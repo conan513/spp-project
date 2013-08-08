@@ -97,6 +97,12 @@
       <DependentUpon>HelpUsWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\INI.cs" />
+    <Compile Include="Windows\LanSwitcher\LanSwitcher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\LanSwitcher\LanSwitcher.Designer.cs">
+      <DependentUpon>LanSwitcher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Launcher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     <EmbeddedResource Include="Windows\HelpUsWindow.resx">
       <DependentUpon>HelpUsWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\LanSwitcher\LanSwitcher.resx">
+      <DependentUpon>LanSwitcher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,7 +179,7 @@
     </EmbeddedResource>
     <None Include="App config and Fody\app.config" />
     <None Include="App config and Fody\app.manifest" />
-    <None Include="App config and Fody\Fody.targets" />
+    <None Include="Fody.targets" />
     <None Include="App config and Fody\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

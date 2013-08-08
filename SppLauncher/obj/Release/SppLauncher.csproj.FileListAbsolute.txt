@@ -127,3 +127,4 @@ D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update_Completed.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.csproj.GenerateResource.Cache
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.LanSwitcher.resources

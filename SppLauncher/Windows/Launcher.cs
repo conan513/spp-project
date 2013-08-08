@@ -14,6 +14,7 @@ using Ionic.Zip;
 using MySql.Data.MySqlClient;
 using MySQLClass;
 using SppLauncher.OnlineBot;
+using SppLauncher.Windows;
 
 namespace SppLauncher
 {
@@ -39,7 +40,7 @@ namespace SppLauncher
         readonly string getTemp = Path.GetTempPath();
         readonly PerformanceCounter cpuCounter;
         readonly PerformanceCounter ramCounter;
-        public static string RemoteProgVer, currProgVer = "1.0.5";
+        public static string RemoteProgVer, currProgVer = "1.0.6";
         public static double CurrEmuVer, RemoteEmuVer;
         public static bool Available, Updater  = false, AllowUpdaterQuestion = false, allowupdaternorunwow = false;
         private bool _startStop;
@@ -1069,6 +1070,11 @@ namespace SppLauncher
         private void lanSwitcherToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Process.Start("Tools\\IP_Changer.exe");
+
+            //test
+            //var LanSwitcher = new LanSwitcher();
+            //LanSwitcher.Show();
+
         }
 
         private void accountToolToolStripMenuItem1_Click(object sender, EventArgs e)

@@ -46,6 +46,7 @@
             this.pb_down.Name = "pb_down";
             this.pb_down.Size = new System.Drawing.Size(298, 24);
             this.pb_down.TabIndex = 0;
+            this.pb_down.Click += new System.EventHandler(this.pb_down_Click);
             // 
             // lbl_Perecent
             // 

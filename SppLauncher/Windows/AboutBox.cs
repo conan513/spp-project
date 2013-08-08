@@ -14,8 +14,6 @@ namespace SppLauncher
         private void AboutBox1_Load_1(object sender, EventArgs e)
         {
             label1.Text = "Launcher and tools by Whit33r";
-            //lbl_oneDesc.Text = "Created by Whit33r \nSpecial thanks: ConanHUN";
-            //lbl_twoDesc.Text = "If you liked it and would like to see\nmore like this software, please donate.";
             timer1.Start();
         }
 
@@ -34,8 +32,7 @@ namespace SppLauncher
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string cmd = "mailto:foo@bar.com";
-            Process.Start(cmd);
+            Process.Start("http://my.opera.com/conan513/blog/");
             
         }
     }
