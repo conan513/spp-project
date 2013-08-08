@@ -11,9 +11,8 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
 using Ionic.Zip;
-using MySql.Data.MySqlClient.Properties;
-using MySQLClass;
 using MySql.Data.MySqlClient;
+using MySQLClass;
 using SppLauncher.OnlineBot;
 
 namespace SppLauncher
@@ -36,12 +35,14 @@ namespace SppLauncher
                              importFile,importFolder,
                              exportfile,exportFolder,
                              autostart;
-        string getTemp = Path.GetTempPath();
-        PerformanceCounter cpuCounter, ramCounter;
+
+        readonly string getTemp = Path.GetTempPath();
+        readonly PerformanceCounter cpuCounter;
+        readonly PerformanceCounter ramCounter;
         public static string RemoteProgVer, currProgVer = "1.0.5";
-        public static double CurrEmuVer, RemoteEmuVer, LocalEmuver;
+        public static double CurrEmuVer, RemoteEmuVer;
         public static bool Available, Updater  = false, AllowUpdaterQuestion = false, allowupdaternorunwow = false;
-        private bool _startStop                = false;
+        private bool _startStop;
         private Process _cmd, _cmd1, _cmd3;
         private bool _allowdev, _allowtext, _restart;
         private DateTime _dt   = DateTime.Now;
@@ -52,11 +53,9 @@ namespace SppLauncher
         private string sqlpath   = "Database\\bin\\";
         private DateTime _start1 = DateTime.Now;
         private string _status;
-        private bool _update, _updateNo = false;
-        private bool _updateYes         = false;
+        private bool _update, _updateNo;
+        private bool _updateYes;
         private string _world;
-
-
 
         #endregion
 
