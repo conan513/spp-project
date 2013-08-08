@@ -33,10 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>wow_cataclysm_icon_by_versewastaken-d30rcse.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\wow_cataclysm_icon_by_versewastaken-d30rcse.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationManifest>App config and Fody\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ionic.Zip">
@@ -72,41 +72,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutBox.cs">
+    <Compile Include="Windows\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutBox.Designer.cs">
+    <Compile Include="Windows\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="BotConf.cs">
+    <Compile Include="Windows\BotConf.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BotConf.Designer.cs">
+    <Compile Include="Windows\BotConf.Designer.cs">
       <DependentUpon>BotConf.cs</DependentUpon>
     </Compile>
-    <Compile Include="BugReport.cs">
+    <Compile Include="Windows\BugReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BugReport.Designer.cs">
+    <Compile Include="Windows\BugReport.Designer.cs">
       <DependentUpon>BugReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="HelpUsWindow.cs">
+    <Compile Include="Windows\HelpUsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HelpUsWindow.Designer.cs">
+    <Compile Include="Windows\HelpUsWindow.Designer.cs">
       <DependentUpon>HelpUsWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\INI.cs" />
-    <Compile Include="Launcher.cs">
+    <Compile Include="Windows\Launcher.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Launcher.Designer.cs">
+    <Compile Include="Windows\Launcher.Designer.cs">
       <DependentUpon>Launcher.cs</DependentUpon>
     </Compile>
-    <Compile Include="Loader.cs">
+    <Compile Include="Windows\Loader.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Loader.Designer.cs">
+    <Compile Include="Windows\Loader.Designer.cs">
       <DependentUpon>Loader.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\OnlineBot.cs" />
@@ -118,40 +118,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Update.cs">
+    <Compile Include="Windows\Update.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Update.Designer.cs">
+    <Compile Include="Windows\Update.Designer.cs">
       <DependentUpon>Update.cs</DependentUpon>
     </Compile>
-    <Compile Include="Update_Completed.cs">
+    <Compile Include="Windows\Update_Completed.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Update_Completed.Designer.cs">
+    <Compile Include="Windows\Update_Completed.Designer.cs">
       <DependentUpon>Update_Completed.cs</DependentUpon>
     </Compile>
-    <Compile Include="WorldConf.cs">
+    <Compile Include="Windows\WorldConf.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WorldConf.Designer.cs">
+    <Compile Include="Windows\WorldConf.Designer.cs">
       <DependentUpon>WorldConf.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AboutBox.resx">
+    <EmbeddedResource Include="Windows\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BotConf.resx">
+    <EmbeddedResource Include="Windows\BotConf.resx">
       <DependentUpon>BotConf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BugReport.resx">
+    <EmbeddedResource Include="Windows\BugReport.resx">
       <DependentUpon>BugReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HelpUsWindow.resx">
+    <EmbeddedResource Include="Windows\HelpUsWindow.resx">
       <DependentUpon>HelpUsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Launcher.resx">
+    <EmbeddedResource Include="Windows\Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Loader.resx">
+    <EmbeddedResource Include="Windows\Loader.resx">
       <DependentUpon>Loader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -159,19 +159,19 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Update.resx">
+    <EmbeddedResource Include="Windows\Update.resx">
       <DependentUpon>Update.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Update_Completed.resx">
+    <EmbeddedResource Include="Windows\Update_Completed.resx">
       <DependentUpon>Update_Completed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WorldConf.resx">
+    <EmbeddedResource Include="Windows\WorldConf.resx">
       <DependentUpon>WorldConf.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
-    <None Include="app.manifest" />
-    <None Include="Fody.targets" />
-    <None Include="packages.config" />
+    <None Include="App config and Fody\app.config" />
+    <None Include="App config and Fody\app.manifest" />
+    <None Include="App config and Fody\Fody.targets" />
+    <None Include="App config and Fody\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -245,10 +245,7 @@
     <None Include="Resources\Import_Icon_32.png" />
     <Content Include="FodyWeavers.xml" />
     <None Include="Resources\search_animation.gif" />
-    <Content Include="wow_cataclysm_icon_by_versewastaken-d30rcse.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <Content Include="Resources\wow_cataclysm_icon_by_versewastaken-d30rcse.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.0-rc\tools\Microsoft.Bcl.Build.targets" />
