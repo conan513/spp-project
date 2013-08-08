@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Management;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Windows.Forms;
-using System.Management;
+
 namespace SppLauncher
 {
     public partial class BugReport : Form
