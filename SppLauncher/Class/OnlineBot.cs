@@ -11,7 +11,7 @@ namespace SppLauncher.OnlineBot
 
             try
             {
-                if (!Loader.kill)
+                if (!Loader.Kill)
                 {
                     string InsertQuery    = "SELECT SUM(online) FROM characters";
                     using (var connection = new MySqlConnection(string.Format("server =127.0.0.1;UID=root;PWD=123456;port=3310;database=characters")))

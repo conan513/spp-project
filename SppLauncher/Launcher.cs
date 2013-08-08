@@ -490,7 +490,7 @@ namespace SppLauncher
                     }
                     else
                     {
-                        Loader.kill = true;
+                        Loader.Kill = true;
                     }
                 }
 
@@ -508,7 +508,7 @@ namespace SppLauncher
                     }
                     else
                     {
-                        Loader.kill = true;
+                        Loader.Kill = true;
                     }
                 }
 
@@ -524,7 +524,7 @@ namespace SppLauncher
                     }
                     else
                     {
-                        Loader.kill = true;
+                        Loader.Kill = true;
                     }
                 }
             }
@@ -901,7 +901,7 @@ namespace SppLauncher
             Thread.Sleep(200);
             CloseProcess(false);
             SppTray.Visible = false;
-            Loader.kill     = true;
+            Loader.Kill     = true;
         }
 
         private void worldSettingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1095,7 +1095,7 @@ namespace SppLauncher
             CloseProcess(false);
 
             SppTray.Visible = false;
-            Loader.kill     = true;
+            Loader.Kill     = true;
         }
 
         public void RealmWorldRestart()
