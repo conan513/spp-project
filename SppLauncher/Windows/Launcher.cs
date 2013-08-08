@@ -554,6 +554,8 @@ namespace SppLauncher
             randomizeBotsToolStripMenuItem1.Enabled         = false;
             restartToolStripMenuItem1.Enabled               = false;
             restartToolStripMenuItem2.Enabled               = false;
+            lanSwitcherToolStripMenuItem1.Enabled           = false;
+            lanSwitcherToolStripMenuItem.Enabled            = false;
         }
 
         public void StatusIcon()
@@ -1069,11 +1071,10 @@ namespace SppLauncher
 
         private void lanSwitcherToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Process.Start("Tools\\IP_Changer.exe");
+            //Process.Start("Tools\\IP_Changer.exe");
 
-            //test
-            //var LanSwitcher = new LanSwitcher();
-            //LanSwitcher.Show();
+            var LanSwitcher = new LanSwitcher();
+            LanSwitcher.Show();
 
         }
 
@@ -1338,6 +1339,8 @@ namespace SppLauncher
                     randomizeBotsToolStripMenuItem.Enabled          = true;
                     resetBotsToolStripMenuItem.Enabled              = true;
                     randomizeBotsToolStripMenuItem1.Enabled         = true;
+                    lanSwitcherToolStripMenuItem1.Enabled           = true;
+                    lanSwitcherToolStripMenuItem.Enabled            = true;
                     startstopToolStripMenuItem.Enabled              = true;
                     startToolStripMenuItem.Enabled                  = true;
                     restartToolStripMenuItem1.Enabled               = true;
@@ -1345,7 +1348,7 @@ namespace SppLauncher
                     exportCharactersToolStripMenuItem.Enabled       = true;
                     exportImportCharactersToolStripMenuItem.Enabled = true;
                     
-                    bwUpdate.RunWorkerAsync(); //check update
+                    //bwUpdate.RunWorkerAsync(); //check update
 
                     Traymsg();
                     GetSqlOnlineBot.Start(); //get online bots

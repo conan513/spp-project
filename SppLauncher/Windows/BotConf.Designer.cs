@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txbMinbot = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbRndBotLgn = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.tTrndBot = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -318,6 +320,7 @@
             this.cbRndBotLgn.TabIndex = 9;
             this.cbRndBotLgn.Text = "Rnd bot login";
             this.cbRndBotLgn.UseVisualStyleBackColor = true;
+            this.cbRndBotLgn.MouseHover += new System.EventHandler(this.cbRndBotLgn_MouseHover);
             // 
             // button2
             // 
@@ -384,5 +387,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox cbRndBotLgn;
+        private System.Windows.Forms.ToolTip tTrndBot;
     }
 }

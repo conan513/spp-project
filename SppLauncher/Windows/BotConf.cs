@@ -204,5 +204,10 @@ namespace SppLauncher
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+        private void cbRndBotLgn_MouseHover(object sender, EventArgs e)
+        {
+            tTrndBot.Show("All bots join on start.", cbRndBotLgn, 100000);
+        }
     }
 }
