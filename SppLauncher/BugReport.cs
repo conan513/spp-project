@@ -14,7 +14,7 @@ namespace SppLauncher
 {
     public partial class BugReport : Form
     {
-        private int count = Environment.ProcessorCount;
+        private readonly int count = Environment.ProcessorCount;
         private string RemoteIp;
 
         public BugReport()

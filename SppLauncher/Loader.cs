@@ -23,8 +23,8 @@ namespace SppLauncher
         public static bool kill = false, Available, AllowUpdaterQuestion = false, allowShow = false, test = false;
         public static double RemoteEmuVer, currEmuVer;
         public static string RemoteProgVer, currProgVer = "1.0.5", sql;
-        private bool  updateNO = false;
-        private bool updateYes = false;
+        private bool  updateNO;
+        private bool updateYes;
         private Process _cmd3;
         private string sqlpath = "Database\\bin\\";
 
@@ -66,7 +66,7 @@ namespace SppLauncher
             }
         }
 
-        private Random rnd = new Random();
+        private readonly Random rnd = new Random();
 
         protected int GetRandomInt()
         {

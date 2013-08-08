@@ -43,11 +43,11 @@ namespace SppLauncher
         public static bool Available, Updater  = false, AllowUpdaterQuestion = false, allowupdaternorunwow = false;
         private bool _startStop                = false;
         private Process _cmd, _cmd1, _cmd3;
-        private bool allowdev, _allowtext, _restart;
+        private bool _allowdev, _allowtext, _restart;
         private DateTime _dt   = DateTime.Now;
         private string lwPath  = "SingleCore\\";
         private Process _p     = new Process();
-        private string _realm,mangosdMem, realmdMem, sqlMem;
+        private string _realm, _mangosdMem, _realmdMem, _sqlMem;
         private string _sql;
         private string sqlpath   = "Database\\bin\\";
         private DateTime _start1 = DateTime.Now;
@@ -64,7 +64,6 @@ namespace SppLauncher
 
         public Launcher()
         {
-            
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
             InitializeComponent();
             cpuCounter = new PerformanceCounter();
@@ -124,6 +123,7 @@ namespace SppLauncher
         {
             _realm += text;
         }
+
 
         public float getCurrentCpuUsage()
         {
@@ -210,6 +210,7 @@ namespace SppLauncher
         {
             _start1              = DateTime.Now;
             _status              = "Starting Realm";
+            tssStatus.Image = Properties.Resources.search_animation;
             pbTempR.Visible      = true;
             pbNotAvailR.Visible  = false;
             tmrRealm.Start();
@@ -328,7 +329,7 @@ namespace SppLauncher
             if (!_restart)
             {
                 _status              = "Starting Mysql";
-                tssStatus.Image = Properties.Resources.search_animation;
+                animateStatus(true);
                 pbTempM.Visible      = true;
                 pbNotAvailM.Visible  = false;
                 SqlStartCheck.Start();
@@ -1116,14 +1117,14 @@ namespace SppLauncher
         {
             if (keyData == (Keys.Control | Keys.D))
             {
-                if (!allowdev)
+                if (!_allowdev)
                 {
-                    allowdev = true;
+                    _allowdev = true;
                     DevWindow(true);
                 }
                 else
                 {
-                    allowdev = false;
+                    _allowdev = false;
                     DevWindow(false);
                 }
 
@@ -1165,36 +1166,36 @@ namespace SppLauncher
             {
                 Process[] SqlProcesses;
                 SqlProcesses = Process.GetProcessesByName("mysqld");
-                sqlMem       = Convert.ToString(SqlProcesses[0].WorkingSet64 / 1024 / 1024) + "MB";
+                _sqlMem       = Convert.ToString(SqlProcesses[0].WorkingSet64 / 1024 / 1024) + "MB";
             }
             catch (Exception)
             {
-                sqlMem = "N/A";
+                _sqlMem = "N/A";
             }
 
             try
             {
                 Process[] mangosdProcesses;
                 mangosdProcesses = Process.GetProcessesByName("mangosd");
-                mangosdMem       = Convert.ToString(mangosdProcesses[0].WorkingSet64 / 1024 / 1024) + "MB";
+                _mangosdMem       = Convert.ToString(mangosdProcesses[0].WorkingSet64 / 1024 / 1024) + "MB";
             }
             catch (Exception)
             {
-                mangosdMem = "N/A";
+                _mangosdMem = "N/A";
             }
 
             try
             {
                 Process[] realmdProcesses;
                 realmdProcesses = Process.GetProcessesByName("login");
-                realmdMem       = Convert.ToString(realmdProcesses[0].WorkingSet64 / 1024 / 1024) + "MB";
+                _realmdMem       = Convert.ToString(realmdProcesses[0].WorkingSet64 / 1024 / 1024) + "MB";
             }
             catch (Exception)
             {
-                realmdMem = "N/A";
+                _realmdMem = "N/A";
             }
 
-            tssUsage.ToolTipText = "Launcher: " + Convert.ToString(proc.WorkingSet64 / 1024 / 1024) + "MB" + "\nMysql Server: " + sqlMem + "\nLogin Server: " + realmdMem + "\nGame Server: " + mangosdMem;
+            tssUsage.ToolTipText = "Launcher: " + Convert.ToString(proc.WorkingSet64 / 1024 / 1024) + "MB" + "\nMysql Server: " + _sqlMem + "\nLogin Server: " + _realmdMem + "\nGame Server: " + _mangosdMem;
 
             tssUsage.Text = "CPU: " + Convert.ToInt32(getCurrentCpuUsage()) + "% |" + " RAM: " + perecent + "%" + " (" + ramfree + "/" + ramtoltal + "MB)";
 
@@ -1319,14 +1320,14 @@ namespace SppLauncher
                     lblWorldStartTime.Text  = (end1 - _start1).TotalSeconds.ToString();
                     pbarWorld.Value         = 100;
                     _status                 = "Online";
-                    tssStatus.Image = null;
+                    animateStatus(false);
                     pbAvailableW.Visible    = true;
                     pbTempW.Visible         = false;
                     pbarWorld.Visible       = false;
                     WindowSize(true);
                     pbarWorld.Value       = 0;
                     _allowtext            = true;
-                    allowdev              = true;
+                    _allowdev              = true;
 
                     resetAllRandomBotsToolStripMenuItem.Enabled     = true;
                     randomizeBotsToolStripMenuItem.Enabled          = true;
@@ -1437,7 +1438,7 @@ namespace SppLauncher
             try
             {
                 _status               = "Checking Update...";
-                tssStatus.Image = Properties.Resources.search_animation;
+                animateStatus(true);
                 var client            = new WebClient();
                 Stream stream         = client.OpenRead("https://raw.github.com/conan513/SingleCore/SPP/Tools/update.txt");
                 var reader            = new StreamReader(stream);
@@ -1486,8 +1487,8 @@ namespace SppLauncher
         {
             if (!_updateNo)
             {
-                _status = "Up to date.";
-                tssStatus.Image = null;
+                _status = "Up to date";
+                animateStatus(false);
             }
 
             //else
@@ -1538,8 +1539,8 @@ namespace SppLauncher
                 WindowState = FormWindowState.Normal;
                 Show();
                 pbAvailableM.Visible = true;
-                _status              = "Decompress...";
-                tssStatus.Image = Properties.Resources.search_animation;
+                _status              = "Decompress";
+                animateStatus(true);
                 bwImport.RunWorkerAsync();
             }
         }
@@ -1547,14 +1548,14 @@ namespace SppLauncher
         private void bwImport_DoWork(object sender, DoWorkEventArgs e)
         {
             ImportExtract();
-            _status = "Import Characters...";
+            _status = "Import Characters";
 
             string conn            = "server=127.0.0.1;user=root;pwd=123456;database=characters;port=3310;convertzerodatetime=true;";
             MySqlBackup mb         = new MySqlBackup(conn);
             mb.ImportInfo.FileName = getTemp + "\\save01";
             mb.Import();
 
-            _status = "Import Accounts...";
+            _status = "Import Accounts";
 
             string conn1            = "server=127.0.0.1;user=root;pwd=123456;database=realmd;port=3310;convertzerodatetime=true;";
             MySqlBackup mb1         = new MySqlBackup(conn1);
@@ -1564,8 +1565,8 @@ namespace SppLauncher
 
         private void bwImport_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            _status = "Import Completed.";
-            tssStatus.Image = null;
+            _status = "Import Completed";
+            animateStatus(false);
             File.Delete(getTemp + "\\save01");
             File.Delete(getTemp + "\\save02");
             StartAll();
@@ -1595,7 +1596,7 @@ namespace SppLauncher
 
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
-                _status       = "Exporting Characters...";
+                _status       = "Exporting Characters";
                 exportfile    = saveFile.FileName;
                 exportFolder  = Path.GetDirectoryName(exportfile);
                 bwExport.RunWorkerAsync();
@@ -1609,14 +1610,14 @@ namespace SppLauncher
             mb.ExportInfo.FileName = getTemp + "\\save01";
             mb.Export();
 
-            _status = "Export Accounts...";
+            _status = "Export Accounts";
 
             string conn1            = "server=127.0.0.1;user=root;pwd=123456;database=realmd;port=3310;convertzerodatetime=true;";
             MySqlBackup mb1         = new MySqlBackup(conn1);
             mb1.ExportInfo.FileName = getTemp + "\\save02";
             mb1.Export();
 
-            _status = "Compressing...";
+            _status = "Compressing";
 
             using (ZipFile zip = new ZipFile()) //create .sppbackup
             {
@@ -1629,8 +1630,8 @@ namespace SppLauncher
 
         private void bwExport_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            _status = "Export Completed.";
-            tssStatus.Image = null;
+            _status = "Export Completed";
+            animateStatus(false);
             File.Delete(getTemp + "\\save01");
             File.Delete(getTemp + "\\save02");
         }
@@ -1749,6 +1750,18 @@ namespace SppLauncher
         private void importToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             import();
+        }
+
+        private void animateStatus(bool animate)
+        {
+            if (animate)
+            {
+                tssStatus.Image = Properties.Resources.search_animation;   
+            }
+            else
+            {
+                tssStatus.Image = null;
+            }
         }
     }
 }

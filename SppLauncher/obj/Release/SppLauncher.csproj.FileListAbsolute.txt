@@ -113,3 +113,17 @@ D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.Update.resources
 D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.Update_Completed.resources
 D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.WorldConf.resources
 D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.csproj.GenerateResource.Cache
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.exe
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.pdb
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.csprojResolveAssemblyReference.cache
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.AboutBox.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BotConf.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BugReport.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.HelpUsWindow.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Launcher.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Loader.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Properties.Resources.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update_Completed.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.csproj.GenerateResource.Cache

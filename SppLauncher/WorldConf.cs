@@ -11,7 +11,7 @@ namespace SppLauncher
 {
     public partial class WorldConf : Form
     {
-        IniFileClass MyIni = new IniFileClass("config\\world.CONF");
+        readonly IniFileClass MyIni = new IniFileClass("config\\world.CONF");
 
 
         public WorldConf()

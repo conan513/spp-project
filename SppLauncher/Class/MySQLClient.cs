@@ -6,7 +6,7 @@ namespace MySQLClass
 {
     class MySQLClient
     {
-        MySqlConnection conn = null;
+        readonly MySqlConnection conn;
 
 
         #region Constructors
@@ -17,12 +17,12 @@ namespace MySQLClass
 
         public MySQLClient(string hostname, string database, string username, string password, int portNumber)
         {
-            conn = new MySqlConnection("host=" + hostname + ";database=" + database + ";username=" + username + ";password=" + password + ";port=" + portNumber.ToString() +";");
+            conn = new MySqlConnection("host=" + hostname + ";database=" + database + ";username=" + username + ";password=" + password + ";port=" + portNumber +";");
         }
 
         public MySQLClient(string hostname, string database, string username, string password, int portNumber, int connectionTimeout)
         {
-            conn = new MySqlConnection("host=" + hostname + ";database=" + database + ";username=" + username + ";password=" + password + ";port=" + portNumber.ToString() + ";Connection Timeout=" + connectionTimeout.ToString() +";");
+            conn = new MySqlConnection("host=" + hostname + ";database=" + database + ";username=" + username + ";password=" + password + ";port=" + portNumber + ";Connection Timeout=" + connectionTimeout +";");
         }
         #endregion
 
@@ -68,7 +68,6 @@ namespace MySQLClass
                 }
             }
             catch { }
-            return;
         }
 
         public void Update(string table, string SET, string WHERE)
@@ -86,7 +85,6 @@ namespace MySQLClass
                 }
                 catch { this.Close(); }
             }
-            return;
         }
 
         public void Delete(string table, string WHERE) 
@@ -103,7 +101,6 @@ namespace MySQLClass
                 }
                 catch { this.Close(); }
             }
-            return;
         }
 
         public Dictionary<string, string> Select(string table, string WHERE)
@@ -124,7 +121,7 @@ namespace MySQLClass
 
                         for (int i = 0; i < dataReader.FieldCount; i++)
                         {
-                            selectResult.Add(dataReader.GetName(i).ToString(), dataReader.GetValue(i).ToString());
+                            selectResult.Add(dataReader.GetName(i), dataReader.GetValue(i).ToString());
                         }
 
                     }
@@ -135,17 +132,14 @@ namespace MySQLClass
 
                 return selectResult;
             }
-            else
-            {
-                return selectResult;
-            }
+            return selectResult;
         }
 
         public int Count(string table)
         {
             string query    = "SELECT Count(*) FROM " + table + "";
             int Count       = -1;
-            if (this.Open() == true)
+            if (this.Open())
             {
                 try
                 {
@@ -156,10 +150,7 @@ namespace MySQLClass
                 catch { this.Close(); }
                 return Count;
             }
-            else
-            {
-                return Count;
-            }
+            return Count;
         }
     }
 }

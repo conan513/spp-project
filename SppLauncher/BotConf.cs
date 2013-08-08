@@ -11,11 +11,10 @@ namespace SppLauncher
 {
     public partial class BotConf : Form
     {
-
-        IniFileClass MyIni              = new IniFileClass("config\\aiplayerbot.CONF");
+        readonly IniFileClass MyIni              = new IniFileClass("config\\aiplayerbot.CONF");
         private string _maps            = " ", _mapsWrite = " ";
         private string[] _arr1          = new string[4];
-        private bool DefaultL           = false;
+        private bool DefaultL;
         public BotConf()
         {
             InitializeComponent();

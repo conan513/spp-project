@@ -16,7 +16,7 @@ namespace SppLauncher
             InitializeComponent();
         }
 
-        Stopwatch sw = new Stopwatch();
+        readonly Stopwatch sw = new Stopwatch();
 
         private void Update_Shown(object sender, EventArgs e)
         {

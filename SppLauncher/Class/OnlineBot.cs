@@ -23,10 +23,7 @@ namespace SppLauncher.OnlineBot
                         return online;
                     }
                 }
-                else
-                {
-                    return "Online Bots: N/A";
-                }
+                return "Online Bots: N/A";
             }
             catch (Exception)
             {
