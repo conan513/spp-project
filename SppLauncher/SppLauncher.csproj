@@ -152,20 +152,8 @@
     <EmbeddedResource Include="Windows\BotConf.af.resx">
       <DependentUpon>BotConf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\BotConf.en.resx">
-      <DependentUpon>BotConf.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\BotConf.hu.resx">
-      <DependentUpon>BotConf.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Windows\BotConf.resx">
       <DependentUpon>BotConf.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\BugReport.en.resx">
-      <DependentUpon>BugReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\BugReport.hu.resx">
-      <DependentUpon>BugReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\BugReport.resx">
       <DependentUpon>BugReport.cs</DependentUpon>
@@ -175,12 +163,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\LanSwitcher\LanSwitcher.resx">
       <DependentUpon>LanSwitcher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Launcher.en.resx">
-      <DependentUpon>Launcher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Launcher.hu.resx">
-      <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
@@ -192,12 +174,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Update.en.resx">
-      <DependentUpon>Update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Update.hu.resx">
-      <DependentUpon>Update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Update.resx">
       <DependentUpon>Update.cs</DependentUpon>
