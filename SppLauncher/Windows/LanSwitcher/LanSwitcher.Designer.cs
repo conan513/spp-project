@@ -46,7 +46,7 @@
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(64, 22);
             this.btnApply.TabIndex = 0;
-            this.btnApply.Text = "Apply";
+            this.btnApply.Text = "Alkalmaz";
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 

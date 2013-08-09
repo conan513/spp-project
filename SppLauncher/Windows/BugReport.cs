@@ -19,6 +19,15 @@ namespace SppLauncher
         {
             InitializeComponent();
             cbBugType.Text = "Aibot";
+
+            groupBox1.Text = Launcher.Msgreport;
+            lblMail.Text   = Launcher.Msgyourmail;
+            lblbug.Text    = Launcher.Msgbugtype;
+            label1.Text    = Launcher.Msgdesc;
+            label2.Text    = Launcher.Msgsysinfo;
+            btnSend.Text   = Launcher.Msgsendreport;
+            Text           = Launcher.Msgtitle;
+
             bwGetSysInfo.RunWorkerAsync();
         }
 

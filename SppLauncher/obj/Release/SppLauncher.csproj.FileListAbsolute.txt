@@ -128,3 +128,19 @@ D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update_Completed.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.csproj.GenerateResource.Cache
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.LanSwitcher.resources
+D:\SPP\Single Player Project Real v2\en\SppLauncher.resources.dll
+D:\SPP\Single Player Project Real v2\hu\SppLauncher.resources.dll
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Launcher.en.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Launcher.hu.resources
+D:\Sourcetree\SppLauncher\obj\Release\en\SppLauncher.resources.dll
+D:\Sourcetree\SppLauncher\obj\Release\hu\SppLauncher.resources.dll
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.AboutBox.hu.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BotConf.en.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BotConf.hu.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BugReport.en.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BugReport.hu.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update.en.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update.hu.resources
+D:\SPP\Single Player Project Real v2\af\SppLauncher.resources.dll
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BotConf.af.resources
+D:\Sourcetree\SppLauncher\obj\Release\af\SppLauncher.resources.dll

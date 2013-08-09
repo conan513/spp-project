@@ -72,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Language.cs" />
     <Compile Include="Windows\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,11 +143,29 @@
     <Compile Include="Windows\WorldConf.Designer.cs">
       <DependentUpon>WorldConf.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Windows\AboutBox.hu.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\BotConf.af.resx">
+      <DependentUpon>BotConf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\BotConf.en.resx">
+      <DependentUpon>BotConf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\BotConf.hu.resx">
+      <DependentUpon>BotConf.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\BotConf.resx">
       <DependentUpon>BotConf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\BugReport.en.resx">
+      <DependentUpon>BugReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\BugReport.hu.resx">
+      <DependentUpon>BugReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\BugReport.resx">
       <DependentUpon>BugReport.cs</DependentUpon>
@@ -156,6 +175,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\LanSwitcher\LanSwitcher.resx">
       <DependentUpon>LanSwitcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Launcher.en.resx">
+      <DependentUpon>Launcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Launcher.hu.resx">
+      <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
@@ -167,6 +192,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Update.en.resx">
+      <DependentUpon>Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Update.hu.resx">
+      <DependentUpon>Update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Update.resx">
       <DependentUpon>Update.cs</DependentUpon>
@@ -254,6 +285,8 @@
     <None Include="Resources\Import_Icon_32.png" />
     <Content Include="FodyWeavers.xml" />
     <None Include="Resources\search_animation.gif" />
+    <None Include="Resources\hu.png" />
+    <None Include="Resources\us.png" />
     <Content Include="Resources\wow_cataclysm_icon_by_versewastaken-d30rcse.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

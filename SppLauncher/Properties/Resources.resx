@@ -118,65 +118,41 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="available_100x100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\available_100x100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="world-of-warcraft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\world-of-warcraft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Final_splash_nelf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Final_splash_nelf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="not-available_100x100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\not-available_100x100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Other-Power-Switch-User-Metro-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Other-Power-Switch-User-Metro-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Information_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Information_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="WoW-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WoW-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="temporarily_not_available_100x100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\temporarily_not_available_100x100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pic_tick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pic_tick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Final_splash_nelf1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Final_splash_nelf1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Final_splash_nelf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Final_splash_nelf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Play-1-Hot-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Play-1-Hot-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search_animation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_animation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Button-stop-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button-stop-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wow_cataclysm_icon_by_versewastaken-d30rcse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wow_cataclysm_icon_by_versewastaken-d30rcse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Information_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Information_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Play-1-Hot-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Play-1-Hot-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="paypal_donate_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paypal_donate_button.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Final_splash_panda2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Final_splash_panda2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Export_Icon_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Export_Icon_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Launcher_bwUpdate_DoWork_Checking_Update___" xml:space="preserve">
+    <value>Checking Update...</value>
+  </data>
+  <data name="hu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="report-bug-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\report-bug-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Places-server-database-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Places-server-database-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pic_paypal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pic_paypal.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Windows-Close-Program-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Windows-Close-Program-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Final_splash_nelf1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Final_splash_nelf1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Import_Icon_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Import_Icon_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,16 +160,49 @@
   <data name="configuration 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\configuration 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Other-Power-Restart-Metro-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Other-Power-Restart-Metro-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="heart-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\heart-icon.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Export_Icon_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Export_Icon_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Windows-Close-Program-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Windows-Close-Program-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search_animation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search_animation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Final_splash_panda2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Final_splash_panda2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pic_paypal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pic_paypal.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="available_100x100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\available_100x100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Other-Power-Restart-Metro-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Other-Power-Restart-Metro-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pic_tick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pic_tick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Other-Power-Switch-User-Metro-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Other-Power-Switch-User-Metro-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wow_cataclysm_icon_by_versewastaken-d30rcse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wow_cataclysm_icon_by_versewastaken-d30rcse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Places-server-database-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Places-server-database-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="temporarily_not_available_100x100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\temporarily_not_available_100x100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WoW-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WoW-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="world-of-warcraft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\world-of-warcraft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="us" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\us.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

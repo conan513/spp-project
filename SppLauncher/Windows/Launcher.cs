@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
@@ -15,6 +16,7 @@ using MySql.Data.MySqlClient;
 using MySQLClass;
 using SppLauncher.OnlineBot;
 using SppLauncher.Windows;
+using SppLauncher.Class;
 
 namespace SppLauncher
 {
@@ -40,7 +42,7 @@ namespace SppLauncher
         readonly string getTemp = Path.GetTempPath();
         readonly PerformanceCounter cpuCounter;
         readonly PerformanceCounter ramCounter;
-        public static string RemoteProgVer, currProgVer = "1.0.6";
+        public static string RemoteProgVer, currProgVer = "1.0.6",lang;
         public static double CurrEmuVer, RemoteEmuVer;
         public static bool Available, Updater  = false, AllowUpdaterQuestion = false, allowupdaternorunwow = false;
         private bool _startStop;
@@ -57,15 +59,81 @@ namespace SppLauncher
         private bool _update, _updateNo;
         private bool _updateYes;
         private string _world;
+        private System.Collections.Hashtable LangHash = new Hashtable();
+        private System.Resources.ResourceManager rm;
+        public static string[] button = new string[80];
+
+        private string tooltip             = "Auto Changed RealmList.wtf and after exit SPP change back original realmlist.";
+        private String Msgloadworld        = "Loading World";
+        private string Msgstartingrealm    = "Starting Realm";
+        private string Msgstartingmy       = "Starting Mysqlm";
+        string Msgresetbots                = "Reset bots";
+        private string Msgserverres        = "Servers Started";
+        private string Msgreadytoplay      = "Ready to play";
+        private string Msgwould            = "Would you like to start World of Warcraft?";
+        private string Msgupstart          = "Update started.\nDo lag for several times.";
+        private string Msgmangoscrash      = "Mangosd Crashed";
+        private string Msgrestart          = "The process is automatically restart.";
+        private string Msgcheckup          = "Checking Update...";
+        private string Msgnewver           = "New Version Available: V";
+        private string Msgyouwant          = "You want to download?";
+        private string Msgnewver2          = "New Version";
+        private string Msgnewservera       = "New Server Update Available";
+        private string Msgstatusup         = "Up to date";
+        private string Msgimportchar       = "Import Characters";
+        private string Msgdecompress       = "Decompress";
+        private string Msgimportacc        = "Import Accounts";
+        private string Msgimportcomp       = "Import Completed";
+        private string Msgexportchar       = "Export Characters";
+        private string Msgexportchar1      = "Exporting Characters";
+        private string Msgexportacc        = "Export Accounts";
+        private string Msgcompress         = "Compressing";
+        private string Msgexportcomp       = "Export Completed";
+        public static string Msgaboutmsg1  = "Launcher and tools by Whit33r";
+        public static string Msgaboutmsg2  = "Server and database by";
+        public static string Msgaboutver   = "Versions";
+        public static string Msgstarting   = "Starting Options";
+        public static string Msgserverrate = "Server Rates";
+        public static string Msgitemdrop   = "Item Drop Rates";
+        public static string Msgreport     = "Report";
+        public static string Msgyourmail   = "Your Mail";
+        public static string Msgbugtype    = "Bug Type:";
+        public static string Msgdesc       = "Description";
+        public static string Msgsysinfo    = "System Information";
+        public static string Msgsendreport = "Send Report";
+        public static string Msgtitle      = "Bug Report";
+        public static string Msgbotsettings = "Bot Settings";
+        public static string Msgbots = "Bots:";
+        public static string Msgminbots = "Min bots:";
+        public static string Msgmaxbots = "Max bots:";
+        public static string Msgminbotsi = "Min bots/intervall:";
+        public static string Msgmaxbotsi = "Max bots/intervall";
+        public static string Msgbotacc = "Bot account:";
+        public static string Msgupinter = "Update intervall:";
+        public static string Msgbotmaps = "Bot Maps";
+        public static string Msgother = "Other";
+        public static string Msgbotsacc = "Delete bot accounts";
+        public static string Msgbotlfg = "Bot Join LFG";
+        public static string Msgrnd = "Rnd bot login";
+        public static string Msgloaddef = "Load Default";
+        public static string Msgsave = "Save";
 
         #endregion
 
-        #region Initialize
+        #region Initializems
+        
 
         public Launcher()
         {
-            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+
+
+
+            //rm = new System.Resources.ResourceManager(typeof (Launcher));
+            //LangHash.Add("English", Thread.CurrentThread.CurrentCulture);
+            //LangHash.Add("Hungarian", new System.Globalization.CultureInfo("hu"));
+
             InitializeComponent();
+
             cpuCounter = new PerformanceCounter();
             GetLocalSrvVer();
             cpuCounter.CategoryName = "Processor";
@@ -80,6 +148,7 @@ namespace SppLauncher
             WindowSize(true);
             font();
             ReadXML();
+            Loadsettlang();
             SearchProcess();
             StatusIcon();
 
@@ -111,8 +180,162 @@ namespace SppLauncher
             }
 
             SppTray.Visible = true;
-            startWowToolStripMenuItem.ToolTipText =
-                "Auto Changed RealmList.wtf and after exit SPP change back original realmlist.";
+            startWowToolStripMenuItem.ToolTipText = tooltip;
+
+        }
+
+        public void Loadsettlang()
+        {
+            Language.ReadXML(lang);
+            Loadlang();
+        }
+
+        public void Loadlang()
+        {
+            runWoWToolStripMenuItem.Text             = button[0];
+            toolStripMenuItem1.Text                  = button[1];
+            toolsToolStripMenuItem.Text              = button[2];
+            restartToolStripMenuItem.Text            = button[3];
+            reportBugToolStripMenuItem.Text          = button[4];
+            tsmHelpUs.Text                           = button[5];
+            aboutToolStripMenuItem.Text              = button[6];
+            exitToolStripMenuItem2.Text              = button[7];
+            worldSettingsToolStripMenuItem.Text      = button[8];
+            botSettingsToolStripMenuItem.Text        = button[9];
+            changeWoWPathToolStripMenuItem1.Text     = button[10];
+            resetAllRandomBotsToolStripMenuItem.Text = button[11];
+            randomizeBotsToolStripMenuItem.Text      = button[12];
+            exportCharactersToolStripMenuItem.Text   = button[13];
+            lanSwitcherToolStripMenuItem1.Text       = button[14];
+            accountToolToolStripMenuItem1.Text       = button[15];
+            startstopToolStripMenuItem.Text          = button[16];
+            restartToolStripMenuItem1.Text           = button[17];
+            autostartToolStripMenuItem.Text          = button[18];
+            Msgloadworld                             = button[19];
+            Msgstartingrealm                         = button[20];
+            Msgstartingmy                            = button[21];
+            Msgresetbots                             = button[22];
+            Msgreadytoplay                           = button[23];
+            Msgwould                                 = button[24];
+            Msgupstart                               = button[25];
+            Msgmangoscrash                           = button[26];
+            Msgrestart                               = button[27];
+            Msgcheckup                               = button[28];
+            Msgnewver                                = button[29];
+            Msgnewver2                               = button[30];
+            Msgnewservera                            = button[31];
+            Msgstatusup                              = button[32];
+            Msgimportchar                            = button[33];
+            Msgdecompress                            = button[34];
+            Msgimportacc                             = button[35];
+            Msgimportcomp                            = button[36];
+            Msgexportchar                            = button[37];
+            Msgexportchar1                           = button[38];
+            Msgexportacc                             = button[39];
+            Msgcompress                              = button[40];
+            Msgexportcomp                            = button[41];
+            Msgaboutmsg1                             = button[42];
+            Msgaboutmsg2                             = button[43];
+            Msgaboutver                              = button[44];
+            Msgstarting                              = button[45];
+            Msgserverrate                            = button[46];
+            Msgitemdrop                              = button[47];
+            Msgyourmail                              = button[48];
+            Msgbugtype                               = button[49];
+            Msgdesc                                  = button[50];
+            Msgsysinfo                               = button[51];
+            Msgsendreport                            = button[52];
+            Msgtitle                                 = button[53];
+            Msgbotsettings                           = button[54];
+            Msgbots                                  = button[55];
+            Msgreport                                = button[56];
+            Msgminbots                               = button[57];
+            Msgmaxbots                               = button[58];
+            Msgminbotsi                              = button[59];
+            Msgmaxbotsi                              = button[60];
+            Msgbotsacc                               = button[61];
+            Msgupinter                               = button[62];
+            Msgbotmaps                               = button[63];
+            Msgother                                 = button[64];
+            Msgbotacc                                = button[65];
+            Msgbotlfg                                = button[66];
+            Msgrnd                                   = button[67];
+            Msgloaddef                               = button[68];
+            Msgsave                                  = button[69];
+        }
+
+        public void Land()
+        {
+            button[0]  = runWoWToolStripMenuItem.Text;
+            button[1]  = toolStripMenuItem1.Text;
+            button[2]  = toolsToolStripMenuItem.Text;
+            button[3]  = restartToolStripMenuItem.Text;
+            button[4]  = reportBugToolStripMenuItem.Text;
+            button[5]  = tsmHelpUs.Text;
+            button[6]  = aboutToolStripMenuItem.Text;
+            button[7]  = exitToolStripMenuItem2.Text;
+            button[8]  = worldSettingsToolStripMenuItem.Text;
+            button[9]  = botSettingsToolStripMenuItem.Text;
+            button[10] = changeWoWPathToolStripMenuItem1.Text;
+            button[11] = resetAllRandomBotsToolStripMenuItem.Text;
+            button[12] = randomizeBotsToolStripMenuItem.Text;
+            button[13] = exportCharactersToolStripMenuItem.Text;
+            button[14] = lanSwitcherToolStripMenuItem1.Text;
+            button[15] = accountToolToolStripMenuItem1.Text;
+            button[16] = startstopToolStripMenuItem.Text;
+            button[17] = restartToolStripMenuItem1.Text;
+            button[18] = autostartToolStripMenuItem.Text;
+            button[19] = Msgloadworld;
+            button[20] = Msgstartingrealm;
+            button[21] = Msgstartingmy;
+            button[22] = Msgresetbots;
+            button[23] = Msgreadytoplay;
+            button[24] = Msgwould;
+            button[25] = Msgupstart;
+            button[26] = Msgmangoscrash;
+            button[27] = Msgrestart;
+            button[28] = Msgcheckup;
+            button[29] = Msgnewver;
+            button[30] = Msgnewver2;
+            button[31] = Msgnewservera;
+            button[32] = Msgstatusup;
+            button[33] = Msgimportchar;
+            button[34] = Msgdecompress;
+            button[35] = Msgimportacc;
+            button[36] = Msgimportcomp;
+            button[37] = Msgexportchar;
+            button[38] = Msgexportchar1;
+            button[39] = Msgexportacc;
+            button[40] = Msgcompress;
+            button[41] = Msgexportcomp;
+            button[42] = Msgaboutmsg1;
+            button[43] = Msgaboutmsg2;
+            button[44] = Msgaboutver;
+            button[45] = Msgstarting;
+            button[46] = Msgserverrate;
+            button[47] = Msgitemdrop;
+            button[48] = Msgyourmail;
+            button[49] = Msgbugtype;
+            button[50] = Msgdesc;
+            button[51] = Msgsysinfo;
+            button[52] = Msgsendreport;
+            button[53] = Msgtitle;
+            button[54] = Msgbotsettings;
+            button[55] = Msgbots;
+            button[56] = Msgreport;
+            button[57] = Msgminbots;
+            button[58] = Msgmaxbots;
+            button[59] = Msgminbotsi;
+            button[60] = Msgmaxbotsi;
+            button[61] = Msgbotacc;
+            button[62] = Msgupinter;
+            button[63] = Msgbotmaps;
+            button[64] = Msgother;
+            button[65] = Msgbotsacc;
+            button[66] = Msgbotlfg;
+            button[67] = Msgrnd;
+            button[68] = Msgloaddef;
+            button[69] = Msgsave;
         }
 
         #endregion
@@ -177,7 +400,7 @@ namespace SppLauncher
             pbarWorld.Visible    = true;
             pbTempW.Visible      = true;
             pbNotAvailW.Visible  = false;
-            _status              = "Loading World";
+            _status              = Msgloadworld;
             WindowSize(false);
             tmrWorld.Start();
             var cmdStartInfo                    = new ProcessStartInfo(lwPath + "mangosd.exe");
@@ -209,7 +432,7 @@ namespace SppLauncher
         public void RealmdStart()
         {
             _start1              = DateTime.Now;
-            _status              = "Starting Realm";
+            _status              = Msgstartingrealm;
             tssStatus.Image = Properties.Resources.search_animation;
             pbTempR.Visible      = true;
             pbNotAvailR.Visible  = false;
@@ -328,7 +551,7 @@ namespace SppLauncher
             _start1 = DateTime.Now;
             if (!_restart)
             {
-                _status              = "Starting Mysql";
+                _status              = Msgstartingmy;
                 animateStatus(true);
                 pbTempM.Visible      = true;
                 pbNotAvailM.Visible  = false;
@@ -425,7 +648,7 @@ namespace SppLauncher
 
         private void rstchck_DoWork(object sender, DoWorkEventArgs e)
         {
-            _status = "Reset bots";
+            _status = Msgresetbots;
             tssStatus.Image = Properties.Resources.search_animation;
             Thread.Sleep(10000);
         }
@@ -610,11 +833,11 @@ namespace SppLauncher
         {
             if (!_restart)
             {
-                NotifyBallon(1000, "Servers Started", "Ready to play", false);
+                NotifyBallon(1000, Msgserverres, Msgreadytoplay, false);
             }
             else
             {
-                NotifyBallon(1000, "Servers Restarted", "Ready to play", false);
+                NotifyBallon(1000, Msgserverres, Msgreadytoplay, false);
                 _restart = false;
             }
             _world = "";
@@ -718,9 +941,9 @@ namespace SppLauncher
             }
         }
 
-    public static void saveMethod()
+        public static void saveMethod()
         {
-            var writer        = new XmlTextWriter("config\\SppPathConfig.xml", Encoding.UTF8);
+            var writer = new XmlTextWriter("config\\SppPathConfig.xml", Encoding.UTF8);
             writer.Formatting = Formatting.Indented;
             writer.WriteStartDocument();
             writer.WriteStartElement("Config");
@@ -729,6 +952,8 @@ namespace SppLauncher
             writer.WriteElementString("ResetBots", resetBots);
             writer.WriteElementString("RandomizeBots", randomizeBots);
             writer.WriteElementString("Autostart", autostart);
+            writer.WriteElementString("Lang",lang);
+
             writer.WriteEndElement();
             writer.Close();
         }
@@ -747,6 +972,66 @@ namespace SppLauncher
                     wowExePath    = node["GamePath"].InnerText;
                     realmListPath = node["RealmWTF"].InnerText;
                     autostart     = node["Autostart"].InnerText;
+                    lang = node["Lang"].InnerText;
+                }
+
+                switch (lang)
+                {
+                    case "Hungarian":
+                                    groupBox1.Width = 683;
+            Width = 715;
+                        pbNotAvailM.Location = new Point(167, 64);
+                        pbNotAvailR.Location = new Point(313, 64);
+                        pbNotAvailW.Location = new Point(464, 64);
+                        pbTempM.Location = new Point(167, 64);
+                        pbTempR.Location = new Point(313, 64);
+                        pbTempW.Location = new Point(464, 64);
+                        pbAvailableM.Location = new Point(167, 64);
+                        pbAvailableR.Location = new Point(313, 64);
+                        pbAvailableW.Location = new Point(464, 64);
+                        pbarWorld.Location = new Point(167, 136);
+                        lblMysql.Location = new Point(134, 26);
+                        lblRealm.Location = new Point(297, 26);
+                        lblWorld.Location = new Point(444, 26);
+                        magyarToolStripMenuItem.Checked = true;
+                        break;
+                    case "English":
+                                                groupBox1.Width = 575;
+            Width = 605;
+                                    pbNotAvailM.Location = new Point(105, 64);
+
+            pbNotAvailR.Location = new Point(251, 64);
+
+            pbNotAvailW.Location = new Point(402, 64);
+
+            pbTempM.Location = new Point(105, 64);
+
+            pbTempR.Location = new Point(251, 64);
+
+            pbTempW.Location = new Point(402, 64);
+
+            pbAvailableM.Location = new Point(105, 64);
+
+            pbAvailableR.Location = new Point(251, 64);
+
+            pbAvailableW.Location = new Point(402, 64);
+
+
+            pbarWorld.Location = new Point(105, 136);
+
+            lblMysql.Location = new Point(72, 26);
+
+            lblRealm.Location = new Point(235, 26);
+
+            lblWorld.Location = new Point(382, 26);
+                        englishToolStripMenuItem.Checked = true;
+                        break;
+                    case "French":
+                        frenchToolStripMenuItem.Checked = true;
+                        break;
+                    case "German":
+                        germanToolStripMenuItem.Checked = true;
+                        break;
                 }
             }
             catch
@@ -833,7 +1118,7 @@ namespace SppLauncher
         public void RandomizeBotsMethod()
         {
             _cmd1.StandardInput.WriteLine("rndbot update");
-            MessageBox.Show("Update started.\nDo lag for several times.");
+            MessageBox.Show(Msgupstart);
         }
 
         public bool CheckRunwow()
@@ -1081,11 +1366,6 @@ namespace SppLauncher
         private void accountToolToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Process.Start("Tools\\AccountCreator.exe");
-        }
-
-        private void accountToolAdvancedToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Process.Start("Tools\\AccountCreator_adv.exe");
         }
 
         private void changeWoWPathToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -1348,7 +1628,7 @@ namespace SppLauncher
                     exportCharactersToolStripMenuItem.Enabled       = true;
                     exportImportCharactersToolStripMenuItem.Enabled = true;
                     
-                    //bwUpdate.RunWorkerAsync(); //check update
+                    bwUpdate.RunWorkerAsync(); //check update
 
                     Traymsg();
                     GetSqlOnlineBot.Start(); //get online bots
@@ -1395,7 +1675,7 @@ namespace SppLauncher
 
             if (!_restart && !CheckRunwow())
             {
-                DialogResult dialog = MessageBox.Show("Would you like to start World of Warcraft?", "Question",
+                DialogResult dialog = MessageBox.Show(Msgwould, "Question",
                                                       MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
@@ -1421,7 +1701,7 @@ namespace SppLauncher
             if (ProcessView() && !Updater)
             {
                 _restart = true;
-                NotifyBallon(1000, "Mangosd Crashed", "The process is automatically restart.", true);
+                NotifyBallon(1000, Msgmangoscrash, Msgrestart, true);
                 RealmWorldRestart();
             }
         }
@@ -1445,7 +1725,7 @@ namespace SppLauncher
         {
             try
             {
-                _status               = "Checking Update...";
+                _status               = Msgcheckup;
                 animateStatus(true);
                 var client            = new WebClient();
                 Stream stream         = client.OpenRead("https://raw.github.com/conan513/SingleCore/SPP/Tools/update.txt");
@@ -1462,8 +1742,8 @@ namespace SppLauncher
                 if (content != currProgVer)
                 {
                     if (
-                        MessageBox.Show("New Version Available: V" + content + "\n" + "You want to download?",
-                                        "New Version", MessageBoxButtons.YesNo,
+                        MessageBox.Show(Msgnewver + content + "\n" + Msgyouwant,
+                                        Msgnewver2, MessageBoxButtons.YesNo,
                                         MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1,
                                         MessageBoxOptions.DefaultDesktopOnly) == DialogResult.Yes)
                     {
@@ -1485,7 +1765,7 @@ namespace SppLauncher
             
             if (RemoteEmuVer > CurrEmuVer)
             {
-                    _status           = "New Server Update Available";
+                    _status           = Msgnewservera;
                     tssStatus.IsLink  = true;
                     _updateNo         = false;
             }
@@ -1495,7 +1775,7 @@ namespace SppLauncher
         {
             if (!_updateNo)
             {
-                _status = "Up to date";
+                _status = Msgstatusup;
                 animateStatus(false);
             }
 
@@ -1530,7 +1810,7 @@ namespace SppLauncher
         private void import()
         {
             OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Title          = "Import Characters";
+            openFile.Title          = Msgimportchar;
             openFile.Filter         = "SPP Backup (*.sppbackup)|*.sppbackup|All files (*.*)|*.*";
 
             if (openFile.ShowDialog() == DialogResult.OK)
@@ -1547,7 +1827,7 @@ namespace SppLauncher
                 WindowState = FormWindowState.Normal;
                 Show();
                 pbAvailableM.Visible = true;
-                _status              = "Decompress";
+                _status              = Msgdecompress;
                 animateStatus(true);
                 bwImport.RunWorkerAsync();
             }
@@ -1556,14 +1836,14 @@ namespace SppLauncher
         private void bwImport_DoWork(object sender, DoWorkEventArgs e)
         {
             ImportExtract();
-            _status = "Import Characters";
+            _status = Msgimportchar;
 
             string conn            = "server=127.0.0.1;user=root;pwd=123456;database=characters;port=3310;convertzerodatetime=true;";
             MySqlBackup mb         = new MySqlBackup(conn);
             mb.ImportInfo.FileName = getTemp + "\\save01";
             mb.Import();
 
-            _status = "Import Accounts";
+            _status = Msgimportacc;
 
             string conn1            = "server=127.0.0.1;user=root;pwd=123456;database=realmd;port=3310;convertzerodatetime=true;";
             MySqlBackup mb1         = new MySqlBackup(conn1);
@@ -1573,7 +1853,7 @@ namespace SppLauncher
 
         private void bwImport_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            _status = "Import Completed";
+            _status = Msgimportcomp;
             animateStatus(false);
             File.Delete(getTemp + "\\save01");
             File.Delete(getTemp + "\\save02");
@@ -1597,14 +1877,14 @@ namespace SppLauncher
         private void export()
         {
             SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.Title          = "Export Characters";
+            saveFile.Title          = Msgexportchar;
             tssStatus.Image = Properties.Resources.search_animation;
             saveFile.Filter         = "SPP Backup (*.sppbackup)|*.sppbackup|All files (*.*)|*.*";
             saveFile.FileName       = "characters";
 
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
-                _status       = "Exporting Characters";
+                _status       = Msgexportchar1;
                 exportfile    = saveFile.FileName;
                 exportFolder  = Path.GetDirectoryName(exportfile);
                 bwExport.RunWorkerAsync();
@@ -1618,14 +1898,14 @@ namespace SppLauncher
             mb.ExportInfo.FileName = getTemp + "\\save01";
             mb.Export();
 
-            _status = "Export Accounts";
+            _status = Msgexportacc;
 
             string conn1            = "server=127.0.0.1;user=root;pwd=123456;database=realmd;port=3310;convertzerodatetime=true;";
             MySqlBackup mb1         = new MySqlBackup(conn1);
             mb1.ExportInfo.FileName = getTemp + "\\save02";
             mb1.Export();
 
-            _status = "Compressing";
+            _status = Msgcompress;
 
             using (ZipFile zip = new ZipFile()) //create .sppbackup
             {
@@ -1638,7 +1918,7 @@ namespace SppLauncher
 
         private void bwExport_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            _status = "Export Completed";
+            _status = Msgexportcomp;
             animateStatus(false);
             File.Delete(getTemp + "\\save01");
             File.Delete(getTemp + "\\save02");
@@ -1770,6 +2050,97 @@ namespace SppLauncher
             {
                 tssStatus.Image = null;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Language.saveMethod();
+        }
+
+        private void magyarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            magyarToolStripMenuItem.Checked  = true;
+            englishToolStripMenuItem.Checked = false;
+            frenchToolStripMenuItem.Checked  = false;
+            germanToolStripMenuItem.Checked  = false;
+            Language.ReadXML("Hungarian");
+            lang = "Hungarian";
+            saveMethod();
+            Loadlang();
+
+            groupBox1.Width = 683;
+            Width = 715;
+            pbNotAvailM.Location = new Point(167, 64);
+            pbNotAvailR.Location = new Point(313, 64);
+            pbNotAvailW.Location = new Point(464, 64);
+            pbTempM.Location = new Point(167, 64);
+            pbTempR.Location = new Point(313, 64);
+            pbTempW.Location = new Point(464, 64);
+            pbAvailableM.Location = new Point(167, 64);
+            pbAvailableR.Location = new Point(313, 64);
+            pbAvailableW.Location = new Point(464, 64);
+            pbarWorld.Location = new Point(167, 136);
+            lblMysql.Location = new Point(134, 26);
+            lblRealm.Location = new Point(297, 26);
+            lblWorld.Location = new Point(444, 26);
+        }
+
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            magyarToolStripMenuItem.Checked  = false;
+            englishToolStripMenuItem.Checked = true;
+            frenchToolStripMenuItem.Checked  = false;
+            germanToolStripMenuItem.Checked  = false;
+            Language.ReadXML("English");
+            lang = "English";
+            saveMethod();
+            Loadlang();
+
+            groupBox1.Width = 575;
+            Width = 605;
+            pbNotAvailM.Location = new Point(105, 64);
+            pbNotAvailR.Location = new Point(251, 64);
+            pbNotAvailW.Location = new Point(402, 64);
+            pbTempM.Location = new Point(105, 64);
+            pbTempR.Location = new Point(251, 64);
+            pbTempW.Location = new Point(402, 64);
+            pbAvailableM.Location = new Point(105, 64);
+            pbAvailableR.Location = new Point(251, 64);
+            pbAvailableW.Location = new Point(402, 64);
+            pbarWorld.Location = new Point(105, 136);
+            lblMysql.Location = new Point(72, 26);
+            lblRealm.Location = new Point(235, 26);
+            lblWorld.Location = new Point(382, 26);
+
+        }
+
+        private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            magyarToolStripMenuItem.Checked  = false;
+            englishToolStripMenuItem.Checked = false;
+            frenchToolStripMenuItem.Checked  = true;
+            germanToolStripMenuItem.Checked  = false;
+            Language.ReadXML("French");
+            lang = "French";
+            saveMethod();
+            Loadlang();
+        }
+
+        private void germanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            magyarToolStripMenuItem.Checked  = false;
+            englishToolStripMenuItem.Checked = false;
+            frenchToolStripMenuItem.Checked  = false;
+            germanToolStripMenuItem.Checked  = true;
+            Language.ReadXML("German");
+            lang = "German";
+            saveMethod();
+            Loadlang();
+        }
+
+        public void Setlang()
+        {
+            
         }
     }
 }

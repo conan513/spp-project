@@ -117,19 +117,109 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="tmrRealm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="tmrWorld.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>121, 17</value>
-  </metadata>
-  <metadata name="SqlStartCheck.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>225, 17</value>
-  </metadata>
-  <metadata name="SppTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>352, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="worldSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="worldSettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Világ Beállítások</value>
+  </data>
+  <data name="botSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="botSettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bot Beállítások</value>
+  </data>
+  <data name="changeWoWPathToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="changeWoWPathToolStripMenuItem1.Text" xml:space="preserve">
+    <value>WoW Útvonal Megváltoztatása</value>
+  </data>
+  <data name="resetAllRandomBotsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="resetAllRandomBotsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bot Reset</value>
+  </data>
+  <data name="randomizeBotsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="randomizeBotsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Botok Randomizálása</value>
+  </data>
+  <data name="exportCharactersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="exportCharactersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Karakter Export/Import</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="settingsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 20</value>
+  </data>
+  <data name="settingsToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Beállítások</value>
+  </data>
+  <data name="lblMysql.Location" type="System.Drawing.Point, System.Drawing">
+    <value>103, 20</value>
+  </data>
+  <data name="lblRealm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>295, 20</value>
+  </data>
+  <data name="lblWorld.Location" type="System.Drawing.Point, System.Drawing">
+    <value>471, 20</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>680, 174</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Szerverek</value>
+  </data>
+  <data name="pbarWorld.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 130</value>
+  </data>
+  <data name="pbarWorld.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 25</value>
+  </data>
+  <data name="pbNotAvailW.Location" type="System.Drawing.Point, System.Drawing">
+    <value>491, 58</value>
+  </data>
+  <data name="pbNotAvailW.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 60</value>
+  </data>
+  <data name="pbNotAvailR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>311, 58</value>
+  </data>
+  <data name="pbNotAvailM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 58</value>
+  </data>
+  <data name="pbTempW.Location" type="System.Drawing.Point, System.Drawing">
+    <value>491, 58</value>
+  </data>
+  <data name="pbTempW.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 60</value>
+  </data>
+  <data name="pbTempR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>311, 58</value>
+  </data>
+  <data name="pbTempM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 58</value>
+  </data>
+  <data name="pbAvailableM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 58</value>
+  </data>
+  <data name="pbAvailableR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>311, 58</value>
+  </data>
+  <data name="pbAvailableW.Location" type="System.Drawing.Point, System.Drawing">
+    <value>491, 58</value>
+  </data>
+  <data name="pbAvailableW.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 60</value>
+  </data>
   <data name="SppTray.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAUAEBAAAAAAIABoBAAAVgAAACAgAAAAACAAqBAAAL4EAAAwMAAAAAAgAKglAABmFQAAQEAAAAAA
@@ -1796,54 +1886,87 @@
         AAAAAAAAAAAAAAAAAAAAAAAA
 </value>
   </data>
-  <metadata name="cmsTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>448, 17</value>
-  </metadata>
-  <metadata name="CheckWowRun.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>544, 17</value>
-  </metadata>
-  <metadata name="GetSqlOnlineBot.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>678, 17</value>
-  </metadata>
-  <metadata name="msForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1024, 17</value>
-  </metadata>
-  <metadata name="ssBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>820, 17</value>
-  </metadata>
-  <metadata name="SrvAnnounce.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>900, 17</value>
-  </metadata>
-  <metadata name="CheckMangosCrashed.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1120, 17</value>
-  </metadata>
-  <metadata name="bwUpdate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1293, 17</value>
-  </metadata>
-  <metadata name="UpdateCompleteChecker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
-  <metadata name="StatusBarUpdater.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>289, 56</value>
-  </metadata>
-  <metadata name="Check.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>205, 56</value>
-  </metadata>
-  <metadata name="rstchck.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>436, 56</value>
-  </metadata>
-  <metadata name="bwImport.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>526, 56</value>
-  </metadata>
-  <metadata name="bwExport.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>631, 56</value>
-  </metadata>
-  <metadata name="tmrUsage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>734, 56</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>146</value>
-  </metadata>
+  <data name="txbWorldDev.Size" type="System.Drawing.Size, System.Drawing">
+    <value>639, 20</value>
+  </data>
+  <data name="rtWorldDev.Size" type="System.Drawing.Size, System.Drawing">
+    <value>639, 159</value>
+  </data>
+  <data name="msForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>704, 24</value>
+  </data>
+  <data name="runWoWToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 20</value>
+  </data>
+  <data name="runWoWToolStripMenuItem.Text" xml:space="preserve">
+    <value>WoW Indítása</value>
+  </data>
+  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 20</value>
+  </data>
+  <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Eszközök</value>
+  </data>
+  <data name="restartToolStripMenuItem.Text" xml:space="preserve">
+    <value>Szerver</value>
+  </data>
+  <data name="startstopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="restartToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="restartToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Újraindítás</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 6</value>
+  </data>
+  <data name="autostartToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="autostartToolStripMenuItem.Text" xml:space="preserve">
+    <value>Automatikus Indulás</value>
+  </data>
+  <data name="reportBugToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="reportBugToolStripMenuItem.Text" xml:space="preserve">
+    <value>Hibajelentés</value>
+  </data>
+  <data name="tsmHelpUs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
+  </data>
+  <data name="tsmHelpUs.Text" xml:space="preserve">
+    <value>Segíts</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 20</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Programról..</value>
+  </data>
+  <data name="exitToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
+  </data>
+  <data name="exitToolStripMenuItem2.Text" xml:space="preserve">
+    <value>Kilépés</value>
+  </data>
+  <data name="ssBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>704, 22</value>
+  </data>
+  <data name="tssUsage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>559, 17</value>
+  </data>
+  <data name="magyarToolStripMenuItem.Text" xml:space="preserve">
+    <value>Magyar</value>
+  </data>
+  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>704, 436</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAUAEBAAAAAAIABoBAAAVgAAACAgAAAAACAAqBAAAL4EAAAwMAAAAAAgAKglAABmFQAAQEAAAAAA

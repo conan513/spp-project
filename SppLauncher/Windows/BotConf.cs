@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace SppLauncher
@@ -13,7 +15,45 @@ namespace SppLauncher
         public BotConf()
         {
             InitializeComponent();
+
+            groupBox1.Text = Launcher.Msgbotsettings;
+            label7.Text = Launcher.Msgbots;
+            label1.Text = Launcher.Msgminbots;
+            label2.Text = Launcher.Msgmaxbots;
+            label3.Text = Launcher.Msgminbotsi;
+            label4.Text = Launcher.Msgmaxbotsi;
+            label6.Text = Launcher.Msgbotsacc;
+            label5.Text = Launcher.Msgupinter;
+            groupBox2.Text = Launcher.Msgbotmaps;
+            groupBox3.Text = Launcher.Msgother;
+            cbDel.Text = Launcher.Msgbotacc;
+            cbJoin.Text = Launcher.Msgbotlfg;
+            cbRndBotLgn.Text = Launcher.Msgrnd;
+            button2.Text = Launcher.Msgloaddef;
+            button1.Text = Launcher.Msgsave;
             ReadBotConf();
+
+            if (Launcher.lang == "Hungarian")
+            {
+                label6.Location = new Point(90, 157);
+                label3.Location = new Point(55, 105);
+                label4.Location = new Point(55, 131);
+                label5.Location = new Point(55, 183);
+                label7.Location = new Point(120, 22);
+                label1.Location = new Point(109, 49);
+                label2.Location = new Point(106, 79);
+            }
+            else
+            {
+                label6.Location = new Point(86, 157);
+                label3.Location = new Point(68, 105);
+                label4.Location = new Point(65, 131);
+                label5.Location = new Point(75, 183);
+                label7.Location = new Point(128, 22);
+                label1.Location = new Point(109, 49);
+                label2.Location = new Point(106, 79);
+            }
+
             ToolTip tt = new ToolTip();
             tt.SetToolTip(label6, "Function is temporarily disabled");
         }

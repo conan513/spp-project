@@ -143,6 +143,16 @@ namespace SppLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hu {
+            get {
+                object obj = ResourceManager.GetObject("hu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_gear {
             get {
                 object obj = ResourceManager.GetObject("icon_gear", resourceCulture);
@@ -167,6 +177,15 @@ namespace SppLauncher.Properties {
             get {
                 object obj = ResourceManager.GetObject("Information_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checking Update....
+        /// </summary>
+        internal static string Launcher_bwUpdate_DoWork_Checking_Update___ {
+            get {
+                return ResourceManager.GetString("Launcher_bwUpdate_DoWork_Checking_Update___", resourceCulture);
             }
         }
         
@@ -276,6 +295,16 @@ namespace SppLauncher.Properties {
         internal static System.Drawing.Bitmap temporarily_not_available_100x100 {
             get {
                 object obj = ResourceManager.GetObject("temporarily_not_available_100x100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap us {
+            get {
+                object obj = ResourceManager.GetObject("us", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,19 +1,24 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 namespace SppLauncher
 {
     partial class AboutBox : Form
     {
+        public static string MsgCreatedby, MsgCreatedby2,Msgver;
         public AboutBox()
         {
             InitializeComponent();
+
+            label1.Text = Launcher.Msgaboutmsg1;
+            label2.Text = Launcher.Msgaboutmsg2;
+            groupBox1.Text = Launcher.Msgaboutver;
         }
 
         private void AboutBox1_Load_1(object sender, EventArgs e)
         {
-            label1.Text = "Launcher and tools by Whit33r";
             timer1.Start();
         }
 
