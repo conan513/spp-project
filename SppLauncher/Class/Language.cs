@@ -99,7 +99,7 @@ namespace SppLauncher.Class
 
         public static void saveMethod()
         {
-            var writer = new XmlTextWriter("config\\French.xml", Encoding.UTF8);
+            var writer        = new XmlTextWriter("config\\French.xml", Encoding.UTF8);
             writer.Formatting = Formatting.Indented;
             writer.WriteStartDocument();
             writer.WriteStartElement("French");

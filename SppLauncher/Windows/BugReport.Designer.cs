@@ -46,63 +46,46 @@
             // 
             // txbMail
             // 
-            this.txbMail.Location = new System.Drawing.Point(120, 24);
+            resources.ApplyResources(this.txbMail, "txbMail");
             this.txbMail.Name = "txbMail";
-            this.txbMail.Size = new System.Drawing.Size(164, 20);
-            this.txbMail.TabIndex = 0;
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(151, 356);
+            resources.ApplyResources(this.btnSend, "btnSend");
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(75, 23);
-            this.btnSend.TabIndex = 1;
-            this.btnSend.Text = "Send Report";
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // lblMail
             // 
-            this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(60, 27);
+            resources.ApplyResources(this.lblMail, "lblMail");
             this.lblMail.Name = "lblMail";
-            this.lblMail.Size = new System.Drawing.Size(54, 13);
-            this.lblMail.TabIndex = 2;
-            this.lblMail.Text = "Your Mail:";
             // 
             // cbBugType
             // 
+            resources.ApplyResources(this.cbBugType, "cbBugType");
             this.cbBugType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBugType.FormattingEnabled = true;
             this.cbBugType.Items.AddRange(new object[] {
-            "Aibot",
-            "Emulator",
-            "Launcher",
-            "Tools"});
-            this.cbBugType.Location = new System.Drawing.Point(120, 50);
+            resources.GetString("cbBugType.Items"),
+            resources.GetString("cbBugType.Items1"),
+            resources.GetString("cbBugType.Items2"),
+            resources.GetString("cbBugType.Items3")});
             this.cbBugType.Name = "cbBugType";
-            this.cbBugType.Size = new System.Drawing.Size(164, 21);
-            this.cbBugType.TabIndex = 3;
             // 
             // lblbug
             // 
-            this.lblbug.AutoSize = true;
-            this.lblbug.Location = new System.Drawing.Point(58, 53);
+            resources.ApplyResources(this.lblbug, "lblbug");
             this.lblbug.Name = "lblbug";
-            this.lblbug.Size = new System.Drawing.Size(56, 13);
-            this.lblbug.TabIndex = 4;
-            this.lblbug.Text = "Bug Type:";
             // 
             // txbDesc
             // 
-            this.txbDesc.Location = new System.Drawing.Point(27, 102);
-            this.txbDesc.Multiline = true;
+            resources.ApplyResources(this.txbDesc, "txbDesc");
             this.txbDesc.Name = "txbDesc";
-            this.txbDesc.Size = new System.Drawing.Size(297, 132);
-            this.txbDesc.TabIndex = 5;
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label1);
@@ -111,40 +94,25 @@
             this.groupBox1.Controls.Add(this.lblbug);
             this.groupBox1.Controls.Add(this.cbBugType);
             this.groupBox1.Controls.Add(this.lblMail);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(350, 337);
-            this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Report";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 244);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "System Information";
             // 
             // textBox1
             // 
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.textBox1.Location = new System.Drawing.Point(27, 260);
-            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(297, 59);
-            this.textBox1.TabIndex = 13;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 86);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Description";
             // 
             // bwGetSysInfo
             // 
@@ -156,18 +124,14 @@
             // 
             // BugReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 386);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSend);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BugReport";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bug Report";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

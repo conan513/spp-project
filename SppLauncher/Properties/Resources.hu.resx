@@ -117,60 +117,140 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lbl_local.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 20</value>
+  <data name="Launcher_bwUpdate_DoWork_Checking_Update___" xml:space="preserve">
+    <value>Update Keresése</value>
   </data>
-  <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 15</value>
+  <data name="Launcher_bwUpdate_RunWorkerCompleted_Up_to_date" xml:space="preserve">
+    <value>Naprakész</value>
   </data>
-  <data name="panel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>340, 52</value>
+  <data name="Launcher_bwExport_DoWork_Compressing" xml:space="preserve">
+    <value>Tömörítés</value>
   </data>
-  <data name="lbl_LocalV.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 20</value>
+  <data name="Launcher_bwExport_DoWork_Export_Accounts" xml:space="preserve">
+    <value>Karakterek Exportálása</value>
   </data>
-  <data name="lblLocalemu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 35</value>
+  <data name="Launcher_bwExport_RunWorkerCompleted_Export_Completed" xml:space="preserve">
+    <value>Export Befejezve</value>
   </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 35</value>
+  <data name="Launcher_bwImport_DoWork_Import_Accounts" xml:space="preserve">
+    <value>Accountok Importálása</value>
   </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 15</value>
+  <data name="Launcher_bwImport_RunWorkerCompleted_Import_Completed" xml:space="preserve">
+    <value>Import Befejezve</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Szerver:</value>
+  <data name="Launcher_bwUpdate_DoWork_ERROR" xml:space="preserve">
+    <value>HIBA</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 66</value>
+  <data name="Launcher_bwUpdate_DoWork_New_Server_Update_Available" xml:space="preserve">
+    <value>Új szerver frissítés érhető el</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Verziók</value>
+  <data name="Launcher_bwUpdate_DoWork_New_Version" xml:space="preserve">
+    <value>Új Verzió</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 13</value>
+  <data name="Launcher_bwUpdate_DoWork_New_Version_Available__V" xml:space="preserve">
+    <value>Új verzió elérhető el: V</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Szervert és adatbázist készítette:</value>
+  <data name="Launcher_bwUpdate_DoWork_You_want_to_download_" xml:space="preserve">
+    <value>Szeretnéd letölteni?</value>
   </data>
-  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 41</value>
+  <data name="Launcher_CheckMangosCrashed_Tick_The_process_is_automatically_restart_" xml:space="preserve">
+    <value>A folyamat automatikusan újraindul.</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 13</value>
+  <data name="Launcher_CheckWowRun_Tick_Would_you_like_to_start_World_of_Warcraft_" xml:space="preserve">
+    <value>El szeretnéd indítani a Word of Warcraft-ot?</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Launcher-t és az eszközöket készítette: Whit33r</value>
+  <data name="Launcher_CloseProcess_" xml:space="preserve">
+    <value>Some Exception: CloseProcess</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>333, 214</value>
+  <data name="Launcher_CloseProcess_Login_Shutdown" xml:space="preserve">
+    <value>Login leáll</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="Launcher_CloseProcess_World_Shutdown" xml:space="preserve">
+    <value>Világ leáll</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Programról</value>
+  <data name="Launcher_export_Backup" xml:space="preserve">
+    <value>Backup</value>
+  </data>
+  <data name="Launcher_export_Export_Characters" xml:space="preserve">
+    <value>Karakterek Exportálása</value>
+  </data>
+  <data name="Launcher_export_Exporting_Characters" xml:space="preserve">
+    <value>Karakterek Exportálása</value>
+  </data>
+  <data name="Launcher_import_Decompress" xml:space="preserve">
+    <value>Kitömörítés</value>
+  </data>
+  <data name="Launcher_import_Import_Characters" xml:space="preserve">
+    <value>Karakterek Importálása</value>
+  </data>
+  <data name="Launcher_import_Online_Bots__N_A" xml:space="preserve">
+    <value>Online Bots: N/A</value>
+  </data>
+  <data name="Launcher_Launcher_Auto_Changed_RealmList_wtf_and_after_exit_SPP_change_back_original_realmlist_" xml:space="preserve">
+    <value>Automatikusan módosítva a RealmList.wtf fájl. Miután kiléptél vissza lesz töltve az eredeti realmlist.</value>
+  </data>
+  <data name="Launcher_RandomizeBotsMethod_" xml:space="preserve">
+    <value>Frissítés elkezdődött.
+Rövid ideig laggolhat a szerver.</value>
+  </data>
+  <data name="Launcher_RealmChange_" xml:space="preserve">
+    <value>Egyéb kivételek: RealmChange</value>
+  </data>
+  <data name="Launcher_RealmChange0_" xml:space="preserve">
+    <value>Egyéb kivételek: RealmWrite</value>
+  </data>
+  <data name="Launcher_RealmdStart_Starting_Realm" xml:space="preserve">
+    <value>Realm Indítása</value>
+  </data>
+  <data name="Launcher_RealmRestore_" xml:space="preserve">
+    <value>Egyéb kivételek: RealmRestore</value>
+  </data>
+  <data name="Launcher_ResetBots_" xml:space="preserve">
+    <value>Reset bots a szerverek újraindítását követeli meg.
+Újraindítás most?</value>
+  </data>
+  <data name="Launcher_rstchck_DoWork_Reset_bots" xml:space="preserve">
+    <value>Reset bots</value>
+  </data>
+  <data name="Launcher_SearchProcess_" xml:space="preserve">
+    <value>Mangod folyamat jelenleg fut.
+Be akarod zárni?</value>
+  </data>
+  <data name="Launcher_SearchProcess0_" xml:space="preserve">
+    <value>Egyéb kivételek: SearchProcess</value>
+  </data>
+  <data name="Launcher_SearchProcess2_" xml:space="preserve">
+    <value>Mysqld folyamat jelenleg fut.
+Be akarod zárni?</value>
+  </data>
+  <data name="Launcher_StartAll_Starting_Mysqlm" xml:space="preserve">
+    <value>Mysqld Indítása</value>
+  </data>
+  <data name="Launcher_startNStop_Online_bot__N_A" xml:space="preserve">
+    <value>Online bot: N/A</value>
+  </data>
+  <data name="Launcher_startNStop_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Launcher_startNStop_Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="Launcher_tmrWorld_Tick_Online" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="Launcher_Traymsg_Ready_to_play" xml:space="preserve">
+    <value>Készen áll a játékra.</value>
+  </data>
+  <data name="Launcher_Traymsg_Servers_Started" xml:space="preserve">
+    <value>Szerverek elindultak</value>
+  </data>
+  <data name="Launcher_WorldStart_Loading_World" xml:space="preserve">
+    <value>Világ Betöltése</value>
+  </data>
+  <data name="Launcher_bwUpdate_DoWork_Checking_Update" xml:space="preserve">
+    <value>Update Keresése</value>
+  </data>
+  <data name="Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_" xml:space="preserve">
+    <value>A beállítások érvényesítéséhez a launcher újraindítására van szükség.</value>
   </data>
 </root>

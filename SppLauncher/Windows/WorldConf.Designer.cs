@@ -93,7 +93,7 @@
             this.groupBox1.Size = new System.Drawing.Size(317, 103);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Starting Options";
+            this.groupBox1.Text = "Indítási Beállítások";
             // 
             // label20
             // 
@@ -504,7 +504,7 @@
             this.groupBox4.Size = new System.Drawing.Size(317, 106);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Server Rates";
+            this.groupBox4.Text = "Szerver Értékek";
             // 
             // WorldConf
             // 

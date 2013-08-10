@@ -117,60 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lbl_local.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 20</value>
-  </data>
-  <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 15</value>
-  </data>
-  <data name="panel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>340, 52</value>
-  </data>
-  <data name="lbl_LocalV.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 20</value>
-  </data>
-  <data name="lblLocalemu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 35</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 35</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 15</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Szerver:</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 66</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Verziók</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 13</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Szervert és adatbázist készítette:</value>
-  </data>
-  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 41</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 13</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Launcher-t és az eszközöket készítette: Whit33r</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>333, 214</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Programról</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
 </root>

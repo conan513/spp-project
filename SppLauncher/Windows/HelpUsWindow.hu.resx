@@ -118,59 +118,64 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lbl_local.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 20</value>
+  <data name="DonateWhiter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>202, 57</value>
   </data>
-  <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 15</value>
+  <data name="DonateConan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>202, 20</value>
   </data>
-  <data name="panel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>340, 52</value>
-  </data>
-  <data name="lbl_LocalV.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 20</value>
-  </data>
-  <data name="lblLocalemu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 35</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 35</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 15</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Szerver:</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 66</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Verziók</value>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 66</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 13</value>
+    <value>158, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Szervert és adatbázist készítette:</value>
+    <value>Launcher és Eszközök: Whit33r</value>
   </data>
-  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 41</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 32</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 13</value>
+    <value>161, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Launcher-t és az eszközöket készítette: Whit33r</value>
+    <value>Szerver és Adatbázis: Conan513</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 108</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Támogatás</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>333, 214</value>
+    <value>318, 129</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD+/v///v7///7+///+/v///v7///7+///r6/3/g4PK/4ODyv/r6/3//v7///7+///+/v///v7///7+
+        ///+/v///v7///7+///+/v///v7///7+///S0u3/UlK6/6Oj4f+jo+H/UlK6/9LS7f/+/v///v7///7+
+        ///+/v///v7///7+///+/v///v7///7+//+trdz/R0e2/7a26//U1Pv/1NT7/7a26/9ISLb/ra3c//7+
+        ///+/v///v7///7+///+/v///v7///7+//+bm9T/UlK6/8TE9P/Kyvn/k5Pp/5OT6f/JyfX/xMT0/1JS
+        uv+bm9T//v7///7+///+/v///v7///7+//+Tk9D/ZWXB/9DQ9//ExPT/k5Pp/5OT6f+Tk+n/k5Pp/8TE
+        9P/Q0Pf/ZWXB/5OT0P/+/v///v7///7+//+5ueD/cHDI/9TU+/+6uvX/nJzs/5yc7P+cnOz/nJzs/5OT
+        6f+Tk+n/tLTz/9TU+/9qasX/ubng//7+///+/v//WVm7/8nJ9f+6uvX/nJzs/5yc7P+cnOz/nJzs/5yc
+        7P+cnOz/nJzs/5yc7P+0tPP/xMT0/1JSuv/+/v//tLTg/4yM1v/U1Pv/paXw/6Ki7v+iou7/paXw/6Wl
+        8P+iou7/oqLu/6Ki7v+cnOz/nJzs/9TU+/+MjNb/tLTg/5OT0P+4uO7/ysr5/7q69f+0tPP/q6vy/6Wl
+        8P+lpfD/paXw/6Wl8P+lpfD/paXw/6Ki7v+6uvX/trbr/5OT0P98fMj/xMT0/9TU+//U1Pv/ysr5/8TE
+        9P+0tPP/q6vy/6ur8v+rq/L/q6vy/6ur8v+lpfD/tLTz/8TE9P98fMj/Y2O+/9TU+//k5P7/5OT+/9ra
+        /f/U1Pv/ysr5/8TE9P+6uvX/tLTz/6ur8v+rq/L/q6vy/7S08//U1Pv/Y2O+/2Vlwf/JyfX/6+v9//f3
+        ///r6/3/5OT+/9ra/f/a2v3/1NT7/8PD+f+6uvX/tLTz/6ur8v+6uvX/xMT0/2Vlwf+IiM3/n5/f/+Tk
+        /v/+/v///v7///7+///r6/3/2tr9/9ra/f/U1Pv/1NT7/8rK+f/Dw/n/ysr5/5+f4P+IiM3/2try/1lZ
+        u//ExPT/2tr9/+vr/f/k5P7/1NT7/4yM1v+MjNb/1NT7/9ra/f/U1Pv/1NT7/8TE9P9ZWbv/2try//7+
+        ///Ly+n/WVm7/5aW3P+qqub/o6Ph/2pqxf+Dg8r/g4PK/2pqxf+jo+H/qqrm/5aW3P9ZWbv/y8vp//7+
+        ///+/v///v7///7+//+trdz/oKDX/6Cg1//a2vL//v7///7+///a2vL/oKDY/6Cg1/+trdz//v7///7+
+        ///+/v//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Programról</value>
+    <value>Segíts Nekünk</value>
   </data>
 </root>

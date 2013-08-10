@@ -12,11 +12,6 @@ namespace SppLauncher
         {
             InitializeComponent();
 
-            groupBox1.Text = Launcher.Msgstarting;
-            groupBox4.Text = Launcher.Msgserverrate;
-            groupBox3.Text = Launcher.Msgitemdrop;
-            button1.Text = Launcher.Msgsave;
-
             Readini();
 
             //143

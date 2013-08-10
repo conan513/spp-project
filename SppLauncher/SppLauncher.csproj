@@ -143,6 +143,10 @@
     <Compile Include="Windows\WorldConf.Designer.cs">
       <DependentUpon>WorldConf.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Properties\Resources.hu.resx" />
+    <EmbeddedResource Include="Windows\AboutBox.af.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\AboutBox.hu.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,17 +156,32 @@
     <EmbeddedResource Include="Windows\BotConf.af.resx">
       <DependentUpon>BotConf.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\BotConf.hu.resx">
+      <DependentUpon>BotConf.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\BotConf.resx">
       <DependentUpon>BotConf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\BugReport.hu.resx">
+      <DependentUpon>BugReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\BugReport.resx">
       <DependentUpon>BugReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\HelpUsWindow.hu.resx">
+      <DependentUpon>HelpUsWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\HelpUsWindow.resx">
       <DependentUpon>HelpUsWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\LanSwitcher\LanSwitcher.hu.resx">
+      <DependentUpon>LanSwitcher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\LanSwitcher\LanSwitcher.resx">
       <DependentUpon>LanSwitcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Launcher.hu.resx">
+      <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
@@ -175,8 +194,14 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Update.hu.resx">
+      <DependentUpon>Update.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Update.resx">
       <DependentUpon>Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Update_Completed.hu.resx">
+      <DependentUpon>Update_Completed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Update_Completed.resx">
       <DependentUpon>Update_Completed.cs</DependentUpon>

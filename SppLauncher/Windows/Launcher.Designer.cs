@@ -154,36 +154,22 @@
             // 
             // lblMysql
             // 
-            this.lblMysql.AutoSize = true;
-            this.lblMysql.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
-            this.lblMysql.Location = new System.Drawing.Point(64, 26);
+            resources.ApplyResources(this.lblMysql, "lblMysql");
             this.lblMysql.Name = "lblMysql";
-            this.lblMysql.Size = new System.Drawing.Size(165, 39);
-            this.lblMysql.TabIndex = 18;
-            this.lblMysql.Text = "Database";
             // 
             // lblRealm
             // 
-            this.lblRealm.AutoSize = true;
-            this.lblRealm.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
-            this.lblRealm.Location = new System.Drawing.Point(235, 26);
+            resources.ApplyResources(this.lblRealm, "lblRealm");
             this.lblRealm.Name = "lblRealm";
-            this.lblRealm.Size = new System.Drawing.Size(118, 39);
-            this.lblRealm.TabIndex = 19;
-            this.lblRealm.Text = "Realm";
             // 
             // lblWorld
             // 
-            this.lblWorld.AutoSize = true;
-            this.lblWorld.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.lblWorld.Location = new System.Drawing.Point(383, 26);
+            resources.ApplyResources(this.lblWorld, "lblWorld");
             this.lblWorld.Name = "lblWorld";
-            this.lblWorld.Size = new System.Drawing.Size(115, 42);
-            this.lblWorld.TabIndex = 20;
-            this.lblWorld.Text = "World";
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.pbarWorld);
             this.groupBox1.Controls.Add(this.pbNotAvailW);
             this.groupBox1.Controls.Add(this.pbNotAvailR);
@@ -197,121 +183,87 @@
             this.groupBox1.Controls.Add(this.lblRealm);
             this.groupBox1.Controls.Add(this.pbAvailableR);
             this.groupBox1.Controls.Add(this.pbAvailableW);
-            this.groupBox1.Location = new System.Drawing.Point(12, 30);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(553, 174);
-            this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Servers";
             // 
             // pbarWorld
             // 
-            this.pbarWorld.Location = new System.Drawing.Point(105, 136);
+            resources.ApplyResources(this.pbarWorld, "pbarWorld");
             this.pbarWorld.Name = "pbarWorld";
-            this.pbarWorld.Size = new System.Drawing.Size(357, 25);
-            this.pbarWorld.TabIndex = 31;
-            this.pbarWorld.Visible = false;
             // 
             // pbNotAvailW
             // 
+            resources.ApplyResources(this.pbNotAvailW, "pbNotAvailW");
             this.pbNotAvailW.Image = global::SppLauncher.Properties.Resources.not_available_100x100;
-            this.pbNotAvailW.Location = new System.Drawing.Point(402, 64);
             this.pbNotAvailW.Name = "pbNotAvailW";
-            this.pbNotAvailW.Size = new System.Drawing.Size(60, 60);
-            this.pbNotAvailW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbNotAvailW.TabIndex = 30;
             this.pbNotAvailW.TabStop = false;
             // 
             // pbNotAvailR
             // 
+            resources.ApplyResources(this.pbNotAvailR, "pbNotAvailR");
             this.pbNotAvailR.Image = global::SppLauncher.Properties.Resources.not_available_100x100;
-            this.pbNotAvailR.Location = new System.Drawing.Point(251, 64);
             this.pbNotAvailR.Name = "pbNotAvailR";
-            this.pbNotAvailR.Size = new System.Drawing.Size(60, 60);
-            this.pbNotAvailR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbNotAvailR.TabIndex = 29;
             this.pbNotAvailR.TabStop = false;
             // 
             // pbNotAvailM
             // 
+            resources.ApplyResources(this.pbNotAvailM, "pbNotAvailM");
             this.pbNotAvailM.Image = global::SppLauncher.Properties.Resources.not_available_100x100;
-            this.pbNotAvailM.Location = new System.Drawing.Point(105, 64);
             this.pbNotAvailM.Name = "pbNotAvailM";
-            this.pbNotAvailM.Size = new System.Drawing.Size(60, 60);
-            this.pbNotAvailM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbNotAvailM.TabIndex = 28;
             this.pbNotAvailM.TabStop = false;
             // 
             // pbTempW
             // 
+            resources.ApplyResources(this.pbTempW, "pbTempW");
             this.pbTempW.Image = global::SppLauncher.Properties.Resources.temporarily_not_available_100x100;
-            this.pbTempW.Location = new System.Drawing.Point(402, 64);
             this.pbTempW.Name = "pbTempW";
-            this.pbTempW.Size = new System.Drawing.Size(60, 60);
-            this.pbTempW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbTempW.TabIndex = 27;
             this.pbTempW.TabStop = false;
             // 
             // pbTempR
             // 
+            resources.ApplyResources(this.pbTempR, "pbTempR");
             this.pbTempR.Image = global::SppLauncher.Properties.Resources.temporarily_not_available_100x100;
-            this.pbTempR.Location = new System.Drawing.Point(251, 64);
             this.pbTempR.Name = "pbTempR";
-            this.pbTempR.Size = new System.Drawing.Size(60, 60);
-            this.pbTempR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbTempR.TabIndex = 26;
             this.pbTempR.TabStop = false;
             // 
             // pbTempM
             // 
+            resources.ApplyResources(this.pbTempM, "pbTempM");
             this.pbTempM.Image = global::SppLauncher.Properties.Resources.temporarily_not_available_100x100;
-            this.pbTempM.Location = new System.Drawing.Point(105, 64);
             this.pbTempM.Name = "pbTempM";
-            this.pbTempM.Size = new System.Drawing.Size(60, 60);
-            this.pbTempM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbTempM.TabIndex = 25;
             this.pbTempM.TabStop = false;
             // 
             // pbAvailableM
             // 
+            resources.ApplyResources(this.pbAvailableM, "pbAvailableM");
             this.pbAvailableM.Image = global::SppLauncher.Properties.Resources.available_100x100;
-            this.pbAvailableM.Location = new System.Drawing.Point(105, 64);
             this.pbAvailableM.Name = "pbAvailableM";
-            this.pbAvailableM.Size = new System.Drawing.Size(60, 60);
-            this.pbAvailableM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAvailableM.TabIndex = 23;
             this.pbAvailableM.TabStop = false;
             // 
             // pbAvailableR
             // 
+            resources.ApplyResources(this.pbAvailableR, "pbAvailableR");
             this.pbAvailableR.Image = global::SppLauncher.Properties.Resources.available_100x100;
-            this.pbAvailableR.Location = new System.Drawing.Point(251, 62);
             this.pbAvailableR.Name = "pbAvailableR";
-            this.pbAvailableR.Size = new System.Drawing.Size(60, 60);
-            this.pbAvailableR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAvailableR.TabIndex = 22;
             this.pbAvailableR.TabStop = false;
             // 
             // pbAvailableW
             // 
+            resources.ApplyResources(this.pbAvailableW, "pbAvailableW");
             this.pbAvailableW.Image = global::SppLauncher.Properties.Resources.available_100x100;
-            this.pbAvailableW.Location = new System.Drawing.Point(402, 64);
             this.pbAvailableW.Name = "pbAvailableW";
-            this.pbAvailableW.Size = new System.Drawing.Size(60, 60);
-            this.pbAvailableW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAvailableW.TabIndex = 21;
             this.pbAvailableW.TabStop = false;
             // 
             // SppTray
             // 
-            this.SppTray.Icon = ((System.Drawing.Icon)(resources.GetObject("SppTray.Icon")));
-            this.SppTray.Text = "Single Player Project";
+            resources.ApplyResources(this.SppTray, "SppTray");
             this.SppTray.DoubleClick += new System.EventHandler(this.SppTray_DoubleClick);
             this.SppTray.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SppTray_MouseClick);
             this.SppTray.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.SppTray_MouseDoubleClick);
             // 
             // cmsTray
             // 
+            resources.ApplyResources(this.cmsTray, "cmsTray");
             this.cmsTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showToolStripMenuItem,
             this.startWowToolStripMenuItem,
@@ -322,26 +274,24 @@
             this.aboutToolStripMenuItem1,
             this.exitToolStripMenuItem1});
             this.cmsTray.Name = "contextMenuStrip1";
-            this.cmsTray.Size = new System.Drawing.Size(196, 180);
             this.cmsTray.DoubleClick += new System.EventHandler(this.cmsTray_DoubleClick);
             // 
             // showToolStripMenuItem
             // 
+            resources.ApplyResources(this.showToolStripMenuItem, "showToolStripMenuItem");
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.showToolStripMenuItem.Text = "Show";
             this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
             // 
             // startWowToolStripMenuItem
             // 
+            resources.ApplyResources(this.startWowToolStripMenuItem, "startWowToolStripMenuItem");
             this.startWowToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.world_of_warcraft;
             this.startWowToolStripMenuItem.Name = "startWowToolStripMenuItem";
-            this.startWowToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.startWowToolStripMenuItem.Text = "Start World of Warcraft";
             this.startWowToolStripMenuItem.Click += new System.EventHandler(this.startWowToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
+            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.worldSettingsToolStripMenuItem1,
             this.botSettingsToolStripMenuItem1,
@@ -351,106 +301,93 @@
             this.exportImportCharactersToolStripMenuItem});
             this.settingsToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.configuration_1;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // worldSettingsToolStripMenuItem1
             // 
+            resources.ApplyResources(this.worldSettingsToolStripMenuItem1, "worldSettingsToolStripMenuItem1");
             this.worldSettingsToolStripMenuItem1.Name = "worldSettingsToolStripMenuItem1";
-            this.worldSettingsToolStripMenuItem1.Size = new System.Drawing.Size(207, 22);
-            this.worldSettingsToolStripMenuItem1.Text = "World Settings";
             this.worldSettingsToolStripMenuItem1.Click += new System.EventHandler(this.worldSettingsToolStripMenuItem1_Click);
             // 
             // botSettingsToolStripMenuItem1
             // 
+            resources.ApplyResources(this.botSettingsToolStripMenuItem1, "botSettingsToolStripMenuItem1");
             this.botSettingsToolStripMenuItem1.Name = "botSettingsToolStripMenuItem1";
-            this.botSettingsToolStripMenuItem1.Size = new System.Drawing.Size(207, 22);
-            this.botSettingsToolStripMenuItem1.Text = "Bot Settings";
             this.botSettingsToolStripMenuItem1.Click += new System.EventHandler(this.botSettingsToolStripMenuItem1_Click);
             // 
             // changeWoWPathToolStripMenuItem
             // 
+            resources.ApplyResources(this.changeWoWPathToolStripMenuItem, "changeWoWPathToolStripMenuItem");
             this.changeWoWPathToolStripMenuItem.Name = "changeWoWPathToolStripMenuItem";
-            this.changeWoWPathToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.changeWoWPathToolStripMenuItem.Text = "Change WoW Path";
             this.changeWoWPathToolStripMenuItem.Click += new System.EventHandler(this.changeWoWPathToolStripMenuItem_Click);
             // 
             // resetBotsToolStripMenuItem
             // 
+            resources.ApplyResources(this.resetBotsToolStripMenuItem, "resetBotsToolStripMenuItem");
             this.resetBotsToolStripMenuItem.Name = "resetBotsToolStripMenuItem";
-            this.resetBotsToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.resetBotsToolStripMenuItem.Text = "Reset bots";
             this.resetBotsToolStripMenuItem.Click += new System.EventHandler(this.resetBotsToolStripMenuItem_Click);
             // 
             // randomizeBotsToolStripMenuItem1
             // 
+            resources.ApplyResources(this.randomizeBotsToolStripMenuItem1, "randomizeBotsToolStripMenuItem1");
             this.randomizeBotsToolStripMenuItem1.Name = "randomizeBotsToolStripMenuItem1";
-            this.randomizeBotsToolStripMenuItem1.Size = new System.Drawing.Size(207, 22);
-            this.randomizeBotsToolStripMenuItem1.Text = "Randomize bots";
             this.randomizeBotsToolStripMenuItem1.Click += new System.EventHandler(this.randomizeBotsToolStripMenuItem1_Click);
             // 
             // exportImportCharactersToolStripMenuItem
             // 
+            resources.ApplyResources(this.exportImportCharactersToolStripMenuItem, "exportImportCharactersToolStripMenuItem");
             this.exportImportCharactersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exportToolStripMenuItem1,
             this.importToolStripMenuItem1});
             this.exportImportCharactersToolStripMenuItem.Name = "exportImportCharactersToolStripMenuItem";
-            this.exportImportCharactersToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.exportImportCharactersToolStripMenuItem.Text = "Export/Import Characters";
             // 
             // exportToolStripMenuItem1
             // 
+            resources.ApplyResources(this.exportToolStripMenuItem1, "exportToolStripMenuItem1");
             this.exportToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.Export_Icon_32;
             this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
-            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
-            this.exportToolStripMenuItem1.Text = "Export";
             this.exportToolStripMenuItem1.Click += new System.EventHandler(this.exportToolStripMenuItem1_Click);
             // 
             // importToolStripMenuItem1
             // 
+            resources.ApplyResources(this.importToolStripMenuItem1, "importToolStripMenuItem1");
             this.importToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.Import_Icon_32;
             this.importToolStripMenuItem1.Name = "importToolStripMenuItem1";
-            this.importToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
-            this.importToolStripMenuItem1.Text = "Import";
             this.importToolStripMenuItem1.Click += new System.EventHandler(this.importToolStripMenuItem1_Click);
             // 
             // toolToolStripMenuItem
             // 
+            resources.ApplyResources(this.toolToolStripMenuItem, "toolToolStripMenuItem");
             this.toolToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lanSwitcherToolStripMenuItem,
             this.accountToolToolStripMenuItem,
             this.accountToolAdvancedToolStripMenuItem});
             this.toolToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.icon_gear;
             this.toolToolStripMenuItem.Name = "toolToolStripMenuItem";
-            this.toolToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.toolToolStripMenuItem.Text = "Tools";
             // 
             // lanSwitcherToolStripMenuItem
             // 
+            resources.ApplyResources(this.lanSwitcherToolStripMenuItem, "lanSwitcherToolStripMenuItem");
             this.lanSwitcherToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.Other_Power_Switch_User_Metro_icon;
             this.lanSwitcherToolStripMenuItem.Name = "lanSwitcherToolStripMenuItem";
-            this.lanSwitcherToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.lanSwitcherToolStripMenuItem.Text = "Lan Switcher";
             this.lanSwitcherToolStripMenuItem.Click += new System.EventHandler(this.lanSwitcherToolStripMenuItem_Click);
             // 
             // accountToolToolStripMenuItem
             // 
+            resources.ApplyResources(this.accountToolToolStripMenuItem, "accountToolToolStripMenuItem");
             this.accountToolToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.WoW_icon;
             this.accountToolToolStripMenuItem.Name = "accountToolToolStripMenuItem";
-            this.accountToolToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.accountToolToolStripMenuItem.Text = "Account Tool";
             this.accountToolToolStripMenuItem.Click += new System.EventHandler(this.accountToolToolStripMenuItem_Click);
             // 
             // accountToolAdvancedToolStripMenuItem
             // 
+            resources.ApplyResources(this.accountToolAdvancedToolStripMenuItem, "accountToolAdvancedToolStripMenuItem");
             this.accountToolAdvancedToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.WoW_icon;
             this.accountToolAdvancedToolStripMenuItem.Name = "accountToolAdvancedToolStripMenuItem";
-            this.accountToolAdvancedToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.accountToolAdvancedToolStripMenuItem.Text = "Account Tool(Advanced)";
             this.accountToolAdvancedToolStripMenuItem.Click += new System.EventHandler(this.accountToolAdvancedToolStripMenuItem_Click);
             // 
             // ServersStripMenuItem
             // 
+            resources.ApplyResources(this.ServersStripMenuItem, "ServersStripMenuItem");
             this.ServersStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.startToolStripMenuItem,
             this.restartToolStripMenuItem2,
@@ -458,60 +395,51 @@
             this.autorunToolStripMenuItem});
             this.ServersStripMenuItem.Image = global::SppLauncher.Properties.Resources.Places_server_database_icon;
             this.ServersStripMenuItem.Name = "ServersStripMenuItem";
-            this.ServersStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.ServersStripMenuItem.Text = "Servers";
             // 
             // startToolStripMenuItem
             // 
+            resources.ApplyResources(this.startToolStripMenuItem, "startToolStripMenuItem");
             this.startToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.Play_1_Hot_icon;
             this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.startToolStripMenuItem.Text = "Start";
             this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
             // 
             // restartToolStripMenuItem2
             // 
-            this.restartToolStripMenuItem2.Enabled = false;
+            resources.ApplyResources(this.restartToolStripMenuItem2, "restartToolStripMenuItem2");
             this.restartToolStripMenuItem2.Image = global::SppLauncher.Properties.Resources.Other_Power_Restart_Metro_icon;
             this.restartToolStripMenuItem2.Name = "restartToolStripMenuItem2";
-            this.restartToolStripMenuItem2.Size = new System.Drawing.Size(123, 22);
-            this.restartToolStripMenuItem2.Text = "Restart";
             this.restartToolStripMenuItem2.Click += new System.EventHandler(this.restartToolStripMenuItem2_Click);
             // 
             // toolStripSeparator2
             // 
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(120, 6);
             // 
             // autorunToolStripMenuItem
             // 
+            resources.ApplyResources(this.autorunToolStripMenuItem, "autorunToolStripMenuItem");
             this.autorunToolStripMenuItem.Name = "autorunToolStripMenuItem";
-            this.autorunToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.autorunToolStripMenuItem.Text = "Autostart";
             this.autorunToolStripMenuItem.Click += new System.EventHandler(this.autorunToolStripMenuItem_Click);
             // 
             // reportToolStripMenuItem
             // 
+            resources.ApplyResources(this.reportToolStripMenuItem, "reportToolStripMenuItem");
             this.reportToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.report_bug_icon;
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.reportToolStripMenuItem.Text = "Report Bug";
             this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem1
             // 
+            resources.ApplyResources(this.aboutToolStripMenuItem1, "aboutToolStripMenuItem1");
             this.aboutToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.Information_icon;
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(195, 22);
-            this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
             // exitToolStripMenuItem1
             // 
+            resources.ApplyResources(this.exitToolStripMenuItem1, "exitToolStripMenuItem1");
             this.exitToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.Windows_Close_Program_icon;
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(195, 22);
-            this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
             // 
             // CheckWowRun
@@ -526,30 +454,24 @@
             // 
             // txbWorldDev
             // 
+            resources.ApplyResources(this.txbWorldDev, "txbWorldDev");
             this.txbWorldDev.BackColor = System.Drawing.Color.Black;
-            this.txbWorldDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txbWorldDev.ForeColor = System.Drawing.Color.White;
-            this.txbWorldDev.Location = new System.Drawing.Point(14, 365);
             this.txbWorldDev.Name = "txbWorldDev";
-            this.txbWorldDev.Size = new System.Drawing.Size(495, 20);
-            this.txbWorldDev.TabIndex = 26;
             this.txbWorldDev.KeyDown += new System.Windows.Forms.KeyEventHandler(this.input_KeyDown);
             // 
             // rtWorldDev
             // 
+            resources.ApplyResources(this.rtWorldDev, "rtWorldDev");
             this.rtWorldDev.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.rtWorldDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.rtWorldDev.ForeColor = System.Drawing.Color.White;
-            this.rtWorldDev.Location = new System.Drawing.Point(14, 207);
             this.rtWorldDev.Name = "rtWorldDev";
             this.rtWorldDev.ReadOnly = true;
-            this.rtWorldDev.Size = new System.Drawing.Size(495, 159);
-            this.rtWorldDev.TabIndex = 28;
-            this.rtWorldDev.Text = "";
             this.rtWorldDev.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // msForm
             // 
+            resources.ApplyResources(this.msForm, "msForm");
             this.msForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.runWoWToolStripMenuItem,
             this.toolStripMenuItem1,
@@ -559,22 +481,18 @@
             this.tsmHelpUs,
             this.aboutToolStripMenuItem,
             this.exitToolStripMenuItem2});
-            this.msForm.Location = new System.Drawing.Point(0, 0);
             this.msForm.Name = "msForm";
-            this.msForm.Size = new System.Drawing.Size(581, 24);
-            this.msForm.TabIndex = 29;
-            this.msForm.Text = "Menu";
             // 
             // runWoWToolStripMenuItem
             // 
+            resources.ApplyResources(this.runWoWToolStripMenuItem, "runWoWToolStripMenuItem");
             this.runWoWToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.world_of_warcraft;
             this.runWoWToolStripMenuItem.Name = "runWoWToolStripMenuItem";
-            this.runWoWToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
-            this.runWoWToolStripMenuItem.Text = "Run WoW";
             this.runWoWToolStripMenuItem.Click += new System.EventHandler(this.runWoWToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.worldSettingsToolStripMenuItem,
             this.botSettingsToolStripMenuItem,
@@ -585,134 +503,117 @@
             this.languageToolStripMenuItem});
             this.toolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.configuration_1;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(77, 20);
-            this.toolStripMenuItem1.Text = "Settings";
             // 
             // worldSettingsToolStripMenuItem
             // 
+            resources.ApplyResources(this.worldSettingsToolStripMenuItem, "worldSettingsToolStripMenuItem");
             this.worldSettingsToolStripMenuItem.Name = "worldSettingsToolStripMenuItem";
-            this.worldSettingsToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.worldSettingsToolStripMenuItem.Text = "World Settings";
             this.worldSettingsToolStripMenuItem.Click += new System.EventHandler(this.worldSettingsToolStripMenuItem_Click);
             // 
             // botSettingsToolStripMenuItem
             // 
+            resources.ApplyResources(this.botSettingsToolStripMenuItem, "botSettingsToolStripMenuItem");
             this.botSettingsToolStripMenuItem.Name = "botSettingsToolStripMenuItem";
-            this.botSettingsToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.botSettingsToolStripMenuItem.Text = "Bot Settings";
             this.botSettingsToolStripMenuItem.Click += new System.EventHandler(this.botSettingsToolStripMenuItem_Click);
             // 
             // changeWoWPathToolStripMenuItem1
             // 
+            resources.ApplyResources(this.changeWoWPathToolStripMenuItem1, "changeWoWPathToolStripMenuItem1");
             this.changeWoWPathToolStripMenuItem1.Name = "changeWoWPathToolStripMenuItem1";
-            this.changeWoWPathToolStripMenuItem1.Size = new System.Drawing.Size(207, 22);
-            this.changeWoWPathToolStripMenuItem1.Text = "Change WoW Path";
             this.changeWoWPathToolStripMenuItem1.Click += new System.EventHandler(this.changeWoWPathToolStripMenuItem1_Click);
             // 
             // resetAllRandomBotsToolStripMenuItem
             // 
+            resources.ApplyResources(this.resetAllRandomBotsToolStripMenuItem, "resetAllRandomBotsToolStripMenuItem");
             this.resetAllRandomBotsToolStripMenuItem.Name = "resetAllRandomBotsToolStripMenuItem";
-            this.resetAllRandomBotsToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.resetAllRandomBotsToolStripMenuItem.Text = "Reset Bots";
             this.resetAllRandomBotsToolStripMenuItem.Click += new System.EventHandler(this.resetAllRandomBotsToolStripMenuItem_Click);
             // 
             // randomizeBotsToolStripMenuItem
             // 
+            resources.ApplyResources(this.randomizeBotsToolStripMenuItem, "randomizeBotsToolStripMenuItem");
             this.randomizeBotsToolStripMenuItem.Name = "randomizeBotsToolStripMenuItem";
-            this.randomizeBotsToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.randomizeBotsToolStripMenuItem.Text = "Randomize Bots";
             this.randomizeBotsToolStripMenuItem.Click += new System.EventHandler(this.randomizeBotsToolStripMenuItem_Click);
             // 
             // exportCharactersToolStripMenuItem
             // 
+            resources.ApplyResources(this.exportCharactersToolStripMenuItem, "exportCharactersToolStripMenuItem");
             this.exportCharactersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exportToolStripMenuItem2,
             this.importToolStripMenuItem2});
             this.exportCharactersToolStripMenuItem.Name = "exportCharactersToolStripMenuItem";
-            this.exportCharactersToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.exportCharactersToolStripMenuItem.Text = "Export/Import Characters";
             // 
             // exportToolStripMenuItem2
             // 
+            resources.ApplyResources(this.exportToolStripMenuItem2, "exportToolStripMenuItem2");
             this.exportToolStripMenuItem2.Name = "exportToolStripMenuItem2";
-            this.exportToolStripMenuItem2.Size = new System.Drawing.Size(110, 22);
-            this.exportToolStripMenuItem2.Text = "Export";
+            this.exportToolStripMenuItem2.Click += new System.EventHandler(this.exportToolStripMenuItem2_Click);
             // 
             // importToolStripMenuItem2
             // 
+            resources.ApplyResources(this.importToolStripMenuItem2, "importToolStripMenuItem2");
             this.importToolStripMenuItem2.Name = "importToolStripMenuItem2";
-            this.importToolStripMenuItem2.Size = new System.Drawing.Size(110, 22);
-            this.importToolStripMenuItem2.Text = "Import";
+            this.importToolStripMenuItem2.Click += new System.EventHandler(this.importToolStripMenuItem2_Click);
             // 
             // languageToolStripMenuItem
             // 
+            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
             this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.magyarToolStripMenuItem,
             this.englishToolStripMenuItem,
             this.frenchToolStripMenuItem,
             this.germanToolStripMenuItem});
             this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-            this.languageToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.languageToolStripMenuItem.Text = "Language";
             // 
             // magyarToolStripMenuItem
             // 
+            resources.ApplyResources(this.magyarToolStripMenuItem, "magyarToolStripMenuItem");
             this.magyarToolStripMenuItem.Name = "magyarToolStripMenuItem";
-            this.magyarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.magyarToolStripMenuItem.Text = "Magyar";
             this.magyarToolStripMenuItem.Click += new System.EventHandler(this.magyarToolStripMenuItem_Click_1);
             // 
             // englishToolStripMenuItem
             // 
+            resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.englishToolStripMenuItem.Text = "English";
             this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
             // 
             // frenchToolStripMenuItem
             // 
-            this.frenchToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.frenchToolStripMenuItem, "frenchToolStripMenuItem");
             this.frenchToolStripMenuItem.Name = "frenchToolStripMenuItem";
-            this.frenchToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.frenchToolStripMenuItem.Text = "French";
             this.frenchToolStripMenuItem.Click += new System.EventHandler(this.frenchToolStripMenuItem_Click);
             // 
             // germanToolStripMenuItem
             // 
-            this.germanToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.germanToolStripMenuItem, "germanToolStripMenuItem");
             this.germanToolStripMenuItem.Name = "germanToolStripMenuItem";
-            this.germanToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.germanToolStripMenuItem.Text = "German";
             this.germanToolStripMenuItem.Click += new System.EventHandler(this.germanToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
+            resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lanSwitcherToolStripMenuItem1,
             this.accountToolToolStripMenuItem1});
             this.toolsToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.icon_gear;
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // lanSwitcherToolStripMenuItem1
             // 
+            resources.ApplyResources(this.lanSwitcherToolStripMenuItem1, "lanSwitcherToolStripMenuItem1");
             this.lanSwitcherToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.Other_Power_Switch_User_Metro_icon;
             this.lanSwitcherToolStripMenuItem1.Name = "lanSwitcherToolStripMenuItem1";
-            this.lanSwitcherToolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
-            this.lanSwitcherToolStripMenuItem1.Text = "Lan Switcher";
             this.lanSwitcherToolStripMenuItem1.Click += new System.EventHandler(this.lanSwitcherToolStripMenuItem1_Click);
             // 
             // accountToolToolStripMenuItem1
             // 
+            resources.ApplyResources(this.accountToolToolStripMenuItem1, "accountToolToolStripMenuItem1");
             this.accountToolToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.WoW_icon;
             this.accountToolToolStripMenuItem1.Name = "accountToolToolStripMenuItem1";
-            this.accountToolToolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
-            this.accountToolToolStripMenuItem1.Text = "Account Tool";
             this.accountToolToolStripMenuItem1.Click += new System.EventHandler(this.accountToolToolStripMenuItem1_Click);
             // 
             // restartToolStripMenuItem
             // 
+            resources.ApplyResources(this.restartToolStripMenuItem, "restartToolStripMenuItem");
             this.restartToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.startstopToolStripMenuItem,
             this.restartToolStripMenuItem1,
@@ -720,117 +621,94 @@
             this.autostartToolStripMenuItem});
             this.restartToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.Places_server_database_icon;
             this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
-            this.restartToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-            this.restartToolStripMenuItem.Text = "Servers";
             // 
             // startstopToolStripMenuItem
             // 
+            resources.ApplyResources(this.startstopToolStripMenuItem, "startstopToolStripMenuItem");
             this.startstopToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.Play_1_Hot_icon;
             this.startstopToolStripMenuItem.Name = "startstopToolStripMenuItem";
-            this.startstopToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.startstopToolStripMenuItem.Text = "Start";
             this.startstopToolStripMenuItem.Click += new System.EventHandler(this.startstopToolStripMenuItem_Click);
             // 
             // restartToolStripMenuItem1
             // 
-            this.restartToolStripMenuItem1.Enabled = false;
+            resources.ApplyResources(this.restartToolStripMenuItem1, "restartToolStripMenuItem1");
             this.restartToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.Other_Power_Restart_Metro_icon;
             this.restartToolStripMenuItem1.Name = "restartToolStripMenuItem1";
-            this.restartToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
-            this.restartToolStripMenuItem1.Text = "Restart";
             this.restartToolStripMenuItem1.Click += new System.EventHandler(this.restartToolStripMenuItem1_Click_1);
             // 
             // toolStripSeparator1
             // 
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(120, 6);
             // 
             // autostartToolStripMenuItem
             // 
+            resources.ApplyResources(this.autostartToolStripMenuItem, "autostartToolStripMenuItem");
             this.autostartToolStripMenuItem.Name = "autostartToolStripMenuItem";
-            this.autostartToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.autostartToolStripMenuItem.Text = "Autostart";
             this.autostartToolStripMenuItem.Click += new System.EventHandler(this.autostartToolStripMenuItem_Click);
             // 
             // reportBugToolStripMenuItem
             // 
+            resources.ApplyResources(this.reportBugToolStripMenuItem, "reportBugToolStripMenuItem");
             this.reportBugToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.report_bug_icon;
             this.reportBugToolStripMenuItem.Name = "reportBugToolStripMenuItem";
-            this.reportBugToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-            this.reportBugToolStripMenuItem.Text = "Report Bug";
             this.reportBugToolStripMenuItem.Click += new System.EventHandler(this.reportBugToolStripMenuItem_Click);
             // 
             // tsmHelpUs
             // 
+            resources.ApplyResources(this.tsmHelpUs, "tsmHelpUs");
             this.tsmHelpUs.Image = global::SppLauncher.Properties.Resources.heart_icon;
             this.tsmHelpUs.Name = "tsmHelpUs";
-            this.tsmHelpUs.Size = new System.Drawing.Size(75, 20);
-            this.tsmHelpUs.Text = "Help us";
             this.tsmHelpUs.Click += new System.EventHandler(this.tsmHelpUs_Click);
             // 
             // aboutToolStripMenuItem
             // 
+            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
             this.aboutToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.Information_icon;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem2
             // 
+            resources.ApplyResources(this.exitToolStripMenuItem2, "exitToolStripMenuItem2");
             this.exitToolStripMenuItem2.Image = global::SppLauncher.Properties.Resources.Windows_Close_Program_icon;
             this.exitToolStripMenuItem2.Name = "exitToolStripMenuItem2";
-            this.exitToolStripMenuItem2.Size = new System.Drawing.Size(53, 20);
-            this.exitToolStripMenuItem2.Text = "Exit";
             this.exitToolStripMenuItem2.Click += new System.EventHandler(this.exitToolStripMenuItem2_Click);
             // 
             // ssBar
             // 
+            resources.ApplyResources(this.ssBar, "ssBar");
             this.ssBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssLOnline,
             this.tssUsage,
             this.tssStatus});
-            this.ssBar.Location = new System.Drawing.Point(0, 414);
             this.ssBar.Name = "ssBar";
             this.ssBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
             this.ssBar.ShowItemToolTips = true;
-            this.ssBar.Size = new System.Drawing.Size(581, 22);
             this.ssBar.SizingGrip = false;
-            this.ssBar.TabIndex = 30;
-            this.ssBar.Text = "statusStrip1";
             // 
             // tssLOnline
             // 
+            resources.ApplyResources(this.tssLOnline, "tssLOnline");
             this.tssLOnline.Name = "tssLOnline";
-            this.tssLOnline.Size = new System.Drawing.Size(91, 17);
-            this.tssLOnline.Text = "Online bot: N/A";
-            this.tssLOnline.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tssUsage
             // 
+            resources.ApplyResources(this.tssUsage, "tssUsage");
             this.tssUsage.Name = "tssUsage";
-            this.tssUsage.Size = new System.Drawing.Size(494, 17);
             this.tssUsage.Spring = true;
-            this.tssUsage.Text = "                      ";
-            this.tssUsage.ToolTipText = "lol";
             // 
             // tssStatus
             // 
+            resources.ApplyResources(this.tssStatus, "tssStatus");
             this.tssStatus.Name = "tssStatus";
-            this.tssStatus.Size = new System.Drawing.Size(39, 17);
-            this.tssStatus.Text = "Status";
-            this.tssStatus.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.tssStatus.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.tssStatus.Click += new System.EventHandler(this.tssStatus_Click);
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(50, 138);
+            resources.ApplyResources(this.progressBar1, "progressBar1");
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(320, 18);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.progressBar1.TabIndex = 24;
-            this.progressBar1.Visible = false;
             // 
             // SrvAnnounce
             // 
@@ -839,33 +717,18 @@
             // 
             // lblWorldStartTime
             // 
-            this.lblWorldStartTime.AutoSize = true;
-            this.lblWorldStartTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblWorldStartTime.Location = new System.Drawing.Point(368, 388);
+            resources.ApplyResources(this.lblWorldStartTime, "lblWorldStartTime");
             this.lblWorldStartTime.Name = "lblWorldStartTime";
-            this.lblWorldStartTime.Size = new System.Drawing.Size(17, 18);
-            this.lblWorldStartTime.TabIndex = 31;
-            this.lblWorldStartTime.Text = "0";
             // 
             // lblRealmStartTime
             // 
-            this.lblRealmStartTime.AutoSize = true;
-            this.lblRealmStartTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblRealmStartTime.Location = new System.Drawing.Point(214, 388);
+            resources.ApplyResources(this.lblRealmStartTime, "lblRealmStartTime");
             this.lblRealmStartTime.Name = "lblRealmStartTime";
-            this.lblRealmStartTime.Size = new System.Drawing.Size(17, 18);
-            this.lblRealmStartTime.TabIndex = 32;
-            this.lblRealmStartTime.Text = "0";
             // 
             // lblSqlStartTime
             // 
-            this.lblSqlStartTime.AutoSize = true;
-            this.lblSqlStartTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblSqlStartTime.Location = new System.Drawing.Point(95, 388);
+            resources.ApplyResources(this.lblSqlStartTime, "lblSqlStartTime");
             this.lblSqlStartTime.Name = "lblSqlStartTime";
-            this.lblSqlStartTime.Size = new System.Drawing.Size(17, 18);
-            this.lblSqlStartTime.TabIndex = 33;
-            this.lblSqlStartTime.Text = "0";
             // 
             // CheckMangosCrashed
             // 
@@ -883,12 +746,8 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 207);
+            resources.ApplyResources(this.richTextBox1, "richTextBox1");
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(100, 96);
-            this.richTextBox1.TabIndex = 34;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.Visible = false;
             // 
             // Check
             // 
@@ -917,10 +776,9 @@
             // 
             // Launcher
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(581, 436);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.lblSqlStartTime);
             this.Controls.Add(this.lblRealmStartTime);
@@ -931,13 +789,10 @@
             this.Controls.Add(this.txbWorldDev);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.msForm;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Launcher";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Single Player Project";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Launcher_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -2,25 +2,21 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Class\Language.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\Launcher.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\Launcher.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Windows\Launcher.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\BotConf.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\BotConf.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Sourcetree\SppLauncher\Windows\BugReport.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\BugReport.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>D:\Sourcetree\SppLauncher\Windows\AboutBox.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Windows\AboutBox.Designer.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Windows\BugReport.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\BugReport.cs</string>
-    </ArrayOfString>
-  </ArrayOfArrayOfString>
-  <ArrayOfArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Windows\Launcher.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\AboutBox.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\AboutBox.hu.resx</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

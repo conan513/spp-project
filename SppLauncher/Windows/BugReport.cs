@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Management;
@@ -20,13 +21,7 @@ namespace SppLauncher
             InitializeComponent();
             cbBugType.Text = "Aibot";
 
-            groupBox1.Text = Launcher.Msgreport;
-            lblMail.Text   = Launcher.Msgyourmail;
-            lblbug.Text    = Launcher.Msgbugtype;
-            label1.Text    = Launcher.Msgdesc;
-            label2.Text    = Launcher.Msgsysinfo;
-            btnSend.Text   = Launcher.Msgsendreport;
-            Text           = Launcher.Msgtitle;
+            if(Launcher.lang == "Hungarian") { lblMail.Location = new Point(45, 27); lblbug.Location = new Point(47, 53); }
 
             bwGetSysInfo.RunWorkerAsync();
         }

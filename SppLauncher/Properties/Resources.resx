@@ -143,7 +143,7 @@
     <value>..\Resources\Export_Icon_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Launcher_bwUpdate_DoWork_Checking_Update___" xml:space="preserve">
-    <value>Checking Update...</value>
+    <value>Checking Update</value>
   </data>
   <data name="hu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -204,5 +204,143 @@
   </data>
   <data name="us" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\us.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Launcher_bwUpdate_RunWorkerCompleted_Up_to_date" xml:space="preserve">
+    <value>Up to date</value>
+  </data>
+  <data name="Launcher_Launcher_Auto_Changed_RealmList_wtf_and_after_exit_SPP_change_back_original_realmlist_" xml:space="preserve">
+    <value>Auto Changed RealmList.wtf and after exit SPP change back original realmlist.</value>
+  </data>
+  <data name="Launcher_WorldStart_Loading_World" xml:space="preserve">
+    <value>Loading World</value>
+  </data>
+  <data name="Launcher_RealmdStart_Starting_Realm" xml:space="preserve">
+    <value>Starting Realm</value>
+  </data>
+  <data name="Launcher_StartAll_Starting_Mysqlm" xml:space="preserve">
+    <value>Starting Mysqlm</value>
+  </data>
+  <data name="Launcher_rstchck_DoWork_Reset_bots" xml:space="preserve">
+    <value>Reset bots</value>
+  </data>
+  <data name="Launcher_CloseProcess_World_Shutdown" xml:space="preserve">
+    <value>World Shutdown</value>
+  </data>
+  <data name="Launcher_CloseProcess_Login_Shutdown" xml:space="preserve">
+    <value>Login Shutdown</value>
+  </data>
+  <data name="Launcher_CloseProcess_" xml:space="preserve">
+    <value>Some Exception: CloseProcess
+</value>
+  </data>
+  <data name="Launcher_SearchProcess_" xml:space="preserve">
+    <value>Mangosd process is running.
+You want close the running process?</value>
+  </data>
+  <data name="Launcher_SearchProcess2_" xml:space="preserve">
+    <value>Mysqld process is running.
+You want close the running process?</value>
+  </data>
+  <data name="Launcher_SearchProcess0_" xml:space="preserve">
+    <value>Some Exception: SearchProcess
+</value>
+  </data>
+  <data name="Launcher_Traymsg_Servers_Started" xml:space="preserve">
+    <value>Servers Started</value>
+  </data>
+  <data name="Launcher_Traymsg_Ready_to_play" xml:space="preserve">
+    <value>Ready to play</value>
+  </data>
+  <data name="Launcher_RealmChange_" xml:space="preserve">
+    <value>Some Exception: RealmChange
+</value>
+  </data>
+  <data name="Launcher_RealmChange0_" xml:space="preserve">
+    <value>Some Exception: RealmWrite
+</value>
+  </data>
+  <data name="Launcher_RealmRestore_" xml:space="preserve">
+    <value>Some Exception: RealmRestore
+</value>
+  </data>
+  <data name="Launcher_ResetBots_" xml:space="preserve">
+    <value>Restart is required for reset bots.
+Restart now?</value>
+  </data>
+  <data name="Launcher_RandomizeBotsMethod_" xml:space="preserve">
+    <value>Update started.
+Do lag for several times.</value>
+  </data>
+  <data name="Launcher_tmrWorld_Tick_Online" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="Launcher_CheckWowRun_Tick_Would_you_like_to_start_World_of_Warcraft_" xml:space="preserve">
+    <value>Would you like to start World of Warcraft?</value>
+  </data>
+  <data name="Launcher_CheckMangosCrashed_Tick_The_process_is_automatically_restart_" xml:space="preserve">
+    <value>The process is automatically restart.</value>
+  </data>
+  <data name="Launcher_bwUpdate_DoWork_New_Version_Available__V" xml:space="preserve">
+    <value>New Version Available: V</value>
+  </data>
+  <data name="Launcher_bwUpdate_DoWork_You_want_to_download_" xml:space="preserve">
+    <value>You want to download?</value>
+  </data>
+  <data name="Launcher_bwUpdate_DoWork_New_Version" xml:space="preserve">
+    <value>New Version</value>
+  </data>
+  <data name="Launcher_bwUpdate_DoWork_ERROR" xml:space="preserve">
+    <value>ERROR</value>
+  </data>
+  <data name="Launcher_bwUpdate_DoWork_New_Server_Update_Available" xml:space="preserve">
+    <value>New Server Update Available</value>
+  </data>
+  <data name="Launcher_import_Import_Characters" xml:space="preserve">
+    <value>Import Characters</value>
+  </data>
+  <data name="Launcher_import_Online_Bots__N_A" xml:space="preserve">
+    <value>Online Bots: N/A</value>
+  </data>
+  <data name="Launcher_import_Decompress" xml:space="preserve">
+    <value>Decompress</value>
+  </data>
+  <data name="Launcher_bwImport_DoWork_Import_Accounts" xml:space="preserve">
+    <value>Import Accounts</value>
+  </data>
+  <data name="Launcher_bwImport_RunWorkerCompleted_Import_Completed" xml:space="preserve">
+    <value>Import Completed</value>
+  </data>
+  <data name="Launcher_export_Export_Characters" xml:space="preserve">
+    <value>Export Characters</value>
+  </data>
+  <data name="Launcher_export_Backup" xml:space="preserve">
+    <value>Backup</value>
+  </data>
+  <data name="Launcher_export_Exporting_Characters" xml:space="preserve">
+    <value>Exporting Characters</value>
+  </data>
+  <data name="Launcher_bwExport_DoWork_Export_Accounts" xml:space="preserve">
+    <value>Export Accounts</value>
+  </data>
+  <data name="Launcher_bwExport_DoWork_Compressing" xml:space="preserve">
+    <value>Compressing</value>
+  </data>
+  <data name="Launcher_bwExport_RunWorkerCompleted_Export_Completed" xml:space="preserve">
+    <value>Export Completed</value>
+  </data>
+  <data name="Launcher_startNStop_Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="Launcher_startNStop_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Launcher_startNStop_Online_bot__N_A" xml:space="preserve">
+    <value>Online bot: N/A</value>
+  </data>
+  <data name="Launcher_bwUpdate_DoWork_Checking_Update" xml:space="preserve">
+    <value>Checking Update</value>
+  </data>
+  <data name="Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_" xml:space="preserve">
+    <value>Changes will take effect when you restart Launcher.</value>
   </data>
 </root>

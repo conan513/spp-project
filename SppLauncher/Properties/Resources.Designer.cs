@@ -181,11 +181,409 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Checking Update....
+        ///   Looks up a localized string similar to Compressing.
+        /// </summary>
+        internal static string Launcher_bwExport_DoWork_Compressing {
+            get {
+                return ResourceManager.GetString("Launcher_bwExport_DoWork_Compressing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export Accounts.
+        /// </summary>
+        internal static string Launcher_bwExport_DoWork_Export_Accounts {
+            get {
+                return ResourceManager.GetString("Launcher_bwExport_DoWork_Export_Accounts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export Completed.
+        /// </summary>
+        internal static string Launcher_bwExport_RunWorkerCompleted_Export_Completed {
+            get {
+                return ResourceManager.GetString("Launcher_bwExport_RunWorkerCompleted_Export_Completed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Accounts.
+        /// </summary>
+        internal static string Launcher_bwImport_DoWork_Import_Accounts {
+            get {
+                return ResourceManager.GetString("Launcher_bwImport_DoWork_Import_Accounts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Completed.
+        /// </summary>
+        internal static string Launcher_bwImport_RunWorkerCompleted_Import_Completed {
+            get {
+                return ResourceManager.GetString("Launcher_bwImport_RunWorkerCompleted_Import_Completed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checking Update.
+        /// </summary>
+        internal static string Launcher_bwUpdate_DoWork_Checking_Update {
+            get {
+                return ResourceManager.GetString("Launcher_bwUpdate_DoWork_Checking_Update", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checking Update.
         /// </summary>
         internal static string Launcher_bwUpdate_DoWork_Checking_Update___ {
             get {
                 return ResourceManager.GetString("Launcher_bwUpdate_DoWork_Checking_Update___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ERROR.
+        /// </summary>
+        internal static string Launcher_bwUpdate_DoWork_ERROR {
+            get {
+                return ResourceManager.GetString("Launcher_bwUpdate_DoWork_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Server Update Available.
+        /// </summary>
+        internal static string Launcher_bwUpdate_DoWork_New_Server_Update_Available {
+            get {
+                return ResourceManager.GetString("Launcher_bwUpdate_DoWork_New_Server_Update_Available", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Version.
+        /// </summary>
+        internal static string Launcher_bwUpdate_DoWork_New_Version {
+            get {
+                return ResourceManager.GetString("Launcher_bwUpdate_DoWork_New_Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Version Available: V.
+        /// </summary>
+        internal static string Launcher_bwUpdate_DoWork_New_Version_Available__V {
+            get {
+                return ResourceManager.GetString("Launcher_bwUpdate_DoWork_New_Version_Available__V", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You want to download?.
+        /// </summary>
+        internal static string Launcher_bwUpdate_DoWork_You_want_to_download_ {
+            get {
+                return ResourceManager.GetString("Launcher_bwUpdate_DoWork_You_want_to_download_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Up to date.
+        /// </summary>
+        internal static string Launcher_bwUpdate_RunWorkerCompleted_Up_to_date {
+            get {
+                return ResourceManager.GetString("Launcher_bwUpdate_RunWorkerCompleted_Up_to_date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The process is automatically restart..
+        /// </summary>
+        internal static string Launcher_CheckMangosCrashed_Tick_The_process_is_automatically_restart_ {
+            get {
+                return ResourceManager.GetString("Launcher_CheckMangosCrashed_Tick_The_process_is_automatically_restart_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Would you like to start World of Warcraft?.
+        /// </summary>
+        internal static string Launcher_CheckWowRun_Tick_Would_you_like_to_start_World_of_Warcraft_ {
+            get {
+                return ResourceManager.GetString("Launcher_CheckWowRun_Tick_Would_you_like_to_start_World_of_Warcraft_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Some Exception: CloseProcess
+        ///.
+        /// </summary>
+        internal static string Launcher_CloseProcess_ {
+            get {
+                return ResourceManager.GetString("Launcher_CloseProcess_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login Shutdown.
+        /// </summary>
+        internal static string Launcher_CloseProcess_Login_Shutdown {
+            get {
+                return ResourceManager.GetString("Launcher_CloseProcess_Login_Shutdown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to World Shutdown.
+        /// </summary>
+        internal static string Launcher_CloseProcess_World_Shutdown {
+            get {
+                return ResourceManager.GetString("Launcher_CloseProcess_World_Shutdown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Changes will take effect when you restart Launcher..
+        /// </summary>
+        internal static string Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_ {
+            get {
+                return ResourceManager.GetString("Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart" +
+                        "_Launcher_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup.
+        /// </summary>
+        internal static string Launcher_export_Backup {
+            get {
+                return ResourceManager.GetString("Launcher_export_Backup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export Characters.
+        /// </summary>
+        internal static string Launcher_export_Export_Characters {
+            get {
+                return ResourceManager.GetString("Launcher_export_Export_Characters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exporting Characters.
+        /// </summary>
+        internal static string Launcher_export_Exporting_Characters {
+            get {
+                return ResourceManager.GetString("Launcher_export_Exporting_Characters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decompress.
+        /// </summary>
+        internal static string Launcher_import_Decompress {
+            get {
+                return ResourceManager.GetString("Launcher_import_Decompress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Characters.
+        /// </summary>
+        internal static string Launcher_import_Import_Characters {
+            get {
+                return ResourceManager.GetString("Launcher_import_Import_Characters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Online Bots: N/A.
+        /// </summary>
+        internal static string Launcher_import_Online_Bots__N_A {
+            get {
+                return ResourceManager.GetString("Launcher_import_Online_Bots__N_A", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto Changed RealmList.wtf and after exit SPP change back original realmlist..
+        /// </summary>
+        internal static string Launcher_Launcher_Auto_Changed_RealmList_wtf_and_after_exit_SPP_change_back_original_realmlist_ {
+            get {
+                return ResourceManager.GetString("Launcher_Launcher_Auto_Changed_RealmList_wtf_and_after_exit_SPP_change_back_origi" +
+                        "nal_realmlist_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update started.
+        ///Do lag for several times..
+        /// </summary>
+        internal static string Launcher_RandomizeBotsMethod_ {
+            get {
+                return ResourceManager.GetString("Launcher_RandomizeBotsMethod_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Some Exception: RealmChange
+        ///.
+        /// </summary>
+        internal static string Launcher_RealmChange_ {
+            get {
+                return ResourceManager.GetString("Launcher_RealmChange_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Some Exception: RealmWrite
+        ///.
+        /// </summary>
+        internal static string Launcher_RealmChange0_ {
+            get {
+                return ResourceManager.GetString("Launcher_RealmChange0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Starting Realm.
+        /// </summary>
+        internal static string Launcher_RealmdStart_Starting_Realm {
+            get {
+                return ResourceManager.GetString("Launcher_RealmdStart_Starting_Realm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Some Exception: RealmRestore
+        ///.
+        /// </summary>
+        internal static string Launcher_RealmRestore_ {
+            get {
+                return ResourceManager.GetString("Launcher_RealmRestore_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restart is required for reset bots.
+        ///Restart now?.
+        /// </summary>
+        internal static string Launcher_ResetBots_ {
+            get {
+                return ResourceManager.GetString("Launcher_ResetBots_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset bots.
+        /// </summary>
+        internal static string Launcher_rstchck_DoWork_Reset_bots {
+            get {
+                return ResourceManager.GetString("Launcher_rstchck_DoWork_Reset_bots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mangosd process is running.
+        ///You want close the running process?.
+        /// </summary>
+        internal static string Launcher_SearchProcess_ {
+            get {
+                return ResourceManager.GetString("Launcher_SearchProcess_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Some Exception: SearchProcess
+        ///.
+        /// </summary>
+        internal static string Launcher_SearchProcess0_ {
+            get {
+                return ResourceManager.GetString("Launcher_SearchProcess0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mysqld process is running.
+        ///You want close the running process?.
+        /// </summary>
+        internal static string Launcher_SearchProcess2_ {
+            get {
+                return ResourceManager.GetString("Launcher_SearchProcess2_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Starting Mysqlm.
+        /// </summary>
+        internal static string Launcher_StartAll_Starting_Mysqlm {
+            get {
+                return ResourceManager.GetString("Launcher_StartAll_Starting_Mysqlm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Online bot: N/A.
+        /// </summary>
+        internal static string Launcher_startNStop_Online_bot__N_A {
+            get {
+                return ResourceManager.GetString("Launcher_startNStop_Online_bot__N_A", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string Launcher_startNStop_Start {
+            get {
+                return ResourceManager.GetString("Launcher_startNStop_Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop.
+        /// </summary>
+        internal static string Launcher_startNStop_Stop {
+            get {
+                return ResourceManager.GetString("Launcher_startNStop_Stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Online.
+        /// </summary>
+        internal static string Launcher_tmrWorld_Tick_Online {
+            get {
+                return ResourceManager.GetString("Launcher_tmrWorld_Tick_Online", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ready to play.
+        /// </summary>
+        internal static string Launcher_Traymsg_Ready_to_play {
+            get {
+                return ResourceManager.GetString("Launcher_Traymsg_Ready_to_play", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Servers Started.
+        /// </summary>
+        internal static string Launcher_Traymsg_Servers_Started {
+            get {
+                return ResourceManager.GetString("Launcher_Traymsg_Servers_Started", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading World.
+        /// </summary>
+        internal static string Launcher_WorldStart_Loading_World {
+            get {
+                return ResourceManager.GetString("Launcher_WorldStart_Loading_World", resourceCulture);
             }
         }
         

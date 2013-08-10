@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
+using SppLauncher.Properties;
 
 namespace SppLauncher
 {
@@ -11,10 +13,6 @@ namespace SppLauncher
         public AboutBox()
         {
             InitializeComponent();
-
-            label1.Text = Launcher.Msgaboutmsg1;
-            label2.Text = Launcher.Msgaboutmsg2;
-            groupBox1.Text = Launcher.Msgaboutver;
         }
 
         private void AboutBox1_Load_1(object sender, EventArgs e)
