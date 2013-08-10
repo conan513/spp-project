@@ -298,6 +298,15 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mangosd Crashed.
+        /// </summary>
+        internal static string Launcher_CheckMangosCrashed_Tick_Mangosd_Crashed {
+            get {
+                return ResourceManager.GetString("Launcher_CheckMangosCrashed_Tick_Mangosd_Crashed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The process is automatically restart..
         /// </summary>
         internal static string Launcher_CheckMangosCrashed_Tick_The_process_is_automatically_restart_ {
@@ -418,6 +427,15 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Info.
+        /// </summary>
+        internal static string Launcher_magyarToolStripMenuItem_Click_1_Info {
+            get {
+                return ResourceManager.GetString("Launcher_magyarToolStripMenuItem_Click_1_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Update started.
         ///Do lag for several times..
         /// </summary>
@@ -467,6 +485,24 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Realmlist.
+        /// </summary>
+        internal static string Launcher_RealmRestore_Realmlist {
+            get {
+                return ResourceManager.GetString("Launcher_RealmRestore_Realmlist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restored.
+        /// </summary>
+        internal static string Launcher_RealmRestore_Restored {
+            get {
+                return ResourceManager.GetString("Launcher_RealmRestore_Restored", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Restart is required for reset bots.
         ///Restart now?.
         /// </summary>
@@ -496,6 +532,15 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        internal static string Launcher_SearchProcess_Warning {
+            get {
+                return ResourceManager.GetString("Launcher_SearchProcess_Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Some Exception: SearchProcess
         ///.
         /// </summary>
@@ -516,11 +561,29 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to announce .
+        /// </summary>
+        internal static string Launcher_SrvAnnounce_Tick_announce_ {
+            get {
+                return ResourceManager.GetString("Launcher_SrvAnnounce_Tick_announce_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Starting Mysqlm.
         /// </summary>
         internal static string Launcher_StartAll_Starting_Mysqlm {
             get {
                 return ResourceManager.GetString("Launcher_StartAll_Starting_Mysqlm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server is down.
+        /// </summary>
+        internal static string Launcher_startNStop_Derver_is_down {
+            get {
+                return ResourceManager.GetString("Launcher_startNStop_Derver_is_down", resourceCulture);
             }
         }
         

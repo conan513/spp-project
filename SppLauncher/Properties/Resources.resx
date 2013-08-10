@@ -343,4 +343,7 @@ Do lag for several times.</value>
   <data name="Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_" xml:space="preserve">
     <value>Changes will take effect when you restart Launcher.</value>
   </data>
+  <data name="Launcher_startNStop_Derver_is_down" xml:space="preserve">
+    <value>Server is down</value>
+  </data>
 </root>

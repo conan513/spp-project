@@ -14,7 +14,6 @@ using System.Xml;
 using Ionic.Zip;
 using MySql.Data.MySqlClient;
 using MySQLClass;
-using SppLauncher.Class;
 using SppLauncher.OnlineBot;
 using SppLauncher.Properties;
 using SppLauncher.Windows;
@@ -61,8 +60,7 @@ namespace SppLauncher
         private bool _updateYes;
         private string _world;
         private readonly Hashtable LangHash = new Hashtable();
-        private System.Resources.ResourceManager rm;
-        public static string[] button = new string[80];
+        private System.Resources.ResourceManager _rm;
 
         #endregion
 
@@ -74,7 +72,7 @@ namespace SppLauncher
 
 
 
-            rm = new System.Resources.ResourceManager(typeof(Launcher));
+            _rm = new System.Resources.ResourceManager(typeof(Launcher));
             LangHash.Add("Hungarian", new System.Globalization.CultureInfo("hu"));
             ReadXML();
             InitializeComponent();
@@ -223,7 +221,7 @@ namespace SppLauncher
         {
             _start1              = DateTime.Now;
             _status              = Resources.Launcher_RealmdStart_Starting_Realm;
-            tssStatus.Image      = Properties.Resources.search_animation;
+            tssStatus.Image      = Resources.search_animation;
             pbTempR.Visible      = true;
             pbNotAvailR.Visible  = false;
             tmrRealm.Start();
@@ -439,7 +437,7 @@ namespace SppLauncher
         private void rstchck_DoWork(object sender, DoWorkEventArgs e)
         {
             _status = Resources.Launcher_rstchck_DoWork_Reset_bots;
-            tssStatus.Image = Properties.Resources.search_animation;
+            tssStatus.Image = Resources.search_animation;
             Thread.Sleep(10000);
         }
 
@@ -485,7 +483,7 @@ namespace SppLauncher
             catch (Exception ex)
             {
                 MessageBox.Show(Resources.Launcher_CloseProcess_ +
-                                ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                ex.Message, Resources.Launcher_SearchProcess_Warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -496,7 +494,7 @@ namespace SppLauncher
                 foreach (Process proc in Process.GetProcessesByName("mangosd"))
                 {
                     DialogResult result =
-                        MessageBox.Show(Resources.Launcher_SearchProcess_, "Warning",
+                        MessageBox.Show(Resources.Launcher_SearchProcess_, Resources.Launcher_SearchProcess_Warning,
                                         MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                     if (result == DialogResult.Yes)
@@ -514,7 +512,7 @@ namespace SppLauncher
                 foreach (Process proc in Process.GetProcessesByName("login"))
                 {
                     DialogResult result =
-                        MessageBox.Show(Resources.Launcher_CloseProcess_Login_Shutdown, "Warning",
+                        MessageBox.Show(Resources.Launcher_CloseProcess_Login_Shutdown, Resources.Launcher_SearchProcess_Warning,
                                         MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                     if (result == DialogResult.Yes)
@@ -530,7 +528,7 @@ namespace SppLauncher
                 foreach (Process proc in Process.GetProcessesByName("mysqld"))
                 {
                     DialogResult result =
-                        MessageBox.Show(Resources.Launcher_SearchProcess2_, "Warning",
+                        MessageBox.Show(Resources.Launcher_SearchProcess2_, Resources.Launcher_SearchProcess_Warning,
                                         MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                     if (result == DialogResult.Yes)
@@ -546,7 +544,7 @@ namespace SppLauncher
             catch (Exception ex)
             {
                 MessageBox.Show(Resources.Launcher_SearchProcess0_ +
-                                ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                ex.Message, Resources.Launcher_SearchProcess_Warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -700,7 +698,7 @@ namespace SppLauncher
             try
             {
                 OLDrealmList = File.ReadAllText(realmListPath, Encoding.UTF8);
-                NotifyBallon(1000, "Realmlist", "Set 127.0.0.1", false);
+                NotifyBallon(1000, Resources.Launcher_RealmRestore_Realmlist, "Set 127.0.0.1", false);
 
             }
             catch (Exception ex)
@@ -724,7 +722,7 @@ namespace SppLauncher
             try
             {
                 File.WriteAllText(realmListPath,OLDrealmList);
-                NotifyBallon(1000,"Realmlist","Restored",false);
+                NotifyBallon(1000,Resources.Launcher_RealmRestore_Realmlist,Resources.Launcher_RealmRestore_Restored,false);
             }
             catch (Exception ex)
             {
@@ -907,16 +905,6 @@ namespace SppLauncher
         #endregion
 
         #region WindowMenuItems
-
-        private void exportToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            export();
-        }
-
-        private void importToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            import();
-        }
 
         private void showToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1226,53 +1214,7 @@ namespace SppLauncher
             tssUsage.ToolTipText = "Launcher: " + Convert.ToString(proc.WorkingSet64 / 1024 / 1024) + "MB" + "\nMysql Server: " + _sqlMem + "\nLogin Server: " + _realmdMem + "\nGame Server: " + _mangosdMem;
 
             tssUsage.Text = "CPU: " + Convert.ToInt32(getCurrentCpuUsage()) + "% |" + " RAM: " + perecent + "%" + " (" + ramfree + "/" + ramtoltal + "MB)";
-
-
         }
-
-        //private void timer1_Tick(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        double version = Convert.ToDouble(File.ReadAllText("SingleCore\\version"));
-
-        //        if (version > CurrEmuVer)
-        //        {
-        //            UpdateCompleteChecker.Stop();
-        //            if (RemoteEmuVer > version)
-        //            {
-        //                AllowUpdaterQuestion = true;
-        //                bwUpdate.RunWorkerAsync();
-        //            }
-
-
-        //            if (!AllowUpdaterQuestion)
-        //            {
-        //                Thread.Sleep(20);
-        //                foreach (Process proc in Process.GetProcessesByName("Updater"))
-        //                {
-        //                    proc.Kill();
-        //                }
-
-        //                Show();
-        //                NotifyBallon(1000, "Update Completed", "Server starting...", false);
-        //                try
-        //                {
-        //                    Process.Start("notepad.exe", "Update\\changelog");
-        //                }
-        //                catch (Exception)
-        //                {
-        //                }
-        //                RealmWorldRestart();
-
-        //                allowupdaternorunwow = false;
-        //            }
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //    }
-        //}
 
         private void tmrRealm_Tick(object sender, EventArgs e)
         {
@@ -1435,7 +1377,7 @@ namespace SppLauncher
         private void SrvAnnounce_Tick(object sender, EventArgs e)
         {
             SrvAnnounce.Stop();
-            _cmd1.StandardInput.WriteLine("announce " + online);
+            _cmd1.StandardInput.WriteLine(Resources.Launcher_SrvAnnounce_Tick_announce_ + online);
         }
 
         private void CheckMangosCrashed_Tick(object sender, EventArgs e)
@@ -1443,7 +1385,7 @@ namespace SppLauncher
             if (ProcessView() && !Updater)
             {
                 _restart = true;
-                NotifyBallon(1000, "Mangosd Crashed", Resources.Launcher_CheckMangosCrashed_Tick_The_process_is_automatically_restart_, true);
+                NotifyBallon(1000, Resources.Launcher_CheckMangosCrashed_Tick_Mangosd_Crashed, Resources.Launcher_CheckMangosCrashed_Tick_The_process_is_automatically_restart_, true);
                 RealmWorldRestart();
             }
         }
@@ -1735,8 +1677,8 @@ namespace SppLauncher
                 _startStop                        = true;
                 startstopToolStripMenuItem.Text   = Resources.Launcher_startNStop_Stop;
                 startToolStripMenuItem.Text       = Resources.Launcher_startNStop_Stop;
-                startstopToolStripMenuItem.Image  = Properties.Resources.Button_stop_icon;
-                startToolStripMenuItem.Image      = Properties.Resources.Button_stop_icon;
+                startstopToolStripMenuItem.Image  = Resources.Button_stop_icon;
+                startToolStripMenuItem.Image      = Resources.Button_stop_icon;
             }
             else
             {
@@ -1750,8 +1692,8 @@ namespace SppLauncher
                 restartToolStripMenuItem2.Enabled                = false;
                 exportCharactersToolStripMenuItem.Enabled        = false;
                 exportImportCharactersToolStripMenuItem.Enabled  = false;
-                startstopToolStripMenuItem.Image                 = Properties.Resources.Play_1_Hot_icon;
-                startToolStripMenuItem.Image                     = Properties.Resources.Play_1_Hot_icon;
+                startstopToolStripMenuItem.Image                 = Resources.Play_1_Hot_icon;
+                startToolStripMenuItem.Image                     = Resources.Play_1_Hot_icon;
                 startstopToolStripMenuItem.Text                  = Resources.Launcher_startNStop_Start;
                 startToolStripMenuItem.Text                      = Resources.Launcher_startNStop_Start;
                 _startStop                                       = false;
@@ -1760,6 +1702,7 @@ namespace SppLauncher
                 tssLOnline.Text = Resources.Launcher_startNStop_Online_bot__N_A;
                 CloseProcess(false);
                 StatusIcon();
+                _status = Resources.Launcher_startNStop_Derver_is_down;
             }
         }
 
@@ -1796,41 +1739,24 @@ namespace SppLauncher
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Language.saveMethod();
-        }
-
         private void magyarToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            magyarToolStripMenuItem.Checked  = true;
-            englishToolStripMenuItem.Checked = false;
-            frenchToolStripMenuItem.Checked  = false;
-            germanToolStripMenuItem.Checked  = false;
-            Language.ReadXML("Hungarian");
             lang = "Hungarian";
             saveMethod();
-            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_,"Info",
+            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_,Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            magyarToolStripMenuItem.Checked  = false;
-            englishToolStripMenuItem.Checked = true;
-            frenchToolStripMenuItem.Checked  = false;
-            germanToolStripMenuItem.Checked  = false;
-            Language.ReadXML("English");
             lang = "English";
             saveMethod();
-            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_, "Info",
+            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_, Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
     MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            Language.ReadXML("French");
             lang = "French";
             saveMethod();
     
@@ -1838,8 +1764,6 @@ namespace SppLauncher
 
         private void germanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            Language.ReadXML("German");
             lang = "German";
             saveMethod();
      
@@ -1855,21 +1779,6 @@ namespace SppLauncher
             import();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Thread.CurrentThread.CurrentUICulture = (System.Globalization.CultureInfo)LangHash["Hungarian"];
-
-            //Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.InvariantCulture;
-            runWoWToolStripMenuItem.Text = rm.GetString("runWoWToolStripMenuItem.Text");
-
-        }
-
-
-        public void reloadText()
-        {
-            runWoWToolStripMenuItem.Text = rm.GetString("runWoWToolStripMenuItem.Text");
-        }
-
         public void checklang()
         {
             switch (lang)
@@ -1881,7 +1790,6 @@ namespace SppLauncher
                     englishToolStripMenuItem.Checked = true;
                     break;
             }
-            
         }
     }
 }

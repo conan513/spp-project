@@ -253,4 +253,7 @@ Be akarod zárni?</value>
   <data name="Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_" xml:space="preserve">
     <value>A beállítások érvényesítéséhez a launcher újraindítására van szükség.</value>
   </data>
+  <data name="Launcher_startNStop_Derver_is_down" xml:space="preserve">
+    <value>Szerver leállt.</value>
+  </data>
 </root>
