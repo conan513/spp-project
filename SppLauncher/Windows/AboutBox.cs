@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Drawing;
-using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
-using SppLauncher.Properties;
 
 namespace SppLauncher
 {

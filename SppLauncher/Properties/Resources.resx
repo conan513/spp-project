@@ -142,9 +142,6 @@
   <data name="Export_Icon_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Export_Icon_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Launcher_bwUpdate_DoWork_Checking_Update___" xml:space="preserve">
-    <value>Checking Update</value>
-  </data>
   <data name="hu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -218,7 +215,7 @@
     <value>Starting Realm</value>
   </data>
   <data name="Launcher_StartAll_Starting_Mysqlm" xml:space="preserve">
-    <value>Starting Mysqlm</value>
+    <value>Starting Mysql</value>
   </data>
   <data name="Launcher_rstchck_DoWork_Reset_bots" xml:space="preserve">
     <value>Reset bots</value>
@@ -337,13 +334,31 @@ Do lag for several times.</value>
   <data name="Launcher_startNStop_Online_bot__N_A" xml:space="preserve">
     <value>Online bot: N/A</value>
   </data>
-  <data name="Launcher_bwUpdate_DoWork_Checking_Update" xml:space="preserve">
-    <value>Checking Update</value>
-  </data>
   <data name="Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_" xml:space="preserve">
     <value>Changes will take effect when you restart Launcher.</value>
   </data>
   <data name="Launcher_startNStop_Derver_is_down" xml:space="preserve">
     <value>Server is down</value>
+  </data>
+  <data name="Launcher_magyarToolStripMenuItem_Click_1_Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="Launcher_CheckMangosCrashed_Tick_Mangosd_Crashed" xml:space="preserve">
+    <value>Mangosd Crashed</value>
+  </data>
+  <data name="Launcher_SrvAnnounce_Tick_announce_" xml:space="preserve">
+    <value>announce </value>
+  </data>
+  <data name="Launcher_RealmRestore_Realmlist" xml:space="preserve">
+    <value>Realmlist</value>
+  </data>
+  <data name="Launcher_RealmRestore_Restored" xml:space="preserve">
+    <value>Restored</value>
+  </data>
+  <data name="Launcher_SearchProcess_Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="Launcher_Checking_Update" xml:space="preserve">
+    <value>Checking Update</value>
   </data>
 </root>

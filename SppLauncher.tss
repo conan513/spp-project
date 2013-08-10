@@ -6,17 +6,41 @@
       <string>D:\Sourcetree\SppLauncher\Windows\Launcher.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Windows\BotConf.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\BotConf.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
       <string>D:\Sourcetree\SppLauncher\Windows\BugReport.cs</string>
       <string>D:\Sourcetree\SppLauncher\Windows\BugReport.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>D:\Sourcetree\SppLauncher\Windows\AboutBox.cs</string>
       <string>D:\Sourcetree\SppLauncher\Windows\AboutBox.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\AboutBox.hu.resx</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Sourcetree\SppLauncher\Windows\WorldConf.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\WorldConf.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Sourcetree\SppLauncher\Windows\Update.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\Update.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\Update.Designer.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Sourcetree\SppLauncher\Windows\Update_Completed.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\Update_Completed.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Sourcetree\SppLauncher\Properties\Resources.resx</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Sourcetree\SppLauncher\Class\Language.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Sourcetree\SppLauncher\Windows\BotConf.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\BotConf.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Sourcetree\SppLauncher\Windows\HelpUsWindow.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Sourcetree\SppLauncher\Windows\LanSwitcher\LanSwitcher.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

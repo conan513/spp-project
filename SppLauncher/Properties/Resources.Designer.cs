@@ -226,24 +226,6 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Checking Update.
-        /// </summary>
-        internal static string Launcher_bwUpdate_DoWork_Checking_Update {
-            get {
-                return ResourceManager.GetString("Launcher_bwUpdate_DoWork_Checking_Update", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Checking Update.
-        /// </summary>
-        internal static string Launcher_bwUpdate_DoWork_Checking_Update___ {
-            get {
-                return ResourceManager.GetString("Launcher_bwUpdate_DoWork_Checking_Update___", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to ERROR.
         /// </summary>
         internal static string Launcher_bwUpdate_DoWork_ERROR {
@@ -294,6 +276,15 @@ namespace SppLauncher.Properties {
         internal static string Launcher_bwUpdate_RunWorkerCompleted_Up_to_date {
             get {
                 return ResourceManager.GetString("Launcher_bwUpdate_RunWorkerCompleted_Up_to_date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checking Update.
+        /// </summary>
+        internal static string Launcher_Checking_Update {
+            get {
+                return ResourceManager.GetString("Launcher_Checking_Update", resourceCulture);
             }
         }
         
@@ -570,7 +561,7 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Starting Mysqlm.
+        ///   Looks up a localized string similar to Starting Mysql.
         /// </summary>
         internal static string Launcher_StartAll_Starting_Mysqlm {
             get {

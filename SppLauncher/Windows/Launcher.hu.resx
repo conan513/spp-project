@@ -1832,6 +1832,75 @@
         AAAAAAAAAAAAAAAAAAAAAAAA
 </value>
   </data>
+  <data name="SppTray.Text" xml:space="preserve">
+    <value>Single Player Projekt</value>
+  </data>
+  <data name="showToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="startWowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="startWowToolStripMenuItem.Text" xml:space="preserve">
+    <value>World of Warcraft Indítása</value>
+  </data>
+  <data name="worldSettingsToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Világ Beállítások</value>
+  </data>
+  <data name="resetBotsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bot Reset</value>
+  </data>
+  <data name="randomizeBotsToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Botok Randomizálása</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Beállítások</value>
+  </data>
+  <data name="toolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="toolToolStripMenuItem.Text" xml:space="preserve">
+    <value>Eszközök</value>
+  </data>
+  <data name="startToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
+  </data>
+  <data name="restartToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
+  </data>
+  <data name="restartToolStripMenuItem2.Text" xml:space="preserve">
+    <value>Újraindítás</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 6</value>
+  </data>
+  <data name="autorunToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
+  </data>
+  <data name="ServersStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="ServersStripMenuItem.Text" xml:space="preserve">
+    <value>Szerver</value>
+  </data>
+  <data name="reportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="reportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Hibajelentés</value>
+  </data>
+  <data name="aboutToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 180</value>
+  </data>
   <data name="runWoWToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 20</value>
   </data>
@@ -1875,22 +1944,25 @@
     <value>Karakter Export/Import</value>
   </data>
   <data name="magyarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>114, 22</value>
+  </data>
+  <data name="magyarToolStripMenuItem.Text" xml:space="preserve">
+    <value>Magyar</value>
   </data>
   <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>114, 22</value>
   </data>
   <data name="englishToolStripMenuItem.Text" xml:space="preserve">
     <value>Angol</value>
   </data>
   <data name="frenchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>114, 22</value>
   </data>
   <data name="frenchToolStripMenuItem.Text" xml:space="preserve">
     <value>Francia</value>
   </data>
   <data name="germanToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>114, 22</value>
   </data>
   <data name="germanToolStripMenuItem.Text" xml:space="preserve">
     <value>Német</value>
@@ -3650,5 +3722,26 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Single Player Projekt</value>
+  </data>
+  <data name="accountToolToolStripMenuItem.Text" xml:space="preserve">
+    <value>Account Készítő</value>
+  </data>
+  <data name="autorunToolStripMenuItem.Text" xml:space="preserve">
+    <value>Automatikus Indítás</value>
+  </data>
+  <data name="botSettingsToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Bot Beállítások</value>
+  </data>
+  <data name="changeWoWPathToolStripMenuItem.Text" xml:space="preserve">
+    <value>WoW Útvonal Megváltoztatása</value>
+  </data>
+  <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Kilépés</value>
+  </data>
+  <data name="exportImportCharactersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Karakter Export/Import</value>
+  </data>
+  <data name="lanSwitcherToolStripMenuItem.Text" xml:space="preserve">
+    <value>IP Cserélő</value>
   </data>
 </root>

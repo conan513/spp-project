@@ -136,6 +136,9 @@
   <data name="lblMail.Text" xml:space="preserve">
     <value>E-mail Címed:</value>
   </data>
+  <data name="cbBugType.Items3" xml:space="preserve">
+    <value>Eszközök</value>
+  </data>
   <data name="lblbug.Location" type="System.Drawing.Point, System.Drawing">
     <value>45, 53</value>
   </data>

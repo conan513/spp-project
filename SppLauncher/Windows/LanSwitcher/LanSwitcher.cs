@@ -1,16 +1,11 @@
 ﻿using System;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Windows.Forms;
-using System.Xml;
 using MySQLClass;
-using SppLauncher.Properties;
 
 namespace SppLauncher.Windows
 {

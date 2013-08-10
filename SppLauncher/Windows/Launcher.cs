@@ -25,7 +25,7 @@ namespace SppLauncher
         #region Variable
 
         public static string wowExePath,
-                             wowFolderPath,
+                             WowFolderPath,
                              wowVersion,
                              ipAdress,
                              online,
@@ -42,7 +42,7 @@ namespace SppLauncher
         readonly string getTemp = Path.GetTempPath();
         readonly PerformanceCounter cpuCounter;
         readonly PerformanceCounter ramCounter;
-        public static string RemoteProgVer, currProgVer = "1.0.6",lang;
+        public static string RemoteProgVer, currProgVer = "1.0.6", lang;
         public static double CurrEmuVer, RemoteEmuVer;
         public static bool Available, Updater  = false, AllowUpdaterQuestion = false, allowupdaternorunwow = false;
         private bool _startStop;
@@ -69,14 +69,12 @@ namespace SppLauncher
 
         public Launcher()
         {
-
-
-
             _rm = new System.Resources.ResourceManager(typeof(Launcher));
             LangHash.Add("Hungarian", new System.Globalization.CultureInfo("hu"));
+            LangHash.Add("German", new System.Globalization.CultureInfo("de"));
             ReadXML();
             InitializeComponent();
-            checklang();
+            checklang(true);
             cpuCounter = new PerformanceCounter();
             GetLocalSrvVer();
             cpuCounter.CategoryName = "Processor";
@@ -96,7 +94,6 @@ namespace SppLauncher
 
             if (autostart == "1")
             {
-
                 startstopToolStripMenuItem.Image                 = Resources.Button_stop_icon;
                 startToolStripMenuItem.Image                     = Resources.Button_stop_icon;
                 startstopToolStripMenuItem.Text                  = Resources.Launcher_startNStop_Stop;
@@ -436,6 +433,7 @@ namespace SppLauncher
 
         private void rstchck_DoWork(object sender, DoWorkEventArgs e)
         {
+            checklang(false);
             _status = Resources.Launcher_rstchck_DoWork_Reset_bots;
             tssStatus.Image = Resources.search_animation;
             Thread.Sleep(10000);
@@ -763,16 +761,7 @@ namespace SppLauncher
                     autostart     = node["Autostart"].InnerText;
                     lang = node["Lang"].InnerText;
                 }
-
-                switch (lang)
-                {
-                    case "Hungarian":
-                        Thread.CurrentThread.CurrentUICulture = (System.Globalization.CultureInfo)LangHash["Hungarian"];
-                        break;
-                    case "English":
-                        Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.InvariantCulture;
-                        break;
-                }
+                checklang(false);
             }
             catch
             {
@@ -1407,9 +1396,10 @@ namespace SppLauncher
 
         private void bwUpdate_DoWork(object sender, DoWorkEventArgs e)
         {
+            checklang(false);
             try
             {
-                _status = Resources.Launcher_bwUpdate_DoWork_Checking_Update;
+                _status = Resources.Launcher_Checking_Update;
                 animateStatus(true);
                 var client            = new WebClient();
                 Stream stream         = client.OpenRead("https://raw.github.com/conan513/SingleCore/SPP/Tools/update.txt");
@@ -1521,6 +1511,7 @@ namespace SppLauncher
 
         private void bwImport_DoWork(object sender, DoWorkEventArgs e)
         {
+            checklang(false);
             ImportExtract();
             _status = Resources.Launcher_import_Import_Characters;
 
@@ -1579,6 +1570,7 @@ namespace SppLauncher
 
         private void bwExport_DoWork(object sender, DoWorkEventArgs e)
         {
+            checklang(false);
             string conn            = "server=127.0.0.1;user=root;pwd=123456;database=characters;port=3310;convertzerodatetime=true;";
             MySqlBackup mb         = new MySqlBackup(conn);
             mb.ExportInfo.FileName = getTemp + "\\save01";
@@ -1759,14 +1751,16 @@ namespace SppLauncher
         {
             lang = "French";
             saveMethod();
-    
+            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_, Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
+MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void germanToolStripMenuItem_Click(object sender, EventArgs e)
         {
             lang = "German";
             saveMethod();
-     
+            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_, Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
+MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void exportToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -1779,8 +1773,9 @@ namespace SppLauncher
             import();
         }
 
-        public void checklang()
+        public void checklang(bool option)
         {
+            if(option)
             switch (lang)
             {
                 case "Hungarian":
@@ -1789,7 +1784,26 @@ namespace SppLauncher
                 case "English":
                     englishToolStripMenuItem.Checked = true;
                     break;
+                case "German":
+                    germanToolStripMenuItem.Checked = true;
+                    break;
             }
+            else
+            {
+                switch (lang)
+                {
+                    case "Hungarian":
+                        Thread.CurrentThread.CurrentUICulture = (System.Globalization.CultureInfo)LangHash["Hungarian"];
+                        break;
+                    case "English":
+                        Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.InvariantCulture;
+                        break;
+                    case "German":
+                        Thread.CurrentThread.CurrentUICulture = (System.Globalization.CultureInfo)LangHash["German"];
+                        break;
+                }
+            }
+
         }
     }
 }

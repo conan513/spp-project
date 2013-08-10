@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Launcher_bwUpdate_DoWork_Checking_Update___" xml:space="preserve">
-    <value>Update Keresése</value>
-  </data>
   <data name="Launcher_bwUpdate_RunWorkerCompleted_Up_to_date" xml:space="preserve">
     <value>Naprakész</value>
   </data>
@@ -127,7 +124,7 @@
     <value>Tömörítés</value>
   </data>
   <data name="Launcher_bwExport_DoWork_Export_Accounts" xml:space="preserve">
-    <value>Karakterek Exportálása</value>
+    <value>Accountok Exportálása</value>
   </data>
   <data name="Launcher_bwExport_RunWorkerCompleted_Export_Completed" xml:space="preserve">
     <value>Export Befejezve</value>
@@ -151,7 +148,7 @@
     <value>Új verzió elérhető el: V</value>
   </data>
   <data name="Launcher_bwUpdate_DoWork_You_want_to_download_" xml:space="preserve">
-    <value>Szeretnéd letölteni?</value>
+    <value>Le szeretnéd tölteni?</value>
   </data>
   <data name="Launcher_CheckMangosCrashed_Tick_The_process_is_automatically_restart_" xml:space="preserve">
     <value>A folyamat automatikusan újraindul.</value>
@@ -213,7 +210,7 @@ Rövid ideig laggolhat a szerver.</value>
     <value>Reset bots</value>
   </data>
   <data name="Launcher_SearchProcess_" xml:space="preserve">
-    <value>Mangod folyamat jelenleg fut.
+    <value>Mangosd folyamat jelenleg fut.
 Be akarod zárni?</value>
   </data>
   <data name="Launcher_SearchProcess0_" xml:space="preserve">
@@ -224,7 +221,7 @@ Be akarod zárni?</value>
 Be akarod zárni?</value>
   </data>
   <data name="Launcher_StartAll_Starting_Mysqlm" xml:space="preserve">
-    <value>Mysqld Indítása</value>
+    <value>Mysql Indítása</value>
   </data>
   <data name="Launcher_startNStop_Online_bot__N_A" xml:space="preserve">
     <value>Online bot: N/A</value>
@@ -247,13 +244,25 @@ Be akarod zárni?</value>
   <data name="Launcher_WorldStart_Loading_World" xml:space="preserve">
     <value>Világ Betöltése</value>
   </data>
-  <data name="Launcher_bwUpdate_DoWork_Checking_Update" xml:space="preserve">
-    <value>Update Keresése</value>
-  </data>
   <data name="Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_" xml:space="preserve">
     <value>A beállítások érvényesítéséhez a launcher újraindítására van szükség.</value>
   </data>
   <data name="Launcher_startNStop_Derver_is_down" xml:space="preserve">
-    <value>Szerver leállt.</value>
+    <value>Szerver leállt</value>
+  </data>
+  <data name="Launcher_CheckMangosCrashed_Tick_Mangosd_Crashed" xml:space="preserve">
+    <value>Mangosd Összeomlott</value>
+  </data>
+  <data name="Launcher_RealmRestore_Realmlist" xml:space="preserve">
+    <value>Realmlist</value>
+  </data>
+  <data name="Launcher_RealmRestore_Restored" xml:space="preserve">
+    <value>Visszaállítva.</value>
+  </data>
+  <data name="Launcher_SearchProcess_Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="Launcher_Checking_Update" xml:space="preserve">
+    <value>Update Keresése</value>
   </data>
 </root>

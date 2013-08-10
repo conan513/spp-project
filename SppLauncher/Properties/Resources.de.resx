@@ -117,135 +117,142 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="txbMinbot.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 46</value>
+  <data name="Launcher_bwExport_DoWork_Compressing" xml:space="preserve">
+    <value>Druck</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 49</value>
+  <data name="Launcher_bwExport_RunWorkerCompleted_Export_Completed" xml:space="preserve">
+    <value>Export fertig</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 13</value>
+  <data name="Launcher_bwUpdate_DoWork_ERROR" xml:space="preserve">
+    <value>FEHLER</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Min botok:</value>
+  <data name="Launcher_bwUpdate_DoWork_New_Server_Update_Available" xml:space="preserve">
+    <value>Neuer Server update verfügbar</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 79</value>
+  <data name="Launcher_bwUpdate_DoWork_New_Version" xml:space="preserve">
+    <value>Neue Version</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
+  <data name="Launcher_bwUpdate_DoWork_New_Version_Available__V" xml:space="preserve">
+    <value>Neue Version verfügbar: V</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Max botok:</value>
+  <data name="Launcher_bwUpdate_DoWork_You_want_to_download_" xml:space="preserve">
+    <value>Möchtest du es herunterladen?</value>
   </data>
-  <data name="txbMaxBot.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 76</value>
+  <data name="Launcher_bwUpdate_RunWorkerCompleted_Up_to_date" xml:space="preserve">
+    <value>Aktuell</value>
   </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 105</value>
+  <data name="Launcher_CheckMangosCrashed_Tick_Mangosd_Crashed" xml:space="preserve">
+    <value>Mangosd Zusammenbruch</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 13</value>
+  <data name="Launcher_CheckMangosCrashed_Tick_The_process_is_automatically_restart_" xml:space="preserve">
+    <value>Der Prozess wird neugestartet.</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Min botok/intervallum:</value>
+  <data name="Launcher_CheckWowRun_Tick_Would_you_like_to_start_World_of_Warcraft_" xml:space="preserve">
+    <value>Möchtest du World of Warcraft starten?</value>
   </data>
-  <data name="txbMinBotInter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 102</value>
+  <data name="Launcher_CloseProcess_" xml:space="preserve">
+    <value>Einige Ausnahmen: CloseProcess</value>
   </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 131</value>
+  <data name="Launcher_CloseProcess_Login_Shutdown" xml:space="preserve">
+    <value>Logon herunterfahren</value>
   </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 13</value>
+  <data name="Launcher_CloseProcess_World_Shutdown" xml:space="preserve">
+    <value>World herunterfahren</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Max botok/intervallum:</value>
+  <data name="Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_" xml:space="preserve">
+    <value>Änderungen wirken wenn du den launcher neustartest.</value>
   </data>
-  <data name="txbMaxBotInter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 128</value>
+  <data name="Launcher_export_Backup" xml:space="preserve">
+    <value>Backup</value>
   </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 183</value>
+  <data name="Launcher_export_Export_Characters" xml:space="preserve">
+    <value>Export Charaktere</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 13</value>
+  <data name="Launcher_export_Exporting_Characters" xml:space="preserve">
+    <value>Export Charaktere</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Frissítési intervallum:</value>
+  <data name="Launcher_import_Decompress" xml:space="preserve">
+    <value>Dekomprimieren</value>
   </data>
-  <data name="txbUpdateInter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 180</value>
+  <data name="Launcher_import_Import_Characters" xml:space="preserve">
+    <value>Import Charaktere</value>
   </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>84, 157</value>
+  <data name="Launcher_Launcher_Auto_Changed_RealmList_wtf_and_after_exit_SPP_change_back_original_realmlist_" xml:space="preserve">
+    <value>Automatische realmlist änderung und nach beenden SPP ändert es zurück in die originale realmlist.</value>
   </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 13</value>
+  <data name="Launcher_RandomizeBotsMethod_" xml:space="preserve">
+    <value>Update startet lags.
+Können auftreten.</value>
   </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Bot accountok:</value>
+  <data name="Launcher_RealmChange_" xml:space="preserve">
+    <value>Einige Ausnahmen: RealmChage</value>
   </data>
-  <data name="txbBotAccount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 154</value>
+  <data name="Launcher_RealmChange0_" xml:space="preserve">
+    <value>Einige Ausnahmen: RealmWrite</value>
   </data>
-  <data name="cbBots.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 19</value>
+  <data name="Launcher_RealmRestore_" xml:space="preserve">
+    <value>Einige Ausnahmen: RealmRestore</value>
   </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 22</value>
+  <data name="Launcher_RealmdStart_Starting_Realm" xml:space="preserve">
+    <value>Starte Realm</value>
   </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 13</value>
+  <data name="Launcher_RealmRestore_Restored" xml:space="preserve">
+    <value>Zurücksetzen.</value>
   </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Botok:</value>
+  <data name="Launcher_ResetBots_" xml:space="preserve">
+    <value>Neustart ist notwendig um Bots zurückzusetzen. Jetzt neustarten?</value>
   </data>
-  <data name="cbDel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 17</value>
+  <data name="Launcher_SearchProcess_" xml:space="preserve">
+    <value>Ein Mangosd Prozess ist noch aktiv.
+Möchten sie den Prozess beenden?</value>
   </data>
-  <data name="cbDel.Text" xml:space="preserve">
-    <value>Bot Accountok Törlése</value>
+  <data name="Launcher_SearchProcess_Warning" xml:space="preserve">
+    <value>Warning</value>
   </data>
-  <data name="cbJoin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 17</value>
+  <data name="Launcher_SearchProcess0_" xml:space="preserve">
+    <value>Einige Ausnahmen: Search Process</value>
   </data>
-  <data name="cbJoin.Text" xml:space="preserve">
-    <value>Botok Csatlakoznak LFG-re</value>
+  <data name="Launcher_SearchProcess2_" xml:space="preserve">
+    <value>Mysqld Prozess ist Aktiv.
+Möchten sie den Prozess beenden?</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>332, 216</value>
+  <data name="Launcher_StartAll_Starting_Mysqlm" xml:space="preserve">
+    <value>Starte Mysql</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Bot beállítások</value>
+  <data name="Launcher_startNStop_Derver_is_down" xml:space="preserve">
+    <value>Server ist heruntergefahren</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Mentés</value>
+  <data name="Launcher_startNStop_Start" xml:space="preserve">
+    <value>Start</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Bot Térképek</value>
+  <data name="Launcher_startNStop_Stop" xml:space="preserve">
+    <value>Stop</value>
   </data>
-  <data name="cbRndBotLgn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 17</value>
+  <data name="Launcher_tmrWorld_Tick_Online" xml:space="preserve">
+    <value>Online</value>
   </data>
-  <data name="cbRndBotLgn.Text" xml:space="preserve">
-    <value>Rnd Bot Csatlakozás</value>
+  <data name="Launcher_Traymsg_Ready_to_play" xml:space="preserve">
+    <value>Bereit zum spielen</value>
   </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 105</value>
+  <data name="Launcher_Traymsg_Servers_Started" xml:space="preserve">
+    <value>Server gestartet</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Egyéb</value>
+  <data name="Launcher_WorldStart_Loading_World" xml:space="preserve">
+    <value>Lade world</value>
   </data>
-  <data name="button2.Text" xml:space="preserve">
-    <value>Alapértelmezett Betöltése</value>
+  <data name="Launcher_bwExport_DoWork_Export_Accounts" xml:space="preserve">
+    <value>Export Accounts</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>356, 378</value>
+  <data name="Launcher_bwImport_DoWork_Import_Accounts" xml:space="preserve">
+    <value>Import Accounts</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
+  <data name="Launcher_bwImport_RunWorkerCompleted_Import_Completed" xml:space="preserve">
+    <value>Import komplett</value>
+  </data>
+  <data name="Launcher_Checking_Update" xml:space="preserve">
+    <value>Schaut nach update</value>
+  </data>
+  <data name="Launcher_startNStop_Online_bot__N_A" xml:space="preserve">
+    <value>Online bot: N/A</value>
   </data>
 </root>

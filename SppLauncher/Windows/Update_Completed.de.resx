@@ -117,146 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;lbl_status.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lbl_Perecent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 19</value>
+  <data name="lbl_completed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 30</value>
   </data>
-  <data name="lbl_downByte.Location" type="System.Drawing.Point, System.Drawing">
-    <value>275, 61</value>
+  <data name="lbl_completed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 18</value>
   </data>
-  <data name="&gt;&gt;gb_status.Name" xml:space="preserve">
-    <value>gb_status</value>
-  </data>
-  <data name="&gt;&gt;lbl_Perecent.Name" xml:space="preserve">
-    <value>lbl_Perecent</value>
-  </data>
-  <data name="lbl_downByte.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 13</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lbl_status.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="&gt;&gt;lbl_Perecent.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lbl_status.Text" xml:space="preserve">
-    <value>Status:</value>
-  </data>
-  <data name="lbl_speed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 61</value>
-  </data>
-  <data name="lbl_Perecent.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lbl_speed.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="lbl_status.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbl_speed.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="lbl_speed.Text" xml:space="preserve">
-    <value>Speed: N/A</value>
-  </data>
-  <data name="&gt;&gt;bw_updater.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_Perecent.Parent" xml:space="preserve">
-    <value>gb_status</value>
-  </data>
-  <data name="pb_down.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lbl_status.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="pb_down.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="lbl_downByte.Text" xml:space="preserve">
-    <value>0 / 0 Kb</value>
-  </data>
-  <data name="gb_status.Text" xml:space="preserve">
-    <value>Update Status</value>
-  </data>
-  <data name="gb_status.Size" type="System.Drawing.Size, System.Drawing">
-    <value>334, 89</value>
-  </data>
-  <data name="&gt;&gt;pb_down.Name" xml:space="preserve">
-    <value>pb_down</value>
-  </data>
-  <data name="lbl_Perecent.Text" xml:space="preserve">
-    <value>0%</value>
-  </data>
-  <data name="&gt;&gt;pb_down.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lbl_downByte.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_status.Parent" xml:space="preserve">
-    <value>gb_status</value>
-  </data>
-  <data name="pb_down.Size" type="System.Drawing.Size, System.Drawing">
-    <value>298, 24</value>
-  </data>
-  <data name="lbl_status.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 61</value>
-  </data>
-  <data name="gb_status.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="lbl_Perecent.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="gb_status.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 10</value>
-  </data>
-  <data name="&gt;&gt;lbl_speed.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pb_down.Parent" xml:space="preserve">
-    <value>gb_status</value>
-  </data>
-  <data name="&gt;&gt;pb_down.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lbl_Perecent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 13</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Update</value>
-  </data>
-  <data name="lbl_downByte.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="lbl_speed.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lbl_downByte.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lbl_speed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_downByte.Parent" xml:space="preserve">
-    <value>gb_status</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+  <data name="lbl_completed.Text" xml:space="preserve">
+    <value>Update Erfolgreisch</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -514,76 +383,7 @@
         //8AAAAAAAD//wAAAAAAAP//AAAAAAAA//8=
 </value>
   </data>
-  <data name="lbl_downByte.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="lbl_ver.Text" xml:space="preserve">
+    <value>Version:</value>
   </data>
-  <data name="gb_status.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lbl_speed.Parent" xml:space="preserve">
-    <value>gb_status</value>
-  </data>
-  <data name="lbl_Perecent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="pb_down.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 35</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Updater</value>
-  </data>
-  <data name="&gt;&gt;lbl_status.Name" xml:space="preserve">
-    <value>lbl_status</value>
-  </data>
-  <data name="&gt;&gt;gb_status.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lbl_downByte.Name" xml:space="preserve">
-    <value>lbl_downByte</value>
-  </data>
-  <data name="&gt;&gt;lbl_speed.Name" xml:space="preserve">
-    <value>lbl_speed</value>
-  </data>
-  <data name="&gt;&gt;lbl_Perecent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="gb_status.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="lbl_speed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
-  </data>
-  <data name="&gt;&gt;gb_status.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lbl_downByte.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lbl_status.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>351, 109</value>
-  </data>
-  <data name="&gt;&gt;bw_updater.Name" xml:space="preserve">
-    <value>bw_updater</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lbl_status.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
-  </data>
-  <data name="&gt;&gt;gb_status.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <metadata name="bw_updater.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>de</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

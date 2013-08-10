@@ -117,375 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="tmrRealm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="tmrWorld.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>121, 17</value>
-  </metadata>
-  <metadata name="SqlStartCheck.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>225, 17</value>
-  </metadata>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblMysql.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblMysql.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 26.25pt</value>
-  </data>
   <data name="lblMysql.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 26</value>
-  </data>
-  <data name="lblMysql.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 39</value>
-  </data>
-  <data name="lblMysql.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="lblMysql.Text" xml:space="preserve">
-    <value>Database</value>
-  </data>
-  <data name="&gt;&gt;lblMysql.Name" xml:space="preserve">
-    <value>lblMysql</value>
-  </data>
-  <data name="&gt;&gt;lblMysql.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblMysql.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;lblMysql.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="lblRealm.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblRealm.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 26.25pt</value>
+    <value>140, 26</value>
   </data>
   <data name="lblRealm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 26</value>
-  </data>
-  <data name="lblRealm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 39</value>
-  </data>
-  <data name="lblRealm.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="lblRealm.Text" xml:space="preserve">
-    <value>Realm</value>
-  </data>
-  <data name="&gt;&gt;lblRealm.Name" xml:space="preserve">
-    <value>lblRealm</value>
-  </data>
-  <data name="&gt;&gt;lblRealm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblRealm.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;lblRealm.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="lblWorld.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblWorld.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 27.75pt</value>
+    <value>311, 26</value>
   </data>
   <data name="lblWorld.Location" type="System.Drawing.Point, System.Drawing">
-    <value>392, 26</value>
-  </data>
-  <data name="lblWorld.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 42</value>
-  </data>
-  <data name="lblWorld.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="lblWorld.Text" xml:space="preserve">
-    <value>World</value>
-  </data>
-  <data name="&gt;&gt;lblWorld.Name" xml:space="preserve">
-    <value>lblWorld</value>
-  </data>
-  <data name="&gt;&gt;lblWorld.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblWorld.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;lblWorld.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="pbarWorld.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 136</value>
-  </data>
-  <data name="pbarWorld.Size" type="System.Drawing.Size, System.Drawing">
-    <value>357, 25</value>
-  </data>
-  <data name="pbarWorld.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="pbarWorld.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;pbarWorld.Name" xml:space="preserve">
-    <value>pbarWorld</value>
-  </data>
-  <data name="&gt;&gt;pbarWorld.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbarWorld.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;pbarWorld.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="pbNotAvailW.Location" type="System.Drawing.Point, System.Drawing">
-    <value>411, 64</value>
-  </data>
-  <data name="pbNotAvailW.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 60</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pbNotAvailW.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pbNotAvailW.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="&gt;&gt;pbNotAvailW.Name" xml:space="preserve">
-    <value>pbNotAvailW</value>
-  </data>
-  <data name="&gt;&gt;pbNotAvailW.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbNotAvailW.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;pbNotAvailW.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="pbNotAvailR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 64</value>
-  </data>
-  <data name="pbNotAvailR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 60</value>
-  </data>
-  <data name="pbNotAvailR.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pbNotAvailR.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;pbNotAvailR.Name" xml:space="preserve">
-    <value>pbNotAvailR</value>
-  </data>
-  <data name="&gt;&gt;pbNotAvailR.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbNotAvailR.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;pbNotAvailR.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="pbNotAvailM.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 64</value>
-  </data>
-  <data name="pbNotAvailM.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 60</value>
-  </data>
-  <data name="pbNotAvailM.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pbNotAvailM.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="&gt;&gt;pbNotAvailM.Name" xml:space="preserve">
-    <value>pbNotAvailM</value>
-  </data>
-  <data name="&gt;&gt;pbNotAvailM.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbNotAvailM.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;pbNotAvailM.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="pbTempW.Location" type="System.Drawing.Point, System.Drawing">
-    <value>411, 64</value>
-  </data>
-  <data name="pbTempW.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 60</value>
-  </data>
-  <data name="pbTempW.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pbTempW.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="&gt;&gt;pbTempW.Name" xml:space="preserve">
-    <value>pbTempW</value>
-  </data>
-  <data name="&gt;&gt;pbTempW.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbTempW.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;pbTempW.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="pbTempR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 64</value>
-  </data>
-  <data name="pbTempR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 60</value>
-  </data>
-  <data name="pbTempR.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pbTempR.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="&gt;&gt;pbTempR.Name" xml:space="preserve">
-    <value>pbTempR</value>
-  </data>
-  <data name="&gt;&gt;pbTempR.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbTempR.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;pbTempR.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="pbTempM.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 64</value>
-  </data>
-  <data name="pbTempM.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 60</value>
-  </data>
-  <data name="pbTempM.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pbTempM.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="&gt;&gt;pbTempM.Name" xml:space="preserve">
-    <value>pbTempM</value>
-  </data>
-  <data name="&gt;&gt;pbTempM.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbTempM.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;pbTempM.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="pbAvailableM.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 64</value>
-  </data>
-  <data name="pbAvailableM.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 60</value>
-  </data>
-  <data name="pbAvailableM.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pbAvailableM.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;pbAvailableM.Name" xml:space="preserve">
-    <value>pbAvailableM</value>
-  </data>
-  <data name="&gt;&gt;pbAvailableM.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbAvailableM.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;pbAvailableM.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="pbAvailableR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 62</value>
-  </data>
-  <data name="pbAvailableR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 60</value>
-  </data>
-  <data name="pbAvailableR.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pbAvailableR.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;pbAvailableR.Name" xml:space="preserve">
-    <value>pbAvailableR</value>
-  </data>
-  <data name="&gt;&gt;pbAvailableR.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbAvailableR.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;pbAvailableR.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="pbAvailableW.Location" type="System.Drawing.Point, System.Drawing">
-    <value>411, 64</value>
-  </data>
-  <data name="pbAvailableW.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 60</value>
-  </data>
-  <data name="pbAvailableW.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pbAvailableW.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;pbAvailableW.Name" xml:space="preserve">
-    <value>pbAvailableW</value>
-  </data>
-  <data name="&gt;&gt;pbAvailableW.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbAvailableW.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;pbAvailableW.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 30</value>
+    <value>459, 26</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>575, 174</value>
+    <value>717, 174</value>
   </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+  <data name="pbarWorld.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 136</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Servers</value>
+  <data name="pbNotAvailW.Location" type="System.Drawing.Point, System.Drawing">
+    <value>478, 64</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="pbNotAvailR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 64</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="pbNotAvailM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 64</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="pbTempW.Location" type="System.Drawing.Point, System.Drawing">
+    <value>478, 64</value>
   </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="pbTempR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 64</value>
   </data>
-  <metadata name="SppTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>352, 17</value>
-  </metadata>
+  <data name="pbTempM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 64</value>
+  </data>
+  <data name="pbAvailableM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 64</value>
+  </data>
+  <data name="pbAvailableR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 62</value>
+  </data>
+  <data name="pbAvailableW.Location" type="System.Drawing.Point, System.Drawing">
+    <value>478, 64</value>
+  </data>
   <data name="SppTray.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAUAEBAAAAAAIABoBAAAVgAAACAgAAAAACAAqBAAAL4EAAAwMAAAAAAgAKglAABmFQAAQEAAAAAA
@@ -2152,644 +1826,171 @@
         AAAAAAAAAAAAAAAAAAAAAAAA
 </value>
   </data>
-  <data name="SppTray.Text" xml:space="preserve">
-    <value>Single Player Project</value>
+  <data name="msForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>741, 24</value>
   </data>
-  <metadata name="cmsTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>448, 17</value>
-  </metadata>
-  <data name="showToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 22</value>
-  </data>
-  <data name="showToolStripMenuItem.Text" xml:space="preserve">
-    <value>Show</value>
-  </data>
-  <data name="startWowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 22</value>
-  </data>
-  <data name="startWowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Start World of Warcraft</value>
-  </data>
-  <data name="worldSettingsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="worldSettingsToolStripMenuItem1.Text" xml:space="preserve">
-    <value>World Settings</value>
-  </data>
-  <data name="botSettingsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="botSettingsToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Bot Settings</value>
-  </data>
-  <data name="changeWoWPathToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="changeWoWPathToolStripMenuItem.Text" xml:space="preserve">
-    <value>Change WoW Path</value>
-  </data>
-  <data name="resetBotsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="resetBotsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Reset bots</value>
-  </data>
-  <data name="randomizeBotsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="randomizeBotsToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Randomize bots</value>
-  </data>
-  <data name="exportToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
-  </data>
-  <data name="exportToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Export</value>
-  </data>
-  <data name="importToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
-  </data>
-  <data name="importToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Import</value>
-  </data>
-  <data name="exportImportCharactersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="exportImportCharactersToolStripMenuItem.Text" xml:space="preserve">
-    <value>Export/Import Characters</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 22</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="lanSwitcherToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="lanSwitcherToolStripMenuItem.Text" xml:space="preserve">
-    <value>Lan Switcher</value>
-  </data>
-  <data name="accountToolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="accountToolToolStripMenuItem.Text" xml:space="preserve">
-    <value>Account Tool</value>
-  </data>
-  <data name="accountToolAdvancedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="accountToolAdvancedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Account Tool(Advanced)</value>
-  </data>
-  <data name="toolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 22</value>
-  </data>
-  <data name="toolToolStripMenuItem.Text" xml:space="preserve">
-    <value>Tools</value>
-  </data>
-  <data name="startToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
-  </data>
-  <data name="startToolStripMenuItem.Text" xml:space="preserve">
-    <value>Start</value>
-  </data>
-  <data name="restartToolStripMenuItem2.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="restartToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
-  </data>
-  <data name="restartToolStripMenuItem2.Text" xml:space="preserve">
-    <value>Restart</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 6</value>
-  </data>
-  <data name="autorunToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
-  </data>
-  <data name="autorunToolStripMenuItem.Text" xml:space="preserve">
-    <value>Autostart</value>
-  </data>
-  <data name="ServersStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 22</value>
-  </data>
-  <data name="ServersStripMenuItem.Text" xml:space="preserve">
-    <value>Servers</value>
-  </data>
-  <data name="reportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 22</value>
-  </data>
-  <data name="reportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Report Bug</value>
-  </data>
-  <data name="aboutToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 22</value>
-  </data>
-  <data name="aboutToolStripMenuItem1.Text" xml:space="preserve">
-    <value>About</value>
-  </data>
-  <data name="exitToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 22</value>
-  </data>
-  <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
-  <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 180</value>
-  </data>
-  <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
-    <value>cmsTray</value>
-  </data>
-  <data name="&gt;&gt;cmsTray.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <metadata name="CheckWowRun.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>544, 17</value>
-  </metadata>
-  <metadata name="GetSqlOnlineBot.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>678, 17</value>
-  </metadata>
-  <data name="txbWorldDev.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="txbWorldDev.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 365</value>
-  </data>
-  <data name="txbWorldDev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>495, 20</value>
-  </data>
-  <data name="txbWorldDev.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="&gt;&gt;txbWorldDev.Name" xml:space="preserve">
-    <value>txbWorldDev</value>
-  </data>
-  <data name="&gt;&gt;txbWorldDev.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txbWorldDev.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txbWorldDev.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="rtWorldDev.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="rtWorldDev.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 207</value>
-  </data>
-  <data name="rtWorldDev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>495, 159</value>
-  </data>
-  <data name="rtWorldDev.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="rtWorldDev.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;rtWorldDev.Name" xml:space="preserve">
-    <value>rtWorldDev</value>
-  </data>
-  <data name="&gt;&gt;rtWorldDev.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rtWorldDev.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;rtWorldDev.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <metadata name="msForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1024, 17</value>
-  </metadata>
   <data name="runWoWToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 20</value>
+    <value>104, 20</value>
   </data>
   <data name="runWoWToolStripMenuItem.Text" xml:space="preserve">
-    <value>Run WoW</value>
+    <value>WoW Starten</value>
+  </data>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 20</value>
+  </data>
+  <data name="toolStripMenuItem1.Text" xml:space="preserve">
+    <value>Einstellungen</value>
   </data>
   <data name="worldSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>202, 22</value>
   </data>
   <data name="worldSettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>World Settings</value>
+    <value>World Einstellungen</value>
   </data>
   <data name="botSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>202, 22</value>
   </data>
   <data name="botSettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Bot Settings</value>
+    <value>Bot Einstellungen</value>
   </data>
   <data name="changeWoWPathToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>202, 22</value>
   </data>
   <data name="changeWoWPathToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Change WoW Path</value>
+    <value>Ändere WoW Pfad</value>
   </data>
   <data name="resetAllRandomBotsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>202, 22</value>
   </data>
   <data name="resetAllRandomBotsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Reset Bots</value>
+    <value>Bot neustarten</value>
   </data>
   <data name="randomizeBotsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>202, 22</value>
   </data>
   <data name="randomizeBotsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Randomize Bots</value>
-  </data>
-  <data name="exportToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
-  </data>
-  <data name="exportToolStripMenuItem2.Text" xml:space="preserve">
-    <value>Export</value>
-  </data>
-  <data name="importToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
-  </data>
-  <data name="importToolStripMenuItem2.Text" xml:space="preserve">
-    <value>Import</value>
+    <value>Bots randomisieren</value>
   </data>
   <data name="exportCharactersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>202, 22</value>
   </data>
   <data name="exportCharactersToolStripMenuItem.Text" xml:space="preserve">
-    <value>Export/Import Characters</value>
+    <value>Charakter Export/Import</value>
+  </data>
+  <data name="exportToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="importToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 22</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sprache</value>
   </data>
   <data name="magyarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
   <data name="magyarToolStripMenuItem.Text" xml:space="preserve">
-    <value>Hungary</value>
+    <value>Ungarisch</value>
   </data>
   <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
   <data name="englishToolStripMenuItem.Text" xml:space="preserve">
-    <value>English</value>
+    <value>Englisch</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="germanToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="germanToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
   <data name="germanToolStripMenuItem.Text" xml:space="preserve">
-    <value>German</value>
-  </data>
-  <data name="frenchToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>Deutsch</value>
   </data>
   <data name="frenchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
   <data name="frenchToolStripMenuItem.Text" xml:space="preserve">
-    <value>French</value>
-  </data>
-  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Language</value>
-  </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 20</value>
-  </data>
-  <data name="toolStripMenuItem1.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="lanSwitcherToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 22</value>
-  </data>
-  <data name="lanSwitcherToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Lan Switcher</value>
-  </data>
-  <data name="accountToolToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 22</value>
-  </data>
-  <data name="accountToolToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Account Tool</value>
+    <value>Französisch</value>
   </data>
   <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
+    <value>93, 20</value>
   </data>
   <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Tools</value>
+    <value>Werkzeuge</value>
   </data>
-  <data name="startstopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+  <data name="lanSwitcherToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 22</value>
   </data>
-  <data name="startstopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Start</value>
+  <data name="lanSwitcherToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Lan wechsler</value>
   </data>
-  <data name="restartToolStripMenuItem1.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="accountToolToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 22</value>
   </data>
-  <data name="restartToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
-  </data>
-  <data name="restartToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Restart</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 6</value>
-  </data>
-  <data name="autostartToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
-  </data>
-  <data name="autostartToolStripMenuItem.Text" xml:space="preserve">
-    <value>Autostart</value>
+  <data name="accountToolToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Account funktion</value>
   </data>
   <data name="restartToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 20</value>
+    <value>67, 20</value>
   </data>
   <data name="restartToolStripMenuItem.Text" xml:space="preserve">
-    <value>Servers</value>
+    <value>Server</value>
+  </data>
+  <data name="startstopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="restartToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="restartToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Neustart</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 6</value>
+  </data>
+  <data name="autostartToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="autostartToolStripMenuItem.Text" xml:space="preserve">
+    <value>Automatischer start</value>
   </data>
   <data name="reportBugToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 20</value>
+    <value>109, 20</value>
   </data>
   <data name="reportBugToolStripMenuItem.Text" xml:space="preserve">
-    <value>Report Bug</value>
+    <value>Bug Berichten</value>
   </data>
   <data name="tsmHelpUs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
+    <value>115, 20</value>
   </data>
   <data name="tsmHelpUs.Text" xml:space="preserve">
-    <value>Help us</value>
+    <value>Unterstützt uns</value>
   </data>
   <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 20</value>
+    <value>60, 20</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>About</value>
+    <value>Über</value>
   </data>
   <data name="exitToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 20</value>
+    <value>81, 20</value>
   </data>
   <data name="exitToolStripMenuItem2.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
-  <data name="msForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="msForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>599, 24</value>
-  </data>
-  <data name="msForm.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="msForm.Text" xml:space="preserve">
-    <value>Menu</value>
-  </data>
-  <data name="&gt;&gt;msForm.Name" xml:space="preserve">
-    <value>msForm</value>
-  </data>
-  <data name="&gt;&gt;msForm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;msForm.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;msForm.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <metadata name="ssBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>820, 17</value>
-  </metadata>
-  <data name="tssLOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 17</value>
-  </data>
-  <data name="tssLOnline.Text" xml:space="preserve">
-    <value>Online bot: N/A</value>
-  </data>
-  <data name="tssLOnline.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tssUsage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>454, 17</value>
-  </data>
-  <data name="tssUsage.Text" xml:space="preserve">
-    <value>                      </value>
-  </data>
-  <data name="tssUsage.ToolTipText" xml:space="preserve">
-    <value>lol</value>
-  </data>
-  <data name="tssStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 17</value>
-  </data>
-  <data name="tssStatus.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="tssStatus.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="tssStatus.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>TextBeforeImage</value>
-  </data>
-  <data name="ssBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 414</value>
+    <value>Beenden</value>
   </data>
   <data name="ssBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>599, 22</value>
+    <value>741, 22</value>
   </data>
-  <data name="ssBar.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="ssBar.Text" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="&gt;&gt;ssBar.Name" xml:space="preserve">
-    <value>ssBar</value>
-  </data>
-  <data name="&gt;&gt;ssBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ssBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ssBar.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="progressBar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>50, 138</value>
-  </data>
-  <data name="progressBar1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 18</value>
-  </data>
-  <data name="progressBar1.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="progressBar1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;progressBar1.Name" xml:space="preserve">
-    <value>progressBar1</value>
-  </data>
-  <data name="&gt;&gt;progressBar1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <metadata name="SrvAnnounce.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>900, 17</value>
-  </metadata>
-  <data name="lblWorldStartTime.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblWorldStartTime.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="lblWorldStartTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 388</value>
-  </data>
-  <data name="lblWorldStartTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 18</value>
-  </data>
-  <data name="lblWorldStartTime.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="lblWorldStartTime.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblWorldStartTime.Name" xml:space="preserve">
-    <value>lblWorldStartTime</value>
-  </data>
-  <data name="&gt;&gt;lblWorldStartTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblWorldStartTime.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblWorldStartTime.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblRealmStartTime.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblRealmStartTime.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="lblRealmStartTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 388</value>
-  </data>
-  <data name="lblRealmStartTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 18</value>
-  </data>
-  <data name="lblRealmStartTime.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="lblRealmStartTime.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblRealmStartTime.Name" xml:space="preserve">
-    <value>lblRealmStartTime</value>
-  </data>
-  <data name="&gt;&gt;lblRealmStartTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblRealmStartTime.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblRealmStartTime.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblSqlStartTime.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSqlStartTime.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="lblSqlStartTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 388</value>
-  </data>
-  <data name="lblSqlStartTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 18</value>
-  </data>
-  <data name="lblSqlStartTime.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="lblSqlStartTime.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblSqlStartTime.Name" xml:space="preserve">
-    <value>lblSqlStartTime</value>
-  </data>
-  <data name="&gt;&gt;lblSqlStartTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSqlStartTime.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblSqlStartTime.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="CheckMangosCrashed.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1120, 17</value>
-  </metadata>
-  <metadata name="bwUpdate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1293, 17</value>
-  </metadata>
-  <metadata name="UpdateCompleteChecker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
-  <metadata name="StatusBarUpdater.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>289, 56</value>
-  </metadata>
-  <data name="richTextBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 207</value>
-  </data>
-  <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 96</value>
-  </data>
-  <data name="richTextBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="richTextBox1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.Name" xml:space="preserve">
-    <value>richTextBox1</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="Check.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>205, 56</value>
-  </metadata>
-  <metadata name="rstchck.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>436, 56</value>
-  </metadata>
-  <metadata name="bwImport.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>526, 56</value>
-  </metadata>
-  <metadata name="bwExport.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>631, 56</value>
-  </metadata>
-  <metadata name="tmrUsage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>734, 56</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>hu</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>146</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="tssUsage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>596, 17</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>599, 436</value>
+    <value>741, 436</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4457,430 +3658,7 @@
         AAAAAAAAAAAAAAAAAAAAAAAA
 </value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Single Player Project</value>
-  </data>
-  <data name="&gt;&gt;tmrRealm.Name" xml:space="preserve">
-    <value>tmrRealm</value>
-  </data>
-  <data name="&gt;&gt;tmrRealm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tmrWorld.Name" xml:space="preserve">
-    <value>tmrWorld</value>
-  </data>
-  <data name="&gt;&gt;tmrWorld.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SqlStartCheck.Name" xml:space="preserve">
-    <value>SqlStartCheck</value>
-  </data>
-  <data name="&gt;&gt;SqlStartCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SppTray.Name" xml:space="preserve">
-    <value>SppTray</value>
-  </data>
-  <data name="&gt;&gt;SppTray.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;showToolStripMenuItem.Name" xml:space="preserve">
-    <value>showToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;showToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startWowToolStripMenuItem.Name" xml:space="preserve">
-    <value>startWowToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;startWowToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;settingsToolStripMenuItem.Name" xml:space="preserve">
-    <value>settingsToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;settingsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;worldSettingsToolStripMenuItem1.Name" xml:space="preserve">
-    <value>worldSettingsToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;worldSettingsToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;botSettingsToolStripMenuItem1.Name" xml:space="preserve">
-    <value>botSettingsToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;botSettingsToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;changeWoWPathToolStripMenuItem.Name" xml:space="preserve">
-    <value>changeWoWPathToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;changeWoWPathToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;resetBotsToolStripMenuItem.Name" xml:space="preserve">
-    <value>resetBotsToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;resetBotsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;randomizeBotsToolStripMenuItem1.Name" xml:space="preserve">
-    <value>randomizeBotsToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;randomizeBotsToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;exportImportCharactersToolStripMenuItem.Name" xml:space="preserve">
-    <value>exportImportCharactersToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;exportImportCharactersToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;exportToolStripMenuItem1.Name" xml:space="preserve">
-    <value>exportToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;exportToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;importToolStripMenuItem1.Name" xml:space="preserve">
-    <value>importToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;importToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolToolStripMenuItem.Name" xml:space="preserve">
-    <value>toolToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;toolToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lanSwitcherToolStripMenuItem.Name" xml:space="preserve">
-    <value>lanSwitcherToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;lanSwitcherToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;accountToolToolStripMenuItem.Name" xml:space="preserve">
-    <value>accountToolToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;accountToolToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;accountToolAdvancedToolStripMenuItem.Name" xml:space="preserve">
-    <value>accountToolAdvancedToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;accountToolAdvancedToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ServersStripMenuItem.Name" xml:space="preserve">
-    <value>ServersStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;ServersStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startToolStripMenuItem.Name" xml:space="preserve">
-    <value>startToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;startToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;restartToolStripMenuItem2.Name" xml:space="preserve">
-    <value>restartToolStripMenuItem2</value>
-  </data>
-  <data name="&gt;&gt;restartToolStripMenuItem2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
-    <value>toolStripSeparator2</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;autorunToolStripMenuItem.Name" xml:space="preserve">
-    <value>autorunToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;autorunToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;reportToolStripMenuItem.Name" xml:space="preserve">
-    <value>reportToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;reportToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;aboutToolStripMenuItem1.Name" xml:space="preserve">
-    <value>aboutToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;aboutToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;exitToolStripMenuItem1.Name" xml:space="preserve">
-    <value>exitToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;exitToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CheckWowRun.Name" xml:space="preserve">
-    <value>CheckWowRun</value>
-  </data>
-  <data name="&gt;&gt;CheckWowRun.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GetSqlOnlineBot.Name" xml:space="preserve">
-    <value>GetSqlOnlineBot</value>
-  </data>
-  <data name="&gt;&gt;GetSqlOnlineBot.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;runWoWToolStripMenuItem.Name" xml:space="preserve">
-    <value>runWoWToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;runWoWToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
-    <value>toolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;worldSettingsToolStripMenuItem.Name" xml:space="preserve">
-    <value>worldSettingsToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;worldSettingsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;botSettingsToolStripMenuItem.Name" xml:space="preserve">
-    <value>botSettingsToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;botSettingsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;changeWoWPathToolStripMenuItem1.Name" xml:space="preserve">
-    <value>changeWoWPathToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;changeWoWPathToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;resetAllRandomBotsToolStripMenuItem.Name" xml:space="preserve">
-    <value>resetAllRandomBotsToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;resetAllRandomBotsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;randomizeBotsToolStripMenuItem.Name" xml:space="preserve">
-    <value>randomizeBotsToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;randomizeBotsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;exportCharactersToolStripMenuItem.Name" xml:space="preserve">
-    <value>exportCharactersToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;exportCharactersToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;exportToolStripMenuItem2.Name" xml:space="preserve">
-    <value>exportToolStripMenuItem2</value>
-  </data>
-  <data name="&gt;&gt;exportToolStripMenuItem2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;importToolStripMenuItem2.Name" xml:space="preserve">
-    <value>importToolStripMenuItem2</value>
-  </data>
-  <data name="&gt;&gt;importToolStripMenuItem2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;languageToolStripMenuItem.Name" xml:space="preserve">
-    <value>languageToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;languageToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;magyarToolStripMenuItem.Name" xml:space="preserve">
-    <value>magyarToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;magyarToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;englishToolStripMenuItem.Name" xml:space="preserve">
-    <value>englishToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;englishToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;germanToolStripMenuItem.Name" xml:space="preserve">
-    <value>germanToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;germanToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;frenchToolStripMenuItem.Name" xml:space="preserve">
-    <value>frenchToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;frenchToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolsToolStripMenuItem.Name" xml:space="preserve">
-    <value>toolsToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;toolsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lanSwitcherToolStripMenuItem1.Name" xml:space="preserve">
-    <value>lanSwitcherToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;lanSwitcherToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;accountToolToolStripMenuItem1.Name" xml:space="preserve">
-    <value>accountToolToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;accountToolToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;restartToolStripMenuItem.Name" xml:space="preserve">
-    <value>restartToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;restartToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startstopToolStripMenuItem.Name" xml:space="preserve">
-    <value>startstopToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;startstopToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;restartToolStripMenuItem1.Name" xml:space="preserve">
-    <value>restartToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;restartToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;autostartToolStripMenuItem.Name" xml:space="preserve">
-    <value>autostartToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;autostartToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;reportBugToolStripMenuItem.Name" xml:space="preserve">
-    <value>reportBugToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;reportBugToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmHelpUs.Name" xml:space="preserve">
-    <value>tsmHelpUs</value>
-  </data>
-  <data name="&gt;&gt;tsmHelpUs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;aboutToolStripMenuItem.Name" xml:space="preserve">
-    <value>aboutToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;aboutToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;exitToolStripMenuItem2.Name" xml:space="preserve">
-    <value>exitToolStripMenuItem2</value>
-  </data>
-  <data name="&gt;&gt;exitToolStripMenuItem2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tssLOnline.Name" xml:space="preserve">
-    <value>tssLOnline</value>
-  </data>
-  <data name="&gt;&gt;tssLOnline.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tssUsage.Name" xml:space="preserve">
-    <value>tssUsage</value>
-  </data>
-  <data name="&gt;&gt;tssUsage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tssStatus.Name" xml:space="preserve">
-    <value>tssStatus</value>
-  </data>
-  <data name="&gt;&gt;tssStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SrvAnnounce.Name" xml:space="preserve">
-    <value>SrvAnnounce</value>
-  </data>
-  <data name="&gt;&gt;SrvAnnounce.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CheckMangosCrashed.Name" xml:space="preserve">
-    <value>CheckMangosCrashed</value>
-  </data>
-  <data name="&gt;&gt;CheckMangosCrashed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bwUpdate.Name" xml:space="preserve">
-    <value>bwUpdate</value>
-  </data>
-  <data name="&gt;&gt;bwUpdate.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UpdateCompleteChecker.Name" xml:space="preserve">
-    <value>UpdateCompleteChecker</value>
-  </data>
-  <data name="&gt;&gt;UpdateCompleteChecker.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StatusBarUpdater.Name" xml:space="preserve">
-    <value>StatusBarUpdater</value>
-  </data>
-  <data name="&gt;&gt;StatusBarUpdater.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Check.Name" xml:space="preserve">
-    <value>Check</value>
-  </data>
-  <data name="&gt;&gt;Check.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rstchck.Name" xml:space="preserve">
-    <value>rstchck</value>
-  </data>
-  <data name="&gt;&gt;rstchck.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bwImport.Name" xml:space="preserve">
-    <value>bwImport</value>
-  </data>
-  <data name="&gt;&gt;bwImport.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bwExport.Name" xml:space="preserve">
-    <value>bwExport</value>
-  </data>
-  <data name="&gt;&gt;bwExport.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tmrUsage.Name" xml:space="preserve">
-    <value>tmrUsage</value>
-  </data>
-  <data name="&gt;&gt;tmrUsage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Launcher</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Single Player Projekt</value>
   </data>
 </root>

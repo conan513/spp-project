@@ -118,134 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="txbMinbot.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 46</value>
+  <data name="btnApply.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 93</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 49</value>
+  <data name="btnApply.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 22</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 13</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Min botok:</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 79</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Max botok:</value>
-  </data>
-  <data name="txbMaxBot.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 76</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 105</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 13</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Min botok/intervallum:</value>
-  </data>
-  <data name="txbMinBotInter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 102</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 131</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 13</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Max botok/intervallum:</value>
-  </data>
-  <data name="txbMaxBotInter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 128</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 183</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 13</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Frissítési intervallum:</value>
-  </data>
-  <data name="txbUpdateInter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 180</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>84, 157</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 13</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Bot accountok:</value>
-  </data>
-  <data name="txbBotAccount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 154</value>
-  </data>
-  <data name="cbBots.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 19</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 22</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 13</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Botok:</value>
-  </data>
-  <data name="cbDel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 17</value>
-  </data>
-  <data name="cbDel.Text" xml:space="preserve">
-    <value>Bot Accountok Törlése</value>
-  </data>
-  <data name="cbJoin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 17</value>
-  </data>
-  <data name="cbJoin.Text" xml:space="preserve">
-    <value>Botok Csatlakoznak LFG-re</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>332, 216</value>
+  <data name="btnApply.Text" xml:space="preserve">
+    <value>Einverstanden</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Bot beállítások</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Mentés</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Bot Térképek</value>
-  </data>
-  <data name="cbRndBotLgn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 17</value>
-  </data>
-  <data name="cbRndBotLgn.Text" xml:space="preserve">
-    <value>Rnd Bot Csatlakozás</value>
-  </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 105</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Egyéb</value>
-  </data>
-  <data name="button2.Text" xml:space="preserve">
-    <value>Alapértelmezett Betöltése</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>356, 378</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
+    <value>Wechsel</value>
   </data>
 </root>

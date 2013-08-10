@@ -130,8 +130,20 @@
   <data name="lbl_LocalV.Location" type="System.Drawing.Point, System.Drawing">
     <value>143, 20</value>
   </data>
+  <data name="lbl_LocalV.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 15</value>
+  </data>
+  <data name="lbl_LocalV.Text" xml:space="preserve">
+    <value>Töltés...</value>
+  </data>
   <data name="lblLocalemu.Location" type="System.Drawing.Point, System.Drawing">
     <value>143, 35</value>
+  </data>
+  <data name="lblLocalemu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 15</value>
+  </data>
+  <data name="lblLocalemu.Text" xml:space="preserve">
+    <value>Töltés...</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 35</value>
@@ -172,5 +184,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Programról</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>Conan513</value>
   </data>
 </root>
