@@ -91,6 +91,12 @@
     <Compile Include="Windows\BugReport.Designer.cs">
       <DependentUpon>BugReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\HelpUsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,9 +151,6 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
     <EmbeddedResource Include="Properties\Resources.hu.resx" />
-    <EmbeddedResource Include="Windows\AboutBox.af.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Windows\AboutBox.de.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,9 +159,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\BotConf.af.resx">
-      <DependentUpon>BotConf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\BotConf.de.resx">
       <DependentUpon>BotConf.cs</DependentUpon>
@@ -177,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\BugReport.resx">
       <DependentUpon>BugReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\HelpUsWindow.de.resx">
       <DependentUpon>HelpUsWindow.cs</DependentUpon>
@@ -319,6 +322,7 @@
     <None Include="Resources\search_animation.gif" />
     <None Include="Resources\hu.png" />
     <None Include="Resources\us.png" />
+    <None Include="Resources\flat-27406_640.png" />
     <Content Include="Resources\wow_cataclysm_icon_by_versewastaken-d30rcse.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

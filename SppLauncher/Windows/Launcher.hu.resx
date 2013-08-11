@@ -1844,20 +1844,53 @@
   <data name="startWowToolStripMenuItem.Text" xml:space="preserve">
     <value>World of Warcraft Indítása</value>
   </data>
+  <data name="worldSettingsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
   <data name="worldSettingsToolStripMenuItem1.Text" xml:space="preserve">
     <value>Világ Beállítások</value>
+  </data>
+  <data name="botSettingsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="botSettingsToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Bot Beállítások</value>
+  </data>
+  <data name="changeWoWPathToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="changeWoWPathToolStripMenuItem.Text" xml:space="preserve">
+    <value>WoW Útvonal Megváltoztatása</value>
+  </data>
+  <data name="resetBotsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
   </data>
   <data name="resetBotsToolStripMenuItem.Text" xml:space="preserve">
     <value>Bot Reset</value>
   </data>
+  <data name="randomizeBotsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
   <data name="randomizeBotsToolStripMenuItem1.Text" xml:space="preserve">
     <value>Botok Randomizálása</value>
+  </data>
+  <data name="exportImportCharactersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="exportImportCharactersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Karakter Export/Import</value>
   </data>
   <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Beállítások</value>
+  </data>
+  <data name="lanSwitcherToolStripMenuItem.Text" xml:space="preserve">
+    <value>IP Cserélő</value>
+  </data>
+  <data name="accountToolToolStripMenuItem.Text" xml:space="preserve">
+    <value>Account Készítő</value>
   </data>
   <data name="toolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1866,19 +1899,22 @@
     <value>Eszközök</value>
   </data>
   <data name="startToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="restartToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="restartToolStripMenuItem2.Text" xml:space="preserve">
     <value>Újraindítás</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="autorunToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>180, 22</value>
+  </data>
+  <data name="autorunToolStripMenuItem.Text" xml:space="preserve">
+    <value>Automatikus Indítás</value>
   </data>
   <data name="ServersStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1897,6 +1933,9 @@
   </data>
   <data name="exitToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Kilépés</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 180</value>
@@ -1955,17 +1994,17 @@
   <data name="englishToolStripMenuItem.Text" xml:space="preserve">
     <value>Angol</value>
   </data>
-  <data name="frenchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 22</value>
-  </data>
-  <data name="frenchToolStripMenuItem.Text" xml:space="preserve">
-    <value>Francia</value>
-  </data>
   <data name="germanToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 22</value>
   </data>
   <data name="germanToolStripMenuItem.Text" xml:space="preserve">
     <value>Német</value>
+  </data>
+  <data name="frenchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 22</value>
+  </data>
+  <data name="frenchToolStripMenuItem.Text" xml:space="preserve">
+    <value>Francia</value>
   </data>
   <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 22</value>
@@ -3722,26 +3761,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Single Player Projekt</value>
-  </data>
-  <data name="accountToolToolStripMenuItem.Text" xml:space="preserve">
-    <value>Account Készítő</value>
-  </data>
-  <data name="autorunToolStripMenuItem.Text" xml:space="preserve">
-    <value>Automatikus Indítás</value>
-  </data>
-  <data name="botSettingsToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Bot Beállítások</value>
-  </data>
-  <data name="changeWoWPathToolStripMenuItem.Text" xml:space="preserve">
-    <value>WoW Útvonal Megváltoztatása</value>
-  </data>
-  <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Kilépés</value>
-  </data>
-  <data name="exportImportCharactersToolStripMenuItem.Text" xml:space="preserve">
-    <value>Karakter Export/Import</value>
-  </data>
-  <data name="lanSwitcherToolStripMenuItem.Text" xml:space="preserve">
-    <value>IP Cserélő</value>
   </data>
 </root>

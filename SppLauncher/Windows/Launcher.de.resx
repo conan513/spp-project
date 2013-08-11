@@ -127,9 +127,6 @@
   <data name="lblWorld.Location" type="System.Drawing.Point, System.Drawing">
     <value>459, 26</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>717, 174</value>
-  </data>
   <data name="pbarWorld.Location" type="System.Drawing.Point, System.Drawing">
     <value>181, 136</value>
   </data>
@@ -159,6 +156,9 @@
   </data>
   <data name="pbAvailableW.Location" type="System.Drawing.Point, System.Drawing">
     <value>478, 64</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>717, 174</value>
   </data>
   <data name="SppTray.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1826,20 +1826,128 @@
         AAAAAAAAAAAAAAAAAAAAAAAA
 </value>
   </data>
-  <data name="msForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>741, 24</value>
+  <data name="showToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 22</value>
+  </data>
+  <data name="showToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zeigen</value>
+  </data>
+  <data name="startWowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 22</value>
+  </data>
+  <data name="startWowToolStripMenuItem.Text" xml:space="preserve">
+    <value>WoW Starten</value>
+  </data>
+  <data name="worldSettingsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 22</value>
+  </data>
+  <data name="worldSettingsToolStripMenuItem1.Text" xml:space="preserve">
+    <value>World Einstellungen</value>
+  </data>
+  <data name="botSettingsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 22</value>
+  </data>
+  <data name="botSettingsToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Bot Einstellungen</value>
+  </data>
+  <data name="changeWoWPathToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 22</value>
+  </data>
+  <data name="changeWoWPathToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ändere WoW Pfad</value>
+  </data>
+  <data name="resetBotsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 22</value>
+  </data>
+  <data name="resetBotsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bot Neustarten</value>
+  </data>
+  <data name="randomizeBotsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 22</value>
+  </data>
+  <data name="randomizeBotsToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Bots Randomisieren</value>
+  </data>
+  <data name="exportImportCharactersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 22</value>
+  </data>
+  <data name="exportImportCharactersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Charakter Export/Import</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 22</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="lanSwitcherToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 22</value>
+  </data>
+  <data name="lanSwitcherToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lan wechsler</value>
+  </data>
+  <data name="accountToolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 22</value>
+  </data>
+  <data name="accountToolToolStripMenuItem.Text" xml:space="preserve">
+    <value>Account funktion</value>
+  </data>
+  <data name="toolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 22</value>
+  </data>
+  <data name="toolToolStripMenuItem.Text" xml:space="preserve">
+    <value>Werkzeuge</value>
+  </data>
+  <data name="startToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="restartToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="restartToolStripMenuItem2.Text" xml:space="preserve">
+    <value>Neustart</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 6</value>
+  </data>
+  <data name="autorunToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 22</value>
+  </data>
+  <data name="autorunToolStripMenuItem.Text" xml:space="preserve">
+    <value>Automatischer start</value>
+  </data>
+  <data name="ServersStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 22</value>
+  </data>
+  <data name="ServersStripMenuItem.Text" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="reportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 22</value>
+  </data>
+  <data name="reportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bug Berichten</value>
+  </data>
+  <data name="aboutToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 22</value>
+  </data>
+  <data name="aboutToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="exitToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Beeden</value>
+  </data>
+  <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 180</value>
   </data>
   <data name="runWoWToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 20</value>
   </data>
   <data name="runWoWToolStripMenuItem.Text" xml:space="preserve">
     <value>WoW Starten</value>
-  </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 20</value>
-  </data>
-  <data name="toolStripMenuItem1.Text" xml:space="preserve">
-    <value>Einstellungen</value>
   </data>
   <data name="worldSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 22</value>
@@ -1863,13 +1971,13 @@
     <value>202, 22</value>
   </data>
   <data name="resetAllRandomBotsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Bot neustarten</value>
+    <value>Bot Neustarten</value>
   </data>
   <data name="randomizeBotsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 22</value>
   </data>
   <data name="randomizeBotsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Bots randomisieren</value>
+    <value>Bots Randomisieren</value>
   </data>
   <data name="exportCharactersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 22</value>
@@ -1877,11 +1985,29 @@
   <data name="exportCharactersToolStripMenuItem.Text" xml:space="preserve">
     <value>Charakter Export/Import</value>
   </data>
-  <data name="exportToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="magyarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 22</value>
   </data>
-  <data name="importToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="magyarToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ungarisch</value>
+  </data>
+  <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 22</value>
+  </data>
+  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
+    <value>Englisch</value>
+  </data>
+  <data name="germanToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 22</value>
+  </data>
+  <data name="germanToolStripMenuItem.Text" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="frenchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 22</value>
+  </data>
+  <data name="frenchToolStripMenuItem.Text" xml:space="preserve">
+    <value>Französisch</value>
   </data>
   <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 22</value>
@@ -1889,39 +2015,11 @@
   <data name="languageToolStripMenuItem.Text" xml:space="preserve">
     <value>Sprache</value>
   </data>
-  <data name="magyarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 20</value>
   </data>
-  <data name="magyarToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ungarisch</value>
-  </data>
-  <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
-    <value>Englisch</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="germanToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="germanToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="germanToolStripMenuItem.Text" xml:space="preserve">
-    <value>Deutsch</value>
-  </data>
-  <data name="frenchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="frenchToolStripMenuItem.Text" xml:space="preserve">
-    <value>Französisch</value>
-  </data>
-  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 20</value>
-  </data>
-  <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Werkzeuge</value>
+  <data name="toolStripMenuItem1.Text" xml:space="preserve">
+    <value>Einstellungen</value>
   </data>
   <data name="lanSwitcherToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 22</value>
@@ -1935,11 +2033,11 @@
   <data name="accountToolToolStripMenuItem1.Text" xml:space="preserve">
     <value>Account funktion</value>
   </data>
-  <data name="restartToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 20</value>
+  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 20</value>
   </data>
-  <data name="restartToolStripMenuItem.Text" xml:space="preserve">
-    <value>Server</value>
+  <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Werkzeuge</value>
   </data>
   <data name="startstopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
@@ -1958,6 +2056,12 @@
   </data>
   <data name="autostartToolStripMenuItem.Text" xml:space="preserve">
     <value>Automatischer start</value>
+  </data>
+  <data name="restartToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 20</value>
+  </data>
+  <data name="restartToolStripMenuItem.Text" xml:space="preserve">
+    <value>Server</value>
   </data>
   <data name="reportBugToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 20</value>
@@ -1983,11 +2087,14 @@
   <data name="exitToolStripMenuItem2.Text" xml:space="preserve">
     <value>Beenden</value>
   </data>
-  <data name="ssBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>741, 22</value>
+  <data name="msForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>741, 24</value>
   </data>
   <data name="tssUsage.Size" type="System.Drawing.Size, System.Drawing">
     <value>596, 17</value>
+  </data>
+  <data name="ssBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>741, 22</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>741, 436</value>

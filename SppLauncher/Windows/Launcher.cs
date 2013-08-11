@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
+using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Reflection;
@@ -24,63 +25,48 @@ namespace SppLauncher
     {
         #region Variable
 
-        public static string wowExePath,
-                             WowFolderPath,
-                             wowVersion,
-                             ipAdress,
-                             online,
-                             resetBots,
-                             randomizeBots,
-                             realmListPath,
-                             realmDialogPath,
-                             OLDrealmList,
-                             UpdLink,
-                             importFile,importFolder,
-                             exportfile,exportFolder,
-                             autostart;
+        public static string wowExePath, ipAdress,
+                             online,resetBots,
+                             randomizeBots,realmListPath,
+                             realmDialogPath,OLDrealmList,
+                             UpdLink,importFile,importFolder,
+                             exportfile,exportFolder,autostart,
+                             RemoteProgVer, currProgVer = "1.0.6", lang;
 
-        readonly string getTemp = Path.GetTempPath();
-        readonly PerformanceCounter cpuCounter;
-        readonly PerformanceCounter ramCounter;
-        public static string RemoteProgVer, currProgVer = "1.0.6", lang;
-        public static double CurrEmuVer, RemoteEmuVer;
-        public static bool Available, Updater  = false, AllowUpdaterQuestion = false, allowupdaternorunwow = false;
-        private bool _startStop;
+        readonly PerformanceCounter cpuCounter, ramCounter;
         private Process _cmd, _cmd1, _cmd3;
-        private bool _allowdev, _allowtext, _restart;
-        private DateTime _dt   = DateTime.Now;
-        private string lwPath  = "SingleCore\\";
-        private Process _p     = new Process();
-        private string _realm, _mangosdMem, _realmdMem, _sqlMem;
-        private string _sql;
-        private string sqlpath   = "Database\\bin\\";
-        private DateTime _start1 = DateTime.Now;
-        private string _status;
-        private bool _update, _updateNo;
-        private bool _updateYes;
-        private string _world;
-        private readonly Hashtable LangHash = new Hashtable();
+        private DateTime _dt, _start1 = DateTime.Now;
+        private readonly Hashtable _langHash = new Hashtable();
         private System.Resources.ResourceManager _rm;
+        private bool _startStop, _allowdev, _allowtext, _restart, _update, _updateNo, _updateYes;
+        public static bool Available, Updater = false, allowupdaternorunwow = false;
+        private string _realm, _mangosdMem, _realmdMem, _sqlMem, _world, _status, _sql;
+        readonly string getTemp = Path.GetTempPath();
+        public static double CurrEmuVer, RemoteEmuVer;
+        private const string lwPath = "SingleCore\\";
+        private const string sqlpath = "Database\\bin\\";
 
         #endregion
 
         #region Initializems
-        
 
         public Launcher()
         {
+            //Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.InvariantCulture;
             _rm = new System.Resources.ResourceManager(typeof(Launcher));
-            LangHash.Add("Hungarian", new System.Globalization.CultureInfo("hu"));
-            LangHash.Add("German", new System.Globalization.CultureInfo("de"));
+            //_langHash.Add("Hungarian", new System.Globalization.CultureInfo("hu"));
+            //_langHash.Add("German", new System.Globalization.CultureInfo("de"));
             ReadXML();
             InitializeComponent();
+            MessageBox.Show(Thread.CurrentThread.CurrentUICulture.ToString() +"\n"+ Thread.CurrentThread.CurrentCulture.ToString());
+
             checklang(true);
             cpuCounter = new PerformanceCounter();
             GetLocalSrvVer();
             cpuCounter.CategoryName = "Processor";
-            cpuCounter.CounterName  = "% Processor Time";
+            cpuCounter.CounterName = "% Processor Time";
             cpuCounter.InstanceName = "_Total";
-            ramCounter              = new PerformanceCounter("Memory", "Available MBytes");
+            ramCounter = new PerformanceCounter("Memory", "Available MBytes");
             tmrUsage.Start();
             StatusBarUpdater.Start();
             MenuItemsDisableAfterLoad();
@@ -88,7 +74,6 @@ namespace SppLauncher
             rtWorldDev.Visible = false;
             WindowSize(true);
             font();
-           // ReadXML();
             SearchProcess();
             StatusIcon();
 
@@ -550,6 +535,97 @@ namespace SppLauncher
 
         #region OtherMethods
 
+        public void checklang(bool option)
+        {
+            if (option)
+                switch (lang)
+                {
+                    case "Hungarian":
+                        magyarToolStripMenuItem.Checked = true;
+                        break;
+                    case "English":
+                        englishToolStripMenuItem.Checked = true;
+                        break;
+                    case "German":
+                        germanToolStripMenuItem.Checked = true;
+                        break;
+                }
+            else
+            {
+                switch (lang)
+                {
+                    case "Hungarian":
+                        Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("hu");
+                        Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("hu");
+                        break;
+                    case "English":
+                        Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.InvariantCulture;
+                        Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
+                        break;
+                    case "German":
+                        Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("de");
+                        Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("de");
+                        break;
+                }
+            }
+
+        }
+
+        private void animateStatus(bool animate)
+        {
+            if (animate)
+            {
+                tssStatus.Image = Resources.search_animation;
+            }
+            else
+            {
+                tssStatus.Image = Resources.flat_27406_640;
+                
+            }
+        }
+
+        public void startNStop()
+        {
+            if (!_startStop)
+            {
+                tssStatus.IsLink = false;
+                startstopToolStripMenuItem.Enabled = false;
+                startToolStripMenuItem.Enabled = false;
+                restartToolStripMenuItem1.Enabled = false;
+                restartToolStripMenuItem2.Enabled = false;
+                StartAll();
+                _startStop = true;
+                startstopToolStripMenuItem.Text = Resources.Launcher_startNStop_Stop;
+                startToolStripMenuItem.Text = Resources.Launcher_startNStop_Stop;
+                startstopToolStripMenuItem.Image = Resources.Button_stop_icon;
+                startToolStripMenuItem.Image = Resources.Button_stop_icon;
+            }
+            else
+            {
+                resetAllRandomBotsToolStripMenuItem.Enabled = false;
+                randomizeBotsToolStripMenuItem.Enabled = false;
+                resetBotsToolStripMenuItem.Enabled = false;
+                randomizeBotsToolStripMenuItem1.Enabled = false;
+
+                tssStatus.IsLink = false;
+                restartToolStripMenuItem1.Enabled = false;
+                restartToolStripMenuItem2.Enabled = false;
+                exportCharactersToolStripMenuItem.Enabled = false;
+                exportImportCharactersToolStripMenuItem.Enabled = false;
+                startstopToolStripMenuItem.Image = Resources.Play_1_Hot_icon;
+                startToolStripMenuItem.Image = Resources.Play_1_Hot_icon;
+                startstopToolStripMenuItem.Text = Resources.Launcher_startNStop_Start;
+                startToolStripMenuItem.Text = Resources.Launcher_startNStop_Start;
+                _startStop = false;
+                CheckMangosCrashed.Stop();
+                GetSqlOnlineBot.Stop();
+                tssLOnline.Text = Resources.Launcher_startNStop_Online_bot__N_A;
+                CloseProcess(false);
+                StatusIcon();
+                _status = Resources.Launcher_startNStop_Derver_is_down;
+            }
+        }
+
         public int getmemory() {return Convert.ToInt32(new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory / 1024 / 1024);}
 
         public void MenuItemsDisableAfterLoad()
@@ -766,6 +842,7 @@ namespace SppLauncher
             catch
             {
                 saveMethod();
+                MessageBox.Show("READXML ERROR");
             }
         }
 
@@ -894,6 +971,118 @@ namespace SppLauncher
         #endregion
 
         #region WindowMenuItems
+
+
+        private void magyarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            lang = "Hungarian";
+            saveMethod();
+            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_, Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lang = "English";
+            saveMethod();
+            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_, Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
+    MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lang = "French";
+            saveMethod();
+            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_, Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
+MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void germanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lang = "German";
+            saveMethod();
+            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_, Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
+MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void exportToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            export();
+        }
+
+        private void importToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            import();
+        }
+
+        private void startToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            startNStop();
+        }
+
+        private void restartToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            MenuItemsDisableAfterLoad();
+            RealmWorldRestart();
+        }
+
+        private void exportToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            export();
+        }
+
+        private void importToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            import();
+        }
+
+
+        private void restartToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            MenuItemsDisableAfterLoad();
+            RealmWorldRestart();
+        }
+
+        private void autorunToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (autorunToolStripMenuItem.Checked)
+            {
+                autostartToolStripMenuItem.Checked = false;
+                autorunToolStripMenuItem.Checked = false;
+                autostart = "0";
+                saveMethod();
+            }
+            else
+            {
+                autostartToolStripMenuItem.Checked = true;
+                autorunToolStripMenuItem.Checked = true;
+                autostart = "1";
+                saveMethod();
+            }
+        }
+
+        private void autostartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (autostartToolStripMenuItem.Checked)
+            {
+                autostartToolStripMenuItem.Checked = false;
+                autorunToolStripMenuItem.Checked = false;
+                autostart = "0";
+                saveMethod();
+            }
+            else
+            {
+                autostartToolStripMenuItem.Checked = true;
+                autorunToolStripMenuItem.Checked = true;
+                autostart = "1";
+                saveMethod();
+            }
+        }
+
+        private void startstopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            startNStop();
+        }
 
         private void showToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1075,8 +1264,6 @@ namespace SppLauncher
 
         private void lanSwitcherToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //Process.Start("Tools\\IP_Changer.exe");
-
             var LanSwitcher = new LanSwitcher();
             LanSwitcher.Show();
 
@@ -1106,9 +1293,8 @@ namespace SppLauncher
 
         public void RealmWorldRestart()
         {
-           
-            rtWorldDev.Visible = false;
             CheckMangosCrashed.Stop();
+            rtWorldDev.Visible  = false;
             _allowtext          = false;
             _restart            = true;
             CloseProcess(true);
@@ -1284,8 +1470,8 @@ namespace SppLauncher
                     pbTempW.Visible         = false;
                     pbarWorld.Visible       = false;
                     WindowSize(true);
-                    pbarWorld.Value       = 0;
-                    _allowtext            = true;
+                    pbarWorld.Value        = 0;
+                    _allowtext             = true;
                     _allowdev              = true;
 
                     resetAllRandomBotsToolStripMenuItem.Enabled     = true;
@@ -1389,7 +1575,7 @@ namespace SppLauncher
             {
                 File.Delete("SppLauncher_OLD.exe");
                 var uC = new Update_Completed();
-                uC.Show();
+                uC.Show(); //open update completed form
                 _update = true;
             }
         }
@@ -1452,15 +1638,6 @@ namespace SppLauncher
                 _status = Resources.Launcher_bwUpdate_RunWorkerCompleted_Up_to_date;
                 animateStatus(false);
             }
-
-            //else
-            //{
-            //    updateNO = false;
-            //    status = "New Version Available";
-            //}
-
-            AllowUpdaterQuestion = false;
-            UpdateCompleteChecker.Start();
 
             if (_updateYes)
             {
@@ -1555,12 +1732,12 @@ namespace SppLauncher
         {
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Title          = Resources.Launcher_export_Export_Characters;
-            tssStatus.Image         = Properties.Resources.search_animation;
             saveFile.Filter         = "SPP Backup (*.sppbackup)|*.sppbackup|All files (*.*)|*.*";
             saveFile.FileName       = Resources.Launcher_export_Backup;
 
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
+                animateStatus(true);
                 _status       = Resources.Launcher_export_Exporting_Characters;
                 exportfile    = saveFile.FileName;
                 exportFolder  = Path.GetDirectoryName(exportfile);
@@ -1604,206 +1781,20 @@ namespace SppLauncher
 
         #endregion
 
-        private void startstopToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            startNStop();
-        }
-
-        private void autostartToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (autostartToolStripMenuItem.Checked)
-            {
-                autostartToolStripMenuItem.Checked = false;
-                autorunToolStripMenuItem.Checked   = false;
-                autostart                          = "0";
-                saveMethod();
-            }
-            else
-            {
-                autostartToolStripMenuItem.Checked = true;
-                autorunToolStripMenuItem.Checked   = true;
-                autostart                          = "1";
-                saveMethod();
-            }
-        }
-
-        private void restartToolStripMenuItem1_Click_1(object sender, EventArgs e)
-        {
-            MenuItemsDisableAfterLoad();
-            RealmWorldRestart();
-        }
-
-        private void SppTray_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
 
         }
 
-        private void autorunToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (autorunToolStripMenuItem.Checked)
-            {
-                autostartToolStripMenuItem.Checked = false;
-                autorunToolStripMenuItem.Checked   = false;
-                autostart                          = "0";
-                saveMethod();
-            }
-            else
-            {
-                autostartToolStripMenuItem.Checked = true;
-                autorunToolStripMenuItem.Checked   = true;
-                autostart                          = "1";
-                saveMethod();
-            }
-        }
 
-        public void startNStop()
-        {
-            if (!_startStop)
-            {
-                tssStatus.IsLink                   = false;
-                startstopToolStripMenuItem.Enabled = false;
-                startToolStripMenuItem.Enabled     = false;
-                restartToolStripMenuItem1.Enabled  = false;
-                restartToolStripMenuItem2.Enabled  = false;
-                StartAll();
-                _startStop                        = true;
-                startstopToolStripMenuItem.Text   = Resources.Launcher_startNStop_Stop;
-                startToolStripMenuItem.Text       = Resources.Launcher_startNStop_Stop;
-                startstopToolStripMenuItem.Image  = Resources.Button_stop_icon;
-                startToolStripMenuItem.Image      = Resources.Button_stop_icon;
-            }
-            else
-            {
-                resetAllRandomBotsToolStripMenuItem.Enabled = false;
-                randomizeBotsToolStripMenuItem.Enabled      = false;
-                resetBotsToolStripMenuItem.Enabled          = false;
-                randomizeBotsToolStripMenuItem1.Enabled     = false;
 
-                tssStatus.IsLink                                 = false;
-                restartToolStripMenuItem1.Enabled                = false;
-                restartToolStripMenuItem2.Enabled                = false;
-                exportCharactersToolStripMenuItem.Enabled        = false;
-                exportImportCharactersToolStripMenuItem.Enabled  = false;
-                startstopToolStripMenuItem.Image                 = Resources.Play_1_Hot_icon;
-                startToolStripMenuItem.Image                     = Resources.Play_1_Hot_icon;
-                startstopToolStripMenuItem.Text                  = Resources.Launcher_startNStop_Start;
-                startToolStripMenuItem.Text                      = Resources.Launcher_startNStop_Start;
-                _startStop                                       = false;
-                CheckMangosCrashed.Stop();
-                GetSqlOnlineBot.Stop();
-                tssLOnline.Text = Resources.Launcher_startNStop_Online_bot__N_A;
-                CloseProcess(false);
-                StatusIcon();
-                _status = Resources.Launcher_startNStop_Derver_is_down;
-            }
-        }
+    
 
-        private void startToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            startNStop();
-        }
+  
 
-        private void restartToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            MenuItemsDisableAfterLoad();
-            RealmWorldRestart();
-        }
 
-        private void exportToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            export();
-        }
+      
 
-        private void importToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            import();
-        }
-
-        private void animateStatus(bool animate)
-        {
-            if (animate)
-            {
-                tssStatus.Image = Properties.Resources.search_animation;   
-            }
-            else
-            {
-                tssStatus.Image = null;
-            }
-        }
-
-        private void magyarToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            lang = "Hungarian";
-            saveMethod();
-            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_,Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            lang = "English";
-            saveMethod();
-            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_, Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
-    MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            lang = "French";
-            saveMethod();
-            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_, Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
-MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void germanToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            lang = "German";
-            saveMethod();
-            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_, Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
-MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void exportToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            export();
-        }
-
-        private void importToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            import();
-        }
-
-        public void checklang(bool option)
-        {
-            if(option)
-            switch (lang)
-            {
-                case "Hungarian":
-                    magyarToolStripMenuItem.Checked = true;
-                    break;
-                case "English":
-                    englishToolStripMenuItem.Checked = true;
-                    break;
-                case "German":
-                    germanToolStripMenuItem.Checked = true;
-                    break;
-            }
-            else
-            {
-                switch (lang)
-                {
-                    case "Hungarian":
-                        Thread.CurrentThread.CurrentUICulture = (System.Globalization.CultureInfo)LangHash["Hungarian"];
-                        break;
-                    case "English":
-                        Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.InvariantCulture;
-                        break;
-                    case "German":
-                        Thread.CurrentThread.CurrentUICulture = (System.Globalization.CultureInfo)LangHash["German"];
-                        break;
-                }
-            }
-
-        }
+        
     }
 }

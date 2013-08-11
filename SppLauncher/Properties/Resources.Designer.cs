@@ -133,6 +133,16 @@ namespace SppLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap flat_27406_640 {
+            get {
+                object obj = ResourceManager.GetObject("flat-27406_640", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap heart_icon {
             get {
                 object obj = ResourceManager.GetObject("heart-icon", resourceCulture);

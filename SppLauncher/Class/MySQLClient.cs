@@ -103,6 +103,8 @@ namespace MySQLClass
             }
         }
 
+   
+
         public Dictionary<string, string> Select(string table, string WHERE)
         {
             string query = "SELECT * FROM " + table + " WHERE " + WHERE + "";
