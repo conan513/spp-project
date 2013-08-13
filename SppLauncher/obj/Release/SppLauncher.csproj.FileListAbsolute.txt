@@ -153,3 +153,4 @@ D:\Sourcetree\SppLauncher\obj\Release\de\SppLauncher.resources.dll
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.de.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.hu.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.Form1.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.DatabaseUpdate.resources

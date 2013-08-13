@@ -39,10 +39,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pbarWorld = new System.Windows.Forms.ProgressBar();
             this.pbNotAvailW = new System.Windows.Forms.PictureBox();
-            this.pbNotAvailR = new System.Windows.Forms.PictureBox();
-            this.pbNotAvailM = new System.Windows.Forms.PictureBox();
             this.pbTempW = new System.Windows.Forms.PictureBox();
+            this.pbNotAvailR = new System.Windows.Forms.PictureBox();
             this.pbTempR = new System.Windows.Forms.PictureBox();
+            this.pbNotAvailM = new System.Windows.Forms.PictureBox();
             this.pbTempM = new System.Windows.Forms.PictureBox();
             this.pbAvailableM = new System.Windows.Forms.PictureBox();
             this.pbAvailableR = new System.Windows.Forms.PictureBox();
@@ -91,6 +91,7 @@
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.germanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.frenchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lanSwitcherToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.accountToolToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -122,12 +123,13 @@
             this.bwExport = new System.ComponentModel.BackgroundWorker();
             this.tmrUsage = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.bWUpEx = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNotAvailW)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNotAvailR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNotAvailM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTempW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNotAvailR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTempR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNotAvailM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTempM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvailableM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvailableR)).BeginInit();
@@ -170,10 +172,10 @@
             // 
             this.groupBox1.Controls.Add(this.pbarWorld);
             this.groupBox1.Controls.Add(this.pbNotAvailW);
-            this.groupBox1.Controls.Add(this.pbNotAvailR);
-            this.groupBox1.Controls.Add(this.pbNotAvailM);
             this.groupBox1.Controls.Add(this.pbTempW);
+            this.groupBox1.Controls.Add(this.pbNotAvailR);
             this.groupBox1.Controls.Add(this.pbTempR);
+            this.groupBox1.Controls.Add(this.pbNotAvailM);
             this.groupBox1.Controls.Add(this.pbTempM);
             this.groupBox1.Controls.Add(this.lblWorld);
             this.groupBox1.Controls.Add(this.lblMysql);
@@ -197,20 +199,6 @@
             this.pbNotAvailW.Name = "pbNotAvailW";
             this.pbNotAvailW.TabStop = false;
             // 
-            // pbNotAvailR
-            // 
-            this.pbNotAvailR.Image = global::SppLauncher.Properties.Resources.not_available_100x100;
-            resources.ApplyResources(this.pbNotAvailR, "pbNotAvailR");
-            this.pbNotAvailR.Name = "pbNotAvailR";
-            this.pbNotAvailR.TabStop = false;
-            // 
-            // pbNotAvailM
-            // 
-            this.pbNotAvailM.Image = global::SppLauncher.Properties.Resources.not_available_100x100;
-            resources.ApplyResources(this.pbNotAvailM, "pbNotAvailM");
-            this.pbNotAvailM.Name = "pbNotAvailM";
-            this.pbNotAvailM.TabStop = false;
-            // 
             // pbTempW
             // 
             this.pbTempW.Image = global::SppLauncher.Properties.Resources.temporarily_not_available_100x100;
@@ -218,12 +206,26 @@
             this.pbTempW.Name = "pbTempW";
             this.pbTempW.TabStop = false;
             // 
+            // pbNotAvailR
+            // 
+            this.pbNotAvailR.Image = global::SppLauncher.Properties.Resources.not_available_100x100;
+            resources.ApplyResources(this.pbNotAvailR, "pbNotAvailR");
+            this.pbNotAvailR.Name = "pbNotAvailR";
+            this.pbNotAvailR.TabStop = false;
+            // 
             // pbTempR
             // 
             this.pbTempR.Image = global::SppLauncher.Properties.Resources.temporarily_not_available_100x100;
             resources.ApplyResources(this.pbTempR, "pbTempR");
             this.pbTempR.Name = "pbTempR";
             this.pbTempR.TabStop = false;
+            // 
+            // pbNotAvailM
+            // 
+            this.pbNotAvailM.Image = global::SppLauncher.Properties.Resources.not_available_100x100;
+            resources.ApplyResources(this.pbNotAvailM, "pbNotAvailM");
+            this.pbNotAvailM.Name = "pbNotAvailM";
+            this.pbNotAvailM.TabStop = false;
             // 
             // pbTempM
             // 
@@ -238,6 +240,7 @@
             resources.ApplyResources(this.pbAvailableM, "pbAvailableM");
             this.pbAvailableM.Name = "pbAvailableM";
             this.pbAvailableM.TabStop = false;
+            this.pbAvailableM.MouseHover += new System.EventHandler(this.pbAvailableM_MouseHover);
             // 
             // pbAvailableR
             // 
@@ -245,6 +248,7 @@
             resources.ApplyResources(this.pbAvailableR, "pbAvailableR");
             this.pbAvailableR.Name = "pbAvailableR";
             this.pbAvailableR.TabStop = false;
+            this.pbAvailableR.MouseHover += new System.EventHandler(this.pbAvailableR_MouseHover);
             // 
             // pbAvailableW
             // 
@@ -252,6 +256,7 @@
             resources.ApplyResources(this.pbAvailableW, "pbAvailableW");
             this.pbAvailableW.Name = "pbAvailableW";
             this.pbAvailableW.TabStop = false;
+            this.pbAvailableW.MouseHover += new System.EventHandler(this.pbAvailableW_MouseHover);
             // 
             // SppTray
             // 
@@ -489,7 +494,8 @@
             this.resetAllRandomBotsToolStripMenuItem,
             this.randomizeBotsToolStripMenuItem,
             this.exportCharactersToolStripMenuItem,
-            this.languageToolStripMenuItem});
+            this.languageToolStripMenuItem,
+            this.updateToolStripMenuItem});
             this.toolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.configuration_1;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
@@ -579,6 +585,12 @@
             resources.ApplyResources(this.frenchToolStripMenuItem, "frenchToolStripMenuItem");
             this.frenchToolStripMenuItem.Name = "frenchToolStripMenuItem";
             this.frenchToolStripMenuItem.Click += new System.EventHandler(this.frenchToolStripMenuItem_Click);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            resources.ApplyResources(this.updateToolStripMenuItem, "updateToolStripMenuItem");
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -770,6 +782,11 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
+            // bWUpEx
+            // 
+            this.bWUpEx.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bWUpEx_DoWork);
+            this.bWUpEx.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bWUpEx_RunWorkerCompleted);
+            // 
             // Launcher
             // 
             resources.ApplyResources(this, "$this");
@@ -793,10 +810,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNotAvailW)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNotAvailR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNotAvailM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTempW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNotAvailR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTempR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNotAvailM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTempM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvailableM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvailableR)).EndInit();
@@ -905,6 +922,8 @@
         private System.Windows.Forms.ToolStripMenuItem frenchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem germanToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker bWUpEx;
     }
 }
 

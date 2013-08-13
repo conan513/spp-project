@@ -25,6 +25,8 @@ namespace SppLauncher
     {
         #region Variable
 
+
+
         public static string wowExePath, ipAdress,
                              online,resetBots,
                              randomizeBots,realmListPath,
@@ -40,7 +42,7 @@ namespace SppLauncher
         private System.Resources.ResourceManager _rm;
         private bool _startStop, _allowdev, _allowtext, _restart, _update, _updateNo, _updateYes;
         public static bool Available, Updater = false, allowupdaternorunwow = false;
-        private string _realm, _mangosdMem, _realmdMem, _sqlMem, _world, _status, _sql;
+        private string _realm, _mangosdMem, _realmdMem, _sqlMem, _world, _status, _sql, UpdateUnpack;
         readonly string getTemp = Path.GetTempPath();
         public static double CurrEmuVer, RemoteEmuVer;
         private const string lwPath = "SingleCore\\";
@@ -52,13 +54,9 @@ namespace SppLauncher
 
         public Launcher()
         {
-            //Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.InvariantCulture;
             _rm = new System.Resources.ResourceManager(typeof(Launcher));
-            //_langHash.Add("Hungarian", new System.Globalization.CultureInfo("hu"));
-            //_langHash.Add("German", new System.Globalization.CultureInfo("de"));
             ReadXML();
             InitializeComponent();
-            MessageBox.Show(Thread.CurrentThread.CurrentUICulture.ToString() +"\n"+ Thread.CurrentThread.CurrentCulture.ToString());
 
             checklang(true);
             cpuCounter = new PerformanceCounter();
@@ -89,6 +87,7 @@ namespace SppLauncher
                 autostartToolStripMenuItem.Checked               = true;
                 autorunToolStripMenuItem.Checked                 = true;
                 exportCharactersToolStripMenuItem.Enabled        = false;
+               // updateToolStripMenuItem.Enabled                  = false;
                 exportImportCharactersToolStripMenuItem.Enabled  = false;
                 StartAll();
             }
@@ -96,6 +95,7 @@ namespace SppLauncher
             {
                 bwUpdate.RunWorkerAsync();
                 exportCharactersToolStripMenuItem.Enabled       = false;
+               // updateToolStripMenuItem.Enabled                 = false;
                 exportImportCharactersToolStripMenuItem.Enabled = false;
                 startstopToolStripMenuItem.Enabled              = true;
                 startToolStripMenuItem.Enabled                  = true;
@@ -199,7 +199,8 @@ namespace SppLauncher
             }
         }
 
-        public void RealmdStart()
+
+        internal void RealmdStart()
         {
             _start1              = DateTime.Now;
             _status              = Resources.Launcher_RealmdStart_Starting_Realm;
@@ -579,7 +580,7 @@ namespace SppLauncher
             }
             else
             {
-                tssStatus.Image = Resources.flat_27406_640;
+                tssStatus.Image = null;
                 
             }
         }
@@ -611,6 +612,7 @@ namespace SppLauncher
                 restartToolStripMenuItem1.Enabled = false;
                 restartToolStripMenuItem2.Enabled = false;
                 exportCharactersToolStripMenuItem.Enabled = false;
+               // updateToolStripMenuItem.Enabled = false;
                 exportImportCharactersToolStripMenuItem.Enabled = false;
                 startstopToolStripMenuItem.Image = Resources.Play_1_Hot_icon;
                 startToolStripMenuItem.Image = Resources.Play_1_Hot_icon;
@@ -633,6 +635,7 @@ namespace SppLauncher
             tssStatus.IsLink                                = false;
             resetAllRandomBotsToolStripMenuItem.Enabled     = false;
             exportCharactersToolStripMenuItem.Enabled       = false;
+           // updateToolStripMenuItem.Enabled                 = false;
             exportImportCharactersToolStripMenuItem.Enabled = false;
             startstopToolStripMenuItem.Enabled              = false;
             randomizeBotsToolStripMenuItem.Enabled          = false;
@@ -1485,6 +1488,7 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
                     restartToolStripMenuItem1.Enabled               = true;
                     restartToolStripMenuItem1.Enabled               = true;
                     exportCharactersToolStripMenuItem.Enabled       = true;
+                   // updateToolStripMenuItem.Enabled                 = true;
                     exportImportCharactersToolStripMenuItem.Enabled = true;
                     
                     bwUpdate.RunWorkerAsync(); //check update
@@ -1524,6 +1528,11 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             catch
             {
             }
+        }
+
+        private void SqlStar()
+        {
+            
         }
 
         private void CheckWowRun_Tick(object sender, EventArgs e)
@@ -1784,6 +1793,101 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var show = new DatabaseUpdate(this);
+            show.Show();
+        }
+
+        private void pbAvailableM_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.pbAvailableM, lblSqlStartTime.Text);
+        }
+
+        private void pbAvailableR_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.pbAvailableR, lblRealmStartTime.Text);
+        }
+
+        private void pbAvailableW_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.pbAvailableW, lblWorldStartTime.Text);
+
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+             OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Title          = "Update";
+            openFile.Filter         = "SPP Upate (*.sppupdate)|*.sppupdate|All files (*.*)|*.*";
+
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                MenuItemsDisableAfterLoad();
+                UpdateUnpack         = openFile.FileName;
+                importFolder       = Path.GetDirectoryName(importFile);
+                rtWorldDev.Visible = false;
+                CheckMangosCrashed.Stop();
+                _allowtext = false;
+                _restart   = true;
+                CloseProcess(true);
+                GetSqlOnlineBot.Stop();
+                tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
+                StatusIcon();
+                WindowState = FormWindowState.Normal;
+                Show();
+                pbAvailableM.Visible = true;
+                _status              = "Decompress Update";
+                animateStatus(true);
+                bWUpEx.RunWorkerAsync();
+            }
+        
+        }
+
+        private void UpdateExtract()
+        {
+            string unpck = UpdateUnpack;
+            string unpckDir = @"update";
+            using (ZipFile zip = ZipFile.Read(unpck))
+            {
+                foreach (ZipEntry e in zip)
+                {
+                    e.Password = "89765487";
+                    e.Extract(unpckDir, ExtractExistingFileAction.OverwriteSilently);
+                }
+            }
+        }
+
+        private void bWUpEx_DoWork(object sender, DoWorkEventArgs e)
+        {
+            UpdateExtract();
+        }
+
+        private void bWUpEx_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            _status = "Completed";
+           
+            animateStatus(false);
+            Hide();
+            startupdate();
+        }
+
+        private void startupdate()
+        {
+            DatabaseUpdate frm2 = new DatabaseUpdate(this);
+            frm2.Show();
+        }
+
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            DatabaseUpdate frm2 = new DatabaseUpdate(this);
+            frm2.Show();
         }
 
 

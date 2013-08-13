@@ -38,7 +38,10 @@
       <string>D:\Sourcetree\SppLauncher\Windows\LanSwitcher\LanSwitcher.cs</string>
     </ArrayOfString>
     <ArrayOfString>
+      <string>D:\Sourcetree\SppLauncher\Properties\Resources.de.resx</string>
       <string>D:\Sourcetree\SppLauncher\Properties\Resources.Designer.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Properties\Resources.hu.resx</string>
+      <string>D:\Sourcetree\SppLauncher\Properties\Resources.resx</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>D:\Sourcetree\SppLauncher\Windows\HelpUsWindow.cs</string>
@@ -50,8 +53,8 @@
       <string>D:\Sourcetree\SppLauncher\Class\MySQLClient.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Windows\Form1.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\Form1.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\DatabaseUpdate.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\DatabaseUpdate.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>
