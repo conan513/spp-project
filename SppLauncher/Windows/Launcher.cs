@@ -41,7 +41,7 @@ namespace SppLauncher
         private readonly Hashtable _langHash = new Hashtable();
         private System.Resources.ResourceManager _rm;
         private bool _startStop, _allowdev, _allowtext, _restart, _update, _updateNo, _updateYes;
-        public static bool Available, Updater = false, allowupdaternorunwow = false;
+        public static bool Available, Updater = false, allowupdaternorunwow = false, OnlyMysqlStart = false, MysqlON = false;
         private string _realm, _mangosdMem, _realmdMem, _sqlMem, _world, _status, _sql, UpdateUnpack;
         readonly string getTemp = Path.GetTempPath();
         public static double CurrEmuVer, RemoteEmuVer;
@@ -86,7 +86,7 @@ namespace SppLauncher
                 _startStop                                       = true;
                 autostartToolStripMenuItem.Checked               = true;
                 autorunToolStripMenuItem.Checked                 = true;
-                exportCharactersToolStripMenuItem.Enabled        = false;
+                //exportCharactersToolStripMenuItem.Enabled        = false;
                // updateToolStripMenuItem.Enabled                  = false;
                 exportImportCharactersToolStripMenuItem.Enabled  = false;
                 StartAll();
@@ -94,7 +94,7 @@ namespace SppLauncher
             else
             {
                 bwUpdate.RunWorkerAsync();
-                exportCharactersToolStripMenuItem.Enabled       = false;
+                //exportCharactersToolStripMenuItem.Enabled       = false;
                // updateToolStripMenuItem.Enabled                 = false;
                 exportImportCharactersToolStripMenuItem.Enabled = false;
                 startstopToolStripMenuItem.Enabled              = true;
@@ -618,7 +618,7 @@ namespace SppLauncher
                 tssStatus.IsLink = false;
                 restartToolStripMenuItem1.Enabled = false;
                 restartToolStripMenuItem2.Enabled = false;
-                exportCharactersToolStripMenuItem.Enabled = false;
+               // exportCharactersToolStripMenuItem.Enabled = false;
                // updateToolStripMenuItem.Enabled = false;
                 exportImportCharactersToolStripMenuItem.Enabled = false;
                 startstopToolStripMenuItem.Image = Resources.Play_1_Hot_icon;
@@ -641,7 +641,7 @@ namespace SppLauncher
         {
             tssStatus.IsLink                                = false;
             resetAllRandomBotsToolStripMenuItem.Enabled     = false;
-            exportCharactersToolStripMenuItem.Enabled       = false;
+            //exportCharactersToolStripMenuItem.Enabled       = false;
            // updateToolStripMenuItem.Enabled                 = false;
             exportImportCharactersToolStripMenuItem.Enabled = false;
             startstopToolStripMenuItem.Enabled              = false;
@@ -882,8 +882,9 @@ namespace SppLauncher
             }
         }
 
-        private static void ShutdownSql()
+        public static void ShutdownSql()
         {
+            MysqlON = false;
             var startInfo             = new ProcessStartInfo();
             startInfo.CreateNoWindow  = true;
             startInfo.UseShellExecute = false;
@@ -1494,7 +1495,7 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
                     startToolStripMenuItem.Enabled                  = true;
                     restartToolStripMenuItem1.Enabled               = true;
                     restartToolStripMenuItem1.Enabled               = true;
-                    exportCharactersToolStripMenuItem.Enabled       = true;
+                  //  exportCharactersToolStripMenuItem.Enabled       = true;
                    // updateToolStripMenuItem.Enabled                 = true;
                     exportImportCharactersToolStripMenuItem.Enabled = true;
                     
@@ -1523,13 +1524,14 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             {
                 if (_sql.Contains("Version: '10.0.3-MariaDB'  socket: ''  port: 3310  mariadb.org binary distribution"))
                 {
+                    MysqlON = true;
                     SqlStartCheck.Stop();
                     DateTime end1         = DateTime.Now;
                     lblSqlStartTime.Text  = (end1 - _start1).TotalSeconds.ToString();
                     pbAvailableM.Visible  = true;
                     pbTempM.Visible       = false;
                     _sql                  = "";
-                    RealmdStart();
+                    if(!OnlyMysqlStart){RealmdStart();}
                 }
             }
             catch
@@ -1676,34 +1678,67 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         private void import()
         {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Title          = Resources.Launcher_import_Import_Characters;
-            openFile.Filter         = "SPP Backup (*.sppbackup)|*.sppbackup|All files (*.*)|*.*";
-
-            if (openFile.ShowDialog() == DialogResult.OK)
+            if (MysqlON)
             {
-                MenuItemsDisableAfterLoad();
-                importFile         = openFile.FileName;
-                importFolder       = Path.GetDirectoryName(importFile);
-                rtWorldDev.Visible = false;
-                CheckMangosCrashed.Stop();
-                _allowtext = false;
-                _restart   = true;
-                CloseProcess(true);
-                GetSqlOnlineBot.Stop();
-                tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
-                StatusIcon();
-                WindowState = FormWindowState.Normal;
-                Show();
-                pbAvailableM.Visible = true;
-                _status              = Resources.Launcher_import_Decompress;
-                animateStatus(true);
-                bwImport.RunWorkerAsync();
+                OpenFileDialog openFile = new OpenFileDialog();
+                openFile.Title = Resources.Launcher_import_Import_Characters;
+                openFile.Filter = "SPP Backup (*.sppbackup)|*.sppbackup|All files (*.*)|*.*";
+
+                if (openFile.ShowDialog() == DialogResult.OK)
+                {
+                    MenuItemsDisableAfterLoad();
+                    importFile = openFile.FileName;
+                    importFolder = Path.GetDirectoryName(importFile);
+                    rtWorldDev.Visible = false;
+                    CheckMangosCrashed.Stop();
+                    _allowtext = false;
+                    _restart = true;
+                    CloseProcess(true);
+                    GetSqlOnlineBot.Stop();
+                    tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
+                    StatusIcon();
+                    WindowState = FormWindowState.Normal;
+                    Show();
+                    pbAvailableM.Visible = true;
+                    _status = Resources.Launcher_import_Decompress;
+                    animateStatus(true);
+                    bwImport.RunWorkerAsync();
+                }
+            }
+            else
+            {
+                OpenFileDialog openFile = new OpenFileDialog();
+                openFile.Title = Resources.Launcher_import_Import_Characters;
+                openFile.Filter = "SPP Backup (*.sppbackup)|*.sppbackup|All files (*.*)|*.*";
+
+                if (openFile.ShowDialog() == DialogResult.OK)
+                {
+                    OnlyMysqlStart = true;
+                    StartAll();
+                    MenuItemsDisableAfterLoad();
+                    importFile = openFile.FileName;
+                    importFolder = Path.GetDirectoryName(importFile);
+                    //rtWorldDev.Visible = false;
+                   // CheckMangosCrashed.Stop();
+                    //_allowtext = false;
+                    //_restart = true;
+                    //CloseProcess(true);
+                    //GetSqlOnlineBot.Stop();
+                   // tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
+                    //StatusIcon();
+                    WindowState = FormWindowState.Normal;
+                    Show();
+                    //pbAvailableM.Visible = true;
+                    _status = Resources.Launcher_import_Decompress;
+                    animateStatus(true);
+                    bwImport.RunWorkerAsync();
+                } 
             }
         }
 
         private void bwImport_DoWork(object sender, DoWorkEventArgs e)
         {
+
             checklang(false);
             ImportExtract();
             _status = Resources.Launcher_import_Import_Characters;
@@ -1723,11 +1758,19 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         private void bwImport_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            if (OnlyMysqlStart)
+            {
+                ShutdownSql();
+                pbAvailableM.Visible = false;
+                pbNotAvailM.Visible = true;
+                startstopToolStripMenuItem.Enabled = true;
+            }
+            if(!OnlyMysqlStart){StartAll();}
+            OnlyMysqlStart = false;
             _status = Resources.Launcher_bwImport_RunWorkerCompleted_Import_Completed;
             animateStatus(false);
             File.Delete(getTemp + "\\save01");
             File.Delete(getTemp + "\\save02");
-            StartAll();
         }
 
         private void ImportExtract() //.sppbackup extract
@@ -1746,18 +1789,39 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         private void export()
         {
-            SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.Title          = Resources.Launcher_export_Export_Characters;
-            saveFile.Filter         = "SPP Backup (*.sppbackup)|*.sppbackup|All files (*.*)|*.*";
-            saveFile.FileName       = Resources.Launcher_export_Backup;
-
-            if (saveFile.ShowDialog() == DialogResult.OK)
+            if (MysqlON)
             {
-                animateStatus(true);
-                _status       = Resources.Launcher_export_Exporting_Characters;
-                exportfile    = saveFile.FileName;
-                exportFolder  = Path.GetDirectoryName(exportfile);
-                bwExport.RunWorkerAsync();
+                SaveFileDialog saveFile = new SaveFileDialog();
+                saveFile.Title = Resources.Launcher_export_Export_Characters;
+                saveFile.Filter = "SPP Backup (*.sppbackup)|*.sppbackup|All files (*.*)|*.*";
+                saveFile.FileName = Resources.Launcher_export_Backup;
+
+                if (saveFile.ShowDialog() == DialogResult.OK)
+                {
+                    animateStatus(true);
+                    _status = Resources.Launcher_export_Exporting_Characters;
+                    exportfile = saveFile.FileName;
+                    exportFolder = Path.GetDirectoryName(exportfile);
+                    bwExport.RunWorkerAsync();
+                }
+            }
+            else
+            {
+                SaveFileDialog saveFile = new SaveFileDialog();
+                saveFile.Title = Resources.Launcher_export_Export_Characters;
+                saveFile.Filter = "SPP Backup (*.sppbackup)|*.sppbackup|All files (*.*)|*.*";
+                saveFile.FileName = Resources.Launcher_export_Backup;
+
+                if (saveFile.ShowDialog() == DialogResult.OK)
+                {
+                    OnlyMysqlStart = true;
+                    StartAll();
+                    animateStatus(true);
+                    _status = Resources.Launcher_export_Exporting_Characters;
+                    exportfile = saveFile.FileName;
+                    exportFolder = Path.GetDirectoryName(exportfile);
+                    bwExport.RunWorkerAsync();
+                }
             }
         }
 
@@ -1789,6 +1853,15 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         private void bwExport_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            if (OnlyMysqlStart)
+            {
+                ShutdownSql();
+                pbAvailableM.Visible = false;
+                pbNotAvailM.Visible = true;
+                startstopToolStripMenuItem.Enabled = true;
+            }
+
+            OnlyMysqlStart = false;
             _status = Resources.Launcher_bwExport_RunWorkerCompleted_Export_Completed;
             animateStatus(false);
             File.Delete(getTemp + "\\save01");
@@ -1829,31 +1902,62 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Title          = "Update";
-            openFile.Filter         = "SPP Upate (*.sppupdate)|*.sppupdate|All files (*.*)|*.*";
-
-            if (openFile.ShowDialog() == DialogResult.OK)
+            if (MysqlON)
             {
-                MenuItemsDisableAfterLoad();
-                UpdateUnpack         = openFile.FileName;
-                importFolder       = Path.GetDirectoryName(importFile);
-                rtWorldDev.Visible = false;
-                CheckMangosCrashed.Stop();
-                _allowtext = false;
-                _restart   = true;
-                CloseProcess(true);
-                GetSqlOnlineBot.Stop();
-                tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
-                StatusIcon();
-                WindowState = FormWindowState.Normal;
-                Show();
-                pbAvailableM.Visible = true;
-                _status              = "Decompress Update";
-                animateStatus(true);
-                bWUpEx.RunWorkerAsync();
+                OpenFileDialog openFile = new OpenFileDialog();
+                openFile.Title = "Update";
+                openFile.Filter = "SPP Upate (*.sppupdate)|*.sppupdate|All files (*.*)|*.*";
+
+                if (openFile.ShowDialog() == DialogResult.OK)
+                {
+                    MenuItemsDisableAfterLoad();
+                    UpdateUnpack = openFile.FileName;
+                    importFolder = Path.GetDirectoryName(importFile);
+                    rtWorldDev.Visible = false;
+                    CheckMangosCrashed.Stop();
+                    _allowtext = false;
+                    _restart = true;
+                    CloseProcess(true);
+                    GetSqlOnlineBot.Stop();
+                    tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
+                    StatusIcon();
+                    WindowState = FormWindowState.Normal;
+                    Show();
+                    pbAvailableM.Visible = true;
+                    _status = "Decompress Update";
+                    animateStatus(true);
+                    bWUpEx.RunWorkerAsync();
+                }
             }
-        
+            else
+            {
+                OpenFileDialog openFile = new OpenFileDialog();
+                openFile.Title = "Update";
+                openFile.Filter = "SPP Upate (*.sppupdate)|*.sppupdate|All files (*.*)|*.*";
+
+                if (openFile.ShowDialog() == DialogResult.OK)
+                {
+                    OnlyMysqlStart = true;
+                    StartAll();
+                    //MenuItemsDisableAfterLoad();
+                    UpdateUnpack = openFile.FileName;
+                    importFolder = Path.GetDirectoryName(importFile);
+                    //rtWorldDev.Visible = false;
+                    //CheckMangosCrashed.Stop();
+                    //_allowtext = false;
+                    //_restart = true;
+                    //CloseProcess(true);
+                    //GetSqlOnlineBot.Stop();
+                    //tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
+                    //StatusIcon();
+                    WindowState = FormWindowState.Normal;
+                    Show();
+                    pbAvailableM.Visible = true;
+                    _status = "Decompress Update";
+                    animateStatus(true);
+                    bWUpEx.RunWorkerAsync();
+                }
+            }
         }
 
         private void UpdateExtract()
@@ -1877,6 +1981,15 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         private void bWUpEx_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            //if (OnlyMysqlStart)
+            //{
+            //    ShutdownSql();
+            //    pbAvailableM.Visible = false;
+            //    pbNotAvailM.Visible = true;
+            //    startstopToolStripMenuItem.Enabled = true;
+            //}
+
+            //OnlyMysqlStart = false;
             _status = "Completed";
            
             animateStatus(false);

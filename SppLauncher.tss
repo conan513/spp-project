@@ -32,10 +32,7 @@
       <string>D:\Sourcetree\SppLauncher\Windows\BotConf.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Properties\Resources.de.resx</string>
       <string>D:\Sourcetree\SppLauncher\Properties\Resources.Designer.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Properties\Resources.hu.resx</string>
-      <string>D:\Sourcetree\SppLauncher\Properties\Resources.resx</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>D:\Sourcetree\SppLauncher\Class\OnlineBot.cs</string>

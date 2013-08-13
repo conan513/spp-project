@@ -137,9 +137,11 @@ namespace SppLauncher.Windows
 
         private void bWdvUpS1_DoWork(object sender, DoWorkEventArgs e)
         {
-
+            Thread.Sleep(10);
                 InsertMultiple1(@"update\scriptdev2\sql_mr", "mangos", "mr*mangos*sql");
+                Thread.Sleep(10);
                 InsertMultiple1(@"update\scriptdev2\sql_mr", "scriptdev2", "mr*scriptdev2*sql");
+                Thread.Sleep(10);
                 label3.Text = "Complete!";
                 label2.Text = "-";
                 if (Directory.Exists(@"update\server")) { Copy(@"update\server", @"\SingleCore"); }
@@ -158,7 +160,16 @@ namespace SppLauncher.Windows
         private void bWdvUpS1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             launcher.Show();
-            this.launcher.RealmdStart();
+
+            if(!Launcher.OnlyMysqlStart){this.launcher.RealmdStart();}
+            else
+            {
+                launcher.pbAvailableM.Visible = false;
+                launcher.pbNotAvailM.Visible = true;
+                Launcher.OnlyMysqlStart = false;
+                Launcher.MysqlON = false;
+               Launcher.ShutdownSql();
+            }
             this.Close();
         }
 
@@ -169,12 +180,14 @@ namespace SppLauncher.Windows
                 String[] Files = Directory.GetFiles(updatePath, filter, SearchOption.TopDirectoryOnly);
                 if(bwup1){progressBar1.Maximum = Files.Length;}
                 complete = 0;
+                Thread.Sleep(10);
                 foreach (String aFile in Files)
                 {
                     label2.Text = Path.GetFileName(aFile);
                     RunMySql("127.0.0.1", 3310, "root", "123456", "mangos", aFile);
 
                     if (bwup1) { complete++; bWdbUp.ReportProgress(complete); }
+                    Thread.Sleep(10);
                 }
             }
             catch (Exception ex)
@@ -190,6 +203,7 @@ namespace SppLauncher.Windows
                 String[] Files = Directory.GetFiles(updatePath, filter, SearchOption.TopDirectoryOnly);
                 progressBar1.Maximum = Files.Length;
                 complete = 0;
+                Thread.Sleep(10);
                 foreach (String aFile in Files)
                 {
                     label2.Text = Path.GetFileName(aFile);
@@ -197,6 +211,7 @@ namespace SppLauncher.Windows
 
                     complete++; 
                     bWdvUpS1.ReportProgress(complete);
+                    Thread.Sleep(10);
                 }
             }
             catch (Exception ex)
@@ -207,7 +222,9 @@ namespace SppLauncher.Windows
 
         public void InsertSingle(string Path)
         {
+
             string path = Path;
+
             try
             {
                 RunMySql("127.0.0.1", 3310, "root", "123456", "mangos", path);
