@@ -383,13 +383,4 @@
         //8AAAAAAAD//wAAAAAAAP//AAAAAAAA//8=
 </value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Updater</value>
-  </data>
-  <data name="gb_status.Text" xml:space="preserve">
-    <value>Update Status</value>
-  </data>
-  <data name="lbl_status.Text" xml:space="preserve">
-    <value>Status:</value>
-  </data>
 </root>

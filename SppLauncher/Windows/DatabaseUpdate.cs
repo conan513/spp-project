@@ -51,6 +51,8 @@ namespace SppLauncher.Windows
 
         #endregion
 
+
+
         public void start()
         {
             progressBar1.Style = ProgressBarStyle.Marquee;
@@ -140,6 +142,7 @@ namespace SppLauncher.Windows
                 InsertMultiple1(@"update\scriptdev2\sql_mr", "scriptdev2", "mr*scriptdev2*sql");
                 label3.Text = "Complete!";
                 label2.Text = "-";
+                if (Directory.Exists(@"update\server")) { Copy(@"update\server", @"\SingleCore"); }
                 Directory.Delete(@"update", true);
                 EnableCloseButton();
                 Thread.Sleep(2000);
@@ -285,6 +288,17 @@ namespace SppLauncher.Windows
         private void button1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        void Copy(string sourceDir, string targetDir)
+        {
+            Directory.CreateDirectory(targetDir);
+
+            foreach (var file in Directory.GetFiles(sourceDir))
+                File.Copy(file, Path.Combine(targetDir, Path.GetFileName(file)));
+
+            foreach (var directory in Directory.GetDirectories(sourceDir))
+                Copy(directory, Path.Combine(targetDir, Path.GetFileName(directory)));
         }
     }
 

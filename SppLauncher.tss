@@ -11,12 +11,9 @@
       <string>D:\Sourcetree\SppLauncher\Windows\BugReport.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Windows\AboutBox.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\AboutBox.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
       <string>D:\Sourcetree\SppLauncher\Windows\WorldConf.cs</string>
       <string>D:\Sourcetree\SppLauncher\Windows\WorldConf.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\WorldConf.de.resx</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>D:\Sourcetree\SppLauncher\Windows\Update.cs</string>
@@ -35,16 +32,10 @@
       <string>D:\Sourcetree\SppLauncher\Windows\BotConf.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Windows\LanSwitcher\LanSwitcher.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
       <string>D:\Sourcetree\SppLauncher\Properties\Resources.de.resx</string>
       <string>D:\Sourcetree\SppLauncher\Properties\Resources.Designer.cs</string>
       <string>D:\Sourcetree\SppLauncher\Properties\Resources.hu.resx</string>
       <string>D:\Sourcetree\SppLauncher\Properties\Resources.resx</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Windows\HelpUsWindow.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>D:\Sourcetree\SppLauncher\Class\OnlineBot.cs</string>

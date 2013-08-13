@@ -119,13 +119,13 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lbl_completed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 30</value>
+    <value>94, 30</value>
   </data>
   <data name="lbl_completed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 18</value>
+    <value>146, 18</value>
   </data>
   <data name="lbl_completed.Text" xml:space="preserve">
-    <value>Update Erfolgreisch</value>
+    <value>Mise à jour complété</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

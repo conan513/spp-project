@@ -391,6 +391,15 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Online Bot: .
+        /// </summary>
+        internal static string Launcher_GetSqlOnlineBot_Tick_Online_Bot_ {
+            get {
+                return ResourceManager.GetString("Launcher_GetSqlOnlineBot_Tick_Online_Bot_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Decompress.
         /// </summary>
         internal static string Launcher_import_Decompress {

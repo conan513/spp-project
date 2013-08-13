@@ -121,10 +121,6 @@
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label19.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
-  </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
@@ -164,6 +160,7 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>342, 399</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
@@ -190,9 +187,6 @@
   </data>
   <data name="&gt;&gt;txbMoney.Parent" xml:space="preserve">
     <value>groupBox1</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -230,8 +224,8 @@
   <data name="label11.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
   </data>
-  <data name="label19.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;txbArena.Name" xml:space="preserve">
+    <value>txbArena</value>
   </data>
   <data name="label18.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
@@ -281,6 +275,9 @@
   <data name="&gt;&gt;txbHonorRate.Name" xml:space="preserve">
     <value>txbHonorRate</value>
   </data>
+  <data name="label19.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>167, 48</value>
   </data>
@@ -311,11 +308,14 @@
   <data name="&gt;&gt;txbPoor.Parent" xml:space="preserve">
     <value>groupBox3</value>
   </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 100</value>
+  <data name="&gt;&gt;txbArtifact.Name" xml:space="preserve">
+    <value>txbArtifact</value>
   </data>
   <data name="&gt;&gt;label11.Name" xml:space="preserve">
     <value>label11</value>
+  </data>
+  <data name="txbMoney.MaxLength" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="txbLegendary.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -328,6 +328,9 @@
   </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
+  </data>
+  <data name="&gt;&gt;txbRare.Parent" xml:space="preserve">
+    <value>groupBox3</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>317, 132</value>
@@ -458,11 +461,14 @@
   <data name="txbExploreRate.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
+  <data name="&gt;&gt;txbLevel.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
   </data>
-  <data name="&gt;&gt;txbLevel.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="txbTalentRate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 20</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 23</value>
@@ -485,9 +491,6 @@
   <data name="label18.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;label15.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
@@ -509,8 +512,8 @@
   <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="txbUncommon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 73</value>
+  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>Explore:</value>
@@ -611,6 +614,9 @@
   <data name="&gt;&gt;txbUncommon.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="txbUncommon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 73</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -708,8 +714,8 @@
   <data name="&gt;&gt;txbHonorRate.Parent" xml:space="preserve">
     <value>groupBox4</value>
   </data>
-  <data name="txbMoney.MaxLength" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="label19.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
   </data>
   <data name="&gt;&gt;txbKillRate.Name" xml:space="preserve">
     <value>txbKillRate</value>
@@ -759,9 +765,6 @@
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>
   </data>
-  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
@@ -798,8 +801,8 @@
   <data name="&gt;&gt;txbMoney.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -900,11 +903,8 @@
   <data name="txbMoney.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 20</value>
   </data>
-  <data name="&gt;&gt;txbArena.Name" xml:space="preserve">
-    <value>txbArena</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -912,8 +912,8 @@
   <data name="label18.Text" xml:space="preserve">
     <value>label18</value>
   </data>
-  <data name="&gt;&gt;txbRare.Parent" xml:space="preserve">
-    <value>groupBox3</value>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;label9.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -924,8 +924,8 @@
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
   </data>
-  <data name="&gt;&gt;txbArtifact.Name" xml:space="preserve">
-    <value>txbArtifact</value>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
   </data>
   <data name="&gt;&gt;label18.Parent" xml:space="preserve">
     <value>groupBox4</value>
@@ -1008,17 +1008,14 @@
   <data name="txbArena.Location" type="System.Drawing.Point, System.Drawing">
     <value>230, 52</value>
   </data>
-  <data name="txbTalentRate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
-  </data>
   <data name="txbHonorRate.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>159, 100</value>
   </data>
   <data name="&gt;&gt;button1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1028,6 +1025,9 @@
   </data>
   <data name="cbPaths.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 21</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -1234,6 +1234,6 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>de</value>
+    <value>fr</value>
   </metadata>
 </root>

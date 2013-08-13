@@ -35,5 +35,10 @@ namespace SppLauncher
             Process.Start("http://my.opera.com/conan513/blog/");
             
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/whit33r");
+        }
     }
 }

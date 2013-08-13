@@ -384,15 +384,17 @@
   <data name="&gt;&gt;btn_ok.Name" xml:space="preserve">
     <value>btn_ok</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lbl_completed.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 14</value>
   </data>
   <data name="pb_pic.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 65</value>
   </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>254, 241</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Update_Completed</value>
   </data>
   <data name="&gt;&gt;richTextBox1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -439,14 +441,12 @@
   <data name="lbl_ver.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 67</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lbl_completed.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="&gt;&gt;pb_pic.Name" xml:space="preserve">
     <value>pb_pic</value>
-  </data>
-  <data name="&gt;&gt;lbl_completed.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;panel.Parent" xml:space="preserve">
     <value>$this</value>
@@ -456,9 +456,6 @@
   </data>
   <data name="&gt;&gt;panel.Name" xml:space="preserve">
     <value>panel</value>
-  </data>
-  <data name="lbl_ver.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="lbl_currVer.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -508,8 +505,8 @@
   <data name="btn_ok.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="panel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-15, 192</value>
+  <data name="lbl_completed.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;richTextBox1.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -538,9 +535,6 @@
   <data name="panel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Update_Completed</value>
-  </data>
   <data name="lbl_completed.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
@@ -555,11 +549,14 @@ Changelog:
   <data name="&gt;&gt;lbl_completed.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>105, 14</value>
+  <data name="lbl_ver.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;btn_ok.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-15, 192</value>
   </data>
   <data name="lbl_currVer.Text" xml:space="preserve">
     <value>ver</value>
@@ -582,14 +579,17 @@ Changelog:
   <data name="&gt;&gt;lbl_ver.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>254, 241</value>
+  <data name="&gt;&gt;lbl_completed.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="lbl_ver.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 18</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="&gt;&gt;lbl_ver.Parent" xml:space="preserve">
     <value>$this</value>
@@ -601,6 +601,6 @@ Changelog:
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>de</value>
+    <value>fr</value>
   </metadata>
 </root>

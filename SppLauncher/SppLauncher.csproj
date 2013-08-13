@@ -156,8 +156,12 @@
       <DependentUpon>WorldConf.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
+    <EmbeddedResource Include="Properties\Resources.fr.resx" />
     <EmbeddedResource Include="Properties\Resources.hu.resx" />
     <EmbeddedResource Include="Windows\AboutBox.de.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\AboutBox.fr.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\AboutBox.hu.resx">
@@ -169,6 +173,9 @@
     <EmbeddedResource Include="Windows\BotConf.de.resx">
       <DependentUpon>BotConf.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\BotConf.fr.resx">
+      <DependentUpon>BotConf.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\BotConf.hu.resx">
       <DependentUpon>BotConf.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +183,9 @@
       <DependentUpon>BotConf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\BugReport.de.resx">
+      <DependentUpon>BugReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\BugReport.fr.resx">
       <DependentUpon>BugReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\BugReport.hu.resx">
@@ -193,6 +203,9 @@
     <EmbeddedResource Include="Windows\HelpUsWindow.de.resx">
       <DependentUpon>HelpUsWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\HelpUsWindow.fr.resx">
+      <DependentUpon>HelpUsWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\HelpUsWindow.hu.resx">
       <DependentUpon>HelpUsWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +215,9 @@
     <EmbeddedResource Include="Windows\LanSwitcher\LanSwitcher.de.resx">
       <DependentUpon>LanSwitcher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\LanSwitcher\LanSwitcher.fr.resx">
+      <DependentUpon>LanSwitcher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\LanSwitcher\LanSwitcher.hu.resx">
       <DependentUpon>LanSwitcher.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +225,9 @@
       <DependentUpon>LanSwitcher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Launcher.de.resx">
+      <DependentUpon>Launcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Launcher.fr.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Launcher.hu.resx">
@@ -228,6 +247,9 @@
     <EmbeddedResource Include="Windows\Update.de.resx">
       <DependentUpon>Update.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Update.fr.resx">
+      <DependentUpon>Update.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Update.hu.resx">
       <DependentUpon>Update.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +259,9 @@
     <EmbeddedResource Include="Windows\Update_Completed.de.resx">
       <DependentUpon>Update_Completed.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Update_Completed.fr.resx">
+      <DependentUpon>Update_Completed.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Update_Completed.hu.resx">
       <DependentUpon>Update_Completed.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +269,9 @@
       <DependentUpon>Update_Completed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\WorldConf.de.resx">
+      <DependentUpon>WorldConf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\WorldConf.fr.resx">
       <DependentUpon>WorldConf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\WorldConf.hu.resx">

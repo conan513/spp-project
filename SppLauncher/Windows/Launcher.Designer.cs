@@ -170,6 +170,7 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.pbarWorld);
             this.groupBox1.Controls.Add(this.pbNotAvailW);
             this.groupBox1.Controls.Add(this.pbTempW);
@@ -183,7 +184,6 @@
             this.groupBox1.Controls.Add(this.lblRealm);
             this.groupBox1.Controls.Add(this.pbAvailableR);
             this.groupBox1.Controls.Add(this.pbAvailableW);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -194,66 +194,66 @@
             // 
             // pbNotAvailW
             // 
-            this.pbNotAvailW.Image = global::SppLauncher.Properties.Resources.not_available_100x100;
             resources.ApplyResources(this.pbNotAvailW, "pbNotAvailW");
+            this.pbNotAvailW.Image = global::SppLauncher.Properties.Resources.not_available_100x100;
             this.pbNotAvailW.Name = "pbNotAvailW";
             this.pbNotAvailW.TabStop = false;
             // 
             // pbTempW
             // 
-            this.pbTempW.Image = global::SppLauncher.Properties.Resources.temporarily_not_available_100x100;
             resources.ApplyResources(this.pbTempW, "pbTempW");
+            this.pbTempW.Image = global::SppLauncher.Properties.Resources.temporarily_not_available_100x100;
             this.pbTempW.Name = "pbTempW";
             this.pbTempW.TabStop = false;
             // 
             // pbNotAvailR
             // 
-            this.pbNotAvailR.Image = global::SppLauncher.Properties.Resources.not_available_100x100;
             resources.ApplyResources(this.pbNotAvailR, "pbNotAvailR");
+            this.pbNotAvailR.Image = global::SppLauncher.Properties.Resources.not_available_100x100;
             this.pbNotAvailR.Name = "pbNotAvailR";
             this.pbNotAvailR.TabStop = false;
             // 
             // pbTempR
             // 
-            this.pbTempR.Image = global::SppLauncher.Properties.Resources.temporarily_not_available_100x100;
             resources.ApplyResources(this.pbTempR, "pbTempR");
+            this.pbTempR.Image = global::SppLauncher.Properties.Resources.temporarily_not_available_100x100;
             this.pbTempR.Name = "pbTempR";
             this.pbTempR.TabStop = false;
             // 
             // pbNotAvailM
             // 
-            this.pbNotAvailM.Image = global::SppLauncher.Properties.Resources.not_available_100x100;
             resources.ApplyResources(this.pbNotAvailM, "pbNotAvailM");
+            this.pbNotAvailM.Image = global::SppLauncher.Properties.Resources.not_available_100x100;
             this.pbNotAvailM.Name = "pbNotAvailM";
             this.pbNotAvailM.TabStop = false;
             // 
             // pbTempM
             // 
-            this.pbTempM.Image = global::SppLauncher.Properties.Resources.temporarily_not_available_100x100;
             resources.ApplyResources(this.pbTempM, "pbTempM");
+            this.pbTempM.Image = global::SppLauncher.Properties.Resources.temporarily_not_available_100x100;
             this.pbTempM.Name = "pbTempM";
             this.pbTempM.TabStop = false;
             // 
             // pbAvailableM
             // 
-            this.pbAvailableM.Image = global::SppLauncher.Properties.Resources.available_100x100;
             resources.ApplyResources(this.pbAvailableM, "pbAvailableM");
+            this.pbAvailableM.Image = global::SppLauncher.Properties.Resources.available_100x100;
             this.pbAvailableM.Name = "pbAvailableM";
             this.pbAvailableM.TabStop = false;
             this.pbAvailableM.MouseHover += new System.EventHandler(this.pbAvailableM_MouseHover);
             // 
             // pbAvailableR
             // 
-            this.pbAvailableR.Image = global::SppLauncher.Properties.Resources.available_100x100;
             resources.ApplyResources(this.pbAvailableR, "pbAvailableR");
+            this.pbAvailableR.Image = global::SppLauncher.Properties.Resources.available_100x100;
             this.pbAvailableR.Name = "pbAvailableR";
             this.pbAvailableR.TabStop = false;
             this.pbAvailableR.MouseHover += new System.EventHandler(this.pbAvailableR_MouseHover);
             // 
             // pbAvailableW
             // 
-            this.pbAvailableW.Image = global::SppLauncher.Properties.Resources.available_100x100;
             resources.ApplyResources(this.pbAvailableW, "pbAvailableW");
+            this.pbAvailableW.Image = global::SppLauncher.Properties.Resources.available_100x100;
             this.pbAvailableW.Name = "pbAvailableW";
             this.pbAvailableW.TabStop = false;
             this.pbAvailableW.MouseHover += new System.EventHandler(this.pbAvailableW_MouseHover);
@@ -266,6 +266,7 @@
             // 
             // cmsTray
             // 
+            resources.ApplyResources(this.cmsTray, "cmsTray");
             this.cmsTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showToolStripMenuItem,
             this.startWowToolStripMenuItem,
@@ -276,24 +277,24 @@
             this.aboutToolStripMenuItem1,
             this.exitToolStripMenuItem1});
             this.cmsTray.Name = "contextMenuStrip1";
-            resources.ApplyResources(this.cmsTray, "cmsTray");
             this.cmsTray.DoubleClick += new System.EventHandler(this.cmsTray_DoubleClick);
             // 
             // showToolStripMenuItem
             // 
-            this.showToolStripMenuItem.Name = "showToolStripMenuItem";
             resources.ApplyResources(this.showToolStripMenuItem, "showToolStripMenuItem");
+            this.showToolStripMenuItem.Name = "showToolStripMenuItem";
             this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
             // 
             // startWowToolStripMenuItem
             // 
+            resources.ApplyResources(this.startWowToolStripMenuItem, "startWowToolStripMenuItem");
             this.startWowToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.world_of_warcraft;
             this.startWowToolStripMenuItem.Name = "startWowToolStripMenuItem";
-            resources.ApplyResources(this.startWowToolStripMenuItem, "startWowToolStripMenuItem");
             this.startWowToolStripMenuItem.Click += new System.EventHandler(this.startWowToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
+            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.worldSettingsToolStripMenuItem1,
             this.botSettingsToolStripMenuItem1,
@@ -303,85 +304,85 @@
             this.exportImportCharactersToolStripMenuItem});
             this.settingsToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.configuration_1;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             // 
             // worldSettingsToolStripMenuItem1
             // 
-            this.worldSettingsToolStripMenuItem1.Name = "worldSettingsToolStripMenuItem1";
             resources.ApplyResources(this.worldSettingsToolStripMenuItem1, "worldSettingsToolStripMenuItem1");
+            this.worldSettingsToolStripMenuItem1.Name = "worldSettingsToolStripMenuItem1";
             this.worldSettingsToolStripMenuItem1.Click += new System.EventHandler(this.worldSettingsToolStripMenuItem1_Click);
             // 
             // botSettingsToolStripMenuItem1
             // 
-            this.botSettingsToolStripMenuItem1.Name = "botSettingsToolStripMenuItem1";
             resources.ApplyResources(this.botSettingsToolStripMenuItem1, "botSettingsToolStripMenuItem1");
+            this.botSettingsToolStripMenuItem1.Name = "botSettingsToolStripMenuItem1";
             this.botSettingsToolStripMenuItem1.Click += new System.EventHandler(this.botSettingsToolStripMenuItem1_Click);
             // 
             // changeWoWPathToolStripMenuItem
             // 
-            this.changeWoWPathToolStripMenuItem.Name = "changeWoWPathToolStripMenuItem";
             resources.ApplyResources(this.changeWoWPathToolStripMenuItem, "changeWoWPathToolStripMenuItem");
+            this.changeWoWPathToolStripMenuItem.Name = "changeWoWPathToolStripMenuItem";
             this.changeWoWPathToolStripMenuItem.Click += new System.EventHandler(this.changeWoWPathToolStripMenuItem_Click);
             // 
             // resetBotsToolStripMenuItem
             // 
-            this.resetBotsToolStripMenuItem.Name = "resetBotsToolStripMenuItem";
             resources.ApplyResources(this.resetBotsToolStripMenuItem, "resetBotsToolStripMenuItem");
+            this.resetBotsToolStripMenuItem.Name = "resetBotsToolStripMenuItem";
             this.resetBotsToolStripMenuItem.Click += new System.EventHandler(this.resetBotsToolStripMenuItem_Click);
             // 
             // randomizeBotsToolStripMenuItem1
             // 
-            this.randomizeBotsToolStripMenuItem1.Name = "randomizeBotsToolStripMenuItem1";
             resources.ApplyResources(this.randomizeBotsToolStripMenuItem1, "randomizeBotsToolStripMenuItem1");
+            this.randomizeBotsToolStripMenuItem1.Name = "randomizeBotsToolStripMenuItem1";
             this.randomizeBotsToolStripMenuItem1.Click += new System.EventHandler(this.randomizeBotsToolStripMenuItem1_Click);
             // 
             // exportImportCharactersToolStripMenuItem
             // 
+            resources.ApplyResources(this.exportImportCharactersToolStripMenuItem, "exportImportCharactersToolStripMenuItem");
             this.exportImportCharactersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exportToolStripMenuItem1,
             this.importToolStripMenuItem1});
             this.exportImportCharactersToolStripMenuItem.Name = "exportImportCharactersToolStripMenuItem";
-            resources.ApplyResources(this.exportImportCharactersToolStripMenuItem, "exportImportCharactersToolStripMenuItem");
             // 
             // exportToolStripMenuItem1
             // 
+            resources.ApplyResources(this.exportToolStripMenuItem1, "exportToolStripMenuItem1");
             this.exportToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.Export_Icon_32;
             this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
-            resources.ApplyResources(this.exportToolStripMenuItem1, "exportToolStripMenuItem1");
             this.exportToolStripMenuItem1.Click += new System.EventHandler(this.exportToolStripMenuItem1_Click);
             // 
             // importToolStripMenuItem1
             // 
+            resources.ApplyResources(this.importToolStripMenuItem1, "importToolStripMenuItem1");
             this.importToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.Import_Icon_32;
             this.importToolStripMenuItem1.Name = "importToolStripMenuItem1";
-            resources.ApplyResources(this.importToolStripMenuItem1, "importToolStripMenuItem1");
             this.importToolStripMenuItem1.Click += new System.EventHandler(this.importToolStripMenuItem1_Click);
             // 
             // toolToolStripMenuItem
             // 
+            resources.ApplyResources(this.toolToolStripMenuItem, "toolToolStripMenuItem");
             this.toolToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lanSwitcherToolStripMenuItem,
             this.accountToolToolStripMenuItem});
             this.toolToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.icon_gear;
             this.toolToolStripMenuItem.Name = "toolToolStripMenuItem";
-            resources.ApplyResources(this.toolToolStripMenuItem, "toolToolStripMenuItem");
             // 
             // lanSwitcherToolStripMenuItem
             // 
+            resources.ApplyResources(this.lanSwitcherToolStripMenuItem, "lanSwitcherToolStripMenuItem");
             this.lanSwitcherToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.Other_Power_Switch_User_Metro_icon;
             this.lanSwitcherToolStripMenuItem.Name = "lanSwitcherToolStripMenuItem";
-            resources.ApplyResources(this.lanSwitcherToolStripMenuItem, "lanSwitcherToolStripMenuItem");
             this.lanSwitcherToolStripMenuItem.Click += new System.EventHandler(this.lanSwitcherToolStripMenuItem_Click);
             // 
             // accountToolToolStripMenuItem
             // 
+            resources.ApplyResources(this.accountToolToolStripMenuItem, "accountToolToolStripMenuItem");
             this.accountToolToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.WoW_icon;
             this.accountToolToolStripMenuItem.Name = "accountToolToolStripMenuItem";
-            resources.ApplyResources(this.accountToolToolStripMenuItem, "accountToolToolStripMenuItem");
             this.accountToolToolStripMenuItem.Click += new System.EventHandler(this.accountToolToolStripMenuItem_Click);
             // 
             // ServersStripMenuItem
             // 
+            resources.ApplyResources(this.ServersStripMenuItem, "ServersStripMenuItem");
             this.ServersStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.startToolStripMenuItem,
             this.restartToolStripMenuItem2,
@@ -389,13 +390,12 @@
             this.autorunToolStripMenuItem});
             this.ServersStripMenuItem.Image = global::SppLauncher.Properties.Resources.Places_server_database_icon;
             this.ServersStripMenuItem.Name = "ServersStripMenuItem";
-            resources.ApplyResources(this.ServersStripMenuItem, "ServersStripMenuItem");
             // 
             // startToolStripMenuItem
             // 
+            resources.ApplyResources(this.startToolStripMenuItem, "startToolStripMenuItem");
             this.startToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.Play_1_Hot_icon;
             this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            resources.ApplyResources(this.startToolStripMenuItem, "startToolStripMenuItem");
             this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
             // 
             // restartToolStripMenuItem2
@@ -407,34 +407,34 @@
             // 
             // toolStripSeparator2
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
             resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
             // 
             // autorunToolStripMenuItem
             // 
-            this.autorunToolStripMenuItem.Name = "autorunToolStripMenuItem";
             resources.ApplyResources(this.autorunToolStripMenuItem, "autorunToolStripMenuItem");
+            this.autorunToolStripMenuItem.Name = "autorunToolStripMenuItem";
             this.autorunToolStripMenuItem.Click += new System.EventHandler(this.autorunToolStripMenuItem_Click);
             // 
             // reportToolStripMenuItem
             // 
+            resources.ApplyResources(this.reportToolStripMenuItem, "reportToolStripMenuItem");
             this.reportToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.report_bug_icon;
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            resources.ApplyResources(this.reportToolStripMenuItem, "reportToolStripMenuItem");
             this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem1
             // 
+            resources.ApplyResources(this.aboutToolStripMenuItem1, "aboutToolStripMenuItem1");
             this.aboutToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.Information_icon;
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            resources.ApplyResources(this.aboutToolStripMenuItem1, "aboutToolStripMenuItem1");
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
             // exitToolStripMenuItem1
             // 
+            resources.ApplyResources(this.exitToolStripMenuItem1, "exitToolStripMenuItem1");
             this.exitToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.Windows_Close_Program_icon;
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            resources.ApplyResources(this.exitToolStripMenuItem1, "exitToolStripMenuItem1");
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
             // 
             // CheckWowRun
@@ -449,16 +449,16 @@
             // 
             // txbWorldDev
             // 
-            this.txbWorldDev.BackColor = System.Drawing.Color.Black;
             resources.ApplyResources(this.txbWorldDev, "txbWorldDev");
+            this.txbWorldDev.BackColor = System.Drawing.Color.Black;
             this.txbWorldDev.ForeColor = System.Drawing.Color.White;
             this.txbWorldDev.Name = "txbWorldDev";
             this.txbWorldDev.KeyDown += new System.Windows.Forms.KeyEventHandler(this.input_KeyDown);
             // 
             // rtWorldDev
             // 
-            this.rtWorldDev.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             resources.ApplyResources(this.rtWorldDev, "rtWorldDev");
+            this.rtWorldDev.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.rtWorldDev.ForeColor = System.Drawing.Color.White;
             this.rtWorldDev.Name = "rtWorldDev";
             this.rtWorldDev.ReadOnly = true;
@@ -466,6 +466,7 @@
             // 
             // msForm
             // 
+            resources.ApplyResources(this.msForm, "msForm");
             this.msForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.runWoWToolStripMenuItem,
             this.toolStripMenuItem1,
@@ -475,18 +476,18 @@
             this.tsmHelpUs,
             this.aboutToolStripMenuItem,
             this.exitToolStripMenuItem2});
-            resources.ApplyResources(this.msForm, "msForm");
             this.msForm.Name = "msForm";
             // 
             // runWoWToolStripMenuItem
             // 
+            resources.ApplyResources(this.runWoWToolStripMenuItem, "runWoWToolStripMenuItem");
             this.runWoWToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.world_of_warcraft;
             this.runWoWToolStripMenuItem.Name = "runWoWToolStripMenuItem";
-            resources.ApplyResources(this.runWoWToolStripMenuItem, "runWoWToolStripMenuItem");
             this.runWoWToolStripMenuItem.Click += new System.EventHandler(this.runWoWToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.worldSettingsToolStripMenuItem,
             this.botSettingsToolStripMenuItem,
@@ -498,86 +499,85 @@
             this.updateToolStripMenuItem});
             this.toolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.configuration_1;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             // 
             // worldSettingsToolStripMenuItem
             // 
-            this.worldSettingsToolStripMenuItem.Name = "worldSettingsToolStripMenuItem";
             resources.ApplyResources(this.worldSettingsToolStripMenuItem, "worldSettingsToolStripMenuItem");
+            this.worldSettingsToolStripMenuItem.Name = "worldSettingsToolStripMenuItem";
             this.worldSettingsToolStripMenuItem.Click += new System.EventHandler(this.worldSettingsToolStripMenuItem_Click);
             // 
             // botSettingsToolStripMenuItem
             // 
-            this.botSettingsToolStripMenuItem.Name = "botSettingsToolStripMenuItem";
             resources.ApplyResources(this.botSettingsToolStripMenuItem, "botSettingsToolStripMenuItem");
+            this.botSettingsToolStripMenuItem.Name = "botSettingsToolStripMenuItem";
             this.botSettingsToolStripMenuItem.Click += new System.EventHandler(this.botSettingsToolStripMenuItem_Click);
             // 
             // changeWoWPathToolStripMenuItem1
             // 
-            this.changeWoWPathToolStripMenuItem1.Name = "changeWoWPathToolStripMenuItem1";
             resources.ApplyResources(this.changeWoWPathToolStripMenuItem1, "changeWoWPathToolStripMenuItem1");
+            this.changeWoWPathToolStripMenuItem1.Name = "changeWoWPathToolStripMenuItem1";
             this.changeWoWPathToolStripMenuItem1.Click += new System.EventHandler(this.changeWoWPathToolStripMenuItem1_Click);
             // 
             // resetAllRandomBotsToolStripMenuItem
             // 
-            this.resetAllRandomBotsToolStripMenuItem.Name = "resetAllRandomBotsToolStripMenuItem";
             resources.ApplyResources(this.resetAllRandomBotsToolStripMenuItem, "resetAllRandomBotsToolStripMenuItem");
+            this.resetAllRandomBotsToolStripMenuItem.Name = "resetAllRandomBotsToolStripMenuItem";
             this.resetAllRandomBotsToolStripMenuItem.Click += new System.EventHandler(this.resetAllRandomBotsToolStripMenuItem_Click);
             // 
             // randomizeBotsToolStripMenuItem
             // 
-            this.randomizeBotsToolStripMenuItem.Name = "randomizeBotsToolStripMenuItem";
             resources.ApplyResources(this.randomizeBotsToolStripMenuItem, "randomizeBotsToolStripMenuItem");
+            this.randomizeBotsToolStripMenuItem.Name = "randomizeBotsToolStripMenuItem";
             this.randomizeBotsToolStripMenuItem.Click += new System.EventHandler(this.randomizeBotsToolStripMenuItem_Click);
             // 
             // exportCharactersToolStripMenuItem
             // 
+            resources.ApplyResources(this.exportCharactersToolStripMenuItem, "exportCharactersToolStripMenuItem");
             this.exportCharactersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exportToolStripMenuItem2,
             this.importToolStripMenuItem2});
             this.exportCharactersToolStripMenuItem.Name = "exportCharactersToolStripMenuItem";
-            resources.ApplyResources(this.exportCharactersToolStripMenuItem, "exportCharactersToolStripMenuItem");
             // 
             // exportToolStripMenuItem2
             // 
+            resources.ApplyResources(this.exportToolStripMenuItem2, "exportToolStripMenuItem2");
             this.exportToolStripMenuItem2.Image = global::SppLauncher.Properties.Resources.Export_Icon_32;
             this.exportToolStripMenuItem2.Name = "exportToolStripMenuItem2";
-            resources.ApplyResources(this.exportToolStripMenuItem2, "exportToolStripMenuItem2");
             this.exportToolStripMenuItem2.Click += new System.EventHandler(this.exportToolStripMenuItem2_Click);
             // 
             // importToolStripMenuItem2
             // 
+            resources.ApplyResources(this.importToolStripMenuItem2, "importToolStripMenuItem2");
             this.importToolStripMenuItem2.Image = global::SppLauncher.Properties.Resources.Import_Icon_32;
             this.importToolStripMenuItem2.Name = "importToolStripMenuItem2";
-            resources.ApplyResources(this.importToolStripMenuItem2, "importToolStripMenuItem2");
             this.importToolStripMenuItem2.Click += new System.EventHandler(this.importToolStripMenuItem2_Click);
             // 
             // languageToolStripMenuItem
             // 
+            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
             this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.magyarToolStripMenuItem,
             this.englishToolStripMenuItem,
             this.germanToolStripMenuItem,
             this.frenchToolStripMenuItem});
             this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
             // 
             // magyarToolStripMenuItem
             // 
-            this.magyarToolStripMenuItem.Name = "magyarToolStripMenuItem";
             resources.ApplyResources(this.magyarToolStripMenuItem, "magyarToolStripMenuItem");
+            this.magyarToolStripMenuItem.Name = "magyarToolStripMenuItem";
             this.magyarToolStripMenuItem.Click += new System.EventHandler(this.magyarToolStripMenuItem_Click_1);
             // 
             // englishToolStripMenuItem
             // 
-            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
             resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
             this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
             // 
             // germanToolStripMenuItem
             // 
-            this.germanToolStripMenuItem.Name = "germanToolStripMenuItem";
             resources.ApplyResources(this.germanToolStripMenuItem, "germanToolStripMenuItem");
+            this.germanToolStripMenuItem.Name = "germanToolStripMenuItem";
             this.germanToolStripMenuItem.Click += new System.EventHandler(this.germanToolStripMenuItem_Click);
             // 
             // frenchToolStripMenuItem
@@ -588,35 +588,36 @@
             // 
             // updateToolStripMenuItem
             // 
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
             resources.ApplyResources(this.updateToolStripMenuItem, "updateToolStripMenuItem");
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
+            resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lanSwitcherToolStripMenuItem1,
             this.accountToolToolStripMenuItem1});
             this.toolsToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.icon_gear;
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
             // 
             // lanSwitcherToolStripMenuItem1
             // 
+            resources.ApplyResources(this.lanSwitcherToolStripMenuItem1, "lanSwitcherToolStripMenuItem1");
             this.lanSwitcherToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.Other_Power_Switch_User_Metro_icon;
             this.lanSwitcherToolStripMenuItem1.Name = "lanSwitcherToolStripMenuItem1";
-            resources.ApplyResources(this.lanSwitcherToolStripMenuItem1, "lanSwitcherToolStripMenuItem1");
             this.lanSwitcherToolStripMenuItem1.Click += new System.EventHandler(this.lanSwitcherToolStripMenuItem1_Click);
             // 
             // accountToolToolStripMenuItem1
             // 
+            resources.ApplyResources(this.accountToolToolStripMenuItem1, "accountToolToolStripMenuItem1");
             this.accountToolToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.WoW_icon;
             this.accountToolToolStripMenuItem1.Name = "accountToolToolStripMenuItem1";
-            resources.ApplyResources(this.accountToolToolStripMenuItem1, "accountToolToolStripMenuItem1");
             this.accountToolToolStripMenuItem1.Click += new System.EventHandler(this.accountToolToolStripMenuItem1_Click);
             // 
             // restartToolStripMenuItem
             // 
+            resources.ApplyResources(this.restartToolStripMenuItem, "restartToolStripMenuItem");
             this.restartToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.startstopToolStripMenuItem,
             this.restartToolStripMenuItem1,
@@ -624,13 +625,12 @@
             this.autostartToolStripMenuItem});
             this.restartToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.Places_server_database_icon;
             this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
-            resources.ApplyResources(this.restartToolStripMenuItem, "restartToolStripMenuItem");
             // 
             // startstopToolStripMenuItem
             // 
+            resources.ApplyResources(this.startstopToolStripMenuItem, "startstopToolStripMenuItem");
             this.startstopToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.Play_1_Hot_icon;
             this.startstopToolStripMenuItem.Name = "startstopToolStripMenuItem";
-            resources.ApplyResources(this.startstopToolStripMenuItem, "startstopToolStripMenuItem");
             this.startstopToolStripMenuItem.Click += new System.EventHandler(this.startstopToolStripMenuItem_Click);
             // 
             // restartToolStripMenuItem1
@@ -642,50 +642,50 @@
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
             // 
             // autostartToolStripMenuItem
             // 
-            this.autostartToolStripMenuItem.Name = "autostartToolStripMenuItem";
             resources.ApplyResources(this.autostartToolStripMenuItem, "autostartToolStripMenuItem");
+            this.autostartToolStripMenuItem.Name = "autostartToolStripMenuItem";
             this.autostartToolStripMenuItem.Click += new System.EventHandler(this.autostartToolStripMenuItem_Click);
             // 
             // reportBugToolStripMenuItem
             // 
+            resources.ApplyResources(this.reportBugToolStripMenuItem, "reportBugToolStripMenuItem");
             this.reportBugToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.report_bug_icon;
             this.reportBugToolStripMenuItem.Name = "reportBugToolStripMenuItem";
-            resources.ApplyResources(this.reportBugToolStripMenuItem, "reportBugToolStripMenuItem");
             this.reportBugToolStripMenuItem.Click += new System.EventHandler(this.reportBugToolStripMenuItem_Click);
             // 
             // tsmHelpUs
             // 
+            resources.ApplyResources(this.tsmHelpUs, "tsmHelpUs");
             this.tsmHelpUs.Image = global::SppLauncher.Properties.Resources.heart_icon;
             this.tsmHelpUs.Name = "tsmHelpUs";
-            resources.ApplyResources(this.tsmHelpUs, "tsmHelpUs");
             this.tsmHelpUs.Click += new System.EventHandler(this.tsmHelpUs_Click);
             // 
             // aboutToolStripMenuItem
             // 
+            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
             this.aboutToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.Information_icon;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem2
             // 
+            resources.ApplyResources(this.exitToolStripMenuItem2, "exitToolStripMenuItem2");
             this.exitToolStripMenuItem2.Image = global::SppLauncher.Properties.Resources.Windows_Close_Program_icon;
             this.exitToolStripMenuItem2.Name = "exitToolStripMenuItem2";
-            resources.ApplyResources(this.exitToolStripMenuItem2, "exitToolStripMenuItem2");
             this.exitToolStripMenuItem2.Click += new System.EventHandler(this.exitToolStripMenuItem2_Click);
             // 
             // ssBar
             // 
+            resources.ApplyResources(this.ssBar, "ssBar");
             this.ssBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssLOnline,
             this.tssUsage,
             this.tssStatus});
-            resources.ApplyResources(this.ssBar, "ssBar");
             this.ssBar.Name = "ssBar";
             this.ssBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
             this.ssBar.ShowItemToolTips = true;
@@ -693,19 +693,19 @@
             // 
             // tssLOnline
             // 
-            this.tssLOnline.Name = "tssLOnline";
             resources.ApplyResources(this.tssLOnline, "tssLOnline");
+            this.tssLOnline.Name = "tssLOnline";
             // 
             // tssUsage
             // 
-            this.tssUsage.Name = "tssUsage";
             resources.ApplyResources(this.tssUsage, "tssUsage");
+            this.tssUsage.Name = "tssUsage";
             this.tssUsage.Spring = true;
             // 
             // tssStatus
             // 
-            this.tssStatus.Name = "tssStatus";
             resources.ApplyResources(this.tssStatus, "tssStatus");
+            this.tssStatus.Name = "tssStatus";
             this.tssStatus.Click += new System.EventHandler(this.tssStatus_Click);
             // 
             // progressBar1

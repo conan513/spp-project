@@ -550,6 +550,9 @@ namespace SppLauncher
                     case "German":
                         germanToolStripMenuItem.Checked = true;
                         break;
+                    case "French":
+                        frenchToolStripMenuItem.Checked = true;
+                        break;
                 }
             else
             {
@@ -557,15 +560,19 @@ namespace SppLauncher
                 {
                     case "Hungarian":
                         Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("hu");
-                        Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("hu");
+                        Thread.CurrentThread.CurrentCulture   = CultureInfo.CreateSpecificCulture("hu");
                         break;
                     case "English":
-                        Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.InvariantCulture;
-                        Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
+                        Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
+                        Thread.CurrentThread.CurrentCulture   = CultureInfo.InvariantCulture;
                         break;
                     case "German":
                         Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("de");
-                        Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("de");
+                        Thread.CurrentThread.CurrentCulture   = CultureInfo.CreateSpecificCulture("de");
+                        break;
+                    case "French":
+                        Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("fr");
+                        Thread.CurrentThread.CurrentCulture   = CultureInfo.CreateSpecificCulture("fr");
                         break;
                 }
             }
@@ -1554,7 +1561,7 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         private void GetSqlOnlineBot_Tick(object sender, EventArgs e)
         {
-            tssLOnline.Text = new Onlinebot().GetBot();
+            tssLOnline.Text = Resources.Launcher_GetSqlOnlineBot_Tick_Online_Bot_ + new Onlinebot().GetBot();
             SppTray.Text    = tssLOnline.Text;
         }
 

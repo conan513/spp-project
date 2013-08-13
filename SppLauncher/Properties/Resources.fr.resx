@@ -118,144 +118,119 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Launcher_bwExport_DoWork_Compressing" xml:space="preserve">
-    <value>Druck</value>
-  </data>
-  <data name="Launcher_bwExport_RunWorkerCompleted_Export_Completed" xml:space="preserve">
-    <value>Export fertig</value>
-  </data>
-  <data name="Launcher_bwUpdate_DoWork_ERROR" xml:space="preserve">
-    <value>FEHLER</value>
-  </data>
-  <data name="Launcher_bwUpdate_DoWork_New_Server_Update_Available" xml:space="preserve">
-    <value>Neuer Server update verfügbar</value>
-  </data>
-  <data name="Launcher_bwUpdate_DoWork_New_Version" xml:space="preserve">
-    <value>Neue Version</value>
-  </data>
-  <data name="Launcher_bwUpdate_DoWork_New_Version_Available__V" xml:space="preserve">
-    <value>Neue Version verfügbar: V</value>
-  </data>
-  <data name="Launcher_bwUpdate_DoWork_You_want_to_download_" xml:space="preserve">
-    <value>Möchtest du es herunterladen?</value>
-  </data>
-  <data name="Launcher_bwUpdate_RunWorkerCompleted_Up_to_date" xml:space="preserve">
-    <value>Aktuell</value>
-  </data>
-  <data name="Launcher_CheckMangosCrashed_Tick_Mangosd_Crashed" xml:space="preserve">
-    <value>Mangosd Zusammenbruch</value>
-  </data>
-  <data name="Launcher_CheckMangosCrashed_Tick_The_process_is_automatically_restart_" xml:space="preserve">
-    <value>Der Prozess wird neugestartet.</value>
-  </data>
-  <data name="Launcher_CheckWowRun_Tick_Would_you_like_to_start_World_of_Warcraft_" xml:space="preserve">
-    <value>Möchtest du World of Warcraft starten?</value>
-  </data>
-  <data name="Launcher_CloseProcess_" xml:space="preserve">
-    <value>Einige Ausnahmen: CloseProcess</value>
-  </data>
-  <data name="Launcher_CloseProcess_Login_Shutdown" xml:space="preserve">
-    <value>Logon herunterfahren</value>
-  </data>
-  <data name="Launcher_CloseProcess_World_Shutdown" xml:space="preserve">
-    <value>World herunterfahren</value>
-  </data>
-  <data name="Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_" xml:space="preserve">
-    <value>Änderungen wirken wenn du den launcher neustartest.</value>
-  </data>
-  <data name="Launcher_export_Backup" xml:space="preserve">
-    <value>Backup</value>
-  </data>
-  <data name="Launcher_export_Export_Characters" xml:space="preserve">
-    <value>Export Charaktere</value>
-  </data>
-  <data name="Launcher_export_Exporting_Characters" xml:space="preserve">
-    <value>Export Charaktere</value>
-  </data>
-  <data name="Launcher_import_Decompress" xml:space="preserve">
-    <value>Dekomprimieren</value>
-  </data>
-  <data name="Launcher_import_Import_Characters" xml:space="preserve">
-    <value>Import Charaktere</value>
-  </data>
-  <data name="Launcher_Launcher_Auto_Changed_RealmList_wtf_and_after_exit_SPP_change_back_original_realmlist_" xml:space="preserve">
-    <value>Automatische realmlist änderung und nach beenden SPP ändert es zurück in die originale realmlist.</value>
-  </data>
-  <data name="Launcher_RandomizeBotsMethod_" xml:space="preserve">
-    <value>Update startet lags.
-Können auftreten.</value>
-  </data>
-  <data name="Launcher_RealmChange_" xml:space="preserve">
-    <value>Einige Ausnahmen: RealmChage</value>
-  </data>
-  <data name="Launcher_RealmChange0_" xml:space="preserve">
-    <value>Einige Ausnahmen: RealmWrite</value>
-  </data>
-  <data name="Launcher_RealmRestore_" xml:space="preserve">
-    <value>Einige Ausnahmen: RealmRestore</value>
-  </data>
-  <data name="Launcher_RealmdStart_Starting_Realm" xml:space="preserve">
-    <value>Starte Realm</value>
-  </data>
-  <data name="Launcher_RealmRestore_Restored" xml:space="preserve">
-    <value>Zurücksetzen.</value>
-  </data>
-  <data name="Launcher_ResetBots_" xml:space="preserve">
-    <value>Neustart ist notwendig um Bots zurückzusetzen. Jetzt neustarten?</value>
-  </data>
-  <data name="Launcher_SearchProcess_" xml:space="preserve">
-    <value>Ein Mangosd Prozess ist noch aktiv.
-Möchten sie den Prozess beenden?</value>
-  </data>
-  <data name="Launcher_SearchProcess_Warning" xml:space="preserve">
-    <value>Warning</value>
-  </data>
-  <data name="Launcher_SearchProcess0_" xml:space="preserve">
-    <value>Einige Ausnahmen: Search Process</value>
-  </data>
-  <data name="Launcher_SearchProcess2_" xml:space="preserve">
-    <value>Mysqld Prozess ist Aktiv.
-Möchten sie den Prozess beenden?</value>
-  </data>
-  <data name="Launcher_StartAll_Starting_Mysqlm" xml:space="preserve">
-    <value>Starte Mysql</value>
-  </data>
-  <data name="Launcher_startNStop_Derver_is_down" xml:space="preserve">
-    <value>Server ist heruntergefahren</value>
-  </data>
-  <data name="Launcher_startNStop_Start" xml:space="preserve">
-    <value>Start</value>
-  </data>
-  <data name="Launcher_startNStop_Stop" xml:space="preserve">
-    <value>Stop</value>
-  </data>
-  <data name="Launcher_tmrWorld_Tick_Online" xml:space="preserve">
-    <value>Online</value>
-  </data>
-  <data name="Launcher_Traymsg_Ready_to_play" xml:space="preserve">
-    <value>Bereit zum spielen</value>
-  </data>
-  <data name="Launcher_Traymsg_Servers_Started" xml:space="preserve">
-    <value>Server gestartet</value>
-  </data>
-  <data name="Launcher_WorldStart_Loading_World" xml:space="preserve">
-    <value>Lade world</value>
+    <value>Compression</value>
   </data>
   <data name="Launcher_bwExport_DoWork_Export_Accounts" xml:space="preserve">
-    <value>Export Accounts</value>
+    <value>Exporter Comptes</value>
+  </data>
+  <data name="Launcher_bwExport_RunWorkerCompleted_Export_Completed" xml:space="preserve">
+    <value>Exportation Completé</value>
   </data>
   <data name="Launcher_bwImport_DoWork_Import_Accounts" xml:space="preserve">
-    <value>Import Accounts</value>
+    <value>Importer Comptes</value>
   </data>
   <data name="Launcher_bwImport_RunWorkerCompleted_Import_Completed" xml:space="preserve">
-    <value>Import komplett</value>
+    <value>Importation Completé</value>
+  </data>
+  <data name="Launcher_bwUpdate_DoWork_ERROR" xml:space="preserve">
+    <value>ERREUR</value>
+  </data>
+  <data name="Launcher_bwUpdate_DoWork_New_Server_Update_Available" xml:space="preserve">
+    <value>Nouvelle mise à jour du serveur disponible</value>
+  </data>
+  <data name="Launcher_bwUpdate_DoWork_New_Version" xml:space="preserve">
+    <value>Nouvelle Version</value>
+  </data>
+  <data name="Launcher_bwUpdate_DoWork_New_Version_Available__V" xml:space="preserve">
+    <value>Nouvelle Version Disponible: V</value>
+  </data>
+  <data name="Launcher_bwUpdate_DoWork_You_want_to_download_" xml:space="preserve">
+    <value>Voulez-vous télécharger?</value>
+  </data>
+  <data name="Launcher_bwUpdate_RunWorkerCompleted_Up_to_date" xml:space="preserve">
+    <value>À jour</value>
+  </data>
+  <data name="Launcher_CheckMangosCrashed_Tick_The_process_is_automatically_restart_" xml:space="preserve">
+    <value>Le programme va redémarrer automatiquement.</value>
   </data>
   <data name="Launcher_Checking_Update" xml:space="preserve">
-    <value>Schaut nach update</value>
+    <value>Recherche de mise à jour</value>
+  </data>
+  <data name="Launcher_CheckMangosCrashed_Tick_Mangosd_Crashed" xml:space="preserve">
+    <value>Mangosd effondrement</value>
+  </data>
+  <data name="Launcher_CheckWowRun_Tick_Would_you_like_to_start_World_of_Warcraft_" xml:space="preserve">
+    <value>Voulez-vous démarrer World of Warcraft?</value>
+  </data>
+  <data name="Launcher_CloseProcess_Login_Shutdown" xml:space="preserve">
+    <value>Fermeture du Login</value>
+  </data>
+  <data name="Launcher_CloseProcess_World_Shutdown" xml:space="preserve">
+    <value>Fermeture du World</value>
+  </data>
+  <data name="Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_" xml:space="preserve">
+    <value>Les changements prendrons effets au redémarrage du Launcher.</value>
+  </data>
+  <data name="Launcher_export_Backup" xml:space="preserve">
+    <value>Sauvegarde</value>
+  </data>
+  <data name="Launcher_export_Export_Characters" xml:space="preserve">
+    <value>Exporter Personnages</value>
+  </data>
+  <data name="Launcher_export_Exporting_Characters" xml:space="preserve">
+    <value>Exporter Personnages</value>
+  </data>
+  <data name="Launcher_import_Decompress" xml:space="preserve">
+    <value>Décompresser</value>
+  </data>
+  <data name="Launcher_import_Import_Characters" xml:space="preserve">
+    <value>Importer Personnages</value>
+  </data>
+  <data name="Launcher_import_Online_Bots__N_A" xml:space="preserve">
+    <value>Bots en-ligne: N/A</value>
+  </data>
+  <data name="Launcher_Launcher_Auto_Changed_RealmList_wtf_and_after_exit_SPP_change_back_original_realmlist_" xml:space="preserve">
+    <value>Changement automatique de RealmList.wtf
+En quittant SPP va remettre realmlist originel.</value>
+  </data>
+  <data name="Launcher_RandomizeBotsMethod_" xml:space="preserve">
+    <value>Mise à jour démarré.
+Lag pour un moment.</value>
+  </data>
+  <data name="Launcher_RealmdStart_Starting_Realm" xml:space="preserve">
+    <value>Démarrage du Realm</value>
+  </data>
+  <data name="Launcher_RealmRestore_Restored" xml:space="preserve">
+    <value>Restaurer.</value>
+  </data>
+  <data name="Launcher_ResetBots_" xml:space="preserve">
+    <value>Redémarrage requis pour réinitialiser les Bots.
+Redémarrer maintenant?</value>
+  </data>
+  <data name="Launcher_rstchck_DoWork_Reset_bots" xml:space="preserve">
+    <value>Réinitialiser bots</value>
+  </data>
+  <data name="Launcher_SearchProcess_" xml:space="preserve">
+    <value>Mangosd est déjà démarré.
+Voulez-vous fermer celui déjà en marche?</value>
+  </data>
+  <data name="Launcher_SearchProcess2_" xml:space="preserve">
+    <value>Mysqld est déjà démarré.
+Voulez-vous fermer celui déjà en marche?</value>
+  </data>
+  <data name="Launcher_StartAll_Starting_Mysqlm" xml:space="preserve">
+    <value>Démarrage de Mysqlm</value>
+  </data>
+  <data name="Launcher_startNStop_Derver_is_down" xml:space="preserve">
+    <value>Serveur hors-ligne</value>
   </data>
   <data name="Launcher_startNStop_Online_bot__N_A" xml:space="preserve">
-    <value>Online bot: N/A</value>
+    <value>Bots en-ligne: N/A</value>
+  </data>
+  <data name="Launcher_WorldStart_Loading_World" xml:space="preserve">
+    <value>Chargement du World</value>
   </data>
   <data name="Launcher_GetSqlOnlineBot_Tick_Online_Bot_" xml:space="preserve">
-    <value>Online Bot: </value>
+    <value>Bots en-ligne: </value>
   </data>
 </root>

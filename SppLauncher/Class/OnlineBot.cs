@@ -18,16 +18,16 @@ namespace SppLauncher.OnlineBot
                     {
                         var command = new MySqlCommand(InsertQuery, connection);
                         command.Connection.Open();
-                        online = "Online Bots: " + command.ExecuteScalar();
+                        online = command.ExecuteScalar().ToString();
                         connection.Close();
                         return online;
                     }
                 }
-                return "Online Bots: N/A";
+                return "N/A";
             }
             catch (Exception)
             {
-                return "Online Bots: N/A";
+                return "N/A";
             }
         }
     }

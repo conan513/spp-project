@@ -122,17 +122,17 @@
     <value>20, 11</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Launcher and tools by Whit33r</value>
+    <value>Launcher and tools by</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lbl_local.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
+  <data name="lbl_LocalV.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="&gt;&gt;lbl_local.Parent" xml:space="preserve">
     <value>groupBox1</value>
-  </data>
-  <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
   </data>
   <data name="lbl_local.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 15</value>
@@ -142,6 +142,9 @@
   </data>
   <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
     <value>97, 15</value>
+  </data>
+  <data name="pb_screen.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblLocalemu.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
@@ -155,9 +158,6 @@
   <data name="&gt;&gt;lbl_LocalV.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;pb_screen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AboutBox</value>
   </data>
@@ -170,11 +170,15 @@
   <data name="&gt;&gt;btn_ok.Parent" xml:space="preserve">
     <value>panel</value>
   </data>
-  <data name="&gt;&gt;lbl_LocalV.Name" xml:space="preserve">
-    <value>lbl_LocalV</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Server and database by</value>
   </data>
-  <data name="&gt;&gt;panel.Parent" xml:space="preserve">
-    <value>$this</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -182,16 +186,12 @@
   <data name="&gt;&gt;panel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="btn_ok.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lbl_local.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
@@ -204,8 +204,8 @@
   <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="linkLabel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="lblLocalemu.Text" xml:space="preserve">
     <value>Loading...</value>
@@ -223,10 +223,13 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 13</value>
+    <value>112, 13</value>
   </data>
   <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>Conan513</value>
   </data>
   <data name="lbl_LocalV.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -234,11 +237,11 @@
   <data name="lbl_LocalV.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 15</value>
   </data>
-  <data name="lbl_LocalV.Text" xml:space="preserve">
-    <value>Loading...</value>
+  <data name="&gt;&gt;lbl_LocalV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lbl_local.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;panel.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_LocalV.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -255,20 +258,23 @@
   <data name="&gt;&gt;lbl_local.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_LocalV.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 52</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;lblLocalemu.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 13</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
@@ -282,6 +288,9 @@
   <data name="lblLocalemu.Location" type="System.Drawing.Point, System.Drawing">
     <value>121, 36</value>
   </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="&gt;&gt;btn_ok.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -291,8 +300,14 @@
   <data name="lbl_local.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
+  <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
   <data name="lblLocalemu.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 15</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Versions</value>
   </data>
   <data name="lblLocalemu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -300,11 +315,17 @@
   <data name="&gt;&gt;lblLocalemu.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>205, 41</value>
+  </data>
+  <data name="pb_screen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 58</value>
   </data>
   <data name="pb_screen.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -315,8 +336,14 @@
   <data name="btn_ok.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="linkLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>205, 26</value>
   </data>
   <data name="panel.Location" type="System.Drawing.Point, System.Drawing">
     <value>-2, 165</value>
@@ -333,8 +360,14 @@
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="btn_ok.Text" xml:space="preserve">
-    <value>OK</value>
+  <data name="lbl_LocalV.Text" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="linkLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;linkLabel2.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -345,14 +378,14 @@
   <data name="&gt;&gt;timer1.Name" xml:space="preserve">
     <value>timer1</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Versions</value>
+  <data name="&gt;&gt;linkLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lbl_LocalV.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+  <data name="&gt;&gt;pb_screen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="panel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -360,23 +393,23 @@
   <data name="&gt;&gt;lblLocalemu.Name" xml:space="preserve">
     <value>lblLocalemu</value>
   </data>
-  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 41</value>
+  <data name="linkLabel2.Text" xml:space="preserve">
+    <value>Whit33r</value>
   </data>
   <data name="lblLocalemu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 26</value>
+    <value>92, 26</value>
   </data>
-  <data name="pb_screen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 58</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>About</value>
   </data>
   <data name="lbl_LocalV.Location" type="System.Drawing.Point, System.Drawing">
     <value>121, 21</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Server and database by</value>
+  <data name="&gt;&gt;lbl_LocalV.Name" xml:space="preserve">
+    <value>lbl_LocalV</value>
   </data>
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -384,11 +417,11 @@
   <data name="btn_ok.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="linkLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 13</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 41</value>
+    <value>84, 41</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 84</value>
@@ -415,25 +448,22 @@
     <value>lbl_local</value>
   </data>
   <data name="&gt;&gt;panel.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
-  <data name="pb_screen.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;linkLabel2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="panel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>272, 52</value>
-  </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>Conan513</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>About</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="lbl_LocalV.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbl_local.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="btn_ok.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="lbl_LocalV.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="&gt;&gt;timer1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -441,11 +471,14 @@
   <data name="pb_screen.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
   </data>
+  <data name="&gt;&gt;linkLabel2.Name" xml:space="preserve">
+    <value>linkLabel2</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>268, 214</value>
   </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="linkLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -460,7 +493,7 @@
     <value>9, 9, 9, 9</value>
   </data>
   <data name="&gt;&gt;pb_screen.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -472,6 +505,6 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>de</value>
+    <value>fr</value>
   </metadata>
 </root>

@@ -154,3 +154,15 @@ D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.de.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.hu.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.Form1.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.DatabaseUpdate.resources
+D:\SPP\Single Player Project Real v2\fr\SppLauncher.resources.dll
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Properties.Resources.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.AboutBox.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BotConf.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BugReport.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.HelpUsWindow.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.LanSwitcher.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Launcher.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update_Completed.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\fr\SppLauncher.resources.dll
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.fr.resources

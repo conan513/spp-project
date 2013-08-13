@@ -265,4 +265,7 @@ Be akarod zárni?</value>
   <data name="Launcher_Checking_Update" xml:space="preserve">
     <value>Update Keresése</value>
   </data>
+  <data name="Launcher_GetSqlOnlineBot_Tick_Online_Bot_" xml:space="preserve">
+    <value>Online Bot: </value>
+  </data>
 </root>

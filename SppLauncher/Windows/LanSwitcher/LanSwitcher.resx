@@ -124,26 +124,23 @@
   <data name="&gt;&gt;cbCh.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;bwUpdate.Name" xml:space="preserve">
-    <value>bwUpdate</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="&gt;&gt;btnApply.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
   <data name="&gt;&gt;bwSql.Type" xml:space="preserve">
     <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
+  <data name="&gt;&gt;txbLanip.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="&gt;&gt;txbLanip.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnApply.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
@@ -152,6 +149,9 @@
   </data>
   <data name="cbCh.Location" type="System.Drawing.Point, System.Drawing">
     <value>40, 55</value>
+  </data>
+  <data name="&gt;&gt;btnApply.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -201,14 +201,17 @@
   <data name="&gt;&gt;cbCh.Name" xml:space="preserve">
     <value>cbCh</value>
   </data>
+  <data name="&gt;&gt;cbCh.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
   <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="cbCh.Items1" xml:space="preserve">
     <value>Lan</value>
   </data>
-  <data name="&gt;&gt;cbCh.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
   </data>
   <data name="&gt;&gt;bwUsageStatSender.Name" xml:space="preserve">
     <value>bwUsageStatSender</value>
@@ -219,8 +222,8 @@
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;txbLanip.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;bwUpdate.Name" xml:space="preserve">
+    <value>bwUpdate</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>LanSwitcher</value>
@@ -230,9 +233,6 @@
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -264,7 +264,7 @@
   <data name="btnApply.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="txbLanip.TabIndex" type="System.Int32, mscorlib">
@@ -288,8 +288,8 @@
   <data name="txbLanip.Location" type="System.Drawing.Point, System.Drawing">
     <value>40, 23</value>
   </data>
-  <data name="&gt;&gt;btnApply.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;btnApply.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -304,7 +304,7 @@
     <value>210, 17</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>de</value>
+    <value>fr</value>
   </metadata>
   <metadata name="bwUpdate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

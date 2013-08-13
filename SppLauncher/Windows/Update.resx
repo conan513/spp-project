@@ -180,6 +180,9 @@
   <data name="pb_down.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;bw_updater.Name" xml:space="preserve">
+    <value>bw_updater</value>
+  </data>
   <data name="&gt;&gt;lbl_status.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
@@ -197,9 +200,6 @@
   </data>
   <data name="&gt;&gt;pb_down.Name" xml:space="preserve">
     <value>pb_down</value>
-  </data>
-  <data name="lbl_Perecent.Text" xml:space="preserve">
-    <value>0%</value>
   </data>
   <data name="&gt;&gt;pb_down.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -236,9 +236,6 @@
   </data>
   <data name="lbl_Perecent.Size" type="System.Drawing.Size, System.Drawing">
     <value>21, 13</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Update</value>
   </data>
   <data name="lbl_downByte.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -517,6 +514,9 @@
   <data name="lbl_downByte.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="gb_status.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -565,11 +565,11 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>351, 109</value>
   </data>
-  <data name="&gt;&gt;bw_updater.Name" xml:space="preserve">
-    <value>bw_updater</value>
+  <data name="lbl_Perecent.Text" xml:space="preserve">
+    <value>0%</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Update</value>
   </data>
   <data name="lbl_status.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
@@ -581,7 +581,7 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>de</value>
+    <value>fr</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

@@ -290,7 +290,7 @@
     <value>155, 371</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Speichern</value>
+    <value>Sauvegarder</value>
   </data>
   <data name="txbMoneyRate.Location" type="System.Drawing.Point, System.Drawing">
     <value>85, 20</value>
