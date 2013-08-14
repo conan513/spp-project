@@ -790,6 +790,7 @@
             // 
             this.groupBox2.Controls.Add(this.rtWorldDev);
             this.groupBox2.Controls.Add(this.txbWorldDev);
+            this.groupBox2.Controls.Add(this.richTextBox1);
             resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
@@ -806,7 +807,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.lblSqlStartTime);
             this.Controls.Add(this.lblRealmStartTime);
             this.Controls.Add(this.lblWorldStartTime);

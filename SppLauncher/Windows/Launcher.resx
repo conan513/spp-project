@@ -360,7 +360,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="pbarWorld.Location" type="System.Drawing.Point, System.Drawing">
     <value>114, 136</value>
@@ -2429,7 +2429,7 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="txbWorldDev.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 152</value>
+    <value>12, 147</value>
   </data>
   <data name="txbWorldDev.Size" type="System.Drawing.Size, System.Drawing">
     <value>551, 20</value>
@@ -2453,7 +2453,7 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="rtWorldDev.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 26</value>
+    <value>12, 21</value>
   </data>
   <data name="rtWorldDev.Size" type="System.Drawing.Size, System.Drawing">
     <value>551, 127</value>
@@ -2501,7 +2501,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;msForm.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="runWoWToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 20</value>
@@ -2674,30 +2674,6 @@
   <metadata name="ssBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>820, 17</value>
   </metadata>
-  <data name="ssBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 459</value>
-  </data>
-  <data name="ssBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>600, 22</value>
-  </data>
-  <data name="ssBar.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="ssBar.Text" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="&gt;&gt;ssBar.Name" xml:space="preserve">
-    <value>ssBar</value>
-  </data>
-  <data name="&gt;&gt;ssBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ssBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ssBar.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="tssLOnline.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 17</value>
   </data>
@@ -2728,6 +2704,30 @@
   <data name="tssStatus.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>TextBeforeImage</value>
   </data>
+  <data name="ssBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 364</value>
+  </data>
+  <data name="ssBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>600, 22</value>
+  </data>
+  <data name="ssBar.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="ssBar.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;ssBar.Name" xml:space="preserve">
+    <value>ssBar</value>
+  </data>
+  <data name="&gt;&gt;ssBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ssBar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ssBar.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="progressBar1.Location" type="System.Drawing.Point, System.Drawing">
     <value>50, 138</value>
   </data>
@@ -2756,7 +2756,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="lblWorldStartTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 388</value>
+    <value>368, 399</value>
   </data>
   <data name="lblWorldStartTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 18</value>
@@ -2780,7 +2780,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblWorldStartTime.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="lblRealmStartTime.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2789,7 +2789,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="lblRealmStartTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 388</value>
+    <value>214, 399</value>
   </data>
   <data name="lblRealmStartTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 18</value>
@@ -2813,7 +2813,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblRealmStartTime.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="lblSqlStartTime.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2822,7 +2822,7 @@
     <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
   </data>
   <data name="lblSqlStartTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 388</value>
+    <value>95, 399</value>
   </data>
   <data name="lblSqlStartTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 18</value>
@@ -2846,7 +2846,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblSqlStartTime.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <metadata name="CheckMangosCrashed.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1120, 17</value>
@@ -2876,7 +2876,7 @@
     <value>566, 56</value>
   </metadata>
   <data name="richTextBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>581, 396</value>
+    <value>12, 21</value>
   </data>
   <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 15</value>
@@ -2897,7 +2897,7 @@
     <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;richTextBox1.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;richTextBox1.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -2945,7 +2945,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>600, 481</value>
+    <value>600, 386</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

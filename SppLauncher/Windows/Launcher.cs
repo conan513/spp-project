@@ -15,6 +15,7 @@ using System.Xml;
 using Ionic.Zip;
 using MySql.Data.MySqlClient;
 using MySQLClass;
+using SppLauncher.Class;
 using SppLauncher.OnlineBot;
 using SppLauncher.Properties;
 using SppLauncher.Windows;
@@ -169,10 +170,12 @@ namespace SppLauncher
                         !text.Contains("removeSpell") &&
                         !text.Contains("ACTION_T_CAST") &&
                         !text.Contains("SD2") &&
-                        !text.Contains("TriggerSpell"))
+                        !text.Contains("TriggerSpell") &&
+                        !text.Contains("ACTION_T_SUMMON") &&
+                        !text.Contains("INSERT INTO") &&
+                        !text.Contains("SQL ERROR"))
                     {
                         _dt = DateTime.Now;
-                       
                         rtWorldDev.Text += _dt.ToString("[" + "HH:mm" + "]: ") + text + Environment.NewLine;
                         rtWorldDev.SelectionStart = rtWorldDev.Text.Length;
                         rtWorldDev.ScrollToCaret();
@@ -1589,6 +1592,7 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         private void GetSqlOnlineBot_Tick(object sender, EventArgs e)
         {
+            tssLOnline.ToolTipText = "Total Character: " + new GetAllChar().GetChar();
             tssLOnline.Text = Resources.Launcher_GetSqlOnlineBot_Tick_Online_Bot_ + new Onlinebot().GetBot();
             SppTray.Text    = tssLOnline.Text;
         }

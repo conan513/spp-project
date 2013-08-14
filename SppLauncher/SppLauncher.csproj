@@ -72,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\GetAllAcc.cs" />
     <Compile Include="Class\Language.cs" />
     <Compile Include="Windows\AboutBox.cs">
       <SubType>Form</SubType>
