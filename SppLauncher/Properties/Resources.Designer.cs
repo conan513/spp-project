@@ -290,6 +290,15 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Completed.
+        /// </summary>
+        internal static string Launcher_bWUpEx_RunWorkerCompleted_Completed {
+            get {
+                return ResourceManager.GetString("Launcher_bWUpEx_RunWorkerCompleted_Completed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Checking Update.
         /// </summary>
         internal static string Launcher_Checking_Update {
@@ -648,6 +657,15 @@ namespace SppLauncher.Properties {
         internal static string Launcher_Traymsg_Servers_Started {
             get {
                 return ResourceManager.GetString("Launcher_Traymsg_Servers_Started", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decompress Update.
+        /// </summary>
+        internal static string Launcher_updateToolStripMenuItem_Click_Decompress_Update {
+            get {
+                return ResourceManager.GetString("Launcher_updateToolStripMenuItem_Click_Decompress_Update", resourceCulture);
             }
         }
         

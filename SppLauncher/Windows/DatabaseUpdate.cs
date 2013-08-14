@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
@@ -21,39 +17,37 @@ namespace SppLauncher.Windows
         {
             InitializeComponent();
             Application.EnableVisualStyles();
-            this.launcher = otLauncher;
+            launcher = otLauncher;
             DisableCloseButton();
-            start();
+            Start();
+            
         }
 
         #region DisableX
 
-        internal const int SC_CLOSE = 0xF060;
-        internal const int MF_GRAYED = 0x1;
-        internal const int MF_ENABLED = 0x00000000;
-        internal const int MF_DISABLED = 0x00000002;
+        private const int ScClose = 0xF060;
+        private const int MfGrayed = 0x1;
+        private const int MfEnabled = 0x00000000;
 
         [DllImport("user32.dll")]
-        private static extern IntPtr GetSystemMenu(IntPtr HWNDValue, bool Revert);
+        private static extern IntPtr GetSystemMenu(IntPtr hwndValue, bool revert);
 
         [DllImport("user32.dll")]
         private static extern int EnableMenuItem(IntPtr tMenu, int targetItem, int targetStatus);
 
-        public void EnableCloseButton() //A standard void function to invoke EnableMenuItem()
+        private void EnableCloseButton()
         {
-            EnableMenuItem(GetSystemMenu(this.Handle, false), SC_CLOSE, MF_ENABLED);
+            EnableMenuItem(GetSystemMenu(Handle, false), ScClose, MfEnabled);
         }
 
-        public void DisableCloseButton() //A standard void function to invoke EnableMenuItem()
+        private void DisableCloseButton()
         {
-            EnableMenuItem(GetSystemMenu(this.Handle, false), SC_CLOSE, MF_GRAYED);
+            EnableMenuItem(GetSystemMenu(Handle, false), ScClose, MfGrayed);
         }
 
         #endregion
 
-
-
-        public void start()
+        private void Start()
         {
             progressBar1.Style = ProgressBarStyle.Marquee;
             progressBar1.MarqueeAnimationSpeed = 100;
@@ -161,7 +155,7 @@ namespace SppLauncher.Windows
         {
             launcher.Show();
 
-            if(!Launcher.OnlyMysqlStart){this.launcher.RealmdStart();}
+            if(!Launcher.OnlyMysqlStart){launcher.RealmdStart();}
             else
             {
                 launcher.pbAvailableM.Visible = false;
@@ -170,18 +164,18 @@ namespace SppLauncher.Windows
                 Launcher.MysqlON = false;
                Launcher.ShutdownSql();
             }
-            this.Close();
+            Close();
         }
 
-        public void InsertMultiple(string updatePath, string filter, bool bwup1)
+        private void InsertMultiple(string updatePath, string filter, bool bwup1)
         {
             try
             {
-                String[] Files = Directory.GetFiles(updatePath, filter, SearchOption.TopDirectoryOnly);
-                if(bwup1){progressBar1.Maximum = Files.Length;}
+                String[] files = Directory.GetFiles(updatePath, filter, SearchOption.TopDirectoryOnly);
+                if(bwup1){progressBar1.Maximum = files.Length;}
                 complete = 0;
                 Thread.Sleep(10);
-                foreach (String aFile in Files)
+                foreach (String aFile in files)
                 {
                     label2.Text = Path.GetFileName(aFile);
                     RunMySql("127.0.0.1", 3310, "root", "123456", "mangos", aFile);
@@ -196,15 +190,15 @@ namespace SppLauncher.Windows
             }
         }
 
-        public void InsertMultiple1(string updatePath,string db, string filter)
+        private void InsertMultiple1(string updatePath,string db, string filter)
         {
             try
             {
-                String[] Files = Directory.GetFiles(updatePath, filter, SearchOption.TopDirectoryOnly);
-                progressBar1.Maximum = Files.Length;
+                String[] files = Directory.GetFiles(updatePath, filter, SearchOption.TopDirectoryOnly);
+                progressBar1.Maximum = files.Length;
                 complete = 0;
                 Thread.Sleep(10);
-                foreach (String aFile in Files)
+                foreach (String aFile in files)
                 {
                     label2.Text = Path.GetFileName(aFile);
                     RunMySql("127.0.0.1", 3310, "root", "123456", db, aFile);
@@ -220,13 +214,15 @@ namespace SppLauncher.Windows
             }
         }
 
-        public void InsertSingle(string Path)
+        private void InsertSingle(string Path)
         {
+            try
+            {
+            if (Path == null) throw new ArgumentNullException("Path");
 
             string path = Path;
 
-            try
-            {
+
                 RunMySql("127.0.0.1", 3310, "root", "123456", "mangos", path);
             }
             catch (Exception ex)
@@ -235,7 +231,7 @@ namespace SppLauncher.Windows
             }
         }
 
-        public static int RunMySql(string server, int port, string user, string password, string database, string filename)
+        private static void RunMySql(string server, int port, string user, string password, string database, string filename)
         {
                 var process = Process.Start(
                     new ProcessStartInfo
@@ -263,10 +259,9 @@ namespace SppLauncher.Windows
             process.BeginOutputReadLine();
             process.StandardInput.Close();
             process.WaitForExit();
-            return process.ExitCode;
         }
 
-        public static int RunMySqlWitoutDb(string server, int port, string user, string password, string filename)
+        private static void RunMySqlWitoutDb(string server, int port, string user, string password, string filename)
         {
             var process = Process.Start(
                 new ProcessStartInfo
@@ -294,17 +289,6 @@ namespace SppLauncher.Windows
             process.BeginOutputReadLine();
             process.StandardInput.Close();
             process.WaitForExit();
-            return process.ExitCode;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            DisableCloseButton();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         void Copy(string sourceDir, string targetDir)

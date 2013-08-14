@@ -36,11 +36,12 @@ namespace SppLauncher
                              RemoteProgVer, currProgVer = "1.0.6", lang;
 
         readonly PerformanceCounter cpuCounter, ramCounter;
-        private Process _cmd, _cmd1, _cmd3;
-        private DateTime _dt, _start1 = DateTime.Now;
+        public static Process _cmd, _cmd1, _cmd3;
+        private DateTime _start1 = DateTime.Now;
+        public DateTime _dt;
         private readonly Hashtable _langHash = new Hashtable();
         private System.Resources.ResourceManager _rm;
-        private bool _startStop, _allowdev, _allowtext, _restart, _update, _updateNo, _updateYes;
+        private bool _startStop, _allowdev, _allowtext, _restart, _update, _updateNo, _updateYes, _serverConsoleActive;
         public static bool Available, Updater = false, allowupdaternorunwow = false, OnlyMysqlStart = false, MysqlON = false;
         private string _realm, _mangosdMem, _realmdMem, _sqlMem, _world, _status, _sql, UpdateUnpack;
         readonly string getTemp = Path.GetTempPath();
@@ -101,6 +102,7 @@ namespace SppLauncher
                 startToolStripMenuItem.Enabled                  = true;
                 restartToolStripMenuItem1.Enabled               = false;
                 restartToolStripMenuItem2.Enabled               = false;
+                sendCommandForServerToolStripMenuItem.Enabled = false;
             }
 
             SppTray.Visible = true;
@@ -157,9 +159,24 @@ namespace SppLauncher
 
                 if (_allowtext)
                 {
-                    rtWorldDev.Text          += _dt.ToString("(" + "HH:mm" + ") ") + text + Environment.NewLine;
-                    rtWorldDev.SelectionStart = rtWorldDev.Text.Length;
-                    rtWorldDev.ScrollToCaret();
+                    if (!text.Contains("SPELL") &&
+                        !text.Contains("wrong DBC files") &&
+                        !text.Contains("incorrect race/class") &&
+                        !text.Contains("SD2 ERROR") &&
+                        !text.Contains("ERROR:Player") &&
+                        !text.Contains("DoScriptText") &&
+                        !text.Contains("DB-SCRIPTS") &&
+                        !text.Contains("removeSpell") &&
+                        !text.Contains("ACTION_T_CAST") &&
+                        !text.Contains("SD2") &&
+                        !text.Contains("TriggerSpell"))
+                    {
+                        _dt = DateTime.Now;
+                       
+                        rtWorldDev.Text += _dt.ToString("[" + "HH:mm" + "]: ") + text + Environment.NewLine;
+                        rtWorldDev.SelectionStart = rtWorldDev.Text.Length;
+                        rtWorldDev.ScrollToCaret();
+                    }
                 }
             }
         }
@@ -439,7 +456,8 @@ namespace SppLauncher
         {
             try
             {
-                
+                if(_serverConsoleActive) sendCommandForServerToolStripMenuItem_Click(new object(), new EventArgs());
+
                 foreach (Process proc in Process.GetProcessesByName("mangosd"))
                 {
                     _cmd1.StandardInput.WriteLine("save");
@@ -601,6 +619,7 @@ namespace SppLauncher
                 startToolStripMenuItem.Enabled = false;
                 restartToolStripMenuItem1.Enabled = false;
                 restartToolStripMenuItem2.Enabled = false;
+                sendCommandForServerToolStripMenuItem.Enabled = false;
                 StartAll();
                 _startStop = true;
                 startstopToolStripMenuItem.Text = Resources.Launcher_startNStop_Stop;
@@ -618,6 +637,7 @@ namespace SppLauncher
                 tssStatus.IsLink = false;
                 restartToolStripMenuItem1.Enabled = false;
                 restartToolStripMenuItem2.Enabled = false;
+                sendCommandForServerToolStripMenuItem.Enabled = false;
                // exportCharactersToolStripMenuItem.Enabled = false;
                // updateToolStripMenuItem.Enabled = false;
                 exportImportCharactersToolStripMenuItem.Enabled = false;
@@ -650,6 +670,7 @@ namespace SppLauncher
             randomizeBotsToolStripMenuItem1.Enabled         = false;
             restartToolStripMenuItem1.Enabled               = false;
             restartToolStripMenuItem2.Enabled               = false;
+            sendCommandForServerToolStripMenuItem.Enabled = false;
             lanSwitcherToolStripMenuItem1.Enabled           = false;
             lanSwitcherToolStripMenuItem.Enabled            = false;
         }
@@ -909,13 +930,15 @@ namespace SppLauncher
         {
             if (!active)
             {
-                Size               = new Size(537, 460);
+                //Size               = new Size(537, 460);
+                Height = 420;
                 rtWorldDev.Visible = true;
             }
 
             if (active)
             {
-                Size               = new Size(537, 251);
+                //Size               = new Size(537, 251);
+                Height = 230;
                 rtWorldDev.Visible = false;
             }
         }
@@ -1317,22 +1340,24 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            if (keyData == (Keys.Control | Keys.D))
-            {
-                if (!_allowdev)
-                {
-                    _allowdev = true;
-                    DevWindow(true);
-                }
-                else
-                {
-                    _allowdev = false;
-                    DevWindow(false);
-                }
+            //if (keyData == (Keys.Control | Keys.D))
+            //{
+            //    if (!_allowdev)
+            //    {
+            //        groupBox2.Visible = false;
+            //        _allowdev = true;
+            //        DevWindow(true);
+            //    }
+            //    else
+            //    {
+            //        groupBox2.Visible = true;
+            //        _allowdev = false;
+            //        DevWindow(false);
+            //    }
 
 
-                return true;
-            }
+            //    return true;
+            //}
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
@@ -1495,6 +1520,7 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
                     startToolStripMenuItem.Enabled                  = true;
                     restartToolStripMenuItem1.Enabled               = true;
                     restartToolStripMenuItem1.Enabled               = true;
+                    sendCommandForServerToolStripMenuItem.Enabled = true;
                   //  exportCharactersToolStripMenuItem.Enabled       = true;
                    // updateToolStripMenuItem.Enabled                 = true;
                     exportImportCharactersToolStripMenuItem.Enabled = true;
@@ -1522,7 +1548,7 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
         {
             try
             {
-                if (_sql.Contains("Version: '10.0.3-MariaDB'  socket: ''  port: 3310  mariadb.org binary distribution"))
+                if (_sql.Contains("Version: '5.5.32-MariaDB'  socket: ''  port: 3310  mariadb.org binary distribution"))
                 {
                     MysqlON = true;
                     SqlStartCheck.Stop();
@@ -1870,17 +1896,6 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         #endregion
 
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var show = new DatabaseUpdate(this);
-            show.Show();
-        }
-
         private void pbAvailableM_MouseHover(object sender, EventArgs e)
         {
             ToolTip tt = new ToolTip();
@@ -1924,7 +1939,7 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
                     WindowState = FormWindowState.Normal;
                     Show();
                     pbAvailableM.Visible = true;
-                    _status = "Decompress Update";
+                    _status = Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update;
                     animateStatus(true);
                     bWUpEx.RunWorkerAsync();
                 }
@@ -1939,21 +1954,12 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
                 {
                     OnlyMysqlStart = true;
                     StartAll();
-                    //MenuItemsDisableAfterLoad();
                     UpdateUnpack = openFile.FileName;
                     importFolder = Path.GetDirectoryName(importFile);
-                    //rtWorldDev.Visible = false;
-                    //CheckMangosCrashed.Stop();
-                    //_allowtext = false;
-                    //_restart = true;
-                    //CloseProcess(true);
-                    //GetSqlOnlineBot.Stop();
-                    //tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
-                    //StatusIcon();
                     WindowState = FormWindowState.Normal;
                     Show();
                     pbAvailableM.Visible = true;
-                    _status = "Decompress Update";
+                    _status = Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update;
                     animateStatus(true);
                     bWUpEx.RunWorkerAsync();
                 }
@@ -1981,17 +1987,7 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         private void bWUpEx_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            //if (OnlyMysqlStart)
-            //{
-            //    ShutdownSql();
-            //    pbAvailableM.Visible = false;
-            //    pbNotAvailM.Visible = true;
-            //    startstopToolStripMenuItem.Enabled = true;
-            //}
-
-            //OnlyMysqlStart = false;
-            _status = "Completed";
-           
+            _status = Resources.Launcher_bWUpEx_RunWorkerCompleted_Completed;
             animateStatus(false);
             Hide();
             startupdate();
@@ -2003,22 +1999,48 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             frm2.Show();
         }
 
-
-        private void button1_Click_2(object sender, EventArgs e)
+        private void sendCommandForServerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DatabaseUpdate frm2 = new DatabaseUpdate(this);
-            frm2.Show();
+            if (!sendCommandForServerToolStripMenuItem.Checked)
+            {
+                sendCommandForServerToolStripMenuItem.Checked = true;
+                _serverConsoleActive                          = true;
+                groupBox2.Visible                             = true;
+                _allowdev                                     = true;
+                Height                                        = 420;
+                rtWorldDev.Visible                            = true;
+                //DevWindow(true);
+            }
+            else
+            {
+                sendCommandForServerToolStripMenuItem.Checked = false;
+                _serverConsoleActive                          = false;
+                groupBox2.Visible                             = false;
+                _allowdev                                     = false;
+                Height                                        = 230;
+                rtWorldDev.Visible                            = false;
+                //DevWindow(false);
+            }
         }
 
-
-
-    
-
-  
-
-
-      
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+        }  
+     
         
     }
 }
+
+            //if (!active)
+            //{
+            //    //Size               = new Size(537, 460);
+            //    Height = 420;
+            //    rtWorldDev.Visible = true;
+            //}
+
+            //if (active)
+            //{
+            //    //Size               = new Size(537, 251);
+            //    Height = 230;
+            //    rtWorldDev.Visible = false;
+            //}

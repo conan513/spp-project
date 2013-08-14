@@ -367,4 +367,10 @@ You want close the running process?</value>
   <data name="Launcher_GetSqlOnlineBot_Tick_Online_Bot_" xml:space="preserve">
     <value>Online Bot: </value>
   </data>
+  <data name="Launcher_updateToolStripMenuItem_Click_Decompress_Update" xml:space="preserve">
+    <value>Decompress Update</value>
+  </data>
+  <data name="Launcher_bWUpEx_RunWorkerCompleted_Completed" xml:space="preserve">
+    <value>Completed</value>
+  </data>
 </root>

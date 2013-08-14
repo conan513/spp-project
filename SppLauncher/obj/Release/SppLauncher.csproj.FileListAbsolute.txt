@@ -166,3 +166,4 @@ D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update.fr.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update_Completed.fr.resources
 D:\Sourcetree\SppLauncher\obj\Release\fr\SppLauncher.resources.dll
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.WorldConsole.resources

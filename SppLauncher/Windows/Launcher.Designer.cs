@@ -116,14 +116,15 @@
             this.CheckMangosCrashed = new System.Windows.Forms.Timer(this.components);
             this.bwUpdate = new System.ComponentModel.BackgroundWorker();
             this.StatusBarUpdater = new System.Windows.Forms.Timer(this.components);
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Check = new System.Windows.Forms.Timer(this.components);
             this.rstchck = new System.ComponentModel.BackgroundWorker();
             this.bwImport = new System.ComponentModel.BackgroundWorker();
             this.bwExport = new System.ComponentModel.BackgroundWorker();
             this.tmrUsage = new System.Windows.Forms.Timer(this.components);
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.bWUpEx = new System.ComponentModel.BackgroundWorker();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.sendCommandForServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNotAvailW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTempW)).BeginInit();
@@ -137,6 +138,7 @@
             this.cmsTray.SuspendLayout();
             this.msForm.SuspendLayout();
             this.ssBar.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tmrRealm
@@ -459,7 +461,7 @@
             // 
             this.rtWorldDev.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             resources.ApplyResources(this.rtWorldDev, "rtWorldDev");
-            this.rtWorldDev.ForeColor = System.Drawing.Color.White;
+            this.rtWorldDev.ForeColor = System.Drawing.Color.YellowGreen;
             this.rtWorldDev.Name = "rtWorldDev";
             this.rtWorldDev.ReadOnly = true;
             this.rtWorldDev.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -621,6 +623,7 @@
             this.startstopToolStripMenuItem,
             this.restartToolStripMenuItem1,
             this.toolStripSeparator1,
+            this.sendCommandForServerToolStripMenuItem,
             this.autostartToolStripMenuItem});
             this.restartToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.Places_server_database_icon;
             this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
@@ -748,11 +751,6 @@
             // 
             this.StatusBarUpdater.Tick += new System.EventHandler(this.StatusBarUpdater_Tick);
             // 
-            // richTextBox1
-            // 
-            resources.ApplyResources(this.richTextBox1, "richTextBox1");
-            this.richTextBox1.Name = "richTextBox1";
-            // 
             // Check
             // 
             this.Check.Interval = 3000;
@@ -778,28 +776,42 @@
             this.tmrUsage.Interval = 1000;
             this.tmrUsage.Tick += new System.EventHandler(this.tmrUsage_Tick);
             // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            // 
             // bWUpEx
             // 
             this.bWUpEx.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bWUpEx_DoWork);
             this.bWUpEx.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bWUpEx_RunWorkerCompleted);
+            // 
+            // richTextBox1
+            // 
+            resources.ApplyResources(this.richTextBox1, "richTextBox1");
+            this.richTextBox1.Name = "richTextBox1";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rtWorldDev);
+            this.groupBox2.Controls.Add(this.txbWorldDev);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.TabStop = false;
+            // 
+            // sendCommandForServerToolStripMenuItem
+            // 
+            this.sendCommandForServerToolStripMenuItem.Name = "sendCommandForServerToolStripMenuItem";
+            resources.ApplyResources(this.sendCommandForServerToolStripMenuItem, "sendCommandForServerToolStripMenuItem");
+            this.sendCommandForServerToolStripMenuItem.Click += new System.EventHandler(this.sendCommandForServerToolStripMenuItem_Click);
             // 
             // Launcher
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.lblSqlStartTime);
             this.Controls.Add(this.lblRealmStartTime);
             this.Controls.Add(this.lblWorldStartTime);
             this.Controls.Add(this.ssBar);
             this.Controls.Add(this.msForm);
-            this.Controls.Add(this.rtWorldDev);
-            this.Controls.Add(this.txbWorldDev);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.msForm;
@@ -823,6 +835,8 @@
             this.msForm.PerformLayout();
             this.ssBar.ResumeLayout(false);
             this.ssBar.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -885,7 +899,6 @@
         private System.Windows.Forms.Timer StatusBarUpdater;
         private System.Windows.Forms.ToolStripMenuItem worldSettingsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Timer Check;
         private System.ComponentModel.BackgroundWorker rstchck;
         private System.Windows.Forms.ToolStripMenuItem tsmHelpUs;
@@ -919,11 +932,13 @@
         private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem frenchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem germanToolStripMenuItem;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker bWUpEx;
         public System.Windows.Forms.PictureBox pbAvailableM;
         public System.Windows.Forms.PictureBox pbNotAvailM;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ToolStripMenuItem sendCommandForServerToolStripMenuItem;
     }
 }
 
