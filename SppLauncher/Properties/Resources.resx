@@ -225,9 +225,6 @@ You want close the running process?</value>
   <data name="Launcher_RealmRestore_Restored" xml:space="preserve">
     <value>Restored</value>
   </data>
-  <data name="Launcher_SrvAnnounce_Tick_announce_" xml:space="preserve">
-    <value>announce </value>
-  </data>
   <data name="Launcher_magyarToolStripMenuItem_Click_1_Info" xml:space="preserve">
     <value>Info</value>
   </data>

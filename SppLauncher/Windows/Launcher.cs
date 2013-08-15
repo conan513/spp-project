@@ -28,26 +28,43 @@ namespace SppLauncher
 
 
 
-        public static string wowExePath, ipAdress,
-                             online,resetBots,
-                             randomizeBots,realmListPath,
-                             realmDialogPath,OLDrealmList,
-                             UpdLink,importFile,importFolder,
-                             exportfile,exportFolder,autostart,
-                             RemoteProgVer, currProgVer = "1.0.6", lang;
+        public static string wowExePath,
+            ipAdress,
+            online,
+            resetBots,
+            randomizeBots,
+            realmListPath,
+            realmDialogPath,
+            OLDrealmList,
+            UpdLink,
+            importFile,
+            importFolder,
+            exportfile,
+            exportFolder,
+            autostart,
+            RemoteProgVer,
+            currProgVer = "1.0.6",
+            lang;
 
-        readonly PerformanceCounter cpuCounter, ramCounter;
+        private readonly PerformanceCounter cpuCounter, ramCounter;
         public static Process _cmd, _cmd1, _cmd3;
         private DateTime _start1 = DateTime.Now;
         public DateTime _dt;
         private readonly Hashtable _langHash = new Hashtable();
         private System.Resources.ResourceManager _rm;
         private bool _startStop, _allowdev, _allowtext, _restart, _update, _updateNo, _updateYes, _serverConsoleActive;
-        public static bool Available, Updater = false, allowupdaternorunwow = false, OnlyMysqlStart = false, MysqlON = false;
+
+        public static bool Available,
+            Updater = false,
+            allowupdaternorunwow = false,
+            OnlyMysqlStart = false,
+            MysqlON = false,
+            Sqlimport;
+
         private string _realm, _mangosdMem, _realmdMem, _sqlMem, _world, _status, _sql, UpdateUnpack;
-        readonly string getTemp = Path.GetTempPath();
+        private readonly string getTemp = Path.GetTempPath();
         public static double CurrEmuVer, RemoteEmuVer;
-        private const string lwPath = "SingleCore\\";
+        private const string lwPath  = "SingleCore\\";
         private const string sqlpath = "Database\\bin\\";
 
         #endregion
@@ -56,7 +73,7 @@ namespace SppLauncher
 
         public Launcher()
         {
-            _rm = new System.Resources.ResourceManager(typeof(Launcher));
+            _rm = new System.Resources.ResourceManager(typeof (Launcher));
             ReadXML();
             InitializeComponent();
 
@@ -64,9 +81,9 @@ namespace SppLauncher
             cpuCounter = new PerformanceCounter();
             GetLocalSrvVer();
             cpuCounter.CategoryName = "Processor";
-            cpuCounter.CounterName = "% Processor Time";
+            cpuCounter.CounterName  = "% Processor Time";
             cpuCounter.InstanceName = "_Total";
-            ramCounter = new PerformanceCounter("Memory", "Available MBytes");
+            ramCounter              = new PerformanceCounter("Memory", "Available MBytes");
             tmrUsage.Start();
             StatusBarUpdater.Start();
             MenuItemsDisableAfterLoad();
@@ -79,42 +96,40 @@ namespace SppLauncher
 
             if (autostart == "1")
             {
-                startstopToolStripMenuItem.Image                 = Resources.Button_stop_icon;
-                startToolStripMenuItem.Image                     = Resources.Button_stop_icon;
-                startstopToolStripMenuItem.Text                  = Resources.Launcher_startNStop_Stop;
-                startToolStripMenuItem.Text                      = Resources.Launcher_startNStop_Stop;
-                startstopToolStripMenuItem.Enabled               = false;
-                startToolStripMenuItem.Enabled                   = false;
-                _startStop                                       = true;
-                autostartToolStripMenuItem.Checked               = true;
-                autorunToolStripMenuItem.Checked                 = true;
-                //exportCharactersToolStripMenuItem.Enabled        = false;
-               // updateToolStripMenuItem.Enabled                  = false;
-                exportImportCharactersToolStripMenuItem.Enabled  = false;
+                startstopToolStripMenuItem.Image                = Resources.Button_stop_icon;
+                startToolStripMenuItem.Image                    = Resources.Button_stop_icon;
+                startstopToolStripMenuItem.Text                 = Resources.Launcher_startNStop_Stop;
+                startToolStripMenuItem.Text                     = Resources.Launcher_startNStop_Stop;
+                startstopToolStripMenuItem.Enabled              = false;
+                startToolStripMenuItem.Enabled                  = false;
+                _startStop                                      = true;
+                autostartToolStripMenuItem.Checked              = true;
+                autorunToolStripMenuItem.Checked                = true;
+                exportImportCharactersToolStripMenuItem.Enabled = false;
                 StartAll();
             }
             else
             {
                 bwUpdate.RunWorkerAsync();
-                //exportCharactersToolStripMenuItem.Enabled       = false;
-               // updateToolStripMenuItem.Enabled                 = false;
-                exportImportCharactersToolStripMenuItem.Enabled = false;
-                startstopToolStripMenuItem.Enabled              = true;
-                startToolStripMenuItem.Enabled                  = true;
-                restartToolStripMenuItem1.Enabled               = false;
-                restartToolStripMenuItem2.Enabled               = false;
-                sendCommandForServerToolStripMenuItem.Enabled = false;
+                exportImportCharactersToolStripMenuItem.Enabled    = false;
+                startstopToolStripMenuItem.Enabled                 = true;
+                startToolStripMenuItem.Enabled                     = true;
+                restartToolStripMenuItem1.Enabled                  = false;
+                restartToolStripMenuItem2.Enabled                  = false;
+                sendCommandForServerToolStripMenuItem.Enabled      = false;
             }
 
             SppTray.Visible = true;
-            startWowToolStripMenuItem.ToolTipText = Resources.Launcher_Launcher_Auto_Changed_RealmList_wtf_and_after_exit_SPP_change_back_original_realmlist_;
+            startWowToolStripMenuItem.ToolTipText =
+                Resources
+                    .Launcher_Launcher_Auto_Changed_RealmList_wtf_and_after_exit_SPP_change_back_original_realmlist_;
 
         }
 
         #endregion
 
         #region Servers
-        
+
         private void SetText(string text)
         {
             _realm += text;
@@ -124,13 +139,13 @@ namespace SppLauncher
         public float getCurrentCpuUsage()
         {
             return cpuCounter.NextValue();
-            
+
         }
 
         public int getAvailableRAM()
         {
             return Convert.ToInt32(ramCounter.NextValue());
-        } 
+        }
 
         private void SetText3(string text1)
         {
@@ -141,8 +156,8 @@ namespace SppLauncher
             }
             else
             {
-                _sql               += text1;
-                richTextBox1.Text  += text1 + Environment.NewLine;
+                _sql += text1;
+                richTextBox1.Text += text1 + Environment.NewLine;
                 File.WriteAllText("logs\\mysql.txt", richTextBox1.Text);
             }
         }
@@ -173,10 +188,15 @@ namespace SppLauncher
                         !text.Contains("TriggerSpell") &&
                         !text.Contains("ACTION_T_SUMMON") &&
                         !text.Contains("INSERT INTO") &&
-                        !text.Contains("SQL ERROR"))
+                        !text.Contains("SQL ERROR") &&
+                        !text.Contains("LoadInventory") &&
+                        !text.Contains("MoveSpline") &&
+                        !text.Contains("unknown spell id"))
                     {
                         _dt = DateTime.Now;
-                        rtWorldDev.Text += _dt.ToString("[" + "HH:mm" + "]: ") + text + Environment.NewLine;
+
+                        if (rtWorldDev.Text      != "") rtWorldDev.Text += Environment.NewLine;
+                        rtWorldDev.Text          += _dt.ToString("[" + "HH:mm" + "]: ") + text;
                         rtWorldDev.SelectionStart = rtWorldDev.Text.Length;
                         rtWorldDev.ScrollToCaret();
                     }
@@ -186,11 +206,11 @@ namespace SppLauncher
 
         public void WorldStart()
         {
-            _start1              = DateTime.Now;
-            pbarWorld.Visible    = true;
-            pbTempW.Visible      = true;
-            pbNotAvailW.Visible  = false;
-            _status              = Resources.Launcher_WorldStart_Loading_World;
+            _start1             = DateTime.Now;
+            pbarWorld.Visible   = true;
+            pbTempW.Visible     = true;
+            pbNotAvailW.Visible = false;
+            _status             = Resources.Launcher_WorldStart_Loading_World;
             WindowSize(false);
             tmrWorld.Start();
             var cmdStartInfo                    = new ProcessStartInfo(lwPath + "mangosd.exe");
@@ -222,11 +242,11 @@ namespace SppLauncher
 
         internal void RealmdStart()
         {
-            _start1              = DateTime.Now;
-            _status              = Resources.Launcher_RealmdStart_Starting_Realm;
-            tssStatus.Image      = Resources.search_animation;
-            pbTempR.Visible      = true;
-            pbNotAvailR.Visible  = false;
+            _start1             = DateTime.Now;
+            _status             = Resources.Launcher_RealmdStart_Starting_Realm;
+            tssStatus.Image     = Resources.search_animation;
+            pbTempR.Visible     = true;
+            pbNotAvailR.Visible = false;
             tmrRealm.Start();
             var cmdStartInfo                    = new ProcessStartInfo(lwPath + "login.exe");
             cmdStartInfo.CreateNoWindow         = true;
@@ -265,7 +285,7 @@ namespace SppLauncher
         private void _cmd_Exited(object sender, EventArgs e)
         {
             _cmd.OutputDataReceived -= _cmd_OutputDataReceived;
-            _cmd.Exited             -= _cmd_Exited;
+            _cmd.Exited -= _cmd_Exited;
         }
 
         private void UpdateConsole(string text)
@@ -299,7 +319,7 @@ namespace SppLauncher
         private void _cmd_Exited1(object sender, EventArgs e)
         {
             _cmd1.OutputDataReceived -= _cmd_OutputDataReceived1;
-            _cmd1.Exited             -= _cmd_Exited1;
+            _cmd1.Exited -= _cmd_Exited1;
         }
 
         private void UpdateConsole1(string text)
@@ -344,13 +364,13 @@ namespace SppLauncher
             {
                 _status = Resources.Launcher_StartAll_Starting_Mysqlm;
                 animateStatus(true);
-                pbTempM.Visible      = true;
-                pbNotAvailM.Visible  = false;
+                pbTempM.Visible     = true;
+                pbNotAvailM.Visible = false;
                 SqlStartCheck.Start();
                 var cmdStartInfo = new ProcessStartInfo("cmd.exe",
-                                                        "/C " + sqlpath + "mysqld.exe" +
-                                                        " --defaults-file=" + sqlpath + "my.ini" +
-                                                        " --standalone --console");
+                    "/C " + sqlpath + "mysqld.exe" +
+                    " --defaults-file=" + sqlpath + "my.ini" +
+                    " --standalone --console");
                 cmdStartInfo.CreateNoWindow         = true;
                 cmdStartInfo.RedirectStandardInput  = true;
                 cmdStartInfo.RedirectStandardOutput = true;
@@ -401,7 +421,7 @@ namespace SppLauncher
         private void _cmd_Exited3(object sender, EventArgs e)
         {
             _cmd3.OutputDataReceived -= _cmd_OutputDataReceived3;
-            _cmd3.Exited             -= _cmd_Exited3;
+            _cmd3.Exited -= _cmd_Exited3;
         }
 
         private void UpdateConsole3(string text)
@@ -424,10 +444,6 @@ namespace SppLauncher
 
         private delegate void SetTextCallback(string text);
 
-        private delegate void SetTextCallback1(string text);
-
-        private delegate void SetTextCallback3(string text);
-
         private void Check_Tick(object sender, EventArgs e)
         {
             if (!CheckRunwow())
@@ -440,7 +456,7 @@ namespace SppLauncher
         private void rstchck_DoWork(object sender, DoWorkEventArgs e)
         {
             checklang(false);
-            _status = Resources.Launcher_rstchck_DoWork_Reset_bots;
+            _status         = Resources.Launcher_rstchck_DoWork_Reset_bots;
             tssStatus.Image = Resources.search_animation;
             Thread.Sleep(10000);
         }
@@ -459,7 +475,7 @@ namespace SppLauncher
         {
             try
             {
-                if(_serverConsoleActive) sendCommandForServerToolStripMenuItem_Click(new object(), new EventArgs());
+                if (_serverConsoleActive) sendCommandForServerToolStripMenuItem_Click(new object(), new EventArgs());
 
                 foreach (Process proc in Process.GetProcessesByName("mangosd"))
                 {
@@ -474,8 +490,8 @@ namespace SppLauncher
 
                 foreach (Process proc in Process.GetProcessesByName("login"))
                 {
-                    tssStatus.IsLink  = false;
-                    _status           = Resources.Launcher_CloseProcess_Login_Shutdown;
+                    tssStatus.IsLink = false;
+                    _status = Resources.Launcher_CloseProcess_Login_Shutdown;
                     proc.Kill();
                 }
 
@@ -488,7 +504,8 @@ namespace SppLauncher
             catch (Exception ex)
             {
                 MessageBox.Show(Resources.Launcher_CloseProcess_ +
-                                ex.Message, Resources.Launcher_SearchProcess_Warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                ex.Message, Resources.Launcher_SearchProcess_Warning, MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
             }
         }
 
@@ -500,7 +517,7 @@ namespace SppLauncher
                 {
                     DialogResult result =
                         MessageBox.Show(Resources.Launcher_SearchProcess_, Resources.Launcher_SearchProcess_Warning,
-                                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                     if (result == DialogResult.Yes)
                     {
@@ -517,8 +534,9 @@ namespace SppLauncher
                 foreach (Process proc in Process.GetProcessesByName("login"))
                 {
                     DialogResult result =
-                        MessageBox.Show(Resources.Launcher_CloseProcess_Login_Shutdown, Resources.Launcher_SearchProcess_Warning,
-                                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        MessageBox.Show(Resources.Launcher_CloseProcess_Login_Shutdown,
+                            Resources.Launcher_SearchProcess_Warning,
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                     if (result == DialogResult.Yes)
                     {
@@ -534,7 +552,7 @@ namespace SppLauncher
                 {
                     DialogResult result =
                         MessageBox.Show(Resources.Launcher_SearchProcess2_, Resources.Launcher_SearchProcess_Warning,
-                                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                     if (result == DialogResult.Yes)
                     {
@@ -549,7 +567,8 @@ namespace SppLauncher
             catch (Exception ex)
             {
                 MessageBox.Show(Resources.Launcher_SearchProcess0_ +
-                                ex.Message, Resources.Launcher_SearchProcess_Warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                ex.Message, Resources.Launcher_SearchProcess_Warning, MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
             }
         }
 
@@ -609,7 +628,7 @@ namespace SppLauncher
             else
             {
                 tssStatus.Image = null;
-                
+
             }
         }
 
@@ -617,38 +636,36 @@ namespace SppLauncher
         {
             if (!_startStop)
             {
-                tssStatus.IsLink = false;
-                startstopToolStripMenuItem.Enabled = false;
-                startToolStripMenuItem.Enabled = false;
-                restartToolStripMenuItem1.Enabled = false;
-                restartToolStripMenuItem2.Enabled = false;
+                tssStatus.IsLink                              = false;
+                startstopToolStripMenuItem.Enabled            = false;
+                startToolStripMenuItem.Enabled                = false;
+                restartToolStripMenuItem1.Enabled             = false;
+                restartToolStripMenuItem2.Enabled             = false;
                 sendCommandForServerToolStripMenuItem.Enabled = false;
                 StartAll();
-                _startStop = true;
-                startstopToolStripMenuItem.Text = Resources.Launcher_startNStop_Stop;
-                startToolStripMenuItem.Text = Resources.Launcher_startNStop_Stop;
+                _startStop                       = true;
+                startstopToolStripMenuItem.Text  = Resources.Launcher_startNStop_Stop;
+                startToolStripMenuItem.Text      = Resources.Launcher_startNStop_Stop;
                 startstopToolStripMenuItem.Image = Resources.Button_stop_icon;
-                startToolStripMenuItem.Image = Resources.Button_stop_icon;
+                startToolStripMenuItem.Image     = Resources.Button_stop_icon;
             }
             else
             {
                 resetAllRandomBotsToolStripMenuItem.Enabled = false;
-                randomizeBotsToolStripMenuItem.Enabled = false;
-                resetBotsToolStripMenuItem.Enabled = false;
-                randomizeBotsToolStripMenuItem1.Enabled = false;
+                randomizeBotsToolStripMenuItem.Enabled      = false;
+                resetBotsToolStripMenuItem.Enabled          = false;
+                randomizeBotsToolStripMenuItem1.Enabled     = false;
 
-                tssStatus.IsLink = false;
-                restartToolStripMenuItem1.Enabled = false;
-                restartToolStripMenuItem2.Enabled = false;
-                sendCommandForServerToolStripMenuItem.Enabled = false;
-               // exportCharactersToolStripMenuItem.Enabled = false;
-               // updateToolStripMenuItem.Enabled = false;
+                tssStatus.IsLink                                = false;
+                restartToolStripMenuItem1.Enabled               = false;
+                restartToolStripMenuItem2.Enabled               = false;
+                sendCommandForServerToolStripMenuItem.Enabled   = false;
                 exportImportCharactersToolStripMenuItem.Enabled = false;
-                startstopToolStripMenuItem.Image = Resources.Play_1_Hot_icon;
-                startToolStripMenuItem.Image = Resources.Play_1_Hot_icon;
-                startstopToolStripMenuItem.Text = Resources.Launcher_startNStop_Start;
-                startToolStripMenuItem.Text = Resources.Launcher_startNStop_Start;
-                _startStop = false;
+                startstopToolStripMenuItem.Image                = Resources.Play_1_Hot_icon;
+                startToolStripMenuItem.Image                    = Resources.Play_1_Hot_icon;
+                startstopToolStripMenuItem.Text                 = Resources.Launcher_startNStop_Start;
+                startToolStripMenuItem.Text                     = Resources.Launcher_startNStop_Start;
+                _startStop                                      = false;
                 CheckMangosCrashed.Stop();
                 GetSqlOnlineBot.Stop();
                 tssLOnline.Text = Resources.Launcher_startNStop_Online_bot__N_A;
@@ -658,24 +675,25 @@ namespace SppLauncher
             }
         }
 
-        public int getmemory() {return Convert.ToInt32(new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory / 1024 / 1024);}
+        public int getmemory()
+        {
+            return Convert.ToInt32(new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory/1024/1024);
+        }
 
         public void MenuItemsDisableAfterLoad()
         {
-            tssStatus.IsLink                                = false;
-            resetAllRandomBotsToolStripMenuItem.Enabled     = false;
-            //exportCharactersToolStripMenuItem.Enabled       = false;
-           // updateToolStripMenuItem.Enabled                 = false;
-            exportImportCharactersToolStripMenuItem.Enabled = false;
-            startstopToolStripMenuItem.Enabled              = false;
-            randomizeBotsToolStripMenuItem.Enabled          = false;
-            resetBotsToolStripMenuItem.Enabled              = false;
-            randomizeBotsToolStripMenuItem1.Enabled         = false;
-            restartToolStripMenuItem1.Enabled               = false;
-            restartToolStripMenuItem2.Enabled               = false;
-            sendCommandForServerToolStripMenuItem.Enabled = false;
-            lanSwitcherToolStripMenuItem1.Enabled           = false;
-            lanSwitcherToolStripMenuItem.Enabled            = false;
+            tssStatus.IsLink                                   = false;
+            resetAllRandomBotsToolStripMenuItem.Enabled        = false;
+            exportImportCharactersToolStripMenuItem.Enabled    = false;
+            startstopToolStripMenuItem.Enabled                 = false;
+            randomizeBotsToolStripMenuItem.Enabled             = false;
+            resetBotsToolStripMenuItem.Enabled                 = false;
+            randomizeBotsToolStripMenuItem1.Enabled            = false;
+            restartToolStripMenuItem1.Enabled                  = false;
+            restartToolStripMenuItem2.Enabled                  = false;
+            sendCommandForServerToolStripMenuItem.Enabled      = false;
+            lanSwitcherToolStripMenuItem1.Enabled              = false;
+            lanSwitcherToolStripMenuItem.Enabled               = false;
         }
 
         public void StatusIcon()
@@ -730,11 +748,13 @@ namespace SppLauncher
         {
             if (!_restart)
             {
-                NotifyBallon(1000, Resources.Launcher_Traymsg_Servers_Started, Resources.Launcher_Traymsg_Ready_to_play, false);
+                NotifyBallon(1000, Resources.Launcher_Traymsg_Servers_Started, Resources.Launcher_Traymsg_Ready_to_play,
+                    false);
             }
             else
             {
-                NotifyBallon(1000, Resources.Launcher_Traymsg_Servers_Started, Resources.Launcher_Traymsg_Ready_to_play, false);
+                NotifyBallon(1000, Resources.Launcher_Traymsg_Servers_Started, Resources.Launcher_Traymsg_Ready_to_play,
+                    false);
                 _restart = false;
             }
             _world = "";
@@ -753,7 +773,7 @@ namespace SppLauncher
                 RealmChange();
                 Process.Start(wowExePath);
                 Check.Start();
-                
+
             }
         }
 
@@ -829,8 +849,9 @@ namespace SppLauncher
         {
             try
             {
-                File.WriteAllText(realmListPath,OLDrealmList);
-                NotifyBallon(1000,Resources.Launcher_RealmRestore_Realmlist,Resources.Launcher_RealmRestore_Restored,false);
+                File.WriteAllText(realmListPath, OLDrealmList);
+                NotifyBallon(1000, Resources.Launcher_RealmRestore_Realmlist, Resources.Launcher_RealmRestore_Restored,
+                    false);
             }
             catch (Exception ex)
             {
@@ -849,7 +870,7 @@ namespace SppLauncher
             writer.WriteElementString("ResetBots", resetBots);
             writer.WriteElementString("RandomizeBots", randomizeBots);
             writer.WriteElementString("Autostart", autostart);
-            writer.WriteElementString("Lang",lang);
+            writer.WriteElementString("Lang", lang);
 
             writer.WriteEndElement();
             writer.Close();
@@ -859,7 +880,7 @@ namespace SppLauncher
         {
             try
             {
-                var doc           = new XmlDocument();
+                var doc = new XmlDocument();
                 doc.Load("config\\SppPathConfig.xml");
                 XmlElement root   = doc.DocumentElement;
                 XmlNodeList nodes = root.SelectNodes("/Config");
@@ -869,7 +890,7 @@ namespace SppLauncher
                     wowExePath    = node["GamePath"].InnerText;
                     realmListPath = node["RealmWTF"].InnerText;
                     autostart     = node["Autostart"].InnerText;
-                    lang = node["Lang"].InnerText;
+                    lang          = node["Lang"].InnerText;
                 }
                 checklang(false);
             }
@@ -885,7 +906,7 @@ namespace SppLauncher
             try
             {
                 var client = new MySQLClient("127.0.0.1", "realmd", "root", "123456", 3310);
-                ipAdress   = client.Select("realmlist", "id='1'")["address"];
+                ipAdress = client.Select("realmlist", "id='1'")["address"];
             }
             catch (Exception)
             {
@@ -908,7 +929,7 @@ namespace SppLauncher
 
         public static void ShutdownSql()
         {
-            MysqlON = false;
+            MysqlON                   = false;
             var startInfo             = new ProcessStartInfo();
             startInfo.CreateNoWindow  = true;
             startInfo.UseShellExecute = false;
@@ -951,7 +972,7 @@ namespace SppLauncher
             _cmd1.StandardInput.WriteLine("rndbot reset");
 
             DialogResult dialog = MessageBox.Show(Resources.Launcher_ResetBots_, "Question",
-                                                  MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.Yes)
             {
                 rstchck.RunWorkerAsync();
@@ -984,10 +1005,24 @@ namespace SppLauncher
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            if (rtWorldDev.TextLength >= 10000)
+            if (rtWorldDev.Lines.Length > 250)
             {
-                rtWorldDev.Clear();
+                DeleteLine(1);
             }
+        }
+
+        private void DeleteLine(int a_line)
+        {
+            int start_index = rtWorldDev.GetFirstCharIndexFromLine(a_line);
+            int count = rtWorldDev.Lines[a_line].Length;
+
+            if (a_line < rtWorldDev.Lines.Length - 1)
+            {
+                count += rtWorldDev.GetFirstCharIndexFromLine(a_line + 1) -
+                         ((start_index + count - 1) + 1);
+            }
+
+            rtWorldDev.Text = rtWorldDev.Text.Remove(start_index, count);
         }
 
         private void StatusBarUpdater_Tick(object sender, EventArgs e)
@@ -1002,7 +1037,8 @@ namespace SppLauncher
                 CurrEmuVer = Convert.ToDouble(File.ReadAllText("SingleCore\\version"));
             }
             catch (Exception)
-            { }
+            {
+            }
         }
 
         #endregion
@@ -1014,7 +1050,9 @@ namespace SppLauncher
         {
             lang = "Hungarian";
             saveMethod();
-            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_, Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
+            MessageBox.Show(
+                Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_,
+                Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -1022,24 +1060,30 @@ namespace SppLauncher
         {
             lang = "English";
             saveMethod();
-            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_, Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
-    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(
+                Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_,
+                Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             lang = "French";
             saveMethod();
-            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_, Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
-MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(
+                Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_,
+                Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void germanToolStripMenuItem_Click(object sender, EventArgs e)
         {
             lang = "German";
             saveMethod();
-            MessageBox.Show(Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_, Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
-MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(
+                Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_,
+                Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void exportToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -1085,15 +1129,15 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             if (autorunToolStripMenuItem.Checked)
             {
                 autostartToolStripMenuItem.Checked = false;
-                autorunToolStripMenuItem.Checked = false;
-                autostart = "0";
+                autorunToolStripMenuItem.Checked   = false;
+                autostart                          = "0";
                 saveMethod();
             }
             else
             {
                 autostartToolStripMenuItem.Checked = true;
-                autorunToolStripMenuItem.Checked = true;
-                autostart = "1";
+                autorunToolStripMenuItem.Checked   = true;
+                autostart                          = "1";
                 saveMethod();
             }
         }
@@ -1103,15 +1147,15 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             if (autostartToolStripMenuItem.Checked)
             {
                 autostartToolStripMenuItem.Checked = false;
-                autorunToolStripMenuItem.Checked = false;
-                autostart = "0";
+                autorunToolStripMenuItem.Checked   = false;
+                autostart                          = "0";
                 saveMethod();
             }
             else
             {
                 autostartToolStripMenuItem.Checked = true;
-                autorunToolStripMenuItem.Checked = true;
-                autostart = "1";
+                autorunToolStripMenuItem.Checked   = true;
+                autostart                          = "1";
                 saveMethod();
             }
         }
@@ -1257,7 +1301,8 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             if (e.Button == MouseButtons.Right)
             {
                 SppTray.ContextMenuStrip = cmsTray;
-                MethodInfo mi = typeof (NotifyIcon).GetMethod("ShowContextMenu",BindingFlags.Instance | BindingFlags.NonPublic);
+                MethodInfo mi = typeof (NotifyIcon).GetMethod("ShowContextMenu",
+                    BindingFlags.Instance | BindingFlags.NonPublic);
                 mi.Invoke(SppTray, null);
                 SppTray.ContextMenuStrip = cmsTray;
             }
@@ -1331,53 +1376,40 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
         public void RealmWorldRestart()
         {
             CheckMangosCrashed.Stop();
-            rtWorldDev.Visible  = false;
-            _allowtext          = false;
-            _restart            = true;
+            rtWorldDev.Visible = false;
+            _allowtext         = false;
+            _restart           = true;
             CloseProcess(true);
             StatusIcon();
-            WindowState        = FormWindowState.Normal;
+            WindowState = FormWindowState.Normal;
             Show();
             StartAll();
         }
 
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        private void resetAllRandomBotsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //if (keyData == (Keys.Control | Keys.D))
-            //{
-            //    if (!_allowdev)
-            //    {
-            //        groupBox2.Visible = false;
-            //        _allowdev = true;
-            //        DevWindow(true);
-            //    }
-            //    else
-            //    {
-            //        groupBox2.Visible = true;
-            //        _allowdev = false;
-            //        DevWindow(false);
-            //    }
-
-
-            //    return true;
-            //}
-            return base.ProcessCmdKey(ref msg, keyData);
+            ResetBots();
         }
 
-        private void resetAllRandomBotsToolStripMenuItem_Click(object sender, EventArgs e)
-        {ResetBots();}
-
         private void randomizeBotsToolStripMenuItem_Click(object sender, EventArgs e)
-        {RandomizeBotsMethod();}
+        {
+            RandomizeBotsMethod();
+        }
 
         private void resetBotsToolStripMenuItem_Click(object sender, EventArgs e)
-        {ResetBots();}
+        {
+            ResetBots();
+        }
 
         private void randomizeBotsToolStripMenuItem1_Click(object sender, EventArgs e)
-        {RandomizeBotsMethod();}
+        {
+            RandomizeBotsMethod();
+        }
 
         private void cmsTray_DoubleClick(object sender, EventArgs e)
-        {WindowState = FormWindowState.Normal;}
+        {
+            WindowState = FormWindowState.Normal;
+        }
 
         #endregion
 
@@ -1388,15 +1420,15 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             int ramavail  = getAvailableRAM();
             int ramtoltal = Convert.ToInt32(getmemory());
             int ramfree   = ramtoltal - ramavail;
-            int ramp      = ramtoltal / 100;
-            int perecent  = ramfree / ramp;
+            int ramp      = ramtoltal/100;
+            int perecent  = ramfree/ramp;
             Process proc  = Process.GetCurrentProcess();
 
             try
             {
                 Process[] SqlProcesses;
                 SqlProcesses = Process.GetProcessesByName("mysqld");
-                _sqlMem       = Convert.ToString(SqlProcesses[0].WorkingSet64 / 1024 / 1024) + "MB";
+                _sqlMem = Convert.ToString(SqlProcesses[0].WorkingSet64/1024/1024) + "MB";
             }
             catch (Exception)
             {
@@ -1407,7 +1439,7 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             {
                 Process[] mangosdProcesses;
                 mangosdProcesses = Process.GetProcessesByName("mangosd");
-                _mangosdMem       = Convert.ToString(mangosdProcesses[0].WorkingSet64 / 1024 / 1024) + "MB";
+                _mangosdMem = Convert.ToString(mangosdProcesses[0].WorkingSet64/1024/1024) + "MB";
             }
             catch (Exception)
             {
@@ -1418,16 +1450,19 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             {
                 Process[] realmdProcesses;
                 realmdProcesses = Process.GetProcessesByName("login");
-                _realmdMem       = Convert.ToString(realmdProcesses[0].WorkingSet64 / 1024 / 1024) + "MB";
+                _realmdMem = Convert.ToString(realmdProcesses[0].WorkingSet64/1024/1024) + "MB";
             }
             catch (Exception)
             {
                 _realmdMem = "N/A";
             }
 
-            tssUsage.ToolTipText = "Launcher: " + Convert.ToString(proc.WorkingSet64 / 1024 / 1024) + "MB" + "\nMysql Server: " + _sqlMem + "\nLogin Server: " + _realmdMem + "\nGame Server: " + _mangosdMem;
+            tssUsage.ToolTipText = "Launcher: " + Convert.ToString(proc.WorkingSet64/1024/1024) + "MB" +
+                                   "\nMysql Server: " + _sqlMem + "\nLogin Server: " + _realmdMem + "\nGame Server: " +
+                                   _mangosdMem;
 
-            tssUsage.Text = "CPU: " + Convert.ToInt32(getCurrentCpuUsage()) + "% |" + " RAM: " + perecent + "%" + " (" + ramfree + "/" + ramtoltal + "MB)";
+            tssUsage.Text = "CPU: " + Convert.ToInt32(getCurrentCpuUsage()) + "% |" + " RAM: " + perecent + "%" + " (" +
+                            ramfree + "/" + ramtoltal + "MB)";
         }
 
         private void tmrRealm_Tick(object sender, EventArgs e)
@@ -1437,10 +1472,10 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (_realm.Contains("realmd process priority class set to HIGH"))
                 {
                     tmrRealm.Stop();
-                    DateTime end1          = DateTime.Now;
+                    DateTime end1 = DateTime.Now;
                     lblRealmStartTime.Text = (end1 - _start1).TotalSeconds.ToString();
-                    pbAvailableR.Visible   = true;
-                    pbTempR.Visible        = false;
+                    pbAvailableR.Visible = true;
+                    pbTempR.Visible = false;
                     WorldStart();
                 }
             }
@@ -1500,34 +1535,32 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
                 {
                     tmrWorld.Stop();
 
-                    DateTime end1           = DateTime.Now;
-                    lblWorldStartTime.Text  = (end1 - _start1).TotalSeconds.ToString();
-                    pbarWorld.Value         = 100;
-                    _status                 = Resources.Launcher_tmrWorld_Tick_Online;
+                    DateTime end1          = DateTime.Now;
+                    lblWorldStartTime.Text = (end1 - _start1).TotalSeconds.ToString();
+                    pbarWorld.Value        = 100;
+                    _status                = Resources.Launcher_tmrWorld_Tick_Online;
                     animateStatus(false);
-                    pbAvailableW.Visible    = true;
-                    pbTempW.Visible         = false;
-                    pbarWorld.Visible       = false;
+                    pbAvailableW.Visible = true;
+                    pbTempW.Visible      = false;
+                    pbarWorld.Visible    = false;
                     WindowSize(true);
-                    pbarWorld.Value        = 0;
-                    _allowtext             = true;
-                    _allowdev              = true;
+                    pbarWorld.Value = 0;
+                    _allowtext      = true;
+                    _allowdev       = true;
 
-                    resetAllRandomBotsToolStripMenuItem.Enabled     = true;
-                    randomizeBotsToolStripMenuItem.Enabled          = true;
-                    resetBotsToolStripMenuItem.Enabled              = true;
-                    randomizeBotsToolStripMenuItem1.Enabled         = true;
-                    lanSwitcherToolStripMenuItem1.Enabled           = true;
-                    lanSwitcherToolStripMenuItem.Enabled            = true;
-                    startstopToolStripMenuItem.Enabled              = true;
-                    startToolStripMenuItem.Enabled                  = true;
-                    restartToolStripMenuItem1.Enabled               = true;
-                    restartToolStripMenuItem1.Enabled               = true;
-                    sendCommandForServerToolStripMenuItem.Enabled = true;
-                  //  exportCharactersToolStripMenuItem.Enabled       = true;
-                   // updateToolStripMenuItem.Enabled                 = true;
-                    exportImportCharactersToolStripMenuItem.Enabled = true;
-                    
+                    resetAllRandomBotsToolStripMenuItem.Enabled         = true;
+                    randomizeBotsToolStripMenuItem.Enabled              = true;
+                    resetBotsToolStripMenuItem.Enabled                  = true;
+                    randomizeBotsToolStripMenuItem1.Enabled             = true;
+                    lanSwitcherToolStripMenuItem1.Enabled               = true;
+                    lanSwitcherToolStripMenuItem.Enabled                = true;
+                    startstopToolStripMenuItem.Enabled                  = true;
+                    startToolStripMenuItem.Enabled                      = true;
+                    restartToolStripMenuItem1.Enabled                   = true;
+                    restartToolStripMenuItem1.Enabled                   = true;
+                    sendCommandForServerToolStripMenuItem.Enabled       = true;
+                    exportImportCharactersToolStripMenuItem.Enabled     = true;
+
                     bwUpdate.RunWorkerAsync(); //check update
 
                     Traymsg();
@@ -1555,12 +1588,20 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
                 {
                     MysqlON = true;
                     SqlStartCheck.Stop();
-                    DateTime end1         = DateTime.Now;
-                    lblSqlStartTime.Text  = (end1 - _start1).TotalSeconds.ToString();
-                    pbAvailableM.Visible  = true;
-                    pbTempM.Visible       = false;
-                    _sql                  = "";
-                    if(!OnlyMysqlStart){RealmdStart();}
+                    DateTime end1        = DateTime.Now;
+                    lblSqlStartTime.Text = (end1 - _start1).TotalSeconds.ToString();
+                    pbAvailableM.Visible = true;
+                    pbTempM.Visible      = false;
+                    _sql                 = "";
+                    if (Sqlimport)
+                    {
+                        bwImport.RunWorkerAsync();
+                    }
+                    if (OnlyMysqlStart && Sqlimport == false) bwExport.RunWorkerAsync();
+                    if (!OnlyMysqlStart)
+                    {
+                        RealmdStart();
+                    }
                 }
             }
             catch
@@ -1570,7 +1611,7 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         private void SqlStar()
         {
-            
+
         }
 
         private void CheckWowRun_Tick(object sender, EventArgs e)
@@ -1581,8 +1622,10 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             if (!_restart && !CheckRunwow())
             {
-                DialogResult dialog = MessageBox.Show(Resources.Launcher_CheckWowRun_Tick_Would_you_like_to_start_World_of_Warcraft_, "Question",
-                                                      MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialog =
+                    MessageBox.Show(Resources.Launcher_CheckWowRun_Tick_Would_you_like_to_start_World_of_Warcraft_,
+                        "Question",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
                     startWow();
@@ -1593,14 +1636,14 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
         private void GetSqlOnlineBot_Tick(object sender, EventArgs e)
         {
             tssLOnline.ToolTipText = "Total Character: " + new GetAllChar().GetChar();
-            tssLOnline.Text = Resources.Launcher_GetSqlOnlineBot_Tick_Online_Bot_ + new Onlinebot().GetBot();
-            SppTray.Text    = tssLOnline.Text;
+            tssLOnline.Text        = Resources.Launcher_GetSqlOnlineBot_Tick_Online_Bot_ + new Onlinebot().GetBot();
+            SppTray.Text           = tssLOnline.Text;
         }
 
         private void SrvAnnounce_Tick(object sender, EventArgs e)
         {
             SrvAnnounce.Stop();
-            _cmd1.StandardInput.WriteLine(Resources.Launcher_SrvAnnounce_Tick_announce_ + online);
+            _cmd1.StandardInput.WriteLine("announce" + online);
         }
 
         private void CheckMangosCrashed_Tick(object sender, EventArgs e)
@@ -1608,7 +1651,8 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             if (ProcessView() && !Updater)
             {
                 _restart = true;
-                NotifyBallon(1000, Resources.Launcher_CheckMangosCrashed_Tick_Mangosd_Crashed, Resources.Launcher_CheckMangosCrashed_Tick_The_process_is_automatically_restart_, true);
+                NotifyBallon(1000, Resources.Launcher_CheckMangosCrashed_Tick_Mangosd_Crashed,
+                    Resources.Launcher_CheckMangosCrashed_Tick_The_process_is_automatically_restart_, true);
                 RealmWorldRestart();
             }
         }
@@ -1635,25 +1679,27 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             {
                 _status = Resources.Launcher_Checking_Update;
                 animateStatus(true);
-                var client            = new WebClient();
-                Stream stream         = client.OpenRead("https://raw.github.com/conan513/SingleCore/SPP/Tools/update.txt");
-                var reader            = new StreamReader(stream);
-                String content        = reader.ReadToEnd();
-                string[] parts        = content.Split(';');
-                content               = parts[0];
-                RemoteEmuVer          = Convert.ToDouble(parts[1]);
-                UpdLink               = parts[2];
-                Available             = true;
-                RemoteProgVer         = content;
-                allowupdaternorunwow  = true;
+                var client           = new WebClient();
+                Stream stream        = client.OpenRead("https://raw.github.com/conan513/SingleCore/SPP/Tools/update.txt");
+                var reader           = new StreamReader(stream);
+                String content       = reader.ReadToEnd();
+                string[] parts       = content.Split(';');
+                content              = parts[0];
+                RemoteEmuVer         = Convert.ToDouble(parts[1]);
+                UpdLink              = parts[2];
+                Available            = true;
+                RemoteProgVer        = content;
+                allowupdaternorunwow = true;
 
                 if (content != currProgVer)
                 {
                     if (
-                        MessageBox.Show(Resources.Launcher_bwUpdate_DoWork_New_Version_Available__V + content + "\n" + Resources.Launcher_bwUpdate_DoWork_You_want_to_download_,
-                                        Resources.Launcher_bwUpdate_DoWork_New_Version, MessageBoxButtons.YesNo,
-                                        MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1,
-                                        MessageBoxOptions.DefaultDesktopOnly) == DialogResult.Yes)
+                        MessageBox.Show(
+                            Resources.Launcher_bwUpdate_DoWork_New_Version_Available__V + content + "\n" +
+                            Resources.Launcher_bwUpdate_DoWork_You_want_to_download_,
+                            Resources.Launcher_bwUpdate_DoWork_New_Version, MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1,
+                            MessageBoxOptions.DefaultDesktopOnly) == DialogResult.Yes)
                     {
                         _updateYes = true;
                     }
@@ -1666,16 +1712,16 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             catch (Exception)
             {
                 Available = false;
-                _status   = Resources.Launcher_bwUpdate_DoWork_ERROR;
+                _status = Resources.Launcher_bwUpdate_DoWork_ERROR;
             }
 
             CurrEmuVer = Convert.ToDouble(File.ReadAllText("SingleCore\\version"));
-            
+
             if (RemoteEmuVer > CurrEmuVer)
             {
-                _status               = Resources.Launcher_bwUpdate_DoWork_New_Server_Update_Available;
-                    tssStatus.IsLink  = true;
-                    _updateNo         = false;
+                _status          = Resources.Launcher_bwUpdate_DoWork_New_Server_Update_Available;
+                tssStatus.IsLink = true;
+                _updateNo        = false;
             }
         }
 
@@ -1711,14 +1757,14 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             if (MysqlON)
             {
                 OpenFileDialog openFile = new OpenFileDialog();
-                openFile.Title = Resources.Launcher_import_Import_Characters;
-                openFile.Filter = "SPP Backup (*.sppbackup)|*.sppbackup|All files (*.*)|*.*";
+                openFile.Title          = Resources.Launcher_import_Import_Characters;
+                openFile.Filter         = "SPP Backup (*.sppbackup)|*.sppbackup|All files (*.*)|*.*";
 
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
                     MenuItemsDisableAfterLoad();
-                    importFile = openFile.FileName;
-                    importFolder = Path.GetDirectoryName(importFile);
+                    importFile         = openFile.FileName;
+                    importFolder       = Path.GetDirectoryName(importFile);
                     rtWorldDev.Visible = false;
                     CheckMangosCrashed.Stop();
                     _allowtext = false;
@@ -1738,31 +1784,23 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
                 OpenFileDialog openFile = new OpenFileDialog();
-                openFile.Title = Resources.Launcher_import_Import_Characters;
-                openFile.Filter = "SPP Backup (*.sppbackup)|*.sppbackup|All files (*.*)|*.*";
+                openFile.Title          = Resources.Launcher_import_Import_Characters;
+                openFile.Filter         = "SPP Backup (*.sppbackup)|*.sppbackup|All files (*.*)|*.*";
 
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
+                    Sqlimport = true;
                     OnlyMysqlStart = true;
+                    MessageBox.Show(OnlyMysqlStart.ToString());
                     StartAll();
                     MenuItemsDisableAfterLoad();
-                    importFile = openFile.FileName;
+                    importFile   = openFile.FileName;
                     importFolder = Path.GetDirectoryName(importFile);
-                    //rtWorldDev.Visible = false;
-                   // CheckMangosCrashed.Stop();
-                    //_allowtext = false;
-                    //_restart = true;
-                    //CloseProcess(true);
-                    //GetSqlOnlineBot.Stop();
-                   // tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
-                    //StatusIcon();
-                    WindowState = FormWindowState.Normal;
+                    WindowState  = FormWindowState.Normal;
                     Show();
-                    //pbAvailableM.Visible = true;
                     _status = Resources.Launcher_import_Decompress;
                     animateStatus(true);
-                    bwImport.RunWorkerAsync();
-                } 
+                }
             }
         }
 
@@ -1773,7 +1811,8 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             ImportExtract();
             _status = Resources.Launcher_import_Import_Characters;
 
-            string conn            = "server=127.0.0.1;user=root;pwd=123456;database=characters;port=3310;convertzerodatetime=true;";
+            string conn            =
+                "server            =127.0.0.1;user=root;pwd=123456;database=characters;port=3310;convertzerodatetime=true;";
             MySqlBackup mb         = new MySqlBackup(conn);
             mb.ImportInfo.FileName = getTemp + "\\save01";
             mb.Import();
@@ -1788,14 +1827,18 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         private void bwImport_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            Sqlimport = false;
             if (OnlyMysqlStart)
             {
                 ShutdownSql();
-                pbAvailableM.Visible = false;
-                pbNotAvailM.Visible = true;
+                pbAvailableM.Visible               = false;
+                pbNotAvailM.Visible                = true;
                 startstopToolStripMenuItem.Enabled = true;
             }
-            if(!OnlyMysqlStart){StartAll();}
+            if (!OnlyMysqlStart)
+            {
+                StartAll();
+            }
             OnlyMysqlStart = false;
             _status = Resources.Launcher_bwImport_RunWorkerCompleted_Import_Completed;
             animateStatus(false);
@@ -1808,7 +1851,7 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             string unpck       = importFile;
             string unpckDir    = getTemp;
             using (ZipFile zip = ZipFile.Read(unpck))
-            {  
+            {
                 foreach (ZipEntry e in zip)
                 {
                     e.Password = "89765487";
@@ -1822,15 +1865,15 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             if (MysqlON)
             {
                 SaveFileDialog saveFile = new SaveFileDialog();
-                saveFile.Title = Resources.Launcher_export_Export_Characters;
-                saveFile.Filter = "SPP Backup (*.sppbackup)|*.sppbackup|All files (*.*)|*.*";
-                saveFile.FileName = Resources.Launcher_export_Backup;
+                saveFile.Title          = Resources.Launcher_export_Export_Characters;
+                saveFile.Filter         = "SPP Backup (*.sppbackup)|*.sppbackup|All files (*.*)|*.*";
+                saveFile.FileName       = Resources.Launcher_export_Backup;
 
                 if (saveFile.ShowDialog() == DialogResult.OK)
                 {
                     animateStatus(true);
-                    _status = Resources.Launcher_export_Exporting_Characters;
-                    exportfile = saveFile.FileName;
+                    _status      = Resources.Launcher_export_Exporting_Characters;
+                    exportfile   = saveFile.FileName;
                     exportFolder = Path.GetDirectoryName(exportfile);
                     bwExport.RunWorkerAsync();
                 }
@@ -1838,19 +1881,19 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
                 SaveFileDialog saveFile = new SaveFileDialog();
-                saveFile.Title = Resources.Launcher_export_Export_Characters;
-                saveFile.Filter = "SPP Backup (*.sppbackup)|*.sppbackup|All files (*.*)|*.*";
-                saveFile.FileName = Resources.Launcher_export_Backup;
+                saveFile.Title          = Resources.Launcher_export_Export_Characters;
+                saveFile.Filter         = "SPP Backup (*.sppbackup)|*.sppbackup|All files (*.*)|*.*";
+                saveFile.FileName       = Resources.Launcher_export_Backup;
 
                 if (saveFile.ShowDialog() == DialogResult.OK)
                 {
                     OnlyMysqlStart = true;
                     StartAll();
                     animateStatus(true);
-                    _status = Resources.Launcher_export_Exporting_Characters;
-                    exportfile = saveFile.FileName;
+                    _status      = Resources.Launcher_export_Exporting_Characters;
+                    exportfile   = saveFile.FileName;
                     exportFolder = Path.GetDirectoryName(exportfile);
-                    bwExport.RunWorkerAsync();
+                    //bwExport.RunWorkerAsync();
                 }
             }
         }
@@ -1858,15 +1901,16 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
         private void bwExport_DoWork(object sender, DoWorkEventArgs e)
         {
             checklang(false);
-            string conn            = "server=127.0.0.1;user=root;pwd=123456;database=characters;port=3310;convertzerodatetime=true;";
-            MySqlBackup mb         = new MySqlBackup(conn);
+            string conn =
+                "server=127.0.0.1;user=root;pwd=123456;database=characters;port=3310;convertzerodatetime=true;";
+            MySqlBackup mb = new MySqlBackup(conn);
             mb.ExportInfo.FileName = getTemp + "\\save01";
             mb.Export();
 
             _status = Resources.Launcher_bwExport_DoWork_Export_Accounts;
 
-            string conn1            = "server=127.0.0.1;user=root;pwd=123456;database=realmd;port=3310;convertzerodatetime=true;";
-            MySqlBackup mb1         = new MySqlBackup(conn1);
+            string conn1 = "server=127.0.0.1;user=root;pwd=123456;database=realmd;port=3310;convertzerodatetime=true;";
+            MySqlBackup mb1 = new MySqlBackup(conn1);
             mb1.ExportInfo.FileName = getTemp + "\\save02";
             mb1.Export();
 
@@ -1930,12 +1974,12 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
                     MenuItemsDisableAfterLoad();
-                    UpdateUnpack = openFile.FileName;
-                    importFolder = Path.GetDirectoryName(importFile);
+                    UpdateUnpack       = openFile.FileName;
+                    importFolder       = Path.GetDirectoryName(importFile);
                     rtWorldDev.Visible = false;
                     CheckMangosCrashed.Stop();
                     _allowtext = false;
-                    _restart = true;
+                    _restart   = true;
                     CloseProcess(true);
                     GetSqlOnlineBot.Stop();
                     tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
@@ -1943,7 +1987,7 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
                     WindowState = FormWindowState.Normal;
                     Show();
                     pbAvailableM.Visible = true;
-                    _status = Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update;
+                    _status              = Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update;
                     animateStatus(true);
                     bWUpEx.RunWorkerAsync();
                 }
@@ -2008,43 +2052,27 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             if (!sendCommandForServerToolStripMenuItem.Checked)
             {
                 sendCommandForServerToolStripMenuItem.Checked = true;
-                _serverConsoleActive                          = true;
-                groupBox2.Visible                             = true;
-                _allowdev                                     = true;
-                Height                                        = 420;
-                rtWorldDev.Visible                            = true;
-                //DevWindow(true);
+                _serverConsoleActive = true;
+                groupBox2.Visible = true;
+                _allowdev = true;
+                Height = 420;
+                rtWorldDev.Visible = true;
             }
             else
             {
                 sendCommandForServerToolStripMenuItem.Checked = false;
-                _serverConsoleActive                          = false;
-                groupBox2.Visible                             = false;
-                _allowdev                                     = false;
-                Height                                        = 230;
-                rtWorldDev.Visible                            = false;
-                //DevWindow(false);
+                _serverConsoleActive = false;
+                groupBox2.Visible = false;
+                _allowdev = false;
+                Height = 230;
+                rtWorldDev.Visible = false;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-        }  
-     
-        
+        }
+
+
     }
 }
-
-            //if (!active)
-            //{
-            //    //Size               = new Size(537, 460);
-            //    Height = 420;
-            //    rtWorldDev.Visible = true;
-            //}
-
-            //if (active)
-            //{
-            //    //Size               = new Size(537, 251);
-            //    Height = 230;
-            //    rtWorldDev.Visible = false;
-            //}

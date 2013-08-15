@@ -42,7 +42,14 @@
     </ArrayOfString>
     <ArrayOfString>
       <string>D:\Sourcetree\SppLauncher\Windows\DatabaseUpdate.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\DatabaseUpdate.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Sourcetree\SppLauncher\Windows\WorldConsole.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\WorldConsole.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\WorldConsole.Designer.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Sourcetree\SppLauncher\Class\GetAllAcc.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

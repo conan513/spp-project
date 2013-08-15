@@ -73,7 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\GetAllAcc.cs" />
-    <Compile Include="Class\Language.cs" />
     <Compile Include="Windows\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,12 +154,6 @@
     </Compile>
     <Compile Include="Windows\WorldConf.Designer.cs">
       <DependentUpon>WorldConf.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\WorldConsole.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\WorldConsole.Designer.cs">
-      <DependentUpon>WorldConsole.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
     <EmbeddedResource Include="Properties\Resources.fr.resx" />
@@ -286,9 +279,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\WorldConf.resx">
       <DependentUpon>WorldConf.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\WorldConsole.resx">
-      <DependentUpon>WorldConsole.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App config and Fody\app.config" />
     <None Include="App config and Fody\app.manifest" />

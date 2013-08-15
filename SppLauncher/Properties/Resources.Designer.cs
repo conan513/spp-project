@@ -580,15 +580,6 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to announce .
-        /// </summary>
-        internal static string Launcher_SrvAnnounce_Tick_announce_ {
-            get {
-                return ResourceManager.GetString("Launcher_SrvAnnounce_Tick_announce_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Starting Mysql.
         /// </summary>
         internal static string Launcher_StartAll_Starting_Mysqlm {
