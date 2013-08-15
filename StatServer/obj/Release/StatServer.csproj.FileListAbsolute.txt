@@ -1,0 +1,8 @@
+D:\Dropbox\Visual Studio\Projects\StatServer\StatServer\bin\Release\Statserver.exe
+D:\Dropbox\Visual Studio\Projects\StatServer\StatServer\bin\Release\Statserver.pdb
+D:\Dropbox\Visual Studio\Projects\StatServer\StatServer\obj\Release\StatServer.csprojResolveAssemblyReference.cache
+D:\Dropbox\Visual Studio\Projects\StatServer\StatServer\obj\Release\StatServer.Statistics.resources
+D:\Dropbox\Visual Studio\Projects\StatServer\StatServer\obj\Release\StatServer.Properties.Resources.resources
+D:\Dropbox\Visual Studio\Projects\StatServer\StatServer\obj\Release\StatServer.csproj.GenerateResource.Cache
+D:\Dropbox\Visual Studio\Projects\StatServer\StatServer\obj\Release\Statserver.exe
+D:\Dropbox\Visual Studio\Projects\StatServer\StatServer\obj\Release\Statserver.pdb
