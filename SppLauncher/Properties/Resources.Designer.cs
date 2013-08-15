@@ -828,5 +828,53 @@ namespace SppLauncher.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your password must be at least 6 characters long. .
+        /// </summary>
+        internal static string WowaccountCreator_btnCreate_Click_Your_password_must_be_at_least_6_characters_long__ {
+            get {
+                return ResourceManager.GetString("WowaccountCreator_btnCreate_Click_Your_password_must_be_at_least_6_characters_lon" +
+                        "g__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your username must be at least 4 characters long. .
+        /// </summary>
+        internal static string WowaccountCreator_btnCreate_Click_Your_username_must_be_at_least_4_characters_long__ {
+            get {
+                return ResourceManager.GetString("WowaccountCreator_btnCreate_Click_Your_username_must_be_at_least_4_characters_lon" +
+                        "g__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///Account type: .
+        /// </summary>
+        internal static string WowaccountCreator_InsertSqlTrinity_ {
+            get {
+                return ResourceManager.GetString("WowaccountCreator_InsertSqlTrinity_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account created successfully: .
+        /// </summary>
+        internal static string WowaccountCreator_InsertSqlTrinity_Account_created_successfully__ {
+            get {
+                return ResourceManager.GetString("WowaccountCreator_InsertSqlTrinity_Account_created_successfully__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username is already taken..
+        /// </summary>
+        internal static string WowaccountCreator_InsertSqlTrinity_Username_is_already_taken_ {
+            get {
+                return ResourceManager.GetString("WowaccountCreator_InsertSqlTrinity_Username_is_already_taken_", resourceCulture);
+            }
+        }
     }
 }

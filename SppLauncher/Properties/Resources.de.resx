@@ -258,4 +258,25 @@ Möchten sie den Prozess beenden?</value>
   <data name="Launcher_GetSqlOnlineBot_Tick_Online_Bot_" xml:space="preserve">
     <value>Online Bot: </value>
   </data>
+  <data name="Launcher_bWUpEx_RunWorkerCompleted_Completed" xml:space="preserve">
+    <value>Fertig</value>
+  </data>
+  <data name="Launcher_updateToolStripMenuItem_Click_Decompress_Update" xml:space="preserve">
+    <value>Dekomprimieren update</value>
+  </data>
+  <data name="Launcher_rstchck_DoWork_Reset_bots" xml:space="preserve">
+    <value>Bot neustarten</value>
+  </data>
+  <data name="Launcher_RealmRestore_Realmlist" xml:space="preserve">
+    <value>Realmlist</value>
+  </data>
+  <data name="Launcher_magyarToolStripMenuItem_Click_1_Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="Launcher_import_Online_Bots__N_A" xml:space="preserve">
+    <value>Online Bots: N/A</value>
+  </data>
+  <data name="WowaccountCreator_btnCreate_Click_Your_password_must_be_at_least_6_characters_long__" xml:space="preserve">
+    <value></value>
+  </data>
 </root>

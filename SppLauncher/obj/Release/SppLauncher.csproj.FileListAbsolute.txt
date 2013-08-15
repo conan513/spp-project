@@ -152,7 +152,6 @@ D:\SPP\Single Player Project Real v2\de\SppLauncher.resources.dll
 D:\Sourcetree\SppLauncher\obj\Release\de\SppLauncher.resources.dll
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.de.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.hu.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.Form1.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.DatabaseUpdate.resources
 D:\SPP\Single Player Project Real v2\fr\SppLauncher.resources.dll
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Properties.Resources.fr.resources
@@ -166,3 +165,8 @@ D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update.fr.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update_Completed.fr.resources
 D:\Sourcetree\SppLauncher\obj\Release\fr\SppLauncher.resources.dll
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.fr.resources
+D:\SPP\Single Player Project Real v2\sq\SppLauncher.resources.dll
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Launcher.sq.resources
+D:\Sourcetree\SppLauncher\obj\Release\sq\SppLauncher.resources.dll
+D:\Sourcetree\SppLauncher\obj\Release\WowAccountCreator.WowaccountCreator.resources
+D:\Sourcetree\SppLauncher\obj\Release\WowAccountCreator.WowaccountCreator.hu.resources

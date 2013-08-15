@@ -97,12 +97,6 @@
     <Compile Include="Windows\DatabaseUpdate.Designer.cs">
       <DependentUpon>DatabaseUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Windows\HelpUsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +149,12 @@
     <Compile Include="Windows\WorldConf.Designer.cs">
       <DependentUpon>WorldConf.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\WowAccountCreator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\WowAccountCreator.Designer.cs">
+      <DependentUpon>WowAccountCreator.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
     <EmbeddedResource Include="Properties\Resources.fr.resx" />
     <EmbeddedResource Include="Properties\Resources.hu.resx" />
@@ -197,9 +197,6 @@
     <EmbeddedResource Include="Windows\DatabaseUpdate.resx">
       <DependentUpon>DatabaseUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Windows\HelpUsWindow.de.resx">
       <DependentUpon>HelpUsWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +231,9 @@
       <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Launcher.resx">
+      <DependentUpon>Launcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Launcher.sq.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Loader.resx">
@@ -279,6 +279,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\WorldConf.resx">
       <DependentUpon>WorldConf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\WowAccountCreator.hu.resx">
+      <DependentUpon>WowAccountCreator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\WowAccountCreator.resx">
+      <DependentUpon>WowAccountCreator.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App config and Fody\app.config" />
     <None Include="App config and Fody\app.manifest" />

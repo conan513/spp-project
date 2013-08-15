@@ -233,4 +233,49 @@ Voulez-vous fermer celui déjà en marche?</value>
   <data name="Launcher_GetSqlOnlineBot_Tick_Online_Bot_" xml:space="preserve">
     <value>Bots en-ligne: </value>
   </data>
+  <data name="Launcher_bWUpEx_RunWorkerCompleted_Completed" xml:space="preserve">
+    <value>Completé</value>
+  </data>
+  <data name="Launcher_CloseProcess_" xml:space="preserve">
+    <value>Some Exception: CloseProcess</value>
+  </data>
+  <data name="Launcher_SearchProcess0_" xml:space="preserve">
+    <value>Some Exception: SearchProcess</value>
+  </data>
+  <data name="Launcher_Traymsg_Ready_to_play" xml:space="preserve">
+    <value>Prêt à jouer</value>
+  </data>
+  <data name="Launcher_tmrWorld_Tick_Online" xml:space="preserve">
+    <value>En-ligne</value>
+  </data>
+  <data name="Launcher_updateToolStripMenuItem_Click_Decompress_Update" xml:space="preserve">
+    <value>Décompresser Update</value>
+  </data>
+  <data name="Launcher_Traymsg_Servers_Started" xml:space="preserve">
+    <value>Serveur démarrer</value>
+  </data>
+  <data name="Launcher_startNStop_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Launcher_startNStop_Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="Launcher_SearchProcess_Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="Launcher_RealmRestore_Realmlist" xml:space="preserve">
+    <value>Realmlist</value>
+  </data>
+  <data name="Launcher_RealmRestore_" xml:space="preserve">
+    <value>Some Exception: RealmRestore</value>
+  </data>
+  <data name="Launcher_magyarToolStripMenuItem_Click_1_Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="Launcher_RealmChange_" xml:space="preserve">
+    <value>Some Exception: RealmChange</value>
+  </data>
+  <data name="Launcher_RealmChange0_" xml:space="preserve">
+    <value>Some Exception: RealmWrite</value>
+  </data>
 </root>

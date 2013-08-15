@@ -19,6 +19,7 @@ using SppLauncher.Class;
 using SppLauncher.OnlineBot;
 using SppLauncher.Properties;
 using SppLauncher.Windows;
+using WowAccountCreator;
 
 namespace SppLauncher
 {
@@ -29,22 +30,12 @@ namespace SppLauncher
 
 
         public static string wowExePath,
-            ipAdress,
-            online,
-            resetBots,
-            randomizeBots,
-            realmListPath,
-            realmDialogPath,
-            OLDrealmList,
-            UpdLink,
-            importFile,
-            importFolder,
-            exportfile,
-            exportFolder,
-            autostart,
-            RemoteProgVer,
-            currProgVer = "1.0.6",
-            lang;
+            ipAdress,online,resetBots,
+            randomizeBots,realmListPath,
+            realmDialogPath,OLDrealmList,
+            UpdLink,importFile,importFolder,
+            exportfile,exportFolder,autostart,
+            RemoteProgVer,currProgVer = "1.0.6",lang;
 
         private readonly PerformanceCounter cpuCounter, ramCounter;
         public static Process _cmd, _cmd1, _cmd3;
@@ -694,6 +685,7 @@ namespace SppLauncher
             sendCommandForServerToolStripMenuItem.Enabled      = false;
             lanSwitcherToolStripMenuItem1.Enabled              = false;
             lanSwitcherToolStripMenuItem.Enabled               = false;
+            accountToolToolStripMenuItem1.Enabled              = false;
         }
 
         public void StatusIcon()
@@ -1346,14 +1338,28 @@ namespace SppLauncher
 
         private void lanSwitcherToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var LanSwitcher = new LanSwitcher();
-            LanSwitcher.Show();
-
+            if (Application.OpenForms["LanSwitcher"] == null)
+            {
+                var show = new LanSwitcher();
+                show.Show();
+            }
+            else
+            {
+                Application.OpenForms["LanSwitcher"].Activate();
+            }
         }
 
         private void accountToolToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Process.Start("Tools\\AccountCreator.exe");
+            if (Application.OpenForms["WowAccountCreator"] == null)
+            {
+                var show = new WowaccountCreator();
+                show.Show();
+            }
+            else
+            {
+                Application.OpenForms["WowAccountCreator"].Activate();
+            }
         }
 
         private void changeWoWPathToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -1554,6 +1560,7 @@ namespace SppLauncher
                     randomizeBotsToolStripMenuItem1.Enabled             = true;
                     lanSwitcherToolStripMenuItem1.Enabled               = true;
                     lanSwitcherToolStripMenuItem.Enabled                = true;
+                    accountToolToolStripMenuItem1.Enabled               = true;
                     startstopToolStripMenuItem.Enabled                  = true;
                     startToolStripMenuItem.Enabled                      = true;
                     restartToolStripMenuItem1.Enabled                   = true;
@@ -2071,6 +2078,12 @@ namespace SppLauncher
 
         private void button1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            var shw = new WowaccountCreator();
+            shw.Show();
         }
 
 

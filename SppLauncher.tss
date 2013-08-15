@@ -25,31 +25,12 @@
       <string>D:\Sourcetree\SppLauncher\Windows\Update_Completed.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Class\Language.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Windows\BotConf.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\BotConf.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Properties\Resources.Designer.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Class\OnlineBot.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Class\MySQLClient.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
       <string>D:\Sourcetree\SppLauncher\Windows\DatabaseUpdate.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Windows\WorldConsole.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\WorldConsole.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\WorldConsole.Designer.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Class\GetAllAcc.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\WowAccountCreator.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\WowAccountCreator.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\WowAccountCreator.Designer.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

@@ -133,17 +133,17 @@
   <data name="pbNotAvailW.Location" type="System.Drawing.Point, System.Drawing">
     <value>478, 64</value>
   </data>
+  <data name="pbTempW.Location" type="System.Drawing.Point, System.Drawing">
+    <value>478, 64</value>
+  </data>
   <data name="pbNotAvailR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 64</value>
+  </data>
+  <data name="pbTempR.Location" type="System.Drawing.Point, System.Drawing">
     <value>327, 64</value>
   </data>
   <data name="pbNotAvailM.Location" type="System.Drawing.Point, System.Drawing">
     <value>181, 64</value>
-  </data>
-  <data name="pbTempW.Location" type="System.Drawing.Point, System.Drawing">
-    <value>478, 64</value>
-  </data>
-  <data name="pbTempR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>327, 64</value>
   </data>
   <data name="pbTempM.Location" type="System.Drawing.Point, System.Drawing">
     <value>181, 64</value>
@@ -1943,6 +1943,18 @@
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 180</value>
   </data>
+  <data name="txbWorldDev.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 147</value>
+  </data>
+  <data name="txbWorldDev.Size" type="System.Drawing.Size, System.Drawing">
+    <value>689, 20</value>
+  </data>
+  <data name="rtWorldDev.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 21</value>
+  </data>
+  <data name="rtWorldDev.Size" type="System.Drawing.Size, System.Drawing">
+    <value>689, 127</value>
+  </data>
   <data name="runWoWToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 20</value>
   </data>
@@ -1979,11 +1991,20 @@
   <data name="randomizeBotsToolStripMenuItem.Text" xml:space="preserve">
     <value>Bots Randomisieren</value>
   </data>
+  <data name="exportToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 22</value>
+  </data>
+  <data name="importToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 22</value>
+  </data>
   <data name="exportCharactersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 22</value>
   </data>
   <data name="exportCharactersToolStripMenuItem.Text" xml:space="preserve">
     <value>Charakter Export/Import</value>
+  </data>
+  <data name="updateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 22</value>
   </data>
   <data name="magyarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 22</value>
@@ -2039,20 +2060,8 @@
   <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
     <value>Werkzeuge</value>
   </data>
-  <data name="startstopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
-  </data>
-  <data name="restartToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
-  </data>
   <data name="restartToolStripMenuItem1.Text" xml:space="preserve">
     <value>Neustart</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 6</value>
-  </data>
-  <data name="autostartToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 22</value>
   </data>
   <data name="autostartToolStripMenuItem.Text" xml:space="preserve">
     <value>Automatischer start</value>
@@ -2093,8 +2102,14 @@
   <data name="tssUsage.Size" type="System.Drawing.Size, System.Drawing">
     <value>596, 17</value>
   </data>
+  <data name="ssBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 414</value>
+  </data>
   <data name="ssBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>741, 22</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>716, 180</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>741, 436</value>

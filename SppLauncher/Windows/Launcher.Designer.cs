@@ -86,12 +86,12 @@
             this.exportCharactersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.magyarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.germanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.frenchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lanSwitcherToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.accountToolToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,6 +99,7 @@
             this.startstopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restartToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.sendCommandForServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autostartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportBugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmHelpUs = new System.Windows.Forms.ToolStripMenuItem();
@@ -124,7 +125,6 @@
             this.bWUpEx = new System.ComponentModel.BackgroundWorker();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.sendCommandForServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNotAvailW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTempW)).BeginInit();
@@ -496,8 +496,8 @@
             this.resetAllRandomBotsToolStripMenuItem,
             this.randomizeBotsToolStripMenuItem,
             this.exportCharactersToolStripMenuItem,
-            this.languageToolStripMenuItem,
-            this.updateToolStripMenuItem});
+            this.updateToolStripMenuItem,
+            this.languageToolStripMenuItem});
             this.toolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.configuration_1;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
@@ -554,6 +554,12 @@
             resources.ApplyResources(this.importToolStripMenuItem2, "importToolStripMenuItem2");
             this.importToolStripMenuItem2.Click += new System.EventHandler(this.importToolStripMenuItem2_Click);
             // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            resources.ApplyResources(this.updateToolStripMenuItem, "updateToolStripMenuItem");
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            // 
             // languageToolStripMenuItem
             // 
             this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -587,12 +593,6 @@
             this.frenchToolStripMenuItem.Name = "frenchToolStripMenuItem";
             resources.ApplyResources(this.frenchToolStripMenuItem, "frenchToolStripMenuItem");
             this.frenchToolStripMenuItem.Click += new System.EventHandler(this.frenchToolStripMenuItem_Click);
-            // 
-            // updateToolStripMenuItem
-            // 
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            resources.ApplyResources(this.updateToolStripMenuItem, "updateToolStripMenuItem");
-            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -647,6 +647,12 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            // 
+            // sendCommandForServerToolStripMenuItem
+            // 
+            this.sendCommandForServerToolStripMenuItem.Name = "sendCommandForServerToolStripMenuItem";
+            resources.ApplyResources(this.sendCommandForServerToolStripMenuItem, "sendCommandForServerToolStripMenuItem");
+            this.sendCommandForServerToolStripMenuItem.Click += new System.EventHandler(this.sendCommandForServerToolStripMenuItem_Click);
             // 
             // autostartToolStripMenuItem
             // 
@@ -794,12 +800,6 @@
             resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
-            // 
-            // sendCommandForServerToolStripMenuItem
-            // 
-            this.sendCommandForServerToolStripMenuItem.Name = "sendCommandForServerToolStripMenuItem";
-            resources.ApplyResources(this.sendCommandForServerToolStripMenuItem, "sendCommandForServerToolStripMenuItem");
-            this.sendCommandForServerToolStripMenuItem.Click += new System.EventHandler(this.sendCommandForServerToolStripMenuItem_Click);
             // 
             // Launcher
             // 

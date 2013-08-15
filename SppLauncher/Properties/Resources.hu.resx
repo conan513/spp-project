@@ -268,4 +268,29 @@ Be akarod zárni?</value>
   <data name="Launcher_GetSqlOnlineBot_Tick_Online_Bot_" xml:space="preserve">
     <value>Online Bot: </value>
   </data>
+  <data name="Launcher_bWUpEx_RunWorkerCompleted_Completed" xml:space="preserve">
+    <value>Befejezve</value>
+  </data>
+  <data name="Launcher_updateToolStripMenuItem_Click_Decompress_Update" xml:space="preserve">
+    <value>Frissítés Kitömörítése</value>
+  </data>
+  <data name="Launcher_magyarToolStripMenuItem_Click_1_Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="WowaccountCreator_btnCreate_Click_Your_password_must_be_at_least_6_characters_long__" xml:space="preserve">
+    <value>A jelszónak legalább 6 karakter hosszúnak kell lennie.</value>
+  </data>
+  <data name="WowaccountCreator_btnCreate_Click_Your_username_must_be_at_least_4_characters_long__" xml:space="preserve">
+    <value>A felhasználónevednek legalább 4 karakter hosszúnak kell lennie.</value>
+  </data>
+  <data name="WowaccountCreator_InsertSqlTrinity_" xml:space="preserve">
+    <value>
+Account Típusa:</value>
+  </data>
+  <data name="WowaccountCreator_InsertSqlTrinity_Account_created_successfully__" xml:space="preserve">
+    <value>Account létrehozva: </value>
+  </data>
+  <data name="WowaccountCreator_InsertSqlTrinity_Username_is_already_taken_" xml:space="preserve">
+    <value>Felhasználónév már létezik.</value>
+  </data>
 </root>
