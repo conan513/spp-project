@@ -63,14 +63,15 @@
             // 
             // cbBugType
             // 
-            resources.ApplyResources(this.cbBugType, "cbBugType");
             this.cbBugType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBugType.FormattingEnabled = true;
             this.cbBugType.Items.AddRange(new object[] {
             resources.GetString("cbBugType.Items"),
             resources.GetString("cbBugType.Items1"),
             resources.GetString("cbBugType.Items2"),
-            resources.GetString("cbBugType.Items3")});
+            resources.GetString("cbBugType.Items3"),
+            resources.GetString("cbBugType.Items4")});
+            resources.ApplyResources(this.cbBugType, "cbBugType");
             this.cbBugType.Name = "cbBugType";
             // 
             // lblbug
@@ -85,7 +86,6 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label1);
@@ -94,6 +94,7 @@
             this.groupBox1.Controls.Add(this.lblbug);
             this.groupBox1.Controls.Add(this.cbBugType);
             this.groupBox1.Controls.Add(this.lblMail);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -104,8 +105,8 @@
             // 
             // textBox1
             // 
-            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.BackColor = System.Drawing.SystemColors.MenuBar;
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             // 

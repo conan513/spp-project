@@ -119,16 +119,19 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lbl_local.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 20</value>
+    <value>26, 21</value>
   </data>
   <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 15</value>
+    <value>111, 15</value>
+  </data>
+  <data name="panel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-2, 148</value>
   </data>
   <data name="panel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 52</value>
+    <value>298, 52</value>
   </data>
   <data name="lbl_LocalV.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 20</value>
+    <value>88, 21</value>
   </data>
   <data name="lbl_LocalV.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 15</value>
@@ -137,7 +140,7 @@
     <value>Töltés...</value>
   </data>
   <data name="lblLocalemu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 35</value>
+    <value>88, 36</value>
   </data>
   <data name="lblLocalemu.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 15</value>
@@ -146,7 +149,7 @@
     <value>Töltés...</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 35</value>
+    <value>37, 36</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 15</value>
@@ -154,38 +157,44 @@
   <data name="label4.Text" xml:space="preserve">
     <value>Szerver:</value>
   </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>111, 67</value>
+  </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>299, 66</value>
+    <value>156, 66</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Verziók</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 41</value>
+    <value>57, 31</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 13</value>
+    <value>151, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Szervert és adatbázist készítette:</value>
+    <value>Szervert és adatbázist fejleszti:</value>
   </data>
   <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>275, 41</value>
+    <value>205, 31</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 26</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 13</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Launcher-t és az eszközöket készítette:</value>
+  <data name="pb_screen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 72</value>
   </data>
   <data name="linkLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>275, 26</value>
+    <value>205, 12</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 12</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Ezt az alkalmazást tervezte és fejleszti:</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>342, 214</value>
+    <value>293, 197</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.RightToLeftLayout" type="System.Boolean, mscorlib">
@@ -193,8 +202,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Programról</value>
-  </data>
-  <data name="btn_ok.Text" xml:space="preserve">
-    <value>OK</value>
   </data>
 </root>

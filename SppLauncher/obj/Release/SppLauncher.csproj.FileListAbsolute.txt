@@ -1,172 +1,67 @@
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.AboutBox.resources
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.BotConf.resources
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.BugReport.resources
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.Launcher.resources
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.Loader.resources
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.Properties.Resources.resources
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.Update.resources
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.Update_Completed.resources
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.WorldConf.resources
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.csproj.GenerateResource.Cache
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\SppLauncher.exe.config
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.exe
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.pdb
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\SppLauncher.exe
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\SppLauncher.pdb
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\Microsoft.QualityTools.Testing.Fakes.dll
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\MySql.Data.dll
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\System.Runtime.dll
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\System.Threading.Tasks.dll
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\System.Runtime.xml
-C:\Dropbox\Conan_shared\SppLauncher\SppLauncher\System.Threading.Tasks.xml
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\SppLauncher.exe.config
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.exe
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.pdb
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.AboutBox.resources
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.BotConf.resources
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.BugReport.resources
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.Launcher.resources
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.Loader.resources
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.Properties.Resources.resources
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.Update.resources
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.Update_Completed.resources
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.WorldConf.resources
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\SppLauncher.exe
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\SppLauncher.pdb
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\MySql.Data.dll
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\System.Runtime.dll
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\System.Threading.Tasks.dll
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\System.Runtime.xml
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\System.Threading.Tasks.xml
-D:\Dropbox\Conan_shared\SppLauncher\SppLauncher\SppLauncher.exe.config
-D:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.exe
-D:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.pdb
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\SppLauncher.exe.config
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\obj\Release\SppLauncher.exe
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\obj\Release\SppLauncher.pdb
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\obj\Release\SppLauncher.csprojFakesResolveAssemblyReference.cache
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\obj\Release\SppLauncher.AboutBox.resources
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\obj\Release\SppLauncher.BotConf.resources
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\obj\Release\SppLauncher.BugReport.resources
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\obj\Release\SppLauncher.Launcher.resources
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\obj\Release\SppLauncher.Loader.resources
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\obj\Release\SppLauncher.Properties.Resources.resources
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\obj\Release\SppLauncher.Update.resources
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\obj\Release\SppLauncher.Update_Completed.resources
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\obj\Release\SppLauncher.WorldConf.resources
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\obj\Release\SppLauncher.csproj.GenerateResource.Cache
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\SppLauncher.exe
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\SppLauncher.pdb
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\MySql.Data.Fakes.fakesconfig
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\Microsoft.QualityTools.Testing.Fakes.dll
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\MySql.Data.dll
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\System.Runtime.dll
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\System.Threading.Tasks.dll
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\System.Runtime.xml
-D:\Dropbox\Visual Studio\Projects\SppLauncher\SppLauncher\System.Threading.Tasks.xml
-D:\SPP\Single Player Project Real v2\SppLauncher.exe.config
-D:\SPP\Single Player Project Real v2\SppLauncher.exe
-D:\SPP\Single Player Project Real v2\SppLauncher.pdb
-C:\SPP\Single Player Project Real v2\SppLauncher.exe.config
-C:\SPP\Single Player Project Real v2\SppLauncher.exe
-C:\SPP\Single Player Project Real v2\SppLauncher.pdb
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.csprojFakesResolveAssemblyReference.cache
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.csprojResolveAssemblyReference.cache
-C:\AMD\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.csproj.GenerateResource.Cache
-D:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.csprojFakesResolveAssemblyReference.cache
-D:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.csprojResolveAssemblyReference.cache
-D:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.AboutBox.resources
-D:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.BotConf.resources
-D:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.BugReport.resources
-D:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.Launcher.resources
-D:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.Loader.resources
-D:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.Properties.Resources.resources
-D:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.Update.resources
-D:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.Update_Completed.resources
-D:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.WorldConf.resources
-D:\Dropbox\Conan_shared\SppLauncher\SppLauncher\obj\Release\SppLauncher.csproj.GenerateResource.Cache
-D:\SppLauncher\SppLauncher\obj\Release\SppLauncher.exe
-D:\SppLauncher\SppLauncher\obj\Release\SppLauncher.pdb
-D:\SppLauncher\SppLauncher\obj\Release\SppLauncher.csprojResolveAssemblyReference.cache
-D:\SppLauncher\SppLauncher\obj\Release\SppLauncher.AboutBox.resources
-D:\SppLauncher\SppLauncher\obj\Release\SppLauncher.BotConf.resources
-D:\SppLauncher\SppLauncher\obj\Release\SppLauncher.BugReport.resources
-D:\SppLauncher\SppLauncher\obj\Release\SppLauncher.Launcher.resources
-D:\SppLauncher\SppLauncher\obj\Release\SppLauncher.Loader.resources
-D:\SppLauncher\SppLauncher\obj\Release\SppLauncher.Properties.Resources.resources
-D:\SppLauncher\SppLauncher\obj\Release\SppLauncher.Update.resources
-D:\SppLauncher\SppLauncher\obj\Release\SppLauncher.Update_Completed.resources
-D:\SppLauncher\SppLauncher\obj\Release\SppLauncher.WorldConf.resources
-D:\SppLauncher\SppLauncher\obj\Release\SppLauncher.csproj.GenerateResource.Cache
-D:\SppLauncher\SppLauncher\obj\Release\SppLauncher.HelpUsWindow.resources
-D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.exe
-D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.pdb
-D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.csprojResolveAssemblyReference.cache
-D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.AboutBox.resources
-D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.BotConf.resources
-D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.BugReport.resources
-D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.HelpUsWindow.resources
-D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.Launcher.resources
-D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.Loader.resources
-D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.Properties.Resources.resources
-D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.Update.resources
-D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.Update_Completed.resources
-D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.WorldConf.resources
-D:\Új mappa\SppLauncher\SppLauncher\obj\Release\SppLauncher.csproj.GenerateResource.Cache
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.exe
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.pdb
+D:\Sourcetree\SppLauncher\bin\Release\SppLauncher.exe.config
+D:\Sourcetree\SppLauncher\bin\Release\SppLauncher.exe
+D:\Sourcetree\SppLauncher\bin\Release\SppLauncher.pdb
+D:\Sourcetree\SppLauncher\bin\Release\de\SppLauncher.resources.dll
+D:\Sourcetree\SppLauncher\bin\Release\fr\SppLauncher.resources.dll
+D:\Sourcetree\SppLauncher\bin\Release\hu\SppLauncher.resources.dll
+D:\Sourcetree\SppLauncher\bin\Release\Ionic.Zip.dll
+D:\Sourcetree\SppLauncher\bin\Release\MySql.Data.dll
+D:\Sourcetree\SppLauncher\bin\Release\MySqlBackup.dll
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.csprojResolveAssemblyReference.cache
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.AboutBox.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BotConf.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BugReport.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.DatabaseUpdate.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.HelpUsWindow.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.LanSwitcher.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Launcher.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Loader.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Properties.Resources.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update_Completed.resources
 D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.csproj.GenerateResource.Cache
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.LanSwitcher.resources
-D:\SPP\Single Player Project Real v2\hu\SppLauncher.resources.dll
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Properties.Resources.hu.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.AboutBox.hu.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Launcher.hu.resources
-D:\Sourcetree\SppLauncher\obj\Release\hu\SppLauncher.resources.dll
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BotConf.hu.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.LanSwitcher.hu.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BugReport.hu.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.HelpUsWindow.hu.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update.hu.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update_Completed.hu.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Properties.Resources.de.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.AboutBox.de.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BotConf.de.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BugReport.de.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.HelpUsWindow.de.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.LanSwitcher.de.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Launcher.de.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update.de.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update_Completed.de.resources
-D:\SPP\Single Player Project Real v2\de\SppLauncher.resources.dll
-D:\Sourcetree\SppLauncher\obj\Release\de\SppLauncher.resources.dll
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.de.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.hu.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.DatabaseUpdate.resources
-D:\SPP\Single Player Project Real v2\fr\SppLauncher.resources.dll
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Properties.Resources.fr.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.AboutBox.fr.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BotConf.fr.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BugReport.fr.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.HelpUsWindow.fr.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.LanSwitcher.fr.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Launcher.fr.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update.fr.resources
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update_Completed.fr.resources
-D:\Sourcetree\SppLauncher\obj\Release\fr\SppLauncher.resources.dll
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.fr.resources
-D:\SPP\Single Player Project Real v2\sq\SppLauncher.resources.dll
-D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Launcher.sq.resources
-D:\Sourcetree\SppLauncher\obj\Release\sq\SppLauncher.resources.dll
 D:\Sourcetree\SppLauncher\obj\Release\WowAccountCreator.WowaccountCreator.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Properties.Resources.de.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Properties.Resources.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Properties.Resources.hu.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.AboutBox.de.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.AboutBox.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.AboutBox.hu.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BotConf.de.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BotConf.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BotConf.hu.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BugReport.de.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BugReport.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.BugReport.hu.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.HelpUsWindow.de.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.HelpUsWindow.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.HelpUsWindow.hu.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.LanSwitcher.de.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.LanSwitcher.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Windows.LanSwitcher.hu.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Launcher.de.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Launcher.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Launcher.hu.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update.de.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update.hu.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update_Completed.de.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update_Completed.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.Update_Completed.hu.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.de.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.fr.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.WorldConf.hu.resources
 D:\Sourcetree\SppLauncher\obj\Release\WowAccountCreator.WowaccountCreator.hu.resources
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.csproj.GenerateResource.Cache
+D:\Sourcetree\SppLauncher\obj\Release\de\SppLauncher.resources.dll
+D:\Sourcetree\SppLauncher\obj\Release\fr\SppLauncher.resources.dll
+D:\Sourcetree\SppLauncher\obj\Release\hu\SppLauncher.resources.dll
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.exe
+D:\Sourcetree\SppLauncher\obj\Release\SppLauncher.pdb
+D:\Sourcetree\SppLauncher\bin\Release\SppLauncher.hu.dll
+D:\SPP\Single Player Project Real v2\SppLauncher.exe.config
+D:\SPP\Single Player Project Real v2\SppLauncher.exe
+D:\SPP\Single Player Project Real v2\SppLauncher.pdb
+D:\SPP\Single Player Project Real v2\de\SppLauncher.resources.dll
+D:\SPP\Single Player Project Real v2\fr\SppLauncher.resources.dll
+D:\SPP\Single Player Project Real v2\hu\SppLauncher.resources.dll

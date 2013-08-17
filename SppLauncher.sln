@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SppLauncher", "SppLauncher\SppLauncher.csproj", "{51E1AB11-8A59-41F9-A811-636832B87A6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatServer", "..\Dropbox\Visual Studio\Projects\StatServer\StatServer\StatServer.csproj", "{99891169-D346-4933-824D-FD7BBE190631}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatServer", "StatServer\StatServer.csproj", "{99891169-D346-4933-824D-FD7BBE190631}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C8472363-8A9F-452B-81A6-B1726CE66870}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

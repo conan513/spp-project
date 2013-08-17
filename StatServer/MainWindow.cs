@@ -23,7 +23,7 @@ namespace StatServer
 
         private readonly DateTime _startTime = DateTime.Now;
         private DateTime dt1 = DateTime.Now;
-        private int _ccGui, _Lanswitcher, _report, _resChanger, _wowAccountCreator;
+        private int _report;
         private Thread _listenThread;
         private TcpListener _tcpListener;
         private string[] _att = new string[8];
@@ -37,11 +37,7 @@ namespace StatServer
             timerSave.Start();
             StatusChange("Not Connected");
 
-            NotifyBallon(1000, "Counter", "Server Started!\nAll Count: " + _ccGui);
-
             ReadXml();
-
-            //NotifyCounter.Text = "All Count: " + _ccGui.ToString(CultureInfo.InvariantCulture);
 
             Bitmap(false);
         }
@@ -67,41 +63,29 @@ namespace StatServer
 
         private void Bitmap (bool backup)
         {
-            var bmp = new Bitmap(300, 300);
+            //var bmp = new Bitmap(300, 300);
 
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                string s = "Compiler Usage: " + _ccGui.ToString(CultureInfo.InvariantCulture) + "\nSwitcher Usage: " +
-                           _Lanswitcher.ToString(CultureInfo.InvariantCulture) + "\nRes Changer: " +
-                           _resChanger.ToString(CultureInfo.InvariantCulture) + "Account Creator: " +
-                           _wowAccountCreator.ToString(CultureInfo.InvariantCulture);
-                var drawFont = new Font("Arial", 11);
-                var rectf = new RectangleF(0, 100, 500, 500);
+            //using (Graphics g = Graphics.FromImage(bmp))
+            //{
+            //    string s = "Compiler Usage: " + _ccGui.ToString(CultureInfo.InvariantCulture) + "\nSwitcher Usage: " +
+            //               _Lanswitcher.ToString(CultureInfo.InvariantCulture) + "\nRes Changer: " +
+            //               _resChanger.ToString(CultureInfo.InvariantCulture) + "Account Creator: " +
+            //               _wowAccountCreator.ToString(CultureInfo.InvariantCulture);
+            //    var drawFont = new Font("Arial", 11);
+            //    var rectf = new RectangleF(0, 100, 500, 500);
 
-                g.DrawString(s, drawFont, Brushes.Black, rectf);
+            //    g.DrawString(s, drawFont, Brushes.Black, rectf);
 
-                bmp.Save("dynamic_pic.bmp");
+            //    bmp.Save("dynamic_pic.bmp");
 
-                if (backup)
-                    File.Copy("dynamic_pic.bmp", "D:\\Dropbox\\Public\\Updates\\dynamic_pic.png", true);
-            }
+            //    if (backup)
+            //        File.Copy("dynamic_pic.bmp", "D:\\Dropbox\\Public\\Updates\\dynamic_pic.png", true);
+            //}
         }
 
         private void LoadStat ()
         {
-            int all = _ccGui + _Lanswitcher + _resChanger + _wowAccountCreator;
-
-            //Write label
-            lblCompiler.Text = _ccGui.ToString(CultureInfo.InvariantCulture);
-            lblAcc.Text = _wowAccountCreator.ToString(CultureInfo.InvariantCulture);
-            lblLanSwitch.Text = _Lanswitcher.ToString(CultureInfo.InvariantCulture);
-            lblRes.Text = _resChanger.ToString(CultureInfo.InvariantCulture);
             lblReport.Text = _report.ToString(CultureInfo.InvariantCulture);
-
-            //all
-            lblAll.Text = all.ToString(CultureInfo.InvariantCulture);
-            NotifyCounter.Text = all.ToString(CultureInfo.InvariantCulture);
-            NotifyCounter.Text = "All Count: " + all;
         }
 
         private void WriteError (string errMsg)
@@ -121,10 +105,6 @@ namespace StatServer
                 writer.WriteStartDocument();
                 writer.WriteComment(DateTime.Now.ToString(CultureInfo.InvariantCulture));
                 writer.WriteStartElement("Save");
-                writer.WriteElementString("Compiler", _ccGui.ToString(CultureInfo.InvariantCulture));
-                writer.WriteElementString("ResChanger", _resChanger.ToString(CultureInfo.InvariantCulture));
-                writer.WriteElementString("LanSwitcher", _Lanswitcher.ToString(CultureInfo.InvariantCulture));
-                writer.WriteElementString("WowAccCreator", _wowAccountCreator.ToString(CultureInfo.InvariantCulture));
                 writer.WriteElementString("Report", _report.ToString(CultureInfo.InvariantCulture));
                 writer.Close();
             }
@@ -149,10 +129,6 @@ namespace StatServer
 
                     foreach (XmlNode node in nodes)
                     {
-                        _ccGui = Convert.ToInt32(node["Compiler"].InnerText);
-                        _resChanger = Convert.ToInt32(node["ResChanger"].InnerText);
-                        _Lanswitcher = Convert.ToInt32(node["LanSwitcher"].InnerText);
-                        _wowAccountCreator = Convert.ToInt32(node["WowAccCreator"].InnerText);
                         _report = Convert.ToInt32(node["Report"].InnerText);
                     }
                 }
@@ -171,7 +147,7 @@ namespace StatServer
 
         private void Server ()
         {
-            _tcpListener = new TcpListener(IPAddress.Any, 5003);
+            _tcpListener = new TcpListener(IPAddress.Any, 5459);
             _listenThread = new Thread(ListenForClients);
             _listenThread.Start();
         }
@@ -225,23 +201,15 @@ namespace StatServer
                 switch (encoder.GetString(message, 0, bytesRead))
                 {
                     case "0":
-                        _ccGui++;
-                        NotifyBallon(500, "Used Compiler", "CC GUI All: " + _ccGui);
                         lbHistory.Items.Add(dt.ToString("(" + "HH:mm" + ") ") + "Compiler");
                         break;
                     case "1":
-                        _resChanger++;
-                        NotifyBallon(500, "Used Resolution Changer", "Resolution Changer All: " + _resChanger);
                         lbHistory.Items.Add(dt.ToString("(" + "HH:mm" + ") ") + "Res Change");
                         break;
                     case "2":
-                        _Lanswitcher++;
-                        NotifyBallon(500, "Used LanSwitcher", "Lan Switcher All: " + _Lanswitcher);
                         lbHistory.Items.Add(dt.ToString("(" + "HH:mm" + ") ") + "Lan Changer");
                         break;
                     case "3":
-                        _wowAccountCreator++;
-                        NotifyBallon(500, "Used Wow Account Creator", "Wow Acc All: " + _wowAccountCreator);
                         lbHistory.Items.Add(dt.ToString("(" + "HH:mm" + ") ") + "Wow Account Creator");
                         break;
                     case "-reset":
@@ -320,10 +288,6 @@ namespace StatServer
 
         private void ResetCommand()
         {
-            _ccGui = 0;
-            _resChanger = 0;
-            _Lanswitcher = 0;
-            _wowAccountCreator = 0;
             SaveXml();
             LoadStat();
         }
@@ -378,7 +342,8 @@ namespace StatServer
         private void timer1_Tick(object sender, EventArgs e)
         {
             TimeSpan delta = DateTime.Now - _startTime;
-            tssUptime.Text = delta.Hours.ToString(CultureInfo.InvariantCulture) + "h " +
+            tssUptime.Text = delta.Days.ToString(CultureInfo.InvariantCulture)+ "d " +
+                             delta.Hours.ToString(CultureInfo.InvariantCulture) + "h " +
                              delta.Minutes.ToString(CultureInfo.InvariantCulture) + "m " +
                              delta.Seconds.ToString(CultureInfo.InvariantCulture) + "s";
         }

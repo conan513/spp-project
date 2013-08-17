@@ -118,17 +118,29 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lbl_local.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 21</value>
+  </data>
   <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 15</value>
+    <value>134, 14</value>
+  </data>
+  <data name="panel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-2, 144</value>
   </data>
   <data name="panel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 52</value>
+    <value>344, 52</value>
+  </data>
+  <data name="lbl_LocalV.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 21</value>
   </data>
   <data name="lbl_LocalV.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 15</value>
   </data>
   <data name="lbl_LocalV.Text" xml:space="preserve">
     <value>Chargement...</value>
+  </data>
+  <data name="lblLocalemu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 36</value>
   </data>
   <data name="lblLocalemu.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 15</value>
@@ -137,7 +149,7 @@
     <value>Chargement...</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 36</value>
+    <value>29, 36</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 15</value>
@@ -145,40 +157,46 @@
   <data name="label4.Text" xml:space="preserve">
     <value>Serveur:</value>
   </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>122, 59</value>
+  </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 66</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 13</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Serveur et base de données par</value>
-  </data>
-  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>242, 41</value>
-  </data>
-  <data name="linkLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>242, 26</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 26</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 13</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Launcher et outils par</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>302, 214</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>À propos</value>
-  </data>
-  <data name="btn_ok.Text" xml:space="preserve">
-    <value>OK</value>
+    <value>180, 66</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Version</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 35</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 13</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Serveur et la base de données développe par</value>
+  </data>
+  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>263, 35</value>
+  </data>
+  <data name="pb_screen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 64</value>
+  </data>
+  <data name="linkLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>263, 13</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 13</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Cette application a été conçue et développée par</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>337, 192</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>À propos</value>
   </data>
 </root>

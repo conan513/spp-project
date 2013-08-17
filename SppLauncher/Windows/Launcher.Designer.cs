@@ -794,9 +794,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.richTextBox1);
             this.groupBox2.Controls.Add(this.rtWorldDev);
             this.groupBox2.Controls.Add(this.txbWorldDev);
-            this.groupBox2.Controls.Add(this.richTextBox1);
             resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
@@ -937,8 +937,8 @@
         public System.Windows.Forms.PictureBox pbAvailableM;
         public System.Windows.Forms.PictureBox pbNotAvailM;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ToolStripMenuItem sendCommandForServerToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 

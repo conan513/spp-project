@@ -21,8 +21,6 @@ namespace SppLauncher
             InitializeComponent();
             cbBugType.Text = "Aibot";
 
-            if(Launcher.lang == "Hungarian") { lblMail.Location = new Point(45, 27); lblbug.Location = new Point(47, 53); }
-
             bwGetSysInfo.RunWorkerAsync();
         }
 
@@ -67,14 +65,11 @@ namespace SppLauncher
             try
             {
                 TcpClient client = new TcpClient();
-
-                IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Parse(RemoteIp), 5003);
-
+                IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Parse(RemoteIp), 5459);
                 client.Connect(serverEndPoint);
-
                 NetworkStream clientStream = client.GetStream();
 
-                UTF8Encoding encoder = new UTF8Encoding(); //currprogver,curremuver
+                UTF8Encoding encoder = new UTF8Encoding();
                 byte[] buffer        = encoder.GetBytes(report + ";" + bugtype + ";" + email + ";" + desc + ";" + cpu + ";" + cpucore + ";" + ram + ";" + os + ";" + ver);
 
                 clientStream.Write(buffer, 0, buffer.Length);

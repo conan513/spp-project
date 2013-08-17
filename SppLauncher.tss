@@ -4,33 +4,11 @@
     <ArrayOfString>
       <string>D:\Sourcetree\SppLauncher\Windows\Launcher.cs</string>
       <string>D:\Sourcetree\SppLauncher\Windows\Launcher.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\Launcher.Designer.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Windows\BugReport.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\BugReport.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Windows\WorldConf.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\WorldConf.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\WorldConf.de.resx</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Windows\Update.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\Update.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\Update.Designer.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Windows\Update_Completed.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\Update_Completed.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>D:\Sourcetree\SppLauncher\Windows\DatabaseUpdate.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sourcetree\SppLauncher\Windows\WowAccountCreator.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\WowAccountCreator.cs</string>
-      <string>D:\Sourcetree\SppLauncher\Windows\WowAccountCreator.Designer.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\DatabaseUpdate.cs</string>
+      <string>D:\Sourcetree\SppLauncher\Windows\DatabaseUpdate.Designer.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

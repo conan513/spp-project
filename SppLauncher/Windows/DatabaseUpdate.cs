@@ -48,8 +48,6 @@ namespace SppLauncher.Windows
 
         private void Start()
         {
-            progressBar1.Style = ProgressBarStyle.Marquee;
-            progressBar1.MarqueeAnimationSpeed = 100;
             bWdbUp1.RunWorkerAsync();
         }
 
@@ -62,108 +60,147 @@ namespace SppLauncher.Windows
                 label3.Text = "Insert YTDB";
                 InsertMultiple(@"update\ytdb\full", "ytdb*mangos*sql", false);
             }
-        }
 
-        private void bWdbUp1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            progressBar1.MarqueeAnimationSpeed = 0;
-            progressBar1.Style = ProgressBarStyle.Blocks;
-
-            bWdbUp.RunWorkerAsync();
-        }
-
-        private void bWdbUp_DoWork(object sender, DoWorkEventArgs e)
-        {
             if (Directory.Exists("update\\mangos"))
             {
                 if (Directory.Exists("update\\ytdb\\update"))
                 {
                     label3.Text = "YTDB Update";
-                    InsertMultiple(@"update\ytdb\update", "*mangos*sql",true);
+                    InsertMultiple(@"update\ytdb\update", "*mangos*sql", true);
                 }
             }
             if (Directory.Exists(@"update\mangos\updates"))
             {
                 label3.Text = "Mangos Update";
-                InsertMultiple(@"update\mangos\updates", "*sql",true);
+                InsertMultiple(@"update\mangos\updates", "*sql", true);
             }
             if (Directory.Exists(@"update\mangos\sql_mr"))
             {
                 label3.Text = "Custom Mangos Tables";
                 InsertSingle(@"update\mangos\sql_mr\custom_mangos_tables.sql");
                 label3.Text = "Update Mangos";
-                InsertMultiple(@"update\mangos\sql_mr", "mr*mangos*sql",true);
+                InsertMultiple(@"update\mangos\sql_mr", "mr*mangos*sql", true);
             }
-        }
 
-        private void bWdbUp_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            progressBar1.Value = e.ProgressPercentage;
-        }
+            label3.Text = "Update ScriptDev2";
+            RunMySqlWitoutDb("127.0.0.1", 3310, "root", "123456", @"update\scriptdev2\sql\scriptdev2_drop_database.sql");
+            RunMySqlWitoutDb("127.0.0.1", 3310, "root", "123456", @"update\scriptdev2\sql\scriptdev2\sql\scriptdev2_create_database.sql");
+            RunMySql("127.0.0.1", 3310, "root", "123456", "scriptdev2", @"update\scriptdev2\sql\scriptdev2\sql\scriptdev2_create_structure_mysql.sql");
+            RunMySql("127.0.0.1", 3310, "root", "123456", "scriptdev2", @"update\scriptdev2\sql\scriptdev2\sql\custom_scriptdev2_bsw_table.sql");
+            RunMySql("127.0.0.1", 3310, "root", "123456", "mangos", @"update\scriptdev2\sql\scriptdev2\sql\scriptdev2\sql\mangos_scriptname_clear.sql");
+            RunMySql("127.0.0.1", 3310, "root", "123456", "mangos", @"update\scriptdev2\sql\scriptdev2\sql\mangos_scriptname_full.sql");
 
-        private void bWdbUp_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            progressBar1.Style = ProgressBarStyle.Marquee;
-            progressBar1.MarqueeAnimationSpeed = 100;
-            bWdbUpS.RunWorkerAsync();
-        }
-
-        private void bWdbUpS_DoWork(object sender, DoWorkEventArgs e)
-        {
-            if (Directory.Exists("update\\scriptdev"))
-            {
-                label3.Text = "Update ScriptDev2";
-                RunMySqlWitoutDb("127.0.0.1", 3310, "root", "123456", @"update\scriptdev2\sql\scriptdev2_drop_database.sql");
-                RunMySqlWitoutDb("127.0.0.1", 3310, "root", "123456", @"update\scriptdev2\sql\scriptdev2\sql\scriptdev2_create_database.sql");
-                RunMySql("127.0.0.1", 3310, "root", "123456", "scriptdev2", @"update\scriptdev2\sql\scriptdev2\sql\scriptdev2_create_structure_mysql.sql");
-                RunMySql("127.0.0.1", 3310, "root", "123456", "scriptdev2", @"update\scriptdev2\sql\scriptdev2\sql\custom_scriptdev2_bsw_table.sql");
-                RunMySql("127.0.0.1", 3310, "root", "123456", "mangos", @"update\scriptdev2\sql\scriptdev2\sql\scriptdev2\sql\mangos_scriptname_clear.sql");
-                RunMySql("127.0.0.1", 3310, "root", "123456", "mangos", @"update\scriptdev2\sql\scriptdev2\sql\mangos_scriptname_full.sql");
-            }
-        }
-
-        private void bWdbUpS_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            progressBar1.Style = ProgressBarStyle.Blocks;
-            bWdvUpS1.RunWorkerAsync();
-        }
-
-        private void bWdvUpS1_DoWork(object sender, DoWorkEventArgs e)
-        {
             Thread.Sleep(10);
-                InsertMultiple1(@"update\scriptdev2\sql_mr", "mangos", "mr*mangos*sql");
-                Thread.Sleep(10);
-                InsertMultiple1(@"update\scriptdev2\sql_mr", "scriptdev2", "mr*scriptdev2*sql");
-                Thread.Sleep(10);
-                label3.Text = "Complete!";
-                label2.Text = "-";
-                if (Directory.Exists(@"update\server")) { Copy(@"update\server", @"\SingleCore"); }
-                Directory.Delete(@"update", true);
-                EnableCloseButton();
-                Thread.Sleep(2000);
-            
-
+            InsertMultiple1(@"update\scriptdev2\sql_mr", "mangos", "mr*mangos*sql");
+            Thread.Sleep(10);
+            InsertMultiple1(@"update\scriptdev2\sql_mr", "scriptdev2", "mr*scriptdev2*sql");
+            Thread.Sleep(10);
+            label3.Text = "Complete!";
+            label2.Text = "-";
+            if (Directory.Exists(@"update\server")) { Copy(@"update\server", @"\SingleCore"); }
+            Directory.Delete(@"update", true);
+            EnableCloseButton();
+            Thread.Sleep(2000);
         }
 
-        private void bWdvUpS1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        private void bWdbUp1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            progressBar1.Value = e.ProgressPercentage;
-        }
-
-        private void bWdvUpS1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
+            Launcher.dbupdate = false;
             launcher.Show();
 
-            if(!Launcher.OnlyMysqlStart){launcher.RealmdStart();}
+            if (!Launcher.OnlyMysqlStart) { launcher.RealmdStart(); }
             else
             {
                 launcher.pbAvailableM.Visible = false;
                 launcher.pbNotAvailM.Visible = true;
                 Launcher.OnlyMysqlStart = false;
                 Launcher.MysqlON = false;
-               Launcher.ShutdownSql();
+                Launcher.ShutdownSql();
             }
             Close();
+        }
+
+        private void bWdbUp_DoWork(object sender, DoWorkEventArgs e)
+        {
+            //if (Directory.Exists("update\\mangos"))
+            //{
+            //    if (Directory.Exists("update\\ytdb\\update"))
+            //    {
+            //        label3.Text = "YTDB Update";
+            //        InsertMultiple(@"update\ytdb\update", "*mangos*sql",true);
+            //    }
+            //}
+            //if (Directory.Exists(@"update\mangos\updates"))
+            //{
+            //    label3.Text = "Mangos Update";
+            //    InsertMultiple(@"update\mangos\updates", "*sql",true);
+            //}
+            //if (Directory.Exists(@"update\mangos\sql_mr"))
+            //{
+            //    label3.Text = "Custom Mangos Tables";
+            //    InsertSingle(@"update\mangos\sql_mr\custom_mangos_tables.sql");
+            //    label3.Text = "Update Mangos";
+            //    InsertMultiple(@"update\mangos\sql_mr", "mr*mangos*sql",true);
+            //}
+        }
+
+        private void bWdbUp_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            //progressBar1.Value = e.ProgressPercentage;
+        }
+
+        private void bWdbUp_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            //progressBar1.Style = ProgressBarStyle.Marquee;
+            //progressBar1.MarqueeAnimationSpeed = 100;
+            //bWdbUpS.RunWorkerAsync();
+        }
+
+        private void bWdbUpS_DoWork(object sender, DoWorkEventArgs e)
+        {
+            //if (Directory.Exists("update\\scriptdev"))
+            //{
+            //    label3.Text = "Update ScriptDev2";
+            //    RunMySqlWitoutDb("127.0.0.1", 3310, "root", "123456", @"update\scriptdev2\sql\scriptdev2_drop_database.sql");
+            //    RunMySqlWitoutDb("127.0.0.1", 3310, "root", "123456", @"update\scriptdev2\sql\scriptdev2\sql\scriptdev2_create_database.sql");
+            //    RunMySql("127.0.0.1", 3310, "root", "123456", "scriptdev2", @"update\scriptdev2\sql\scriptdev2\sql\scriptdev2_create_structure_mysql.sql");
+            //    RunMySql("127.0.0.1", 3310, "root", "123456", "scriptdev2", @"update\scriptdev2\sql\scriptdev2\sql\custom_scriptdev2_bsw_table.sql");
+            //    RunMySql("127.0.0.1", 3310, "root", "123456", "mangos", @"update\scriptdev2\sql\scriptdev2\sql\scriptdev2\sql\mangos_scriptname_clear.sql");
+            //    RunMySql("127.0.0.1", 3310, "root", "123456", "mangos", @"update\scriptdev2\sql\scriptdev2\sql\mangos_scriptname_full.sql");
+            //}
+        }
+
+        private void bWdbUpS_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            //progressBar1.Style = ProgressBarStyle.Blocks;
+            //bWdvUpS1.RunWorkerAsync();
+        }
+
+        private void bWdvUpS1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+
+        }
+
+        private void bWdvUpS1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            //progressBar1.Value = e.ProgressPercentage;
+        }
+
+        private void bWdvUpS1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            //launcher.Show();
+
+            //if (!Launcher.OnlyMysqlStart) { launcher.RealmdStart(); }
+            //else
+            //{
+            //    launcher.pbAvailableM.Visible = false;
+            //    launcher.pbNotAvailM.Visible = true;
+            //    Launcher.OnlyMysqlStart = false;
+            //    Launcher.MysqlON = false;
+            //    Launcher.ShutdownSql();
+            //}
+            //Close();
         }
 
         private void InsertMultiple(string updatePath, string filter, bool bwup1)
@@ -171,7 +208,7 @@ namespace SppLauncher.Windows
             try
             {
                 String[] files = Directory.GetFiles(updatePath, filter, SearchOption.TopDirectoryOnly);
-                if(bwup1){progressBar1.Maximum = files.Length;}
+                progressBar1.Maximum = files.Length;
                 complete = 0;
                 Thread.Sleep(10);
                 foreach (String aFile in files)
@@ -179,7 +216,7 @@ namespace SppLauncher.Windows
                     label2.Text = Path.GetFileName(aFile);
                     RunMySql("127.0.0.1", 3310, "root", "123456", "mangos", aFile);
 
-                    if (bwup1) { complete++; bWdbUp.ReportProgress(complete); }
+                    complete++; bWdbUp1.ReportProgress(complete);
                     Thread.Sleep(10);
                 }
             }
@@ -202,8 +239,8 @@ namespace SppLauncher.Windows
                     label2.Text = Path.GetFileName(aFile);
                     RunMySql("127.0.0.1", 3310, "root", "123456", db, aFile);
 
-                    complete++; 
-                    bWdvUpS1.ReportProgress(complete);
+                    complete++;
+                    bWdbUp1.ReportProgress(complete);
                     Thread.Sleep(10);
                 }
             }
@@ -249,14 +286,13 @@ namespace SppLauncher.Windows
                         WorkingDirectory       = Environment.CurrentDirectory,
                     }
                     );
-            
 
-            process.OutputDataReceived += (o, e) => Console.Out.WriteLine(e.Data);
-            process.ErrorDataReceived  += (o, e) => Console.Error.WriteLine(e.Data);
-            process.Start();
-            process.BeginErrorReadLine();
-            process.BeginOutputReadLine();
-            process.StandardInput.Close();
+            //process.OutputDataReceived += (o, e) => Console.Out.WriteLine(e.Data);
+            //process.ErrorDataReceived  += (o, e) => Console.Error.WriteLine(e.Data);
+            ////process.Start();
+            //process.BeginErrorReadLine();
+            //process.BeginOutputReadLine();
+            //process.StandardInput.Close();
             process.WaitForExit();
         }
 
@@ -281,12 +317,12 @@ namespace SppLauncher.Windows
                 );
 
 
-            process.OutputDataReceived += (o, e) => Console.Out.WriteLine(e.Data);
-            process.ErrorDataReceived += (o, e) => Console.Error.WriteLine(e.Data);
-            process.Start();
-            process.BeginErrorReadLine();
-            process.BeginOutputReadLine();
-            process.StandardInput.Close();
+           // process.OutputDataReceived += (o, e) => Console.Out.WriteLine(e.Data);
+           // process.ErrorDataReceived += (o, e) => Console.Error.WriteLine(e.Data);
+           //// process.Start();
+           // process.BeginErrorReadLine();
+           // process.BeginOutputReadLine();
+           // process.StandardInput.Close();
             process.WaitForExit();
         }
 
@@ -299,6 +335,16 @@ namespace SppLauncher.Windows
 
             foreach (var directory in Directory.GetDirectories(sourceDir))
                 Copy(directory, Path.Combine(targetDir, Path.GetFileName(directory)));
+        }
+
+        private void bWdbUp1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBar1.Value = e.ProgressPercentage;
+        }
+
+        private void bWdbUp1_ProgressChanged_1(object sender, ProgressChangedEventArgs e)
+        {
+            progressBar1.Value = e.ProgressPercentage;
         }
     }
 

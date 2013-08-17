@@ -27,8 +27,6 @@ namespace SppLauncher
     {
         #region Variable
 
-
-
         public static string wowExePath,
             ipAdress,online,resetBots,
             randomizeBots,realmListPath,
@@ -50,7 +48,7 @@ namespace SppLauncher
             allowupdaternorunwow = false,
             OnlyMysqlStart = false,
             MysqlON = false,
-            Sqlimport;
+            Sqlimport, sqlexport , dbupdate = false;
 
         private string _realm, _mangosdMem, _realmdMem, _sqlMem, _world, _status, _sql, UpdateUnpack;
         private readonly string getTemp = Path.GetTempPath();
@@ -64,10 +62,10 @@ namespace SppLauncher
 
         public Launcher()
         {
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
             _rm = new System.Resources.ResourceManager(typeof (Launcher));
             ReadXML();
             InitializeComponent();
-
             checklang(true);
             cpuCounter = new PerformanceCounter();
             GetLocalSrvVer();
@@ -590,8 +588,8 @@ namespace SppLauncher
                 switch (lang)
                 {
                     case "Hungarian":
-                        Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("hu");
-                        Thread.CurrentThread.CurrentCulture   = CultureInfo.CreateSpecificCulture("hu");
+                        Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("hu-HU");
+                        Thread.CurrentThread.CurrentCulture   = CultureInfo.CreateSpecificCulture("hu-HU");
                         break;
                     case "English":
                         Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
@@ -1600,11 +1598,9 @@ namespace SppLauncher
                     pbAvailableM.Visible = true;
                     pbTempM.Visible      = false;
                     _sql                 = "";
-                    if (Sqlimport)
-                    {
-                        bwImport.RunWorkerAsync();
-                    }
-                    if (OnlyMysqlStart && Sqlimport == false) bwExport.RunWorkerAsync();
+                    if (Sqlimport) bwImport.RunWorkerAsync();
+                    if (dbupdate) bWUpEx.RunWorkerAsync();
+                    if (sqlexport) bwExport.RunWorkerAsync();
                     if (!OnlyMysqlStart)
                     {
                         RealmdStart();
@@ -1895,6 +1891,7 @@ namespace SppLauncher
                 if (saveFile.ShowDialog() == DialogResult.OK)
                 {
                     OnlyMysqlStart = true;
+                    sqlexport = true;
                     StartAll();
                     animateStatus(true);
                     _status      = Resources.Launcher_export_Exporting_Characters;
@@ -1934,9 +1931,11 @@ namespace SppLauncher
 
         private void bwExport_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            sqlexport = false;
             if (OnlyMysqlStart)
             {
                 ShutdownSql();
+
                 pbAvailableM.Visible = false;
                 pbNotAvailM.Visible = true;
                 startstopToolStripMenuItem.Enabled = true;
@@ -2007,6 +2006,7 @@ namespace SppLauncher
 
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
+                    dbupdate = true;
                     OnlyMysqlStart = true;
                     StartAll();
                     UpdateUnpack = openFile.FileName;
@@ -2016,7 +2016,6 @@ namespace SppLauncher
                     pbAvailableM.Visible = true;
                     _status = Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update;
                     animateStatus(true);
-                    bWUpEx.RunWorkerAsync();
                 }
             }
         }
@@ -2084,6 +2083,12 @@ namespace SppLauncher
         {
             var shw = new WowaccountCreator();
             shw.Show();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            DatabaseUpdate frm2 = new DatabaseUpdate(this);
+            frm2.Show();
         }
 
 

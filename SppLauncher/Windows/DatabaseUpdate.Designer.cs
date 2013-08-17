@@ -109,7 +109,9 @@
             // 
             // bWdbUp1
             // 
+            this.bWdbUp1.WorkerReportsProgress = true;
             this.bWdbUp1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bWdbUp1_DoWork);
+            this.bWdbUp1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bWdbUp1_ProgressChanged_1);
             this.bWdbUp1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bWdbUp1_RunWorkerCompleted);
             // 
             // bWdbUpS
@@ -135,7 +137,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DatabaseUpdate";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Database Update";
             this.groupBox1.ResumeLayout(false);
