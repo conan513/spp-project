@@ -14,24 +14,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugReportGUI", "C:\Users\wh
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
+		SccNumberOfProjects = 1
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://singleplayerproject.visualstudio.com/defaultcollection
-		SccProjectUniqueName0 = StatServer\\StatServer.csproj
-		SccProjectName0 = StatServer
+		SccProjectUniqueName0 = C:\\Users\\whit33r\\Desktop\\BugReportGUI\\BugReportGUI.csproj
+		SccProjectName0 = $/SPP/SppLauncher/BugReportGUI
 		SccAuxPath0 = https://singleplayerproject.visualstudio.com/defaultcollection
-		SccLocalPath0 = StatServer
+		SccLocalPath0 = C:\\Users\\whit33r\\Desktop\\BugReportGUI
 		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccProjectUniqueName1 = SppLauncher\\SppLauncher.csproj
-		SccProjectName1 = SppLauncher
-		SccAuxPath1 = https://singleplayerproject.visualstudio.com/defaultcollection
-		SccLocalPath1 = SppLauncher
-		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccProjectUniqueName2 = C:\\Users\\whit33r\\Desktop\\BugReportGUI\\BugReportGUI.csproj
-		SccProjectName2 = BugReportGUI
-		SccAuxPath2 = https://singleplayerproject.visualstudio.com/defaultcollection
-		SccLocalPath2 = C:\\Users\\whit33r\\Desktop\\BugReportGUI
-		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

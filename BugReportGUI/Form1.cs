@@ -43,7 +43,7 @@ namespace BugReportGUI
                 selectedpath = afile;
                 string file = File.ReadAllText(afile);
                 string[] content = file.Split(';');
-                listBox2.Items.Add(content[2]);
+                listBox2.Items.Add(content[1] + " (" + content[2] + ")");
             }
         }
 
