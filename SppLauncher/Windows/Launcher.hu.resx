@@ -127,12 +127,6 @@
   <data name="lblWorld.Location" type="System.Drawing.Point, System.Drawing">
     <value>455, 26</value>
   </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 40</value>
-  </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>668, 100</value>
-  </data>
   <data name="pbarWorld.Location" type="System.Drawing.Point, System.Drawing">
     <value>137, 136</value>
   </data>

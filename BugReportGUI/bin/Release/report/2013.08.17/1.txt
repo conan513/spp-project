@@ -1,0 +1,1 @@
+report;test;Aibot;test;AMD FX(tm)-8120 Eight-Core Processor@4000Mhz;8;16283;Microsoft Windows 7 Ultimate ;Prog: 1.0.6, Emu: 105

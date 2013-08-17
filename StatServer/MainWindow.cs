@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
+using StatServer.Class;
 
 namespace StatServer
 {
@@ -22,22 +23,23 @@ namespace StatServer
     {
 
         private readonly DateTime _startTime = DateTime.Now;
+        public string date;
         private DateTime dt1 = DateTime.Now;
-        private int _report;
+        public static int _report;
         private Thread _listenThread;
         private TcpListener _tcpListener;
         private string[] _att = new string[8];
-        private string savepath;
-
+        public static string savepath;
+        private XmlReadW xmlReadWrite;
         public Statistics()
         {
             InitializeComponent();
+            xmlReadWrite = new XmlReadW();
             GetProccess();
             timerUp.Start();
             timerSave.Start();
             StatusChange("Not Connected");
-
-            ReadXml();
+            xmlReadWrite.ReadXml();
 
             Bitmap(false);
         }
@@ -88,62 +90,57 @@ namespace StatServer
             lblReport.Text = _report.ToString(CultureInfo.InvariantCulture);
         }
 
-        private void WriteError (string errMsg)
-        {
-            File.WriteAllText(@"ErrorMsg.txt", errMsg, Encoding.UTF8);
-        }
+        //private void SaveXml()
+        //{
+        //    try
+        //    {
+        //        var writer = new XmlTextWriter(savepath + "counter.xml", Encoding.UTF8)
+        //        {
+        //            Formatting = Formatting.Indented
+        //        };
 
-        private void SaveXml()
-        {
-            try
-            {
-                var writer = new XmlTextWriter(savepath + "counter.xml", Encoding.UTF8)
-                {
-                    Formatting = Formatting.Indented
-                };
+        //        writer.WriteStartDocument();
+        //        writer.WriteComment(DateTime.Now.ToString(CultureInfo.InvariantCulture));
+        //        writer.WriteStartElement("Save");
+        //        writer.WriteElementString("Report", _report.ToString(CultureInfo.InvariantCulture));
+        //        writer.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message + "\nWrited error to ErrorMsg.txt", "Error", MessageBoxButtons.OK,
+        //            MessageBoxIcon.Error);
+        //        WriteError(ex.Message);
+        //    }
+        //}
 
-                writer.WriteStartDocument();
-                writer.WriteComment(DateTime.Now.ToString(CultureInfo.InvariantCulture));
-                writer.WriteStartElement("Save");
-                writer.WriteElementString("Report", _report.ToString(CultureInfo.InvariantCulture));
-                writer.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + "\nWrited error to ErrorMsg.txt", "Error", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                WriteError(ex.Message);
-            }
-        }
+        //private void ReadXml ()
+        //{
+        //    if (File.Exists("counter.xml")) //not exist? run SaveXML and create it.
+        //    {
+        //        try
+        //        {
+        //            var doc = new XmlDocument();
+        //            doc.Load("counter.xml");
+        //            XmlElement root = doc.DocumentElement;
+        //            XmlNodeList nodes = root.SelectNodes("/Save");
 
-        private void ReadXml ()
-        {
-            if (File.Exists("counter.xml")) //not exist? run SaveXML and create it.
-            {
-                try
-                {
-                    var doc = new XmlDocument();
-                    doc.Load("counter.xml");
-                    XmlElement root = doc.DocumentElement;
-                    XmlNodeList nodes = root.SelectNodes("/Save");
-
-                    foreach (XmlNode node in nodes)
-                    {
-                        _report = Convert.ToInt32(node["Report"].InnerText);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message + "\nWrited error to ErrorMsg.txt", "Warning", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    WriteError(ex.Message);
-                }
-            }
-            else
-            {
-                SaveXml();
-            }
-        }
+        //            foreach (XmlNode node in nodes)
+        //            {
+        //                _report = Convert.ToInt32(node["Report"].InnerText);
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.Message + "\nWrited error to ErrorMsg.txt", "Warning", MessageBoxButtons.OK,
+        //                MessageBoxIcon.Error);
+        //            WriteError(ex.Message);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        SaveXml();
+        //    }
+        //}
 
         private void Server ()
         {
@@ -230,25 +227,30 @@ namespace StatServer
 
                 }
                 dt1 = DateTime.Now;
-                string date = dt1.ToString("yyy.MM.dd");
+                date = dt1.ToString("yyy.MM.dd");
 
                 _att = report.Split(';');
 
                 if (_att[0] == "report")
                 {
-                    string appendtext2 = Environment.NewLine + "####################" + dt.ToString() +
-                                         "####################" +
-                                         Environment.NewLine;
+                    //string appendText = "Mail: " + _att[1] + Environment.NewLine + "Bug Type: " + _att[2] +
+                    //                    Environment.NewLine + "Descreption: " + _att[3] + Environment.NewLine +
+                    //                    "Cpu: " +
+                    //                    _att[4] + Environment.NewLine + "Cpu Core: " + _att[5] + Environment.NewLine +
+                    //                    "Total MEmory: " + _att[6] + Environment.NewLine + "Operation System: " +
+                    //                    _att[7] + Environment.NewLine + "Version: " + _att[8] + Environment.NewLine;
 
-                    string appendText = "Mail: " + _att[1] + Environment.NewLine + "Bug Type: " + _att[2] +
-                                        Environment.NewLine + "Descreption: " + _att[3] + Environment.NewLine +
-                                        "Cpu: " +
-                                        _att[4] + Environment.NewLine + "Cpu Core: " + _att[5] + Environment.NewLine +
-                                        "Total MEmory: " + _att[6] + Environment.NewLine + "Operation System: " +
-                                        _att[7] + Environment.NewLine + "Version: " + _att[8] + Environment.NewLine;
+                    //string writetext = _att[1];
 
-                    File.AppendAllText("D:\\Dropbox\\Conan_shared\\Report\\" + date + ".txt",
-                        appendtext2 + appendText);
+
+                    if(!Directory.Exists("D:\\Dropbox\\Conan_shared\\Report\\" + date))
+                    {
+                        Directory.CreateDirectory("D:\\Dropbox\\Conan_shared\\Report\\" + date);
+                    }
+
+                    int fileCount = Directory.GetFiles("D:\\Dropbox\\Conan_shared\\Report\\" + date, "*.*", SearchOption.TopDirectoryOnly).Length;
+
+                    File.AppendAllText("D:\\Dropbox\\Conan_shared\\Report\\" + date + "\\" + (fileCount +1) +".txt", report);
                     lbHistory.Items.Add(dt1.ToString("(" + "HH:mm" + ") ") + "Report received.");
                     NotifyBallon(500, "Report Received", "Report All: " + _report);
                     _report++;
@@ -261,6 +263,16 @@ namespace StatServer
 
             tcpClient.Close();
         }
+        DirectoryInfo di = new DirectoryInfo("report");
+        private void test(DirectoryInfo dir)
+        {
+            foreach (DirectoryInfo d in dir.GetDirectories())
+            {
+
+            }
+        }
+
+
 
         private void backup()
         {
@@ -288,7 +300,7 @@ namespace StatServer
 
         private void ResetCommand()
         {
-            SaveXml();
+            xmlReadWrite.SaveXml();
             LoadStat();
         }
 
@@ -306,7 +318,7 @@ namespace StatServer
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveXml();
+            xmlReadWrite.SaveXml();
             Environment.Exit(0);
         }
 
@@ -335,7 +347,7 @@ namespace StatServer
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ReadXml();
+            xmlReadWrite.ReadXml();
             LoadStat();
         }
 
@@ -350,7 +362,7 @@ namespace StatServer
 
         private void timerSave_Tick(object sender, EventArgs e)
         {
-            SaveXml();
+           xmlReadWrite.SaveXml();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -362,7 +374,7 @@ namespace StatServer
                 if (result == DialogResult.OK)
                 {
                     savepath = dlg.SelectedPath;
-                    SaveXml();
+                    xmlReadWrite.SaveXml();
                 }
             }
         }

@@ -1,0 +1,16 @@
+D:\Sourcetree\BugReportGUI\bin\Release\BugReportGUI.exe
+D:\Sourcetree\BugReportGUI\bin\Release\BugReportGUI.pdb
+D:\Sourcetree\BugReportGUI\obj\Release\BugReportGUI.csprojResolveAssemblyReference.cache
+D:\Sourcetree\BugReportGUI\obj\Release\BugReportGUI.Properties.Resources.resources
+D:\Sourcetree\BugReportGUI\obj\Release\BugReportGUI.csproj.GenerateResource.Cache
+D:\Sourcetree\BugReportGUI\obj\Release\BugReportGUI.exe
+D:\Sourcetree\BugReportGUI\obj\Release\BugReportGUI.pdb
+D:\Sourcetree\BugReportGUI\obj\Release\BugReportGUI.Form1.resources
+C:\Users\whit33r\Desktop\BugReportGUI\obj\Release\BugReportGUI.exe
+C:\Users\whit33r\Desktop\BugReportGUI\obj\Release\BugReportGUI.pdb
+C:\Users\whit33r\Desktop\BugReportGUI\bin\Release\BugReportGUI.exe
+C:\Users\whit33r\Desktop\BugReportGUI\bin\Release\BugReportGUI.pdb
+C:\Users\whit33r\Desktop\BugReportGUI\obj\Release\BugReportGUI.csprojResolveAssemblyReference.cache
+C:\Users\whit33r\Desktop\BugReportGUI\obj\Release\BugReportGUI.Form1.resources
+C:\Users\whit33r\Desktop\BugReportGUI\obj\Release\BugReportGUI.Properties.Resources.resources
+C:\Users\whit33r\Desktop\BugReportGUI\obj\Release\BugReportGUI.csproj.GenerateResource.Cache

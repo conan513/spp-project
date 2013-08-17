@@ -1,0 +1,8 @@
+C:\Users\whit33r\Desktop\BugReportGUI\bin\Debug\BugReportGUI.exe
+C:\Users\whit33r\Desktop\BugReportGUI\bin\Debug\BugReportGUI.pdb
+C:\Users\whit33r\Desktop\BugReportGUI\obj\Debug\BugReportGUI.csprojResolveAssemblyReference.cache
+C:\Users\whit33r\Desktop\BugReportGUI\obj\Debug\BugReportGUI.Form1.resources
+C:\Users\whit33r\Desktop\BugReportGUI\obj\Debug\BugReportGUI.Properties.Resources.resources
+C:\Users\whit33r\Desktop\BugReportGUI\obj\Debug\BugReportGUI.csproj.GenerateResource.Cache
+C:\Users\whit33r\Desktop\BugReportGUI\obj\Debug\BugReportGUI.exe
+C:\Users\whit33r\Desktop\BugReportGUI\obj\Debug\BugReportGUI.pdb

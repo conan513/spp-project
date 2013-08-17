@@ -10,7 +10,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C84723
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugReportGUI", "C:\Users\whit33r\Desktop\BugReportGUI\BugReportGUI.csproj", "{85363C4C-9711-4681-8A0A-7AAD026E1D94}"
+EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://singleplayerproject.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = StatServer\\StatServer.csproj
+		SccProjectName0 = StatServer
+		SccAuxPath0 = https://singleplayerproject.visualstudio.com/defaultcollection
+		SccLocalPath0 = StatServer
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = SppLauncher\\SppLauncher.csproj
+		SccProjectName1 = SppLauncher
+		SccAuxPath1 = https://singleplayerproject.visualstudio.com/defaultcollection
+		SccLocalPath1 = SppLauncher
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = C:\\Users\\whit33r\\Desktop\\BugReportGUI\\BugReportGUI.csproj
+		SccProjectName2 = BugReportGUI
+		SccAuxPath2 = https://singleplayerproject.visualstudio.com/defaultcollection
+		SccLocalPath2 = C:\\Users\\whit33r\\Desktop\\BugReportGUI
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -24,6 +46,10 @@ Global
 		{99891169-D346-4933-824D-FD7BBE190631}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99891169-D346-4933-824D-FD7BBE190631}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99891169-D346-4933-824D-FD7BBE190631}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85363C4C-9711-4681-8A0A-7AAD026E1D94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85363C4C-9711-4681-8A0A-7AAD026E1D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85363C4C-9711-4681-8A0A-7AAD026E1D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85363C4C-9711-4681-8A0A-7AAD026E1D94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
