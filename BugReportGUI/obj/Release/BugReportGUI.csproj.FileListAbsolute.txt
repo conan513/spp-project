@@ -15,3 +15,6 @@ C:\Users\whit33r\Desktop\BugReportGUI\obj\Release\BugReportGUI.Properties.Resour
 C:\Users\whit33r\Desktop\BugReportGUI\obj\Release\BugReportGUI.csproj.GenerateResource.Cache
 C:\Users\whit33r\Desktop\BugReportGUI\obj\Release\BugReportGUI.BugreportGUI.resources
 C:\Users\whit33r\Desktop\BugReportGUI\bin\Release\BugReportGUI.exe.config
+D:\Sources\BugReportGUI\bin\Release\BugReportGUI.exe.config
+D:\Sources\BugReportGUI\obj\Release\BugReportGUI.exe
+D:\Sources\BugReportGUI\obj\Release\BugReportGUI.pdb

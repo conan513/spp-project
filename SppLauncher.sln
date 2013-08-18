@@ -10,19 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C84723
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugReportGUI", "C:\Users\whit33r\Desktop\BugReportGUI\BugReportGUI.csproj", "{85363C4C-9711-4681-8A0A-7AAD026E1D94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugReportGUI", "BugReportGUI\BugReportGUI.csproj", "{85363C4C-9711-4681-8A0A-7AAD026E1D94}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 1
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://singleplayerproject.visualstudio.com/defaultcollection
-		SccProjectUniqueName0 = C:\\Users\\whit33r\\Desktop\\BugReportGUI\\BugReportGUI.csproj
-		SccProjectName0 = $/SPP/SppLauncher/BugReportGUI
-		SccAuxPath0 = https://singleplayerproject.visualstudio.com/defaultcollection
-		SccLocalPath0 = C:\\Users\\whit33r\\Desktop\\BugReportGUI
-		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
