@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BugReportGUI.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,14 +11,22 @@ using System.Windows.Forms;
 
 namespace BugReportGUI
 {
-    public partial class Form1 : Form
+    public partial class BugreportGUI : Form
     {
-        string item,item2,selectedpath;
-        public Form1()
+        string item,item2,selectedpath,Bugpath;
+        public BugreportGUI()
         {
             InitializeComponent();
             DirectoryInfo di = new DirectoryInfo("report");
-            test(di);
+            Bugpath = Settings.Default["path"].ToString();
+            if (Bugpath == "")
+            {
+                Dialog();
+            }
+            else
+            {
+                test(di);
+            }
         }
 
         private void test(DirectoryInfo dir)
@@ -25,6 +34,20 @@ namespace BugReportGUI
             foreach (DirectoryInfo d in dir.GetDirectories())
             {
                 listBox1.Items.Add(d);
+            }
+        }
+
+
+
+        private void Dialog()
+        {
+            fbdPath.ShowNewFolderButton = false;
+            fbdPath.RootFolder = Environment.SpecialFolder.MyComputer;
+
+            DialogResult result = fbdPath.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                
             }
         }
 

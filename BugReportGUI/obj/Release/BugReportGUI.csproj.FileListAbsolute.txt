@@ -11,6 +11,7 @@ C:\Users\whit33r\Desktop\BugReportGUI\obj\Release\BugReportGUI.pdb
 C:\Users\whit33r\Desktop\BugReportGUI\bin\Release\BugReportGUI.exe
 C:\Users\whit33r\Desktop\BugReportGUI\bin\Release\BugReportGUI.pdb
 C:\Users\whit33r\Desktop\BugReportGUI\obj\Release\BugReportGUI.csprojResolveAssemblyReference.cache
-C:\Users\whit33r\Desktop\BugReportGUI\obj\Release\BugReportGUI.Form1.resources
 C:\Users\whit33r\Desktop\BugReportGUI\obj\Release\BugReportGUI.Properties.Resources.resources
 C:\Users\whit33r\Desktop\BugReportGUI\obj\Release\BugReportGUI.csproj.GenerateResource.Cache
+C:\Users\whit33r\Desktop\BugReportGUI\obj\Release\BugReportGUI.BugreportGUI.resources
+C:\Users\whit33r\Desktop\BugReportGUI\bin\Release\BugReportGUI.exe.config
