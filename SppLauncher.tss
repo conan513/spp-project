@@ -2,8 +2,34 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\whit33r\Desktop\BugReportGUI\BugreportGUI.cs</string>
-      <string>C:\Users\whit33r\Desktop\BugReportGUI\BugreportGUI.cs</string>
+      <string>D:\Sources\SppLauncher\Windows\Launcher.cs</string>
+      <string>D:\Sources\SppLauncher\Windows\Launcher.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Sources\BugReportGUI\BugreportGUI.cs</string>
+      <string>D:\Sources\BugReportGUI\BugreportGUI.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>BugReportGUI</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>SppLauncher</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Sources\SppLauncher\Class\GetAllAcc.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Sources\SppLauncher\Windows\BugReport\BugReport.cs</string>
+      <string>D:\Sources\SppLauncher\Windows\BugReport\BugReport.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Sources\SppLauncher\Windows\BugReport\SendReport.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Sources\SppLauncher\Windows\AboutBox.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Sources\SppLauncher\Windows\BugReport\GetSysInfo.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

@@ -18,6 +18,7 @@ using SppLauncher.Class;
 using SppLauncher.OnlineBot;
 using SppLauncher.Properties;
 using SppLauncher.Windows;
+using SppLauncher.Windows.BugReport;
 using WowAccountCreator;
 
 namespace SppLauncher

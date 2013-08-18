@@ -100,12 +100,20 @@
     <Compile Include="Windows\BotConf.Designer.cs">
       <DependentUpon>BotConf.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\BugReport.cs">
+    <Compile Include="Windows\BugReport\BugReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\BugReport.Designer.cs">
+    <Compile Include="Windows\BugReport\BugReport.Designer.cs">
       <DependentUpon>BugReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\BugReport\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\BugReport\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BugReport\GetSysInfo.cs" />
+    <Compile Include="Windows\BugReport\SendReport.cs" />
     <Compile Include="Windows\DatabaseUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,17 +219,17 @@
       <DependentUpon>BotConf.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\BugReport.de.resx">
+    <EmbeddedResource Include="Windows\BugReport\BugReport.de.resx">
       <DependentUpon>BugReport.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\BugReport.fr.resx">
+    <EmbeddedResource Include="Windows\BugReport\BugReport.fr.resx">
       <DependentUpon>BugReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\BugReport.hu.resx">
+    <EmbeddedResource Include="Windows\BugReport\BugReport.hu.resx">
       <DependentUpon>BugReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\BugReport.resx">
+    <EmbeddedResource Include="Windows\BugReport\BugReport.resx">
       <DependentUpon>BugReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\DatabaseUpdate.resx">

@@ -1,74 +1,48 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Management;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Windows.Forms;
 
-namespace SppLauncher
+namespace SppLauncher.Windows.BugReport
 {
     public partial class BugReport : Form
     {
         private readonly int count = Environment.ProcessorCount;
-        private string RemoteIp;
-
+        public static string RemoteIp;
+        public static string lol;
+        private GetSysInfo getSys;
+        private SendReport send;
         public BugReport()
         {
             InitializeComponent();
+            getSys = new GetSysInfo();
+            send = new SendReport();
             cbBugType.Text = "Aibot";
-
+            
             bwGetSysInfo.RunWorkerAsync();
         }
 
-        public int getmemory()
+        public Cursor SetCursor
         {
-            return Convert.ToInt32(new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory / 1024 / 1024);
+            set { Cursor = value; }
+            get { throw new NotImplementedException(); }
         }
 
-        private string GetProcessorName()
+
+        public static string test
         {
-            string ProcessorName = "";
-            string mhz = "";
-            ManagementObjectSearcher mos = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
-
-            foreach (ManagementObject mo in mos.Get())
-            {
-                ProcessorName = mo["Name"].ToString().Replace("  ","");
-                mhz = mo["maxclockspeed"].ToString().Replace(" ","");
-            }
-
-
-            return ProcessorName+ " @" + mhz;
-        }
-
-        private string GetProcessorNameL()
-        {
-            string ProcessorName = "";
-            ManagementObjectSearcher mos = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
-
-            foreach (ManagementObject mo in mos.Get())
-                ProcessorName = mo["Name"].ToString();
-
-            return ProcessorName;
-        }
-
-        private string getOS()
-        {
-            var name =
-                (from x in
-                     new ManagementObjectSearcher("SELECT * FROM Win32_OperatingSystem").Get().OfType<ManagementObject>()
-                 select x.GetPropertyValue("Caption")).First();
-            return name != null ? name.ToString() : "Unknown";
+            get { return null; }
+            set { ; }
         }
 
         public void SendError(string report,string bugtype, string email, string desc, string cpu, string cpucore, string ram,string os, string ver)
         {
             try
             {
+                
                 TcpClient client = new TcpClient();
                 IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Parse(RemoteIp), 5459);
                 client.Connect(serverEndPoint);
@@ -76,7 +50,7 @@ namespace SppLauncher
 
                 UTF8Encoding encoder = new UTF8Encoding();
                 byte[] buffer        = encoder.GetBytes(report + ";" + bugtype + ";" + email + ";" + desc + ";" + cpu + ";" + cpucore + ";" + ram + ";" + os + ";" + ver);
-
+                
                 clientStream.Write(buffer, 0, buffer.Length);
                 clientStream.Flush();
                 client.Close();
@@ -97,13 +71,12 @@ namespace SppLauncher
         {
             if (txbDesc.Text != "")
             {
-                this.Cursor = Cursors.WaitCursor;
+                Cursor = Cursors.WaitCursor;
                 bwSendReport.RunWorkerAsync();
             }
             else
             {
                 MessageBox.Show("Please Fill out the Description box.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-  
             }
         }
 
@@ -122,13 +95,19 @@ namespace SppLauncher
             }
 
             textBox1.Text = "Loading...";
-            textBox1.Text = "Cpu: " + GetProcessorNameL() + Environment.NewLine + "Core: " + count + Environment.NewLine + "Total Memory: " + getmemory() + "Mb" + Environment.NewLine + "Operation System: " + getOS();
+            textBox1.Text = "Cpu: " + getSys.GetProcessorNameL() + Environment.NewLine + "Core: " + count + Environment.NewLine + "Total Memory: " + getSys.getmemory() + "Mb" + Environment.NewLine + "Operation System: " + getSys.getOS();
         }
 
         private void bwSendReport_DoWork(object sender, DoWorkEventArgs e)
         {
-            SendError("report", txbMail.Text, cbBugType.Text, txbDesc.Text, GetProcessorName(), count.ToString(), getmemory().ToString(),
-          getOS(), "Prog: " + Launcher.currProgVer + "," + " Emu: " + Launcher.CurrEmuVer);
+            send.SendError("report", txbMail.Text, cbBugType.Text, txbDesc.Text, getSys.GetProcessorName(), count.ToString(), getSys.getmemory().ToString(),
+          getSys.getOS(), "Prog: " + Launcher.currProgVer + "," + " Emu: " + Launcher.CurrEmuVer);
+        }
+
+        private void bwSendReport_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            Cursor = Cursors.Default;
+            Close();
         }
 
     }

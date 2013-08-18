@@ -64,7 +64,6 @@ D:\SPP\Single Player Project Real v2\hu\SppLauncher.resources.dll
 D:\Sources\SppLauncher\obj\Release\SppLauncher.csprojResolveAssemblyReference.cache
 D:\Sources\SppLauncher\obj\Release\SppLauncher.AboutBox.resources
 D:\Sources\SppLauncher\obj\Release\SppLauncher.BotConf.resources
-D:\Sources\SppLauncher\obj\Release\SppLauncher.BugReport.resources
 D:\Sources\SppLauncher\obj\Release\SppLauncher.Windows.DatabaseUpdate.resources
 D:\Sources\SppLauncher\obj\Release\SppLauncher.HelpUsWindow.resources
 D:\Sources\SppLauncher\obj\Release\SppLauncher.Windows.LanSwitcher.resources
@@ -84,9 +83,6 @@ D:\Sources\SppLauncher\obj\Release\SppLauncher.AboutBox.hu.resources
 D:\Sources\SppLauncher\obj\Release\SppLauncher.BotConf.de.resources
 D:\Sources\SppLauncher\obj\Release\SppLauncher.BotConf.fr.resources
 D:\Sources\SppLauncher\obj\Release\SppLauncher.BotConf.hu.resources
-D:\Sources\SppLauncher\obj\Release\SppLauncher.BugReport.de.resources
-D:\Sources\SppLauncher\obj\Release\SppLauncher.BugReport.fr.resources
-D:\Sources\SppLauncher\obj\Release\SppLauncher.BugReport.hu.resources
 D:\Sources\SppLauncher\obj\Release\SppLauncher.HelpUsWindow.de.resources
 D:\Sources\SppLauncher\obj\Release\SppLauncher.HelpUsWindow.fr.resources
 D:\Sources\SppLauncher\obj\Release\SppLauncher.HelpUsWindow.hu.resources
@@ -112,3 +108,7 @@ D:\Sources\SppLauncher\obj\Release\fr\SppLauncher.resources.dll
 D:\Sources\SppLauncher\obj\Release\hu\SppLauncher.resources.dll
 D:\Sources\SppLauncher\obj\Release\SppLauncher.exe
 D:\Sources\SppLauncher\obj\Release\SppLauncher.pdb
+D:\Sources\SppLauncher\obj\Release\SppLauncher.Windows.BugReport.BugReport.resources
+D:\Sources\SppLauncher\obj\Release\SppLauncher.Windows.BugReport.BugReport.de.resources
+D:\Sources\SppLauncher\obj\Release\SppLauncher.Windows.BugReport.BugReport.fr.resources
+D:\Sources\SppLauncher\obj\Release\SppLauncher.Windows.BugReport.BugReport.hu.resources

@@ -1,4 +1,4 @@
-﻿namespace SppLauncher
+﻿namespace SppLauncher.Windows.BugReport
 {
     partial class BugReport
     {
@@ -122,6 +122,7 @@
             // bwSendReport
             // 
             this.bwSendReport.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwSendReport_DoWork);
+            this.bwSendReport.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwSendReport_RunWorkerCompleted);
             // 
             // BugReport
             // 
