@@ -4,16 +4,18 @@ using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using SppLauncher.Properties;
+using SppLauncher.Windows.WowAccountCreator;
 
 namespace WowAccountCreator
 {
     public partial class WowaccountCreator : Form
     {
         public static string ip, user, pass, db, port, gmlvl, accType;
-
+        private GenHash Generate;
         public WowaccountCreator()
         {
             InitializeComponent();
+            Generate = new GenHash();
             cbEx.Text = "WOTLK";
             cbType.Text = "Player";
             bwUpdate.RunWorkerAsync();
@@ -29,7 +31,7 @@ namespace WowAccountCreator
         {
             try
             {
-                string str = Sha1_hash(txbUser.Text, txbPass.Text);
+                string str = Generate.Sha1_hash(txbUser.Text, txbPass.Text);
                 string InsertQuery = "INSERT INTO account (username, sha_pass_hash, expansion) VALUES ('" + txbUser.Text.ToUpper() + "', '" + str.ToUpper() + "', '" + accType + "');SELECT @@Identity";
                 using (MySqlConnection connection = new MySqlConnection(string.Format("server={0};UID={1};PWD={2};port={3};database={4}", ip, user, pass, port, db)))
                 {
@@ -42,7 +44,10 @@ namespace WowAccountCreator
                     {
                         new MySqlCommand(InsertAdmin, connection).ExecuteNonQuery();
                     }
-                    MessageBox.Show(Resources.WowaccountCreator_InsertSqlTrinity_Account_created_successfully__ + txbUser.Text + Resources.WowaccountCreator_InsertSqlTrinity_ + cbType.Items[cbType.SelectedIndex], "Info", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show(Resources.WowaccountCreator_InsertSqlTrinity_Account_created_successfully__ +
+                        txbUser.Text + Resources.WowaccountCreator_InsertSqlTrinity_ +
+                        cbType.Items[cbType.SelectedIndex], "Info", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
                     txbUser.Text = "";
                     txbPass.Text = "";
                     connection.Close();
@@ -50,14 +55,9 @@ namespace WowAccountCreator
             }
             catch (MySqlException exception)
             {
-                if (exception.Message.Contains("Duplicate"))
-                {
-                    MessageBox.Show(Resources.WowaccountCreator_InsertSqlTrinity_Username_is_already_taken_, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else
-                {
-                    MessageBox.Show(exception.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                MessageBox.Show(exception.Message.Contains("Duplicate") ? Resources.WowaccountCreator_InsertSqlTrinity_Username_is_already_taken_ : exception.Message,
+                    "Warning", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
             }
         }
 
@@ -81,20 +81,6 @@ namespace WowAccountCreator
             }
         }
 
-        public string Sha1_hash(string user, string pass)
-        {
-            UTF8Encoding ue = new UTF8Encoding();
-            byte[] bytes = ue.GetBytes(user.ToUpper() + ":" + pass.ToUpper());
-            SHA1 sha = new SHA1CryptoServiceProvider();
-            byte[] hashBytes = sha.ComputeHash(bytes);
-            string hashString = "";
-            for (int i = 0; i < hashBytes.Length; i++)
-            {
-                hashString += Convert.ToString(hashBytes[i], 16).PadLeft(2, '0');
-            }
-
-            return hashString.ToUpper();
-        }
 
         private void cbType_SelectedIndexChanged(object sender, EventArgs e)
         {

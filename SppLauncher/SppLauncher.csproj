@@ -85,9 +85,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class\GetAllAcc.cs" />
-    <Compile Include="Class\UpdateExtract.cs" />
-    <Compile Include="Class\XmlReadWrite.cs" />
+    <Compile Include="Windows\Launcher\GetAllAcc.cs" />
+    <Compile Include="Windows\Launcher\UpdateExtract.cs" />
+    <Compile Include="Windows\Launcher\XmlReadWrite.cs" />
     <Compile Include="Windows\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,10 +135,10 @@
     <Compile Include="Windows\LanSwitcher\LanSwitcher.Designer.cs">
       <DependentUpon>LanSwitcher.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Launcher.cs">
+    <Compile Include="Windows\Launcher\Launcher.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\Launcher.Designer.cs">
+    <Compile Include="Windows\Launcher\Launcher.Designer.cs">
       <DependentUpon>Launcher.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Loader.cs">
@@ -147,7 +147,7 @@
     <Compile Include="Windows\Loader.Designer.cs">
       <DependentUpon>Loader.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class\OnlineBot.cs" />
+    <Compile Include="Windows\Launcher\OnlineBot.cs" />
     <Compile Include="Class\MySQLClient.cs" />
     <Compile Include="Class\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -174,10 +174,11 @@
     <Compile Include="Windows\WorldConf.Designer.cs">
       <DependentUpon>WorldConf.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\WowAccountCreator.cs">
+    <Compile Include="Windows\WowAccountCreator\GenHash.cs" />
+    <Compile Include="Windows\WowAccountCreator\WowAccountCreator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\WowAccountCreator.Designer.cs">
+    <Compile Include="Windows\WowAccountCreator\WowAccountCreator.Designer.cs">
       <DependentUpon>WowAccountCreator.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.de.resx">
@@ -261,16 +262,16 @@
     <EmbeddedResource Include="Windows\LanSwitcher\LanSwitcher.resx">
       <DependentUpon>LanSwitcher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Launcher.de.resx">
+    <EmbeddedResource Include="Windows\Launcher\Launcher.de.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Launcher.fr.resx">
+    <EmbeddedResource Include="Windows\Launcher\Launcher.fr.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Launcher.hu.resx">
+    <EmbeddedResource Include="Windows\Launcher\Launcher.hu.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Launcher.resx">
+    <EmbeddedResource Include="Windows\Launcher\Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Loader.resx">
@@ -317,10 +318,10 @@
     <EmbeddedResource Include="Windows\WorldConf.resx">
       <DependentUpon>WorldConf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\WowAccountCreator.hu.resx">
+    <EmbeddedResource Include="Windows\WowAccountCreator\WowAccountCreator.hu.resx">
       <DependentUpon>WowAccountCreator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\WowAccountCreator.resx">
+    <EmbeddedResource Include="Windows\WowAccountCreator\WowAccountCreator.resx">
       <DependentUpon>WowAccountCreator.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App config and Fody\app.config" />
