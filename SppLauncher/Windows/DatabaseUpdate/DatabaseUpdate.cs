@@ -1,7 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Data.SqlClient;
-using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -13,7 +11,7 @@ namespace SppLauncher.Windows
     {
         private int count, complete;
         private readonly Launcher launcher;
-        private RunMysql run;
+        private readonly RunMysql run;
         public DatabaseUpdate(Launcher otLauncher)
         {
             InitializeComponent();

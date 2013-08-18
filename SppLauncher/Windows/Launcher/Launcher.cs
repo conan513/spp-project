@@ -27,7 +27,7 @@ namespace SppLauncher
     {
         #region Variable
 
-        private XmlReadWrite xmlReadWrite;
+        private readonly XmlReadWrite xmlReadWrite;
 
         public static string wowExePath,
             ipAdress,online,resetBots,
@@ -811,14 +811,13 @@ namespace SppLauncher
             {
                 realmListPath = dialog.FileName;
                 xmlReadWrite.saveMethod();
-               // saveMethod();
                 RealmChange();
                 Process.Start(wowExePath);
                 Check.Start();
             }
         }
 
-        public void RealmChange()
+        private void RealmChange()
         {
             try
             {
@@ -842,7 +841,7 @@ namespace SppLauncher
             }
         }
 
-        public void RealmRestore()
+        private void RealmRestore()
         {
             try
             {
@@ -855,48 +854,6 @@ namespace SppLauncher
                 MessageBox.Show(Resources.Launcher_RealmRestore_ + ex.Message);
             }
         }
-
-        //public static void saveMethod()
-        //{
-        //    var writer = new XmlTextWriter("config\\SppPathConfig.xml", Encoding.UTF8);
-        //    writer.Formatting = Formatting.Indented;
-        //    writer.WriteStartDocument();
-        //    writer.WriteStartElement("Config");
-        //    writer.WriteElementString("GamePath", wowExePath);
-        //    writer.WriteElementString("RealmWTF", realmListPath);
-        //    writer.WriteElementString("ResetBots", resetBots);
-        //    writer.WriteElementString("RandomizeBots", randomizeBots);
-        //    writer.WriteElementString("Autostart", autostart);
-        //    writer.WriteElementString("Lang", lang);
-
-        //    writer.WriteEndElement();
-        //    writer.Close();
-        //}
-
-        //private void ReadXML()
-        //{
-        //    try
-        //    {
-        //        var doc = new XmlDocument();
-        //        doc.Load("config\\SppPathConfig.xml");
-        //        XmlElement root   = doc.DocumentElement;
-        //        XmlNodeList nodes = root.SelectNodes("/Config");
-
-        //        foreach (XmlNode node in nodes)
-        //        {
-        //            wowExePath    = node["GamePath"].InnerText;
-        //            realmListPath = node["RealmWTF"].InnerText;
-        //            autostart     = node["Autostart"].InnerText;
-        //            lang          = node["Lang"].InnerText;
-        //        }
-        //        checklang(false);
-        //    }
-        //    catch
-        //    {
-        //        saveMethod();
-        //        MessageBox.Show("READXML ERROR");
-        //    }
-        //}
 
         private void CheckLanIpInRealmDatabase()
         {
@@ -944,23 +901,6 @@ namespace SppLauncher
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-        }
-
-        public void DevWindow(bool active)
-        {
-            if (!active)
-            {
-                //Size               = new Size(537, 460);
-                Height = 420;
-                rtWorldDev.Visible = true;
-            }
-
-            if (active)
-            {
-                //Size               = new Size(537, 251);
-                Height = 230;
-                rtWorldDev.Visible = false;
             }
         }
 
@@ -1708,11 +1648,6 @@ namespace SppLauncher
             catch
             {
             }
-        }
-
-        private void SqlStar()
-        {
-
         }
 
         private void CheckWowRun_Tick(object sender, EventArgs e)

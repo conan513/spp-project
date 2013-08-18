@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Reflection;
@@ -29,7 +24,7 @@ namespace StatServer
         private TcpListener _tcpListener;
         private string[] _att = new string[8];
         public static string savepath;
-        private XmlReadW xmlReadWrite;
+        private readonly XmlReadW xmlReadWrite;
         public Statistics()
         {
             InitializeComponent();
