@@ -23,8 +23,8 @@ namespace BugReportGUI
 
             try
             {
-                Bugpath = Settings.Default["path"].ToString();
-                if(Bugpath != "") di = new DirectoryInfo(Bugpath);
+                Bugpath      = Settings.Default["path"].ToString();
+                if(Bugpath  != "") di = new DirectoryInfo(Bugpath);
                 if (Bugpath != "") chckcount = Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length;
 
                 if (Bugpath == "")
@@ -57,14 +57,14 @@ namespace BugReportGUI
         private void Dialog()
         {
             fbdPath.ShowNewFolderButton = false;
-            fbdPath.RootFolder = Environment.SpecialFolder.MyComputer;
+            fbdPath.RootFolder          = Environment.SpecialFolder.MyComputer;
 
             DialogResult result = fbdPath.ShowDialog();
-            if (result == DialogResult.OK)
+            if (result          == DialogResult.OK)
             {
                 listBox1.Items.Clear();
                 delAllField();
-                Bugpath = fbdPath.SelectedPath;
+                Bugpath                  = fbdPath.SelectedPath;
                 Settings.Default["path"] = Bugpath;
                 Settings.Default.Save();
                 di = new DirectoryInfo(Bugpath);
@@ -89,8 +89,8 @@ namespace BugReportGUI
                     string[] files = Directory.GetFiles(Bugpath+ "\\" + item);
                     foreach (string afile in files)
                     {
-                        selectedpath = afile;
-                        string file = File.ReadAllText(afile);
+                        selectedpath     = afile;
+                        string file      = File.ReadAllText(afile);
                         string[] content = file.Split(';');
                         listBox2.Items.Add(content[1] + " (" + content[2] + ")");
                     }
@@ -111,11 +111,11 @@ namespace BugReportGUI
                 }
                 int s = listBox2.SelectedIndex;
                 s++;
-                string file = File.ReadAllText(Bugpath + "\\" + item + "\\" + s + ".txt");
+                string file      = File.ReadAllText(Bugpath + "\\" + item + "\\" + s + ".txt");
                 string[] content = file.Split(';');
-                txbMail.Text = content[1];
-                txbType.Text = content[2];
-                txbDesc.Text = content[3];
+                txbMail.Text     = content[1];
+                txbType.Text     = content[2];
+                txbDesc.Text     = content[3];
 
                 txbSysinfo.Text = "Cpu:" + content[4] + Environment.NewLine + "Core:" + content[5] + Environment.NewLine + "Total Memory: " + content[6] + "Mb" + Environment.NewLine + "Operation System:" + content[7] + Environment.NewLine + content[8];
             }
@@ -131,11 +131,6 @@ namespace BugReportGUI
             Dialog();
         }
 
-        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            refresh();
-        }
-
         public void refresh()
         {
             listBox1.Items.Clear();
@@ -146,11 +141,10 @@ namespace BugReportGUI
 
         public void delAllField()
         {
-            //listBox1.Items.Clear();
             listBox2.Items.Clear();
-            txbMail.Text = "";
-            txbDesc.Text = "";
-            txbType.Text = "";
+            txbMail.Text    = "";
+            txbDesc.Text    = "";
+            txbType.Text    = "";
             txbSysinfo.Text = "";
         }
 

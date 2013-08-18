@@ -624,7 +624,6 @@ namespace SppLauncher
             else
             {
                 tssStatus.Image = null;
-
             }
         }
 

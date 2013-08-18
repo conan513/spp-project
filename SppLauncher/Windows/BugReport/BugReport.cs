@@ -1,7 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.IO;
-using System.Net;
 using System.Windows.Forms;
 
 namespace SppLauncher.Windows.BugReport
@@ -11,9 +9,9 @@ namespace SppLauncher.Windows.BugReport
         private readonly int count = Environment.ProcessorCount;
         public static string RemoteIp;
         public static string lol;
-        private GetSysInfo getSys;
-        private SendReport send;
-        private GetServerIP ip;
+        private readonly GetSysInfo getSys;
+        private readonly SendReport send;
+        private readonly GetServerIP ip;
         public BugReport()
         {
             InitializeComponent();
