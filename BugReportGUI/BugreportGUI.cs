@@ -109,8 +109,8 @@ namespace BugReportGUI
                 {
                     item2 = listBox2.Items[i].ToString();
                 }
-                string s = listBox2.SelectedIndex.ToString();
-                if (s == "0") s = "1";
+                int s = listBox2.SelectedIndex;
+                s++;
                 string file = File.ReadAllText(Bugpath + "\\" + item + "\\" + s + ".txt");
                 string[] content = file.Split(';');
                 txbMail.Text = content[1];
