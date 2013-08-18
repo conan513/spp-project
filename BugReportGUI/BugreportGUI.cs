@@ -81,11 +81,12 @@ namespace BugReportGUI
                 {
                     foreach (int i in listBox1.SelectedIndices)
                     {
-                        item = listBox1.Items[i].ToString();
                         delAllField();
+                        item = listBox1.Items[i].ToString();
+
                     }
 
-                    string[] files = Directory.GetFiles("report\\" + item);
+                    string[] files = Directory.GetFiles(Bugpath+ "\\" + item);
                     foreach (string afile in files)
                     {
                         selectedpath = afile;
@@ -110,7 +111,7 @@ namespace BugReportGUI
                 }
                 string s = listBox2.SelectedIndex.ToString();
                 if (s == "0") s = "1";
-                string file = File.ReadAllText("report\\" + item + "\\" + s + ".txt");
+                string file = File.ReadAllText(Bugpath + "\\" + item + "\\" + s + ".txt");
                 string[] content = file.Split(';');
                 txbMail.Text = content[1];
                 txbType.Text = content[2];
