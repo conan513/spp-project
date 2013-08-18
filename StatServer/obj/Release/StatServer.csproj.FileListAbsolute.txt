@@ -6,3 +6,11 @@ D:\Single Player Project\SPP\SppLauncher\StatServer\obj\Release\StatServer.Prope
 D:\Single Player Project\SPP\SppLauncher\StatServer\obj\Release\StatServer.csproj.GenerateResource.Cache
 D:\Single Player Project\SPP\SppLauncher\StatServer\obj\Release\Statserver.exe
 D:\Single Player Project\SPP\SppLauncher\StatServer\obj\Release\Statserver.pdb
+D:\Sources\StatServer\bin\Release\Statserver.exe
+D:\Sources\StatServer\bin\Release\Statserver.pdb
+D:\Sources\StatServer\obj\Release\StatServer.csprojResolveAssemblyReference.cache
+D:\Sources\StatServer\obj\Release\StatServer.Statistics.resources
+D:\Sources\StatServer\obj\Release\StatServer.Properties.Resources.resources
+D:\Sources\StatServer\obj\Release\StatServer.csproj.GenerateResource.Cache
+D:\Sources\StatServer\obj\Release\Statserver.exe
+D:\Sources\StatServer\obj\Release\Statserver.pdb

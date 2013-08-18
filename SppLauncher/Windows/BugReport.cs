@@ -32,12 +32,17 @@ namespace SppLauncher
         private string GetProcessorName()
         {
             string ProcessorName = "";
+            string mhz = "";
             ManagementObjectSearcher mos = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
 
             foreach (ManagementObject mo in mos.Get())
-                ProcessorName = mo["Name"] + "@" + mo["maxclockspeed"] + "Mhz";
+            {
+                ProcessorName = mo["Name"].ToString().Replace("  ","");
+                mhz = mo["maxclockspeed"].ToString().Replace(" ","");
+            }
 
-            return ProcessorName;
+
+            return ProcessorName+ " @" + mhz;
         }
 
         private string GetProcessorNameL()

@@ -2,7 +2,8 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\whit33r\Desktop\BugReportGUI\Form1.cs</string>
+      <string>C:\Users\whit33r\Desktop\BugReportGUI\BugreportGUI.cs</string>
+      <string>C:\Users\whit33r\Desktop\BugReportGUI\BugreportGUI.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>
