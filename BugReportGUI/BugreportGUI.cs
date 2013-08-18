@@ -13,12 +13,16 @@ namespace BugReportGUI
 {
     public partial class BugreportGUI : Form
     {
-        string item,item2,selectedpath,Bugpath;
+        public static string item,item2,selectedpath,Bugpath;
+        public int chckcount;
+
+        DirectoryInfo di = new DirectoryInfo(Settings.Default["path"].ToString());
         public BugreportGUI()
         {
             InitializeComponent();
-            DirectoryInfo di = new DirectoryInfo("report");
+
             Bugpath = Settings.Default["path"].ToString();
+            chckcount = Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length;
             if (Bugpath == "")
             {
                 Dialog();
@@ -26,6 +30,7 @@ namespace BugReportGUI
             else
             {
                 test(di);
+                tmrCheck.Start();
             }
         }
 
@@ -47,26 +52,39 @@ namespace BugReportGUI
             DialogResult result = fbdPath.ShowDialog();
             if (result == DialogResult.OK)
             {
-                
+                listBox1.Items.Clear();
+                delAllField();
+                Bugpath = fbdPath.SelectedPath;
+                Settings.Default["path"] = Bugpath;
+                Settings.Default.Save();
+                test(di);
             }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (int i in listBox1.SelectedIndices)
+            if (listBox1.SelectedItem != null)
             {
-                item = listBox1.Items[i].ToString();
-                listBox2.Items.Clear();
-                clearAll();
-            }
+                try
+                {
+                    foreach (int i in listBox1.SelectedIndices)
+                    {
+                        item = listBox1.Items[i].ToString();
+                        delAllField();
+                    }
 
-            string[] files = Directory.GetFiles("report\\" + item);
-            foreach (string afile in files)
-            {
-                selectedpath = afile;
-                string file = File.ReadAllText(afile);
-                string[] content = file.Split(';');
-                listBox2.Items.Add(content[1] + " (" + content[2] + ")");
+                    string[] files = Directory.GetFiles("report\\" + item);
+                    foreach (string afile in files)
+                    {
+                        selectedpath = afile;
+                        string file = File.ReadAllText(afile);
+                        string[] content = file.Split(';');
+                        listBox2.Items.Add(content[1] + " (" + content[2] + ")");
+                    }
+                }
+                catch
+                {
+                }
             }
         }
 
@@ -88,18 +106,53 @@ namespace BugReportGUI
 
                 txbSysinfo.Text = "Cpu:" + content[4] + Environment.NewLine + "Core:" + content[5] + Environment.NewLine + "Total Memory: " + content[6] + "Mb" + Environment.NewLine + "Operation System:" + content[7] + Environment.NewLine + content[8];
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
             }
 
         }
 
-        private void clearAll()
+
+        private void changePathToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Dialog();
+        }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            refresh();
+        }
+
+        public void refresh()
+        {
+            listBox1.Items.Clear();
+            delAllField();
+            test(di);
+        }
+
+        public void delAllField()
+        {
+            //listBox1.Items.Clear();
+            listBox2.Items.Clear();
             txbMail.Text = "";
             txbDesc.Text = "";
             txbType.Text = "";
+            txbSysinfo.Text = "";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+        }
+
+        private void tmrCheck_Tick(object sender, EventArgs e)
+        {
+            
+            if (chckcount != Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length)
+            {
+                chckcount = Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length;
+                refresh();
+            }
         }
     }
 }
