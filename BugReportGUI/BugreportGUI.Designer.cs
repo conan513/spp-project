@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BugreportGUI));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.txbMail = new System.Windows.Forms.TextBox();
@@ -46,8 +47,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.tmrCheck = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -60,7 +59,7 @@
             this.listBox1.Location = new System.Drawing.Point(23, 24);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(75, 147);
-            this.listBox1.TabIndex = 0;
+            this.listBox1.TabIndex = 1;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // listBox2
@@ -78,15 +77,17 @@
             this.txbMail.Name = "txbMail";
             this.txbMail.ReadOnly = true;
             this.txbMail.Size = new System.Drawing.Size(246, 20);
-            this.txbMail.TabIndex = 2;
+            this.txbMail.TabIndex = 5;
+            this.txbMail.TabStop = false;
             // 
             // txbDesc
             // 
             this.txbDesc.Location = new System.Drawing.Point(72, 102);
             this.txbDesc.Multiline = true;
             this.txbDesc.Name = "txbDesc";
-            this.txbDesc.Size = new System.Drawing.Size(246, 181);
-            this.txbDesc.TabIndex = 3;
+            this.txbDesc.Size = new System.Drawing.Size(246, 129);
+            this.txbDesc.TabIndex = 4;
+            this.txbDesc.TabStop = false;
             // 
             // txbType
             // 
@@ -95,6 +96,7 @@
             this.txbType.ReadOnly = true;
             this.txbType.Size = new System.Drawing.Size(246, 20);
             this.txbType.TabIndex = 4;
+            this.txbType.TabStop = false;
             // 
             // label7
             // 
@@ -125,17 +127,18 @@
             // 
             // txbSysinfo
             // 
-            this.txbSysinfo.Location = new System.Drawing.Point(72, 302);
+            this.txbSysinfo.Location = new System.Drawing.Point(69, 250);
             this.txbSysinfo.Multiline = true;
             this.txbSysinfo.Name = "txbSysinfo";
             this.txbSysinfo.ReadOnly = true;
             this.txbSysinfo.Size = new System.Drawing.Size(246, 84);
             this.txbSysinfo.TabIndex = 14;
+            this.txbSysinfo.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(72, 286);
+            this.label1.Location = new System.Drawing.Point(69, 234);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 15;
@@ -151,9 +154,9 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Location = new System.Drawing.Point(11, 242);
+            this.groupBox1.Location = new System.Drawing.Point(12, 232);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(345, 413);
+            this.groupBox1.Size = new System.Drawing.Size(345, 350);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info";
@@ -162,7 +165,7 @@
             // 
             this.groupBox2.Controls.Add(this.listBox2);
             this.groupBox2.Controls.Add(this.listBox1);
-            this.groupBox2.Location = new System.Drawing.Point(11, 47);
+            this.groupBox2.Location = new System.Drawing.Point(11, 37);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(345, 189);
             this.groupBox2.TabIndex = 17;
@@ -172,8 +175,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.refreshToolStripMenuItem});
+            this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(368, 24);
@@ -191,26 +193,9 @@
             // changePathToolStripMenuItem
             // 
             this.changePathToolStripMenuItem.Name = "changePathToolStripMenuItem";
-            this.changePathToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.changePathToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.changePathToolStripMenuItem.Text = "Change Path";
             this.changePathToolStripMenuItem.Click += new System.EventHandler(this.changePathToolStripMenuItem_Click);
-            // 
-            // refreshToolStripMenuItem
-            // 
-            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.refreshToolStripMenuItem.Text = "Refresh";
-            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(237, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tmrCheck
             // 
@@ -221,11 +206,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 667);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(368, 591);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "BugreportGUI";
             this.Text = "BureportGUI";
@@ -258,8 +243,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePathToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer tmrCheck;
     }
 }

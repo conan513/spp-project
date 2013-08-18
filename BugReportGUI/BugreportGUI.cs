@@ -16,22 +16,32 @@ namespace BugReportGUI
         public static string item,item2,selectedpath,Bugpath;
         public int chckcount;
 
-        DirectoryInfo di = new DirectoryInfo(Settings.Default["path"].ToString());
+        private DirectoryInfo di;
         public BugreportGUI()
         {
             InitializeComponent();
 
-            Bugpath = Settings.Default["path"].ToString();
-            chckcount = Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length;
-            if (Bugpath == "")
+            try
             {
-                Dialog();
+                Bugpath = Settings.Default["path"].ToString();
+                if(Bugpath != "") di = new DirectoryInfo(Bugpath);
+                if (Bugpath != "") chckcount = Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length;
+
+                if (Bugpath == "")
+                {
+                    Dialog();
+                }
+                else
+                {
+                    test(di);
+                    tmrCheck.Start();
+                }
             }
-            else
+            catch (Exception e)
             {
-                test(di);
-                tmrCheck.Start();
+                MessageBox.Show(e.ToString());
             }
+            
         }
 
         private void test(DirectoryInfo dir)
@@ -57,7 +67,9 @@ namespace BugReportGUI
                 Bugpath = fbdPath.SelectedPath;
                 Settings.Default["path"] = Bugpath;
                 Settings.Default.Save();
+                di = new DirectoryInfo(Bugpath);
                 test(di);
+                chckcount = Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length;
             }
         }
 
@@ -127,6 +139,7 @@ namespace BugReportGUI
         {
             listBox1.Items.Clear();
             delAllField();
+            di = new DirectoryInfo(Bugpath);
             test(di);
         }
 

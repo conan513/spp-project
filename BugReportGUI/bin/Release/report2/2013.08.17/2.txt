@@ -1,0 +1,5 @@
+report;ironhead123@gmx.de;Aibot;Hello,
+
+the problem is, that the LFG not work.
+i dont know what i do wrong. But no bot comes in dungeon finder.
+sry for bad english ( im german );Intel(R) Core(TM) i7-2670QM CPU @ 2.20GHz@2201Mhz;8;8096;Microsoft Windows 7 Home Premium ;Prog: 1.0.7, Emu: 1,04

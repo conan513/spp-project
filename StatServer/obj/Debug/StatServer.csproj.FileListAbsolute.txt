@@ -1,0 +1,8 @@
+D:\Sources\StatServer\bin\Debug\Statserver.exe
+D:\Sources\StatServer\bin\Debug\Statserver.pdb
+D:\Sources\StatServer\obj\Debug\StatServer.csprojResolveAssemblyReference.cache
+D:\Sources\StatServer\obj\Debug\StatServer.Statistics.resources
+D:\Sources\StatServer\obj\Debug\StatServer.Properties.Resources.resources
+D:\Sources\StatServer\obj\Debug\StatServer.csproj.GenerateResource.Cache
+D:\Sources\StatServer\obj\Debug\Statserver.exe
+D:\Sources\StatServer\obj\Debug\Statserver.pdb
