@@ -112,6 +112,7 @@
     <Compile Include="Windows\BugReport\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\BugReport\GetServerIP.cs" />
     <Compile Include="Windows\BugReport\GetSysInfo.cs" />
     <Compile Include="Windows\BugReport\SendReport.cs" />
     <Compile Include="Windows\DatabaseUpdate.cs">
