@@ -40,8 +40,6 @@ namespace StatServer
             timerSave.Start();
             StatusChange("Not Connected");
             xmlReadWrite.ReadXml();
-
-            Bitmap(false);
         }
 
         private void StatusChange (string msg)
@@ -63,84 +61,11 @@ namespace StatServer
             }
         }
 
-        private void Bitmap (bool backup)
-        {
-            //var bmp = new Bitmap(300, 300);
-
-            //using (Graphics g = Graphics.FromImage(bmp))
-            //{
-            //    string s = "Compiler Usage: " + _ccGui.ToString(CultureInfo.InvariantCulture) + "\nSwitcher Usage: " +
-            //               _Lanswitcher.ToString(CultureInfo.InvariantCulture) + "\nRes Changer: " +
-            //               _resChanger.ToString(CultureInfo.InvariantCulture) + "Account Creator: " +
-            //               _wowAccountCreator.ToString(CultureInfo.InvariantCulture);
-            //    var drawFont = new Font("Arial", 11);
-            //    var rectf = new RectangleF(0, 100, 500, 500);
-
-            //    g.DrawString(s, drawFont, Brushes.Black, rectf);
-
-            //    bmp.Save("dynamic_pic.bmp");
-
-            //    if (backup)
-            //        File.Copy("dynamic_pic.bmp", "D:\\Dropbox\\Public\\Updates\\dynamic_pic.png", true);
-            //}
-        }
-
         private void LoadStat ()
         {
             lblReport.Text = _report.ToString(CultureInfo.InvariantCulture);
         }
 
-        //private void SaveXml()
-        //{
-        //    try
-        //    {
-        //        var writer = new XmlTextWriter(savepath + "counter.xml", Encoding.UTF8)
-        //        {
-        //            Formatting = Formatting.Indented
-        //        };
-
-        //        writer.WriteStartDocument();
-        //        writer.WriteComment(DateTime.Now.ToString(CultureInfo.InvariantCulture));
-        //        writer.WriteStartElement("Save");
-        //        writer.WriteElementString("Report", _report.ToString(CultureInfo.InvariantCulture));
-        //        writer.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message + "\nWrited error to ErrorMsg.txt", "Error", MessageBoxButtons.OK,
-        //            MessageBoxIcon.Error);
-        //        WriteError(ex.Message);
-        //    }
-        //}
-
-        //private void ReadXml ()
-        //{
-        //    if (File.Exists("counter.xml")) //not exist? run SaveXML and create it.
-        //    {
-        //        try
-        //        {
-        //            var doc = new XmlDocument();
-        //            doc.Load("counter.xml");
-        //            XmlElement root = doc.DocumentElement;
-        //            XmlNodeList nodes = root.SelectNodes("/Save");
-
-        //            foreach (XmlNode node in nodes)
-        //            {
-        //                _report = Convert.ToInt32(node["Report"].InnerText);
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show(ex.Message + "\nWrited error to ErrorMsg.txt", "Warning", MessageBoxButtons.OK,
-        //                MessageBoxIcon.Error);
-        //            WriteError(ex.Message);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        SaveXml();
-        //    }
-        //}
 
         private void Server ()
         {
@@ -214,17 +139,6 @@ namespace StatServer
                                             encoder.GetString(message, 0, bytesRead));
                         ResetCommand();
                         break;
-                    case "-picupdate":
-                        lbHistory.Items.Add(dt.ToString("(" + "HH:mm" + ") ") +
-                                            encoder.GetString(message, 0, bytesRead));
-                        UpdateCommand();
-                        break;
-                    case "-backup":
-                        lbHistory.Items.Add(dt.ToString("(" + "HH:mm" + ") ") +
-                                            encoder.GetString(message, 0, bytesRead));
-                        backup();
-                        break;
-
                 }
                 dt1 = DateTime.Now;
                 date = dt1.ToString("yyy.MM.dd");
@@ -258,21 +172,10 @@ namespace StatServer
 
                 lbHistory.TopIndex = lbHistory.Items.Count - 1;
                 LoadStat();
-                Bitmap(false);
             }
 
             tcpClient.Close();
         }
-        DirectoryInfo di = new DirectoryInfo("report");
-        private void test(DirectoryInfo dir)
-        {
-            foreach (DirectoryInfo d in dir.GetDirectories())
-            {
-
-            }
-        }
-
-
 
         private void backup()
         {
@@ -295,7 +198,6 @@ namespace StatServer
 
         private void UpdateCommand()
         {
-            Bitmap(true);
         }
 
         private void ResetCommand()
@@ -378,11 +280,6 @@ namespace StatServer
                 }
             }
         }
-
-        private void NotifyCounter_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-        }
-
     }
 
 }

@@ -128,7 +128,7 @@
     <Compile Include="Windows\HelpUsWindow.Designer.cs">
       <DependentUpon>HelpUsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class\INI.cs" />
+    <Compile Include="Class\ReadINI.cs" />
     <Compile Include="Windows\LanSwitcher\LanSwitcher.cs">
       <SubType>Form</SubType>
     </Compile>

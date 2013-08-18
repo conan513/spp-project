@@ -61,7 +61,6 @@
             this.NotifyCounter.Visible = true;
             this.NotifyCounter.DoubleClick += new System.EventHandler(this.NotifyCounter_DoubleClick);
             this.NotifyCounter.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NotifyCounter_MouseClick);
-            this.NotifyCounter.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyCounter_MouseDoubleClick);
             // 
             // gBStat
             // 
