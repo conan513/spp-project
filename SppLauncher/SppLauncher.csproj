@@ -115,12 +115,13 @@
     <Compile Include="Windows\BugReport\GetServerIP.cs" />
     <Compile Include="Windows\BugReport\GetSysInfo.cs" />
     <Compile Include="Windows\BugReport\SendReport.cs" />
-    <Compile Include="Windows\DatabaseUpdate.cs">
+    <Compile Include="Windows\DatabaseUpdate\DatabaseUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\DatabaseUpdate.Designer.cs">
+    <Compile Include="Windows\DatabaseUpdate\DatabaseUpdate.Designer.cs">
       <DependentUpon>DatabaseUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\DatabaseUpdate\RunMysql.cs" />
     <Compile Include="Windows\HelpUsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,7 +234,7 @@
     <EmbeddedResource Include="Windows\BugReport\BugReport.resx">
       <DependentUpon>BugReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\DatabaseUpdate.resx">
+    <EmbeddedResource Include="Windows\DatabaseUpdate\DatabaseUpdate.resx">
       <DependentUpon>DatabaseUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\HelpUsWindow.de.resx">

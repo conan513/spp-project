@@ -38,18 +38,7 @@ namespace SppLauncher
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://githu" +
-                          "" +
-                          "" +
-                          "" +
-                          "" +
-                          "" +
-                          "" +
-                          "" +
-                          "" +
-                          "" +
-                          "" +
-                          "b.com/whit33r");
+            Process.Start("https://github.com/whit33r");
         }
     }
 }

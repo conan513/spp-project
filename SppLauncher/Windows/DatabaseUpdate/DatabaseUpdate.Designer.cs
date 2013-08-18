@@ -32,13 +32,10 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.bWdbUp = new System.ComponentModel.BackgroundWorker();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bWdbUp1 = new System.ComponentModel.BackgroundWorker();
-            this.bWdbUpS = new System.ComponentModel.BackgroundWorker();
-            this.bWdvUpS1 = new System.ComponentModel.BackgroundWorker();
+            this.bWdbUp = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,13 +64,6 @@
             this.label3.Size = new System.Drawing.Size(10, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "-";
-            // 
-            // bWdbUp
-            // 
-            this.bWdbUp.WorkerReportsProgress = true;
-            this.bWdbUp.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bWdbUp_DoWork);
-            this.bWdbUp.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bWdbUp_ProgressChanged);
-            this.bWdbUp.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bWdbUp_RunWorkerCompleted);
             // 
             // label4
             // 
@@ -107,24 +97,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update";
             // 
-            // bWdbUp1
+            // bWdbUp
             // 
-            this.bWdbUp1.WorkerReportsProgress = true;
-            this.bWdbUp1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bWdbUp1_DoWork);
-            this.bWdbUp1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bWdbUp1_ProgressChanged_1);
-            this.bWdbUp1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bWdbUp1_RunWorkerCompleted);
-            // 
-            // bWdbUpS
-            // 
-            this.bWdbUpS.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bWdbUpS_DoWork);
-            this.bWdbUpS.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bWdbUpS_RunWorkerCompleted);
-            // 
-            // bWdvUpS1
-            // 
-            this.bWdvUpS1.WorkerReportsProgress = true;
-            this.bWdvUpS1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bWdvUpS1_DoWork);
-            this.bWdvUpS1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bWdvUpS1_ProgressChanged);
-            this.bWdvUpS1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bWdvUpS1_RunWorkerCompleted);
+            this.bWdbUp.WorkerReportsProgress = true;
+            this.bWdbUp.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bWdbUp1_DoWork);
+            this.bWdbUp.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bWdbUp1_ProgressChanged);
+            this.bWdbUp.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bWdbUp1_RunWorkerCompleted);
             // 
             // DatabaseUpdate
             // 
@@ -150,12 +128,9 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.ComponentModel.BackgroundWorker bWdbUp;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.ComponentModel.BackgroundWorker bWdbUp1;
-        private System.ComponentModel.BackgroundWorker bWdbUpS;
-        private System.ComponentModel.BackgroundWorker bWdvUpS1;
+        private System.ComponentModel.BackgroundWorker bWdbUp;
     }
 }
