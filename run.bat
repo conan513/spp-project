@@ -1,1 +1,1 @@
-gource -s 5 -1280x800 -i 0 --multi-sampling --camera-mode overview --max-file-lag 50 --highlight-users --user-friction 20 --user-scale 2
+gource -s 4 -1280x800 -i 0 --multi-sampling --camera-mode overview --max-file-lag 50 --highlight-users --user-friction 20 --user-scale 2
