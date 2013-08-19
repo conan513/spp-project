@@ -93,6 +93,11 @@
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lanSwitcherToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.accountToolToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.exportImportCharactersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.importToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startstopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restartToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -121,11 +126,6 @@
             this.bwExport = new System.ComponentModel.BackgroundWorker();
             this.tmrUsage = new System.Windows.Forms.Timer(this.components);
             this.bWUpEx = new System.ComponentModel.BackgroundWorker();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportImportCharactersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.importToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNotAvailW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTempW)).BeginInit();
@@ -605,6 +605,39 @@
             resources.ApplyResources(this.accountToolToolStripMenuItem1, "accountToolToolStripMenuItem1");
             this.accountToolToolStripMenuItem1.Click += new System.EventHandler(this.accountToolToolStripMenuItem1_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+            // 
+            // exportImportCharactersToolStripMenuItem1
+            // 
+            this.exportImportCharactersToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportToolStripMenuItem2,
+            this.importToolStripMenuItem2});
+            this.exportImportCharactersToolStripMenuItem1.Name = "exportImportCharactersToolStripMenuItem1";
+            resources.ApplyResources(this.exportImportCharactersToolStripMenuItem1, "exportImportCharactersToolStripMenuItem1");
+            // 
+            // exportToolStripMenuItem2
+            // 
+            this.exportToolStripMenuItem2.Image = global::SppLauncher.Properties.Resources.Export_Icon_32;
+            this.exportToolStripMenuItem2.Name = "exportToolStripMenuItem2";
+            resources.ApplyResources(this.exportToolStripMenuItem2, "exportToolStripMenuItem2");
+            this.exportToolStripMenuItem2.Click += new System.EventHandler(this.exportToolStripMenuItem2_Click);
+            // 
+            // importToolStripMenuItem2
+            // 
+            this.importToolStripMenuItem2.Image = global::SppLauncher.Properties.Resources.Import_Icon_32;
+            this.importToolStripMenuItem2.Name = "importToolStripMenuItem2";
+            resources.ApplyResources(this.importToolStripMenuItem2, "importToolStripMenuItem2");
+            this.importToolStripMenuItem2.Click += new System.EventHandler(this.importToolStripMenuItem2_Click);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            resources.ApplyResources(this.updateToolStripMenuItem, "updateToolStripMenuItem");
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            // 
             // restartToolStripMenuItem
             // 
             this.restartToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -774,39 +807,6 @@
             // 
             this.bWUpEx.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bWUpEx_DoWork);
             this.bWUpEx.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bWUpEx_RunWorkerCompleted);
-            // 
-            // updateToolStripMenuItem
-            // 
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            resources.ApplyResources(this.updateToolStripMenuItem, "updateToolStripMenuItem");
-            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
-            // 
-            // exportImportCharactersToolStripMenuItem1
-            // 
-            this.exportImportCharactersToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportToolStripMenuItem2,
-            this.importToolStripMenuItem2});
-            this.exportImportCharactersToolStripMenuItem1.Name = "exportImportCharactersToolStripMenuItem1";
-            resources.ApplyResources(this.exportImportCharactersToolStripMenuItem1, "exportImportCharactersToolStripMenuItem1");
-            // 
-            // exportToolStripMenuItem2
-            // 
-            this.exportToolStripMenuItem2.Image = global::SppLauncher.Properties.Resources.Export_Icon_32;
-            this.exportToolStripMenuItem2.Name = "exportToolStripMenuItem2";
-            resources.ApplyResources(this.exportToolStripMenuItem2, "exportToolStripMenuItem2");
-            this.exportToolStripMenuItem2.Click += new System.EventHandler(this.exportToolStripMenuItem2_Click);
-            // 
-            // importToolStripMenuItem2
-            // 
-            this.importToolStripMenuItem2.Image = global::SppLauncher.Properties.Resources.Import_Icon_32;
-            this.importToolStripMenuItem2.Name = "importToolStripMenuItem2";
-            resources.ApplyResources(this.importToolStripMenuItem2, "importToolStripMenuItem2");
-            this.importToolStripMenuItem2.Click += new System.EventHandler(this.importToolStripMenuItem2_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
             // Launcher
             // 

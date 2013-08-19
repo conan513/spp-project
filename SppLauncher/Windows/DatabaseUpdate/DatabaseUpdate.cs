@@ -100,6 +100,7 @@ namespace SppLauncher.Windows
             label3.Text = "Complete!";
             label2.Text = "-";
             if (Directory.Exists(@"update\server")) { Copy(@"update\server", @"\SingleCore"); }
+            File.WriteAllText(@"SingleCore\version", File.ReadAllText(@"update\version"));
             Directory.Delete(@"update", true);
             EnableCloseButton();
             Thread.Sleep(2000);
@@ -108,6 +109,7 @@ namespace SppLauncher.Windows
         private void bWdbUp1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             Launcher.dbupdate = false;
+
             launcher.Show();
 
             if (!Launcher.OnlyMysqlStart) { launcher.RealmdStart(); }

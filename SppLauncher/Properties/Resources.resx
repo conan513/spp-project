@@ -386,4 +386,24 @@ Account type: </value>
   <data name="WowaccountCreator_btnCreate_Click_Your_password_must_be_at_least_6_characters_long__" xml:space="preserve">
     <value>Your password must be at least 6 characters long. </value>
   </data>
+  <data name="BotConf_SaveIni_" xml:space="preserve">
+    <value>Bot Settings Saved.
+The changes to take effect bot reset requiered.</value>
+  </data>
+  <data name="BotConf_SaveIni_default" xml:space="preserve">
+    <value>Default settings loaded.
+The changes to take effect bot reset requiered.</value>
+  </data>
+  <data name="BotConf_cbRndBotLgn_MouseHover_All_bots_join_on_start_" xml:space="preserve">
+    <value>All bots join on start.</value>
+  </data>
+  <data name="Function_is_temporarily_disabled" xml:space="preserve">
+    <value>Function is temporarily disabled</value>
+  </data>
+  <data name="Total_Character__" xml:space="preserve">
+    <value>Total Character: </value>
+  </data>
+  <data name="Your_DB_is_up_to_date_" xml:space="preserve">
+    <value>Your DB is up to date.</value>
+  </data>
 </root>

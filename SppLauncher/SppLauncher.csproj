@@ -85,7 +85,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Windows\Launcher\GetAllAcc.cs" />
+    <Compile Include="Windows\Launcher\GetSqlCount.cs" />
     <Compile Include="Windows\Launcher\UpdateExtract.cs" />
     <Compile Include="Windows\Launcher\XmlReadWrite.cs" />
     <Compile Include="Windows\AboutBox.cs">
@@ -147,7 +147,6 @@
     <Compile Include="Windows\Loader.Designer.cs">
       <DependentUpon>Loader.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Launcher\OnlineBot.cs" />
     <Compile Include="Class\MySQLClient.cs" />
     <Compile Include="Class\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

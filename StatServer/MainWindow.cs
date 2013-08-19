@@ -190,10 +190,6 @@ namespace StatServer
             }
         }
 
-        private void UpdateCommand()
-        {
-        }
-
         private void ResetCommand()
         {
             xmlReadWrite.SaveXml();

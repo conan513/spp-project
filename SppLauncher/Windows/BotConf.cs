@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using SppLauncher.Properties;
 
 namespace SppLauncher
 {
@@ -18,7 +19,7 @@ namespace SppLauncher
          
 
             ToolTip tt = new ToolTip();
-            tt.SetToolTip(label6, "Function is temporarily disabled");
+            tt.SetToolTip(label6, Resources.Function_is_temporarily_disabled);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -100,10 +101,7 @@ namespace SppLauncher
                 MessageBox.Show("Some exception: write", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            if (!DefaultL)
-                MessageBox.Show("Bot Settings Saved.\nThe changes to take effect bot reset requiered.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-            MessageBox.Show("Default settings loaded.\nThe changes to take effect bot reset requiered.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(!DefaultL ? Resources.BotConf_SaveIni_ : Resources.BotConf_SaveIni_default, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -210,7 +208,7 @@ namespace SppLauncher
 
         private void cbRndBotLgn_MouseHover(object sender, EventArgs e)
         {
-            tTrndBot.Show("All bots join on start.", cbRndBotLgn, 100000);
+            tTrndBot.Show(Resources.BotConf_cbRndBotLgn_MouseHover_All_bots_join_on_start_, cbRndBotLgn, 100000);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

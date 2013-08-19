@@ -15,7 +15,6 @@ using Ionic.Zip;
 using MySql.Data.MySqlClient;
 using MySQLClass;
 using SppLauncher.Class;
-using SppLauncher.OnlineBot;
 using SppLauncher.Properties;
 using SppLauncher.Windows;
 using SppLauncher.Windows.BugReport;
@@ -1059,6 +1058,7 @@ namespace SppLauncher
         private void magyarToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             lang = "Hungarian";
+            xmlReadWrite.saveMethod();
             MessageBox.Show(
                 Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_,
                 Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
@@ -1671,8 +1671,8 @@ namespace SppLauncher
 
         private void GetSqlOnlineBot_Tick(object sender, EventArgs e)
         {
-            tssLOnline.ToolTipText = "Total Character: " + new GetAllChar().GetChar();
-            tssLOnline.Text        = Resources.Launcher_GetSqlOnlineBot_Tick_Online_Bot_ + new Onlinebot().GetBot();
+            tssLOnline.ToolTipText = Resources.Total_Character__ + new GetAllChar().GetChar("SELECT COUNT(*) FROM characters");
+            tssLOnline.Text        = Resources.Launcher_GetSqlOnlineBot_Tick_Online_Bot_ + new GetAllChar().GetChar("SELECT SUM(online) FROM characters");
             SppTray.Text           = tssLOnline.Text;
         }
 
@@ -1707,15 +1707,42 @@ namespace SppLauncher
         private void bWUpEx_DoWork(object sender, DoWorkEventArgs e)
         {
             new UpdateExtract().Extract();
-
         }
 
         private void bWUpEx_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             _status = Resources.Launcher_bWUpEx_RunWorkerCompleted_Completed;
             animateStatus(false);
-            Hide();
-            startupdate();
+            try
+            {
+                int db = Convert.ToInt32(File.ReadAllText(@"update\version"));
+                int local = Convert.ToInt32(File.ReadAllText(@"SingleCore\version"));
+                if (db != local)
+                {
+                    Hide();
+                    startupdate();
+                }
+                else
+                {
+                    dbupdate = false;
+
+                    if (!OnlyMysqlStart) { RealmdStart(); }
+                    else
+                    {
+                        pbAvailableM.Visible = false;
+                        pbNotAvailM.Visible = true;
+                        OnlyMysqlStart = false;
+                        MysqlON = false;
+                        ShutdownSql();
+                        Directory.Delete(@"update", true);
+                    }
+
+                    ShutdownSql();
+                    MessageBox.Show(Resources.Your_DB_is_up_to_date_);
+                }
+            }
+            catch
+            { }
         }
 
         private void WasThisUpdate()
@@ -1779,16 +1806,18 @@ namespace SppLauncher
                 _status          = Resources.Launcher_bwUpdate_DoWork_New_Server_Update_Available;
                 tssStatus.IsLink = true;
                 _updateNo        = false;
+                animateStatus(false);
+            }
+            else
+            {
+                    _status = Resources.Launcher_bwUpdate_RunWorkerCompleted_Up_to_date;
+                    animateStatus(false);
             }
         }
 
         private void bwUpdate_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (!_updateNo)
-            {
-                _status = Resources.Launcher_bwUpdate_RunWorkerCompleted_Up_to_date;
-                animateStatus(false);
-            }
+
 
             if (_updateYes)
             {

@@ -71,6 +71,35 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All bots join on start..
+        /// </summary>
+        internal static string BotConf_cbRndBotLgn_MouseHover_All_bots_join_on_start_ {
+            get {
+                return ResourceManager.GetString("BotConf_cbRndBotLgn_MouseHover_All_bots_join_on_start_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bot Settings Saved.
+        ///The changes to take effect bot reset requiered..
+        /// </summary>
+        internal static string BotConf_SaveIni_ {
+            get {
+                return ResourceManager.GetString("BotConf_SaveIni_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default settings loaded.
+        ///The changes to take effect bot reset requiered..
+        /// </summary>
+        internal static string BotConf_SaveIni_default {
+            get {
+                return ResourceManager.GetString("BotConf_SaveIni_default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Button_stop_icon {
@@ -137,6 +166,15 @@ namespace SppLauncher.Properties {
             get {
                 object obj = ResourceManager.GetObject("flat-27406_640", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Function is temporarily disabled.
+        /// </summary>
+        internal static string Function_is_temporarily_disabled {
+            get {
+                return ResourceManager.GetString("Function_is_temporarily_disabled", resourceCulture);
             }
         }
         
@@ -780,6 +818,15 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total Character: .
+        /// </summary>
+        internal static string Total_Character__ {
+            get {
+                return ResourceManager.GetString("Total_Character__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap us {
@@ -874,6 +921,15 @@ namespace SppLauncher.Properties {
         internal static string WowaccountCreator_InsertSqlTrinity_Username_is_already_taken_ {
             get {
                 return ResourceManager.GetString("WowaccountCreator_InsertSqlTrinity_Username_is_already_taken_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your DB is up to date..
+        /// </summary>
+        internal static string Your_DB_is_up_to_date_ {
+            get {
+                return ResourceManager.GetString("Your_DB_is_up_to_date_", resourceCulture);
             }
         }
     }
