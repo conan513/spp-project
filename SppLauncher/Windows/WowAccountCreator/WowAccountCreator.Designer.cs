@@ -141,8 +141,8 @@
         #endregion
 
         private System.Windows.Forms.ComboBox cbEx;
-        private System.Windows.Forms.TextBox txbUser;
-        private System.Windows.Forms.TextBox txbPass;
+        public System.Windows.Forms.TextBox txbUser;
+        public System.Windows.Forms.TextBox txbPass;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.GroupBox gbAcc;

@@ -932,7 +932,7 @@
         private System.Windows.Forms.ToolStripMenuItem resetAllRandomBotsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem randomizeBotsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem magyarToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem magyarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem frenchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem germanToolStripMenuItem;

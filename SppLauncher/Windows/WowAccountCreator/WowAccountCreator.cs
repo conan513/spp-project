@@ -3,13 +3,14 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using SppLauncher.Properties;
 using SppLauncher.Windows.WowAccountCreator;
-
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace WowAccountCreator
 {
     public partial class WowaccountCreator : Form
     {
         public static string ip, user, pass, db, port, gmlvl, accType;
         private readonly GenHash Generate;
+
         public WowaccountCreator()
         {
             InitializeComponent();

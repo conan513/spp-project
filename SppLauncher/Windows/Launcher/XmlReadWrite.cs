@@ -4,7 +4,7 @@ using System.Xml;
 
 namespace SppLauncher.Class
 {
-    class XmlReadWrite
+    public class XmlReadWrite
     {
         private Launcher launcher;
         

@@ -1,0 +1,15 @@
+D:\Sources\SPPTest\bin\Release\SPPTest.dll
+D:\Sources\SPPTest\bin\Release\SPPTest.pdb
+D:\Sources\SPPTest\bin\Release\SppLauncher.exe
+D:\Sources\SPPTest\bin\Release\MySql.Data.dll
+D:\Sources\SPPTest\bin\Release\Ionic.Zip.dll
+D:\Sources\SPPTest\bin\Release\MySqlBackup.dll
+D:\Sources\SPPTest\bin\Release\SppLauncher.pdb
+D:\Sources\SPPTest\bin\Release\de\SppLauncher.resources.dll
+D:\Sources\SPPTest\bin\Release\fr\SppLauncher.resources.dll
+D:\Sources\SPPTest\bin\Release\hu\SppLauncher.resources.dll
+D:\Sources\SPPTest\obj\Release\SPPTest.csprojResolveAssemblyReference.cache
+D:\Sources\SPPTest\obj\Release\SPPTest.dll
+D:\Sources\SPPTest\obj\Release\SPPTest.pdb
+D:\SPP\Single Player Project Real v2\SPPTest.dll
+D:\SPP\Single Player Project Real v2\SPPTest.pdb
