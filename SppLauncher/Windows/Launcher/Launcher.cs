@@ -507,8 +507,10 @@ namespace SppLauncher
         {
             try
             {
+
                 foreach (Process proc in Process.GetProcessesByName("mangosd"))
                 {
+                
                     DialogResult result =
                         MessageBox.Show(Resources.Launcher_SearchProcess_, Resources.Launcher_SearchProcess_Warning,
                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -542,6 +544,9 @@ namespace SppLauncher
                     }
                 }
 
+                if(UnitTestDetector.IsInUnitTest)
+                    goto isUnitTest;
+
                 foreach (Process proc in Process.GetProcessesByName("mysqld"))
                 {
                     DialogResult result =
@@ -557,6 +562,8 @@ namespace SppLauncher
                         Loader.Kill = true;
                     }
                 }
+
+                isUnitTest:;
             }
             catch (Exception ex)
             {
@@ -564,6 +571,8 @@ namespace SppLauncher
                                 ex.Message, Resources.Launcher_SearchProcess_Warning, MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
+
+
         }
 
         #endregion
@@ -1754,29 +1763,27 @@ namespace SppLauncher
             }
         }
 
-        private void bwUpdate_DoWork(object sender, DoWorkEventArgs e)
+        public bool GetUpdate()
         {
-            checklang(false);
             try
             {
                 statusChage(Resources.Launcher_Checking_Update, false);
                 animateStatus(true);
-                var client           = new WebClient();
-                Stream stream        = client.OpenRead("https://raw.github.com/conan513/SingleCore/SPP/Tools/update.txt");
-                var reader           = new StreamReader(stream);
-                String content       = reader.ReadToEnd();
-                string[] parts       = content.Split(';');
-                content              = parts[0];
-                RemoteEmuVer         = Convert.ToDouble(parts[1]);
-                UpdLink              = parts[2];
-                Available            = true;
-                RemoteProgVer        = content;
+                var client = new WebClient();
+                Stream stream = client.OpenRead("https://raw.github.com/conan513/SingleCore/SPP/Tools/update.txt");
+                var reader = new StreamReader(stream);
+                String content = reader.ReadToEnd();
+                string[] parts = content.Split(';');
+                content = parts[0];
+                RemoteEmuVer = Convert.ToDouble(parts[1]);
+                UpdLink = parts[2];
+                Available = true;
+                RemoteProgVer = content;
                 allowupdaternorunwow = true;
 
                 if (content != currProgVer)
                 {
-                    if (
-                        MessageBox.Show(
+                    if (MessageBox.Show(
                             Resources.Launcher_bwUpdate_DoWork_New_Version_Available__V + content + "\n" +
                             Resources.Launcher_bwUpdate_DoWork_You_want_to_download_,
                             Resources.Launcher_bwUpdate_DoWork_New_Version, MessageBoxButtons.YesNo,
@@ -1795,8 +1802,15 @@ namespace SppLauncher
             {
                 Available = false;
                 statusChage(Resources.Launcher_bwUpdate_DoWork_ERROR, false);
+                return false;
             }
+            return true;
+        }
 
+        private void bwUpdate_DoWork(object sender, DoWorkEventArgs e)
+        {
+            checklang(false);
+            GetUpdate();
             CurrEmuVer = Convert.ToDouble(File.ReadAllText("SingleCore\\version"));
 
             if (RemoteEmuVer > CurrEmuVer)
@@ -1814,8 +1828,6 @@ namespace SppLauncher
 
         private void bwUpdate_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-
-
             if (_updateYes)
             {
                 CheckMangosCrashed.Stop();

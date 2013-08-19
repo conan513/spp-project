@@ -44,9 +44,9 @@ namespace WowAccountCreator
                         new MySqlCommand(InsertAdmin, connection).ExecuteNonQuery();
                     }
                     
-                    MessageBox.Show(Resources.WowaccountCreator_InsertSqlTrinity_Account_created_successfully__ +
+                    if(!UnitTestDetector.IsInUnitTest){MessageBox.Show(Resources.WowaccountCreator_InsertSqlTrinity_Account_created_successfully__ +
                         txbUser.Text + Resources.WowaccountCreator_InsertSqlTrinity_ +
-                        cbType.Items[cbType.SelectedIndex], "Info", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        cbType.Items[cbType.SelectedIndex], "Info", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);}
 
                     txbUser.Text = "";
                     txbPass.Text = "";

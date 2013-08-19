@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Windows\Launcher\GetSqlCount.cs" />
+    <Compile Include="Windows\Launcher\isUnitTest.cs" />
     <Compile Include="Windows\Launcher\UpdateExtract.cs" />
     <Compile Include="Windows\Launcher\XmlReadWrite.cs" />
     <Compile Include="Windows\AboutBox.cs">

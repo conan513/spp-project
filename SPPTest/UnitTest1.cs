@@ -39,5 +39,12 @@ namespace SPPTest
             FileCopyOverWrite obj = new FileCopyOverWrite();
             if (Directory.Exists(@"update\server")) { Assert.AreEqual(true,obj.Copy(@"update\server", "", true)); }
         }
+
+        [TestMethod]
+        public void GetUpdateTest()
+        {
+            Launcher obj = new Launcher();
+            Assert.AreEqual(true, obj.GetUpdate());
+        }
     }
 }
