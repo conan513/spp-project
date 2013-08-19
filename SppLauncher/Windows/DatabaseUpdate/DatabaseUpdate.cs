@@ -11,7 +11,7 @@ namespace SppLauncher.Windows
 {
     public partial class DatabaseUpdate : Form
     {
-        private int count, complete;
+        private int _complete;
         private readonly Launcher launcher;
         private readonly RunMysql run;
         private FileCopyOverWrite fileCopy;
@@ -124,7 +124,7 @@ namespace SppLauncher.Windows
                 Launcher.OnlyMysqlStart = false;
                 Launcher.MysqlON = false;
                 Launcher.ShutdownSql();
-                Launcher._status = Resources.Launcher_bwUpdate_RunWorkerCompleted_Up_to_date;
+                Launcher.Status = Resources.Launcher_bwUpdate_RunWorkerCompleted_Up_to_date;
             }
             Close();
         }
@@ -135,14 +135,14 @@ namespace SppLauncher.Windows
             {
                 String[] files = Directory.GetFiles(updatePath, filter, SearchOption.TopDirectoryOnly);
                 progressBar1.Maximum = files.Length;
-                complete = 0;
+                _complete = 0;
                 Thread.Sleep(10);
                 foreach (String aFile in files)
                 {
                     label2.Text = Path.GetFileName(aFile);
                     run.RunMySql("127.0.0.1", 3310, "root", "123456", "mangos", aFile);
 
-                    complete++; bWdbUp.ReportProgress(complete);
+                    _complete++; bWdbUp.ReportProgress(_complete);
                     Thread.Sleep(10);
                 }
             }
@@ -158,15 +158,15 @@ namespace SppLauncher.Windows
             {
                 String[] files = Directory.GetFiles(updatePath, filter, SearchOption.TopDirectoryOnly);
                 progressBar1.Maximum = files.Length;
-                complete = 0;
+                _complete = 0;
                 Thread.Sleep(10);
                 foreach (String aFile in files)
                 {
                     label2.Text = Path.GetFileName(aFile);
                     run.RunMySql("127.0.0.1", 3310, "root", "123456", db, aFile);
 
-                    complete++;
-                    bWdbUp.ReportProgress(complete);
+                    _complete++;
+                    bWdbUp.ReportProgress(_complete);
                     Thread.Sleep(10);
                 }
             }

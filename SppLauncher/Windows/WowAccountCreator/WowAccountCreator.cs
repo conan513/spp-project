@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using SppLauncher.Properties;
 using SppLauncher.Windows.WowAccountCreator;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 namespace WowAccountCreator
 {
     public partial class WowaccountCreator : Form
@@ -56,6 +56,9 @@ namespace WowAccountCreator
             }
             catch (MySqlException exception)
             {
+                if (UnitTestDetector.IsInUnitTest)
+                return false;
+
                 MessageBox.Show(exception.Message.Contains("Duplicate") ? Resources.WowaccountCreator_InsertSqlTrinity_Username_is_already_taken_ : exception.Message,
                     "Warning", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);

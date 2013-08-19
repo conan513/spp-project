@@ -13,9 +13,6 @@ namespace SppLauncher.Windows
     {
         public static bool Available, updateYes, allowCheck = true, FirstRun = false, allowUsageStat = true;
         public static string ip, user, pass, db, port, currVer = "1.0.1", RemoteVer, test;
-        private bool enable;
-        private bool thirdrun;
-        private bool update;
 
         public LanSwitcher()
         {

@@ -6,8 +6,7 @@ namespace SppLauncher.Class
 {
     public class XmlReadWrite
     {
-        private Launcher launcher;
-        
+
         public void saveMethod()
         {
             var writer        = new XmlTextWriter("config\\SppPathConfig.xml", Encoding.UTF8);
@@ -18,7 +17,7 @@ namespace SppLauncher.Class
             writer.WriteElementString("RealmWTF", Launcher.realmListPath);
             writer.WriteElementString("ResetBots", Launcher.resetBots);
             writer.WriteElementString("RandomizeBots", Launcher.randomizeBots);
-            writer.WriteElementString("Autostart", Launcher.autostart);
+            writer.WriteElementString("Autostart", Launcher.Autostart);
             writer.WriteElementString("Lang", Launcher.lang);
 
             writer.WriteEndElement();
@@ -38,7 +37,7 @@ namespace SppLauncher.Class
                 {
                     Launcher.wowExePath    = node["GamePath"].InnerText;
                     Launcher.realmListPath = node["RealmWTF"].InnerText;
-                    Launcher.autostart     = node["Autostart"].InnerText;
+                    Launcher.Autostart     = node["Autostart"].InnerText;
                     Launcher.lang          = node["Lang"].InnerText;
                 }
                return true;

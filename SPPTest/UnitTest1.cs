@@ -15,9 +15,9 @@ namespace SPPTest
         public void CreateAccountTest()
         {
            WowaccountCreator obj = new WowaccountCreator();
-            Random rnd = new Random();
-            string user = rnd.Next(50000,60000).ToString();
-            string pass = rnd.Next(50000,60000).ToString();
+            Random rnd           = new Random();
+            string user          = rnd.Next(50000,60000).ToString();
+            string pass          = rnd.Next(50000,60000).ToString();
 
             obj.txbUser.Text = user;
             obj.txbPass.Text = pass;
@@ -27,7 +27,7 @@ namespace SPPTest
         [TestMethod]
         public void ChecklangTest()
         {
-            Launcher obj = new Launcher();
+            Launcher obj     = new Launcher();
             XmlReadWrite xml = new XmlReadWrite();
             if(xml.ReadXML()){obj.checklang(false);}
             obj.checklang(true);
@@ -45,6 +45,13 @@ namespace SPPTest
         {
             Launcher obj = new Launcher();
             Assert.AreEqual(true, obj.GetUpdate());
+        }
+
+        [TestMethod]
+        public void GetLocalVerTest()
+        {
+            Launcher obj = new Launcher();
+            Assert.AreEqual(true, obj.GetLocalSrvVer());
         }
     }
 }

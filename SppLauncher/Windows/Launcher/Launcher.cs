@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
@@ -24,7 +23,7 @@ namespace SppLauncher
 {
     public partial class Launcher : Form
     {
-        #region Variable
+        #region [ Variable ]
 
         private readonly XmlReadWrite xmlReadWrite;
 
@@ -32,30 +31,16 @@ namespace SppLauncher
             ipAdress,online,resetBots,
             randomizeBots,realmListPath,
             realmDialogPath,OLDrealmList,
-            UpdLink,importFile,importFolder,
-            exportfile,exportFolder,autostart,
-            RemoteProgVer,currProgVer = "1.0.6",lang,
-            UpdateUnpack;
+            UpdLink,importFile, exportfile, 
+            Autostart, currProgVer = "1.0.6",
+            lang, UpdateUnpack, Status;
 
-        
-
+        public DateTime Dt;
         private readonly PerformanceCounter cpuCounter, ramCounter;
         public static Process _cmd, _cmd1, _cmd3;
         private DateTime _start1 = DateTime.Now;
-        public DateTime _dt;
-        private readonly Hashtable _langHash = new Hashtable();
-        private System.Resources.ResourceManager _rm;
-        private bool _startStop, _allowdev, _allowtext, _restart, _update, _updateNo, _updateYes, _serverConsoleActive;
-        public static string _status;
-        public static bool Available,
-            Updater = false,
-            allowupdaternorunwow = false,
-            OnlyMysqlStart = false,
-            MysqlON = false,
-            Sqlimport,
-            sqlexport,
-            dbupdate = false;
-
+        private bool _startStop, _allowtext, _restart, _updateYes, _serverConsoleActive;
+        public static bool Updater, OnlyMysqlStart,MysqlON,Sqlimport,sqlexport,dbupdate;
         private string _realm, _mangosdMem, _realmdMem, _sqlMem, _world, _sql;
         private readonly string getTemp = Path.GetTempPath();
         public static double CurrEmuVer, RemoteEmuVer;
@@ -64,12 +49,11 @@ namespace SppLauncher
 
         #endregion
 
-        #region Initializems
+        #region [ Initialize ]
 
         public Launcher()
         {
             xmlReadWrite = new XmlReadWrite();
-            _rm = new System.Resources.ResourceManager(typeof (Launcher));
             if(xmlReadWrite.ReadXML()){checklang(false);}
             InitializeComponent();
             checklang(true);
@@ -90,7 +74,7 @@ namespace SppLauncher
             StatusIcon();
 
 
-            if (autostart == "1")
+            if (Autostart == "1")
             {
                 startstopToolStripMenuItem.Image                = Resources.Button_stop_icon;
                 startToolStripMenuItem.Image                    = Resources.Button_stop_icon;
@@ -124,7 +108,7 @@ namespace SppLauncher
 
         #endregion
 
-        #region Servers
+        #region [ Servers ]
 
         private void SetText(string text)
         {
@@ -151,7 +135,7 @@ namespace SppLauncher
             }
             else
             {
-                _sql += text1;
+                _sql              += text1;
                 richTextBox1.Text += text1 + Environment.NewLine;
                 File.WriteAllText("logs\\mysql.txt", richTextBox1.Text);
             }
@@ -188,10 +172,10 @@ namespace SppLauncher
                         !text.Contains("MoveSpline") &&
                         !text.Contains("unknown spell id"))
                     {
-                        _dt = DateTime.Now;
+                        Dt = DateTime.Now;
 
                         if (rtWorldDev.Text      != "") rtWorldDev.Text += Environment.NewLine;
-                        rtWorldDev.Text          += _dt.ToString("[" + "HH:mm" + "]: ") + text;
+                        rtWorldDev.Text          += Dt.ToString("[" + "HH:mm" + "]: ") + text;
                         rtWorldDev.SelectionStart = rtWorldDev.Text.Length;
                         rtWorldDev.ScrollToCaret();
                     }
@@ -464,7 +448,7 @@ namespace SppLauncher
 
         #endregion
 
-        #region ProcessTasks
+        #region [ ProcessTasks ]
 
         public void CloseProcess(bool restart)
         {
@@ -577,7 +561,13 @@ namespace SppLauncher
 
         #endregion
 
-        #region OtherMethods
+        #region [ OtherMethods ]
+
+        public void statusChage(string msg, bool islink)
+        {
+            Status = msg;
+            tssStatus.IsLink = islink;
+        }
 
         public void checklang(bool option)
         {
@@ -967,10 +957,10 @@ namespace SppLauncher
 
         private void StatusBarUpdater_Tick(object sender, EventArgs e)
         {
-            tssStatus.Text = _status;
+            tssStatus.Text = Status;
         }
 
-        public void GetLocalSrvVer()
+        public bool GetLocalSrvVer()
         {
             try
             {
@@ -978,12 +968,14 @@ namespace SppLauncher
             }
             catch (Exception)
             {
+                return false;
             }
+            return true;
         }
 
         #endregion
 
-        #region WindowMenuItems
+        #region [ WindowMenuItems ]
 
 
         private void sendCommandForServerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -991,20 +983,18 @@ namespace SppLauncher
             if (!sendCommandForServerToolStripMenuItem.Checked)
             {
                 sendCommandForServerToolStripMenuItem.Checked = true;
-                _serverConsoleActive = true;
-                groupBox2.Visible = true;
-                _allowdev = true;
-                Height = 420;
-                rtWorldDev.Visible = true;
+                _serverConsoleActive                          = true;
+                groupBox2.Visible                             = true;
+                Height                                        = 420;
+                rtWorldDev.Visible                            = true;
             }
             else
             {
                 sendCommandForServerToolStripMenuItem.Checked = false;
-                _serverConsoleActive = false;
-                groupBox2.Visible = false;
-                _allowdev = false;
-                Height = 230;
-                rtWorldDev.Visible = false;
+                _serverConsoleActive                          = false;
+                groupBox2.Visible                             = false;
+                Height                                        = 230;
+                rtWorldDev.Visible                            = false;
             }
         }
 
@@ -1013,14 +1003,13 @@ namespace SppLauncher
             if (MysqlON)
             {
                 OpenFileDialog openFile = new OpenFileDialog();
-                openFile.Title = "Update";
-                openFile.Filter = "SPP Upate (*.sppupdate)|*.sppupdate";
+                openFile.Title          = "Update";
+                openFile.Filter         = "SPP Upate (*.sppupdate)|*.sppupdate";
 
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
                     UpdateUnpack = openFile.FileName;
-                    importFolder = Path.GetDirectoryName(importFile);
-                    WindowState = FormWindowState.Normal;
+                    WindowState  = FormWindowState.Normal;
                     Show();
                     statusChage(Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update, false);
                     animateStatus(true);
@@ -1030,16 +1019,15 @@ namespace SppLauncher
             else
             {
                 OpenFileDialog openFile = new OpenFileDialog();
-                openFile.Title = "Update";
-                openFile.Filter = "SPP Upate (*.sppupdate)|*.sppupdate";
+                openFile.Title          = "Update";
+                openFile.Filter         = "SPP Upate (*.sppupdate)|*.sppupdate";
 
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
-                    UpdateUnpack = openFile.FileName;
-                    importFolder = Path.GetDirectoryName(importFile);
-                    WindowState = FormWindowState.Normal;
-                    Show();
+                    UpdateUnpack         = openFile.FileName;
+                    WindowState          = FormWindowState.Normal;
                     pbAvailableM.Visible = true;
+                    Show();
                     statusChage(Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update, false);
                     animateStatus(true);
                     bWUpEx.RunWorkerAsync();
@@ -1132,14 +1120,14 @@ namespace SppLauncher
             {
                 autostartToolStripMenuItem.Checked = false;
                 autorunToolStripMenuItem.Checked   = false;
-                autostart                          = "0";
+                Autostart                          = "0";
                 xmlReadWrite.saveMethod();
             }
             else
             {
                 autostartToolStripMenuItem.Checked = true;
                 autorunToolStripMenuItem.Checked   = true;
-                autostart                          = "1";
+                Autostart                          = "1";
                 xmlReadWrite.saveMethod();
             }
         }
@@ -1150,14 +1138,14 @@ namespace SppLauncher
             {
                 autostartToolStripMenuItem.Checked = false;
                 autorunToolStripMenuItem.Checked   = false;
-                autostart                          = "0";
+                Autostart                          = "0";
                 xmlReadWrite.saveMethod();
             }
             else
             {
                 autostartToolStripMenuItem.Checked = true;
                 autorunToolStripMenuItem.Checked   = true;
-                autostart                          = "1";
+                Autostart                          = "1";
                 xmlReadWrite.saveMethod();
             }
         }
@@ -1271,7 +1259,7 @@ namespace SppLauncher
 
         #endregion
 
-        #region TrayMenu
+        #region [ TrayMenu ]
 
         private void pbAvailableM_MouseHover(object sender, EventArgs e)
         {
@@ -1448,7 +1436,7 @@ namespace SppLauncher
 
         #endregion
 
-        #region Timers
+        #region [ Timers ]
 
         private void tmrUsage_Tick(object sender, EventArgs e)
         {
@@ -1463,7 +1451,7 @@ namespace SppLauncher
             {
                 Process[] SqlProcesses;
                 SqlProcesses = Process.GetProcessesByName("mysqld");
-                _sqlMem = Convert.ToString(SqlProcesses[0].WorkingSet64/1024/1024) + "MB";
+                _sqlMem      = Convert.ToString(SqlProcesses[0].WorkingSet64/1024/1024) + "MB";
             }
             catch (Exception)
             {
@@ -1474,7 +1462,7 @@ namespace SppLauncher
             {
                 Process[] mangosdProcesses;
                 mangosdProcesses = Process.GetProcessesByName("mangosd");
-                _mangosdMem = Convert.ToString(mangosdProcesses[0].WorkingSet64/1024/1024) + "MB";
+                _mangosdMem      = Convert.ToString(mangosdProcesses[0].WorkingSet64/1024/1024) + "MB";
             }
             catch (Exception)
             {
@@ -1485,7 +1473,7 @@ namespace SppLauncher
             {
                 Process[] realmdProcesses;
                 realmdProcesses = Process.GetProcessesByName("login");
-                _realmdMem = Convert.ToString(realmdProcesses[0].WorkingSet64/1024/1024) + "MB";
+                _realmdMem      = Convert.ToString(realmdProcesses[0].WorkingSet64/1024/1024) + "MB";
             }
             catch (Exception)
             {
@@ -1507,10 +1495,10 @@ namespace SppLauncher
                 if (_realm.Contains("realmd process priority class set to HIGH"))
                 {
                     tmrRealm.Stop();
-                    DateTime end1 = DateTime.Now;
+                    DateTime end1          = DateTime.Now;
                     lblRealmStartTime.Text = (end1 - _start1).TotalSeconds.ToString();
-                    pbAvailableR.Visible = true;
-                    pbTempR.Visible = false;
+                    pbAvailableR.Visible   = true;
+                    pbTempR.Visible        = false;
                     WorldStart();
                 }
             }
@@ -1530,37 +1518,37 @@ namespace SppLauncher
                 if (_world.Contains("Loading Item converts..."))
                 {
                     pbarWorld.Value = 20;
-                    _world = "";
+                    _world          = "";
                 }
                 if (_world.Contains("Loading pet levelup spells..."))
                 {
                     pbarWorld.Value = 30;
-                    _world = "";
+                    _world          = "";
                 }
                 if (_world.Contains("Loading Quests Relations..."))
                 {
                     pbarWorld.Value = 40;
-                    _world = "";
+                    _world          = "";
                 }
                 if (_world.Contains("Loading the max pet number..."))
                 {
                     pbarWorld.Value = 50;
-                    _world = "";
+                    _world          = "";
                 }
                 if (_world.Contains("Loading Achievements..."))
                 {
                     pbarWorld.Value = 60;
-                    _world = "";
+                    _world          = "";
                 }
                 if (_world.Contains("Waypoint templates loaded"))
                 {
                     pbarWorld.Value = 70;
-                    _world = "";
+                    _world          = "";
                 }
                 if (_world.Contains("Loading GameTeleports..."))
                 {
                     pbarWorld.Value = 80;
-                    _world = "";
+                    _world          = "";
                 }
                 if (_world.Contains("Initialize AuctionHouseBot..."))
                 {
@@ -1581,7 +1569,6 @@ namespace SppLauncher
                     WindowSize(true);
                     pbarWorld.Value = 0;
                     _allowtext      = true;
-                    _allowdev       = true;
 
                     resetAllRandomBotsToolStripMenuItem.Enabled         = true;
                     randomizeBotsToolStripMenuItem.Enabled              = true;
@@ -1693,7 +1680,7 @@ namespace SppLauncher
 
         #endregion
 
-        #region Update
+        #region [ Update ]
 
 
         private void startupdate()
@@ -1714,9 +1701,9 @@ namespace SppLauncher
 
             try
             {
-                int db = Convert.ToInt32(File.ReadAllText(@"update\version"));
+                int db    = Convert.ToInt32(File.ReadAllText(@"update\version"));
                 int local = Convert.ToInt32(File.ReadAllText(@"SingleCore\version"));
-                if (db != local)
+                if (db   != local)
                 {
                     if (!MysqlON)
                     {
@@ -1731,7 +1718,7 @@ namespace SppLauncher
                         rtWorldDev.Visible = false;
                         CheckMangosCrashed.Stop();
                         _allowtext = false;
-                        _restart = true;
+                        _restart   = true;
                         CloseProcess(true);
                         GetSqlOnlineBot.Stop();
                         tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
@@ -1759,7 +1746,6 @@ namespace SppLauncher
                 File.Delete("SppLauncher_OLD.exe");
                 var uC = new Update_Completed();
                 uC.Show(); //open update completed form
-                _update = true;
             }
         }
 
@@ -1769,17 +1755,14 @@ namespace SppLauncher
             {
                 statusChage(Resources.Launcher_Checking_Update, false);
                 animateStatus(true);
-                var client = new WebClient();
-                Stream stream = client.OpenRead("https://raw.github.com/conan513/SingleCore/SPP/Tools/update.txt");
-                var reader = new StreamReader(stream);
+                var client     = new WebClient();
+                Stream stream  = client.OpenRead("https://raw.github.com/conan513/SingleCore/SPP/Tools/update.txt");
+                var reader     = new StreamReader(stream);
                 String content = reader.ReadToEnd();
                 string[] parts = content.Split(';');
-                content = parts[0];
-                RemoteEmuVer = Convert.ToDouble(parts[1]);
-                UpdLink = parts[2];
-                Available = true;
-                RemoteProgVer = content;
-                allowupdaternorunwow = true;
+                content        = parts[0];
+                RemoteEmuVer   = Convert.ToDouble(parts[1]);
+                UpdLink        = parts[2];
 
                 if (content != currProgVer)
                 {
@@ -1794,13 +1777,11 @@ namespace SppLauncher
                     }
                     else
                     {
-                        _updateNo = true;
                     }
                 }
             }
             catch (Exception)
             {
-                Available = false;
                 statusChage(Resources.Launcher_bwUpdate_DoWork_ERROR, false);
                 return false;
             }
@@ -1816,7 +1797,6 @@ namespace SppLauncher
             if (RemoteEmuVer > CurrEmuVer)
             {
                 statusChage(Resources.Launcher_bwUpdate_DoWork_New_Server_Update_Available, true);
-                _updateNo        = false;
                 animateStatus(false);
             }
             else
@@ -1845,7 +1825,7 @@ namespace SppLauncher
 
         #endregion
 
-        #region Backup
+        #region [ Backup ]
 
         private void import()
         {
@@ -1859,7 +1839,6 @@ namespace SppLauncher
                 {
                     MenuItemsDisableAfterLoad();
                     importFile         = openFile.FileName;
-                    importFolder       = Path.GetDirectoryName(importFile);
                     rtWorldDev.Visible = false;
                     CheckMangosCrashed.Stop();
                     _allowtext = false;
@@ -1890,7 +1869,6 @@ namespace SppLauncher
                     StartAll();
                     MenuItemsDisableAfterLoad();
                     importFile   = openFile.FileName;
-                    importFolder = Path.GetDirectoryName(importFile);
                     WindowState  = FormWindowState.Normal;
                     Show();
                     statusChage(Resources.Launcher_import_Decompress, false);
@@ -1901,7 +1879,6 @@ namespace SppLauncher
 
         private void bwImport_DoWork(object sender, DoWorkEventArgs e)
         {
-
             checklang(false);
             ImportExtract();
             statusChage(Resources.Launcher_import_Import_Characters, false);
@@ -1969,7 +1946,6 @@ namespace SppLauncher
                     animateStatus(true);
                     statusChage(Resources.Launcher_export_Exporting_Characters, false);
                     exportfile   = saveFile.FileName;
-                    exportFolder = Path.GetDirectoryName(exportfile);
                     bwExport.RunWorkerAsync();
                 }
             }
@@ -1988,8 +1964,6 @@ namespace SppLauncher
                     animateStatus(true);
                     statusChage(Resources.Launcher_export_Exporting_Characters, false);
                     exportfile   = saveFile.FileName;
-                    exportFolder = Path.GetDirectoryName(exportfile);
-                    //bwExport.RunWorkerAsync();
                 }
             }
         }
@@ -2028,13 +2002,13 @@ namespace SppLauncher
             {
                 ShutdownSql();
 
-                pbAvailableM.Visible = false;
-                pbNotAvailM.Visible = true;
+                pbAvailableM.Visible               = false;
+                pbNotAvailM.Visible                = true;
                 startstopToolStripMenuItem.Enabled = true;
             }
 
             OnlyMysqlStart = false;
-            _status = Resources.Launcher_bwExport_RunWorkerCompleted_Export_Completed;
+            Status = Resources.Launcher_bwExport_RunWorkerCompleted_Export_Completed;
             statusChage(Resources.Launcher_bwExport_RunWorkerCompleted_Export_Completed, false);
             animateStatus(false);
             File.Delete(getTemp + "\\save01");
@@ -2042,12 +2016,5 @@ namespace SppLauncher
         }
 
         #endregion
-
-        public void statusChage(string msg, bool islink)
-        {
-            _status = msg;
-            tssStatus.IsLink = islink;
-        }
-
     }
 }

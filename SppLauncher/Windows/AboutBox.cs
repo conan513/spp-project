@@ -6,7 +6,6 @@ namespace SppLauncher
 {
     partial class AboutBox : Form
     {
-        public static string MsgCreatedby, MsgCreatedby2,Msgver;
         public AboutBox()
         {
             InitializeComponent();
