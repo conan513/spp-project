@@ -2,20 +2,7 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>D:\Sources\SppLauncher\Windows\WowAccountCreator\WowAccountCreator.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sources\SppLauncher\Windows\WowAccountCreator\GenHash.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sources\SppLauncher\Windows\BotConf.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sources\SppLauncher\Class\ReadINI.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\Sources\StatServer\MainWindow.cs</string>
-      <string>D:\Sources\StatServer\MainWindow.Designer.cs</string>
+      <string>SPPTest</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>
