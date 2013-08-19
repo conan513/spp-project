@@ -26,7 +26,7 @@ namespace WowAccountCreator
             port = "3310";
         }
 
-        public void InsertSqlTrinity()
+        public bool InsertSqlTrinity()
         {
             try
             {
@@ -43,6 +43,7 @@ namespace WowAccountCreator
                     {
                         new MySqlCommand(InsertAdmin, connection).ExecuteNonQuery();
                     }
+                    
                     MessageBox.Show(Resources.WowaccountCreator_InsertSqlTrinity_Account_created_successfully__ +
                         txbUser.Text + Resources.WowaccountCreator_InsertSqlTrinity_ +
                         cbType.Items[cbType.SelectedIndex], "Info", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -50,6 +51,7 @@ namespace WowAccountCreator
                     txbUser.Text = "";
                     txbPass.Text = "";
                     connection.Close();
+                    return true;
                 }
             }
             catch (MySqlException exception)
@@ -57,6 +59,7 @@ namespace WowAccountCreator
                 MessageBox.Show(exception.Message.Contains("Duplicate") ? Resources.WowaccountCreator_InsertSqlTrinity_Username_is_already_taken_ : exception.Message,
                     "Warning", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
+                return false;
             }
         }
 

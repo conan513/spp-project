@@ -174,7 +174,7 @@
     <Compile Include="Windows\WorldConf.Designer.cs">
       <DependentUpon>WorldConf.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\WowAccountCreator\FileCopyOverWrite.cs" />
+    <Compile Include="Windows\DatabaseUpdate\FileCopyOverWrite.cs" />
     <Compile Include="Windows\WowAccountCreator\GenHash.cs" />
     <Compile Include="Windows\WowAccountCreator\WowAccountCreator.cs">
       <SubType>Form</SubType>

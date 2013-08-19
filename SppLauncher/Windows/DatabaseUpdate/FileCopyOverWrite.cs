@@ -1,10 +1,12 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Windows.Forms;
 
 namespace SppLauncher.Windows.WowAccountCreator
 {
     public class FileCopyOverWrite
     {
-        public void Copy(string sourceD, string destD, bool copySubD)
+        public bool Copy(string sourceD, string destD, bool copySubD)
         {
             try
             {
@@ -20,7 +22,7 @@ namespace SppLauncher.Windows.WowAccountCreator
                 foreach (FileInfo file in files)
                 {
                     string temppath = Path.Combine(destD, file.Name);
-                    file.CopyTo(temppath, false);
+                    file.CopyTo(temppath, true);
                 }
 
                 if (copySubD)
@@ -34,7 +36,9 @@ namespace SppLauncher.Windows.WowAccountCreator
             }
             catch
             {
+                return false;
             }
+            return true;
         }
     }
 }
