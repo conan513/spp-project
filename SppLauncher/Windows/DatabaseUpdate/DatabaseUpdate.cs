@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 using SppLauncher.Properties;
+using SppLauncher.Windows.WowAccountCreator;
 
 namespace SppLauncher.Windows
 {
@@ -13,10 +14,12 @@ namespace SppLauncher.Windows
         private int count, complete;
         private readonly Launcher launcher;
         private readonly RunMysql run;
+        private FileCopyOverWrite fileCopy;
         public DatabaseUpdate(Launcher otLauncher)
         {
             InitializeComponent();
             run = new RunMysql();
+            fileCopy = new FileCopyOverWrite();
             Application.EnableVisualStyles();
             launcher = otLauncher;
             DisableCloseButton();
@@ -100,7 +103,7 @@ namespace SppLauncher.Windows
             Thread.Sleep(10);
             label3.Text = "Complete!";
             label2.Text = "-";
-            if (Directory.Exists(@"update\server")) { Copy(@"update\server", @"\SingleCore"); }
+            if (Directory.Exists(@"update\server")) { fileCopy.Copy(@"update\server", "", true); }
             File.WriteAllText(@"SingleCore\version", File.ReadAllText(@"update\version"));
             Directory.Delete(@"update", true);
             EnableCloseButton();
@@ -188,17 +191,6 @@ namespace SppLauncher.Windows
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        void Copy(string sourceDir, string targetDir)
-        {
-            Directory.CreateDirectory(targetDir);
-
-            foreach (var file in Directory.GetFiles(sourceDir))
-                File.Copy(file, Path.Combine(targetDir, Path.GetFileName(file)));
-
-            foreach (var directory in Directory.GetDirectories(sourceDir))
-                Copy(directory, Path.Combine(targetDir, Path.GetFileName(directory)));
         }
 
         private void bWdbUp1_ProgressChanged(object sender, ProgressChangedEventArgs e)

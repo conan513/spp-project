@@ -121,17 +121,26 @@
     <value>Létrehoz</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblPass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 100</value>
+  </data>
   <data name="lblPass.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
   </data>
   <data name="lblPass.Text" xml:space="preserve">
     <value>Jelszó:</value>
   </data>
+  <data name="lblUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 77</value>
+  </data>
   <data name="lblUser.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 13</value>
   </data>
   <data name="lblUser.Text" xml:space="preserve">
     <value>Felhasználónév:</value>
+  </data>
+  <data name="lblType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 44</value>
   </data>
   <data name="lblType.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 13</value>

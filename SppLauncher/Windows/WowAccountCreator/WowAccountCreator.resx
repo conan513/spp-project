@@ -133,6 +133,9 @@
   <data name="lblUser.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 13</value>
   </data>
+  <data name="gbAcc.Text" xml:space="preserve">
+    <value>Create Account</value>
+  </data>
   <data name="&gt;&gt;txbPass.Parent" xml:space="preserve">
     <value>gbAcc</value>
   </data>
@@ -151,6 +154,9 @@
   </data>
   <data name="&gt;&gt;txbUser.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="cbEx.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 21</value>
   </data>
   <data name="btnCreate.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -176,6 +182,9 @@
   </data>
   <data name="&gt;&gt;bwUsageStatSender.Type" xml:space="preserve">
     <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCreate.Name" xml:space="preserve">
+    <value>btnCreate</value>
   </data>
   <data name="cbType.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -203,6 +212,9 @@
   </data>
   <data name="gbAcc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
+  </data>
+  <data name="&gt;&gt;bwUpdate.Name" xml:space="preserve">
+    <value>bwUpdate</value>
   </data>
   <data name="txbPass.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 7.8pt</value>
@@ -291,8 +303,8 @@
   <data name="&gt;&gt;lblUser.Name" xml:space="preserve">
     <value>lblUser</value>
   </data>
-  <data name="&gt;&gt;btnCreate.Name" xml:space="preserve">
-    <value>btnCreate</value>
+  <data name="cbType.Items2" xml:space="preserve">
+    <value>GameMaster</value>
   </data>
   <data name="cbType.Items3" xml:space="preserve">
     <value>Admin</value>
@@ -304,9 +316,6 @@
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblType.Parent" xml:space="preserve">
-    <value>gbAcc</value>
-  </data>
-  <data name="&gt;&gt;btnCreate.Parent" xml:space="preserve">
     <value>gbAcc</value>
   </data>
   <data name="&gt;&gt;lblEx.ZOrder" xml:space="preserve">
@@ -336,17 +345,14 @@
   <data name="&gt;&gt;cbEx.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="gbAcc.Text" xml:space="preserve">
-    <value>Create Account</value>
+  <data name="&gt;&gt;btnCreate.Parent" xml:space="preserve">
+    <value>gbAcc</value>
   </data>
   <data name="cbEx.Items3" xml:space="preserve">
     <value>Vanilla</value>
   </data>
-  <data name="&gt;&gt;bwUpdate.Name" xml:space="preserve">
-    <value>bwUpdate</value>
-  </data>
-  <data name="btnCreate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="lblType.Text" xml:space="preserve">
+    <value>Account type:</value>
   </data>
   <data name="cbEx.Items2" xml:space="preserve">
     <value>BC</value>
@@ -381,9 +387,6 @@
   <data name="&gt;&gt;gbAcc.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="lblPass.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
   <data name="cbEx.Items" xml:space="preserve">
     <value>WOTLK</value>
   </data>
@@ -401,9 +404,6 @@
   </data>
   <data name="btnCreate.Text" xml:space="preserve">
     <value>Create</value>
-  </data>
-  <data name="cbType.Items2" xml:space="preserve">
-    <value>GameMaster</value>
   </data>
   <data name="&gt;&gt;txbUser.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -429,8 +429,8 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>224, 190</value>
   </data>
-  <data name="lblType.Text" xml:space="preserve">
-    <value>Account type:</value>
+  <data name="lblPass.Text" xml:space="preserve">
+    <value>Password:</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -450,14 +450,11 @@
   <data name="lblUser.Text" xml:space="preserve">
     <value>Username:</value>
   </data>
-  <data name="cbEx.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 21</value>
+  <data name="btnCreate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <metadata name="bwUsageStatSender.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>125, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>hu</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

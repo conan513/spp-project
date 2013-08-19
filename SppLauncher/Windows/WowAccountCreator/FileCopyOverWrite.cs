@@ -1,0 +1,40 @@
+﻿using System.IO;
+
+namespace SppLauncher.Windows.WowAccountCreator
+{
+    public class FileCopyOverWrite
+    {
+        public void Copy(string sourceD, string destD, bool copySubD)
+        {
+            try
+            {
+                DirectoryInfo dir = new DirectoryInfo(sourceD);
+                DirectoryInfo[] dirs = dir.GetDirectories();
+
+                if (!Directory.Exists(destD) && destD != "")
+                {
+                    Directory.CreateDirectory(destD);
+                }
+
+                FileInfo[] files = dir.GetFiles();
+                foreach (FileInfo file in files)
+                {
+                    string temppath = Path.Combine(destD, file.Name);
+                    file.CopyTo(temppath, false);
+                }
+
+                if (copySubD)
+                {
+                    foreach (DirectoryInfo subdir in dirs)
+                    {
+                        string temppath = Path.Combine(destD, subdir.Name);
+                        Copy(subdir.FullName, temppath, copySubD);
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+    }
+}

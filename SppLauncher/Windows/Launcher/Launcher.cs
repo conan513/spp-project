@@ -487,7 +487,6 @@ namespace SppLauncher
 
                 foreach (Process proc in Process.GetProcessesByName("login"))
                 {
-                    tssStatus.IsLink = false;
                     statusChage(Resources.Launcher_CloseProcess_Login_Shutdown, false);
                     proc.Kill();
                 }
@@ -632,7 +631,6 @@ namespace SppLauncher
         {
             if (!_startStop)
             {
-                tssStatus.IsLink                              = false;
                 startstopToolStripMenuItem.Enabled            = false;
                 startToolStripMenuItem.Enabled                = false;
                 restartToolStripMenuItem1.Enabled             = false;
@@ -647,12 +645,10 @@ namespace SppLauncher
             }
             else
             {
-                resetAllRandomBotsToolStripMenuItem.Enabled = false;
-                randomizeBotsToolStripMenuItem.Enabled      = false;
-                resetBotsToolStripMenuItem.Enabled          = false;
-                randomizeBotsToolStripMenuItem1.Enabled     = false;
-
-                tssStatus.IsLink                                = false;
+                resetAllRandomBotsToolStripMenuItem.Enabled     = false;
+                randomizeBotsToolStripMenuItem.Enabled          = false;
+                resetBotsToolStripMenuItem.Enabled              = false;
+                randomizeBotsToolStripMenuItem1.Enabled         = false;
                 restartToolStripMenuItem1.Enabled               = false;
                 restartToolStripMenuItem2.Enabled               = false;
                 sendCommandForServerToolStripMenuItem.Enabled   = false;
@@ -678,7 +674,6 @@ namespace SppLauncher
 
         public void MenuItemsDisableAfterLoad()
         {
-            tssStatus.IsLink                                   = false;
             resetAllRandomBotsToolStripMenuItem.Enabled        = false;
             exportImportCharactersToolStripMenuItem.Enabled    = false;
             startstopToolStripMenuItem.Enabled                 = false;
