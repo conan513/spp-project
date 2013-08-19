@@ -4,6 +4,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
+using SppLauncher.Properties;
 
 namespace SppLauncher.Windows
 {
@@ -120,6 +121,7 @@ namespace SppLauncher.Windows
                 Launcher.OnlyMysqlStart = false;
                 Launcher.MysqlON = false;
                 Launcher.ShutdownSql();
+                Launcher._status = Resources.Launcher_bwUpdate_RunWorkerCompleted_Up_to_date;
             }
             Close();
         }

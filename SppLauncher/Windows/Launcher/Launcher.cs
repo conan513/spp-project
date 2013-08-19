@@ -8,9 +8,11 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using Ionic.Zip;
 using MySql.Data.MySqlClient;
 using MySQLClass;
@@ -46,7 +48,7 @@ namespace SppLauncher
         private readonly Hashtable _langHash = new Hashtable();
         private System.Resources.ResourceManager _rm;
         private bool _startStop, _allowdev, _allowtext, _restart, _update, _updateNo, _updateYes, _serverConsoleActive;
-
+        public static string _status;
         public static bool Available,
             Updater = false,
             allowupdaternorunwow = false,
@@ -56,7 +58,7 @@ namespace SppLauncher
             sqlexport,
             dbupdate = false;
 
-        private string _realm, _mangosdMem, _realmdMem, _sqlMem, _world, _status, _sql;
+        private string _realm, _mangosdMem, _realmdMem, _sqlMem, _world, _sql;
         private readonly string getTemp = Path.GetTempPath();
         public static double CurrEmuVer, RemoteEmuVer;
         private const string lwPath  = "SingleCore\\";
@@ -205,7 +207,7 @@ namespace SppLauncher
             pbarWorld.Visible   = true;
             pbTempW.Visible     = true;
             pbNotAvailW.Visible = false;
-            _status             = Resources.Launcher_WorldStart_Loading_World;
+            statusChage(Resources.Launcher_WorldStart_Loading_World, false);
             WindowSize(false);
             tmrWorld.Start();
             var cmdStartInfo                    = new ProcessStartInfo(lwPath + "mangosd.exe");
@@ -238,7 +240,7 @@ namespace SppLauncher
         internal void RealmdStart()
         {
             _start1             = DateTime.Now;
-            _status             = Resources.Launcher_RealmdStart_Starting_Realm;
+            statusChage(Resources.Launcher_RealmdStart_Starting_Realm, false);
             tssStatus.Image     = Resources.search_animation;
             pbTempR.Visible     = true;
             pbNotAvailR.Visible = false;
@@ -357,7 +359,7 @@ namespace SppLauncher
             _start1 = DateTime.Now;
             if (!_restart)
             {
-                _status = Resources.Launcher_StartAll_Starting_Mysqlm;
+                statusChage(Resources.Launcher_StartAll_Starting_Mysqlm, false);
                 animateStatus(true);
                 pbTempM.Visible     = true;
                 pbNotAvailM.Visible = false;
@@ -451,7 +453,7 @@ namespace SppLauncher
         private void rstchck_DoWork(object sender, DoWorkEventArgs e)
         {
             checklang(false);
-            _status         = Resources.Launcher_rstchck_DoWork_Reset_bots;
+            statusChage(Resources.Launcher_rstchck_DoWork_Reset_bots, false);
             tssStatus.Image = Resources.search_animation;
             Thread.Sleep(10000);
         }
@@ -477,7 +479,7 @@ namespace SppLauncher
                     _cmd1.StandardInput.WriteLine("save");
                     Thread.Sleep(1000);
 
-                    _status = Resources.Launcher_CloseProcess_World_Shutdown;
+                    statusChage(Resources.Launcher_CloseProcess_World_Shutdown, false);
                     _cmd1.StandardInput.WriteLine("server shutdown 0");
                     Thread.Sleep(300);
                     proc.Kill();
@@ -486,7 +488,7 @@ namespace SppLauncher
                 foreach (Process proc in Process.GetProcessesByName("login"))
                 {
                     tssStatus.IsLink = false;
-                    _status = Resources.Launcher_CloseProcess_Login_Shutdown;
+                    statusChage(Resources.Launcher_CloseProcess_Login_Shutdown, false);
                     proc.Kill();
                 }
 
@@ -665,7 +667,7 @@ namespace SppLauncher
                 tssLOnline.Text = Resources.Launcher_startNStop_Online_bot__N_A;
                 CloseProcess(false);
                 StatusIcon();
-                _status = Resources.Launcher_startNStop_Derver_is_down;
+                statusChage(Resources.Launcher_startNStop_Derver_is_down, false);
             }
         }
 
@@ -1014,21 +1016,11 @@ namespace SppLauncher
 
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
-                    MenuItemsDisableAfterLoad();
                     UpdateUnpack = openFile.FileName;
                     importFolder = Path.GetDirectoryName(importFile);
-                    rtWorldDev.Visible = false;
-                    CheckMangosCrashed.Stop();
-                    _allowtext = false;
-                    _restart = true;
-                    CloseProcess(true);
-                    GetSqlOnlineBot.Stop();
-                    tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
-                    StatusIcon();
                     WindowState = FormWindowState.Normal;
                     Show();
-                    pbAvailableM.Visible = true;
-                    _status = Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update;
+                    statusChage(Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update, false);
                     animateStatus(true);
                     bWUpEx.RunWorkerAsync();
                 }
@@ -1041,16 +1033,15 @@ namespace SppLauncher
 
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
-                    dbupdate = true;
-                    OnlyMysqlStart = true;
-                    StartAll();
                     UpdateUnpack = openFile.FileName;
                     importFolder = Path.GetDirectoryName(importFile);
                     WindowState = FormWindowState.Normal;
                     Show();
                     pbAvailableM.Visible = true;
-                    _status = Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update;
+                    statusChage(Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update, false);
                     animateStatus(true);
+                    bWUpEx.RunWorkerAsync();
+                    
                 }
             }
         }
@@ -1580,7 +1571,7 @@ namespace SppLauncher
                     DateTime end1          = DateTime.Now;
                     lblWorldStartTime.Text = (end1 - _start1).TotalSeconds.ToString();
                     pbarWorld.Value        = 100;
-                    _status                = Resources.Launcher_tmrWorld_Tick_Online;
+                    statusChage(Resources.Launcher_tmrWorld_Tick_Online, false);
                     animateStatus(false);
                     pbAvailableW.Visible = true;
                     pbTempW.Visible      = false;
@@ -1637,7 +1628,12 @@ namespace SppLauncher
                     pbTempM.Visible      = false;
                     _sql                 = "";
                     if (Sqlimport) bwImport.RunWorkerAsync();
-                    if (dbupdate) bWUpEx.RunWorkerAsync();
+                    if (dbupdate)
+                    {
+                        animateStatus(false);
+                        Hide();
+                        startupdate();
+                    }
                     if (sqlexport) bwExport.RunWorkerAsync();
                     if (!OnlyMysqlStart)
                     {
@@ -1711,34 +1707,43 @@ namespace SppLauncher
 
         private void bWUpEx_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            _status = Resources.Launcher_bWUpEx_RunWorkerCompleted_Completed;
+            statusChage(Resources.Launcher_bWUpEx_RunWorkerCompleted_Completed, false);
             animateStatus(false);
+
             try
             {
                 int db = Convert.ToInt32(File.ReadAllText(@"update\version"));
                 int local = Convert.ToInt32(File.ReadAllText(@"SingleCore\version"));
                 if (db != local)
                 {
-                    Hide();
-                    startupdate();
+                    if (!MysqlON)
+                    {
+                        dbupdate = true;
+                        OnlyMysqlStart = true;
+                        StartAll();
+                    }
+                    else
+                    {
+                        dbupdate = true;
+                        MenuItemsDisableAfterLoad();
+                        rtWorldDev.Visible = false;
+                        CheckMangosCrashed.Stop();
+                        _allowtext = false;
+                        _restart = true;
+                        CloseProcess(true);
+                        GetSqlOnlineBot.Stop();
+                        tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
+                        StatusIcon();
+                        pbAvailableM.Visible = true;
+                        Hide();
+                        startupdate();
+                    }
                 }
                 else
                 {
-                    dbupdate = false;
-
-                    if (!OnlyMysqlStart) { RealmdStart(); }
-                    else
-                    {
-                        pbAvailableM.Visible = false;
-                        pbNotAvailM.Visible = true;
-                        OnlyMysqlStart = false;
-                        MysqlON = false;
-                        ShutdownSql();
-                        Directory.Delete(@"update", true);
-                    }
-
-                    ShutdownSql();
+                    Directory.Delete(@"update", true);
                     MessageBox.Show(Resources.Your_DB_is_up_to_date_);
+                    statusChage(Resources.Launcher_bwUpdate_RunWorkerCompleted_Up_to_date, false);
                 }
             }
             catch
@@ -1761,7 +1766,7 @@ namespace SppLauncher
             checklang(false);
             try
             {
-                _status = Resources.Launcher_Checking_Update;
+                statusChage(Resources.Launcher_Checking_Update, false);
                 animateStatus(true);
                 var client           = new WebClient();
                 Stream stream        = client.OpenRead("https://raw.github.com/conan513/SingleCore/SPP/Tools/update.txt");
@@ -1796,21 +1801,20 @@ namespace SppLauncher
             catch (Exception)
             {
                 Available = false;
-                _status = Resources.Launcher_bwUpdate_DoWork_ERROR;
+                statusChage(Resources.Launcher_bwUpdate_DoWork_ERROR, false);
             }
 
             CurrEmuVer = Convert.ToDouble(File.ReadAllText("SingleCore\\version"));
 
             if (RemoteEmuVer > CurrEmuVer)
             {
-                _status          = Resources.Launcher_bwUpdate_DoWork_New_Server_Update_Available;
-                tssStatus.IsLink = true;
+                statusChage(Resources.Launcher_bwUpdate_DoWork_New_Server_Update_Available, true);
                 _updateNo        = false;
                 animateStatus(false);
             }
             else
             {
-                    _status = Resources.Launcher_bwUpdate_RunWorkerCompleted_Up_to_date;
+                    statusChage(Resources.Launcher_bwUpdate_RunWorkerCompleted_Up_to_date, false);
                     animateStatus(false);
             }
         }
@@ -1862,7 +1866,7 @@ namespace SppLauncher
                     WindowState = FormWindowState.Normal;
                     Show();
                     pbAvailableM.Visible = true;
-                    _status = Resources.Launcher_import_Decompress;
+                    statusChage(Resources.Launcher_import_Decompress, false);
                     animateStatus(true);
                     bwImport.RunWorkerAsync();
                 }
@@ -1884,7 +1888,7 @@ namespace SppLauncher
                     importFolder = Path.GetDirectoryName(importFile);
                     WindowState  = FormWindowState.Normal;
                     Show();
-                    _status = Resources.Launcher_import_Decompress;
+                    statusChage(Resources.Launcher_import_Decompress, false);
                     animateStatus(true);
                 }
             }
@@ -1895,7 +1899,7 @@ namespace SppLauncher
 
             checklang(false);
             ImportExtract();
-            _status = Resources.Launcher_import_Import_Characters;
+            statusChage(Resources.Launcher_import_Import_Characters, false);
 
             string conn            =
                 "server            =127.0.0.1;user=root;pwd=123456;database=characters;port=3310;convertzerodatetime=true;";
@@ -1903,7 +1907,7 @@ namespace SppLauncher
             mb.ImportInfo.FileName = getTemp + "\\save01";
             mb.Import();
 
-            _status = Resources.Launcher_bwImport_DoWork_Import_Accounts;
+            statusChage(Resources.Launcher_bwImport_DoWork_Import_Accounts, false);
 
             string conn1            = "server=127.0.0.1;user=root;pwd=123456;database=realmd;port=3310;convertzerodatetime=true;";
             MySqlBackup mb1         = new MySqlBackup(conn1);
@@ -1926,7 +1930,7 @@ namespace SppLauncher
                 StartAll();
             }
             OnlyMysqlStart = false;
-            _status = Resources.Launcher_bwImport_RunWorkerCompleted_Import_Completed;
+            statusChage(Resources.Launcher_bwImport_RunWorkerCompleted_Import_Completed, false);
             animateStatus(false);
             File.Delete(getTemp + "\\save01");
             File.Delete(getTemp + "\\save02");
@@ -1958,7 +1962,7 @@ namespace SppLauncher
                 if (saveFile.ShowDialog() == DialogResult.OK)
                 {
                     animateStatus(true);
-                    _status      = Resources.Launcher_export_Exporting_Characters;
+                    statusChage(Resources.Launcher_export_Exporting_Characters, false);
                     exportfile   = saveFile.FileName;
                     exportFolder = Path.GetDirectoryName(exportfile);
                     bwExport.RunWorkerAsync();
@@ -1977,7 +1981,7 @@ namespace SppLauncher
                     sqlexport = true;
                     StartAll();
                     animateStatus(true);
-                    _status      = Resources.Launcher_export_Exporting_Characters;
+                    statusChage(Resources.Launcher_export_Exporting_Characters, false);
                     exportfile   = saveFile.FileName;
                     exportFolder = Path.GetDirectoryName(exportfile);
                     //bwExport.RunWorkerAsync();
@@ -1994,14 +1998,14 @@ namespace SppLauncher
             mb.ExportInfo.FileName = getTemp + "\\save01";
             mb.Export();
 
-            _status = Resources.Launcher_bwExport_DoWork_Export_Accounts;
+            statusChage(Resources.Launcher_bwExport_DoWork_Export_Accounts, false);
 
             string conn1 = "server=127.0.0.1;user=root;pwd=123456;database=realmd;port=3310;convertzerodatetime=true;";
             MySqlBackup mb1 = new MySqlBackup(conn1);
             mb1.ExportInfo.FileName = getTemp + "\\save02";
             mb1.Export();
 
-            _status = Resources.Launcher_bwExport_DoWork_Compressing;
+            statusChage(Resources.Launcher_bwExport_DoWork_Compressing, false);
 
             using (ZipFile zip = new ZipFile()) //create .sppbackup
             {
@@ -2026,11 +2030,19 @@ namespace SppLauncher
 
             OnlyMysqlStart = false;
             _status = Resources.Launcher_bwExport_RunWorkerCompleted_Export_Completed;
+            statusChage(Resources.Launcher_bwExport_RunWorkerCompleted_Export_Completed, false);
             animateStatus(false);
             File.Delete(getTemp + "\\save01");
             File.Delete(getTemp + "\\save02");
         }
 
         #endregion
+
+        public void statusChage(string msg, bool islink)
+        {
+            _status = msg;
+            tssStatus.IsLink = islink;
+        }
+
     }
 }
