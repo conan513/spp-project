@@ -7,7 +7,7 @@ namespace SppLauncher.Class
     class XmlReadWrite
     {
         private Launcher launcher;
-
+        
         public void saveMethod()
         {
             var writer        = new XmlTextWriter("config\\SppPathConfig.xml", Encoding.UTF8);

@@ -6,17 +6,6 @@ namespace SppLauncher.Windows
 {
     class RunMysql
     {
-
-        public void run(List<String> commands)
-        {
-            ProcessStartInfo processStartInfo = new ProcessStartInfo();
-            processStartInfo.FileName = @"Database\bin\mysql.exe";
-            processStartInfo.Arguments = String.Format(
-                "-C -B --host={0} -P {1} --user={2} --password={3} --database={4} -e \"\\. {5}\"",
-                server, port, user, password, database, filename);
-
-        }
-
         public void RunMySql(string server, int port, string user, string password, string database, string filename)
         {
             var process = Process.Start(

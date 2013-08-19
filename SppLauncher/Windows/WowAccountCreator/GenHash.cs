@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SppLauncher.Windows.WowAccountCreator
 {
-    class GenHash
+    public class GenHash
     {
         public string Sha1_hash(string user, string pass)
         {
