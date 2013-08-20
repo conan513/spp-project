@@ -395,7 +395,7 @@ The changes to take effect bot reset requiered.</value>
 The changes to take effect bot reset requiered.</value>
   </data>
   <data name="BotConf_cbRndBotLgn_MouseHover_All_bots_join_on_start_" xml:space="preserve">
-    <value>All bots join on start.</value>
+    <value>All available bots join on start.</value>
   </data>
   <data name="Function_is_temporarily_disabled" xml:space="preserve">
     <value>Function is temporarily disabled</value>

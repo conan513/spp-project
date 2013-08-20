@@ -718,7 +718,7 @@
             // 
             // SrvAnnounce
             // 
-            this.SrvAnnounce.Interval = 600000;
+            this.SrvAnnounce.Interval = 900000;
             this.SrvAnnounce.Tick += new System.EventHandler(this.SrvAnnounce_Tick);
             // 
             // CheckMangosCrashed

@@ -784,7 +784,6 @@ namespace SppLauncher
                     wowExePath      = dialog.FileName;
                     realmDialogPath = Path.GetDirectoryName(wowExePath);
                     RealmDialog();
-
                 }
                 catch (Exception)
                 {
@@ -867,6 +866,8 @@ namespace SppLauncher
             switch (e.KeyData)
             {
                 case Keys.Enter:
+                    e.Handled          = true;
+                    e.SuppressKeyPress = true;
                     _cmd1.StandardInput.WriteLine(txbWorldDev.Text);
                     txbWorldDev.Text = "";
                     break;
@@ -1647,8 +1648,7 @@ namespace SppLauncher
 
         private void SrvAnnounce_Tick(object sender, EventArgs e)
         {
-            SrvAnnounce.Stop();
-            _cmd1.StandardInput.WriteLine("announce" + online);
+            _cmd1.StandardInput.WriteLine(".announce {0}", tssLOnline);
         }
 
         private void CheckMangosCrashed_Tick(object sender, EventArgs e)

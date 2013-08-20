@@ -71,7 +71,7 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All bots join on start..
+        ///   Looks up a localized string similar to All available bots join on start..
         /// </summary>
         internal static string BotConf_cbRndBotLgn_MouseHover_All_bots_join_on_start_ {
             get {
