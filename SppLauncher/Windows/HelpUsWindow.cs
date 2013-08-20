@@ -99,9 +99,7 @@ namespace SppLauncher
 
         private void DonateWhiter_Click(object sender, EventArgs e)
         {
-            Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L5L443PH22PQ4");
+            Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VR33SHQ7LZY42&lc=HU&item_name=Single%20Player%20Project&item_number=SPP&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted");
         }
-
-
     }
 }

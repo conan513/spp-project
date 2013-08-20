@@ -2,9 +2,11 @@
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Configuration;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using MySQLClass;
 
 namespace SppLauncher.Windows
@@ -13,12 +15,12 @@ namespace SppLauncher.Windows
     {
         public static bool Available, updateYes, allowCheck = true, FirstRun = false, allowUsageStat = true;
         public static string ip, user, pass, db, port, currVer = "1.0.1", RemoteVer, test;
-
+        private GetPublicIP GetPublic;
         public LanSwitcher()
         {
             InitializeComponent();
            // cbCh.Text = "Offline";
-
+            GetPublic = new GetPublicIP();
             ip = "127.0.0.1";
             user = "root";
             pass = "123456";
@@ -27,26 +29,6 @@ namespace SppLauncher.Windows
 
             CheckLan();
         }
-
-
-        public string GetPublicIP()
-        {
-            String direction = "";
-            WebRequest request = WebRequest.Create("http://checkip.dyndns.org/");
-            using (WebResponse response = request.GetResponse())
-            using (StreamReader stream = new StreamReader(response.GetResponseStream()))
-            {
-                direction = stream.ReadToEnd();
-            }
-
-            //Search for the ip in the html
-            int first = direction.IndexOf("Address: ") + 9;
-            int last = direction.LastIndexOf("</body>");
-            direction = direction.Substring(first, last - first);
-
-            return direction;
-        }
-
 
         private void CheckLan()
         {
@@ -64,10 +46,10 @@ namespace SppLauncher.Windows
                     cbCh.Text = "Lan";
                     txbLanip.Text = lan;
                 }
-                else if (lan == GetPublicIP())
+                else if (lan == GetPublic.IP())
                 {
                     cbCh.Text = "Internet";
-                    txbLanip.Text = GetPublicIP();
+                    txbLanip.Text = GetPublic.IP();
                 }
             }
             catch (Exception)
@@ -88,7 +70,7 @@ namespace SppLauncher.Windows
                     txbLanip.Text = Convert.ToString(LocalIPAddress());
                     break;
                 case "Internet":
-                    txbLanip.Text = GetPublicIP();
+                    txbLanip.Text = GetPublic.IP();
                     break;
             }
         }

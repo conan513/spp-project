@@ -48,6 +48,7 @@
             this.timerSave = new System.Windows.Forms.Timer(this.components);
             this.btnChange = new System.Windows.Forms.Button();
             this.fbd = new System.Windows.Forms.FolderBrowserDialog();
+            this.Getip = new System.Windows.Forms.Timer(this.components);
             this.gBStat.SuspendLayout();
             this.cmsUp.SuspendLayout();
             this.gBhistory.SuspendLayout();
@@ -213,6 +214,11 @@
             this.btnChange.UseVisualStyleBackColor = true;
             this.btnChange.Click += new System.EventHandler(this.button3_Click);
             // 
+            // Getip
+            // 
+            this.Getip.Interval = 600000;
+            this.Getip.Tick += new System.EventHandler(this.Getip_Tick);
+            // 
             // Statistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,6 +272,7 @@
         private System.Windows.Forms.Label lblReportt;
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.FolderBrowserDialog fbd;
+        private System.Windows.Forms.Timer Getip;
     }
 }
 

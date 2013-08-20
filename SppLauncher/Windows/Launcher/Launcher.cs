@@ -818,7 +818,6 @@ namespace SppLauncher
                 CheckLanIpInRealmDatabase();
                 OLDrealmList = File.ReadAllText(realmListPath, Encoding.UTF8);
                 NotifyBallon(1000, Resources.Launcher_RealmRestore_Realmlist, "Set " + ipAdress, false);
-
             }
             catch (Exception ex)
             {
@@ -832,7 +831,6 @@ namespace SppLauncher
             catch (Exception ex)
             {
                 MessageBox.Show(Resources.Launcher_RealmChange0_ + ex.Message);
-
             }
         }
 
@@ -1482,7 +1480,8 @@ namespace SppLauncher
                 {
                     tmrRealm.Stop();
                     DateTime end1          = DateTime.Now;
-                    _RealmStartTime = (end1 - _start1).TotalSeconds.ToString();
+                    _RealmStartTime = (end1 - _start1).TotalSeconds.ToString("##.0" + "sec");
+
                     pbAvailableR.Visible   = true;
                     pbTempR.Visible        = false;
                     WorldStart();
@@ -1545,7 +1544,7 @@ namespace SppLauncher
                     tmrWorld.Stop();
 
                     DateTime end1          = DateTime.Now;
-                    _WorldStartTime = (end1 - _start1).TotalSeconds.ToString();
+                    _WorldStartTime = (end1 - _start1).TotalSeconds.ToString("##.0" + "sec");
                     pbarWorld.Value        = 100;
                     statusChage(Resources.Launcher_tmrWorld_Tick_Online, false);
                     animateStatus(false);
@@ -1598,7 +1597,7 @@ namespace SppLauncher
                     MysqlON = true;
                     SqlStartCheck.Stop();
                     DateTime end1        = DateTime.Now;
-                    _SqlStartTime = (end1 - _start1).TotalSeconds.ToString();
+                    _SqlStartTime = (end1 - _start1).TotalSeconds.ToString("##.0" + " sec");
                     pbAvailableM.Visible = true;
                     pbTempM.Visible      = false;
                     _sql                 = "";

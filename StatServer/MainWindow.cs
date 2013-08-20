@@ -25,6 +25,8 @@ namespace StatServer
         private string[] _att = new string[8];
         public static string savepath;
         private readonly XmlReadW xmlReadWrite;
+        private GetPublicIP get = new GetPublicIP();
+
         public Statistics()
         {
             InitializeComponent();
@@ -34,6 +36,10 @@ namespace StatServer
             timerSave.Start();
             StatusChange("Not Connected");
             xmlReadWrite.ReadXml();
+            //Thread t = new Thread(() => File.WriteAllText(@"D:\Dropbox\Public\Updates\ip.txt", get.IP()));
+            //t.Start();
+            Getip.Start();
+
         }
 
         private void StatusChange (string msg)
@@ -243,7 +249,7 @@ namespace StatServer
             LoadStat();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+       private void timer1_Tick(object sender, EventArgs e)
         {
             TimeSpan delta = DateTime.Now - _startTime;
             tssUptime.Text = delta.Days.ToString(CultureInfo.InvariantCulture)+ "d " +
@@ -268,6 +274,15 @@ namespace StatServer
                     savepath = dlg.SelectedPath;
                     xmlReadWrite.SaveXml();
                 }
+            }
+        }
+
+        private void Getip_Tick(object sender, EventArgs e)
+        {
+            string ip = get.IP();
+            if (ip != File.ReadAllText(@"D:\Dropbox\Public\Updates\ip.txt"))
+            {
+                File.WriteAllText(@"D:\Dropbox\Public\Updates\ip.txt", ip);
             }
         }
     }
