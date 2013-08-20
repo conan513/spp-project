@@ -32,7 +32,7 @@ namespace SppLauncher
             randomizeBots,realmListPath,
             realmDialogPath,OLDrealmList,
             UpdLink,importFile, exportfile, 
-            Autostart, currProgVer = "1.0.6",
+            Autostart, currProgVer = "1.1.0",
             lang, UpdateUnpack, Status;
 
         public DateTime Dt;
