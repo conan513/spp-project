@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugReportGUI", "BugReportGU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPPTest", "SPPTest\SPPTest.csproj", "{99FA27DA-3D14-465B-9ED7-AF1E4043D223}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{4D5F26D0-0FF9-4364-9EB5-F9382DE84108}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{99FA27DA-3D14-465B-9ED7-AF1E4043D223} = {4D5F26D0-0FF9-4364-9EB5-F9382DE84108}
 	EndGlobalSection
 	GlobalSection(CodealikeProperties) = postSolution
 		SolutionGuid = 01c6b685-ddb6-4656-acc2-9904a73e5362

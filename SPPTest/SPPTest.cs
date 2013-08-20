@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SppLauncher;
 using SppLauncher.Class;
@@ -9,23 +10,33 @@ using WowAccountCreator;
 namespace SPPTest
 {
     [TestClass]
-    public class UnitTest1
+    public class SPPTest
     {
+
+        private Random _random = new Random(Environment.TickCount);
+
+        public string RandomString(int length)
+        {
+            string chars = "abcdefghijklmnopqrstuvwxyz";
+            StringBuilder builder = new StringBuilder(length);
+
+            for (int i = 0; i < length; ++i)
+                builder.Append(chars[_random.Next(chars.Length)]);
+
+            return builder.ToString();
+        }
+
         [TestMethod]
-        public void CreateAccountTest()
+        public void CreateAccount()
         {
            WowaccountCreator obj = new WowaccountCreator();
-            Random rnd           = new Random();
-            string user          = rnd.Next(50000,60000).ToString();
-            string pass          = rnd.Next(50000,60000).ToString();
-
-            obj.txbUser.Text = user;
-            obj.txbPass.Text = pass;
+            obj.txbUser.Text = RandomString(8);
+            obj.txbPass.Text = RandomString(8);
             Assert.AreEqual(true, obj.InsertSqlTrinity());
         }
 
         [TestMethod]
-        public void ChecklangTest()
+        public void Checklang()
         {
             Launcher obj     = new Launcher();
             XmlReadWrite xml = new XmlReadWrite();
@@ -34,21 +45,21 @@ namespace SPPTest
         }
 
         [TestMethod]
-        public void CopyUpdatesTest()
+        public void CopyUpdates()
         {
             FileCopyOverWrite obj = new FileCopyOverWrite();
             if (Directory.Exists(@"update\server")) { Assert.AreEqual(true,obj.Copy(@"update\server", "", true)); }
         }
 
         [TestMethod]
-        public void GetUpdateTest()
+        public void GetUpdate()
         {
             Launcher obj = new Launcher();
             Assert.AreEqual(true, obj.GetUpdate());
         }
 
         [TestMethod]
-        public void GetLocalVerTest()
+        public void GetLocalVer()
         {
             Launcher obj = new Launcher();
             Assert.AreEqual(true, obj.GetLocalSrvVer());
