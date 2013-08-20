@@ -815,8 +815,9 @@ namespace SppLauncher
         {
             try
             {
+                CheckLanIpInRealmDatabase();
                 OLDrealmList = File.ReadAllText(realmListPath, Encoding.UTF8);
-                NotifyBallon(1000, Resources.Launcher_RealmRestore_Realmlist, "Set 127.0.0.1", false);
+                NotifyBallon(1000, Resources.Launcher_RealmRestore_Realmlist, "Set " + ipAdress, false);
 
             }
             catch (Exception ex)
@@ -826,7 +827,7 @@ namespace SppLauncher
 
             try
             {
-                File.WriteAllText(realmListPath, "set realmlist 127.0.0.1");
+                File.WriteAllText(realmListPath, "set realmlist " + ipAdress);
             }
             catch (Exception ex)
             {
