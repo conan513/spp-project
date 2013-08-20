@@ -104,12 +104,6 @@
     <Compile Include="Windows\BugReport\BugReport.Designer.cs">
       <DependentUpon>BugReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\BugReport\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\BugReport\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Windows\BugReport\GetServerIP.cs" />
     <Compile Include="Windows\BugReport\GetSysInfo.cs" />
     <Compile Include="Windows\BugReport\SendReport.cs" />

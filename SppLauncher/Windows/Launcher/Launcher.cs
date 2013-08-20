@@ -41,7 +41,7 @@ namespace SppLauncher
         private DateTime _start1 = DateTime.Now;
         private bool _startStop, _allowtext, _restart, _updateYes, _serverConsoleActive;
         public static bool Updater, OnlyMysqlStart,MysqlON,Sqlimport,sqlexport,dbupdate;
-        private string _realm, _mangosdMem, _realmdMem, _sqlMem, _world, _sql;
+        private string _realm, _mangosdMem, _realmdMem, _sqlMem, _world, _sql, _SqlStartTime, _RealmStartTime, _WorldStartTime;
         private readonly string getTemp = Path.GetTempPath();
         public static double CurrEmuVer, RemoteEmuVer;
         private const string lwPath  = "SingleCore\\";
@@ -563,6 +563,8 @@ namespace SppLauncher
 
         #region [ OtherMethods ]
 
+
+
         public void statusChage(string msg, bool islink)
         {
             Status = msg;
@@ -1000,40 +1002,7 @@ namespace SppLauncher
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MysqlON)
-            {
-                OpenFileDialog openFile = new OpenFileDialog();
-                openFile.Title          = "Update";
-                openFile.Filter         = "SPP Upate (*.sppupdate)|*.sppupdate";
-
-                if (openFile.ShowDialog() == DialogResult.OK)
-                {
-                    UpdateUnpack = openFile.FileName;
-                    WindowState  = FormWindowState.Normal;
-                    Show();
-                    statusChage(Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update, false);
-                    animateStatus(true);
-                    bWUpEx.RunWorkerAsync();
-                }
-            }
-            else
-            {
-                OpenFileDialog openFile = new OpenFileDialog();
-                openFile.Title          = "Update";
-                openFile.Filter         = "SPP Upate (*.sppupdate)|*.sppupdate";
-
-                if (openFile.ShowDialog() == DialogResult.OK)
-                {
-                    UpdateUnpack         = openFile.FileName;
-                    WindowState          = FormWindowState.Normal;
-                    pbAvailableM.Visible = true;
-                    Show();
-                    statusChage(Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update, false);
-                    animateStatus(true);
-                    bWUpEx.RunWorkerAsync();
-                    
-                }
-            }
+            UpdateInFile();
         }
 
         private void magyarToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -1261,22 +1230,27 @@ namespace SppLauncher
 
         #region [ TrayMenu ]
 
+        private void openUpdateFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateInFile();
+        }
+
         private void pbAvailableM_MouseHover(object sender, EventArgs e)
         {
             ToolTip tt = new ToolTip();
-            tt.SetToolTip(this.pbAvailableM, lblSqlStartTime.Text);
+            tt.SetToolTip(this.pbAvailableM, _SqlStartTime);
         }
 
         private void pbAvailableR_MouseHover(object sender, EventArgs e)
         {
             ToolTip tt = new ToolTip();
-            tt.SetToolTip(this.pbAvailableR, lblRealmStartTime.Text);
+            tt.SetToolTip(this.pbAvailableR, _RealmStartTime);
         }
 
         private void pbAvailableW_MouseHover(object sender, EventArgs e)
         {
             ToolTip tt = new ToolTip();
-            tt.SetToolTip(this.pbAvailableW, lblWorldStartTime.Text);
+            tt.SetToolTip(this.pbAvailableW, _WorldStartTime);
 
         }
 
@@ -1330,17 +1304,28 @@ namespace SppLauncher
 
         private void lanSwitcherToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("Tools\\IP_Changer.exe");
+            if (Application.OpenForms["LanSwitcher"] == null)
+            {
+                var show = new LanSwitcher();
+                show.Show();
+            }
+            else
+            {
+                Application.OpenForms["LanSwitcher"].Activate();
+            }
         }
 
         private void accountToolToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("Tools\\AccountCreator.exe");
-        }
-
-        private void accountToolAdvancedToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Process.Start("Tools\\AccountCreator_adv.exe");
+            if (Application.OpenForms["WowAccountCreator"] == null)
+            {
+                var show = new WowaccountCreator();
+                show.Show();
+            }
+            else
+            {
+                Application.OpenForms["WowAccountCreator"].Activate();
+            }
         }
 
         private void changeWoWPathToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1391,7 +1376,6 @@ namespace SppLauncher
             GetSqlOnlineBot.Stop();
             Thread.Sleep(200);
             CloseProcess(false);
-
             SppTray.Visible = false;
             Loader.Kill     = true;
         }
@@ -1496,7 +1480,7 @@ namespace SppLauncher
                 {
                     tmrRealm.Stop();
                     DateTime end1          = DateTime.Now;
-                    lblRealmStartTime.Text = (end1 - _start1).TotalSeconds.ToString();
+                    _RealmStartTime = (end1 - _start1).TotalSeconds.ToString();
                     pbAvailableR.Visible   = true;
                     pbTempR.Visible        = false;
                     WorldStart();
@@ -1559,7 +1543,7 @@ namespace SppLauncher
                     tmrWorld.Stop();
 
                     DateTime end1          = DateTime.Now;
-                    lblWorldStartTime.Text = (end1 - _start1).TotalSeconds.ToString();
+                    _WorldStartTime = (end1 - _start1).TotalSeconds.ToString();
                     pbarWorld.Value        = 100;
                     statusChage(Resources.Launcher_tmrWorld_Tick_Online, false);
                     animateStatus(false);
@@ -1612,7 +1596,7 @@ namespace SppLauncher
                     MysqlON = true;
                     SqlStartCheck.Stop();
                     DateTime end1        = DateTime.Now;
-                    lblSqlStartTime.Text = (end1 - _start1).TotalSeconds.ToString();
+                    _SqlStartTime = (end1 - _start1).TotalSeconds.ToString();
                     pbAvailableM.Visible = true;
                     pbTempM.Visible      = false;
                     _sql                 = "";
@@ -1682,6 +1666,44 @@ namespace SppLauncher
 
         #region [ Update ]
 
+
+        public void UpdateInFile()
+        {
+            if (MysqlON)
+            {
+                OpenFileDialog openFile = new OpenFileDialog();
+                openFile.Title = "Update";
+                openFile.Filter = "SPP Upate (*.sppupdate)|*.sppupdate";
+
+                if (openFile.ShowDialog() == DialogResult.OK)
+                {
+                    UpdateUnpack = openFile.FileName;
+                    WindowState = FormWindowState.Normal;
+                    Show();
+                    statusChage(Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update, false);
+                    animateStatus(true);
+                    bWUpEx.RunWorkerAsync();
+                }
+            }
+            else
+            {
+                OpenFileDialog openFile = new OpenFileDialog();
+                openFile.Title = "Update";
+                openFile.Filter = "SPP Upate (*.sppupdate)|*.sppupdate";
+
+                if (openFile.ShowDialog() == DialogResult.OK)
+                {
+                    UpdateUnpack = openFile.FileName;
+                    WindowState = FormWindowState.Normal;
+                    pbAvailableM.Visible = true;
+                    Show();
+                    statusChage(Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update, false);
+                    animateStatus(true);
+                    bWUpEx.RunWorkerAsync();
+
+                }
+            }
+        }
 
         private void startupdate()
         {
@@ -2016,5 +2038,6 @@ namespace SppLauncher
         }
 
         #endregion
+
     }
 }

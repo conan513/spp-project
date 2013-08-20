@@ -61,9 +61,6 @@
             this.changeWoWPathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetBotsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.randomizeBotsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportImportCharactersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.importToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lanSwitcherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,7 +92,6 @@
             this.accountToolToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.exportImportCharactersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -114,9 +110,6 @@
             this.tssStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SrvAnnounce = new System.Windows.Forms.Timer(this.components);
-            this.lblWorldStartTime = new System.Windows.Forms.Label();
-            this.lblRealmStartTime = new System.Windows.Forms.Label();
-            this.lblSqlStartTime = new System.Windows.Forms.Label();
             this.CheckMangosCrashed = new System.Windows.Forms.Timer(this.components);
             this.bwUpdate = new System.ComponentModel.BackgroundWorker();
             this.StatusBarUpdater = new System.Windows.Forms.Timer(this.components);
@@ -126,6 +119,12 @@
             this.bwExport = new System.ComponentModel.BackgroundWorker();
             this.tmrUsage = new System.Windows.Forms.Timer(this.components);
             this.bWUpEx = new System.ComponentModel.BackgroundWorker();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.exportImportCharactersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.importToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.openUpdateFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNotAvailW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTempW)).BeginInit();
@@ -333,8 +332,7 @@
             this.botSettingsToolStripMenuItem1,
             this.changeWoWPathToolStripMenuItem,
             this.resetBotsToolStripMenuItem,
-            this.randomizeBotsToolStripMenuItem1,
-            this.exportImportCharactersToolStripMenuItem});
+            this.randomizeBotsToolStripMenuItem1});
             this.settingsToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.configuration_1;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
@@ -369,33 +367,14 @@
             resources.ApplyResources(this.randomizeBotsToolStripMenuItem1, "randomizeBotsToolStripMenuItem1");
             this.randomizeBotsToolStripMenuItem1.Click += new System.EventHandler(this.randomizeBotsToolStripMenuItem1_Click);
             // 
-            // exportImportCharactersToolStripMenuItem
-            // 
-            this.exportImportCharactersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportToolStripMenuItem1,
-            this.importToolStripMenuItem1});
-            this.exportImportCharactersToolStripMenuItem.Name = "exportImportCharactersToolStripMenuItem";
-            resources.ApplyResources(this.exportImportCharactersToolStripMenuItem, "exportImportCharactersToolStripMenuItem");
-            // 
-            // exportToolStripMenuItem1
-            // 
-            this.exportToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.Export_Icon_32;
-            this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
-            resources.ApplyResources(this.exportToolStripMenuItem1, "exportToolStripMenuItem1");
-            this.exportToolStripMenuItem1.Click += new System.EventHandler(this.exportToolStripMenuItem1_Click);
-            // 
-            // importToolStripMenuItem1
-            // 
-            this.importToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.Import_Icon_32;
-            this.importToolStripMenuItem1.Name = "importToolStripMenuItem1";
-            resources.ApplyResources(this.importToolStripMenuItem1, "importToolStripMenuItem1");
-            this.importToolStripMenuItem1.Click += new System.EventHandler(this.importToolStripMenuItem1_Click);
-            // 
             // toolToolStripMenuItem
             // 
             this.toolToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lanSwitcherToolStripMenuItem,
-            this.accountToolToolStripMenuItem});
+            this.accountToolToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.exportImportCharactersToolStripMenuItem,
+            this.openUpdateFileToolStripMenuItem});
             this.toolToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.icon_gear;
             this.toolToolStripMenuItem.Name = "toolToolStripMenuItem";
             resources.ApplyResources(this.toolToolStripMenuItem, "toolToolStripMenuItem");
@@ -618,13 +597,6 @@
             this.exportImportCharactersToolStripMenuItem1.Name = "exportImportCharactersToolStripMenuItem1";
             resources.ApplyResources(this.exportImportCharactersToolStripMenuItem1, "exportImportCharactersToolStripMenuItem1");
             // 
-            // exportToolStripMenuItem2
-            // 
-            this.exportToolStripMenuItem2.Image = global::SppLauncher.Properties.Resources.Export_Icon_32;
-            this.exportToolStripMenuItem2.Name = "exportToolStripMenuItem2";
-            resources.ApplyResources(this.exportToolStripMenuItem2, "exportToolStripMenuItem2");
-            this.exportToolStripMenuItem2.Click += new System.EventHandler(this.exportToolStripMenuItem2_Click);
-            // 
             // importToolStripMenuItem2
             // 
             this.importToolStripMenuItem2.Image = global::SppLauncher.Properties.Resources.Import_Icon_32;
@@ -749,21 +721,6 @@
             this.SrvAnnounce.Interval = 600000;
             this.SrvAnnounce.Tick += new System.EventHandler(this.SrvAnnounce_Tick);
             // 
-            // lblWorldStartTime
-            // 
-            resources.ApplyResources(this.lblWorldStartTime, "lblWorldStartTime");
-            this.lblWorldStartTime.Name = "lblWorldStartTime";
-            // 
-            // lblRealmStartTime
-            // 
-            resources.ApplyResources(this.lblRealmStartTime, "lblRealmStartTime");
-            this.lblRealmStartTime.Name = "lblRealmStartTime";
-            // 
-            // lblSqlStartTime
-            // 
-            resources.ApplyResources(this.lblSqlStartTime, "lblSqlStartTime");
-            this.lblSqlStartTime.Name = "lblSqlStartTime";
-            // 
             // CheckMangosCrashed
             // 
             this.CheckMangosCrashed.Interval = 5000;
@@ -808,15 +765,52 @@
             this.bWUpEx.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bWUpEx_DoWork);
             this.bWUpEx.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bWUpEx_RunWorkerCompleted);
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+            // 
+            // exportImportCharactersToolStripMenuItem
+            // 
+            this.exportImportCharactersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportToolStripMenuItem1,
+            this.importToolStripMenuItem1});
+            this.exportImportCharactersToolStripMenuItem.Name = "exportImportCharactersToolStripMenuItem";
+            resources.ApplyResources(this.exportImportCharactersToolStripMenuItem, "exportImportCharactersToolStripMenuItem");
+            // 
+            // exportToolStripMenuItem1
+            // 
+            this.exportToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.Export_Icon_32;
+            this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
+            resources.ApplyResources(this.exportToolStripMenuItem1, "exportToolStripMenuItem1");
+            this.exportToolStripMenuItem1.Click += new System.EventHandler(this.exportToolStripMenuItem1_Click);
+            // 
+            // importToolStripMenuItem1
+            // 
+            this.importToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.Import_Icon_32;
+            this.importToolStripMenuItem1.Name = "importToolStripMenuItem1";
+            resources.ApplyResources(this.importToolStripMenuItem1, "importToolStripMenuItem1");
+            this.importToolStripMenuItem1.Click += new System.EventHandler(this.importToolStripMenuItem1_Click);
+            // 
+            // exportToolStripMenuItem2
+            // 
+            this.exportToolStripMenuItem2.Image = global::SppLauncher.Properties.Resources.Export_Icon_32;
+            this.exportToolStripMenuItem2.Name = "exportToolStripMenuItem2";
+            resources.ApplyResources(this.exportToolStripMenuItem2, "exportToolStripMenuItem2");
+            this.exportToolStripMenuItem2.Click += new System.EventHandler(this.exportToolStripMenuItem2_Click);
+            // 
+            // openUpdateFileToolStripMenuItem
+            // 
+            this.openUpdateFileToolStripMenuItem.Name = "openUpdateFileToolStripMenuItem";
+            resources.ApplyResources(this.openUpdateFileToolStripMenuItem, "openUpdateFileToolStripMenuItem");
+            this.openUpdateFileToolStripMenuItem.Click += new System.EventHandler(this.openUpdateFileToolStripMenuItem_Click);
+            // 
             // Launcher
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.lblSqlStartTime);
-            this.Controls.Add(this.lblRealmStartTime);
-            this.Controls.Add(this.lblWorldStartTime);
             this.Controls.Add(this.ssBar);
             this.Controls.Add(this.msForm);
             this.Controls.Add(this.groupBox1);
@@ -894,9 +888,6 @@
         private System.Windows.Forms.ToolStripStatusLabel tssStatus;
         private System.Windows.Forms.ProgressBar pbarWorld;
         private System.Windows.Forms.Timer SrvAnnounce;
-        private System.Windows.Forms.Label lblWorldStartTime;
-        private System.Windows.Forms.Label lblRealmStartTime;
-        private System.Windows.Forms.Label lblSqlStartTime;
         private System.Windows.Forms.ToolStripMenuItem resetBotsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem randomizeBotsToolStripMenuItem1;
         private System.Windows.Forms.Timer CheckMangosCrashed;
@@ -921,9 +912,6 @@
         private System.Windows.Forms.ToolStripMenuItem restartToolStripMenuItem2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem autorunToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportImportCharactersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem1;
         public System.Windows.Forms.ToolStripMenuItem runWoWToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem worldSettingsToolStripMenuItem;
@@ -944,9 +932,14 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportImportCharactersToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem exportImportCharactersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem openUpdateFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem2;
     }
 }
 

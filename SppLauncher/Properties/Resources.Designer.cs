@@ -788,6 +788,15 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please Fill out the Description box..
+        /// </summary>
+        internal static string Please_Fill {
+            get {
+                return ResourceManager.GetString("Please_Fill", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap report_bug_icon {

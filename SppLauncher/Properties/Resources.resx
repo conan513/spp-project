@@ -406,4 +406,7 @@ The changes to take effect bot reset requiered.</value>
   <data name="Your_DB_is_up_to_date_" xml:space="preserve">
     <value>Your DB is up to date.</value>
   </data>
+  <data name="Please_Fill" xml:space="preserve">
+    <value>Please Fill out the Description box.</value>
+  </data>
 </root>

@@ -481,7 +481,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="groupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2282,43 +2282,64 @@
     <value>Start World of Warcraft</value>
   </data>
   <data name="worldSettingsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="worldSettingsToolStripMenuItem1.Text" xml:space="preserve">
     <value>World Settings</value>
   </data>
   <data name="botSettingsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="botSettingsToolStripMenuItem1.Text" xml:space="preserve">
     <value>Bot Settings</value>
   </data>
   <data name="changeWoWPathToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="changeWoWPathToolStripMenuItem.Text" xml:space="preserve">
     <value>Change WoW Path</value>
   </data>
   <data name="resetBotsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="resetBotsToolStripMenuItem.Text" xml:space="preserve">
     <value>Reset bots</value>
   </data>
   <data name="randomizeBotsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="randomizeBotsToolStripMenuItem1.Text" xml:space="preserve">
     <value>Randomize bots</value>
   </data>
+  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 22</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="lanSwitcherToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="lanSwitcherToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lan Switcher</value>
+  </data>
+  <data name="accountToolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="accountToolToolStripMenuItem.Text" xml:space="preserve">
+    <value>Account Tool</value>
+  </data>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 6</value>
+  </data>
   <data name="exportToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="exportToolStripMenuItem1.Text" xml:space="preserve">
     <value>Export</value>
   </data>
   <data name="importToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="importToolStripMenuItem1.Text" xml:space="preserve">
     <value>Import</value>
@@ -2329,23 +2350,11 @@
   <data name="exportImportCharactersToolStripMenuItem.Text" xml:space="preserve">
     <value>Export/Import Characters</value>
   </data>
-  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 22</value>
+  <data name="openUpdateFileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
   </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="lanSwitcherToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 22</value>
-  </data>
-  <data name="lanSwitcherToolStripMenuItem.Text" xml:space="preserve">
-    <value>Lan Switcher</value>
-  </data>
-  <data name="accountToolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 22</value>
-  </data>
-  <data name="accountToolToolStripMenuItem.Text" xml:space="preserve">
-    <value>Account Tool</value>
+  <data name="openUpdateFileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open Update File...</value>
   </data>
   <data name="toolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 22</value>
@@ -2354,7 +2363,7 @@
     <value>Tools</value>
   </data>
   <data name="startToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="startToolStripMenuItem.Text" xml:space="preserve">
     <value>Start</value>
@@ -2363,16 +2372,16 @@
     <value>False</value>
   </data>
   <data name="restartToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="restartToolStripMenuItem2.Text" xml:space="preserve">
     <value>Restart</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 6</value>
+    <value>149, 6</value>
   </data>
   <data name="autorunToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="autorunToolStripMenuItem.Text" xml:space="preserve">
     <value>Autostart</value>
@@ -2381,7 +2390,7 @@
     <value>195, 22</value>
   </data>
   <data name="ServersStripMenuItem.Text" xml:space="preserve">
-    <value>Servers</value>
+    <value>Server</value>
   </data>
   <data name="reportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 22</value>
@@ -2402,7 +2411,7 @@
     <value>Exit</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 180</value>
+    <value>196, 202</value>
   </data>
   <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
     <value>cmsTray</value>
@@ -2507,13 +2516,13 @@
     <value>204, 6</value>
   </data>
   <data name="exportToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="exportToolStripMenuItem2.Text" xml:space="preserve">
     <value>Export</value>
   </data>
   <data name="importToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="importToolStripMenuItem2.Text" xml:space="preserve">
     <value>Import</value>
@@ -2618,7 +2627,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;msForm.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
   </data>
   <metadata name="ssBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>820, 17</value>
@@ -2633,7 +2642,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="tssUsage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>424, 17</value>
+    <value>455, 17</value>
   </data>
   <data name="tssUsage.Text" xml:space="preserve">
     <value>                      </value>
@@ -2675,7 +2684,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ssBar.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="progressBar1.Location" type="System.Drawing.Point, System.Drawing">
     <value>50, 138</value>
@@ -2698,105 +2707,6 @@
   <metadata name="SrvAnnounce.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>900, 17</value>
   </metadata>
-  <data name="lblWorldStartTime.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblWorldStartTime.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="lblWorldStartTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 399</value>
-  </data>
-  <data name="lblWorldStartTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 18</value>
-  </data>
-  <data name="lblWorldStartTime.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="lblWorldStartTime.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblWorldStartTime.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;lblWorldStartTime.Name" xml:space="preserve">
-    <value>lblWorldStartTime</value>
-  </data>
-  <data name="&gt;&gt;lblWorldStartTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblWorldStartTime.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblWorldStartTime.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblRealmStartTime.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblRealmStartTime.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="lblRealmStartTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 399</value>
-  </data>
-  <data name="lblRealmStartTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 18</value>
-  </data>
-  <data name="lblRealmStartTime.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="lblRealmStartTime.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblRealmStartTime.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;lblRealmStartTime.Name" xml:space="preserve">
-    <value>lblRealmStartTime</value>
-  </data>
-  <data name="&gt;&gt;lblRealmStartTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblRealmStartTime.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblRealmStartTime.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblSqlStartTime.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSqlStartTime.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="lblSqlStartTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 399</value>
-  </data>
-  <data name="lblSqlStartTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 18</value>
-  </data>
-  <data name="lblSqlStartTime.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="lblSqlStartTime.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblSqlStartTime.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;lblSqlStartTime.Name" xml:space="preserve">
-    <value>lblSqlStartTime</value>
-  </data>
-  <data name="&gt;&gt;lblSqlStartTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSqlStartTime.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblSqlStartTime.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <metadata name="CheckMangosCrashed.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1120, 17</value>
   </metadata>
@@ -4580,24 +4490,6 @@
   <data name="&gt;&gt;randomizeBotsToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;exportImportCharactersToolStripMenuItem.Name" xml:space="preserve">
-    <value>exportImportCharactersToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;exportImportCharactersToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;exportToolStripMenuItem1.Name" xml:space="preserve">
-    <value>exportToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;exportToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;importToolStripMenuItem1.Name" xml:space="preserve">
-    <value>importToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;importToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;toolToolStripMenuItem.Name" xml:space="preserve">
     <value>toolToolStripMenuItem</value>
   </data>
@@ -4778,12 +4670,6 @@
   <data name="&gt;&gt;exportImportCharactersToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;exportToolStripMenuItem2.Name" xml:space="preserve">
-    <value>exportToolStripMenuItem2</value>
-  </data>
-  <data name="&gt;&gt;exportToolStripMenuItem2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;importToolStripMenuItem2.Name" xml:space="preserve">
     <value>importToolStripMenuItem2</value>
   </data>
@@ -4933,6 +4819,42 @@
   </data>
   <data name="&gt;&gt;bWUpEx.Type" xml:space="preserve">
     <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
+    <value>toolStripSeparator4</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exportImportCharactersToolStripMenuItem.Name" xml:space="preserve">
+    <value>exportImportCharactersToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;exportImportCharactersToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exportToolStripMenuItem1.Name" xml:space="preserve">
+    <value>exportToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;exportToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;importToolStripMenuItem1.Name" xml:space="preserve">
+    <value>importToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;importToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exportToolStripMenuItem2.Name" xml:space="preserve">
+    <value>exportToolStripMenuItem2</value>
+  </data>
+  <data name="&gt;&gt;exportToolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openUpdateFileToolStripMenuItem.Name" xml:space="preserve">
+    <value>openUpdateFileToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;openUpdateFileToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Launcher</value>

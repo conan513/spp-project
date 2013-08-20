@@ -69,8 +69,7 @@
             resources.GetString("cbBugType.Items"),
             resources.GetString("cbBugType.Items1"),
             resources.GetString("cbBugType.Items2"),
-            resources.GetString("cbBugType.Items3"),
-            resources.GetString("cbBugType.Items4")});
+            resources.GetString("cbBugType.Items3")});
             resources.ApplyResources(this.cbBugType, "cbBugType");
             this.cbBugType.Name = "cbBugType";
             // 

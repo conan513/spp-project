@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using SppLauncher.Properties;
 
 namespace SppLauncher.Windows.BugReport
 {
@@ -18,7 +19,7 @@ namespace SppLauncher.Windows.BugReport
             getSys = new GetSysInfo();
             send = new SendReport();
             ip = new GetServerIP();
-            cbBugType.Text = "Aibot";
+            cbBugType.Text = "PlayerBots";
             
             bwGetSysInfo.RunWorkerAsync();
         }
@@ -32,7 +33,7 @@ namespace SppLauncher.Windows.BugReport
             }
             else
             {
-                MessageBox.Show("Please Fill out the Description box.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resources.Please_Fill, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
