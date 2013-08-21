@@ -15,7 +15,6 @@ namespace StatServer
 
     public partial class Statistics : Form
     {
-
         private readonly DateTime _startTime = DateTime.Now;
         public string date;
         private DateTime dt1 = DateTime.Now;
@@ -36,8 +35,6 @@ namespace StatServer
             timerSave.Start();
             StatusChange("Not Connected");
             xmlReadWrite.ReadXml();
-            //Thread t = new Thread(() => File.WriteAllText(@"D:\Dropbox\Public\Updates\ip.txt", get.IP()));
-            //t.Start();
             Getip.Start();
 
         }
@@ -120,6 +117,7 @@ namespace StatServer
 
                 encoder.GetString(message, 0, bytesRead);
                 string report = encoder.GetString(message, 0, bytesRead);
+
                 switch (encoder.GetString(message, 0, bytesRead))
                 {
                     case "0":
@@ -134,11 +132,6 @@ namespace StatServer
                     case "3":
                         lbHistory.Items.Add(dt.ToString("(" + "HH:mm" + ") ") + "Wow Account Creator");
                         break;
-                    case "-reset":
-                        lbHistory.Items.Add(dt.ToString("(" + "HH:mm" + ") ") +
-                                            encoder.GetString(message, 0, bytesRead));
-                        ResetCommand();
-                        break;
                 }
                 dt1 = DateTime.Now;
                 date = dt1.ToString("yyy.MM.dd");
@@ -147,15 +140,16 @@ namespace StatServer
 
                 if (_att[0] == "report")
                 {
-                    //string appendText = "Mail: " + _att[1] + Environment.NewLine + "Bug Type: " + _att[2] +
-                    //                    Environment.NewLine + "Descreption: " + _att[3] + Environment.NewLine +
-                    //                    "Cpu: " +
-                    //                    _att[4] + Environment.NewLine + "Cpu Core: " + _att[5] + Environment.NewLine +
-                    //                    "Total MEmory: " + _att[6] + Environment.NewLine + "Operation System: " +
-                    //                    _att[7] + Environment.NewLine + "Version: " + _att[8] + Environment.NewLine;
+                    /*
+                    string appendText = "Mail: " + _att[1] + Environment.NewLine + "Bug Type: " + _att[2] +
+                                        Environment.NewLine + "Descreption: " + _att[3] + Environment.NewLine +
+                                        "Cpu: " +
+                                        _att[4] + Environment.NewLine + "Cpu Core: " + _att[5] + Environment.NewLine +
+                                        "Total MEmory: " + _att[6] + Environment.NewLine + "Operation System: " +
+                                        _att[7] + Environment.NewLine + "Version: " + _att[8] + Environment.NewLine;
 
-                    //string writetext = _att[1];
-
+                    string writetext = _att[1];
+                    */
 
                     if(!Directory.Exists("D:\\Dropbox\\Conan_shared\\Report\\" + date))
                     {
@@ -175,11 +169,6 @@ namespace StatServer
             }
 
             tcpClient.Close();
-        }
-
-        private void backup()
-        {
-            File.Copy("counter.xml", "D:\\Dropbox\\Public\\Updates\\backup\\backup.xml", true);
         }
 
         private void MainWindow_Shown(object sender, EventArgs e)

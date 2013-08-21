@@ -839,8 +839,7 @@ namespace SppLauncher
             try
             {
                 File.WriteAllText(realmListPath, OLDrealmList);
-                NotifyBallon(1000, Resources.Launcher_RealmRestore_Realmlist, Resources.Launcher_RealmRestore_Restored,
-                    false);
+                NotifyBallon(1000, Resources.Launcher_RealmRestore_Realmlist, Resources.Launcher_RealmRestore_Restored, false);
             }
             catch (Exception ex)
             {

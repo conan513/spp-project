@@ -14,12 +14,11 @@ namespace SppLauncher.Windows
     public partial class LanSwitcher : Form
     {
         public static bool Available, updateYes, allowCheck = true, FirstRun = false, allowUsageStat = true;
-        public static string ip, user, pass, db, port, currVer = "1.0.1", RemoteVer, test;
+        public static string ip, user, pass, db, port, currVer = "1.0.1", RemoteVer, test, lan;
         private GetPublicIP GetPublic;
         public LanSwitcher()
         {
             InitializeComponent();
-           // cbCh.Text = "Offline";
             GetPublic = new GetPublicIP();
             ip = "127.0.0.1";
             user = "root";
@@ -30,12 +29,19 @@ namespace SppLauncher.Windows
             CheckLan();
         }
 
-        private void CheckLan()
+        public string CheckLan()
         {
+
             try
             {
                 var client = new MySQLClient(ip, db, user, pass, Convert.ToInt32(port));
-                string lan = client.Select("realmlist", "id='1'")["address"];
+                lan = client.Select("realmlist", "id='1'")["address"];
+
+                if (UnitTestDetector.IsInUnitTest)
+                {
+                    return lan;
+                }
+                
                 if (lan == "127.0.0.1")
                 {
                     cbCh.Text = "Offline";
@@ -55,6 +61,7 @@ namespace SppLauncher.Windows
             catch (Exception)
             {
             }
+            return lan;
         }
 
         private void cbCh_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,13 +101,10 @@ namespace SppLauncher.Windows
             UpdateSql();
         }
 
-        private void UpdateSql()
+        public void UpdateSql()
         {
             var client = new MySQLClient(ip, db, user, pass, Convert.ToInt32(port));
-
-
             client.Update("realmlist", "address='" + txbLanip.Text + "'", "id='1'");
-
         }
     }
 }

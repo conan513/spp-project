@@ -8,8 +8,7 @@ namespace MySQLClass
     {
         readonly MySqlConnection conn;
 
-
-        #region Constructors
+        #region [ Constructors ]
         public MySQLClient(string hostname, string database, string username, string password)
         {
             conn = new MySqlConnection("host=" + hostname + ";database=" + database +";username=" + username +";password=" + password +";");
@@ -26,7 +25,7 @@ namespace MySQLClass
         }
         #endregion
 
-        #region Open/Close Connection
+        #region [ Open/Close Connection ]
         private bool Open()
         {
             try
@@ -57,7 +56,6 @@ namespace MySQLClass
         public void Insert(string table, string column, string value)
         {
             string query = "INSERT INTO " + table + " (" + column + ") VALUES (" + value + ")";
-
             try
             {
                 if (this.Open())
@@ -80,7 +78,7 @@ namespace MySQLClass
                 {
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Successful.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if(!UnitTestDetector.IsInUnitTest){MessageBox.Show("Successful.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);}
                     this.Close();
                 }
                 catch { this.Close(); }
@@ -103,8 +101,6 @@ namespace MySQLClass
             }
         }
 
-   
-
         public Dictionary<string, string> Select(string table, string WHERE)
         {
             string query = "SELECT * FROM " + table + " WHERE " + WHERE + "";
@@ -120,12 +116,10 @@ namespace MySQLClass
                 {
                     while (dataReader.Read())
                     {
-
                         for (int i = 0; i < dataReader.FieldCount; i++)
                         {
                             selectResult.Add(dataReader.GetName(i), dataReader.GetValue(i).ToString());
                         }
-
                     }
                     dataReader.Close();
                 }

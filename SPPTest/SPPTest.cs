@@ -4,8 +4,10 @@ using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SppLauncher;
 using SppLauncher.Class;
+using SppLauncher.Windows;
 using SppLauncher.Windows.WowAccountCreator;
 using WowAccountCreator;
+using MySQLClass;
 
 namespace SPPTest
 {
@@ -63,6 +65,19 @@ namespace SPPTest
         {
             Launcher obj = new Launcher();
             Assert.AreEqual(true, obj.GetLocalSrvVer());
+        }
+
+        [TestMethod]
+        public void LanSwitcher()
+        {
+            LanSwitcher obj = new LanSwitcher();
+            obj.txbLanip.Text = "0";
+            obj.UpdateSql();
+            Assert.AreEqual("0", obj.CheckLan());
+
+            obj.txbLanip.Text = "127.0.0.1";
+            obj.UpdateSql();
+
         }
     }
 }

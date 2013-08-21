@@ -6,7 +6,6 @@ namespace StatServer
 {
     class GetPublicIP
     {
-
             public string IP()
             {
                 String direction;
