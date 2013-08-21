@@ -127,6 +127,11 @@
   <data name="lbl_completed.Text" xml:space="preserve">
     <value>Mise à jour complété</value>
   </data>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>v1.0.5
+Changelog:
+- Bug report send versions</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAMAEBAAAAAAIABoBAAANgAAACAgAAAAACAAqBAAAJ4EAAAwMAAAAAAgAKglAABGFQAAKAAAABAA

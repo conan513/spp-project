@@ -117,10 +117,221 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lbl_completed.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lbl_completed.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.8pt</value>
+  </data>
+  <data name="lbl_completed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 30</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lbl_completed.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="lbl_completed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 18</value>
+  </data>
+  <data name="lbl_completed.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lbl_completed.Text" xml:space="preserve">
+    <value>Update Completed</value>
+  </data>
+  <data name="&gt;&gt;lbl_completed.Name" xml:space="preserve">
+    <value>lbl_completed</value>
+  </data>
+  <data name="&gt;&gt;lbl_completed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_completed.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_completed.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lbl_ver.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_ver.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.8pt</value>
+  </data>
+  <data name="lbl_ver.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 67</value>
+  </data>
+  <data name="lbl_ver.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="lbl_ver.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 18</value>
+  </data>
+  <data name="lbl_ver.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lbl_ver.Text" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="&gt;&gt;lbl_ver.Name" xml:space="preserve">
+    <value>lbl_ver</value>
+  </data>
+  <data name="&gt;&gt;lbl_ver.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_ver.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_ver.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lbl_currVer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_currVer.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.8pt</value>
+  </data>
+  <data name="lbl_currVer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>182, 67</value>
+  </data>
+  <data name="lbl_currVer.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="lbl_currVer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 18</value>
+  </data>
+  <data name="lbl_currVer.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lbl_currVer.Text" xml:space="preserve">
+    <value>ver</value>
+  </data>
+  <data name="&gt;&gt;lbl_currVer.Name" xml:space="preserve">
+    <value>lbl_currVer</value>
+  </data>
+  <data name="&gt;&gt;lbl_currVer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_currVer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_currVer.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 14</value>
+  </data>
+  <data name="btn_ok.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="btn_ok.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btn_ok.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btn_ok.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;btn_ok.Name" xml:space="preserve">
+    <value>btn_ok</value>
+  </data>
+  <data name="&gt;&gt;btn_ok.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_ok.Parent" xml:space="preserve">
+    <value>panel</value>
+  </data>
+  <data name="&gt;&gt;btn_ok.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-15, 192</value>
+  </data>
+  <data name="panel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="panel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 52</value>
+  </data>
+  <data name="panel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panel.Name" xml:space="preserve">
+    <value>panel</value>
+  </data>
+  <data name="&gt;&gt;panel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pb_pic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 30</value>
+  </data>
+  <data name="pb_pic.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pb_pic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 65</value>
+  </data>
+  <data name="pb_pic.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pb_pic.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pb_pic.Name" xml:space="preserve">
+    <value>pb_pic</value>
+  </data>
   <data name="&gt;&gt;pb_pic.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="&gt;&gt;pb_pic.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pb_pic.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="richTextBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 109</value>
+  </data>
+  <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 68</value>
+  </data>
+  <data name="richTextBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>v1.1.1
+Changelog:
+- Little Fixes</value>
+  </data>
+  <data name="&gt;&gt;richTextBox1.Name" xml:space="preserve">
+    <value>richTextBox1</value>
+  </data>
+  <data name="&gt;&gt;richTextBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;richTextBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>254, 241</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAMAEBAAAAAAIABoBAAANgAAACAgAAAAACAAqBAAAJ4EAAAwMAAAAAAgAKglAABGFQAAKAAAABAA
@@ -377,230 +588,16 @@
         //8AAAAAAAD//wAAAAAAAP//AAAAAAAA//8=
 </value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lbl_currVer.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="&gt;&gt;btn_ok.Name" xml:space="preserve">
-    <value>btn_ok</value>
-  </data>
-  <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>105, 14</value>
-  </data>
-  <data name="pb_pic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 65</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>254, 241</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Update_Completed</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_ok.Parent" xml:space="preserve">
-    <value>panel</value>
-  </data>
-  <data name="pb_pic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 30</value>
-  </data>
-  <data name="&gt;&gt;lbl_currVer.Name" xml:space="preserve">
-    <value>lbl_currVer</value>
-  </data>
-  <data name="&gt;&gt;panel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lbl_completed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 30</value>
-  </data>
-  <data name="lbl_ver.Text" xml:space="preserve">
-    <value>Version:</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;lbl_completed.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btn_ok.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="pb_pic.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="&gt;&gt;pb_pic.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lbl_currVer.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
-  <data name="lbl_ver.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 67</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lbl_completed.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;pb_pic.Name" xml:space="preserve">
-    <value>pb_pic</value>
-  </data>
-  <data name="&gt;&gt;panel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="lbl_currVer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>182, 67</value>
-  </data>
-  <data name="&gt;&gt;panel.Name" xml:space="preserve">
-    <value>panel</value>
-  </data>
-  <data name="lbl_currVer.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="panel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>281, 52</value>
-  </data>
-  <data name="richTextBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="lbl_completed.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.8pt</value>
-  </data>
-  <data name="pb_pic.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="&gt;&gt;lbl_currVer.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lbl_ver.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.8pt</value>
-  </data>
-  <data name="&gt;&gt;lbl_completed.Name" xml:space="preserve">
-    <value>lbl_completed</value>
-  </data>
-  <data name="&gt;&gt;lbl_ver.Name" xml:space="preserve">
-    <value>lbl_ver</value>
-  </data>
-  <data name="&gt;&gt;btn_ok.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pb_pic.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="richTextBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 109</value>
-  </data>
-  <data name="panel.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="pb_pic.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lbl_currVer.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.8pt</value>
-  </data>
-  <data name="btn_ok.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="lbl_completed.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lbl_completed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 18</value>
-  </data>
-  <data name="btn_ok.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="lbl_ver.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbl_ver.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 68</value>
-  </data>
-  <data name="lbl_completed.Text" xml:space="preserve">
-    <value>Update Completed</value>
-  </data>
-  <data name="lbl_currVer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 18</value>
-  </data>
-  <data name="panel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="lbl_completed.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value>v1.0.5
-Changelog:
-- Bug report send versions</value>
-  </data>
-  <data name="btn_ok.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lbl_completed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lbl_ver.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btn_ok.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="panel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-15, 192</value>
-  </data>
-  <data name="lbl_currVer.Text" xml:space="preserve">
-    <value>ver</value>
-  </data>
-  <data name="&gt;&gt;panel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lbl_currVer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.Name" xml:space="preserve">
-    <value>richTextBox1</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lbl_currVer.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;lbl_ver.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_completed.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lbl_ver.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 18</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Update_Completed</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="&gt;&gt;lbl_ver.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lbl_ver.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>fr</value>
-  </metadata>
 </root>

@@ -26,13 +26,12 @@ namespace SppLauncher
         #region [ Variable ]
 
         private readonly XmlReadWrite xmlReadWrite;
-
         public static string wowExePath,
             ipAdress,online,resetBots,
             randomizeBots,realmListPath,
             realmDialogPath,OLDrealmList,
             UpdLink,importFile, exportfile, 
-            Autostart, currProgVer = "1.1.0",
+            Autostart, currProgVer = "1.1.1",
             lang, UpdateUnpack, Status;
 
         public DateTime Dt;
@@ -1699,7 +1698,6 @@ namespace SppLauncher
                     statusChage(Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update, false);
                     animateStatus(true);
                     bWUpEx.RunWorkerAsync();
-
                 }
             }
         }
@@ -1796,9 +1794,6 @@ namespace SppLauncher
                     {
                         _updateYes = true;
                     }
-                    else
-                    {
-                    }
                 }
             }
             catch (Exception)
@@ -1822,8 +1817,8 @@ namespace SppLauncher
             }
             else
             {
-                    statusChage(Resources.Launcher_bwUpdate_RunWorkerCompleted_Up_to_date, false);
-                    animateStatus(false);
+                statusChage(Resources.Launcher_bwUpdate_RunWorkerCompleted_Up_to_date, false);
+                animateStatus(false);
             }
         }
 
@@ -1886,7 +1881,6 @@ namespace SppLauncher
                 {
                     Sqlimport = true;
                     OnlyMysqlStart = true;
-                    MessageBox.Show(OnlyMysqlStart.ToString());
                     StartAll();
                     MenuItemsDisableAfterLoad();
                     importFile   = openFile.FileName;
@@ -1904,8 +1898,7 @@ namespace SppLauncher
             ImportExtract();
             statusChage(Resources.Launcher_import_Import_Characters, false);
 
-            string conn            =
-                "server            =127.0.0.1;user=root;pwd=123456;database=characters;port=3310;convertzerodatetime=true;";
+            string conn            = "server=127.0.0.1;user=root;pwd=123456;database=characters;port=3310;convertzerodatetime=true;";
             MySqlBackup mb         = new MySqlBackup(conn);
             mb.ImportInfo.FileName = getTemp + "\\save01";
             mb.Import();
