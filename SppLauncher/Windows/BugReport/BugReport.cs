@@ -13,6 +13,7 @@ namespace SppLauncher.Windows.BugReport
         private readonly GetSysInfo getSys;
         private readonly SendReport send;
         private readonly GetServerIP ip;
+
         public BugReport()
         {
             InitializeComponent();
@@ -39,20 +40,25 @@ namespace SppLauncher.Windows.BugReport
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            RemoteIp = ip.Getip();
             textBox1.Text = "Loading...";
+            RemoteIp = ip.Getip();
             textBox1.Text = "Cpu: " + getSys.GetProcessorNameL() + Environment.NewLine + "Core: " + count + Environment.NewLine + "Total Memory: " + getSys.getmemory() + "Mb" + Environment.NewLine + "Operation System: " + getSys.getOS();
+           
         }
 
         private void bwSendReport_DoWork(object sender, DoWorkEventArgs e)
         {
             send.SendError("report", txbMail.Text, cbBugType.Text, txbDesc.Text, getSys.GetProcessorName(), count.ToString(), getSys.getmemory().ToString(),
           getSys.getOS(), "Prog: " + Launcher.currProgVer + "," + " Emu: " + Launcher.CurrEmuVer);
+
+            if (cbLogs.Checked)
+                send.zipLogs();
         }
 
         private void bwSendReport_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             Cursor = Cursors.Default;
+            MessageBox.Show("Thank you for the report.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
         }
 

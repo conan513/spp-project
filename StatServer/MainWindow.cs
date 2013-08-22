@@ -12,6 +12,7 @@ using StatServer.Class;
 
 namespace StatServer
 {
+    #region [ Variables & Initialize ]
 
     public partial class Statistics : Form
     {
@@ -26,6 +27,10 @@ namespace StatServer
         private readonly XmlReadW xmlReadWrite;
         private GetPublicIP get = new GetPublicIP();
         private AutoMail Mail = new AutoMail();
+        TcpClient Fileclient;
+        private Thread FilelistenThread;
+        private TcpListener FiletcpListener;
+
         public Statistics()
         {
             InitializeComponent();
@@ -36,37 +41,15 @@ namespace StatServer
             StatusChange("Not Connected");
             xmlReadWrite.ReadXml();
             Getip.Start();
-
         }
 
-        private void StatusChange (string msg)
-        {
-            //  ssStatus.Text = msg;
-        }
+    #endregion
 
-        private void NotifyBallon(int timeout, string title, string msg)
-        {
-            NotifyCounter.ShowBalloonTip(timeout, title, msg, ToolTipIcon.Info);
-        }
+        #region [ ReportServer ]
 
-        private void GetProccess()
+        private void MsgServer()
         {
-            if (Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Length > 1)
-            {
-                MessageBox.Show("Server is already running!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Environment.Exit(0);
-            }
-        }
-
-        private void LoadStat ()
-        {
-            lblReport.Text = _report.ToString(CultureInfo.InvariantCulture);
-        }
-
-
-        private void Server ()
-        {
-            _tcpListener = new TcpListener(IPAddress.Any, 5459);
+            _tcpListener  = new TcpListener(IPAddress.Any, 5459);
             _listenThread = new Thread(ListenForClients);
             _listenThread.Start();
         }
@@ -97,7 +80,6 @@ namespace StatServer
                 try
                 {
                     bytesRead = clientStream.Read(message, 0, 4096);
-
                 }
                 catch
                 {
@@ -176,16 +158,107 @@ namespace StatServer
                 lbHistory.TopIndex = lbHistory.Items.Count - 1;
                 LoadStat();
             }
-
             tcpClient.Close();
         }
 
+        #endregion
 
-
-        private void MainWindow_Shown(object sender, EventArgs e)
+        #region [ Log Server ]
+        private void FileServer()
         {
-            Server();
+            FiletcpListener  = new TcpListener(IPAddress.Any, 5460);
+            FilelistenThread = new Thread(FileListenForClients);
+            FilelistenThread.Start();
         }
+
+        private void FileListenForClients()
+        {
+            FiletcpListener.Start();
+
+            while (true)
+            {
+                TcpClient client = FiletcpListener.AcceptTcpClient();
+                var clientThread = new Thread(Fileserverstart);
+                clientThread.Start(client);
+            }
+        }
+
+        public void Fileserverstart(object client)
+        {
+            TcpClient tcpClient = (TcpClient)client;
+            int bufferSize      = 1024;
+            NetworkStream netStream;
+            int bytesRead = 0;
+            int allBytesRead = 0;
+
+            netStream = tcpClient.GetStream();
+
+            // Read length of incoming data
+            byte[] length  = new byte[4];
+            bytesRead      = netStream.Read(length, 0, 4);
+            int dataLength = BitConverter.ToInt32(length, 0);
+
+            // Read the data
+            int bytesLeft = dataLength;
+            byte[] data = new byte[dataLength];
+
+            while (bytesLeft > 0)
+            {
+
+                int nextPacketSize = (bytesLeft > bufferSize) ? bufferSize : bytesLeft;
+                bytesRead          = netStream.Read(data, allBytesRead, nextPacketSize);
+                allBytesRead      += bytesRead;
+                bytesLeft         -= bytesRead;
+            }
+
+            DateTime dt = DateTime.Now;
+            date = dt.ToString("yyy.MM.dd");
+            int fileCount = Directory.GetFiles("D:\\Dropbox\\Conan_shared\\Report\\" + date, "*.*", SearchOption.TopDirectoryOnly).Length;
+
+            if (!Directory.Exists("D:\\Dropbox\\Conan_shared\\Report\\Logs\\" + date))
+            {
+                Directory.CreateDirectory("D:\\Dropbox\\Conan_shared\\Report\\Logs\\" + date);
+            }
+
+            File.WriteAllBytes("D:\\Dropbox\\Conan_shared\\Report\\Logs\\" + date + "\\" + fileCount + "_Logs.zip", data);
+
+            lbHistory.Items.Add(dt.ToString("(" + "HH:mm" + ") ") + "Logs Received");
+
+            netStream.Close();
+            tcpClient.Close();
+
+        }
+        #endregion
+
+        #region [ Other Methods ]
+
+        private void LoadStat()
+        {
+            lblReport.Text = _report.ToString(CultureInfo.InvariantCulture);
+        }
+
+        private void GetProccess()
+        {
+            if (Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Length > 1)
+            {
+                MessageBox.Show("Server is already running!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
+            }
+        }
+
+        private void NotifyBallon(int timeout, string title, string msg)
+        {
+            NotifyCounter.ShowBalloonTip(timeout, title, msg, ToolTipIcon.Info);
+        }
+
+        private void StatusChange(string msg)
+        {
+            //  ssStatus.Text = msg;
+        }
+
+        #endregion
+
+        #region [ Click & Form Events ]
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -194,12 +267,6 @@ namespace StatServer
                 e.Cancel = true;
                 Hide();
             }
-        }
-
-        private void ResetCommand()
-        {
-            xmlReadWrite.SaveXml();
-            LoadStat();
         }
 
         private void NotifyCounter_DoubleClick(object sender, EventArgs e)
@@ -231,16 +298,25 @@ namespace StatServer
             if (e.Button == MouseButtons.Right)
             {
                 NotifyCounter.ContextMenuStrip = cmsUp;
-                MethodInfo mi = typeof(NotifyIcon).GetMethod("ShowContextMenu",
+                MethodInfo mi                  = typeof(NotifyIcon).GetMethod("ShowContextMenu",
                     BindingFlags.Instance | BindingFlags.NonPublic);
                 mi.Invoke(NotifyCounter, null);
                 NotifyCounter.ContextMenuStrip = cmsUp;
             }
         }
 
-        private void Statistics_Load(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            LoadStat();
+            {
+                FolderBrowserDialog dlg = new FolderBrowserDialog();
+                dlg.ShowNewFolderButton = true;
+                DialogResult result     = dlg.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    savepath = dlg.SelectedPath;
+                    xmlReadWrite.SaveXml();
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -249,10 +325,25 @@ namespace StatServer
             LoadStat();
         }
 
-       private void timer1_Tick(object sender, EventArgs e)
+        private void Statistics_Load(object sender, EventArgs e)
+        {
+            LoadStat();
+        }
+
+        private void MainWindow_Shown(object sender, EventArgs e)
+        {
+            MsgServer();
+            FileServer();
+        }
+
+        #endregion
+
+        #region [ Timers ]
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
             TimeSpan delta = DateTime.Now - _startTime;
-            tssUptime.Text = delta.Days.ToString(CultureInfo.InvariantCulture)+ "d " +
+            tssUptime.Text = delta.Days.ToString(CultureInfo.InvariantCulture) + "d " +
                              delta.Hours.ToString(CultureInfo.InvariantCulture) + "h " +
                              delta.Minutes.ToString(CultureInfo.InvariantCulture) + "m " +
                              delta.Seconds.ToString(CultureInfo.InvariantCulture) + "s";
@@ -260,21 +351,7 @@ namespace StatServer
 
         private void timerSave_Tick(object sender, EventArgs e)
         {
-           xmlReadWrite.SaveXml();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            {
-                FolderBrowserDialog dlg = new FolderBrowserDialog();
-                dlg.ShowNewFolderButton = true;
-                DialogResult result = dlg.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    savepath = dlg.SelectedPath;
-                    xmlReadWrite.SaveXml();
-                }
-            }
+            xmlReadWrite.SaveXml();
         }
 
         private void Getip_Tick(object sender, EventArgs e)
@@ -285,6 +362,7 @@ namespace StatServer
                 File.WriteAllText(@"D:\Dropbox\Public\Updates\ip.txt", ip);
             }
         }
-    }
 
+        #endregion
+    }
 }

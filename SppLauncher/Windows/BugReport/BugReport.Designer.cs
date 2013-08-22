@@ -41,6 +41,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bwGetSysInfo = new System.ComponentModel.BackgroundWorker();
             this.bwSendReport = new System.ComponentModel.BackgroundWorker();
+            this.cbLogs = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +87,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.cbLogs);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label1);
@@ -123,6 +127,17 @@
             this.bwSendReport.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwSendReport_DoWork);
             this.bwSendReport.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwSendReport_RunWorkerCompleted);
             // 
+            // cbLogs
+            // 
+            resources.ApplyResources(this.cbLogs, "cbLogs");
+            this.cbLogs.Name = "cbLogs";
+            this.cbLogs.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
             // BugReport
             // 
             resources.ApplyResources(this, "$this");
@@ -153,5 +168,7 @@
         private System.Windows.Forms.Label label2;
         private System.ComponentModel.BackgroundWorker bwGetSysInfo;
         private System.ComponentModel.BackgroundWorker bwSendReport;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox cbLogs;
     }
 }

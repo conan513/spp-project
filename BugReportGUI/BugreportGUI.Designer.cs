@@ -42,13 +42,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.fbdPath = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrCheck = new System.Windows.Forms.Timer(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnLog = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -149,6 +150,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnLog);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.txbDesc);
             this.groupBox1.Controls.Add(this.label1);
@@ -164,6 +166,15 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(271, 29);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(47, 20);
+            this.textBox1.TabIndex = 16;
+            this.textBox1.TabStop = false;
             // 
             // groupBox2
             // 
@@ -206,14 +217,16 @@
             this.tmrCheck.Interval = 2000;
             this.tmrCheck.Tick += new System.EventHandler(this.tmrCheck_Tick);
             // 
-            // textBox1
+            // btnLog
             // 
-            this.textBox1.Location = new System.Drawing.Point(271, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(47, 20);
-            this.textBox1.TabIndex = 16;
-            this.textBox1.TabStop = false;
+            this.btnLog.Enabled = false;
+            this.btnLog.Location = new System.Drawing.Point(15, 102);
+            this.btnLog.Name = "btnLog";
+            this.btnLog.Size = new System.Drawing.Size(44, 34);
+            this.btnLog.TabIndex = 17;
+            this.btnLog.Text = "Log";
+            this.btnLog.UseVisualStyleBackColor = true;
+            this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
             // 
             // BugreportGUI
             // 
@@ -258,6 +271,7 @@
         private System.Windows.Forms.ToolStripMenuItem changePathToolStripMenuItem;
         private System.Windows.Forms.Timer tmrCheck;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnLog;
     }
 }
 

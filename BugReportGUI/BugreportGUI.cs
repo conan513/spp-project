@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -11,7 +12,7 @@ namespace BugReportGUI
 {
     public partial class BugreportGUI : Form
     {
-        public static string item,item2,selectedpath,Bugpath;
+        public static string item, item2, selectedpath, Bugpath, logpath;
         public int chckcount;
 
         private DirectoryInfo di;
@@ -45,11 +46,9 @@ namespace BugReportGUI
         {
             foreach (DirectoryInfo d in dir.GetDirectories())
             {
-                listBox1.Items.Add(d);
+                if(d.ToString() != "Logs"){listBox1.Items.Add(d);}
             }
         }
-
-
 
         private void Dialog()
         {
@@ -114,6 +113,17 @@ namespace BugReportGUI
                 int s = listBox2.SelectedIndex;
                 s++;
                 string file      = File.ReadAllText(Bugpath + "\\" + item + "\\" + s + ".txt");
+
+                if (File.Exists(Bugpath + "\\Logs\\" + item + "\\" + s + "_Logs.zip"))
+                {
+                    logpath = Bugpath + "\\Logs\\" + item + "\\" + s + "_Logs.zip";
+                    btnLog.Enabled = true;
+                }
+                else
+                {
+                    btnLog.Enabled = false;
+                }
+
                 string[] content = file.Split(';');
                 txbMail.Text     = content[1];
                 txbType.Text     = content[2];
@@ -126,7 +136,6 @@ namespace BugReportGUI
             }
 
         }
-
 
         private void changePathToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -150,11 +159,6 @@ namespace BugReportGUI
             txbSysinfo.Text = "";
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            listBox1.Items.Clear();
-        }
-
         private void tmrCheck_Tick(object sender, EventArgs e)
         {
             
@@ -163,6 +167,11 @@ namespace BugReportGUI
                 chckcount = Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length;
                 refresh();
             }
+        }
+
+        private void btnLog_Click(object sender, EventArgs e)
+        {
+            Process.Start(logpath);
         }
     }
 }

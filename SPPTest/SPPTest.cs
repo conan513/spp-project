@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SppLauncher;
 using SppLauncher.Class;
 using SppLauncher.Windows;
+using SppLauncher.Windows.BugReport;
 using SppLauncher.Windows.WowAccountCreator;
 using WowAccountCreator;
 using MySQLClass;
@@ -77,7 +78,13 @@ namespace SPPTest
 
             obj.txbLanip.Text = "127.0.0.1";
             obj.UpdateSql();
+        }
 
+        [TestMethod]
+        public void sendlogs()
+        {
+            SendReport obj = new SendReport();
+            obj.zipLogs();
         }
     }
 }
