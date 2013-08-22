@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using BugReportGUI.Properties;
+using ns;
 
 namespace BugReportGUI
 {
@@ -14,7 +18,6 @@ namespace BugReportGUI
         public BugreportGUI()
         {
             InitializeComponent();
-
             try
             {
                 Bugpath      = Settings.Default["path"].ToString();
@@ -77,10 +80,13 @@ namespace BugReportGUI
                     {
                         delAllField();
                         item = listBox1.Items[i].ToString();
-
                     }
 
                     string[] files = Directory.GetFiles(Bugpath+ "\\" + item);
+
+                    NumericComparer ns = new NumericComparer();
+                    Array.Sort(files, ns); ;
+
                     foreach (string afile in files)
                     {
                         selectedpath     = afile;
@@ -94,6 +100,8 @@ namespace BugReportGUI
                 }
             }
         }
+
+       
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -110,7 +118,7 @@ namespace BugReportGUI
                 txbMail.Text     = content[1];
                 txbType.Text     = content[2];
                 txbDesc.Text     = content[3];
-
+                textBox1.Text = content[9];
                 txbSysinfo.Text = "Cpu:" + content[4] + Environment.NewLine + "Core:" + content[5] + Environment.NewLine + "Total Memory: " + content[6] + "Mb" + Environment.NewLine + "Operation System:" + content[7] + Environment.NewLine + content[8];
             }
             catch

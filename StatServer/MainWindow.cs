@@ -25,7 +25,7 @@ namespace StatServer
         public static string savepath;
         private readonly XmlReadW xmlReadWrite;
         private GetPublicIP get = new GetPublicIP();
-
+        private AutoMail Mail = new AutoMail();
         public Statistics()
         {
             InitializeComponent();
@@ -135,21 +135,31 @@ namespace StatServer
                 }
                 dt1 = DateTime.Now;
                 date = dt1.ToString("yyy.MM.dd");
-
+                string date2 = dt1.ToString("HH:mm");
+                
                 _att = report.Split(';');
 
                 if (_att[0] == "report")
                 {
-                    /*
-                    string appendText = "Mail: " + _att[1] + Environment.NewLine + "Bug Type: " + _att[2] +
-                                        Environment.NewLine + "Descreption: " + _att[3] + Environment.NewLine +
+                    string appendText = "Mail: " + _att[1] + Environment.NewLine + "Bug Type: " + _att[2] + Environment.NewLine +
                                         "Cpu: " +
                                         _att[4] + Environment.NewLine + "Cpu Core: " + _att[5] + Environment.NewLine +
-                                        "Total MEmory: " + _att[6] + Environment.NewLine + "Operation System: " +
-                                        _att[7] + Environment.NewLine + "Version: " + _att[8] + Environment.NewLine;
+                                        "Total Mmory: " + _att[6] + Environment.NewLine + "Operation System: " +
+                                        _att[7] + Environment.NewLine + "Version: " + _att[8] + Environment.NewLine + "Descreption: "+ Environment.NewLine + _att[3];
+
+                    //string appendText = "Mail: " + _att[1] + Environment.NewLine + "Bug Type: " + _att[2] +
+                    //Environment.NewLine + "Descreption: " + _att[3] + Environment.NewLine +
+                    //"Cpu: " +
+                    //_att[4] + Environment.NewLine + "Cpu Core: " + _att[5] + Environment.NewLine +
+                    //"Total Mmory: " + _att[6] + Environment.NewLine + "Operation System: " +
+                    //_att[7] + Environment.NewLine + "Version: " + _att[8] + Environment.NewLine;
 
                     string writetext = _att[1];
-                    */
+                    if (_att[1].Contains("@"))
+                    {
+                        Thread t = new Thread(() => Mail.Send(_att[1], appendText, date));
+                        t.Start();
+                    }
 
                     if(!Directory.Exists("D:\\Dropbox\\Conan_shared\\Report\\" + date))
                     {
@@ -158,9 +168,8 @@ namespace StatServer
 
                     int fileCount = Directory.GetFiles("D:\\Dropbox\\Conan_shared\\Report\\" + date, "*.*", SearchOption.TopDirectoryOnly).Length;
 
-                    File.AppendAllText("D:\\Dropbox\\Conan_shared\\Report\\" + date + "\\" + (fileCount +1) +".txt", report);
+                    File.AppendAllText("D:\\Dropbox\\Conan_shared\\Report\\" + date + "\\" + (fileCount +1) +".txt", report + ";" + date2);
                     lbHistory.Items.Add(dt1.ToString("(" + "HH:mm" + ") ") + "Report received.");
-                    NotifyBallon(500, "Report Received", "Report All: " + _report);
                     _report++;
                 }
 
@@ -170,6 +179,8 @@ namespace StatServer
 
             tcpClient.Close();
         }
+
+
 
         private void MainWindow_Shown(object sender, EventArgs e)
         {

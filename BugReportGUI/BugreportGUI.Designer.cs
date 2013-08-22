@@ -48,6 +48,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrCheck = new System.Windows.Forms.Timer(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -76,7 +77,7 @@
             this.txbMail.Location = new System.Drawing.Point(72, 29);
             this.txbMail.Name = "txbMail";
             this.txbMail.ReadOnly = true;
-            this.txbMail.Size = new System.Drawing.Size(246, 20);
+            this.txbMail.Size = new System.Drawing.Size(193, 20);
             this.txbMail.TabIndex = 5;
             this.txbMail.TabStop = false;
             // 
@@ -85,6 +86,7 @@
             this.txbDesc.Location = new System.Drawing.Point(72, 102);
             this.txbDesc.Multiline = true;
             this.txbDesc.Name = "txbDesc";
+            this.txbDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txbDesc.Size = new System.Drawing.Size(246, 129);
             this.txbDesc.TabIndex = 4;
             this.txbDesc.TabStop = false;
@@ -131,6 +133,7 @@
             this.txbSysinfo.Multiline = true;
             this.txbSysinfo.Name = "txbSysinfo";
             this.txbSysinfo.ReadOnly = true;
+            this.txbSysinfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txbSysinfo.Size = new System.Drawing.Size(246, 84);
             this.txbSysinfo.TabIndex = 14;
             this.txbSysinfo.TabStop = false;
@@ -146,6 +149,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.txbDesc);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txbMail);
@@ -193,7 +197,7 @@
             // changePathToolStripMenuItem
             // 
             this.changePathToolStripMenuItem.Name = "changePathToolStripMenuItem";
-            this.changePathToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.changePathToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.changePathToolStripMenuItem.Text = "Change Path";
             this.changePathToolStripMenuItem.Click += new System.EventHandler(this.changePathToolStripMenuItem_Click);
             // 
@@ -201,6 +205,15 @@
             // 
             this.tmrCheck.Interval = 2000;
             this.tmrCheck.Tick += new System.EventHandler(this.tmrCheck_Tick);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(271, 29);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(47, 20);
+            this.textBox1.TabIndex = 16;
+            this.textBox1.TabStop = false;
             // 
             // BugreportGUI
             // 
@@ -244,6 +257,7 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePathToolStripMenuItem;
         private System.Windows.Forms.Timer tmrCheck;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
