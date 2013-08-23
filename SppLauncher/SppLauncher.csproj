@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Windows\LanSwitcher\GetPublicIP.cs" />
+    <Compile Include="Windows\Launcher\AssemblyResolver.cs" />
     <Compile Include="Windows\Launcher\GetSqlCount.cs" />
     <Compile Include="Windows\Launcher\isUnitTest.cs" />
     <Compile Include="Windows\Launcher\UpdateExtract.cs" />

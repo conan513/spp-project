@@ -19,9 +19,9 @@ namespace SppLauncher.Windows
                     ErrorDialog = false,
                     CreateNoWindow = true,
                     UseShellExecute = false,
-                    RedirectStandardError = true,
-                    RedirectStandardInput = true,
-                    RedirectStandardOutput = true,
+                    RedirectStandardError = false,
+                    RedirectStandardInput = false,
+                    RedirectStandardOutput = false,
                     WorkingDirectory = Environment.CurrentDirectory,
                 }
                 );
@@ -41,9 +41,9 @@ namespace SppLauncher.Windows
                     ErrorDialog = false,
                     CreateNoWindow = true,
                     UseShellExecute = false,
-                    RedirectStandardError = true,
-                    RedirectStandardInput = true,
-                    RedirectStandardOutput = true,
+                    RedirectStandardError = false,
+                    RedirectStandardInput = false,
+                    RedirectStandardOutput = false,
                     WorkingDirectory = Environment.CurrentDirectory,
                 }
                 );

@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatabaseUpdate));
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblFile = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -46,24 +46,24 @@
             this.progressBar1.Size = new System.Drawing.Size(359, 29);
             this.progressBar1.TabIndex = 0;
             // 
-            // label2
+            // lblFile
             // 
-            this.label2.AutoEllipsis = true;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(184, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(10, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "-";
+            this.lblFile.AutoEllipsis = true;
+            this.lblFile.AutoSize = true;
+            this.lblFile.Location = new System.Drawing.Point(184, 68);
+            this.lblFile.Name = "lblFile";
+            this.lblFile.Size = new System.Drawing.Size(10, 13);
+            this.lblFile.TabIndex = 2;
+            this.lblFile.Text = "-";
             // 
-            // label3
+            // lblStatus
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(68, 68);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(10, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "-";
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(68, 68);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(10, 13);
+            this.lblStatus.TabIndex = 3;
+            this.lblStatus.Text = "-";
             // 
             // label4
             // 
@@ -88,8 +88,8 @@
             this.groupBox1.Controls.Add(this.progressBar1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lblFile);
+            this.groupBox1.Controls.Add(this.lblStatus);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(420, 105);
@@ -126,8 +126,8 @@
         #endregion
 
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblFile;
+        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;

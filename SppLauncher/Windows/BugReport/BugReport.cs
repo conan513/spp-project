@@ -50,7 +50,7 @@ namespace SppLauncher.Windows.BugReport
         {
             send.SendError("report", txbMail.Text, cbBugType.Text, txbDesc.Text, getSys.GetProcessorName(), count.ToString(), getSys.getmemory().ToString(),
           getSys.getOS(), "Prog: " + Launcher.currProgVer + "," + " Emu: " + Launcher.CurrEmuVer);
-
+            
             if (cbLogs.Checked)
                 send.zipLogs();
         }

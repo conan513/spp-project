@@ -24,7 +24,6 @@ namespace SppLauncher.Windows
             launcher = otLauncher;
             DisableCloseButton();
             Start();
-            
         }
 
         #region DisableX
@@ -54,16 +53,15 @@ namespace SppLauncher.Windows
         private void Start()
         {
             bWdbUp.RunWorkerAsync();
-            
         }
 
         private void bWdbUp1_DoWork(object sender, DoWorkEventArgs e)
         {
             if (Directory.Exists("update\\mangos"))
             {
-                label3.Text = "Drop Mangos";
+                lblStatus.Text = "Drop Mangos";
                 InsertSingle(@"update\mangos\mangos_recreate_database.sql");
-                label3.Text = "Insert YTDB";
+                lblStatus.Text = "Insert YTDB";
                 InsertMultiple(@"update\ytdb\full", "ytdb*mangos*sql", false);
             }
 
@@ -71,41 +69,61 @@ namespace SppLauncher.Windows
             {
                 if (Directory.Exists("update\\ytdb\\update"))
                 {
-                    label3.Text = "YTDB Update";
+                    lblStatus.Text = "YTDB Update";
                     InsertMultiple(@"update\ytdb\update", "*mangos*sql", true);
                 }
             }
             if (Directory.Exists(@"update\mangos\updates"))
             {
-                label3.Text = "Mangos Update";
+                lblStatus.Text = "Mangos Update";
                 InsertMultiple(@"update\mangos\updates", "*sql", true);
             }
             if (Directory.Exists(@"update\mangos\sql_mr"))
             {
-                label3.Text = "Custom Mangos Tables";
+                lblStatus.Text = "Custom Mangos Tables";
                 InsertSingle(@"update\mangos\sql_mr\custom_mangos_tables.sql");
-                label3.Text = "Update Mangos";
+                lblStatus.Text = "Update Mangos";
                 InsertMultiple(@"update\mangos\sql_mr", "mr*mangos*sql", true);
             }
 
-            label3.Text = "Update ScriptDev2";
-            run.RunMySqlWitoutDb("127.0.0.1", 3310, "root", "123456", @"update\scriptdev2\sql\scriptdev2_drop_database.sql");
-            run.RunMySqlWitoutDb("127.0.0.1", 3310, "root", "123456", @"update\scriptdev2\sql\scriptdev2\sql\scriptdev2_create_database.sql");
-            run.RunMySql("127.0.0.1", 3310, "root", "123456", "scriptdev2", @"update\scriptdev2\sql\scriptdev2\sql\scriptdev2_create_structure_mysql.sql");
-            run.RunMySql("127.0.0.1", 3310, "root", "123456", "scriptdev2", @"update\scriptdev2\sql\scriptdev2\sql\custom_scriptdev2_bsw_table.sql");
-            run.RunMySql("127.0.0.1", 3310, "root", "123456", "mangos", @"update\scriptdev2\sql\scriptdev2\sql\scriptdev2\sql\mangos_scriptname_clear.sql");
-            run.RunMySql("127.0.0.1", 3310, "root", "123456", "mangos", @"update\scriptdev2\sql\scriptdev2\sql\mangos_scriptname_full.sql");
+            if (Directory.Exists(@"update\scriptdev2"))
+            {
+                lblStatus.Text = "Update ScriptDev2";
+                run.RunMySqlWitoutDb("127.0.0.1", 3310, "root", "123456",
+                    @"update\scriptdev2\sql\scriptdev2_drop_database.sql");
+                run.RunMySqlWitoutDb("127.0.0.1", 3310, "root", "123456",
+                    @"update\scriptdev2\sql\scriptdev2_create_database.sql");
+                run.RunMySql("127.0.0.1", 3310, "root", "123456", "scriptdev2",
+                    @"update\scriptdev2\sql\scriptdev2_create_structure_mysql.sql");
+                run.RunMySql("127.0.0.1", 3310, "root", "123456", "scriptdev2",
+                    @"update\scriptdev2\sql\custom_scriptdev2_bsw_table.sql");
+                run.RunMySql("127.0.0.1", 3310, "root", "123456", "mangos",
+                    @"update\scriptdev2\sql\mangos_scriptname_clear.sql");
+                run.RunMySql("127.0.0.1", 3310, "root", "123456", "mangos",
+                    @"update\scriptdev2\sql\mangos_scriptname_full.sql");
 
-            Thread.Sleep(10);
-            InsertMultiple1(@"update\scriptdev2\sql_mr", "mangos", "mr*mangos*sql");
-            Thread.Sleep(10);
-            InsertMultiple1(@"update\scriptdev2\sql_mr", "scriptdev2", "mr*scriptdev2*sql");
-            Thread.Sleep(10);
-            label3.Text = "Complete!";
-            label2.Text = "-";
-            if (Directory.Exists(@"update\server")) { fileCopy.Copy(@"update\server", "", true); }
-            File.WriteAllText(@"SingleCore\version", File.ReadAllText(@"update\version"));
-            Directory.Delete(@"update", true);
+                if (Directory.Exists(@"update\scriptdev2\sql_mr"))
+                {
+                    Thread.Sleep(10);
+                    InsertMultiple1(@"update\scriptdev2\sql_mr", "mangos", "mr*mangos*sql");
+                    Thread.Sleep(10);
+                    InsertMultiple1(@"update\scriptdev2\sql_mr", "scriptdev2", "mr*scriptdev2*sql");
+                    Thread.Sleep(10);
+                }
+            }
+
+            lblStatus.Text = "Complete!";
+            lblFile.Text = "-";
+
+            try
+            {
+                if (Directory.Exists(@"update\server")) { fileCopy.Copy(@"update\server", "", true); }
+                File.WriteAllText(@"SingleCore\version", File.ReadAllText(@"update\version"));
+                Directory.Delete(@"update", true);
+            }
+            catch
+            {
+            }
             EnableCloseButton();
             Thread.Sleep(2000);
         }
@@ -139,16 +157,14 @@ namespace SppLauncher.Windows
                 Thread.Sleep(10);
                 foreach (String aFile in files)
                 {
-                    label2.Text = Path.GetFileName(aFile);
+                    lblFile.Text = Path.GetFileName(aFile);
                     run.RunMySql("127.0.0.1", 3310, "root", "123456", "mangos", aFile);
-
                     _complete++; bWdbUp.ReportProgress(_complete);
                     Thread.Sleep(10);
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
             }
         }
 
@@ -162,7 +178,7 @@ namespace SppLauncher.Windows
                 Thread.Sleep(10);
                 foreach (String aFile in files)
                 {
-                    label2.Text = Path.GetFileName(aFile);
+                    lblFile.Text = Path.GetFileName(aFile);
                     run.RunMySql("127.0.0.1", 3310, "root", "123456", db, aFile);
 
                     _complete++;
@@ -170,9 +186,8 @@ namespace SppLauncher.Windows
                     Thread.Sleep(10);
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
             }
         }
 
@@ -187,9 +202,8 @@ namespace SppLauncher.Windows
 
                 run.RunMySql("127.0.0.1", 3310, "root", "123456", "mangos", path);
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
             }
         }
 

@@ -45,7 +45,6 @@ namespace SppLauncher
         public static double CurrEmuVer, RemoteEmuVer;
         private const string lwPath  = "SingleCore\\";
         private const string sqlpath = "Database\\bin\\";
-
         #endregion
 
         #region [ Initialize ]
