@@ -31,7 +31,7 @@ namespace SppLauncher
             randomizeBots,realmListPath,
             realmDialogPath,OLDrealmList,
             UpdLink,importFile, exportfile, 
-            Autostart, currProgVer = "1.1.1",
+            Autostart, currProgVer = "1.1.3",
             lang, UpdateUnpack, Status;
 
         public DateTime Dt;
@@ -53,6 +53,8 @@ namespace SppLauncher
         {
             xmlReadWrite = new XmlReadWrite();
             if(xmlReadWrite.ReadXML()){checklang(false);}
+            string exePath = AppDomain.CurrentDomain.FriendlyName;
+            File.SetAttributes(exePath, FileAttributes.Normal);
             InitializeComponent();
             checklang(true);
             cpuCounter = new PerformanceCounter();
@@ -561,8 +563,6 @@ namespace SppLauncher
 
         #region [ OtherMethods ]
 
-
-
         public void statusChage(string msg, bool islink)
         {
             Status = msg;
@@ -609,7 +609,6 @@ namespace SppLauncher
                         break;
                 }
             }
-
         }
 
         private void animateStatus(bool animate)
@@ -1762,9 +1761,41 @@ namespace SppLauncher
             if (File.Exists("SppLauncher_OLD.exe"))
             {
                 File.Delete("SppLauncher_OLD.exe");
+                File.SetAttributes("SppLauncher.exe", FileAttributes.Normal);
                 var uC = new Update_Completed();
                 uC.Show(); //open update completed form
             }
+        }
+
+        //public void WasThisLangUpdate()
+        //{
+        //    if (File.Exists(@"Languages\hu\SppLauncher.resources_new.dll"))
+        //    {
+        //        File.Delete(@"Languages\hu\SppLauncher.resources.dll");
+        //        File.Delete(@"Languages\de\SppLauncher.resources.dll");
+        //        File.Delete(@"Languages\fr\SppLauncher.resources.dll");
+
+        //        File.Move(@"Languages\hu\SppLauncher.resources_new.dll", @"Languages\hu\SppLauncher.resources.dll");
+        //        File.SetAttributes(@"Languages\hu\SppLauncher.resources.dll", FileAttributes.Normal);
+
+        //        File.Move(@"Languages\de\SppLauncher.resources_new.dll", @"Languages\de\SppLauncher.resources.dll");
+        //        File.SetAttributes(@"Languages\de\SppLauncher.resources.dll", FileAttributes.Normal);
+
+        //        File.Move(@"Languages\fr\SppLauncher.resources_new.dll", @"Languages\fr\SppLauncher.resources.dll");
+        //        File.SetAttributes(@"Languages\fr\SppLauncher.resources.dll", FileAttributes.Normal);
+        //    }
+        //}
+
+        public void test()
+        {
+            try
+            {
+                File.SetAttributes("SppLauncher_NEW.exe", FileAttributes.Normal);
+            }
+            catch
+            {
+            }
+
         }
 
         public bool GetUpdate()
@@ -1774,7 +1805,7 @@ namespace SppLauncher
                 statusChage(Resources.Launcher_Checking_Update, false);
                 animateStatus(true);
                 var client     = new WebClient();
-                Stream stream  = client.OpenRead("https://raw.github.com/conan513/SingleCore/SPP/Tools/update.txt");
+                Stream stream  = client.OpenRead("https://raw.github.com/conan513/SingleCore/SPP/Tools/update_new.txt");
                 var reader     = new StreamReader(stream);
                 String content = reader.ReadToEnd();
                 string[] parts = content.Split(';');
@@ -2029,6 +2060,5 @@ namespace SppLauncher
         }
 
         #endregion
-
     }
 }

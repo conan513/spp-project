@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -13,8 +14,8 @@ namespace SppLauncher
         public Loader()
         {
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+            DelLang();
             InitializeComponent();
-
             SqlStartCheck.Start();
             pictureBox1.Visible = false;
             pictureBox2.Visible = false;
@@ -47,6 +48,51 @@ namespace SppLauncher
             }
         }
 
+        public void WasThisLangUpdate()
+        {
+            try
+            {
+                if (File.Exists(@"Languages\hu\SppLauncher.resources_new.dll"))
+                {
+                    File.Delete(@"Languages\hu\SppLauncher.resources.dll");
+                    File.Delete(@"Languages\de\SppLauncher.resources.dll");
+                    File.Delete(@"Languages\fr\SppLauncher.resources.dll");
+
+                    File.Move(@"Languages\hu\SppLauncher.resources_new.dll", @"Languages\hu\SppLauncher.resources.dll");
+                    File.SetAttributes(@"Languages\hu\SppLauncher.resources.dll", FileAttributes.Normal);
+
+                    File.Move(@"Languages\de\SppLauncher.resources_new.dll", @"Languages\de\SppLauncher.resources.dll");
+                    File.SetAttributes(@"Languages\de\SppLauncher.resources.dll", FileAttributes.Normal);
+
+                    File.Move(@"Languages\fr\SppLauncher.resources_new.dll", @"Languages\fr\SppLauncher.resources.dll");
+                    File.SetAttributes(@"Languages\fr\SppLauncher.resources.dll", FileAttributes.Normal);
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        public void DelLang()
+        {
+            try
+            {
+                if (File.Exists(@"hu\SppLauncher.resources.dll"))
+                {
+                    File.Delete(@"hu\SppLauncher.resources.dll");
+                    File.Delete(@"fr\SppLauncher.resources.dll");
+                    File.Delete(@"de\SppLauncher.resources.dll");
+
+                    Directory.Delete("hu");
+                    Directory.Delete("fr");
+                    Directory.Delete("de");
+                }
+            }
+            catch
+            {
+            }
+        }
+
         private readonly Random _rnd = new Random();
 
         private int GetRandomInt()
@@ -61,6 +107,7 @@ namespace SppLauncher
             if (Opacity >= 1)
             {
                 ShowSplashScreen.Stop();
+                WasThisLangUpdate();
                 Thread.Sleep(2000);
                 HideSplashScreen.Start();
             }

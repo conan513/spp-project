@@ -83,8 +83,15 @@ namespace SPPTest
         [TestMethod]
         public void sendlogs()
         {
-            SendReport obj = new SendReport();
-            obj.zipLogs();
+          Update obj = new Update();
+            obj.bw_LangUpdate.RunWorkerAsync();
+        }
+
+        [TestMethod]
+        public void Landupdate()
+        {
+            Launcher obj = new Launcher();
+            //obj.WasThisLangUpdate();
         }
     }
 }

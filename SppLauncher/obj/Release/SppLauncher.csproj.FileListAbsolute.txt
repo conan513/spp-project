@@ -18,9 +18,6 @@ D:\Sources\SppLauncher\obj\Release\SppLauncher.Update.resources
 D:\Sources\SppLauncher\obj\Release\SppLauncher.Update_Completed.resources
 D:\Sources\SppLauncher\obj\Release\SppLauncher.WorldConf.resources
 D:\Sources\SppLauncher\obj\Release\WowAccountCreator.WowaccountCreator.resources
-D:\Sources\SppLauncher\obj\Release\SppLauncher.Properties.Resources.de.resources
-D:\Sources\SppLauncher\obj\Release\SppLauncher.Properties.Resources.fr.resources
-D:\Sources\SppLauncher\obj\Release\SppLauncher.Properties.Resources.hu.resources
 D:\Sources\SppLauncher\obj\Release\SppLauncher.AboutBox.de.resources
 D:\Sources\SppLauncher\obj\Release\SppLauncher.AboutBox.fr.resources
 D:\Sources\SppLauncher\obj\Release\SppLauncher.AboutBox.hu.resources
@@ -55,3 +52,6 @@ D:\Sources\SppLauncher\obj\Release\fr\SppLauncher.resources.dll
 D:\Sources\SppLauncher\obj\Release\hu\SppLauncher.resources.dll
 D:\Sources\SppLauncher\obj\Release\SppLauncher.exe
 D:\Sources\SppLauncher\obj\Release\SppLauncher.pdb
+D:\Sources\SppLauncher\obj\Release\SppLauncher.Properties.Resources.de.resources
+D:\Sources\SppLauncher\obj\Release\SppLauncher.Properties.Resources.fr.resources
+D:\Sources\SppLauncher\obj\Release\SppLauncher.Properties.Resources.hu.resources

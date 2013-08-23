@@ -32,10 +32,11 @@
             this.pb_down = new System.Windows.Forms.ProgressBar();
             this.lbl_Perecent = new System.Windows.Forms.Label();
             this.lbl_downByte = new System.Windows.Forms.Label();
-            this.bw_updater = new System.ComponentModel.BackgroundWorker();
+            this.bw_LauncherUpdate = new System.ComponentModel.BackgroundWorker();
             this.gb_status = new System.Windows.Forms.GroupBox();
             this.lbl_speed = new System.Windows.Forms.Label();
             this.lbl_status = new System.Windows.Forms.Label();
+            this.bw_LangUpdate = new System.ComponentModel.BackgroundWorker();
             this.gb_status.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,18 +56,18 @@
             resources.ApplyResources(this.lbl_downByte, "lbl_downByte");
             this.lbl_downByte.Name = "lbl_downByte";
             // 
-            // bw_updater
+            // bw_LauncherUpdate
             // 
-            this.bw_updater.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bw_updater_DoWork);
+            this.bw_LauncherUpdate.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bw_updater_DoWork);
             // 
             // gb_status
             // 
-            resources.ApplyResources(this.gb_status, "gb_status");
             this.gb_status.Controls.Add(this.lbl_speed);
             this.gb_status.Controls.Add(this.lbl_status);
             this.gb_status.Controls.Add(this.pb_down);
             this.gb_status.Controls.Add(this.lbl_downByte);
             this.gb_status.Controls.Add(this.lbl_Perecent);
+            resources.ApplyResources(this.gb_status, "gb_status");
             this.gb_status.Name = "gb_status";
             this.gb_status.TabStop = false;
             // 
@@ -79,6 +80,11 @@
             // 
             resources.ApplyResources(this.lbl_status, "lbl_status");
             this.lbl_status.Name = "lbl_status";
+            // 
+            // bw_LangUpdate
+            // 
+            this.bw_LangUpdate.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bw_LangUpdate_DoWork);
+            this.bw_LangUpdate.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bw_LangUpdate_RunWorkerCompleted);
             // 
             // Update
             // 
@@ -101,9 +107,10 @@
         private System.Windows.Forms.ProgressBar pb_down;
         private System.Windows.Forms.Label lbl_Perecent;
         private System.Windows.Forms.Label lbl_downByte;
-        private System.ComponentModel.BackgroundWorker bw_updater;
+        private System.ComponentModel.BackgroundWorker bw_LauncherUpdate;
         private System.Windows.Forms.GroupBox gb_status;
         private System.Windows.Forms.Label lbl_status;
         private System.Windows.Forms.Label lbl_speed;
+        public System.ComponentModel.BackgroundWorker bw_LangUpdate;
     }
 }

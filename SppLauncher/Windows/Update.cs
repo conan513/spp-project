@@ -6,6 +6,7 @@ using System.IO;
 using System.Net;
 using System.Threading;
 using System.Windows.Forms;
+using Ionic.Zip;
 
 namespace SppLauncher
 {
@@ -20,10 +21,10 @@ namespace SppLauncher
 
         private void Update_Shown(object sender, EventArgs e)
         {
-            bw_updater.RunWorkerAsync();
+            bw_LauncherUpdate.RunWorkerAsync();
         }
 
-        private void DownloadUpdate(string URL, string Save)
+        public void DownloadUpdate(string URL, string Save)
         {
             lbl_status.Text = "Status: Connecting";
             Thread.Sleep(100);
@@ -45,6 +46,19 @@ namespace SppLauncher
                 new Uri(URL), Save);
             sw.Start();
         }
+        
+        public void DownloadLangUpdate(string URL, string Save)
+        {
+            lbl_status.Text = "Status: Connecting";
+            Thread.Sleep(100);
+            var client = new WebClient();
+            client.DownloadProgressChanged += clientLang_DownloadProgressChanged;
+            client.DownloadFileCompleted += clientLang_DownloadFileCompleted;
+            lbl_status.Text = "Status: Downloading Languages";
+            client.DownloadFileAsync(
+                new Uri(URL), Save);
+            sw.Start();
+        }
 
         private void client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
@@ -57,8 +71,25 @@ namespace SppLauncher
             lbl_Perecent.Text = int.Parse(Math.Truncate(percentage).ToString(CultureInfo.InvariantCulture)) + "%";
         }
 
+        private void clientLang_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            double bytesIn = double.Parse(e.BytesReceived.ToString());
+            double totalBytes = double.Parse(e.TotalBytesToReceive.ToString());
+            double percentage = bytesIn / totalBytes * 100;
+            lbl_downByte.Text = e.BytesReceived / 1024 + " / " + e.TotalBytesToReceive / 1024 + " Kb";
+            lbl_speed.Text = "Speed: " + (bytesIn / 1024 / sw.Elapsed.TotalSeconds).ToString("0.00") + " Kb/s";
+            pb_down.Value = int.Parse(Math.Truncate(percentage).ToString(CultureInfo.InvariantCulture));
+            lbl_Perecent.Text = int.Parse(Math.Truncate(percentage).ToString(CultureInfo.InvariantCulture)) + "%";
+        }
+
         private void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
+            bw_LangUpdate.RunWorkerAsync();
+        }
+
+        private void clientLang_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            ImportExtract();
             lbl_status.Text = "Status: Completed";
             Thread.Sleep(500);
             Process.Start("SppLauncher.exe");
@@ -67,12 +98,34 @@ namespace SppLauncher
 
         private void bw_updater_DoWork(object sender, DoWorkEventArgs e)
         {
-            DownloadUpdate("http://dl.dropbox.com/u/7587303/Updates/SppLauncher.exe", "SppLauncher.exe");
+            DownloadUpdate("http://dl.dropbox.com/u/7587303/Updates/SppLauncher_new.exe", "SppLauncher.exe");
         }
 
         private void pb_down_Click(object sender, EventArgs e)
         {
+        }
 
+        private void bw_LangUpdate_DoWork(object sender, DoWorkEventArgs e)
+        {
+            DownloadLangUpdate("https://dl.dropboxusercontent.com/u/7587303/Updates/Languages.zip", "Languages.zip");
+            lbl_status.Text = "Status: Decompress";
+        }
+
+        public void ImportExtract() //.sppbackup extract
+        {
+            string unpck = "Languages.zip";
+            string unpckDir = "";
+            using (ZipFile zip = ZipFile.Read(unpck))
+            {
+                foreach (ZipEntry e in zip)
+                {
+                    e.Extract(unpckDir, ExtractExistingFileAction.OverwriteSilently);
+                }
+            }
+        }
+
+        private void bw_LangUpdate_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
         }
     }
 }
