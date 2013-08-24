@@ -2516,13 +2516,13 @@
     <value>204, 6</value>
   </data>
   <data name="exportToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="exportToolStripMenuItem2.Text" xml:space="preserve">
     <value>Export</value>
   </data>
   <data name="importToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="importToolStripMenuItem2.Text" xml:space="preserve">
     <value>Import</value>
@@ -2733,6 +2733,15 @@
   </metadata>
   <metadata name="bWUpEx.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>566, 56</value>
+  </metadata>
+  <metadata name="bwStopWorld.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>730, 56</value>
+  </metadata>
+  <metadata name="bwRestart.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>894, 56</value>
+  </metadata>
+  <metadata name="bwRunImport.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1058, 56</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -4854,6 +4863,24 @@
     <value>bWUpEx</value>
   </data>
   <data name="&gt;&gt;bWUpEx.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bwStopWorld.Name" xml:space="preserve">
+    <value>bwStopWorld</value>
+  </data>
+  <data name="&gt;&gt;bwStopWorld.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bwRestart.Name" xml:space="preserve">
+    <value>bwRestart</value>
+  </data>
+  <data name="&gt;&gt;bwRestart.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bwRunImport.Name" xml:space="preserve">
+    <value>bwRunImport</value>
+  </data>
+  <data name="&gt;&gt;bwRunImport.Type" xml:space="preserve">
     <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

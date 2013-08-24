@@ -24,3 +24,12 @@ D:\Sources\BugReportGUI\obj\Release\BugReportGUI.csprojResolveAssemblyReference.
 D:\Sources\BugReportGUI\obj\Release\BugReportGUI.BugreportGUI.resources
 D:\Sources\BugReportGUI\obj\Release\BugReportGUI.Properties.Resources.resources
 D:\Sources\BugReportGUI\obj\Release\BugReportGUI.csproj.GenerateResource.Cache
+D:\Github\Single Player Project\BugReportGUI\bin\Release\BugReportGUI.exe.config
+D:\Github\Single Player Project\BugReportGUI\obj\Release\BugReportGUI.exe
+D:\Github\Single Player Project\BugReportGUI\obj\Release\BugReportGUI.pdb
+D:\Github\Single Player Project\BugReportGUI\bin\Release\BugReportGUI.exe
+D:\Github\Single Player Project\BugReportGUI\bin\Release\BugReportGUI.pdb
+D:\Github\Single Player Project\BugReportGUI\obj\Release\BugReportGUI.csprojResolveAssemblyReference.cache
+D:\Github\Single Player Project\BugReportGUI\obj\Release\BugReportGUI.BugreportGUI.resources
+D:\Github\Single Player Project\BugReportGUI\obj\Release\BugReportGUI.Properties.Resources.resources
+D:\Github\Single Player Project\BugReportGUI\obj\Release\BugReportGUI.csproj.GenerateResource.Cache

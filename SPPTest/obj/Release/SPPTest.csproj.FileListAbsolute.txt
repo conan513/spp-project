@@ -13,3 +13,8 @@ D:\Sources\SPPTest\obj\Release\SPPTest.dll
 D:\Sources\SPPTest\obj\Release\SPPTest.pdb
 D:\SPP\Single Player Project Real v2\SPPTest.dll
 D:\SPP\Single Player Project Real v2\SPPTest.pdb
+D:\Github\SPP\Single Player Project Real v2\SPPTest.dll
+D:\Github\SPP\Single Player Project Real v2\SPPTest.pdb
+D:\Github\Single Player Project\SPPTest\obj\Release\SPPTest.csprojResolveAssemblyReference.cache
+D:\Github\Single Player Project\SPPTest\obj\Release\SPPTest.dll
+D:\Github\Single Player Project\SPPTest\obj\Release\SPPTest.pdb

@@ -12,7 +12,7 @@ using StatServer.Class;
 
 namespace StatServer
 {
-    #region [ Variables & Initialize ]
+    #region [ Variables ]
 
     public partial class Statistics : Form
     {
@@ -31,6 +31,10 @@ namespace StatServer
         private Thread FilelistenThread;
         private TcpListener FiletcpListener;
 
+    #endregion
+
+        #region [ Constructor ]
+
         public Statistics()
         {
             InitializeComponent();
@@ -43,7 +47,7 @@ namespace StatServer
             Getip.Start();
         }
 
-    #endregion
+        #endregion
 
         #region [ ReportServer ]
 

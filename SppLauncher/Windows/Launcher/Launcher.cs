@@ -454,12 +454,15 @@ namespace SppLauncher
         {
             try
             {
+                checklang(false);
                 if (_serverConsoleActive) sendCommandForServerToolStripMenuItem_Click(new object(), new EventArgs());
 
                 foreach (Process proc in Process.GetProcessesByName("mangosd"))
                 {
-                    _cmd1.StandardInput.WriteLine("save");
-                    Thread.Sleep(1000);
+                    statusChage("Saving",false);
+                    animateStatus(true);
+                    _cmd1.StandardInput.WriteLine("saveall");
+                    Thread.Sleep(5000);
 
                     statusChage(Resources.Launcher_CloseProcess_World_Shutdown, false);
                     _cmd1.StandardInput.WriteLine("server shutdown 0");
@@ -657,9 +660,9 @@ namespace SppLauncher
                 CheckMangosCrashed.Stop();
                 GetSqlOnlineBot.Stop();
                 tssLOnline.Text = Resources.Launcher_startNStop_Online_bot__N_A;
-                CloseProcess(false);
-                StatusIcon();
-                statusChage(Resources.Launcher_startNStop_Derver_is_down, false);
+                bwStopWorld.RunWorkerAsync(); //
+                //StatusIcon();
+                //statusChage(Resources.Launcher_startNStop_Derver_is_down, false);
             }
         }
 
@@ -1117,6 +1120,7 @@ namespace SppLauncher
 
         private void startstopToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            _allowtext = false;
             startNStop();
         }
 
@@ -1382,11 +1386,7 @@ namespace SppLauncher
             rtWorldDev.Visible = false;
             _allowtext         = false;
             _restart           = true;
-            CloseProcess(true);
-            StatusIcon();
-            WindowState = FormWindowState.Normal;
-            Show();
-            StartAll();
+            bwRestart.RunWorkerAsync();
         }
 
         private void resetAllRandomBotsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1889,16 +1889,17 @@ namespace SppLauncher
                     CheckMangosCrashed.Stop();
                     _allowtext = false;
                     _restart = true;
-                    CloseProcess(true);
-                    GetSqlOnlineBot.Stop();
-                    tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
-                    StatusIcon();
-                    WindowState = FormWindowState.Normal;
-                    Show();
-                    pbAvailableM.Visible = true;
-                    statusChage(Resources.Launcher_import_Decompress, false);
-                    animateStatus(true);
-                    bwImport.RunWorkerAsync();
+                    bwRunImport.RunWorkerAsync();
+                    //CloseProcess(true);
+                    //GetSqlOnlineBot.Stop();
+                    //tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
+                    //StatusIcon();
+                    //WindowState = FormWindowState.Normal;
+                    //Show();
+                    //pbAvailableM.Visible = true;
+                    //statusChage(Resources.Launcher_import_Decompress, false);
+                    //animateStatus(true);
+                    //bwImport.RunWorkerAsync();
                 }
             }
             else
@@ -2060,5 +2061,48 @@ namespace SppLauncher
         }
 
         #endregion
+
+        private void bwCloseProcess_DoWork(object sender, DoWorkEventArgs e)
+        {
+            CloseProcess(false);
+        }
+
+        private void bwCloseProcess_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            StatusIcon();
+            statusChage(Resources.Launcher_startNStop_Derver_is_down, false);
+            animateStatus(false);
+        }
+
+        private void bwCloseProcess1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            CloseProcess(true);
+        }
+
+        private void bwCloseProcess1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            StatusIcon();
+            WindowState = FormWindowState.Normal;
+            Show();
+            StartAll();
+        }
+
+        private void bwRunExport_DoWork(object sender, DoWorkEventArgs e)
+        {
+            CloseProcess(true);
+        }
+
+        private void bwRunExport_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            GetSqlOnlineBot.Stop();
+            tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
+            StatusIcon();
+            WindowState = FormWindowState.Normal;
+            Show();
+            pbAvailableM.Visible = true;
+            statusChage(Resources.Launcher_import_Decompress, false);
+            animateStatus(true);
+            bwImport.RunWorkerAsync();
+        }
     }
 }

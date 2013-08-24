@@ -125,6 +125,9 @@
             this.bwExport = new System.ComponentModel.BackgroundWorker();
             this.tmrUsage = new System.Windows.Forms.Timer(this.components);
             this.bWUpEx = new System.ComponentModel.BackgroundWorker();
+            this.bwStopWorld = new System.ComponentModel.BackgroundWorker();
+            this.bwRestart = new System.ComponentModel.BackgroundWorker();
+            this.bwRunImport = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNotAvailW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTempW)).BeginInit();
@@ -805,6 +808,21 @@
             this.bWUpEx.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bWUpEx_DoWork);
             this.bWUpEx.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bWUpEx_RunWorkerCompleted);
             // 
+            // bwStopWorld
+            // 
+            this.bwStopWorld.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwCloseProcess_DoWork);
+            this.bwStopWorld.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwCloseProcess_RunWorkerCompleted);
+            // 
+            // bwRestart
+            // 
+            this.bwRestart.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwCloseProcess1_DoWork);
+            this.bwRestart.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwCloseProcess1_RunWorkerCompleted);
+            // 
+            // bwRunImport
+            // 
+            this.bwRunImport.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwRunExport_DoWork);
+            this.bwRunImport.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwRunExport_RunWorkerCompleted);
+            // 
             // Launcher
             // 
             resources.ApplyResources(this, "$this");
@@ -940,6 +958,9 @@
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem openUpdateFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem2;
+        private System.ComponentModel.BackgroundWorker bwStopWorld;
+        private System.ComponentModel.BackgroundWorker bwRestart;
+        private System.ComponentModel.BackgroundWorker bwRunImport;
     }
 }
 
