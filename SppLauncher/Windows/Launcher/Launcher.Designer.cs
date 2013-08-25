@@ -128,6 +128,8 @@
             this.bwStopWorld = new System.ComponentModel.BackgroundWorker();
             this.bwRestart = new System.ComponentModel.BackgroundWorker();
             this.bwRunImport = new System.ComponentModel.BackgroundWorker();
+            this.tmrSysProtect = new System.Windows.Forms.Timer(this.components);
+            this.bwCloseSPP = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNotAvailW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTempW)).BeginInit();
@@ -823,6 +825,15 @@
             this.bwRunImport.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwRunExport_DoWork);
             this.bwRunImport.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwRunExport_RunWorkerCompleted);
             // 
+            // tmrSysProtect
+            // 
+            this.tmrSysProtect.Interval = 1000;
+            // 
+            // bwCloseSPP
+            // 
+            this.bwCloseSPP.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwCloseSPP_DoWork);
+            this.bwCloseSPP.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwCloseSPP_RunWorkerCompleted);
+            // 
             // Launcher
             // 
             resources.ApplyResources(this, "$this");
@@ -961,6 +972,8 @@
         private System.ComponentModel.BackgroundWorker bwStopWorld;
         private System.ComponentModel.BackgroundWorker bwRestart;
         private System.ComponentModel.BackgroundWorker bwRunImport;
+        private System.Windows.Forms.Timer tmrSysProtect;
+        private System.ComponentModel.BackgroundWorker bwCloseSPP;
     }
 }
 

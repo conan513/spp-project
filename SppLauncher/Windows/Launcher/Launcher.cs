@@ -38,7 +38,7 @@ namespace SppLauncher
         private readonly PerformanceCounter cpuCounter, ramCounter;
         public static Process _cmd, _cmd1, _cmd3;
         private DateTime _start1 = DateTime.Now;
-        private bool _startStop, _allowtext, _restart, _updateYes, _serverConsoleActive;
+        private bool _startStop, _allowtext, _restart, _updateYes, _serverConsoleActive, SysProtect;
         public static bool Updater, OnlyMysqlStart,MysqlON,Sqlimport,sqlexport,dbupdate;
         private string _realm, _mangosdMem, _realmdMem, _sqlMem, _world, _sql, _SqlStartTime, _RealmStartTime, _WorldStartTime;
         private readonly string getTemp = Path.GetTempPath();
@@ -461,12 +461,11 @@ namespace SppLauncher
                 {
                     statusChage("Saving",false);
                     animateStatus(true);
-                    _cmd1.StandardInput.WriteLine("saveall");
+                    _world = "";
                     Thread.Sleep(5000);
-
                     statusChage(Resources.Launcher_CloseProcess_World_Shutdown, false);
                     _cmd1.StandardInput.WriteLine("server shutdown 0");
-                    Thread.Sleep(300);
+                    Thread.Sleep(1000);
                     proc.Kill();
                 }
 
@@ -660,6 +659,7 @@ namespace SppLauncher
                 CheckMangosCrashed.Stop();
                 GetSqlOnlineBot.Stop();
                 tssLOnline.Text = Resources.Launcher_startNStop_Online_bot__N_A;
+                SaveAnnounce();
                 bwStopWorld.RunWorkerAsync(); //
                 //StatusIcon();
                 //statusChage(Resources.Launcher_startNStop_Derver_is_down, false);
@@ -1056,6 +1056,7 @@ namespace SppLauncher
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            _allowtext = false;
             startNStop();
         }
 
@@ -1132,12 +1133,10 @@ namespace SppLauncher
 
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Hide();
+            exitToolStripMenuItem1.Enabled = false;
+            CheckMangosCrashed.Stop();
             GetSqlOnlineBot.Stop();
-            Thread.Sleep(200);
-            CloseProcess(false);
-            SppTray.Visible = false;
-            Loader.Kill     = true;
+            bwCloseSPP.RunWorkerAsync();
         }
 
         private void worldSettingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1371,13 +1370,10 @@ namespace SppLauncher
 
         private void exitToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Hide();
+            exitToolStripMenuItem2.Enabled = false;
             CheckMangosCrashed.Stop();
             GetSqlOnlineBot.Stop();
-            Thread.Sleep(200);
-            CloseProcess(false);
-            SppTray.Visible = false;
-            Loader.Kill     = true;
+            bwCloseSPP.RunWorkerAsync();
         }
 
         public void RealmWorldRestart()
@@ -1386,6 +1382,7 @@ namespace SppLauncher
             rtWorldDev.Visible = false;
             _allowtext         = false;
             _restart           = true;
+            SaveAnnounce();
             bwRestart.RunWorkerAsync();
         }
 
@@ -1466,6 +1463,27 @@ namespace SppLauncher
 
             tssUsage.Text = "CPU: " + Convert.ToInt32(getCurrentCpuUsage()) + "% |" + " RAM: " + perecent + "%" + " (" +
                             ramfree + "/" + ramtoltal + "MB)";
+
+            if (perecent >= 75)
+            {
+                if (!SysProtect)
+                {
+                    _cmd1.StandardInput.WriteLine(".announce Current ram usage: {0}%", perecent);
+                    _cmd1.StandardInput.WriteLine(".announce If the RAM usage exceeds 90%, auto-restart!}");
+                    SysProtect = true;
+                }
+            }
+
+            if (perecent >= 90)
+            {
+                if (SysProtect)
+                {
+                    _cmd1.StandardInput.WriteLine(".announce Auto-Restart!}");
+                    restartToolStripMenuItem1_Click_1(new object(), new EventArgs());
+                }
+            }
+
+
         }
 
         private void tmrRealm_Tick(object sender, EventArgs e)
@@ -2103,6 +2121,24 @@ namespace SppLauncher
             statusChage(Resources.Launcher_import_Decompress, false);
             animateStatus(true);
             bwImport.RunWorkerAsync();
+        }
+        
+        private void SaveAnnounce()
+        {
+            _cmd1.StandardInput.WriteLine("saveall");
+            _cmd1.StandardInput.WriteLine(".announce Saving...");
+        }
+
+        private void bwCloseSPP_DoWork(object sender, DoWorkEventArgs e)
+        {
+            CloseProcess(false);
+        }
+
+        private void bwCloseSPP_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            Hide();
+            SppTray.Visible = false;
+            Loader.Kill = true;
         }
     }
 }
