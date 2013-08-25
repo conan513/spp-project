@@ -15,54 +15,65 @@ using MySql.Data.MySqlClient;
 using MySQLClass;
 using SppLauncher.Class;
 using SppLauncher.Properties;
-using SppLauncher.Windows;
-using SppLauncher.Windows.BugReport;
 using WowAccountCreator;
 
-namespace SppLauncher
+namespace SppLauncher.Windows.Launcher
 {
     public partial class Launcher : Form
     {
         #region [ Variable ]
-
-        private readonly XmlReadWrite xmlReadWrite;
-        public static string wowExePath,
-            ipAdress,online,resetBots,
-            randomizeBots,realmListPath,
-            realmDialogPath,OLDrealmList,
-            UpdLink,importFile, exportfile, 
-            Autostart, currProgVer = "1.1.3",
-            lang, UpdateUnpack, Status;
-
-        public DateTime Dt;
-        private readonly PerformanceCounter cpuCounter, ramCounter;
-        public static Process _cmd, _cmd1, _cmd3;
+        private static double _remoteEmuVer;
+        private const string LwPath = "SingleCore\\";
+        private const string Sqlpath = "Database\\bin\\";
+        private readonly string _getTemp = Path.GetTempPath();
+        private static Process _cmd, _cmd1, _cmd3;
+        private DateTime _dt;
         private DateTime _start1 = DateTime.Now;
-        private bool _startStop, _allowtext, _restart, _updateYes, _serverConsoleActive, SysProtect;
-        public static bool Updater, OnlyMysqlStart,MysqlON,Sqlimport,sqlexport,dbupdate;
-        private string _realm, _mangosdMem, _realmdMem, _sqlMem, _world, _sql, _SqlStartTime, _RealmStartTime, _WorldStartTime;
-        private readonly string getTemp = Path.GetTempPath();
-        public static double CurrEmuVer, RemoteEmuVer;
-        private const string lwPath  = "SingleCore\\";
-        private const string sqlpath = "Database\\bin\\";
+        private readonly PerformanceCounter _cpuCounter, _ramCounter;
+        private bool _startStop, _allowtext, _restart, _updateYes, _serverConsoleActive, _sysProtect;
+        private readonly XmlReadWrite _xmlReadWrite;
+        private static string _olDrealmList, _updLink, _realmDialogPath, _exportfile, _ipAdress, _importFile;
+        private static bool _sqlimport, _sqlexport, Updater;
+        private string _realm, _mangosdMem, _realmdMem, _sqlMem, _world, _sql, _sqlStartTime, _realmStartTime, _worldStartTime;
+        public static string AutoS, resetBots, RandomizeBots, RealmListPath, Lang, UpdateUnpack, Status, WowExePath;
+        public static bool OnlyMysqlStart, MysqlOn, Dbupdate;
+        public static double CurrEmuVer;
+        public const string CurrProgVer = "1.1.3"; //? Current program version.
+
         #endregion
 
         #region [ Initialize ]
 
         public Launcher()
         {
-            xmlReadWrite = new XmlReadWrite();
-            if(xmlReadWrite.ReadXML()){checklang(false);}
+            _xmlReadWrite = new XmlReadWrite();
+            if(_xmlReadWrite.ReadXML()){Checklang(false);}
             string exePath = AppDomain.CurrentDomain.FriendlyName;
             File.SetAttributes(exePath, FileAttributes.Normal);
             InitializeComponent();
-            checklang(true);
-            cpuCounter = new PerformanceCounter();
+
+            _cpuCounter = new PerformanceCounter();
+            _cpuCounter.CategoryName = "Processor";
+            _cpuCounter.CounterName  = "% Processor Time";
+            _cpuCounter.InstanceName = "_Total";
+            _ramCounter              = new PerformanceCounter("Memory", "Available MBytes");
+
+
+            SppTray.Visible = true;
+            startWowToolStripMenuItem.ToolTipText = Resources.Launcher_Launcher_Auto_Changed_RealmList_wtf_and_after_exit_SPP_change_back_original_realmlist_;
+        }
+
+        private void Launcher_Shown(object sender, EventArgs e)
+        {
+            InitMethods();
+        }
+
+        #endregion
+
+        private void InitMethods()
+        {
+            Checklang(true);
             GetLocalSrvVer();
-            cpuCounter.CategoryName = "Processor";
-            cpuCounter.CounterName  = "% Processor Time";
-            cpuCounter.InstanceName = "_Total";
-            ramCounter              = new PerformanceCounter("Memory", "Available MBytes");
             tmrUsage.Start();
             StatusBarUpdater.Start();
             MenuItemsDisableAfterLoad();
@@ -72,9 +83,12 @@ namespace SppLauncher
             font();
             SearchProcess();
             StatusIcon();
+            AutoStart();  
+        }
 
-
-            if (Autostart == "1")
+        private void AutoStart()
+        {
+                       if (AutoS == "1")
             {
                 startstopToolStripMenuItem.Image                = Resources.Button_stop_icon;
                 startToolStripMenuItem.Image                    = Resources.Button_stop_icon;
@@ -97,16 +111,8 @@ namespace SppLauncher
                 restartToolStripMenuItem1.Enabled                  = false;
                 restartToolStripMenuItem2.Enabled                  = false;
                 sendCommandForServerToolStripMenuItem.Enabled      = false;
-            }
-
-            SppTray.Visible = true;
-            startWowToolStripMenuItem.ToolTipText =
-                Resources
-                    .Launcher_Launcher_Auto_Changed_RealmList_wtf_and_after_exit_SPP_change_back_original_realmlist_;
-
+            } 
         }
-
-        #endregion
 
         #region [ Servers ]
 
@@ -118,8 +124,9 @@ namespace SppLauncher
         private void bwCloseProcess_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             StatusIcon();
-            statusChage(Resources.Launcher_startNStop_Derver_is_down, false);
-            animateStatus(false);
+            StatusChage(Resources.Launcher_startNStop_Derver_is_down, false);
+            AnimateStatus(false);
+            
         }
 
         private void bwCloseProcess1_DoWork(object sender, DoWorkEventArgs e)
@@ -148,8 +155,8 @@ namespace SppLauncher
             WindowState = FormWindowState.Normal;
             Show();
             pbAvailableM.Visible = true;
-            statusChage(Resources.Launcher_import_Decompress, false);
-            animateStatus(true);
+            StatusChage(Resources.Launcher_import_Decompress, false);
+            AnimateStatus(true);
             bwImport.RunWorkerAsync();
         }
 
@@ -160,7 +167,7 @@ namespace SppLauncher
                 _cmd1.StandardInput.WriteLine("saveall");
                 _cmd1.StandardInput.WriteLine(".announce Saving...");
             }
-            catch
+            catch (Exception)
             {
             }
         }
@@ -182,15 +189,15 @@ namespace SppLauncher
             _realm += text;
         }
 
-        public float getCurrentCpuUsage()
+        public float GetCurrentCpuUsage()
         {
-            return cpuCounter.NextValue();
+            return _cpuCounter.NextValue();
 
         }
 
-        public int getAvailableRAM()
+        public int GetAvailableRAM()
         {
-            return Convert.ToInt32(ramCounter.NextValue());
+            return Convert.ToInt32(_ramCounter.NextValue());
         }
 
         private void SetText3(string text1)
@@ -239,10 +246,10 @@ namespace SppLauncher
                         !text.Contains("MoveSpline") &&
                         !text.Contains("unknown spell id"))
                     {
-                        Dt = DateTime.Now;
+                        _dt = DateTime.Now;
 
                         if (rtWorldDev.Text      != "") rtWorldDev.Text += Environment.NewLine;
-                        rtWorldDev.Text          += Dt.ToString("[" + "HH:mm" + "]: ") + text;
+                        rtWorldDev.Text          += _dt.ToString("[" + "HH:mm" + "]: ") + text;
                         rtWorldDev.SelectionStart = rtWorldDev.Text.Length;
                         rtWorldDev.ScrollToCaret();
                     }
@@ -256,10 +263,10 @@ namespace SppLauncher
             pbarWorld.Visible   = true;
             pbTempW.Visible     = true;
             pbNotAvailW.Visible = false;
-            statusChage(Resources.Launcher_WorldStart_Loading_World, false);
+            StatusChage(Resources.Launcher_WorldStart_Loading_World, false);
             WindowSize(false);
             tmrWorld.Start();
-            var cmdStartInfo                    = new ProcessStartInfo(lwPath + "mangosd.exe");
+            var cmdStartInfo                    = new ProcessStartInfo(LwPath + "mangosd.exe");
             cmdStartInfo.CreateNoWindow         = true;
             cmdStartInfo.RedirectStandardInput  = true;
             cmdStartInfo.RedirectStandardOutput = true;
@@ -289,12 +296,12 @@ namespace SppLauncher
         internal void RealmdStart()
         {
             _start1             = DateTime.Now;
-            statusChage(Resources.Launcher_RealmdStart_Starting_Realm, false);
+            StatusChage(Resources.Launcher_RealmdStart_Starting_Realm, false);
             tssStatus.Image     = Resources.search_animation;
             pbTempR.Visible     = true;
             pbNotAvailR.Visible = false;
             tmrRealm.Start();
-            var cmdStartInfo                    = new ProcessStartInfo(lwPath + "login.exe");
+            var cmdStartInfo                    = new ProcessStartInfo(LwPath + "login.exe");
             cmdStartInfo.CreateNoWindow         = true;
             cmdStartInfo.RedirectStandardInput  = true;
             cmdStartInfo.RedirectStandardOutput = true;
@@ -341,10 +348,10 @@ namespace SppLauncher
 
         private void UpdateConsole(string text, Brush color)
         {
-            WriteLine(text, color);
+            WriteLine(text);
         }
 
-        private void WriteLine(string text, Brush color)
+        private void WriteLine(string text)
         {
             if (text != null)
             {
@@ -375,10 +382,10 @@ namespace SppLauncher
 
         private void UpdateConsole1(string text, Brush color)
         {
-            WriteLine1(text, color);
+            WriteLine1(text);
         }
 
-        private void WriteLine1(string text, Brush color)
+        private void WriteLine1(string text)
         {
             if (text != null)
             {
@@ -408,14 +415,14 @@ namespace SppLauncher
             _start1 = DateTime.Now;
             if (!_restart)
             {
-                statusChage(Resources.Launcher_StartAll_Starting_Mysqlm, false);
-                animateStatus(true);
+                StatusChage(Resources.Launcher_StartAll_Starting_Mysqlm, false);
+                AnimateStatus(true);
                 pbTempM.Visible     = true;
                 pbNotAvailM.Visible = false;
                 SqlStartCheck.Start();
                 var cmdStartInfo = new ProcessStartInfo("cmd.exe",
-                    "/C " + sqlpath + "mysqld.exe" +
-                    " --defaults-file=" + sqlpath + "my.ini" +
+                    "/C " + Sqlpath + "mysqld.exe" +
+                    " --defaults-file=" + Sqlpath + "my.ini" +
                     " --standalone --console");
                 cmdStartInfo.CreateNoWindow         = true;
                 cmdStartInfo.RedirectStandardInput  = true;
@@ -458,7 +465,7 @@ namespace SppLauncher
         {
             UpdateConsole3(e.Data);
         }
-
+       
         private void _cmd_ErrorDataReceived3(object sender, DataReceivedEventArgs e)
         {
             UpdateConsole3(e.Data, Brushes.Red);
@@ -477,10 +484,10 @@ namespace SppLauncher
 
         private void UpdateConsole3(string text, Brush color)
         {
-            WriteLine3(text, color);
+            WriteLine3(text);
         }
 
-        private void WriteLine3(string text, Brush color)
+        private void WriteLine3(string text)
         {
             if (text != null)
             {
@@ -501,8 +508,8 @@ namespace SppLauncher
 
         private void rstchck_DoWork(object sender, DoWorkEventArgs e)
         {
-            checklang(false);
-            statusChage(Resources.Launcher_rstchck_DoWork_Reset_bots, false);
+            Checklang(false);
+            StatusChage(Resources.Launcher_rstchck_DoWork_Reset_bots, false);
             tssStatus.Image = Resources.search_animation;
             Thread.Sleep(10000);
         }
@@ -521,13 +528,13 @@ namespace SppLauncher
         {
             try
             {
-                checklang(false);
+                Checklang(false);
                 if (_serverConsoleActive) sendCommandForServerToolStripMenuItem_Click(new object(), new EventArgs());
 
                 foreach (Process proc in Process.GetProcessesByName("mangosd"))
                 {
-                    statusChage(Resources.CloseProcess_Saving,false);
-                    animateStatus(true);
+                    StatusChage(Resources.CloseProcess_Saving,false);
+                    AnimateStatus(true);
                     if (_allowtext)
                     {
                         Back:
@@ -543,7 +550,7 @@ namespace SppLauncher
                                 listBox1.SelectedIndex = -1;
                                 goto Back;
                         }
-                    statusChage(Resources.Launcher_CloseProcess_World_Shutdown, false);
+                    StatusChage(Resources.Launcher_CloseProcess_World_Shutdown, false);
                     _cmd1.StandardInput.WriteLine("server shutdown 0");
                     Thread.Sleep(1000);
                     }
@@ -552,7 +559,7 @@ namespace SppLauncher
 
                 foreach (Process proc in Process.GetProcessesByName("login"))
                 {
-                    statusChage(Resources.Launcher_CloseProcess_Login_Shutdown, false);
+                    StatusChage(Resources.Launcher_CloseProcess_Login_Shutdown, false);
                     proc.Kill();
                 }
 
@@ -646,16 +653,16 @@ namespace SppLauncher
 
         #region [ OtherMethods ]
 
-        public void statusChage(string msg, bool islink)
+        public void StatusChage(string msg, bool islink)
         {
             Status = msg;
             tssStatus.IsLink = islink;
         }
 
-        public void checklang(bool option)
+        public void Checklang(bool option)
         {
             if (option)
-                switch (lang)
+                switch (Lang)
                 {
                     case "Hungarian":
                         magyarToolStripMenuItem.Checked = true;
@@ -672,7 +679,7 @@ namespace SppLauncher
                 }
             else
             {
-                switch (lang)
+                switch (Lang)
                 {
                     case "Hungarian":
                         Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("hu-HU");
@@ -694,7 +701,7 @@ namespace SppLauncher
             }
         }
 
-        private void animateStatus(bool animate)
+        private void AnimateStatus(bool animate)
         {
             if (animate)
             {
@@ -706,7 +713,7 @@ namespace SppLauncher
             }
         }
 
-        public void startNStop()
+        public void StartNStop()
         {
             if (!_startStop)
             {
@@ -747,7 +754,7 @@ namespace SppLauncher
             }
         }
 
-        public int getmemory()
+        public int Getmemory()
         {
             return Convert.ToInt32(new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory/1024/1024);
         }
@@ -832,18 +839,18 @@ namespace SppLauncher
             _world = "";
         }
 
-        public void startWow()
+        public void StartWow()
         {
             CheckLanIpInRealmDatabase();
 
-            if (wowExePath == "" || realmListPath == "")
+            if (WowExePath == "" || RealmListPath == "")
             {
                 DialogMethod();
             }
             else
             {
                 RealmChange();
-                Process.Start(wowExePath);
+                Process.Start(WowExePath);
                 Check.Start();
 
             }
@@ -862,8 +869,8 @@ namespace SppLauncher
             {
                 try
                 {
-                    wowExePath      = dialog.FileName;
-                    realmDialogPath = Path.GetDirectoryName(wowExePath);
+                    WowExePath      = dialog.FileName;
+                    _realmDialogPath = Path.GetDirectoryName(WowExePath);
                     RealmDialog();
                 }
                 catch (Exception)
@@ -877,17 +884,17 @@ namespace SppLauncher
         {
             var dialog = new OpenFileDialog();
 
-            dialog.InitialDirectory = realmDialogPath;
+            dialog.InitialDirectory = _realmDialogPath;
             dialog.Filter           = "Realmlist File (*realmlist.wtf)|*realmlist.wtf";
             dialog.FilterIndex      = 2;
             dialog.RestoreDirectory = true;
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                realmListPath = dialog.FileName;
-                xmlReadWrite.saveMethod();
+                RealmListPath = dialog.FileName;
+                _xmlReadWrite.saveMethod();
                 RealmChange();
-                Process.Start(wowExePath);
+                Process.Start(WowExePath);
                 Check.Start();
             }
         }
@@ -897,8 +904,8 @@ namespace SppLauncher
             try
             {
                 CheckLanIpInRealmDatabase();
-                OLDrealmList = File.ReadAllText(realmListPath, Encoding.UTF8);
-                NotifyBallon(1000, Resources.Launcher_RealmRestore_Realmlist, "Set " + ipAdress, false);
+                _olDrealmList = File.ReadAllText(RealmListPath, Encoding.UTF8);
+                NotifyBallon(1000, Resources.Launcher_RealmRestore_Realmlist, "Set " + _ipAdress, false);
             }
             catch (Exception ex)
             {
@@ -907,7 +914,7 @@ namespace SppLauncher
 
             try
             {
-                File.WriteAllText(realmListPath, "set realmlist " + ipAdress);
+                File.WriteAllText(RealmListPath, "set realmlist " + _ipAdress);
             }
             catch (Exception ex)
             {
@@ -919,7 +926,7 @@ namespace SppLauncher
         {
             try
             {
-                File.WriteAllText(realmListPath, OLDrealmList);
+                File.WriteAllText(RealmListPath, _olDrealmList);
                 NotifyBallon(1000, Resources.Launcher_RealmRestore_Realmlist, Resources.Launcher_RealmRestore_Restored, false);
             }
             catch (Exception ex)
@@ -933,7 +940,7 @@ namespace SppLauncher
             try
             {
                 var client = new MySQLClient("127.0.0.1", "realmd", "root", "123456", 3310);
-                ipAdress = client.Select("realmlist", "id='1'")["address"];
+                _ipAdress = client.Select("realmlist", "id='1'")["address"];
             }
             catch (Exception)
             {
@@ -958,7 +965,7 @@ namespace SppLauncher
 
         public static void ShutdownSql()
         {
-            MysqlON                   = false;
+            MysqlOn                   = false;
             var startInfo             = new ProcessStartInfo();
             startInfo.CreateNoWindow  = true;
             startInfo.UseShellExecute = false;
@@ -1023,18 +1030,18 @@ namespace SppLauncher
             }
         }
 
-        private void DeleteLine(int a_line)
+        private void DeleteLine(int aLine)
         {
-            int start_index = rtWorldDev.GetFirstCharIndexFromLine(a_line);
-            int count = rtWorldDev.Lines[a_line].Length;
+            int startIndex = rtWorldDev.GetFirstCharIndexFromLine(aLine);
+            int count = rtWorldDev.Lines[aLine].Length;
 
-            if (a_line < rtWorldDev.Lines.Length - 1)
+            if (aLine < rtWorldDev.Lines.Length - 1)
             {
-                count += rtWorldDev.GetFirstCharIndexFromLine(a_line + 1) -
-                         ((start_index + count - 1) + 1);
+                count += rtWorldDev.GetFirstCharIndexFromLine(aLine + 1) -
+                         ((startIndex + count - 1) + 1);
             }
 
-            rtWorldDev.Text = rtWorldDev.Text.Remove(start_index, count);
+            rtWorldDev.Text = rtWorldDev.Text.Remove(startIndex, count);
         }
 
         private void StatusBarUpdater_Tick(object sender, EventArgs e)
@@ -1087,8 +1094,8 @@ namespace SppLauncher
 
         private void magyarToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            lang = "Hungarian";
-            xmlReadWrite.saveMethod();
+            Lang = "Hungarian";
+            _xmlReadWrite.saveMethod();
             MessageBox.Show(
                 Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_,
                 Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
@@ -1097,8 +1104,8 @@ namespace SppLauncher
 
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lang = "English";
-            xmlReadWrite.saveMethod();
+            Lang = "English";
+            _xmlReadWrite.saveMethod();
             MessageBox.Show(
                 Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_,
                 Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
@@ -1107,8 +1114,8 @@ namespace SppLauncher
 
         private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lang = "French";
-            xmlReadWrite.saveMethod();
+            Lang = "French";
+            _xmlReadWrite.saveMethod();
             MessageBox.Show(
                 Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_,
                 Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
@@ -1117,8 +1124,8 @@ namespace SppLauncher
 
         private void germanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lang = "German";
-            xmlReadWrite.saveMethod();
+            Lang = "German";
+            _xmlReadWrite.saveMethod();
             MessageBox.Show(
                 Resources.Launcher_englishToolStripMenuItem_Click_Changes_will_take_effect_when_you_restart_Launcher_,
                 Resources.Launcher_magyarToolStripMenuItem_Click_1_Info,
@@ -1127,18 +1134,18 @@ namespace SppLauncher
 
         private void exportToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            export();
+            Export();
         }
 
         private void importToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            import();
+            Import();
         }
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _allowtext = false;
-            startNStop();
+            StartNStop();
         }
 
         private void restartToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -1149,12 +1156,12 @@ namespace SppLauncher
 
         private void exportToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            export();
+            Export();
         }
 
         private void importToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            import();
+            Import();
         }
 
 
@@ -1170,15 +1177,15 @@ namespace SppLauncher
             {
                 autostartToolStripMenuItem.Checked = false;
                 autorunToolStripMenuItem.Checked   = false;
-                Autostart                          = "0";
-                xmlReadWrite.saveMethod();
+                AutoS                          = "0";
+                _xmlReadWrite.saveMethod();
             }
             else
             {
                 autostartToolStripMenuItem.Checked = true;
                 autorunToolStripMenuItem.Checked   = true;
-                Autostart                          = "1";
-                xmlReadWrite.saveMethod();
+                AutoS                          = "1";
+                _xmlReadWrite.saveMethod();
             }
         }
 
@@ -1188,15 +1195,15 @@ namespace SppLauncher
             {
                 autostartToolStripMenuItem.Checked = false;
                 autorunToolStripMenuItem.Checked   = false;
-                Autostart                          = "0";
-                xmlReadWrite.saveMethod();
+                AutoS                          = "0";
+                _xmlReadWrite.saveMethod();
             }
             else
             {
                 autostartToolStripMenuItem.Checked = true;
                 autorunToolStripMenuItem.Checked   = true;
-                Autostart                          = "1";
-                xmlReadWrite.saveMethod();
+                AutoS                          = "1";
+                _xmlReadWrite.saveMethod();
             }
         }
 
@@ -1204,7 +1211,7 @@ namespace SppLauncher
         {
             _allowtext = false;
             _world = "";
-            startNStop();
+            StartNStop();
         }
 
         private void showToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1264,7 +1271,7 @@ namespace SppLauncher
         {
             if (Application.OpenForms["BugReport"] == null)
             {
-                var show = new BugReport();
+                var show = new BugReport.BugReport();
                 show.Show();
             }
             else
@@ -1275,12 +1282,12 @@ namespace SppLauncher
 
         private void reportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var sReport = new BugReport();
+            var sReport = new BugReport.BugReport();
             sReport.Show();
 
             if (Application.OpenForms["BugReport"] == null)
             {
-                var show = new BugReport();
+                var show = new BugReport.BugReport();
                 show.Show();
             }
             else
@@ -1304,7 +1311,7 @@ namespace SppLauncher
 
         private void tssStatus_Click(object sender, EventArgs e)
         {
-            Process.Start(UpdLink);
+            Process.Start(_updLink);
         }
 
         #endregion
@@ -1319,19 +1326,19 @@ namespace SppLauncher
         private void pbAvailableM_MouseHover(object sender, EventArgs e)
         {
             ToolTip tt = new ToolTip();
-            tt.SetToolTip(this.pbAvailableM, _SqlStartTime);
+            tt.SetToolTip(pbAvailableM, _sqlStartTime);
         }
 
         private void pbAvailableR_MouseHover(object sender, EventArgs e)
         {
             ToolTip tt = new ToolTip();
-            tt.SetToolTip(this.pbAvailableR, _RealmStartTime);
+            tt.SetToolTip(pbAvailableR, _realmStartTime);
         }
 
         private void pbAvailableW_MouseHover(object sender, EventArgs e)
         {
             ToolTip tt = new ToolTip();
-            tt.SetToolTip(this.pbAvailableW, _WorldStartTime);
+            tt.SetToolTip(pbAvailableW, _worldStartTime);
 
         }
 
@@ -1380,7 +1387,7 @@ namespace SppLauncher
 
         private void startWowToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            startWow();
+            StartWow();
         }
 
         private void lanSwitcherToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1416,7 +1423,7 @@ namespace SppLauncher
 
         private void runWoWToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            startWow();
+            StartWow();
         }
 
         private void lanSwitcherToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -1500,8 +1507,8 @@ namespace SppLauncher
         
         private void tmrUsage_Tick(object sender, EventArgs e)
         {
-            int ramavail  = getAvailableRAM();
-            int ramtoltal = Convert.ToInt32(getmemory());
+            int ramavail  = GetAvailableRAM();
+            int ramtoltal = Convert.ToInt32(Getmemory());
             int ramfree   = ramtoltal - ramavail;
             int ramp      = ramtoltal/100;
             int perecent  = ramfree/ramp;
@@ -1544,22 +1551,22 @@ namespace SppLauncher
                                    "\nMysql Server: " + _sqlMem + "\nLogin Server: " + _realmdMem + "\nGame Server: " +
                                    _mangosdMem;
 
-            tssUsage.Text = "CPU: " + Convert.ToInt32(getCurrentCpuUsage()) + "% |" + " RAM: " + perecent + "%" + " (" +
+            tssUsage.Text = "CPU: " + Convert.ToInt32(GetCurrentCpuUsage()) + "% |" + " RAM: " + perecent + "%" + " (" +
                             ramfree + "/" + ramtoltal + "MB)";
 
             if (perecent >= 75)
             {
-                if (!SysProtect)
+                if (!_sysProtect)
                 {
                     _cmd1.StandardInput.WriteLine(Resources.announce_Current_ram_usage + perecent + "%");
                     _cmd1.StandardInput.WriteLine(Resources.announce_If_the_RAM_usage_exceeds);
-                    SysProtect = true;
+                    _sysProtect = true;
                 }
             }
 
             if (perecent >= 90)
             {
-                if (SysProtect)
+                if (_sysProtect)
                 {
                     _cmd1.StandardInput.WriteLine(Resources.announce_Auto_Restart);
                     restartToolStripMenuItem1_Click_1(new object(), new EventArgs());
@@ -1577,14 +1584,14 @@ namespace SppLauncher
                 {
                     tmrRealm.Stop();
                     DateTime end1          = DateTime.Now;
-                    _RealmStartTime = (end1 - _start1).TotalSeconds.ToString("##.0" + "sec");
+                    _realmStartTime = (end1 - _start1).TotalSeconds.ToString("##.0" + "sec");
 
                     pbAvailableR.Visible   = true;
                     pbTempR.Visible        = false;
                     WorldStart();
                 }
             }
-            catch
+            catch (Exception)
             {
             }
         }
@@ -1641,16 +1648,17 @@ namespace SppLauncher
                     tmrWorld.Stop();
 
                     DateTime end1          = DateTime.Now;
-                    _WorldStartTime = (end1 - _start1).TotalSeconds.ToString("##.0" + "sec");
+                    _worldStartTime = (end1 - _start1).TotalSeconds.ToString("##.0" + "sec");
                     pbarWorld.Value        = 100;
-                    statusChage(Resources.Launcher_tmrWorld_Tick_Online, false);
-                    animateStatus(false);
+                    StatusChage(Resources.Launcher_tmrWorld_Tick_Online, false);
+                    AnimateStatus(false);
                     pbAvailableW.Visible = true;
                     pbTempW.Visible      = false;
                     pbarWorld.Visible    = false;
                     WindowSize(true);
                     pbarWorld.Value = 0;
                     _allowtext      = true;
+                    _sysProtect      = false;
 
                     resetAllRandomBotsToolStripMenuItem.Enabled         = true;
                     randomizeBotsToolStripMenuItem.Enabled              = true;
@@ -1666,10 +1674,10 @@ namespace SppLauncher
                     sendCommandForServerToolStripMenuItem.Enabled       = true;
                     exportImportCharactersToolStripMenuItem.Enabled     = true;
 
-                    bwUpdate.RunWorkerAsync(); //check update
+                    bwUpdate.RunWorkerAsync(); //? Check update.
 
                     Traymsg();
-                    GetSqlOnlineBot.Start(); // get online bots
+                    GetSqlOnlineBot.Start(); //? Get online bots.
 
                     if (Updater)
                     {
@@ -1680,7 +1688,7 @@ namespace SppLauncher
                     SrvAnnounce.Start();
                 }
             }
-            catch
+            catch (Exception)
             {
             }
         }
@@ -1691,28 +1699,28 @@ namespace SppLauncher
             {
                 if (_sql.Contains("Version: '5.5.32-MariaDB'  socket: ''  port: 3310  mariadb.org binary distribution"))
                 {
-                    MysqlON = true;
+                    MysqlOn = true;
                     SqlStartCheck.Stop();
                     DateTime end1        = DateTime.Now;
-                    _SqlStartTime = (end1 - _start1).TotalSeconds.ToString("##.0" + " sec");
+                    _sqlStartTime = (end1 - _start1).TotalSeconds.ToString("##.0" + " sec");
                     pbAvailableM.Visible = true;
                     pbTempM.Visible      = false;
                     _sql                 = "";
-                    if (Sqlimport) bwImport.RunWorkerAsync();
-                    if (dbupdate)
+                    if (_sqlimport) bwImport.RunWorkerAsync();
+                    if (Dbupdate)
                     {
-                        animateStatus(false);
+                        AnimateStatus(false);
                         Hide();
-                        startupdate();
+                        Startupdate();
                     }
-                    if (sqlexport) bwExport.RunWorkerAsync();
+                    if (_sqlexport) bwExport.RunWorkerAsync();
                     if (!OnlyMysqlStart)
                     {
                         RealmdStart();
                     }
                 }
             }
-            catch
+            catch (Exception)
             {
             }
         }
@@ -1720,7 +1728,6 @@ namespace SppLauncher
         private void CheckWowRun_Tick(object sender, EventArgs e)
         {
             CheckWowRun.Stop();
-
             Traymsg();
 
             if (!_restart && !CheckRunwow())
@@ -1731,7 +1738,7 @@ namespace SppLauncher
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
-                    startWow();
+                    StartWow();
                 }
             }
         }
@@ -1745,7 +1752,7 @@ namespace SppLauncher
 
         private void SrvAnnounce_Tick(object sender, EventArgs e)
         {
-            _cmd1.StandardInput.WriteLine(".announce {0}", tssLOnline);
+            _cmd1.StandardInput.WriteLine(".announce {0}", tssLOnline); //? Announce online bots count every 15 mins.
         }
 
         private void CheckMangosCrashed_Tick(object sender, EventArgs e)
@@ -1763,10 +1770,9 @@ namespace SppLauncher
 
         #region [ Update ]
 
-
         public void UpdateInFile()
         {
-            if (MysqlON)
+            if (MysqlOn)
             {
                 OpenFileDialog openFile = new OpenFileDialog();
                 openFile.Title = "Update";
@@ -1777,8 +1783,8 @@ namespace SppLauncher
                     UpdateUnpack = openFile.FileName;
                     WindowState = FormWindowState.Normal;
                     Show();
-                    statusChage(Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update, false);
-                    animateStatus(true);
+                    StatusChage(Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update, false);
+                    AnimateStatus(true);
                     bWUpEx.RunWorkerAsync();
                 }
             }
@@ -1794,14 +1800,14 @@ namespace SppLauncher
                     WindowState = FormWindowState.Normal;
                     pbAvailableM.Visible = true;
                     Show();
-                    statusChage(Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update, false);
-                    animateStatus(true);
+                    StatusChage(Resources.Launcher_updateToolStripMenuItem_Click_Decompress_Update, false);
+                    AnimateStatus(true);
                     bWUpEx.RunWorkerAsync();
                 }
             }
         }
 
-        private void startupdate()
+        private void Startupdate()
         {
             DatabaseUpdate frm2 = new DatabaseUpdate(this);
             frm2.Show();
@@ -1814,24 +1820,24 @@ namespace SppLauncher
 
         private void bWUpEx_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            statusChage(Resources.Launcher_bWUpEx_RunWorkerCompleted_Completed, false);
-            animateStatus(false);
+            StatusChage(Resources.Launcher_bWUpEx_RunWorkerCompleted_Completed, false);
+            AnimateStatus(false);
 
             try
             {
-                int db    = Convert.ToInt32(File.ReadAllText(@"update\version"));
-                int local = Convert.ToInt32(File.ReadAllText(@"SingleCore\version"));
+                int db    = Convert.ToInt32(File.ReadAllText(@"update\version"));       //! Read update version
+                int local = Convert.ToInt32(File.ReadAllText(@"SingleCore\version"));   //! Read databse version
                 if (db   != local)
                 {
-                    if (!MysqlON)
+                    if (!MysqlOn)
                     {
-                        dbupdate = true;
+                        Dbupdate = true;
                         OnlyMysqlStart = true;
                         StartAll();
                     }
                     else
                     {
-                        dbupdate = true;
+                        Dbupdate = true;
                         MenuItemsDisableAfterLoad();
                         rtWorldDev.Visible = false;
                         CheckMangosCrashed.Stop();
@@ -1843,17 +1849,17 @@ namespace SppLauncher
                         StatusIcon();
                         pbAvailableM.Visible = true;
                         Hide();
-                        startupdate();
+                        Startupdate();
                     }
                 }
                 else
                 {
                     Directory.Delete(@"update", true);
                     MessageBox.Show(Resources.Your_DB_is_up_to_date_);
-                    statusChage(Resources.Launcher_bwUpdate_RunWorkerCompleted_Up_to_date, false);
+                    StatusChage(Resources.Launcher_bwUpdate_RunWorkerCompleted_Up_to_date, false);
                 }
             }
-            catch
+            catch (Exception)
             { }
         }
 
@@ -1864,57 +1870,26 @@ namespace SppLauncher
                 File.Delete("SppLauncher_OLD.exe");
                 File.SetAttributes("SppLauncher.exe", FileAttributes.Normal);
                 var uC = new Update_Completed();
-                uC.Show(); //open update completed form
+                uC.Show(); //? Open update completed form.
             }
-        }
-
-        //public void WasThisLangUpdate()
-        //{
-        //    if (File.Exists(@"Languages\hu\SppLauncher.resources_new.dll"))
-        //    {
-        //        File.Delete(@"Languages\hu\SppLauncher.resources.dll");
-        //        File.Delete(@"Languages\de\SppLauncher.resources.dll");
-        //        File.Delete(@"Languages\fr\SppLauncher.resources.dll");
-
-        //        File.Move(@"Languages\hu\SppLauncher.resources_new.dll", @"Languages\hu\SppLauncher.resources.dll");
-        //        File.SetAttributes(@"Languages\hu\SppLauncher.resources.dll", FileAttributes.Normal);
-
-        //        File.Move(@"Languages\de\SppLauncher.resources_new.dll", @"Languages\de\SppLauncher.resources.dll");
-        //        File.SetAttributes(@"Languages\de\SppLauncher.resources.dll", FileAttributes.Normal);
-
-        //        File.Move(@"Languages\fr\SppLauncher.resources_new.dll", @"Languages\fr\SppLauncher.resources.dll");
-        //        File.SetAttributes(@"Languages\fr\SppLauncher.resources.dll", FileAttributes.Normal);
-        //    }
-        //}
-
-        public void test()
-        {
-            try
-            {
-                File.SetAttributes("SppLauncher_NEW.exe", FileAttributes.Normal);
-            }
-            catch
-            {
-            }
-
         }
 
         public bool GetUpdate()
         {
             try
             {
-                statusChage(Resources.Launcher_Checking_Update, false);
-                animateStatus(true);
+                StatusChage(Resources.Launcher_Checking_Update, false);
+                AnimateStatus(true);
                 var client     = new WebClient();
-                Stream stream  = client.OpenRead("https://raw.github.com/conan513/SingleCore/SPP/Tools/update_new.txt");
+                Stream stream  = client.OpenRead("https://raw.github.com/conan513/SingleCore/SPP/Tools/update_new.txt"); //? Get version txt.
                 var reader     = new StreamReader(stream);
-                String content = reader.ReadToEnd();
-                string[] parts = content.Split(';');
+                String content = reader.ReadToEnd(); //? Example: "<Launcher ver.>;<DB ver.>;<DB Update link>
+                string[] parts = content.Split(';'); //? Load the array.
                 content        = parts[0];
-                RemoteEmuVer   = Convert.ToDouble(parts[1]);
-                UpdLink        = parts[2];
+                _remoteEmuVer   = Convert.ToDouble(parts[1]);
+                _updLink        = parts[2];
 
-                if (content != currProgVer)
+                if (content != CurrProgVer)
                 {
                     if (MessageBox.Show(
                             Resources.Launcher_bwUpdate_DoWork_New_Version_Available__V + content + "\n" +
@@ -1929,7 +1904,7 @@ namespace SppLauncher
             }
             catch (Exception)
             {
-                statusChage(Resources.Launcher_bwUpdate_DoWork_ERROR, false);
+                StatusChage(Resources.Launcher_bwUpdate_DoWork_ERROR, false);
                 return false;
             }
             return true;
@@ -1937,19 +1912,19 @@ namespace SppLauncher
 
         private void bwUpdate_DoWork(object sender, DoWorkEventArgs e)
         {
-            checklang(false);
+            Checklang(false);
             GetUpdate();
-            CurrEmuVer = Convert.ToDouble(File.ReadAllText("SingleCore\\version"));
+            CurrEmuVer = Convert.ToDouble(File.ReadAllText("SingleCore\\version")); //? Get local DB version.
 
-            if (RemoteEmuVer > CurrEmuVer)
+            if (_remoteEmuVer > CurrEmuVer)
             {
-                statusChage(Resources.Launcher_bwUpdate_DoWork_New_Server_Update_Available, true);
-                animateStatus(false);
+                StatusChage(Resources.Launcher_bwUpdate_DoWork_New_Server_Update_Available, true);
+                AnimateStatus(false);
             }
             else
             {
-                statusChage(Resources.Launcher_bwUpdate_RunWorkerCompleted_Up_to_date, false);
-                animateStatus(false);
+                StatusChage(Resources.Launcher_bwUpdate_RunWorkerCompleted_Up_to_date, false);
+                AnimateStatus(false);
             }
         }
 
@@ -1974,9 +1949,9 @@ namespace SppLauncher
 
         #region [ Backup ]
 
-        private void import()
+        private void Import()
         {
-            if (MysqlON)
+            if (MysqlOn)
             {
                 OpenFileDialog openFile = new OpenFileDialog();
                 openFile.Title          = Resources.Launcher_import_Import_Characters;
@@ -1985,7 +1960,7 @@ namespace SppLauncher
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
                     MenuItemsDisableAfterLoad();
-                    importFile         = openFile.FileName;
+                    _importFile         = openFile.FileName;
                     rtWorldDev.Visible = false;
                     CheckMangosCrashed.Stop();
                     _allowtext = false;
@@ -2011,41 +1986,41 @@ namespace SppLauncher
 
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
-                    Sqlimport = true;
+                    _sqlimport = true;
                     OnlyMysqlStart = true;
                     StartAll();
                     MenuItemsDisableAfterLoad();
-                    importFile   = openFile.FileName;
+                    _importFile   = openFile.FileName;
                     WindowState  = FormWindowState.Normal;
                     Show();
-                    statusChage(Resources.Launcher_import_Decompress, false);
-                    animateStatus(true);
+                    StatusChage(Resources.Launcher_import_Decompress, false);
+                    AnimateStatus(true);
                 }
             }
         }
 
         private void bwImport_DoWork(object sender, DoWorkEventArgs e)
         {
-            checklang(false);
+            Checklang(false);
             ImportExtract();
-            statusChage(Resources.Launcher_import_Import_Characters, false);
+            StatusChage(Resources.Launcher_import_Import_Characters, false);
 
             string conn            = "server=127.0.0.1;user=root;pwd=123456;database=characters;port=3310;convertzerodatetime=true;";
             MySqlBackup mb         = new MySqlBackup(conn);
-            mb.ImportInfo.FileName = getTemp + "\\save01";
+            mb.ImportInfo.FileName = _getTemp + "\\save01";
             mb.Import();
 
-            statusChage(Resources.Launcher_bwImport_DoWork_Import_Accounts, false);
+            StatusChage(Resources.Launcher_bwImport_DoWork_Import_Accounts, false);
 
             string conn1            = "server=127.0.0.1;user=root;pwd=123456;database=realmd;port=3310;convertzerodatetime=true;";
             MySqlBackup mb1         = new MySqlBackup(conn1);
-            mb1.ImportInfo.FileName = getTemp + "\\save02";
+            mb1.ImportInfo.FileName = _getTemp + "\\save02";
             mb1.Import();
         }
 
         private void bwImport_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            Sqlimport = false;
+            _sqlimport = false;
             if (OnlyMysqlStart)
             {
                 ShutdownSql();
@@ -2058,16 +2033,16 @@ namespace SppLauncher
                 StartAll();
             }
             OnlyMysqlStart = false;
-            statusChage(Resources.Launcher_bwImport_RunWorkerCompleted_Import_Completed, false);
-            animateStatus(false);
-            File.Delete(getTemp + "\\save01");
-            File.Delete(getTemp + "\\save02");
+            StatusChage(Resources.Launcher_bwImport_RunWorkerCompleted_Import_Completed, false);
+            AnimateStatus(false);
+            File.Delete(_getTemp + "\\save01");
+            File.Delete(_getTemp + "\\save02");
         }
 
         private void ImportExtract() //.sppbackup extract
         {
-            string unpck       = importFile;
-            string unpckDir    = getTemp;
+            string unpck       = _importFile;
+            string unpckDir    = _getTemp;
             using (ZipFile zip = ZipFile.Read(unpck))
             {
                 foreach (ZipEntry e in zip)
@@ -2078,9 +2053,9 @@ namespace SppLauncher
             }
         }
 
-        private void export()
+        private void Export()
         {
-            if (MysqlON)
+            if (MysqlOn)
             {
                 SaveFileDialog saveFile = new SaveFileDialog();
                 saveFile.Title          = Resources.Launcher_export_Export_Characters;
@@ -2089,9 +2064,9 @@ namespace SppLauncher
 
                 if (saveFile.ShowDialog() == DialogResult.OK)
                 {
-                    animateStatus(true);
-                    statusChage(Resources.Launcher_export_Exporting_Characters, false);
-                    exportfile   = saveFile.FileName;
+                    AnimateStatus(true);
+                    StatusChage(Resources.Launcher_export_Exporting_Characters, false);
+                    _exportfile   = saveFile.FileName;
                     bwExport.RunWorkerAsync();
                 }
             }
@@ -2105,45 +2080,45 @@ namespace SppLauncher
                 if (saveFile.ShowDialog() == DialogResult.OK)
                 {
                     OnlyMysqlStart = true;
-                    sqlexport = true;
+                    _sqlexport = true;
                     StartAll();
-                    animateStatus(true);
-                    statusChage(Resources.Launcher_export_Exporting_Characters, false);
-                    exportfile   = saveFile.FileName;
+                    AnimateStatus(true);
+                    StatusChage(Resources.Launcher_export_Exporting_Characters, false);
+                    _exportfile   = saveFile.FileName;
                 }
             }
         }
 
         private void bwExport_DoWork(object sender, DoWorkEventArgs e)
         {
-            checklang(false);
+            Checklang(false);
             string conn =
                 "server=127.0.0.1;user=root;pwd=123456;database=characters;port=3310;convertzerodatetime=true;";
             MySqlBackup mb = new MySqlBackup(conn);
-            mb.ExportInfo.FileName = getTemp + "\\save01";
+            mb.ExportInfo.FileName = _getTemp + "\\save01";
             mb.Export();
 
-            statusChage(Resources.Launcher_bwExport_DoWork_Export_Accounts, false);
+            StatusChage(Resources.Launcher_bwExport_DoWork_Export_Accounts, false);
 
             string conn1 = "server=127.0.0.1;user=root;pwd=123456;database=realmd;port=3310;convertzerodatetime=true;";
             MySqlBackup mb1 = new MySqlBackup(conn1);
-            mb1.ExportInfo.FileName = getTemp + "\\save02";
+            mb1.ExportInfo.FileName = _getTemp + "\\save02";
             mb1.Export();
 
-            statusChage(Resources.Launcher_bwExport_DoWork_Compressing, false);
+            StatusChage(Resources.Launcher_bwExport_DoWork_Compressing, false);
 
             using (ZipFile zip = new ZipFile()) //create .sppbackup
             {
                 zip.Password = "89765487";
-                zip.AddFile(getTemp + "\\save01", @"\");
-                zip.AddFile(getTemp + "\\save02", @"\");
-                zip.Save(exportfile);
+                zip.AddFile(_getTemp + "\\save01", @"\");
+                zip.AddFile(_getTemp + "\\save02", @"\");
+                zip.Save(_exportfile);
             }
         }
 
         private void bwExport_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            sqlexport = false;
+            _sqlexport = false;
             if (OnlyMysqlStart)
             {
                 ShutdownSql();
@@ -2155,12 +2130,14 @@ namespace SppLauncher
 
             OnlyMysqlStart = false;
             Status = Resources.Launcher_bwExport_RunWorkerCompleted_Export_Completed;
-            statusChage(Resources.Launcher_bwExport_RunWorkerCompleted_Export_Completed, false);
-            animateStatus(false);
-            File.Delete(getTemp + "\\save01");
-            File.Delete(getTemp + "\\save02");
+            StatusChage(Resources.Launcher_bwExport_RunWorkerCompleted_Export_Completed, false);
+            AnimateStatus(false);
+            File.Delete(_getTemp + "\\save01");
+            File.Delete(_getTemp + "\\save02");
         }
 
         #endregion
+
+
     }
 }

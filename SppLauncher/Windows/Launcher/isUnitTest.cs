@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Reflection;
 
 /// <summary>
 /// Detect if we are running as part of a nUnit unit test.

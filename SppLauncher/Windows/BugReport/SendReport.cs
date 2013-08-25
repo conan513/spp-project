@@ -46,7 +46,7 @@ namespace SppLauncher.Windows.BugReport
             {
                 client.Connect(new IPEndPoint(ipAddress, port));
             }
-            catch (Exception ex)
+            catch
             {
             }
             netStream = client.GetStream();

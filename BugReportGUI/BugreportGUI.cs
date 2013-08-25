@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using BugReportGUI.Properties;
 using ns;
@@ -13,8 +9,8 @@ namespace BugReportGUI
 {
     public partial class BugreportGUI : Form
     {
-        public static string item, item2, selectedpath, Bugpath, logpath;
-        public int chckcount;
+        public static string item, Bugpath, logpath;
+        public int Chckcount;
 
         private DirectoryInfo di;
         public BugreportGUI()
@@ -24,7 +20,7 @@ namespace BugReportGUI
             {
                 Bugpath      = Settings.Default["path"].ToString();
                 if(Bugpath  != "") di = new DirectoryInfo(Bugpath);
-                if (Bugpath != "") chckcount = Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length;
+                if(Bugpath != "") Chckcount = Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length;
 
                 if (Bugpath == "")
                 {
@@ -32,7 +28,7 @@ namespace BugReportGUI
                 }
                 else
                 {
-                    test(di);
+                    Getdir(di);
                     tmrCheck.Start();
                 }
             }
@@ -43,7 +39,7 @@ namespace BugReportGUI
             
         }
 
-        private void test(DirectoryInfo dir)
+        private void Getdir(DirectoryInfo dir)
         {
             foreach (DirectoryInfo d in dir.GetDirectories())
             {
@@ -68,8 +64,8 @@ namespace BugReportGUI
                 Settings.Default["path"] = Bugpath;
                 Settings.Default.Save();
                 di = new DirectoryInfo(Bugpath);
-                test(di);
-                chckcount = Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length;
+                Getdir(di);
+                Chckcount = Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length;
             }
         }
 
@@ -92,7 +88,6 @@ namespace BugReportGUI
 
                     foreach (string afile in files)
                     {
-                        selectedpath     = afile;
                         string file      = File.ReadAllText(afile);
                         string[] content = file.Split(';');
                         lbReports.Items.Add(content[1] + " (" + content[2] + ")");
@@ -110,7 +105,6 @@ namespace BugReportGUI
             {
                 foreach (int i in lbReports.SelectedIndices)
                 {
-                    item2 = lbReports.Items[i].ToString();
                 }
                 int s = lbReports.SelectedIndex;
                 s++;
@@ -148,7 +142,7 @@ namespace BugReportGUI
             lbDate.Items.Clear();
             delAllField();
             di = new DirectoryInfo(Bugpath);
-            test(di);
+            Getdir(di);
         }
 
         public void delAllField()
@@ -160,12 +154,12 @@ namespace BugReportGUI
             txbSysinfo.Text = "";
         }
 
-        private void tmrCheck_Tick(object sender, EventArgs e)
+        private void tmrCheck_Tick(object sender, EventArgs e) //? Check new files.
         {
             
-            if (chckcount != Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length)
+            if (Chckcount != Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length)
             {
-                chckcount = Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length;
+                Chckcount = Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length;
                 refresh();
             }
         }

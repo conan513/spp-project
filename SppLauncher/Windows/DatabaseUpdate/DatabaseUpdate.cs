@@ -12,10 +12,10 @@ namespace SppLauncher.Windows
     public partial class DatabaseUpdate : Form
     {
         private int _complete;
-        private readonly Launcher launcher;
+        private readonly Launcher.Launcher launcher;
         private readonly RunMysql run;
-        private FileCopyOverWrite fileCopy;
-        public DatabaseUpdate(Launcher otLauncher)
+        private readonly FileCopyOverWrite fileCopy;
+        public DatabaseUpdate(Launcher.Launcher otLauncher)
         {
             InitializeComponent();
             run = new RunMysql();
@@ -130,19 +130,19 @@ namespace SppLauncher.Windows
 
         private void bWdbUp1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            Launcher.dbupdate = false;
+            Launcher.Launcher.Dbupdate = false;
 
             launcher.Show();
 
-            if (!Launcher.OnlyMysqlStart) { launcher.RealmdStart(); }
+            if (!Launcher.Launcher.OnlyMysqlStart) { launcher.RealmdStart(); }
             else
             {
                 launcher.pbAvailableM.Visible = false;
                 launcher.pbNotAvailM.Visible = true;
-                Launcher.OnlyMysqlStart = false;
-                Launcher.MysqlON = false;
-                Launcher.ShutdownSql();
-                Launcher.Status = Resources.Launcher_bwUpdate_RunWorkerCompleted_Up_to_date;
+                Launcher.Launcher.OnlyMysqlStart = false;
+                Launcher.Launcher.MysqlOn = false;
+                Launcher.Launcher.ShutdownSql();
+                Launcher.Launcher.Status = Resources.Launcher_bwUpdate_RunWorkerCompleted_Up_to_date;
             }
             Close();
         }

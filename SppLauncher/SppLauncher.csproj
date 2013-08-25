@@ -62,7 +62,6 @@
     <ApplicationManifest>App config and Fody\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BetterListViewExpress, Version=3.7.6.0, Culture=neutral, PublicKeyToken=e6c91a3add447be2, processorArchitecture=MSIL" />
     <Reference Include="Ionic.Zip">
       <HintPath>Dlls\Ionic.Zip.dll</HintPath>
     </Reference>
@@ -75,7 +74,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Net" />
     <Reference Include="System.Data" />

@@ -5,10 +5,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SppLauncher;
 using SppLauncher.Class;
 using SppLauncher.Windows;
-using SppLauncher.Windows.BugReport;
+using SppLauncher.Windows.Launcher;
 using SppLauncher.Windows.WowAccountCreator;
 using WowAccountCreator;
-using MySQLClass;
 
 namespace SPPTest
 {
@@ -16,7 +15,7 @@ namespace SPPTest
     public class SPPTest
     {
 
-        private Random _random = new Random(Environment.TickCount);
+        private readonly Random _random = new Random(Environment.TickCount);
 
         public string RandomString(int length)
         {
@@ -43,8 +42,8 @@ namespace SPPTest
         {
             Launcher obj     = new Launcher();
             XmlReadWrite xml = new XmlReadWrite();
-            if(xml.ReadXML()){obj.checklang(false);}
-            obj.checklang(true);
+            if(xml.ReadXML()){obj.Checklang(false);}
+            obj.Checklang(true);
         }
 
         [TestMethod]

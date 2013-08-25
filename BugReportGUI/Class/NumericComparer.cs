@@ -1,18 +1,16 @@
 // (c) Vasian Cepa 2005
 // Version 2
 
-using System;
-using System.Collections; // required for NumericComparer : IComparer only
+using System.Collections;
+
+// required for NumericComparer : IComparer only
 
 namespace ns
 {
 
 	public class NumericComparer : IComparer
 	{
-		public NumericComparer()
-		{}
-		
-		public int Compare(object x, object y)
+	    public int Compare(object x, object y)
 		{
 			if((x is string) && (y is string))
 			{

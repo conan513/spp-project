@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using SppLauncher.Windows.Launcher;
 
 namespace SppLauncher
 {
@@ -88,7 +89,7 @@ namespace SppLauncher
                     Directory.Delete("de");
                 }
             }
-            catch
+            catch (Exception)
             {
             }
         }
@@ -145,7 +146,6 @@ namespace SppLauncher
         {
             return Process.GetProcessesByName("mysqld").Any();
         }
-
 
         private void timer1_Tick(object sender, EventArgs e)
         {

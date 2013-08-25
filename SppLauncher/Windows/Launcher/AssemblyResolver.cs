@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace SppLauncher.Class
 {
     public class HookResolver
     {
-        Dictionary<string, Assembly> _loaded;
+        readonly Dictionary<string, Assembly> _loaded;
 
         public HookResolver()
         {
             _loaded = new Dictionary<string, Assembly>(StringComparer.OrdinalIgnoreCase);
-            AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(CurrentDomain_AssemblyResolve);
+            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
         }
 
         System.Reflection.Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)

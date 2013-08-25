@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using SppLauncher.Windows.Launcher;
 
 namespace SppLauncher
 {
@@ -8,7 +9,7 @@ namespace SppLauncher
         public Update_Completed()
         {
             InitializeComponent();
-            lbl_currVer.Text = Launcher.currProgVer;
+            lbl_currVer.Text = Launcher.CurrProgVer;
         }
 
         private void btn_ok_Click(object sender, EventArgs e)

@@ -227,6 +227,9 @@
   <data name="listBox1.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
+  <data name="listBox1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;listBox1.Name" xml:space="preserve">
     <value>listBox1</value>
   </data>

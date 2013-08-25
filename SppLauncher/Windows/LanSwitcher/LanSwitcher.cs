@@ -1,12 +1,9 @@
 ﻿using System;
-using System.IO;
 using System.Linq;
 using System.Net;
-using System.Net.Configuration;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using MySQLClass;
 
 namespace SppLauncher.Windows
@@ -15,7 +12,7 @@ namespace SppLauncher.Windows
     {
         public static bool Available, updateYes, allowCheck = true, FirstRun = false, allowUsageStat = true;
         public static string ip, user, pass, db, port, currVer = "1.0.1", RemoteVer, test, lan;
-        private GetPublicIP GetPublic;
+        private readonly GetPublicIP GetPublic;
         public LanSwitcher()
         {
             InitializeComponent();

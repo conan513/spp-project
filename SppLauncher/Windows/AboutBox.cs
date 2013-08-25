@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using SppLauncher.Windows.Launcher;
 
 namespace SppLauncher
 {
@@ -25,7 +26,7 @@ namespace SppLauncher
         {
 
                 lblLocalemu.Text = Launcher.CurrEmuVer.ToString();
-                lbl_LocalV.Text = Launcher.currProgVer;
+                lbl_LocalV.Text = Launcher.CurrProgVer;
             
         }
 

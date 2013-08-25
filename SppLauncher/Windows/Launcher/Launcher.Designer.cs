@@ -1,4 +1,4 @@
-﻿namespace SppLauncher
+﻿namespace SppLauncher.Windows.Launcher
 {
     partial class Launcher
     {
@@ -857,6 +857,7 @@
             this.MinimizeBox = false;
             this.Name = "Launcher";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Launcher_FormClosing);
+            this.Shown += new System.EventHandler(this.Launcher_Shown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNotAvailW)).EndInit();

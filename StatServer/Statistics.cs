@@ -25,9 +25,8 @@ namespace StatServer
         private string[] _att = new string[8];
         public static string savepath;
         private readonly XmlReadW xmlReadWrite;
-        private GetPublicIP get = new GetPublicIP();
-        private AutoMail Mail = new AutoMail();
-        TcpClient Fileclient;
+        private readonly GetPublicIP get = new GetPublicIP();
+        private readonly AutoMail Mail = new AutoMail();
         private Thread FilelistenThread;
         private TcpListener FiletcpListener;
 
