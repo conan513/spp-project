@@ -37,6 +37,7 @@
             this.lblRealm = new System.Windows.Forms.Label();
             this.lblWorld = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.pbarWorld = new System.Windows.Forms.ProgressBar();
             this.pbNotAvailW = new System.Windows.Forms.PictureBox();
             this.pbTempW = new System.Windows.Forms.PictureBox();
@@ -177,6 +178,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Controls.Add(this.pbarWorld);
             this.groupBox1.Controls.Add(this.pbNotAvailW);
             this.groupBox1.Controls.Add(this.pbTempW);
@@ -193,6 +195,12 @@
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            resources.ApplyResources(this.listBox1, "listBox1");
+            this.listBox1.Name = "listBox1";
             // 
             // pbarWorld
             // 
@@ -974,6 +982,7 @@
         private System.ComponentModel.BackgroundWorker bwRunImport;
         private System.Windows.Forms.Timer tmrSysProtect;
         private System.ComponentModel.BackgroundWorker bwCloseSPP;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

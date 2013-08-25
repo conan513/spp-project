@@ -409,4 +409,19 @@ The changes to take effect bot reset requiered.</value>
   <data name="Please_Fill" xml:space="preserve">
     <value>Please Fill out the Description box.</value>
   </data>
+  <data name="CloseProcess_Saving" xml:space="preserve">
+    <value>Saving</value>
+  </data>
+  <data name="announce_Current_ram_usage_" xml:space="preserve">
+    <value>.announce Current ram usage:</value>
+  </data>
+  <data name="announce_If_the_RAM_usage_exceeds" xml:space="preserve">
+    <value>.announce If the RAM usage exceeds 90%, auto-restart!}</value>
+  </data>
+  <data name="announce_Current_ram_usage" xml:space="preserve">
+    <value>.announce Current ram usage:</value>
+  </data>
+  <data name="announce_Auto_Restart" xml:space="preserve">
+    <value>.announce Auto-Restart!</value>
+  </data>
 </root>

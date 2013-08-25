@@ -124,9 +124,6 @@
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
   </data>
-  <data name="label20.Text" xml:space="preserve">
-    <value>Arènes:</value>
-  </data>
   <data name="txbLevel.Location" type="System.Drawing.Point, System.Drawing">
     <value>82, 26</value>
   </data>
@@ -136,9 +133,6 @@
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 13</value>
   </data>
-  <data name="label19.Text" xml:space="preserve">
-    <value>Tout les trajets aériens:</value>
-  </data>
   <data name="txbMoney.Location" type="System.Drawing.Point, System.Drawing">
     <value>82, 52</value>
   </data>
@@ -147,9 +141,6 @@
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
-  </data>
-  <data name="label16.Text" xml:space="preserve">
-    <value>Argent:</value>
   </data>
   <data name="cbPaths.Location" type="System.Drawing.Point, System.Drawing">
     <value>278, 25</value>
@@ -163,17 +154,11 @@
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
   </data>
-  <data name="label15.Text" xml:space="preserve">
-    <value>Niveau:</value>
-  </data>
   <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
     <value>28, 81</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 13</value>
-  </data>
-  <data name="label17.Text" xml:space="preserve">
-    <value>Honneur:</value>
   </data>
   <data name="txbHonor.Location" type="System.Drawing.Point, System.Drawing">
     <value>82, 78</value>
@@ -196,17 +181,11 @@
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 13</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Blanc (normal):</value>
-  </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>-1, 74</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 13</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Vert (commune):</value>
   </data>
   <data name="txbPoor.Location" type="System.Drawing.Point, System.Drawing">
     <value>85, 21</value>
@@ -217,17 +196,11 @@
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Gris (faible):</value>
-  </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 102</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 13</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Bleu (rare):</value>
   </data>
   <data name="txbNormal.Location" type="System.Drawing.Point, System.Drawing">
     <value>85, 47</value>
@@ -238,17 +211,11 @@
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 13</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Violet (epic):</value>
-  </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>172, 48</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 13</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Orange (legendaire):</value>
   </data>
   <data name="txbUncommon.Location" type="System.Drawing.Point, System.Drawing">
     <value>85, 73</value>
@@ -259,17 +226,11 @@
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 13</value>
   </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Or (artefact):</value>
-  </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
     <value>212, 100</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 13</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Référencé:</value>
   </data>
   <data name="txbRare.Location" type="System.Drawing.Point, System.Drawing">
     <value>85, 99</value>
@@ -282,9 +243,6 @@
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>360, 132</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Taux butain objets</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>155, 371</value>
@@ -310,17 +268,11 @@
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
   </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Argent:</value>
-  </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
     <value>50, 49</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 13</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Mort:</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
     <value>42, 75</value>
@@ -328,26 +280,17 @@
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
   </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Quête:</value>
-  </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
     <value>214, 23</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
   </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Exploration:</value>
-  </data>
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
     <value>224, 49</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 13</value>
-  </data>
-  <data name="label13.Text" xml:space="preserve">
-    <value>Honneur:</value>
   </data>
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
     <value>235, 75</value>

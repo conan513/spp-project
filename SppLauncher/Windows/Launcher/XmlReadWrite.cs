@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -9,19 +10,26 @@ namespace SppLauncher.Class
 
         public void saveMethod()
         {
-            var writer        = new XmlTextWriter("config\\SppPathConfig.xml", Encoding.UTF8);
-            writer.Formatting = Formatting.Indented;
-            writer.WriteStartDocument();
-            writer.WriteStartElement("Config");
-            writer.WriteElementString("GamePath", Launcher.wowExePath);
-            writer.WriteElementString("RealmWTF", Launcher.realmListPath);
-            writer.WriteElementString("ResetBots", Launcher.resetBots);
-            writer.WriteElementString("RandomizeBots", Launcher.randomizeBots);
-            writer.WriteElementString("Autostart", Launcher.Autostart);
-            writer.WriteElementString("Lang", Launcher.lang);
+            try
+            {
+                var writer = new XmlTextWriter("config\\SppPathConfig.xml", Encoding.UTF8);
+                writer.Formatting = Formatting.Indented;
+                writer.WriteStartDocument();
+                writer.WriteStartElement("Config");
+                writer.WriteElementString("GamePath", Launcher.wowExePath);
+                writer.WriteElementString("RealmWTF", Launcher.realmListPath);
+                writer.WriteElementString("ResetBots", Launcher.resetBots);
+                writer.WriteElementString("RandomizeBots", Launcher.randomizeBots);
+                writer.WriteElementString("Autostart", Launcher.Autostart);
+                writer.WriteElementString("Lang", Launcher.lang);
 
-            writer.WriteEndElement();
-            writer.Close();
+                writer.WriteEndElement();
+                writer.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Some exception: ReadXML \n{0}", ex.Message);
+            }
         }
 
         public bool ReadXML()
@@ -42,10 +50,10 @@ namespace SppLauncher.Class
                 }
                return true;
             }
-            catch
+            catch (Exception ex)
             {
                 saveMethod();
-                MessageBox.Show("READXML ERROR");
+                MessageBox.Show("Some exception: ReadXML \n{0}", ex.Message);
                 return false;
             }
         }

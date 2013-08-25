@@ -110,6 +110,73 @@ namespace SppLauncher
 
         #region [ Servers ]
 
+        private void bwCloseProcess_DoWork(object sender, DoWorkEventArgs e)
+        {
+            CloseProcess(false);
+        }
+
+        private void bwCloseProcess_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            StatusIcon();
+            statusChage(Resources.Launcher_startNStop_Derver_is_down, false);
+            animateStatus(false);
+        }
+
+        private void bwCloseProcess1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            CloseProcess(true);
+        }
+
+        private void bwCloseProcess1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            StatusIcon();
+            WindowState = FormWindowState.Normal;
+            Show();
+            StartAll();
+        }
+
+        private void bwRunExport_DoWork(object sender, DoWorkEventArgs e)
+        {
+            CloseProcess(true);
+        }
+
+        private void bwRunExport_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            GetSqlOnlineBot.Stop();
+            tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
+            StatusIcon();
+            WindowState = FormWindowState.Normal;
+            Show();
+            pbAvailableM.Visible = true;
+            statusChage(Resources.Launcher_import_Decompress, false);
+            animateStatus(true);
+            bwImport.RunWorkerAsync();
+        }
+
+        private void SaveAnnounce()
+        {
+            try
+            {
+                _cmd1.StandardInput.WriteLine("saveall");
+                _cmd1.StandardInput.WriteLine(".announce Saving...");
+            }
+            catch
+            {
+            }
+        }
+
+        private void bwCloseSPP_DoWork(object sender, DoWorkEventArgs e)
+        {
+            CloseProcess(false);
+        }
+
+        private void bwCloseSPP_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            Hide();
+            SppTray.Visible = false;
+            Loader.Kill = true;
+        }
+
         private void SetText(string text)
         {
             _realm += text;
@@ -459,13 +526,27 @@ namespace SppLauncher
 
                 foreach (Process proc in Process.GetProcessesByName("mangosd"))
                 {
-                    statusChage("Saving",false);
+                    statusChage(Resources.CloseProcess_Saving,false);
                     animateStatus(true);
-                    _world = "";
-                    Thread.Sleep(5000);
+                    if (_allowtext)
+                    {
+                        Back:
+                        switch (_world.Contains("players"))
+                        {
+                            case true:
+                                Thread.Sleep(3000);
+                                break;
+                            case false:
+                                Thread.Sleep(2000);
+                                listBox1.Items.Add(_world);
+                                listBox1.SelectedIndex = listBox1.Items.Count - 1;
+                                listBox1.SelectedIndex = -1;
+                                goto Back;
+                        }
                     statusChage(Resources.Launcher_CloseProcess_World_Shutdown, false);
                     _cmd1.StandardInput.WriteLine("server shutdown 0");
                     Thread.Sleep(1000);
+                    }
                     proc.Kill();
                 }
 
@@ -1122,6 +1203,7 @@ namespace SppLauncher
         private void startstopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _allowtext = false;
+            _world = "";
             startNStop();
         }
 
@@ -1373,6 +1455,7 @@ namespace SppLauncher
             exitToolStripMenuItem2.Enabled = false;
             CheckMangosCrashed.Stop();
             GetSqlOnlineBot.Stop();
+            SaveAnnounce();
             bwCloseSPP.RunWorkerAsync();
         }
 
@@ -1414,7 +1497,7 @@ namespace SppLauncher
         #endregion
 
         #region [ Timers ]
-
+        
         private void tmrUsage_Tick(object sender, EventArgs e)
         {
             int ramavail  = getAvailableRAM();
@@ -1423,7 +1506,7 @@ namespace SppLauncher
             int ramp      = ramtoltal/100;
             int perecent  = ramfree/ramp;
             Process proc  = Process.GetCurrentProcess();
-
+            
             try
             {
                 Process[] SqlProcesses;
@@ -1468,8 +1551,8 @@ namespace SppLauncher
             {
                 if (!SysProtect)
                 {
-                    _cmd1.StandardInput.WriteLine(".announce Current ram usage: {0}%", perecent);
-                    _cmd1.StandardInput.WriteLine(".announce If the RAM usage exceeds 90%, auto-restart!}");
+                    _cmd1.StandardInput.WriteLine(Resources.announce_Current_ram_usage + perecent + "%");
+                    _cmd1.StandardInput.WriteLine(Resources.announce_If_the_RAM_usage_exceeds);
                     SysProtect = true;
                 }
             }
@@ -1478,7 +1561,7 @@ namespace SppLauncher
             {
                 if (SysProtect)
                 {
-                    _cmd1.StandardInput.WriteLine(".announce Auto-Restart!}");
+                    _cmd1.StandardInput.WriteLine(Resources.announce_Auto_Restart);
                     restartToolStripMenuItem1_Click_1(new object(), new EventArgs());
                 }
             }
@@ -1586,7 +1669,7 @@ namespace SppLauncher
                     bwUpdate.RunWorkerAsync(); //check update
 
                     Traymsg();
-                    GetSqlOnlineBot.Start(); //get online bots
+                    GetSqlOnlineBot.Start(); // get online bots
 
                     if (Updater)
                     {
@@ -2079,66 +2162,5 @@ namespace SppLauncher
         }
 
         #endregion
-
-        private void bwCloseProcess_DoWork(object sender, DoWorkEventArgs e)
-        {
-            CloseProcess(false);
-        }
-
-        private void bwCloseProcess_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            StatusIcon();
-            statusChage(Resources.Launcher_startNStop_Derver_is_down, false);
-            animateStatus(false);
-        }
-
-        private void bwCloseProcess1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            CloseProcess(true);
-        }
-
-        private void bwCloseProcess1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            StatusIcon();
-            WindowState = FormWindowState.Normal;
-            Show();
-            StartAll();
-        }
-
-        private void bwRunExport_DoWork(object sender, DoWorkEventArgs e)
-        {
-            CloseProcess(true);
-        }
-
-        private void bwRunExport_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            GetSqlOnlineBot.Stop();
-            tssLOnline.Text = Resources.Launcher_import_Online_Bots__N_A;
-            StatusIcon();
-            WindowState = FormWindowState.Normal;
-            Show();
-            pbAvailableM.Visible = true;
-            statusChage(Resources.Launcher_import_Decompress, false);
-            animateStatus(true);
-            bwImport.RunWorkerAsync();
-        }
-        
-        private void SaveAnnounce()
-        {
-            _cmd1.StandardInput.WriteLine("saveall");
-            _cmd1.StandardInput.WriteLine(".announce Saving...");
-        }
-
-        private void bwCloseSPP_DoWork(object sender, DoWorkEventArgs e)
-        {
-            CloseProcess(false);
-        }
-
-        private void bwCloseSPP_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            Hide();
-            SppTray.Visible = false;
-            Loader.Kill = true;
-        }
     }
 }
