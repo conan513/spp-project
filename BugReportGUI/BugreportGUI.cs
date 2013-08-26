@@ -18,8 +18,8 @@ namespace BugReportGUI
             InitializeComponent();
             try
             {
-                Bugpath      = Settings.Default["path"].ToString();
-                if(Bugpath  != "") di = new DirectoryInfo(Bugpath);
+                Bugpath = Settings.Default["path"].ToString();
+                if(Bugpath != "") di = new DirectoryInfo(Bugpath);
                 if(Bugpath != "") Chckcount = Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length;
 
                 if (Bugpath == "")
@@ -112,7 +112,7 @@ namespace BugReportGUI
 
                 if (File.Exists(Bugpath + "\\Logs\\" + item + "\\" + s + "_Logs.zip"))
                 {
-                    logpath = Bugpath + "\\Logs\\" + item + "\\" + s + "_Logs.zip";
+                    logpath        = Bugpath + "\\Logs\\" + item + "\\" + s + "_Logs.zip";
                     btnLog.Enabled = true;
                 }
                 else
@@ -124,8 +124,10 @@ namespace BugReportGUI
                 txbMail.Text     = content[1];
                 txbType.Text     = content[2];
                 txbDesc.Text     = content[3];
-                textBox1.Text = content[9];
-                txbSysinfo.Text = "Cpu:" + content[4] + Environment.NewLine + "Core:" + content[5] + Environment.NewLine + "Total Memory: " + content[6] + "Mb" + Environment.NewLine + "Operation System:" + content[7] + Environment.NewLine + content[8];
+                textBox1.Text    = content[9];
+                txbSysinfo.Text  = "Cpu:" + content[4] + Environment.NewLine + "Core:" +
+                    content[5] + Environment.NewLine + "Total Memory: " + content[6] + "Mb" +
+                    Environment.NewLine + "Operation System:" + content[7] + Environment.NewLine + content[8];
             }
             catch
             {

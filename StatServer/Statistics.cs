@@ -12,10 +12,10 @@ using StatServer.Class;
 
 namespace StatServer
 {
-    #region [ Variables ]
-
     public partial class Statistics : Form
     {
+        #region [ Variables ]
+
         private readonly DateTime _startTime = DateTime.Now;
         public string date;
         private DateTime dt1 = DateTime.Now;

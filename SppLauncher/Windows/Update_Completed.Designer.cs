@@ -57,9 +57,9 @@
             // 
             // panel
             // 
-            resources.ApplyResources(this.panel, "panel");
             this.panel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel.Controls.Add(this.btn_ok);
+            resources.ApplyResources(this.panel, "panel");
             this.panel.Name = "panel";
             // 
             // btn_ok
@@ -71,8 +71,8 @@
             // 
             // pb_pic
             // 
-            resources.ApplyResources(this.pb_pic, "pb_pic");
             this.pb_pic.Image = global::SppLauncher.Properties.Resources.pic_tick;
+            resources.ApplyResources(this.pb_pic, "pb_pic");
             this.pb_pic.Name = "pb_pic";
             this.pb_pic.TabStop = false;
             // 
