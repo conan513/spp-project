@@ -91,14 +91,24 @@ namespace SppLauncher
         {
             ImportExtract();
             lbl_status.Text = "Status: Completed";
-            Thread.Sleep(500);
+
+
+            Thread.Sleep(1500);
+            try
+            {
+                File.Delete("Languages.zip");
+            }
+            catch (Exception)
+            {
+            }
             Process.Start("SppLauncher.exe");
             Application.Exit();
         }
 
         private void bw_updater_DoWork(object sender, DoWorkEventArgs e)
         {
-            DownloadUpdate("http://dl.dropbox.com/u/7587303/Updates/SppLauncher_new.exe", "SppLauncher.exe");
+            DownloadUpdate("http://dl.dropbox.com/u/7587303/Updates/SppLauncher_new.exe", "SppLauncher.exe"); //? Release.
+            //DownloadUpdate("http://dl.dropbox.com/u/7587303/Updates/SppLauncher_new_test.exe", "SppLauncher.exe"); //? Test
         }
 
         private void pb_down_Click(object sender, EventArgs e)
@@ -107,7 +117,8 @@ namespace SppLauncher
 
         private void bw_LangUpdate_DoWork(object sender, DoWorkEventArgs e)
         {
-            DownloadLangUpdate("https://dl.dropboxusercontent.com/u/7587303/Updates/Languages.zip", "Languages.zip");
+            DownloadLangUpdate("https://dl.dropboxusercontent.com/u/7587303/Updates/Languages.zip", "Languages.zip"); //? Release.
+            //DownloadLangUpdate("https://dl.dropboxusercontent.com/u/7587303/Updates/Languages_test.zip", "Languages.zip"); //? Test
             lbl_status.Text = "Status: Decompress";
         }
 

@@ -43,10 +43,21 @@
     <ApplicationIcon>report-bug-icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BetterListViewExpress, Version=3.7.6.0, Culture=neutral, PublicKeyToken=e6c91a3add447be2, processorArchitecture=MSIL" />
+    <Reference Include="ListControls">
+      <HintPath>..\..\..\Dropbox\Visual Studio\Download Project\ImageListBox\bin\Release\ListControls.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjectListView">
+      <HintPath>..\..\..\Dropbox\Visual Studio\Download Project\ObjectListView\bin\Release\ObjectListView.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BugreportGUI.cs">

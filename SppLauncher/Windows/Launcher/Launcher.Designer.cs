@@ -802,7 +802,7 @@
             // 
             // tmrUsage
             // 
-            this.tmrUsage.Interval = 1000;
+            this.tmrUsage.Interval = 2000;
             this.tmrUsage.Tick += new System.EventHandler(this.tmrUsage_Tick);
             // 
             // bWUpEx

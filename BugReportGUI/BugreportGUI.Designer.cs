@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BugreportGUI));
             this.lbDate = new System.Windows.Forms.ListBox();
-            this.lbReports = new System.Windows.Forms.ListBox();
             this.txbMail = new System.Windows.Forms.TextBox();
             this.txbDesc = new System.Windows.Forms.TextBox();
             this.txbType = new System.Windows.Forms.TextBox();
@@ -41,9 +40,13 @@
             this.txbSysinfo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCheck = new System.Windows.Forms.Button();
             this.btnLog = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.fbdPath = new System.Windows.Forms.FolderBrowserDialog();
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,15 +65,6 @@
             this.lbDate.Size = new System.Drawing.Size(65, 147);
             this.lbDate.TabIndex = 1;
             this.lbDate.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // lbReports
-            // 
-            this.lbReports.FormattingEnabled = true;
-            this.lbReports.Location = new System.Drawing.Point(94, 24);
-            this.lbReports.Name = "lbReports";
-            this.lbReports.Size = new System.Drawing.Size(232, 147);
-            this.lbReports.TabIndex = 1;
-            this.lbReports.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // txbMail
             // 
@@ -159,6 +153,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnCheck);
             this.groupBox1.Controls.Add(this.btnLog);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.txbDesc);
@@ -175,6 +170,17 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info";
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Enabled = false;
+            this.btnCheck.Location = new System.Drawing.Point(15, 142);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(44, 34);
+            this.btnCheck.TabIndex = 19;
+            this.btnCheck.Text = "✔";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnLog
             // 
@@ -200,7 +206,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.lbReports);
+            this.groupBox2.Controls.Add(this.listView1);
             this.groupBox2.Controls.Add(this.lbDate);
             this.groupBox2.Location = new System.Drawing.Point(11, 37);
             this.groupBox2.Name = "groupBox2";
@@ -208,6 +214,32 @@
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Browser";
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.listView1.LargeImageList = this.imageList;
+            this.listView1.Location = new System.Drawing.Point(94, 24);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(232, 147);
+            this.listView1.SmallImageList = this.imageList;
+            this.listView1.TabIndex = 2;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Width = 100;
+            // 
+            // imageList
+            // 
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "ok.png");
+            this.imageList.Images.SetKeyName(1, "no.png");
             // 
             // MenuStrip
             // 
@@ -230,7 +262,7 @@
             // changePathToolStripMenuItem
             // 
             this.changePathToolStripMenuItem.Name = "changePathToolStripMenuItem";
-            this.changePathToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.changePathToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.changePathToolStripMenuItem.Text = "Change Path";
             this.changePathToolStripMenuItem.Click += new System.EventHandler(this.changePathToolStripMenuItem_Click);
             // 
@@ -268,7 +300,6 @@
         #endregion
 
         private System.Windows.Forms.ListBox lbDate;
-        private System.Windows.Forms.ListBox lbReports;
         private System.Windows.Forms.TextBox txbMail;
         private System.Windows.Forms.TextBox txbDesc;
         private System.Windows.Forms.TextBox txbType;
@@ -286,6 +317,10 @@
         private System.Windows.Forms.Timer tmrCheck;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnLog;
+        public System.Windows.Forms.ImageList imageList;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Button btnCheck;
     }
 }
 

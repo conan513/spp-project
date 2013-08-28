@@ -153,7 +153,7 @@ namespace StatServer
 
                     int fileCount = Directory.GetFiles("D:\\Dropbox\\Conan_shared\\Report\\" + date, "*.*", SearchOption.TopDirectoryOnly).Length;
 
-                    File.AppendAllText("D:\\Dropbox\\Conan_shared\\Report\\" + date + "\\" + (fileCount +1) +".txt", report + ";" + date2);
+                    File.AppendAllText("D:\\Dropbox\\Conan_shared\\Report\\" + date + "\\" + (fileCount +1) +".txt", report + ";" + date2 + ";" + "0");
                     lbHistory.Items.Add(dt1.ToString("(" + "HH:mm" + ") ") + "Report received.");
                     _report++;
                 }
@@ -196,12 +196,12 @@ namespace StatServer
 
             netStream = tcpClient.GetStream();
 
-            // Read length of incoming data
+            //? Read length of incoming data
             byte[] length  = new byte[4];
             bytesRead      = netStream.Read(length, 0, 4);
             int dataLength = BitConverter.ToInt32(length, 0);
 
-            // Read the data
+            //? Read the data
             int bytesLeft = dataLength;
             byte[] data = new byte[dataLength];
 
@@ -359,10 +359,17 @@ namespace StatServer
 
         private void Getip_Tick(object sender, EventArgs e)
         {
-            string ip = get.IP();
-            if (ip != File.ReadAllText(@"D:\Dropbox\Public\Updates\ip.txt"))
+            try
             {
-                File.WriteAllText(@"D:\Dropbox\Public\Updates\ip.txt", ip);
+                string ip = get.IP();
+                if (ip != File.ReadAllText(@"D:\Dropbox\Public\Updates\ip.txt"))
+                {
+                    File.WriteAllText(@"D:\Dropbox\Public\Updates\ip.txt", ip);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

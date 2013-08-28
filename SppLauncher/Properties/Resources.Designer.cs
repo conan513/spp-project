@@ -146,6 +146,16 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap check_icon {
+            get {
+                object obj = ResourceManager.GetObject("check-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Saving.
         /// </summary>
         internal static string CloseProcess_Saving {
@@ -226,6 +236,16 @@ namespace SppLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Good_or_Tick_icon {
+            get {
+                object obj = ResourceManager.GetObject("Good-or-Tick-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap heart_icon {
             get {
                 object obj = ResourceManager.GetObject("heart-icon", resourceCulture);
@@ -259,6 +279,16 @@ namespace SppLauncher.Properties {
         internal static System.Drawing.Bitmap Import_Icon_32 {
             get {
                 object obj = ResourceManager.GetObject("Import_Icon_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_icon_mini {
+            get {
+                object obj = ResourceManager.GetObject("info_icon_mini", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -872,6 +902,16 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tick_octagon {
+            get {
+                object obj = ResourceManager.GetObject("tick_octagon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Total Character: .
         /// </summary>
         internal static string Total_Character__ {
@@ -886,6 +926,16 @@ namespace SppLauncher.Properties {
         internal static System.Drawing.Bitmap us {
             get {
                 object obj = ResourceManager.GetObject("us", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Warning_icon_mini {
+            get {
+                object obj = ResourceManager.GetObject("Warning-icon_mini", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

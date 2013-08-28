@@ -55,9 +55,16 @@ namespace SppLauncher
             {
                 if (File.Exists(@"Languages\hu\SppLauncher.resources_new.dll"))
                 {
-                    File.Delete(@"Languages\hu\SppLauncher.resources.dll");
-                    File.Delete(@"Languages\de\SppLauncher.resources.dll");
-                    File.Delete(@"Languages\fr\SppLauncher.resources.dll");
+                    File.Move(@"Languages\hu\SppLauncher.resources.dll", @"Languages\hu\SppLauncher.resources_old.dll");
+                    File.SetAttributes(@"Languages\hu\SppLauncher.resources_old.dll", FileAttributes.Hidden);
+
+                    File.Move(@"Languages\de\SppLauncher.resources.dll", @"Languages\de\SppLauncher.resources_old.dll");
+                    File.SetAttributes(@"Languages\de\SppLauncher.resources_old.dll", FileAttributes.Hidden);
+
+                    File.Move(@"Languages\fr\SppLauncher.resources.dll", @"Languages\fr\SppLauncher.resources_old.dll");
+                    File.SetAttributes(@"Languages\fr\SppLauncher.resources_old.dll", FileAttributes.Hidden);
+
+                    Thread.Sleep(100);
 
                     File.Move(@"Languages\hu\SppLauncher.resources_new.dll", @"Languages\hu\SppLauncher.resources.dll");
                     File.SetAttributes(@"Languages\hu\SppLauncher.resources.dll", FileAttributes.Normal);
@@ -69,7 +76,7 @@ namespace SppLauncher
                     File.SetAttributes(@"Languages\fr\SppLauncher.resources.dll", FileAttributes.Normal);
                 }
             }
-            catch
+            catch (Exception)
             {
             }
         }
@@ -83,7 +90,6 @@ namespace SppLauncher
                     File.Delete(@"hu\SppLauncher.resources.dll");
                     File.Delete(@"fr\SppLauncher.resources.dll");
                     File.Delete(@"de\SppLauncher.resources.dll");
-
                     Directory.Delete("hu");
                     Directory.Delete("fr");
                     Directory.Delete("de");
@@ -92,6 +98,23 @@ namespace SppLauncher
             catch (Exception)
             {
             }
+        }
+
+        private void DelOldLang()
+        {
+            try
+            {
+                if (File.Exists(@"Languages\hu\SppLauncher.resources_old.dll"))
+                {
+                    File.Delete(@"Languages\hu\SppLauncher.resources_old.dll");
+                    File.Delete(@"Languages\fr\SppLauncher.resources_old.dll");
+                    File.Delete(@"Languages\de\SppLauncher.resources_old.dll");
+                }
+            }
+            catch (Exception)
+            {
+            }
+
         }
 
         private readonly Random _rnd = new Random();
@@ -109,6 +132,7 @@ namespace SppLauncher
             {
                 ShowSplashScreen.Stop();
                 WasThisLangUpdate();
+                DelOldLang();
                 Thread.Sleep(2000);
                 HideSplashScreen.Start();
             }
