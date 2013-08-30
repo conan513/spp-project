@@ -234,6 +234,15 @@ namespace SppLauncher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New update available!.
+        /// </summary>
+        internal static string GetUpdate_New_update_available_ {
+            get {
+                return ResourceManager.GetString("GetUpdate_New_update_available_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Good_or_Tick_icon {

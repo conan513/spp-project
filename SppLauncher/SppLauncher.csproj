@@ -327,7 +327,7 @@
     <EmbeddedResource Include="Windows\WowAccountCreator\WowAccountCreator.resx">
       <DependentUpon>WowAccountCreator.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App config and Fody\app.config" />
+    <None Include="app.config" />
     <None Include="App config and Fody\app.manifest" />
     <None Include="Fody.targets" />
     <None Include="packages.config" />

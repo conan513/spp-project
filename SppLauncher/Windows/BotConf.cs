@@ -7,10 +7,11 @@ namespace SppLauncher
 {
     public partial class BotConf : Form
     {
-        readonly IniFileClass MyIni              = new IniFileClass("config\\aiplayerbot.CONF");
-        private string _maps            = " ", _mapsWrite = " ";
-        private string[] _arr1          = new string[4];
-        private bool DefaultL;
+        readonly IniFileClass _ahbot = new IniFileClass("config\\ahbot.CONF");
+        readonly IniFileClass _aiplayerbot             = new IniFileClass("config\\aiplayerbot.CONF");
+        private string _maps                     = " ", _mapsWrite = " ";
+        private string[] _arr1                   = new string[4];
+        private bool _defaultL;
         public BotConf()
         {
             InitializeComponent();
@@ -30,51 +31,65 @@ namespace SppLauncher
         public void SaveIni()
         {
 
-            MyIni.Write("AiPlayerbotConf", "AiPlayerbot.MinRandomBots", " " + txbMinbot.Text);
-            MyIni.Write("AiPlayerbotConf", "AiPlayerbot.MaxRandomBots", " " + txbMaxBot.Text);
-            MyIni.Write("AiPlayerbotConf", "AiPlayerbot.MinRandomBotsPerInterval", " " + txbMinBotInter.Text);
-            MyIni.Write("AiPlayerbotConf", "AiPlayerbot.MaxRandomBotsPerInterval", " " + txbMaxBotInter.Text);
-            MyIni.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotAccountCount", " " + txbBotAccount.Text);
-            MyIni.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotUpdateInterval", " " + txbUpdateInter.Text);
+            _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.MinRandomBots", " " + txbMinbot.Text);
+            _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.MaxRandomBots", " " + txbMaxBot.Text);
+            _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.MinRandomBotsPerInterval", " " + txbMinBotInter.Text);
+            _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.MaxRandomBotsPerInterval", " " + txbMaxBotInter.Text);
+            _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotAccountCount", " " + txbBotAccount.Text);
+            _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotUpdateInterval", " " + txbUpdateInter.Text);
 
             try
             {
                 switch (cbDel.Checked)
                 {
                     case true:
-                        MyIni.Write("AiPlayerbotConf", "AiPlayerbot.DeleteRandomBotAccounts", " 1");
+                        _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.DeleteRandomBotAccounts", " 1");
                         break;
                     case false:
-                        MyIni.Write("AiPlayerbotConf", "AiPlayerbot.DeleteRandomBotAccounts", " 0");
+                        _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.DeleteRandomBotAccounts", " 0");
                         break;
                 }
                 switch (cbJoin.Checked)
                 {
                     case true:
-                        MyIni.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotJoinLfg", " 1");
+                        _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotJoinLfg", " 1");
                         break;
                     case false:
-                        MyIni.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotJoinLfg", " 0");
+                        _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotJoinLfg", " 0");
                         break;
                 }
 
                 switch (cbBots.Text)
                 {
                     case "Enabled":
-                        MyIni.Write("AiPlayerbotConf", "AiPlayerbot.Enabled", " 1");
+                        _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.Enabled", " 1");
+
                         break;
                     case "Disabled":
-                        MyIni.Write("AiPlayerbotConf", "AiPlayerbot.Enabled", " 0");
+                        _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.Enabled", " 0");
+                        break;
+                }
+
+                switch (cbAHbot.Text)
+                {
+                    case "Enabled":
+                        _ahbot.Write("AhbotConf", "AuctionHouseBot.Seller.Enabled", " 1");
+                        _ahbot.Write("AhbotConf", "AuctionHouseBot.Buyer.Enabled", " 1");
+
+                        break;
+                    case "Disabled":
+                        _ahbot.Write("AhbotConf", "AuctionHouseBot.Seller.Enabled", " 0");
+                        _ahbot.Write("AhbotConf", "AuctionHouseBot.Buyer.Enabled", " 0");
                         break;
                 }
 
                 switch (cbRndBotLgn.Checked)
                 {
                     case true:
-                        MyIni.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotLoginAtStartup", " 1");
+                        _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotLoginAtStartup", " 1");
                         break;
                     case false:
-                        MyIni.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotLoginAtStartup", " 0");
+                        _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotLoginAtStartup", " 0");
                         break;
                 }
 
@@ -94,20 +109,30 @@ namespace SppLauncher
 
                 var res = String.Join(",", arr.Where(s => !string.IsNullOrEmpty(s)));
 
-                MyIni.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotMaps", " " + res);
+                _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotMaps", " " + res);
             }
             catch (Exception)
             {
                 MessageBox.Show("Some exception: write", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            MessageBox.Show(!DefaultL ? Resources.BotConf_SaveIni_ : Resources.BotConf_SaveIni_default, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(!_defaultL ? Resources.BotConf_SaveIni_ : Resources.BotConf_SaveIni_default, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
         public void ReadBotConf()
         {
-            switch (MyIni.Read("AiPlayerbotConf", "AiPlayerbot.Enabled"))
+            switch (_ahbot.Read("AhbotConf", "AuctionHouseBot.Seller.Enabled"))
+            {
+                case "1":
+                    cbAHbot.Text = "Enabled";
+                    break;
+                case "0":
+                    cbAHbot.Text = "Disabled";
+                    break;
+            }
+
+            switch (_aiplayerbot.Read("AiPlayerbotConf", "AiPlayerbot.Enabled"))
             {
                 case "1":
                     cbBots.Text = "Enabled";
@@ -116,14 +141,14 @@ namespace SppLauncher
                     cbBots.Text = "Disabled";
                     break;
             }
-            txbMinbot.Text      = MyIni.Read("AiPlayerbotConf", "AiPlayerbot.MinRandomBots");
-            txbMaxBot.Text      = MyIni.Read("AiPlayerbotConf", "AiPlayerbot.MaxRandomBots");
-            txbMinBotInter.Text = MyIni.Read("AiPlayerbotConf", "AiPlayerbot.MinRandomBotsPerInterval");
-            txbMaxBotInter.Text = MyIni.Read("AiPlayerbotConf", "AiPlayerbot.MaxRandomBotsPerInterval");
-            txbBotAccount.Text  = MyIni.Read("AiPlayerbotConf", "AiPlayerbot.RandomBotAccountCount");
-            txbUpdateInter.Text = MyIni.Read("AiPlayerbotConf", "AiPlayerbot.RandomBotUpdateInterval");
+            txbMinbot.Text      = _aiplayerbot.Read("AiPlayerbotConf", "AiPlayerbot.MinRandomBots");
+            txbMaxBot.Text      = _aiplayerbot.Read("AiPlayerbotConf", "AiPlayerbot.MaxRandomBots");
+            txbMinBotInter.Text = _aiplayerbot.Read("AiPlayerbotConf", "AiPlayerbot.MinRandomBotsPerInterval");
+            txbMaxBotInter.Text = _aiplayerbot.Read("AiPlayerbotConf", "AiPlayerbot.MaxRandomBotsPerInterval");
+            txbBotAccount.Text  = _aiplayerbot.Read("AiPlayerbotConf", "AiPlayerbot.RandomBotAccountCount");
+            txbUpdateInter.Text = _aiplayerbot.Read("AiPlayerbotConf", "AiPlayerbot.RandomBotUpdateInterval");
 
-            switch (MyIni.Read("AiPlayerbotConf", "AiPlayerbot.DeleteRandomBotAccounts"))
+            switch (_aiplayerbot.Read("AiPlayerbotConf", "AiPlayerbot.DeleteRandomBotAccounts"))
             {
                 case "1":
                     cbDel.Checked = true;
@@ -133,7 +158,7 @@ namespace SppLauncher
                     break;
             }
 
-            switch (MyIni.Read("AiPlayerbotConf", "AiPlayerbot.RandomBotJoinLfg"))
+            switch (_aiplayerbot.Read("AiPlayerbotConf", "AiPlayerbot.RandomBotJoinLfg"))
             {
                 case "1":
                     cbJoin.Checked = true;
@@ -143,7 +168,7 @@ namespace SppLauncher
                     break;
             }
 
-            switch (MyIni.Read("AiPlayerbotConf", "AiPlayerbot.RandomBotLoginAtStartup"))
+            switch (_aiplayerbot.Read("AiPlayerbotConf", "AiPlayerbot.RandomBotLoginAtStartup"))
             {
                 case "1":
                     cbRndBotLgn.Checked = true;
@@ -153,7 +178,7 @@ namespace SppLauncher
                     break;
             }
 
-            _maps = MyIni.Read("AiPlayerbotConf", "AiPlayerbot.RandomBotMaps");
+            _maps = _aiplayerbot.Read("AiPlayerbotConf", "AiPlayerbot.RandomBotMaps");
             _arr1 = _maps.Split(',');
 
             if (_arr1.Contains("0"))
@@ -192,7 +217,7 @@ namespace SppLauncher
             cbNorthrend.Checked = false;
             cbOutland.Checked   = false;
             cbJoin.Checked      = true;
-            DefaultL            = true;
+            _defaultL            = true;
             SaveIni();
         }
 

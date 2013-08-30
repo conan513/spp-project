@@ -38,7 +38,7 @@ namespace SppLauncher.Windows.Launcher
         public static string AutoS, resetBots, RandomizeBots, RealmListPath, Lang, UpdateUnpack, Status, WowExePath;
         public static bool OnlyMysqlStart, MysqlOn, Dbupdate;
         public static double CurrEmuVer;
-        public const string CurrProgVer = "1.1.5"; //? Current program version.
+        public const string CurrProgVer = "1.1.6"; //? Current program version.
 
         #endregion
 
@@ -712,7 +712,6 @@ namespace SppLauncher.Windows.Launcher
                         Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("fr");
                         Thread.CurrentThread.CurrentCulture   = CultureInfo.CreateSpecificCulture("fr");
                         break;
-                        ;
                 }
             }
         }
@@ -1483,6 +1482,7 @@ namespace SppLauncher.Windows.Launcher
 
         private void exitToolStripMenuItem2_Click(object sender, EventArgs e)
         {
+            exitToolStripMenuItem1.Enabled = false;
             exitToolStripMenuItem2.Enabled = false;
             CheckMangosCrashed.Stop();
             GetSqlOnlineBot.Stop();
@@ -1919,7 +1919,7 @@ namespace SppLauncher.Windows.Launcher
 
                 if (content != CurrProgVer)
                 {
-                    StatusChage("New update available!", false);
+                    StatusChage(Resources.GetUpdate_New_update_available_, false);
                     AnimateStatus(4);
 
                     if (MessageBox.Show(
@@ -1966,7 +1966,7 @@ namespace SppLauncher.Windows.Launcher
                 }
                 else
                 {
-                    StatusChage("New update available!", false);
+                    StatusChage(Resources.GetUpdate_New_update_available_, false);
                     AnimateStatus(4);
                 }
             }

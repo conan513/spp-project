@@ -293,4 +293,7 @@ Account Típusa:</value>
   <data name="WowaccountCreator_InsertSqlTrinity_Username_is_already_taken_" xml:space="preserve">
     <value>Felhasználónév már létezik.</value>
   </data>
+  <data name="GetUpdate_New_update_available_" xml:space="preserve">
+    <value>Új elérhető frissítés</value>
+  </data>
 </root>

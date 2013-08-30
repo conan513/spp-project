@@ -47,6 +47,8 @@
             this.cbDel = new System.Windows.Forms.CheckBox();
             this.cbJoin = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbAHbot = new System.Windows.Forms.ComboBox();
+            this.lblAhbot = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.cbEastern = new System.Windows.Forms.CheckBox();
             this.cbKalimdor = new System.Windows.Forms.CheckBox();
@@ -174,6 +176,8 @@
             // groupBox1
             // 
             resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.cbAHbot);
+            this.groupBox1.Controls.Add(this.lblAhbot);
             this.groupBox1.Controls.Add(this.cbBots);
             this.groupBox1.Controls.Add(this.txbMinbot);
             this.groupBox1.Controls.Add(this.label1);
@@ -192,6 +196,23 @@
             this.groupBox1.TabStop = false;
             this.tTrndBot.SetToolTip(this.groupBox1, resources.GetString("groupBox1.ToolTip"));
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cbAHbot
+            // 
+            resources.ApplyResources(this.cbAHbot, "cbAHbot");
+            this.cbAHbot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAHbot.FormattingEnabled = true;
+            this.cbAHbot.Items.AddRange(new object[] {
+            resources.GetString("cbAHbot.Items"),
+            resources.GetString("cbAHbot.Items1")});
+            this.cbAHbot.Name = "cbAHbot";
+            this.tTrndBot.SetToolTip(this.cbAHbot, resources.GetString("cbAHbot.ToolTip"));
+            // 
+            // lblAhbot
+            // 
+            resources.ApplyResources(this.lblAhbot, "lblAhbot");
+            this.lblAhbot.Name = "lblAhbot";
+            this.tTrndBot.SetToolTip(this.lblAhbot, resources.GetString("lblAhbot.ToolTip"));
             // 
             // button1
             // 
@@ -322,5 +343,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox cbRndBotLgn;
         private System.Windows.Forms.ToolTip tTrndBot;
+        private System.Windows.Forms.ComboBox cbAHbot;
+        private System.Windows.Forms.Label lblAhbot;
     }
 }
