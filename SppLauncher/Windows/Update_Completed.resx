@@ -219,6 +219,21 @@
   <data name="&gt;&gt;lbl_currVer.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 14</value>
+  </data>
+  <data name="btn_ok.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="btn_ok.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btn_ok.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btn_ok.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
   <data name="&gt;&gt;btn_ok.Name" xml:space="preserve">
     <value>btn_ok</value>
   </data>
@@ -254,33 +269,6 @@
   </data>
   <data name="&gt;&gt;panel.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 14</value>
-  </data>
-  <data name="btn_ok.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="btn_ok.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="btn_ok.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btn_ok.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="&gt;&gt;btn_ok.Name" xml:space="preserve">
-    <value>btn_ok</value>
-  </data>
-  <data name="&gt;&gt;btn_ok.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_ok.Parent" xml:space="preserve">
-    <value>panel</value>
-  </data>
-  <data name="&gt;&gt;btn_ok.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="pb_pic.Location" type="System.Drawing.Point, System.Drawing">
     <value>50, 19</value>
@@ -352,7 +340,27 @@ v1.1.0
 - Start WoW realm IP changer fixed (now can change the realmlist to LAN or internet IP)
 - Server console can open up
 - 4 language added (English, French, German, Hungarian)
-- Embedded Account Creator and IP Changer</value>
+- Embedded Account Creator and IP Changer
+
+v1.0.6
+- Fix regional update problem
+
+v1.0.5
+- Bug report send versions
+
+v1.0.4
+- Launcher privilege problem fixed.
+
+v1.0.3
+- Fix update system
+- Rewritten realmlist changer
+
+v1.0.2
+- Improve self update
+- Some exception handling
+
+v1.0.1
+- Added Mysql logging in /logs/mysql.txt</value>
   </data>
   <data name="&gt;&gt;richTextBox1.Name" xml:space="preserve">
     <value>richTextBox1</value>

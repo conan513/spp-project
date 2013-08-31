@@ -275,7 +275,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 591);
+            this.ClientSize = new System.Drawing.Size(371, 590);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.MenuStrip);
@@ -287,6 +287,8 @@
             this.MinimumSize = new System.Drawing.Size(387, 629);
             this.Name = "BugreportGUI";
             this.Text = "BureportGUI";
+            this.Activated += new System.EventHandler(this.BugreportGUI_Activated);
+            this.MouseEnter += new System.EventHandler(this.BugreportGUI_MouseEnter);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

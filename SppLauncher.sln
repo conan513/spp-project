@@ -45,9 +45,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{99FA27DA-3D14-465B-9ED7-AF1E4043D223} = {4D5F26D0-0FF9-4364-9EB5-F9382DE84108}
 	EndGlobalSection
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
-	EndGlobalSection
 	GlobalSection(CodealikeProperties) = postSolution
 		SolutionGuid = 01c6b685-ddb6-4656-acc2-9904a73e5362
 	EndGlobalSection

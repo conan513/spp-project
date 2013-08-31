@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
+using BugReportGUI.Class;
 using BugReportGUI.Properties;
 using ns;
 
@@ -10,13 +12,14 @@ namespace BugReportGUI
     public partial class BugreportGUI : Form
     {
         public static string item, Bugpath, logpath,fileC;
+        private bool _newItem;
         public int Chckcount;
 
         private DirectoryInfo di;
         public BugreportGUI()
         {
             InitializeComponent();
-            
+            Flash fl = new Flash();
             try
             {
                 Bugpath = Settings.Default["path"].ToString();
@@ -37,6 +40,9 @@ namespace BugReportGUI
             {
                 MessageBox.Show(e.ToString());
             }
+
+            Chckcount = Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length;
+
             
         }
 
@@ -69,7 +75,7 @@ namespace BugReportGUI
             if (result          == DialogResult.OK)
             {
                 lbDate.Items.Clear();
-                delAllField();
+                DelAllField();
                 Bugpath                  = fbdPath.SelectedPath;
                 Settings.Default["path"] = Bugpath;
                 Settings.Default.Save();
@@ -88,7 +94,7 @@ namespace BugReportGUI
                     btnCheck.Enabled = false;
                     foreach (int i in lbDate.SelectedIndices)
                     {
-                        delAllField();
+                        DelAllField();
                         item = lbDate.Items[i].ToString();
                     }
 
@@ -107,7 +113,7 @@ namespace BugReportGUI
                         ResizeColums(listView1);
                     }
                 }
-                catch
+                catch (Exception)
                 {
                 }
             }
@@ -121,39 +127,6 @@ namespace BugReportGUI
             listBox1_SelectedIndexChanged(new object(), new EventArgs());
         }
 
-        //private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        //int s = lbReports.SelectedIndex;
-        //        //s++;
-        //        string file      = File.ReadAllText(Bugpath + "\\" + item + "\\" + s + ".txt");
-
-        //        if (File.Exists(Bugpath + "\\Logs\\" + item + "\\" + s + "_Logs.zip"))
-        //        {
-        //            logpath        = Bugpath + "\\Logs\\" + item + "\\" + s + "_Logs.zip";
-        //            btnLog.Enabled = true;
-        //        }
-        //        else
-        //        {
-        //            btnLog.Enabled = false;
-        //        }
-
-        //        string[] content = file.Split(';');
-        //        txbMail.Text     = content[1];
-        //        txbType.Text     = content[2];
-        //        txbDesc.Text     = content[3];
-        //        textBox1.Text    = content[9];
-        //        btnCheck.Enabled = content[10] == "0";
-        //        txbSysinfo.Text  = "Cpu:" + content[4] + Environment.NewLine + "Core:" +
-        //            content[5] + Environment.NewLine + "Total Memory: " + content[6] + "Mb" +
-        //            Environment.NewLine + "Operation System:" + content[7] + Environment.NewLine + content[8];
-        //    }
-        //    catch
-        //    {
-        //    }
-        //}
-
         private void changePathToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dialog();
@@ -163,12 +136,13 @@ namespace BugReportGUI
         {
             lbDate.Items.Clear();
             textBox1.Text = "";
-            delAllField();
+            DelAllField();
             di = new DirectoryInfo(Bugpath);
             Getdir(di);
+            Flash.FlashWindow.Start(FindForm());
         }
 
-        public void delAllField()
+        public void DelAllField()
         {
             textBox1.Text = "";
             listView1.Items.Clear();
@@ -223,6 +197,17 @@ namespace BugReportGUI
             catch
             {
             }
+        }
+
+        private void BugreportGUI_Activated(object sender, EventArgs e)
+        {
+
+            Flash.FlashWindow.Stop(FindForm());
+        }
+
+        private void BugreportGUI_MouseEnter(object sender, EventArgs e)
+        {
+            Flash.FlashWindow.Stop(FindForm());
         }
     }
 }

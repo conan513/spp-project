@@ -66,6 +66,7 @@
     <Compile Include="BugreportGUI.Designer.cs">
       <DependentUpon>BugreportGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Class\Flash.cs" />
     <Compile Include="Class\NumericComparer.cs" />
     <Compile Include="Class\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
