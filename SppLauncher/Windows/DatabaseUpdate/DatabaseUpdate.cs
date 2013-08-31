@@ -12,16 +12,16 @@ namespace SppLauncher.Windows
     public partial class DatabaseUpdate : Form
     {
         private int _complete;
-        private readonly Launcher.Launcher launcher;
+        private readonly Launcher.Launcher _launcher;
         private readonly RunMysql run;
-        private readonly FileCopyOverWrite fileCopy;
+        private readonly FileCopyOverWrite _fileCopy;
         public DatabaseUpdate(Launcher.Launcher otLauncher)
         {
             InitializeComponent();
             run = new RunMysql();
-            fileCopy = new FileCopyOverWrite();
+            _fileCopy = new FileCopyOverWrite();
             Application.EnableVisualStyles();
-            launcher = otLauncher;
+            _launcher = otLauncher;
             DisableCloseButton();
             Start();
         }
@@ -117,12 +117,13 @@ namespace SppLauncher.Windows
 
             try
             {
-                if (Directory.Exists(@"update\server")) { fileCopy.Copy(@"update\server", "", true); }
+                if (Directory.Exists(@"update\server")) { _fileCopy.Copy(@"update\server", "", true); }
                 File.WriteAllText(@"SingleCore\version", File.ReadAllText(@"update\version"));
                 Directory.Delete(@"update", true);
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Some exception: Copy\n" + ex.Message);
             }
             EnableCloseButton();
             Thread.Sleep(2000);
@@ -132,13 +133,13 @@ namespace SppLauncher.Windows
         {
             Launcher.Launcher.Dbupdate = false;
 
-            launcher.Show();
+            _launcher.Show();
 
-            if (!Launcher.Launcher.OnlyMysqlStart) { launcher.RealmdStart(); }
+            if (!Launcher.Launcher.OnlyMysqlStart) { _launcher.RealmdStart(); }
             else
             {
-                launcher.pbAvailableM.Visible = false;
-                launcher.pbNotAvailM.Visible = true;
+                _launcher.pbAvailableM.Visible = false;
+                _launcher.pbNotAvailM.Visible = true;
                 Launcher.Launcher.OnlyMysqlStart = false;
                 Launcher.Launcher.MysqlOn = false;
                 Launcher.Launcher.ShutdownSql();
@@ -163,7 +164,7 @@ namespace SppLauncher.Windows
                     Thread.Sleep(10);
                 }
             }
-            catch
+            catch (Exception)
             {
             }
         }
@@ -186,7 +187,7 @@ namespace SppLauncher.Windows
                     Thread.Sleep(10);
                 }
             }
-            catch
+            catch (Exception)
             {
             }
         }
@@ -202,7 +203,7 @@ namespace SppLauncher.Windows
 
                 run.RunMySql("127.0.0.1", 3310, "root", "123456", "mangos", path);
             }
-            catch
+            catch (Exception)
             {
             }
         }

@@ -1,4 +1,6 @@
-﻿using Ionic.Zip;
+﻿using System;
+using System.Windows.Forms;
+using Ionic.Zip;
 using SppLauncher.Windows.Launcher;
 
 namespace SppLauncher.Class
@@ -21,8 +23,9 @@ namespace SppLauncher.Class
                 }
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Some exception: mysql\n" + ex.Message);
                 return false;
             }
 

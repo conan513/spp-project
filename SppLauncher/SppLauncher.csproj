@@ -306,6 +306,9 @@
     <EmbeddedResource Include="Windows\Update_Completed.hu.resx">
       <DependentUpon>Update_Completed.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Update_Completed.nl.resx">
+      <DependentUpon>Update_Completed.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Update_Completed.resx">
       <DependentUpon>Update_Completed.cs</DependentUpon>
     </EmbeddedResource>

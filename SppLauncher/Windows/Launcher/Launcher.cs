@@ -543,7 +543,7 @@ namespace SppLauncher.Windows.Launcher
                         switch (_world.Contains("players"))
                         {
                             case true:
-                                Thread.Sleep(3000);
+                                Thread.Sleep(4000);
                                 break;
                             case false:
                                 Thread.Sleep(2000);
@@ -1537,11 +1537,10 @@ namespace SppLauncher.Windows.Launcher
             var ramp      = ramtoltal/100;
             var perecent  = ramfree/ramp;
             var proc  = Process.GetCurrentProcess();
-            
+
             try
             {
-                Process[] SqlProcesses;
-                SqlProcesses = Process.GetProcessesByName("mysqld");
+                Process[] SqlProcesses = Process.GetProcessesByName("mysqld");
                 _sqlMem      = Convert.ToString(SqlProcesses[0].WorkingSet64/1024/1024) + "MB";
             }
             catch (Exception)
@@ -1551,8 +1550,7 @@ namespace SppLauncher.Windows.Launcher
 
             try
             {
-                Process[] mangosdProcesses;
-                mangosdProcesses = Process.GetProcessesByName("mangosd");
+            Process[] mangosdProcesses = Process.GetProcessesByName("mangosd");
                 _mangosdMem      = Convert.ToString(mangosdProcesses[0].WorkingSet64/1024/1024) + "MB";
             }
             catch (Exception)
@@ -1560,8 +1558,8 @@ namespace SppLauncher.Windows.Launcher
                 _mangosdMem = "N/A";
             }
 
-            try
-            {
+                try
+                {
                 Process[] realmdProcesses;
                 realmdProcesses = Process.GetProcessesByName("login");
                 _realmdMem      = Convert.ToString(realmdProcesses[0].WorkingSet64/1024/1024) + "MB";
