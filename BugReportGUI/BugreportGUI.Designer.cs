@@ -52,9 +52,14 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrCheck = new System.Windows.Forms.Timer(this.components);
+            this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.cmsUp = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.MenuStrip.SuspendLayout();
+            this.cmsUp.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbDate
@@ -271,6 +276,37 @@
             this.tmrCheck.Interval = 2000;
             this.tmrCheck.Tick += new System.EventHandler(this.tmrCheck_Tick);
             // 
+            // NotifyIcon
+            // 
+            this.NotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("NotifyIcon.Icon")));
+            this.NotifyIcon.Text = "BugreportGUI";
+            this.NotifyIcon.Visible = true;
+            this.NotifyIcon.DoubleClick += new System.EventHandler(this.NotifyIcon_DoubleClick);
+            this.NotifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon_MouseClick);
+            // 
+            // cmsUp
+            // 
+            this.cmsUp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.cmsUp.Name = "cmsUp";
+            this.cmsUp.Size = new System.Drawing.Size(104, 48);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Image = global::BugReportGUI.Properties.Resources.Windows_Close_Program_icon;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // showToolStripMenuItem
+            // 
+            this.showToolStripMenuItem.Name = "showToolStripMenuItem";
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.showToolStripMenuItem.Text = "Show";
+            this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
+            // 
             // BugreportGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,12 +324,14 @@
             this.Name = "BugreportGUI";
             this.Text = "BureportGUI";
             this.Activated += new System.EventHandler(this.BugreportGUI_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BugreportGUI_FormClosing);
             this.MouseEnter += new System.EventHandler(this.BugreportGUI_MouseEnter);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
+            this.cmsUp.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,6 +361,10 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.NotifyIcon NotifyIcon;
+        private System.Windows.Forms.ContextMenuStrip cmsUp;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem;
     }
 }
 

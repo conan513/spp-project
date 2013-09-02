@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using BugReportGUI.Class;
@@ -140,6 +141,19 @@ namespace BugReportGUI
             di = new DirectoryInfo(Bugpath);
             Getdir(di);
             Flash.FlashWindow.Start(FindForm());
+            NotifyBallon(2000, "New Report!", "Click to show.");
+        }
+
+        private void NotifyBallon(int timeout, string title, string msg)
+        {
+            NotifyIcon.ShowBalloonTip(timeout, title, msg, ToolTipIcon.Info);
+            NotifyIcon.BalloonTipClicked += new EventHandler(notifyIcon_BalloonTipClicked);
+        }
+
+        void notifyIcon_BalloonTipClicked(object sender, EventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
         }
 
         public void DelAllField()
@@ -208,6 +222,43 @@ namespace BugReportGUI
         private void BugreportGUI_MouseEnter(object sender, EventArgs e)
         {
             Flash.FlashWindow.Stop(FindForm());
+        }
+
+        private void showToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void NotifyIcon_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                NotifyIcon.ContextMenuStrip = cmsUp;
+                MethodInfo mi = typeof(NotifyIcon).GetMethod("ShowContextMenu", BindingFlags.Instance | BindingFlags.NonPublic);
+                mi.Invoke(NotifyIcon, null);
+                NotifyIcon.ContextMenuStrip = cmsUp;
+            }
+        }
+
+        private void NotifyIcon_DoubleClick(object sender, EventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void BugreportGUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                Hide();
+            }
         }
     }
 }
