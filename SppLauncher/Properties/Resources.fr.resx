@@ -278,4 +278,60 @@ Voulez-vous fermer celui déjà en marche?</value>
   <data name="Launcher_RealmChange0_" xml:space="preserve">
     <value>Some Exception: RealmWrite</value>
   </data>
+  <data name="Function_is_temporarily_disabled" xml:space="preserve">
+    <value>Fonction temporairement désactiver</value>
+  </data>
+  <data name="CloseProcess_Saving" xml:space="preserve">
+    <value>Sauvegarde</value>
+  </data>
+  <data name="BotConf_SaveIni_default" xml:space="preserve">
+    <value>Réglages par défaut charger.
+Réinitialiser les bots pour activer les changements.</value>
+  </data>
+  <data name="BotConf_SaveIni_" xml:space="preserve">
+    <value>Réglages des bots sauvegarder.
+Réinitialiser les bots pour activer les changements.</value>
+  </data>
+  <data name="BotConf_cbRndBotLgn_MouseHover_All_bots_join_on_start_" xml:space="preserve">
+    <value>Tous les bots disponibles joint au démarrage.</value>
+  </data>
+  <data name="GetUpdate_New_update_available_" xml:space="preserve">
+    <value>Nouvelle mise à jour du disponible</value>
+  </data>
+  <data name="Please_Fill" xml:space="preserve">
+    <value>Remplissez la boîte de description.</value>
+  </data>
+  <data name="Total_Character__" xml:space="preserve">
+    <value>Caractères totales:</value>
+  </data>
+  <data name="WowaccountCreator_btnCreate_Click_Your_password_must_be_at_least_6_characters_long__" xml:space="preserve">
+    <value>Votre mot de passe doit avoir 6 caractères minimum.</value>
+  </data>
+  <data name="WowaccountCreator_btnCreate_Click_Your_username_must_be_at_least_4_characters_long__" xml:space="preserve">
+    <value>Votre nom d'utilisateur doit avoir 4 caractères minimum.</value>
+  </data>
+  <data name="WowaccountCreator_InsertSqlTrinity_Username_is_already_taken_" xml:space="preserve">
+    <value>Nom d'utilisateur déjà utiliser.</value>
+  </data>
+  <data name="WowaccountCreator_InsertSqlTrinity_Account_created_successfully__" xml:space="preserve">
+    <value>Compte créer avec succès:</value>
+  </data>
+  <data name="Your_DB_is_up_to_date_" xml:space="preserve">
+    <value>Votre database est à jour.</value>
+  </data>
+  <data name="WowaccountCreator_InsertSqlTrinity_" xml:space="preserve">
+    <value>Type de compte:</value>
+  </data>
+  <data name="announce_If_the_RAM_usage_exceeds" xml:space="preserve">
+    <value>.announce Si l'usage RAM dépasse 90%, il y aura redémarrage.</value>
+  </data>
+  <data name="announce_Current_ram_usage_" xml:space="preserve">
+    <value>.announce Usage RAM courante:</value>
+  </data>
+  <data name="announce_Auto_Restart" xml:space="preserve">
+    <value>.announce Auto-Redémarrage!</value>
+  </data>
+  <data name="announce_Current_ram_usage" xml:space="preserve">
+    <value>.announce Usage RAM courante:</value>
+  </data>
 </root>

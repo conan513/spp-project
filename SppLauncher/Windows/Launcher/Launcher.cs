@@ -70,50 +70,6 @@ namespace SppLauncher.Windows.Launcher
 
         #endregion
 
-        private void InitMethods()
-        {
-            Checklang(true);
-            GetLocalSrvVer();
-            tmrUsage.Start();
-            StatusBarUpdater.Start();
-            MenuItemsDisableAfterLoad();
-            WasThisUpdate();
-            rtWorldDev.Visible = false;
-            WindowSize(true);
-            font();
-            SearchProcess();
-            StatusIcon();
-            AutoStart();  
-        }
-
-        private void AutoStart()
-        {
-            if (AutoS == "1")
-            {
-                startstopToolStripMenuItem.Image                = Resources.Button_stop_icon;
-                startToolStripMenuItem.Image                    = Resources.Button_stop_icon;
-                startstopToolStripMenuItem.Text                 = Resources.Launcher_startNStop_Stop;
-                startToolStripMenuItem.Text                     = Resources.Launcher_startNStop_Stop;
-                startstopToolStripMenuItem.Enabled              = false;
-                startToolStripMenuItem.Enabled                  = false;
-                _startStop                                      = true;
-                autostartToolStripMenuItem.Checked              = true;
-                autorunToolStripMenuItem.Checked                = true;
-                exportImportCharactersToolStripMenuItem.Enabled = false;
-                StartAll();
-            }
-            else
-            {
-                bwUpdate.RunWorkerAsync();
-                exportImportCharactersToolStripMenuItem.Enabled = false;
-                startstopToolStripMenuItem.Enabled              = true;
-                startToolStripMenuItem.Enabled                  = true;
-                restartToolStripMenuItem1.Enabled               = false;
-                restartToolStripMenuItem2.Enabled               = false;
-                sendCommandForServerToolStripMenuItem.Enabled   = false;
-            }
-        }
-
         #region [ Servers ]
 
         private void bwCloseProcess_DoWork(object sender, DoWorkEventArgs e)
@@ -667,6 +623,50 @@ namespace SppLauncher.Windows.Launcher
         #endregion
 
         #region [ OtherMethods ]
+
+        private void InitMethods()
+        {
+            Checklang(true);
+            GetLocalSrvVer();
+            tmrUsage.Start();
+            StatusBarUpdater.Start();
+            MenuItemsDisableAfterLoad();
+            WasThisUpdate();
+            rtWorldDev.Visible = false;
+            WindowSize(true);
+            font();
+            SearchProcess();
+            StatusIcon();
+            AutoStart();
+        }
+
+        private void AutoStart()
+        {
+            if (AutoS == "1")
+            {
+                startstopToolStripMenuItem.Image = Resources.Button_stop_icon;
+                startToolStripMenuItem.Image = Resources.Button_stop_icon;
+                startstopToolStripMenuItem.Text = Resources.Launcher_startNStop_Stop;
+                startToolStripMenuItem.Text = Resources.Launcher_startNStop_Stop;
+                startstopToolStripMenuItem.Enabled = false;
+                startToolStripMenuItem.Enabled = false;
+                _startStop = true;
+                autostartToolStripMenuItem.Checked = true;
+                autorunToolStripMenuItem.Checked = true;
+                exportImportCharactersToolStripMenuItem.Enabled = false;
+                StartAll();
+            }
+            else
+            {
+                bwUpdate.RunWorkerAsync();
+                exportImportCharactersToolStripMenuItem.Enabled = false;
+                startstopToolStripMenuItem.Enabled = true;
+                startToolStripMenuItem.Enabled = true;
+                restartToolStripMenuItem1.Enabled = false;
+                restartToolStripMenuItem2.Enabled = false;
+                sendCommandForServerToolStripMenuItem.Enabled = false;
+            }
+        }
 
         public void StatusChage(string msg, bool islink)
         {
@@ -2170,7 +2170,5 @@ namespace SppLauncher.Windows.Launcher
         }
 
         #endregion
-
-
     }
 }
