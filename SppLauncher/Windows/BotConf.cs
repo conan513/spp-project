@@ -9,6 +9,7 @@ namespace SppLauncher
     {
         readonly IniFileClass _ahbot = new IniFileClass("config\\ahbot.CONF");
         readonly IniFileClass _aiplayerbot             = new IniFileClass("config\\aiplayerbot.CONF");
+
         private string _maps                     = " ", _mapsWrite = " ";
         private string[] _arr1                   = new string[4];
         private bool _defaultL;
@@ -16,9 +17,6 @@ namespace SppLauncher
         {
             InitializeComponent();
             ReadBotConf();
-
-         
-
             ToolTip tt = new ToolTip();
             tt.SetToolTip(label6, Resources.Function_is_temporarily_disabled);
         }

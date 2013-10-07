@@ -29,6 +29,7 @@ namespace SppLauncher.Windows.Launcher
         private static Process _cmd, _cmd1, _cmd3;
         private DateTime _dt;
         private DateTime _start1 = DateTime.Now;
+        private readonly RunMysql run;
         private readonly PerformanceCounter _cpuCounter, _ramCounter;
         private bool _startStop, _allowtext, _restart, _updateYes, _serverConsoleActive, _sysProtect, _worldstarted, _sayno, _Forcerestart;
         private readonly XmlReadWrite _xmlReadWrite;
@@ -38,7 +39,7 @@ namespace SppLauncher.Windows.Launcher
         public static string AutoS, resetBots, RandomizeBots, RealmListPath, Lang, UpdateUnpack, Status, WowExePath;
         public static bool OnlyMysqlStart, MysqlOn, Dbupdate;
         public static double CurrEmuVer;
-        public const string CurrProgVer = "1.1.6"; //? Current program version.
+        public const string CurrProgVer = "1.1.7"; //? Current program version.
 
         #endregion
 
@@ -51,14 +52,15 @@ namespace SppLauncher.Windows.Launcher
             var exePath = AppDomain.CurrentDomain.FriendlyName;
             File.SetAttributes(exePath, FileAttributes.Normal);
             InitializeComponent();
-
+            run = new RunMysql();
             _cpuCounter = new PerformanceCounter();
             _cpuCounter.CategoryName = "Processor";
             _cpuCounter.CounterName  = "% Processor Time";
             _cpuCounter.InstanceName = "_Total";
-            _ramCounter              = new PerformanceCounter("Memory", "Available MBytes");
-
-
+            _ramCounter = new PerformanceCounter();
+            _ramCounter.CategoryName = "Memory";
+            _ramCounter.CounterName = "Available MBytes";
+            
             SppTray.Visible = true;
             startWowToolStripMenuItem.ToolTipText = Resources.Launcher_Launcher_Auto_Changed_RealmList_wtf_and_after_exit_SPP_change_back_original_realmlist_;
         }
@@ -147,13 +149,27 @@ namespace SppLauncher.Windows.Launcher
 
         public float GetCurrentCpuUsage()
         {
-            return _cpuCounter.NextValue();
-
+            try
+            {
+                return Convert.ToInt32(_cpuCounter.NextValue());
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
         }
 
         public int GetAvailableRAM()
         {
-            return Convert.ToInt32(_ramCounter.NextValue());
+            try
+            {
+                return Convert.ToInt32(_ramCounter.NextValue());
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+
         }
 
         private void SetText3(string text1)
@@ -200,7 +216,8 @@ namespace SppLauncher.Windows.Launcher
                         !text.Contains("SQL ERROR") &&
                         !text.Contains("LoadInventory") &&
                         !text.Contains("MoveSpline") &&
-                        !text.Contains("unknown spell id"))
+                        !text.Contains("unknown spell id") &&
+                        !text.Contains("MapManager"))
                     {
                         _dt = DateTime.Now;
 
@@ -773,6 +790,7 @@ namespace SppLauncher.Windows.Launcher
                 GetSqlOnlineBot.Stop();
                 tssLOnline.Text = Resources.Launcher_startNStop_Online_bot__N_A;
                 SaveAnnounce();
+                rtWorldDev.Text = "";
                 bwStopWorld.RunWorkerAsync();
             }
         }
@@ -1115,6 +1133,8 @@ namespace SppLauncher.Windows.Launcher
             UpdateInFile();
         }
 
+     
+
         private void magyarToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             Lang = "Hungarian";
@@ -1190,6 +1210,7 @@ namespace SppLauncher.Windows.Launcher
 
         private void restartToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
+            rtWorldDev.Text = "";
             MenuItemsDisableAfterLoad();
             RealmWorldRestart();
         }
@@ -1334,6 +1355,7 @@ namespace SppLauncher.Windows.Launcher
 
         private void tssStatus_Click(object sender, EventArgs e)
         {
+            if(_remoteEmuVer > CurrEmuVer)
             Process.Start(_updLink);
         }
 
@@ -1537,6 +1559,7 @@ namespace SppLauncher.Windows.Launcher
             var ramp      = ramtoltal/100;
             var perecent  = ramfree/ramp;
             var proc  = Process.GetCurrentProcess();
+            var usage = Convert.ToInt32(GetCurrentCpuUsage());
 
             try
             {
@@ -1573,8 +1596,17 @@ namespace SppLauncher.Windows.Launcher
                                    "\nMysql Server: " + _sqlMem + "\nLogin Server: " + _realmdMem + "\nGame Server: " +
                                    _mangosdMem;
 
-            tssUsage.Text = "CPU: " + Convert.ToInt32(GetCurrentCpuUsage()) + "% |" + " RAM: " + perecent + "%" + " (" +
-                            ramfree + "/" + ramtoltal + "MB)";
+
+
+            if (GetCurrentCpuUsage() != -1)
+            {
+                tssUsage.Text = "CPU: " + usage + "% |" + " RAM: " + perecent + "%" + " (" + ramfree + "/" + ramtoltal + "MB)";
+            }
+            else
+            {
+                tssUsage.Text = "CPU: Error | RAM: N/A (N/A MB)"; 
+                perecent = 0;
+            }
 
             if (perecent >= 75)
             {
@@ -1907,7 +1939,7 @@ namespace SppLauncher.Windows.Launcher
                 StatusChage(Resources.Launcher_Checking_Update, false);
                 AnimateStatus(1);
                 var client     = new WebClient();
-                var stream  = client.OpenRead("https://raw.github.com/conan513/SingleCore/SPP/Tools/update_new.txt"); //? Get version txt.
+                var stream = client.OpenRead("http://spp.splights.eu/updates/update.txt"); //? Get version txt.
                 var reader     = new StreamReader(stream);
                 var content = reader.ReadToEnd(); //? Example: "<Launcher ver.>;<DB ver.>;<DB Update link>
                 var parts = content.Split(';'); //? Load the array.
@@ -2035,6 +2067,7 @@ namespace SppLauncher.Windows.Launcher
 
         private void bwImport_DoWork(object sender, DoWorkEventArgs e)
         {
+            AnimateStatus(1);
             Checklang(false);
             ImportExtract();
             StatusChage(Resources.Launcher_import_Import_Characters, false);
@@ -2050,6 +2083,30 @@ namespace SppLauncher.Windows.Launcher
             var mb1         = new MySqlBackup(conn1);
             mb1.ImportInfo.FileName = _getTemp + "\\save02";
             mb1.Import();
+
+            StatusChage("Char Update", false);
+            if (Directory.Exists(@"Database\char"))
+            {
+                InsertMultiple1(@"Database\char", "characters", "*sql");
+            }
+        }
+
+        private void InsertMultiple1(string updatePath, string db, string filter)
+        {
+            try
+            {
+                String[] files = Directory.GetFiles(updatePath, filter, SearchOption.TopDirectoryOnly);
+                Thread.Sleep(10);
+                foreach (String aFile in files)
+                {
+                    run.RunMySql("127.0.0.1", 3310, "root", "123456", db, aFile);
+                    Thread.Sleep(10);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         private void bwImport_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

@@ -56,6 +56,7 @@
             this.cmsUp = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autorunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.MenuStrip.SuspendLayout();
@@ -288,9 +289,10 @@
             // 
             this.cmsUp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showToolStripMenuItem,
+            this.autorunToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.cmsUp.Name = "cmsUp";
-            this.cmsUp.Size = new System.Drawing.Size(104, 48);
+            this.cmsUp.Size = new System.Drawing.Size(119, 70);
             // 
             // exitToolStripMenuItem
             // 
@@ -306,6 +308,13 @@
             this.showToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.showToolStripMenuItem.Text = "Show";
             this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
+            // 
+            // autorunToolStripMenuItem
+            // 
+            this.autorunToolStripMenuItem.Name = "autorunToolStripMenuItem";
+            this.autorunToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.autorunToolStripMenuItem.Text = "Autorun";
+            this.autorunToolStripMenuItem.Click += new System.EventHandler(this.autorunToolStripMenuItem_Click);
             // 
             // BugreportGUI
             // 
@@ -325,6 +334,7 @@
             this.Text = "BureportGUI";
             this.Activated += new System.EventHandler(this.BugreportGUI_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BugreportGUI_FormClosing);
+            this.Shown += new System.EventHandler(this.BugreportGUI_Shown);
             this.MouseEnter += new System.EventHandler(this.BugreportGUI_MouseEnter);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -365,6 +375,7 @@
         private System.Windows.Forms.ContextMenuStrip cmsUp;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem autorunToolStripMenuItem;
     }
 }
 

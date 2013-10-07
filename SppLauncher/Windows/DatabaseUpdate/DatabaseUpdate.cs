@@ -107,7 +107,7 @@ namespace SppLauncher.Windows
                     Thread.Sleep(10);
                     InsertMultiple1(@"update\scriptdev2\sql_mr", "mangos", "mr*mangos*sql");
                     Thread.Sleep(10);
-                    InsertMultiple1(@"update\scriptdev2\sql_mr", "scriptdev2", "mr*scriptdev2*sql");
+                    InsertMultiple1(@"update\scriptdev2\sql_mr", "scriptdev2", "*sql");
                     Thread.Sleep(10);
                 }
             }
@@ -125,6 +125,12 @@ namespace SppLauncher.Windows
             {
                 MessageBox.Show("Some exception: Copy\n" + ex.Message);
             }
+
+            if (Directory.Exists(@"Database\char"))
+            {
+                InsertMultiple1(@"Database\char", "characters", "*sql");
+            }
+
             EnableCloseButton();
             Thread.Sleep(2000);
         }

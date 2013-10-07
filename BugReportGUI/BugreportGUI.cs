@@ -6,6 +6,7 @@ using System.Threading;
 using System.Windows.Forms;
 using BugReportGUI.Class;
 using BugReportGUI.Properties;
+using Microsoft.Win32;
 using ns;
 
 namespace BugReportGUI
@@ -44,7 +45,7 @@ namespace BugReportGUI
 
             Chckcount = Directory.GetFiles(Bugpath, "*.*", SearchOption.AllDirectories).Length;
 
-            
+
         }
 
         private void ResizeColums(ListView lv)
@@ -258,6 +259,56 @@ namespace BugReportGUI
             {
                 e.Cancel = true;
                 Hide();
+            }
+        }
+
+        private void autorunToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (autorunToolStripMenuItem.Checked)
+            {
+                autorunToolStripMenuItem.Checked = false;
+                AddAutoRun(true);
+            }
+            else
+            {
+                autorunToolStripMenuItem.Checked = true;
+                AddAutoRun(false);
+            }
+        }
+
+        private void AddAutoRun(bool del)
+        {
+            RegistryKey App = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+
+            if (!Startup())
+                App.SetValue("Uptime", Application.ExecutablePath);
+            if (del)
+            {
+                App.DeleteValue("Uptime", false);
+            }
+        }
+
+        private static bool Startup()
+        {
+            RegistryKey App = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+
+            if (App.GetValue("Uptime") == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private void BugreportGUI_Shown(object sender, EventArgs e)
+        {
+            if (Startup())
+            {
+                autorunToolStripMenuItem.Checked = true;
+                Hide();
+            }
+            else
+            {
+                autorunToolStripMenuItem.Checked = false;
             }
         }
     }

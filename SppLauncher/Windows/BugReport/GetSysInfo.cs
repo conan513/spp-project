@@ -23,7 +23,7 @@ namespace SppLauncher.Windows.BugReport
                 mhz = mo["maxclockspeed"].ToString().Replace(" ", "");
             }
 
-            return ProcessorName + " @" + mhz;
+            return ProcessorName + ";" + mhz;
         }
 
         public string GetProcessorNameL()

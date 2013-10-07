@@ -219,21 +219,6 @@
   <data name="&gt;&gt;lbl_currVer.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 14</value>
-  </data>
-  <data name="btn_ok.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="btn_ok.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="btn_ok.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btn_ok.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
   <data name="&gt;&gt;btn_ok.Name" xml:space="preserve">
     <value>btn_ok</value>
   </data>
@@ -269,6 +254,33 @@
   </data>
   <data name="&gt;&gt;panel.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 14</value>
+  </data>
+  <data name="btn_ok.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="btn_ok.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btn_ok.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btn_ok.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;btn_ok.Name" xml:space="preserve">
+    <value>btn_ok</value>
+  </data>
+  <data name="&gt;&gt;btn_ok.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_ok.Parent" xml:space="preserve">
+    <value>panel</value>
+  </data>
+  <data name="&gt;&gt;btn_ok.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="pb_pic.Location" type="System.Drawing.Point, System.Drawing">
     <value>50, 19</value>
@@ -307,7 +319,16 @@
     <value>5</value>
   </data>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>v1.1.6
+    <value>News:
+- 
+
+v1.1.7
+- Database update: Added character db update method
+- Minor Fixes (Character backup, Console)
+- Fixed PerformamanceCounter Exception in Windows 8
+- FR Language update
+
+v1.1.6
 - Fixed System Protect
 - Added AHbot Enable/Disable in Botconf.
 - Fixed Languages
