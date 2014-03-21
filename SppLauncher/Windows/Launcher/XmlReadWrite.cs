@@ -23,7 +23,7 @@ namespace SppLauncher.Class
                 writer.WriteElementString("RandomizeBots", Launcher.RandomizeBots);
                 writer.WriteElementString("Autostart", Launcher.AutoS);
                 writer.WriteElementString("Lang", Launcher.Lang);
-
+                writer.WriteElementString("Sysprotect", Launcher.SysProt);
                 writer.WriteEndElement();
                 writer.Close();
             }
@@ -48,13 +48,14 @@ namespace SppLauncher.Class
                     Launcher.RealmListPath = node["RealmWTF"].InnerText;
                     Launcher.AutoS     = node["Autostart"].InnerText;
                     Launcher.Lang          = node["Lang"].InnerText;
+                    Launcher.SysProt = node["Sysprotect"].InnerText;
                 }
                return true;
             }
             catch (Exception ex)
             {
                 saveMethod();
-                MessageBox.Show("Some exception: ReadXML \n{0}", ex.Message);
+                //MessageBox.Show("Some exception: ReadXML \n{0}", ex.Message);
                 return false;
             }
         }

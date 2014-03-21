@@ -49,7 +49,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\Single Player Project Real v2.2\</OutputPath>
+    <OutputPath>..\..\..\SPP_IN\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -67,10 +67,6 @@
     <Reference Include="Ionic.Zip">
       <HintPath>Dlls\Ionic.Zip.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="ListControls">
-      <HintPath>..\..\..\Dropbox\Visual Studio\Download Project\ImageListBox\bin\Release\ListControls.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data">
@@ -304,9 +300,6 @@
       <DependentUpon>Update_Completed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Update_Completed.hu.resx">
-      <DependentUpon>Update_Completed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Update_Completed.nl.resx">
       <DependentUpon>Update_Completed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Update_Completed.resx">

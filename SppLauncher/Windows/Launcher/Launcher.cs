@@ -36,10 +36,11 @@ namespace SppLauncher.Windows.Launcher
         private static string _olDrealmList, _updLink, _realmDialogPath, _exportfile, _ipAdress, _importFile;
         private static bool _sqlimport, _sqlexport, _updater;
         private string _realm, _mangosdMem, _realmdMem, _sqlMem, _world, _sql, _sqlStartTime, _realmStartTime, _worldStartTime;
-        public static string AutoS, resetBots, RandomizeBots, RealmListPath, Lang, UpdateUnpack, Status, WowExePath;
+        public static string AutoS , resetBots, RandomizeBots, RealmListPath, Lang, UpdateUnpack, Status, WowExePath;
+        public static string SysProt = "1";
         public static bool OnlyMysqlStart, MysqlOn, Dbupdate;
         public static double CurrEmuVer;
-        public const string CurrProgVer = "1.1.7"; //? Current program version.
+        public const string CurrProgVer = "1.1.9"; //? Current program version.
 
         #endregion
 
@@ -60,7 +61,14 @@ namespace SppLauncher.Windows.Launcher
             _ramCounter = new PerformanceCounter();
             _ramCounter.CategoryName = "Memory";
             _ramCounter.CounterName = "Available MBytes";
-            
+            if (SysProt == "1")
+            {
+                systemProtectToolStripMenuItem.Checked = true;
+            }
+            else
+            {
+                systemProtectToolStripMenuItem.Checked = false;  
+            }
             SppTray.Visible = true;
             startWowToolStripMenuItem.ToolTipText = Resources.Launcher_Launcher_Auto_Changed_RealmList_wtf_and_after_exit_SPP_change_back_original_realmlist_;
         }
@@ -1608,9 +1616,9 @@ namespace SppLauncher.Windows.Launcher
                 perecent = 0;
             }
 
-            if (perecent >= 75)
+            if (perecent >= 75) //75
             {
-                if (!_sysProtect && _Forcerestart)
+                if (!_sysProtect && _Forcerestart && systemProtectToolStripMenuItem.Checked)
                 {
                     _cmd1.StandardInput.WriteLine(Resources.announce_Current_ram_usage + perecent + "%");
                     _cmd1.StandardInput.WriteLine(Resources.announce_If_the_RAM_usage_exceeds);
@@ -1618,9 +1626,9 @@ namespace SppLauncher.Windows.Launcher
                 }
             }
 
-            if (perecent >= 90)
+            if (perecent >= 90) //90
             {
-                if (_sysProtect && _Forcerestart)
+                if (_sysProtect && _Forcerestart && systemProtectToolStripMenuItem.Checked)
                 {
                     _Forcerestart = false;
                     _cmd1.StandardInput.WriteLine(Resources.announce_Auto_Restart);
@@ -1939,7 +1947,7 @@ namespace SppLauncher.Windows.Launcher
                 StatusChage(Resources.Launcher_Checking_Update, false);
                 AnimateStatus(1);
                 var client     = new WebClient();
-                var stream = client.OpenRead("http://spp.splights.eu/updates/update.txt"); //? Get version txt.
+                var stream = client.OpenRead("http://spp.splights.eu/updates/update"); //? Get version txt.
                 var reader     = new StreamReader(stream);
                 var content = reader.ReadToEnd(); //? Example: "<Launcher ver.>;<DB ver.>;<DB Update link>
                 var parts = content.Split(';'); //? Load the array.
@@ -2227,5 +2235,23 @@ namespace SppLauncher.Windows.Launcher
         }
 
         #endregion
+
+        private void systemProtectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (systemProtectToolStripMenuItem.Checked)
+            {
+                systemProtectToolStripMenuItem.Checked = false;
+                //autorunToolStripMenuItem.Checked = false;
+                SysProt = "0";
+                _xmlReadWrite.saveMethod();
+            }
+            else
+            {
+                systemProtectToolStripMenuItem.Checked = true;
+                //autorunToolStripMenuItem.Checked = true;
+                SysProt = "1";
+                _xmlReadWrite.saveMethod();
+            }
+        }
     }
 }

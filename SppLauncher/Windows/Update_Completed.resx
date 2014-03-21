@@ -321,6 +321,14 @@
   <data name="richTextBox1.Text" xml:space="preserve">
     <value>News:
 - 
+v1.1.9
+- System protection can be disabled (in settings)
+- Bugreport is temporarily disabled. (bad hosting :-/)
+
+
+v1.1.8
+- Changed the reporting system based on PHP. (There is in test phase, errors may occur)
+- The report of the old clients will not be available. (1.1.7&gt;)
 
 v1.1.7
 - Database update: Added character db update method

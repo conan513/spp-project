@@ -80,8 +80,8 @@ namespace SppLauncher.Windows.BugReport
             if (txbDesc.Text != "")
             {
                 Cursor = Cursors.WaitCursor;
-                bwSendReport.RunWorkerAsync();
                 //test();
+                bwSendReport.RunWorkerAsync();
             }
             else
             {
@@ -98,8 +98,9 @@ namespace SppLauncher.Windows.BugReport
 
         private void bwSendReport_DoWork(object sender, DoWorkEventArgs e)
         {
-            send.SendError("report", txbMail.Text, cbBugType.Text, txbDesc.Text, getSys.GetProcessorName(), count.ToString(), getSys.getmemory().ToString(),
-          getSys.getOS(), "Prog: " + Launcher.Launcher.CurrProgVer + "," + " Emu: " + Launcher.Launcher.CurrEmuVer);
+            test();
+            //send.SendError("report", txbMail.Text, cbBugType.Text, txbDesc.Text, getSys.GetProcessorName(), count.ToString(), getSys.getmemory().ToString(),
+          //getSys.getOS(), "Prog: " + Launcher.Launcher.CurrProgVer + "," + " Emu: " + Launcher.Launcher.CurrEmuVer);
             
             if (cbLogs.Checked)
                 send.zipLogs();
@@ -110,6 +111,11 @@ namespace SppLauncher.Windows.BugReport
             Cursor = Cursors.Default;
             MessageBox.Show("Thank you for the report.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
+        }
+
+        private void testbtn_Click(object sender, EventArgs e)
+        {
+            test();
         }
 
     }

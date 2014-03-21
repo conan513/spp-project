@@ -127,6 +127,12 @@
   <data name="lblWorld.Location" type="System.Drawing.Point, System.Drawing">
     <value>455, 26</value>
   </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>668, 140</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Szerverek</value>
+  </data>
   <data name="pbarWorld.Location" type="System.Drawing.Point, System.Drawing">
     <value>137, 136</value>
   </data>
@@ -160,11 +166,8 @@
   <data name="pbAvailableW.Location" type="System.Drawing.Point, System.Drawing">
     <value>474, 64</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>668, 140</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Szerverek</value>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>668, 180</value>
   </data>
   <data name="rtWorldDev.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 21</value>
@@ -177,9 +180,6 @@
   </data>
   <data name="txbWorldDev.Size" type="System.Drawing.Size, System.Drawing">
     <value>635, 20</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>668, 180</value>
   </data>
   <data name="SppTray.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1850,6 +1850,9 @@
   <data name="SppTray.Text" xml:space="preserve">
     <value>Single Player Projekt</value>
   </data>
+  <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 180</value>
+  </data>
   <data name="showToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
@@ -1858,6 +1861,12 @@
   </data>
   <data name="startWowToolStripMenuItem.Text" xml:space="preserve">
     <value>World of Warcraft Indítása</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Beállítások</value>
   </data>
   <data name="worldSettingsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 22</value>
@@ -1889,11 +1898,11 @@
   <data name="randomizeBotsToolStripMenuItem1.Text" xml:space="preserve">
     <value>Botok Randomizálása</value>
   </data>
-  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Beállítások</value>
+  <data name="toolToolStripMenuItem.Text" xml:space="preserve">
+    <value>Eszközök</value>
   </data>
   <data name="lanSwitcherToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>194, 22</value>
@@ -1919,11 +1928,11 @@
   <data name="openUpdateFileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>194, 22</value>
   </data>
-  <data name="toolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ServersStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
-  <data name="toolToolStripMenuItem.Text" xml:space="preserve">
-    <value>Eszközök</value>
+  <data name="ServersStripMenuItem.Text" xml:space="preserve">
+    <value>Szerver</value>
   </data>
   <data name="startToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
@@ -1943,12 +1952,6 @@
   <data name="autorunToolStripMenuItem.Text" xml:space="preserve">
     <value>Automatikus Indítás</value>
   </data>
-  <data name="ServersStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
-  <data name="ServersStripMenuItem.Text" xml:space="preserve">
-    <value>Szerver</value>
-  </data>
   <data name="reportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
@@ -1964,14 +1967,20 @@
   <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
     <value>Kilépés</value>
   </data>
-  <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 180</value>
+  <data name="msForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>693, 24</value>
   </data>
   <data name="runWoWToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 20</value>
   </data>
   <data name="runWoWToolStripMenuItem.Text" xml:space="preserve">
     <value>WoW Indítása</value>
+  </data>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 20</value>
+  </data>
+  <data name="toolStripMenuItem1.Text" xml:space="preserve">
+    <value>Beállítások</value>
   </data>
   <data name="worldSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 22</value>
@@ -2003,6 +2012,12 @@
   <data name="randomizeBotsToolStripMenuItem.Text" xml:space="preserve">
     <value>Botok Randomizálása</value>
   </data>
+  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nyelv</value>
+  </data>
   <data name="magyarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 22</value>
   </data>
@@ -2027,17 +2042,11 @@
   <data name="frenchToolStripMenuItem.Text" xml:space="preserve">
     <value>Francia</value>
   </data>
-  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 22</value>
+  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 20</value>
   </data>
-  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nyelv</value>
-  </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 20</value>
-  </data>
-  <data name="toolStripMenuItem1.Text" xml:space="preserve">
-    <value>Beállítások</value>
+  <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Eszközök</value>
   </data>
   <data name="lanSwitcherToolStripMenuItem1.Text" xml:space="preserve">
     <value>IP Cserélő</value>
@@ -2045,23 +2054,17 @@
   <data name="accountToolToolStripMenuItem1.Text" xml:space="preserve">
     <value>Account Készítő</value>
   </data>
-  <data name="toolsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 20</value>
+  <data name="restartToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
   </data>
-  <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Eszközök</value>
+  <data name="restartToolStripMenuItem.Text" xml:space="preserve">
+    <value>Szerver</value>
   </data>
   <data name="restartToolStripMenuItem1.Text" xml:space="preserve">
     <value>Újraindítás</value>
   </data>
   <data name="autostartToolStripMenuItem.Text" xml:space="preserve">
     <value>Automatikus Indítás</value>
-  </data>
-  <data name="restartToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 20</value>
-  </data>
-  <data name="restartToolStripMenuItem.Text" xml:space="preserve">
-    <value>Szerver</value>
   </data>
   <data name="reportBugToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
@@ -2087,17 +2090,17 @@
   <data name="exitToolStripMenuItem2.Text" xml:space="preserve">
     <value>Kilépés</value>
   </data>
-  <data name="msForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>693, 24</value>
-  </data>
-  <data name="tssUsage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>548, 17</value>
-  </data>
   <data name="ssBar.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 370</value>
   </data>
   <data name="ssBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>693, 22</value>
+  </data>
+  <data name="tssUsage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>548, 17</value>
+  </data>
+  <data name="systemProtectToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rendszer Védelem</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>693, 392</value>

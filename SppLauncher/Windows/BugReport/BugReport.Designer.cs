@@ -36,13 +36,13 @@
             this.lblbug = new System.Windows.Forms.Label();
             this.txbDesc = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbLogs = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bwGetSysInfo = new System.ComponentModel.BackgroundWorker();
             this.bwSendReport = new System.ComponentModel.BackgroundWorker();
-            this.cbLogs = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,6 +101,17 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // cbLogs
+            // 
+            resources.ApplyResources(this.cbLogs, "cbLogs");
+            this.cbLogs.Name = "cbLogs";
+            this.cbLogs.UseVisualStyleBackColor = true;
+            // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
@@ -126,17 +137,6 @@
             // 
             this.bwSendReport.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwSendReport_DoWork);
             this.bwSendReport.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwSendReport_RunWorkerCompleted);
-            // 
-            // cbLogs
-            // 
-            resources.ApplyResources(this.cbLogs, "cbLogs");
-            this.cbLogs.Name = "cbLogs";
-            this.cbLogs.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
             // 
             // BugReport
             // 
