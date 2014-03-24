@@ -120,11 +120,8 @@
   <data name="&gt;&gt;cbKalimdor.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
-  <data name="&gt;&gt;cbNorthrend.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="button2.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;txbMinLevel.Name" xml:space="preserve">
+    <value>txbMinLevel</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cbBots.TabIndex" type="System.Int32, mscorlib">
@@ -136,11 +133,11 @@
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
   </data>
-  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="txbMinBotInter.MaxLength" type="System.Int32, mscorlib">
     <value>10</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="label7.ToolTip" xml:space="preserve">
     <value />
@@ -155,8 +152,11 @@
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbOutland.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 13</value>
@@ -170,23 +170,38 @@
   <data name="cbAHbot.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 21</value>
   </data>
-  <data name="&gt;&gt;cbJoin.Name" xml:space="preserve">
-    <value>cbJoin</value>
+  <data name="txbMinLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 20</value>
+  </data>
+  <data name="cbEastern.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 105</value>
   </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="&gt;&gt;txbMaxBot.Parent" xml:space="preserve">
+    <value>gbBotSettings</value>
+  </data>
+  <data name="txbMaxLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
   </data>
   <data name="&gt;&gt;cbBots.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
+    <value>btnSave</value>
+  </data>
+  <data name="txbMinLevel.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Bot accounts:</value>
   </data>
   <data name="cbAHbot.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="&gt;&gt;txbMaxLevel.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="cbJoin.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -197,11 +212,8 @@
   <data name="&gt;&gt;cbBots.Name" xml:space="preserve">
     <value>cbBots</value>
   </data>
-  <data name="&gt;&gt;cbKalimdor.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>gbBotSettings</value>
   </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -209,38 +221,56 @@
   <data name="cbOutland.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 374</value>
+  <data name="btnLoadDefault.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 400</value>
+  </data>
+  <data name="&gt;&gt;cbEastern.Name" xml:space="preserve">
+    <value>cbEastern</value>
+  </data>
+  <data name="&gt;&gt;txbMinbot.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txbBotAccount.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>gbBotSettings</value>
   </data>
-  <data name="txbMinbot.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 77</value>
+  <data name="&gt;&gt;cbRndBotLgn.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;cbJoin.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;txbMaxBotInter.ZOrder" xml:space="preserve">
+    <value>16</value>
   </data>
   <data name="txbUpdateInter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 211</value>
+    <value>165, 237</value>
   </data>
   <data name="txbMinbot.MaxLength" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;txbUpdateInter.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="&gt;&gt;cbNorthrend.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbRndBotLgn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 59</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="label2.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="txbMinbot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 20</value>
+  <data name="cbAHbot.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
   </data>
-  <data name="&gt;&gt;txbMaxBotInter.ZOrder" xml:space="preserve">
-    <value>13</value>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="cbDel.Text" xml:space="preserve">
     <value>Delete Bots Account</value>
@@ -249,31 +279,28 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;cbAHbot.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="label6.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Save</value>
+  <data name="btnLoadDefault.Text" xml:space="preserve">
+    <value>Load Default</value>
   </data>
   <data name="txbMinBotInter.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 20</value>
   </data>
-  <data name="cbEastern.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+  <data name="&gt;&gt;txbUpdateInter.Parent" xml:space="preserve">
+    <value>gbBotSettings</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;cbNorthrend.Name" xml:space="preserve">
+    <value>cbNorthrend</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="cbDel.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
-  </data>
-  <data name="txbMaxBot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 20</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -281,8 +308,8 @@
   <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
     <value>groupBox3</value>
   </data>
-  <data name="cbRndBotLgn.Text" xml:space="preserve">
-    <value>Rnd Bot Connect</value>
+  <data name="txbMaxLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 20</value>
   </data>
   <data name="&gt;&gt;cbDel.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -293,35 +320,29 @@
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="cbRndBotLgn.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="&gt;&gt;txbMinLevel.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="txbBotAccount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 185</value>
+    <value>165, 211</value>
   </data>
   <data name="&gt;&gt;cbAHbot.Name" xml:space="preserve">
     <value>cbAHbot</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="&gt;&gt;cbKalimdor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="button1.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;txbUpdateInter.Name" xml:space="preserve">
+    <value>txbUpdateInter</value>
   </data>
   <data name="&gt;&gt;txbUpdateInter.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbEastern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 17</value>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="txbMaxBotInter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 159</value>
+  <data name="txbMinbot.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 77</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblAhbot.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -329,6 +350,12 @@
   </data>
   <data name="cbDel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;txbMaxLevel.Name" xml:space="preserve">
+    <value>txbMaxLevel</value>
+  </data>
+  <data name="&gt;&gt;btnLoadDefault.Name" xml:space="preserve">
+    <value>btnLoadDefault</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Min bots/intervall:</value>
@@ -339,44 +366,53 @@
   <data name="label5.Text" xml:space="preserve">
     <value>Update intervall:</value>
   </data>
+  <data name="cbKalimdor.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txbMaxLevel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;gbBotSettings.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbDel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label5.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="&gt;&gt;txbMaxBotInter.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>gbBotSettings</value>
   </data>
-  <data name="&gt;&gt;cbRndBotLgn.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;cbKalimdor.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="cbOutland.Text" xml:space="preserve">
     <value>Outlands</value>
   </data>
-  <data name="cbBots.Items1" xml:space="preserve">
-    <value>Disabled</value>
-  </data>
   <data name="&gt;&gt;txbMinbot.Name" xml:space="preserve">
     <value>txbMinbot</value>
   </data>
-  <data name="&gt;&gt;cbAHbot.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="txbMinbot.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>gbBotSettings</value>
   </data>
   <data name="cbNorthrend.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 17</value>
   </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+  <data name="btnSave.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="cbNorthrend.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -387,20 +423,26 @@
   <data name="&gt;&gt;txbMaxBotInter.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbRndBotLgn.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;cbNorthrend.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;txbMinbot.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
-  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 23</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Bot Maps</value>
+  </data>
+  <data name="&gt;&gt;gbBotSettings.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;lblAhbot.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>gbBotSettings</value>
   </data>
-  <data name="lblAhbot.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Bot level Min/Max:</value>
+  </data>
+  <data name="cbEastern.Text" xml:space="preserve">
+    <value>Eastern Kingdoms</value>
   </data>
   <data name="&gt;&gt;lblAhbot.Name" xml:space="preserve">
     <value>lblAhbot</value>
@@ -408,26 +450,35 @@
   <data name="txbMaxBotInter.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 20</value>
   </data>
+  <data name="&gt;&gt;txbMinBotInter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 13</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 400</value>
   </data>
   <data name="&gt;&gt;txbBotAccount.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>gbBotSettings</value>
   </data>
-  <data name="txbBotAccount.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="cbRndBotLgn.Text" xml:space="preserve">
+    <value>Rnd Bot Connect</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>68, 162</value>
   </data>
-  <data name="cbAHbot.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+  <data name="label8.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbBots.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 23</value>
+  </data>
+  <data name="cbEastern.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 17</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 80</value>
@@ -435,11 +486,14 @@
   <data name="&gt;&gt;txbMinBotInter.Name" xml:space="preserve">
     <value>txbMinBotInter</value>
   </data>
-  <data name="cbJoin.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="gbBotSettings.Text" xml:space="preserve">
+    <value>Bot Settings</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>BotConf</value>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 13</value>
+  </data>
+  <data name="&gt;&gt;tTrndBot.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txbBotAccount.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 20</value>
@@ -454,12 +508,18 @@
     <value>2</value>
   </data>
   <data name="&gt;&gt;txbUpdateInter.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
-  <data name="cbKalimdor.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="cbNorthrend.Text" xml:space="preserve">
+    <value>Northrend</value>
+  </data>
+  <data name="cbBots.Items1" xml:space="preserve">
+    <value>Disabled</value>
   </data>
   <data name="lblAhbot.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txbMaxBotInter.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="&gt;&gt;cbNorthrend.Parent" xml:space="preserve">
@@ -474,23 +534,23 @@
   <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="cbRndBotLgn.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>18</value>
   </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;cbAHbot.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label7.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 262</value>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="txbMaxBotInter.ToolTip" xml:space="preserve">
-    <value />
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 288</value>
+  </data>
+  <data name="txbMinbot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 20</value>
   </data>
   <data name="cbDel.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 19</value>
@@ -499,10 +559,10 @@
     <value>124, 17</value>
   </data>
   <data name="&gt;&gt;txbMinBotInter.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>gbBotSettings</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;tTrndBot.Name" xml:space="preserve">
+    <value>tTrndBot</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -513,11 +573,14 @@
   <data name="txbMaxBot.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;cbNorthrend.Name" xml:space="preserve">
-    <value>cbNorthrend</value>
+  <data name="txbBotAccount.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;txbMinbot.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>gbBotSettings</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 188</value>
   </data>
   <data name="txbBotAccount.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -525,23 +588,20 @@
   <data name="&gt;&gt;cbJoin.Parent" xml:space="preserve">
     <value>groupBox3</value>
   </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 240</value>
   </data>
   <data name="&gt;&gt;cbDel.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>gbBotSettings</value>
   </data>
-  <data name="label5.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;cbOutland.Parent" xml:space="preserve">
+    <value>groupBox2</value>
   </data>
-  <data name="label4.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -549,56 +609,68 @@
   <data name="cbOutland.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="cbRndBotLgn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 59</value>
+  <data name="txbMaxBotInter.MaxLength" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
   <data name="&gt;&gt;cbBots.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txbMaxBot.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="cbDel.ToolTip" xml:space="preserve">
+  <data name="label1.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="cbRndBotLgn.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="cbOutland.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 59</value>
   </data>
   <data name="&gt;&gt;cbRndBotLgn.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbRndBotLgn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 17</value>
+  <data name="lblAhbot.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;cbJoin.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 10</value>
+  <data name="cbRndBotLgn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="txbMinbot.ToolTip" xml:space="preserve">
+  <data name="cbBots.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>gbBotSettings</value>
   </data>
   <data name="lblAhbot.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
   </data>
-  <data name="cbEastern.Text" xml:space="preserve">
-    <value>Eastern Kingdoms</value>
+  <data name="gbBotSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 10</value>
   </data>
   <data name="txbUpdateInter.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 20</value>
   </data>
-  <data name="&gt;&gt;txbMinBotInter.Type" xml:space="preserve">
+  <data name="&gt;&gt;txbMinLevel.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="txbMaxBot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 20</value>
+  </data>
+  <data name="btnLoadDefault.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 23</value>
+  </data>
   <data name="&gt;&gt;txbBotAccount.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>17</value>
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
   </data>
   <data name="&gt;&gt;lblAhbot.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="cbOutland.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -606,8 +678,8 @@
   <data name="cbJoin.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="cbOutland.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 59</value>
+  <data name="&gt;&gt;cbJoin.Name" xml:space="preserve">
+    <value>cbJoin</value>
   </data>
   <data name="cbKalimdor.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 39</value>
@@ -624,14 +696,17 @@
   <data name="&gt;&gt;cbKalimdor.Name" xml:space="preserve">
     <value>cbKalimdor</value>
   </data>
-  <data name="cbBots.ToolTip" xml:space="preserve">
+  <data name="gbBotSettings.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 13</value>
   </data>
-  <data name="&gt;&gt;cbOutland.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Save</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>68, 136</value>
@@ -654,17 +729,29 @@
   <data name="cbNorthrend.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="txbMinLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>164, 185</value>
+  </data>
+  <data name="txbMaxBotInter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 159</value>
+  </data>
+  <data name="txbMaxBot.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="cbAHbot.Items1" xml:space="preserve">
     <value>Disabled</value>
   </data>
-  <data name="&gt;&gt;cbEastern.Name" xml:space="preserve">
-    <value>cbEastern</value>
+  <data name="btnLoadDefault.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;gbBotSettings.Name" xml:space="preserve">
+    <value>gbBotSettings</value>
   </data>
   <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnLoadDefault.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="cbOutland.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 17</value>
@@ -675,35 +762,35 @@
   <data name="&gt;&gt;txbBotAccount.Name" xml:space="preserve">
     <value>txbBotAccount</value>
   </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
   </data>
   <data name="groupBox2.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>gbBotSettings</value>
   </data>
-  <data name="&gt;&gt;cbKalimdor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cbRndBotLgn.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="txbUpdateInter.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="label3.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label6.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>gbBotSettings</value>
+  </data>
+  <data name="cbRndBotLgn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 17</value>
   </data>
   <data name="cbKalimdor.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -723,11 +810,8 @@
   <data name="cbEastern.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 19</value>
   </data>
-  <data name="groupBox1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>261, 374</value>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="txbMinBotInter.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -738,26 +822,29 @@
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>128, 26</value>
   </data>
-  <data name="txbMaxBot.ToolTip" xml:space="preserve">
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="txbMinbot.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 214</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="txbMaxLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>217, 185</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
+  <data name="&gt;&gt;txbMaxLevel.Parent" xml:space="preserve">
+    <value>gbBotSettings</value>
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
   </data>
-  <data name="txbMaxBotInter.MaxLength" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="txbMinbot.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;cbOutland.Name" xml:space="preserve">
     <value>cbOutland</value>
@@ -768,8 +855,8 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="groupBox3.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;txbMinLevel.Parent" xml:space="preserve">
+    <value>gbBotSettings</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -781,55 +868,52 @@
     <value>Min bots:</value>
   </data>
   <data name="&gt;&gt;cbBots.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>gbBotSettings</value>
   </data>
   <data name="&gt;&gt;cbAHbot.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>gbBotSettings</value>
   </data>
   <data name="cbDel.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="cbKalimdor.ToolTip" xml:space="preserve">
-    <value />
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
   </data>
-  <data name="cbNorthrend.Text" xml:space="preserve">
-    <value>Northrend</value>
+  <data name="&gt;&gt;gbBotSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txbMinBotInter.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="txbBotAccount.ToolTip" xml:space="preserve">
+  <data name="label4.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="&gt;&gt;button2.Name" xml:space="preserve">
-    <value>button2</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 13</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 262</value>
-  </data>
-  <data name="cbKalimdor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 17</value>
+    <value>163, 288</value>
   </data>
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tTrndBot.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;btnLoadDefault.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="txbMaxBot.Location" type="System.Drawing.Point, System.Drawing">
     <value>165, 107</value>
   </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
   </data>
-  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="cbKalimdor.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gbBotSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>106, 110</value>
@@ -838,7 +922,7 @@
     <value>groupBox3</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>348, 409</value>
+    <value>348, 432</value>
   </data>
   <data name="lblAhbot.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 53</value>
@@ -846,8 +930,8 @@
   <data name="txbMaxBotInter.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;txbMinbot.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="txbMinLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
   <data name="lblAhbot.Text" xml:space="preserve">
     <value>Ahbot:</value>
@@ -858,17 +942,11 @@
   <data name="&gt;&gt;label7.Name" xml:space="preserve">
     <value>label7</value>
   </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>324, 246</value>
+  <data name="cbJoin.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="button2.Text" xml:space="preserve">
-    <value>Load Default</value>
+    <value>15</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Other</value>
@@ -877,31 +955,31 @@
     <value>Bots Join LFG</value>
   </data>
   <data name="&gt;&gt;txbMaxBot.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>14</value>
   </data>
-  <data name="&gt;&gt;button2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnLoadDefault.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
   </data>
-  <data name="&gt;&gt;cbNorthrend.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbBots.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 23</value>
+  <data name="cbKalimdor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 17</value>
   </data>
   <data name="lblAhbot.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="cbAHbot.Location" type="System.Drawing.Point, System.Drawing">
-    <value>164, 50</value>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;cbRndBotLgn.Parent" xml:space="preserve">
     <value>groupBox3</value>
   </data>
-  <data name="&gt;&gt;cbOutland.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="cbAHbot.Location" type="System.Drawing.Point, System.Drawing">
+    <value>164, 50</value>
   </data>
   <data name="cbJoin.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 17</value>
@@ -909,20 +987,23 @@
   <data name="txbMaxBot.MaxLength" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Bot Maps</value>
+  <data name="&gt;&gt;txbMaxLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txbUpdateInter.Name" xml:space="preserve">
-    <value>txbUpdateInter</value>
+  <data name="groupBox3.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;txbMinBotInter.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;cbEastern.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="button2.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>BotConf</value>
+  </data>
+  <data name="&gt;&gt;btnLoadDefault.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 13</value>
@@ -930,20 +1011,23 @@
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>145, 105</value>
   </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
   <data name="&gt;&gt;cbDel.Name" xml:space="preserve">
     <value>cbDel</value>
   </data>
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Bot Settings</value>
+    <value>gbBotSettings</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 188</value>
+    <value>86, 214</value>
   </data>
-  <data name="&gt;&gt;txbMinbot.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="gbBotSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>324, 269</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -954,17 +1038,14 @@
   <data name="cbNorthrend.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tTrndBot.Name" xml:space="preserve">
-    <value>tTrndBot</value>
+  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="tTrndBot.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>fr</value>
+    <value>nl</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

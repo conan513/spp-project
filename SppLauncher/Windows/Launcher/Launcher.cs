@@ -40,7 +40,7 @@ namespace SppLauncher.Windows.Launcher
         public static string SysProt = "1";
         public static bool OnlyMysqlStart, MysqlOn, Dbupdate;
         public static double CurrEmuVer;
-        public const string CurrProgVer = "1.1.9"; //? Current program version.
+        public const string CurrProgVer = "1.2.0"; //? Current program version.
 
         #endregion
 

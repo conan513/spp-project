@@ -52,7 +52,7 @@ namespace SppLauncher.Class
                 }
                return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 saveMethod();
                 //MessageBox.Show("Some exception: ReadXML \n{0}", ex.Message);

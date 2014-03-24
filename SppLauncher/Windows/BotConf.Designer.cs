@@ -46,10 +46,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbDel = new System.Windows.Forms.CheckBox();
             this.cbJoin = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbBotSettings = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txbMaxLevel = new System.Windows.Forms.TextBox();
+            this.txbMinLevel = new System.Windows.Forms.TextBox();
             this.cbAHbot = new System.Windows.Forms.ComboBox();
             this.lblAhbot = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.cbEastern = new System.Windows.Forms.CheckBox();
             this.cbKalimdor = new System.Windows.Forms.CheckBox();
             this.cbOutland = new System.Windows.Forms.CheckBox();
@@ -57,9 +60,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbRndBotLgn = new System.Windows.Forms.CheckBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLoadDefault = new System.Windows.Forms.Button();
             this.tTrndBot = new System.Windows.Forms.ToolTip(this.components);
-            this.groupBox1.SuspendLayout();
+            this.gbBotSettings.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -173,29 +176,50 @@
             this.tTrndBot.SetToolTip(this.cbJoin, resources.GetString("cbJoin.ToolTip"));
             this.cbJoin.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // gbBotSettings
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Controls.Add(this.cbAHbot);
-            this.groupBox1.Controls.Add(this.lblAhbot);
-            this.groupBox1.Controls.Add(this.cbBots);
-            this.groupBox1.Controls.Add(this.txbMinbot);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txbMaxBot);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txbMinBotInter);
-            this.groupBox1.Controls.Add(this.txbUpdateInter);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txbMaxBotInter);
-            this.groupBox1.Controls.Add(this.txbBotAccount);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
-            this.tTrndBot.SetToolTip(this.groupBox1, resources.GetString("groupBox1.ToolTip"));
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            resources.ApplyResources(this.gbBotSettings, "gbBotSettings");
+            this.gbBotSettings.Controls.Add(this.label8);
+            this.gbBotSettings.Controls.Add(this.txbMaxLevel);
+            this.gbBotSettings.Controls.Add(this.txbMinLevel);
+            this.gbBotSettings.Controls.Add(this.cbAHbot);
+            this.gbBotSettings.Controls.Add(this.lblAhbot);
+            this.gbBotSettings.Controls.Add(this.cbBots);
+            this.gbBotSettings.Controls.Add(this.txbMinbot);
+            this.gbBotSettings.Controls.Add(this.label1);
+            this.gbBotSettings.Controls.Add(this.label7);
+            this.gbBotSettings.Controls.Add(this.txbMaxBot);
+            this.gbBotSettings.Controls.Add(this.label2);
+            this.gbBotSettings.Controls.Add(this.label5);
+            this.gbBotSettings.Controls.Add(this.txbMinBotInter);
+            this.gbBotSettings.Controls.Add(this.txbUpdateInter);
+            this.gbBotSettings.Controls.Add(this.label3);
+            this.gbBotSettings.Controls.Add(this.label6);
+            this.gbBotSettings.Controls.Add(this.txbMaxBotInter);
+            this.gbBotSettings.Controls.Add(this.txbBotAccount);
+            this.gbBotSettings.Controls.Add(this.label4);
+            this.gbBotSettings.Name = "gbBotSettings";
+            this.gbBotSettings.TabStop = false;
+            this.tTrndBot.SetToolTip(this.gbBotSettings, resources.GetString("gbBotSettings.ToolTip"));
+            this.gbBotSettings.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            this.tTrndBot.SetToolTip(this.label8, resources.GetString("label8.ToolTip"));
+            // 
+            // txbMaxLevel
+            // 
+            resources.ApplyResources(this.txbMaxLevel, "txbMaxLevel");
+            this.txbMaxLevel.Name = "txbMaxLevel";
+            this.tTrndBot.SetToolTip(this.txbMaxLevel, resources.GetString("txbMaxLevel.ToolTip"));
+            // 
+            // txbMinLevel
+            // 
+            resources.ApplyResources(this.txbMinLevel, "txbMinLevel");
+            this.txbMinLevel.Name = "txbMinLevel";
+            this.tTrndBot.SetToolTip(this.txbMinLevel, resources.GetString("txbMinLevel.ToolTip"));
             // 
             // cbAHbot
             // 
@@ -214,13 +238,13 @@
             this.lblAhbot.Name = "lblAhbot";
             this.tTrndBot.SetToolTip(this.lblAhbot, resources.GetString("lblAhbot.ToolTip"));
             // 
-            // button1
+            // btnSave
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.tTrndBot.SetToolTip(this.button1, resources.GetString("button1.ToolTip"));
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            resources.ApplyResources(this.btnSave, "btnSave");
+            this.btnSave.Name = "btnSave";
+            this.tTrndBot.SetToolTip(this.btnSave, resources.GetString("btnSave.ToolTip"));
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.button1_Click);
             // 
             // cbEastern
             // 
@@ -280,22 +304,22 @@
             this.cbRndBotLgn.UseVisualStyleBackColor = true;
             this.cbRndBotLgn.MouseHover += new System.EventHandler(this.cbRndBotLgn_MouseHover);
             // 
-            // button2
+            // btnLoadDefault
             // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.tTrndBot.SetToolTip(this.button2, resources.GetString("button2.ToolTip"));
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            resources.ApplyResources(this.btnLoadDefault, "btnLoadDefault");
+            this.btnLoadDefault.Name = "btnLoadDefault";
+            this.tTrndBot.SetToolTip(this.btnLoadDefault, resources.GetString("btnLoadDefault.ToolTip"));
+            this.btnLoadDefault.UseVisualStyleBackColor = true;
+            this.btnLoadDefault.Click += new System.EventHandler(this.button2_Click);
             // 
             // BotConf
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLoadDefault);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbBotSettings);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -304,8 +328,8 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.tTrndBot.SetToolTip(this, resources.GetString("$this.ToolTip"));
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbBotSettings.ResumeLayout(false);
+            this.gbBotSettings.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -332,18 +356,21 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox cbDel;
         private System.Windows.Forms.CheckBox cbJoin;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox gbBotSettings;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.CheckBox cbEastern;
         private System.Windows.Forms.CheckBox cbKalimdor;
         private System.Windows.Forms.CheckBox cbOutland;
         private System.Windows.Forms.CheckBox cbNorthrend;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLoadDefault;
         private System.Windows.Forms.CheckBox cbRndBotLgn;
         private System.Windows.Forms.ToolTip tTrndBot;
         private System.Windows.Forms.ComboBox cbAHbot;
         private System.Windows.Forms.Label lblAhbot;
+        private System.Windows.Forms.TextBox txbMaxLevel;
+        private System.Windows.Forms.TextBox txbMinLevel;
+        private System.Windows.Forms.Label label8;
     }
 }

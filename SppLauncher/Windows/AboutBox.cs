@@ -26,7 +26,7 @@ namespace SppLauncher
         {
 
                 lblLocalemu.Text = Launcher.CurrEmuVer.ToString();
-                lbl_LocalV.Text = Launcher.CurrProgVer + ".4200";
+                lbl_LocalV.Text = Launcher.CurrProgVer + ".4236";
             
         }
 

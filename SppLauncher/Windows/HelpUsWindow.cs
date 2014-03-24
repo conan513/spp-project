@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -10,6 +13,7 @@ namespace SppLauncher
         public HelpUsWindow()
         {
             InitializeComponent();
+            bWGetDonators.RunWorkerAsync();
         }
 
         #region Assembly Attribute Accessors
@@ -100,6 +104,34 @@ namespace SppLauncher
         private void DonateWhiter_Click(object sender, EventArgs e)
         {
             Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VR33SHQ7LZY42&lc=HU&item_name=Single%20Player%20Project&item_number=SPP&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted");
+        }
+
+        private void GetDonaters()
+        {
+            try
+            {
+                var client = new WebClient();
+                var stream = client.OpenRead("http://spp.splights.eu/updates/donaters");
+                var reader = new StreamReader(stream);
+                var content = reader.ReadToEnd();
+                var parts = content.Split('%');
+                int i = 0;
+                while (i <= parts.Count())
+                {
+                    string[] row = parts[i].Split(';');
+                    var listViewItem = new ListViewItem(row);
+                    DonateList.Items.Add(listViewItem);
+                    i++;
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void bWGetDonators_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            GetDonaters();
         }
     }
 }

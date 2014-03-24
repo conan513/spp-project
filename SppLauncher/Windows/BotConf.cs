@@ -18,7 +18,9 @@ namespace SppLauncher
             InitializeComponent();
             ReadBotConf();
             ToolTip tt = new ToolTip();
+            ToolTip tt2 = new ToolTip();
             tt.SetToolTip(label6, Resources.Function_is_temporarily_disabled);
+            tt2.SetToolTip(label8, "Ignored if more than MaxPlayerLevel mangosd.conf value");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,7 +36,8 @@ namespace SppLauncher
             _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.MinRandomBotsPerInterval", " " + txbMinBotInter.Text);
             _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.MaxRandomBotsPerInterval", " " + txbMaxBotInter.Text);
             _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotAccountCount", " " + txbBotAccount.Text);
-            _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotUpdateInterval", " " + txbUpdateInter.Text);
+            _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotMinLevel", " " + txbMinLevel.Text);
+            _aiplayerbot.Write("AiPlayerbotConf", "AiPlayerbot.RandomBotMaxLevel", " " + txbMaxLevel.Text);
 
             try
             {
@@ -145,6 +148,14 @@ namespace SppLauncher
             txbMaxBotInter.Text = _aiplayerbot.Read("AiPlayerbotConf", "AiPlayerbot.MaxRandomBotsPerInterval");
             txbBotAccount.Text  = _aiplayerbot.Read("AiPlayerbotConf", "AiPlayerbot.RandomBotAccountCount");
             txbUpdateInter.Text = _aiplayerbot.Read("AiPlayerbotConf", "AiPlayerbot.RandomBotUpdateInterval");
+            txbMinLevel.Text = _aiplayerbot.Read("AiPlayerbotConf", "AiPlayerbot.RandomBotMinLevel");
+            txbMaxLevel.Text = _aiplayerbot.Read("AiPlayerbotConf", "AiPlayerbot.RandomBotMaxLevel");
+
+            if(txbMaxLevel.Text.Contains("(ignored"))
+            {
+                string[] a = txbMaxLevel.Text.Split('(');
+                txbMaxLevel.Text = a[0].Trim();
+            }
 
             switch (_aiplayerbot.Read("AiPlayerbotConf", "AiPlayerbot.DeleteRandomBotAccounts"))
             {

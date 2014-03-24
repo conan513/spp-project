@@ -119,19 +119,22 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="DonateWhiter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 57</value>
+    <value>216, 99</value>
   </data>
   <data name="DonateConan.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 20</value>
+    <value>216, 62</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>65, 66</value>
+    <value>74, 108</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Launcher et Outils: Whit33r</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 71</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>196, 13</value>
@@ -140,13 +143,22 @@
     <value>Serveur et base de données: Conan513</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>303, 108</value>
+    <value>303, 146</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Faire un don</value>
   </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>303, 131</value>
+  </data>
+  <data name="DonateList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 21</value>
+  </data>
+  <data name="DonateList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 100</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>328, 129</value>
+    <value>325, 307</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
