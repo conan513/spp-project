@@ -46,14 +46,13 @@
             // 
             // cbEx
             // 
-            resources.ApplyResources(this.cbEx, "cbEx");
             this.cbEx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEx.FormattingEnabled = true;
             this.cbEx.Items.AddRange(new object[] {
             resources.GetString("cbEx.Items"),
             resources.GetString("cbEx.Items1"),
-            resources.GetString("cbEx.Items2"),
-            resources.GetString("cbEx.Items3")});
+            resources.GetString("cbEx.Items2")});
+            resources.ApplyResources(this.cbEx, "cbEx");
             this.cbEx.Name = "cbEx";
             this.cbEx.SelectedIndexChanged += new System.EventHandler(this.cbEx_SelectedIndexChanged);
             // 
@@ -76,7 +75,6 @@
             // 
             // cbType
             // 
-            resources.ApplyResources(this.cbType, "cbType");
             this.cbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbType.FormattingEnabled = true;
             this.cbType.Items.AddRange(new object[] {
@@ -84,12 +82,12 @@
             resources.GetString("cbType.Items1"),
             resources.GetString("cbType.Items2"),
             resources.GetString("cbType.Items3")});
+            resources.ApplyResources(this.cbType, "cbType");
             this.cbType.Name = "cbType";
             this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
             // 
             // gbAcc
             // 
-            resources.ApplyResources(this.gbAcc, "gbAcc");
             this.gbAcc.Controls.Add(this.lblPass);
             this.gbAcc.Controls.Add(this.cbEx);
             this.gbAcc.Controls.Add(this.lblUser);
@@ -99,6 +97,7 @@
             this.gbAcc.Controls.Add(this.btnCreate);
             this.gbAcc.Controls.Add(this.txbUser);
             this.gbAcc.Controls.Add(this.txbPass);
+            resources.ApplyResources(this.gbAcc, "gbAcc");
             this.gbAcc.Name = "gbAcc";
             this.gbAcc.TabStop = false;
             // 

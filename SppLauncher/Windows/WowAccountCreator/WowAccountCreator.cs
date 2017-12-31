@@ -15,7 +15,7 @@ namespace WowAccountCreator
         {
             InitializeComponent();
             Generate = new GenHash();
-            cbEx.Text = "WOTLK";
+            cbEx.Text = "Wrath of the Lich King";
             cbType.Text = "Player";
             bwUpdate.RunWorkerAsync();
 
@@ -113,16 +113,16 @@ namespace WowAccountCreator
 
             switch (accType)
             {
-                case "WOTLK":
+                case "Wrath of the Lich King":
                     accType = "2";
                     break;
                 case "Cataclysm":
                     accType = "3";
                     break;
-                case "BC":
+                case "Burning Crusade":
                     accType = "1";
                     break;
-                case "Vanilla":
+                case "Vanilla/Classic":
                     accType = "0";
                     break;
             }
