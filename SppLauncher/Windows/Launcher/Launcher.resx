@@ -2825,7 +2825,7 @@
     <value>91, 17</value>
   </data>
   <data name="tssLOnline.Text" xml:space="preserve">
-    <value>Online bot: N/A</value>
+    <value>Online Players: N/A</value>
   </data>
   <data name="tssLOnline.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>

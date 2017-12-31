@@ -13,7 +13,7 @@ namespace SppLauncher.Class
         {
             try
             {
-                var writer = new XmlTextWriter("config\\SppPathConfig.xml", Encoding.UTF8);
+                var writer = new XmlTextWriter("Settings\\SppPathConfig.xml", Encoding.UTF8);
                 writer.Formatting = Formatting.Indented;
                 writer.WriteStartDocument();
                 writer.WriteStartElement("Config");
@@ -38,7 +38,7 @@ namespace SppLauncher.Class
             try
             {
                 var doc = new XmlDocument();
-                doc.Load("config\\SppPathConfig.xml");
+                doc.Load("Settings\\SppPathConfig.xml");
                 XmlElement root   = doc.DocumentElement;
                 XmlNodeList nodes = root.SelectNodes("/Config");
 

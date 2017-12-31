@@ -10,7 +10,7 @@ namespace SppLauncher.Windows
             var process = Process.Start(
                 new ProcessStartInfo
                 {
-                    FileName = @"Database\bin\mysql.exe",
+                    FileName = @"Server\Database\bin\mysql.exe",
                     Arguments =
                         String.Format(
                             "-C -B --host={0} -P {1} --user={2} --password={3} --database={4} -e \"\\. {5}\"",
@@ -32,7 +32,7 @@ namespace SppLauncher.Windows
             var process = Process.Start(
                 new ProcessStartInfo
                 {
-                    FileName = @"Database\bin\mysql.exe",
+                    FileName = @"Server\Database\bin\mysql.exe",
                     Arguments =
                         String.Format(
                             "-C -B --host={0} -P {1} --user={2} --password={3} -e \"\\. {4}\"",

@@ -118,7 +118,7 @@ namespace SppLauncher.Windows
             try
             {
                 if (Directory.Exists(@"update\server")) { _fileCopy.Copy(@"update\server", "", true); }
-                File.WriteAllText(@"SingleCore\version", File.ReadAllText(@"update\version"));
+                File.WriteAllText(@"Server\version", File.ReadAllText(@"update\version"));
                 Directory.Delete(@"update", true);
             }
             catch (Exception ex)

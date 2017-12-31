@@ -23,8 +23,8 @@ namespace SppLauncher.Windows.Launcher
     {
         #region [ Variable ]
         private static double _remoteEmuVer;
-        private const string LwPath = "SingleCore\\";
-        private const string Sqlpath = "Database\\bin\\";
+        private const string LwPath = "Server\\Bin\\";
+        private const string Sqlpath = "Server\\Database\\bin\\";
         private readonly string _getTemp = Path.GetTempPath();
         private static Process _cmd, _cmd1, _cmd3;
         private DateTime _dt;
@@ -247,7 +247,7 @@ namespace SppLauncher.Windows.Launcher
             StatusChage(Resources.Launcher_WorldStart_Loading_World, false);
             WindowSize(false);
             tmrWorld.Start();
-            var cmdStartInfo                    = new ProcessStartInfo(LwPath + "mangosd.exe");
+            var cmdStartInfo                    = new ProcessStartInfo(LwPath + "worldserver.exe");
             cmdStartInfo.CreateNoWindow         = true;
             cmdStartInfo.RedirectStandardInput  = true;
             cmdStartInfo.RedirectStandardOutput = true;
@@ -282,7 +282,7 @@ namespace SppLauncher.Windows.Launcher
             pbTempR.Visible     = true;
             pbNotAvailR.Visible = false;
             tmrRealm.Start();
-            var cmdStartInfo                    = new ProcessStartInfo(LwPath + "login.exe");
+            var cmdStartInfo                    = new ProcessStartInfo(LwPath + "bnetserver.exe");
             cmdStartInfo.CreateNoWindow         = true;
             cmdStartInfo.RedirectStandardInput  = true;
             cmdStartInfo.RedirectStandardOutput = true;
@@ -512,7 +512,7 @@ namespace SppLauncher.Windows.Launcher
                 Checklang(false);
                 if (_serverConsoleActive) sendCommandForServerToolStripMenuItem_Click(new object(), new EventArgs());
 
-                foreach (var proc in Process.GetProcessesByName("mangosd"))
+                foreach (var proc in Process.GetProcessesByName("worldserver"))
                 {
                     StatusChage(Resources.CloseProcess_Saving,false);
                     AnimateStatus(1);
@@ -542,14 +542,14 @@ namespace SppLauncher.Windows.Launcher
                         _worldstarted = false;
                         AnimateStatus(1);
                         StatusChage(Resources.Launcher_CloseProcess_World_Shutdown, false);
-                        _cmd1.StandardInput.WriteLine("server shutdown 0");
+                        //_cmd1.StandardInput.WriteLine("server shutdown 0");
                         Thread.Sleep(1000);
                     }
                     AnimateStatus(1);
                     proc.Kill();
                 }
 
-                foreach (var proc in Process.GetProcessesByName("login"))
+                foreach (var proc in Process.GetProcessesByName("bnetserver"))
                 {
                     StatusChage(Resources.Launcher_CloseProcess_Login_Shutdown, false);
                     AnimateStatus(1);
@@ -578,7 +578,7 @@ namespace SppLauncher.Windows.Launcher
             try
             {
 
-                foreach (var proc in Process.GetProcessesByName("mangosd"))
+                foreach (var proc in Process.GetProcessesByName("worldserver"))
                 {
                 
                     var result =
@@ -597,7 +597,7 @@ namespace SppLauncher.Windows.Launcher
 
                 Thread.Sleep(100);
 
-                foreach (var proc in Process.GetProcessesByName("login"))
+                foreach (var proc in Process.GetProcessesByName("bnetserver"))
                 {
                     var result =
                         MessageBox.Show(Resources.Launcher_CloseProcess_Login_Shutdown,
@@ -848,7 +848,7 @@ namespace SppLauncher.Windows.Launcher
             try
             {
                 var pfc = new PrivateFontCollection();
-                pfc.AddFontFile("data\\font\\Wfont.ttf");
+                pfc.AddFontFile("Server\\font\\Wfont.ttf");
                 lblMysql.Font = new Font(pfc.Families[0], 26, FontStyle.Regular);
                 lblRealm.Font = new Font(pfc.Families[0], 26, FontStyle.Regular);
                 lblWorld.Font = new Font(pfc.Families[0], 26, FontStyle.Regular);
@@ -1018,7 +1018,7 @@ namespace SppLauncher.Windows.Launcher
             var startInfo             = new ProcessStartInfo();
             startInfo.CreateNoWindow  = true;
             startInfo.UseShellExecute = false;
-            startInfo.FileName        = "Database\\bin\\mysqladmin.exe";
+            startInfo.FileName        = "Server\\Database\\bin\\mysqladmin.exe";
             startInfo.Arguments       = "-u root -p123456 --port=3310 shutdown";
             startInfo.WindowStyle     = ProcessWindowStyle.Hidden;
 
@@ -1064,7 +1064,7 @@ namespace SppLauncher.Windows.Launcher
 
         public bool ProcessView()
         {
-            foreach (var proc in Process.GetProcessesByName("mangosd"))
+            foreach (var proc in Process.GetProcessesByName("worldserver"))
             {
                 return false;
             }
@@ -1102,7 +1102,7 @@ namespace SppLauncher.Windows.Launcher
         {
             try
             {
-                CurrEmuVer = Convert.ToDouble(File.ReadAllText("SingleCore\\version"));
+                CurrEmuVer = Convert.ToDouble(File.ReadAllText("Server\\version"));
             }
             catch (Exception)
             {
@@ -1581,7 +1581,7 @@ namespace SppLauncher.Windows.Launcher
 
             try
             {
-            Process[] mangosdProcesses = Process.GetProcessesByName("mangosd");
+            Process[] mangosdProcesses = Process.GetProcessesByName("worldserver");
                 _mangosdMem      = Convert.ToString(mangosdProcesses[0].WorkingSet64/1024/1024) + "MB";
             }
             catch (Exception)
@@ -1592,7 +1592,7 @@ namespace SppLauncher.Windows.Launcher
                 try
                 {
                 Process[] realmdProcesses;
-                realmdProcesses = Process.GetProcessesByName("login");
+                realmdProcesses = Process.GetProcessesByName("bnetserver");
                 _realmdMem      = Convert.ToString(realmdProcesses[0].WorkingSet64/1024/1024) + "MB";
             }
             catch (Exception)
@@ -1643,16 +1643,12 @@ namespace SppLauncher.Windows.Launcher
         {
             try
             {
-                if (_realm.Contains("realmd process priority class set to HIGH"))
-                {
-                    tmrRealm.Stop();
-                    var end1          = DateTime.Now;
-                    _realmStartTime = (end1 - _start1).TotalSeconds.ToString("##.0" + "sec");
-
-                    pbAvailableR.Visible   = true;
-                    pbTempR.Visible        = false;
-                    WorldStart();
-                }
+                tmrRealm.Stop();
+                var end1          = DateTime.Now;
+                _realmStartTime = (end1 - _start1).TotalSeconds.ToString("##.0" + "sec");
+                pbAvailableR.Visible   = true;
+                pbTempR.Visible        = false;
+                WorldStart();
             }
             catch (Exception)
             {
@@ -1663,11 +1659,11 @@ namespace SppLauncher.Windows.Launcher
         {
             try
             {
-                if (_world.Contains("Loading Script Names..."))
+                if (_world.Contains("Initialize data stores..."))
                 {
                     pbarWorld.Value = 10;
                 }
-                if (_world.Contains("Loading Item converts..."))
+                if (_world.Contains("Loading Spell Rank Data..."))
                 {
                     pbarWorld.Value = 20;
                     _world          = "";
@@ -1677,36 +1673,36 @@ namespace SppLauncher.Windows.Launcher
                     pbarWorld.Value = 30;
                     _world          = "";
                 }
-                if (_world.Contains("Loading Quests Relations..."))
+                if (_world.Contains("Loading Quests..."))
                 {
                     pbarWorld.Value = 40;
                     _world          = "";
                 }
-                if (_world.Contains("Loading the max pet number..."))
+                if (_world.Contains("Loading SpellArea Data..."))
                 {
                     pbarWorld.Value = 50;
                     _world          = "";
                 }
-                if (_world.Contains("Loading Achievements..."))
+                if (_world.Contains("Loading Pet Name Parts..."))
                 {
                     pbarWorld.Value = 60;
                     _world          = "";
                 }
-                if (_world.Contains("Waypoint templates loaded"))
+                if (_world.Contains("Loading gameobject loot templates..."))
                 {
                     pbarWorld.Value = 70;
                     _world          = "";
                 }
-                if (_world.Contains("Loading GameTeleports..."))
+                if (_world.Contains("Loading Guilds..."))
                 {
                     pbarWorld.Value = 80;
                     _world          = "";
                 }
-                if (_world.Contains("Initialize AuctionHouseBot..."))
+                if (_world.Contains("Initializing Scripts..."))
                 {
                     pbarWorld.Value = 90;
                 }
-                if (_world.Contains("WORLD: World initialized"))
+                if (_world.Contains("Loading world quests status..."))
                 {
                     tmrWorld.Stop();
 
@@ -1762,7 +1758,7 @@ namespace SppLauncher.Windows.Launcher
         {
             try
             {
-                if (_sql.Contains("Version: '5.5.32-MariaDB'  socket: ''  port: 3310  mariadb.org binary distribution"))
+                if (_sql.Contains("Version: '10.1.30-MariaDB'  socket: ''  port: 3310  mariadb.org binary distribution"))
                 {
                     MysqlOn = true;
                     SqlStartCheck.Stop();
@@ -1892,7 +1888,7 @@ namespace SppLauncher.Windows.Launcher
             try
             {
                 var db    = Convert.ToInt32(File.ReadAllText(@"update\version"));       //? Read update version
-                var local = Convert.ToInt32(File.ReadAllText(@"SingleCore\version"));   //? Read databse version
+                var local = Convert.ToInt32(File.ReadAllText(@"Server\version"));   //? Read databse version
                 if (db   != local)
                 {
                     if (!MysqlOn)
@@ -1988,7 +1984,7 @@ namespace SppLauncher.Windows.Launcher
         {
             Checklang(false);
             GetUpdate();
-            CurrEmuVer = Convert.ToDouble(File.ReadAllText("SingleCore\\version")); //? Get local DB version.
+            CurrEmuVer = Convert.ToDouble(File.ReadAllText("Server\\version")); //? Get local DB version.
 
             if (_remoteEmuVer > CurrEmuVer)
             {

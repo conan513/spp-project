@@ -7,8 +7,8 @@ namespace SppLauncher
 {
     public partial class BotConf : Form
     {
-        readonly IniFileClass _ahbot = new IniFileClass("config\\ahbot.CONF");
-        readonly IniFileClass _aiplayerbot             = new IniFileClass("config\\aiplayerbot.CONF");
+        readonly IniFileClass _ahbot = new IniFileClass("Settings\\ahbot.CONF");
+        readonly IniFileClass _aiplayerbot             = new IniFileClass("Settings\\aiplayerbot.CONF");
 
         private string _maps                     = " ", _mapsWrite = " ";
         private string[] _arr1                   = new string[4];

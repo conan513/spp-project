@@ -187,7 +187,7 @@
     <value>Importer Personnages</value>
   </data>
   <data name="Launcher_import_Online_Bots__N_A" xml:space="preserve">
-    <value>Bots en-ligne: N/A</value>
+    <value>Online Players: N/A</value>
   </data>
   <data name="Launcher_Launcher_Auto_Changed_RealmList_wtf_and_after_exit_SPP_change_back_original_realmlist_" xml:space="preserve">
     <value>Changement automatique de RealmList.wtf
@@ -225,13 +225,13 @@ Voulez-vous fermer celui déjà en marche?</value>
     <value>Serveur hors-ligne</value>
   </data>
   <data name="Launcher_startNStop_Online_bot__N_A" xml:space="preserve">
-    <value>Bots en-ligne: N/A</value>
+    <value>Online Players: N/A</value>
   </data>
   <data name="Launcher_WorldStart_Loading_World" xml:space="preserve">
     <value>Chargement du World</value>
   </data>
   <data name="Launcher_GetSqlOnlineBot_Tick_Online_Bot_" xml:space="preserve">
-    <value>Bots en-ligne: </value>
+    <value>Online Players: </value>
   </data>
   <data name="Launcher_bWUpEx_RunWorkerCompleted_Completed" xml:space="preserve">
     <value>Completé</value>

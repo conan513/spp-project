@@ -2016,7 +2016,7 @@
     <value>105, 17</value>
   </data>
   <data name="tssLOnline.Text" xml:space="preserve">
-    <value>Bots en-ligne: N/A</value>
+    <value>Online Players: N/A</value>
   </data>
   <data name="tssUsage.Size" type="System.Drawing.Size, System.Drawing">
     <value>571, 17</value>

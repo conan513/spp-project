@@ -5,7 +5,7 @@ namespace SppLauncher
 {
     public partial class WorldConf : Form
     {
-        readonly IniFileClass MyIni = new IniFileClass("config\\world.CONF");
+        readonly IniFileClass MyIni = new IniFileClass("Settings\\world.conf");
 
 
         public WorldConf()
@@ -21,7 +21,7 @@ namespace SppLauncher
         public void Readini()
         {
 
-            switch (MyIni.Read("MangosdConf", "AllFlightPaths"))
+            switch (MyIni.Read("worldserver", "AllFlightPaths"))
             {
                 case "1":
                     cbPaths.Text = "Enabled";
@@ -31,24 +31,24 @@ namespace SppLauncher
                     break;
             }
 
-            txbLevel.Text       = MyIni.Read("MangosdConf", "StartPlayerLevel");
-            txbMoney.Text       = MyIni.Read("MangosdConf", "StartPlayerMoney");
-            txbHonor.Text       = MyIni.Read("MangosdConf", "StartHonorPoints");
-            txbArena.Text       = MyIni.Read("MangosdConf", "StartArenaPoints");
-            txbPoor.Text        = MyIni.Read("MangosdConf", "Rate.Drop.Item.Poor");
-            txbNormal.Text      = MyIni.Read("MangosdConf", "Rate.Drop.Item.Normal");
-            txbUncommon.Text    = MyIni.Read("MangosdConf", "Rate.Drop.Item.Uncommon");
-            txbRare.Text        = MyIni.Read("MangosdConf", "Rate.Drop.Item.Rare");
-            txbEpic.Text        = MyIni.Read("MangosdConf", "Rate.Drop.Item.Epic");
-            txbLegendary.Text   = MyIni.Read("MangosdConf", "Rate.Drop.Item.Legendary");
-            txbArtifact.Text    = MyIni.Read("MangosdConf", "Rate.Drop.Item.Artifact");
-            txbReferenced.Text  = MyIni.Read("MangosdConf", "Rate.Drop.Item.Referenced");
-            txbMoneyRate.Text   = MyIni.Read("MangosdConf", "Rate.Drop.Money");
-            txbKillRate.Text    = MyIni.Read("MangosdConf", "Rate.XP.Kill");
-            txbQuestRate.Text   = MyIni.Read("MangosdConf", "Rate.XP.Quest");
-            txbExploreRate.Text = MyIni.Read("MangosdConf", "Rate.XP.Explore");
-            txbHonorRate.Text   = MyIni.Read("MangosdConf", "Rate.Honor");
-            txbTalentRate.Text  = MyIni.Read("MangosdConf", "Rate.Talent");
+            txbLevel.Text       = MyIni.Read("worldserver", "StartPlayerLevel");
+            txbMoney.Text       = MyIni.Read("worldserver", "StartPlayerMoney");
+            txbHonor.Text       = MyIni.Read("worldserver", "StartHonorPoints");
+            txbArena.Text       = MyIni.Read("worldserver", "StartArenaPoints");
+            txbPoor.Text        = MyIni.Read("worldserver", "Rate.Drop.Item.Poor");
+            txbNormal.Text      = MyIni.Read("worldserver", "Rate.Drop.Item.Normal");
+            txbUncommon.Text    = MyIni.Read("worldserver", "Rate.Drop.Item.Uncommon");
+            txbRare.Text        = MyIni.Read("worldserver", "Rate.Drop.Item.Rare");
+            txbEpic.Text        = MyIni.Read("worldserver", "Rate.Drop.Item.Epic");
+            txbLegendary.Text   = MyIni.Read("worldserver", "Rate.Drop.Item.Legendary");
+            txbArtifact.Text    = MyIni.Read("worldserver", "Rate.Drop.Item.Artifact");
+            txbReferenced.Text  = MyIni.Read("worldserver", "Rate.Drop.Item.Referenced");
+            txbMoneyRate.Text   = MyIni.Read("worldserver", "Rate.Drop.Money");
+            txbKillRate.Text    = MyIni.Read("worldserver", "Rate.XP.Kill");
+            txbQuestRate.Text   = MyIni.Read("worldserver", "Rate.XP.Quest");
+            txbExploreRate.Text = MyIni.Read("worldserver", "Rate.XP.Explore");
+            txbHonorRate.Text   = MyIni.Read("worldserver", "Rate.Honor");
+            txbTalentRate.Text  = MyIni.Read("worldserver", "Rate.Talent");
 
 
            
@@ -58,32 +58,32 @@ namespace SppLauncher
         {
             try
             {
-                MyIni.Write("MangosdConf", "StartPlayerLevel", " " + txbLevel.Text);
-                MyIni.Write("MangosdConf", "StartPlayerMoney", " " + txbMoney.Text);
-                MyIni.Write("MangosdConf", "StartHonorPoints", " " + txbHonor.Text);
-                MyIni.Write("MangosdConf", "StartArenaPoints", " " + txbArena.Text);
-                MyIni.Write("MangosdConf", "Rate.Drop.Item.Poor", " " + txbPoor.Text);
-                MyIni.Write("MangosdConf", "Rate.Drop.Item.Normal", " " + txbNormal.Text);
-                MyIni.Write("MangosdConf", "Rate.Drop.Item.Uncommon", " " + txbUncommon.Text);
-                MyIni.Write("MangosdConf", "Rate.Drop.Item.Rare", " " + txbRare.Text);
-                MyIni.Write("MangosdConf", "Rate.Drop.Item.Legendary", " " + txbLegendary.Text);
-                MyIni.Write("MangosdConf", "Rate.Drop.Item.Artifact", " " + txbArtifact.Text);
-                MyIni.Write("MangosdConf", "Rate.Drop.Item.Referenced", " " + txbReferenced.Text);
-                MyIni.Write("MangosdConf", "Rate.Drop.Item.Epic", " " + txbEpic.Text);
-                MyIni.Write("MangosdConf", "Rate.Drop.Money", " " + txbMoneyRate.Text);
-                MyIni.Write("MangosdConf", "Rate.XP.Kill", " " + txbKillRate.Text);
-                MyIni.Write("MangosdConf", "Rate.XP.Quest", " " + txbQuestRate.Text);
-                MyIni.Write("MangosdConf", "Rate.XP.Explore", " " + txbExploreRate.Text);
-                MyIni.Write("MangosdConf", "Rate.Honor", " " + txbHonorRate.Text);
-                MyIni.Write("MangosdConf", "Rate.Talent", " " + txbTalentRate.Text);
+                MyIni.Write("worldserver", "StartPlayerLevel", " " + txbLevel.Text);
+                MyIni.Write("worldserver", "StartPlayerMoney", " " + txbMoney.Text);
+                MyIni.Write("worldserver", "StartHonorPoints", " " + txbHonor.Text);
+                MyIni.Write("worldserver", "StartArenaPoints", " " + txbArena.Text);
+                MyIni.Write("worldserver", "Rate.Drop.Item.Poor", " " + txbPoor.Text);
+                MyIni.Write("worldserver", "Rate.Drop.Item.Normal", " " + txbNormal.Text);
+                MyIni.Write("worldserver", "Rate.Drop.Item.Uncommon", " " + txbUncommon.Text);
+                MyIni.Write("worldserver", "Rate.Drop.Item.Rare", " " + txbRare.Text);
+                MyIni.Write("worldserver", "Rate.Drop.Item.Legendary", " " + txbLegendary.Text);
+                MyIni.Write("worldserver", "Rate.Drop.Item.Artifact", " " + txbArtifact.Text);
+                MyIni.Write("worldserver", "Rate.Drop.Item.Referenced", " " + txbReferenced.Text);
+                MyIni.Write("worldserver", "Rate.Drop.Item.Epic", " " + txbEpic.Text);
+                MyIni.Write("worldserver", "Rate.Drop.Money", " " + txbMoneyRate.Text);
+                MyIni.Write("worldserver", "Rate.XP.Kill", " " + txbKillRate.Text);
+                MyIni.Write("worldserver", "Rate.XP.Quest", " " + txbQuestRate.Text);
+                MyIni.Write("worldserver", "Rate.XP.Explore", " " + txbExploreRate.Text);
+                MyIni.Write("worldserver", "Rate.Honor", " " + txbHonorRate.Text);
+                MyIni.Write("worldserver", "Rate.Talent", " " + txbTalentRate.Text);
                 
                 switch (cbPaths.Text)
                 {
                     case "Enabled":
-                        MyIni.Write("MangosdConf", "AllFlightPaths", " " + "1");
+                        MyIni.Write("worldserver", "AllFlightPaths", " " + "1");
                         break;
                     case "Disabled":
-                        MyIni.Write("MangosdConf", "AllFlightPaths", " " + "0");
+                        MyIni.Write("worldserver", "AllFlightPaths", " " + "0");
                         break;
                 }
             }

@@ -224,7 +224,7 @@ Be akarod zárni?</value>
     <value>Mysql Indítása</value>
   </data>
   <data name="Launcher_startNStop_Online_bot__N_A" xml:space="preserve">
-    <value>Online bot: N/A</value>
+    <value>Online Players: N/A</value>
   </data>
   <data name="Launcher_startNStop_Start" xml:space="preserve">
     <value>Start</value>
@@ -266,7 +266,7 @@ Be akarod zárni?</value>
     <value>Update Keresése</value>
   </data>
   <data name="Launcher_GetSqlOnlineBot_Tick_Online_Bot_" xml:space="preserve">
-    <value>Online Bot: </value>
+    <value>Online Players: </value>
   </data>
   <data name="Launcher_bWUpEx_RunWorkerCompleted_Completed" xml:space="preserve">
     <value>Befejezve</value>
