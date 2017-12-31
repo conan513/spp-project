@@ -18,7 +18,8 @@ namespace SppLauncher.Class
                 writer.WriteStartDocument();
                 writer.WriteStartElement("Config");
                 writer.WriteElementString("GamePath", Launcher.WowExePath);
-                writer.WriteElementString("RealmWTF", Launcher.RealmListPath);
+                writer.WriteElementString("GamePath64", Launcher.WowExePath64);
+                //writer.WriteElementString("RealmWTF", Launcher.RealmListPath);
                 writer.WriteElementString("ResetBots", Launcher.resetBots);
                 writer.WriteElementString("RandomizeBots", Launcher.RandomizeBots);
                 writer.WriteElementString("Autostart", Launcher.AutoS);
@@ -45,7 +46,8 @@ namespace SppLauncher.Class
                 foreach (XmlNode node in nodes)
                 {
                     Launcher.WowExePath    = node["GamePath"].InnerText;
-                    Launcher.RealmListPath = node["RealmWTF"].InnerText;
+                    Launcher.WowExePath64  = node["GamePath64"].InnerText;
+                    //Launcher.RealmListPath = node["RealmWTF"].InnerText;
                     Launcher.AutoS     = node["Autostart"].InnerText;
                     Launcher.Lang          = node["Lang"].InnerText;
                     Launcher.SysProt = node["Sysprotect"].InnerText;

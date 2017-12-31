@@ -81,6 +81,8 @@
             this.GetSqlOnlineBot = new System.Windows.Forms.Timer(this.components);
             this.msForm = new System.Windows.Forms.MenuStrip();
             this.runWoWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.runWoWToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.runWoiW64ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.worldSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.botSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -170,6 +172,7 @@
             // 
             resources.ApplyResources(this.lblRealm, "lblRealm");
             this.lblRealm.Name = "lblRealm";
+            this.lblRealm.Click += new System.EventHandler(this.lblRealm_Click);
             // 
             // lblWorld
             // 
@@ -515,10 +518,25 @@
             // 
             // runWoWToolStripMenuItem
             // 
+            this.runWoWToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.runWoWToolStripMenuItem1,
+            this.runWoiW64ToolStripMenuItem});
             this.runWoWToolStripMenuItem.Image = global::SppLauncher.Properties.Resources.world_of_warcraft;
             this.runWoWToolStripMenuItem.Name = "runWoWToolStripMenuItem";
             resources.ApplyResources(this.runWoWToolStripMenuItem, "runWoWToolStripMenuItem");
             this.runWoWToolStripMenuItem.Click += new System.EventHandler(this.runWoWToolStripMenuItem_Click);
+            // 
+            // runWoWToolStripMenuItem1
+            // 
+            this.runWoWToolStripMenuItem1.Name = "runWoWToolStripMenuItem1";
+            resources.ApplyResources(this.runWoWToolStripMenuItem1, "runWoWToolStripMenuItem1");
+            this.runWoWToolStripMenuItem1.Click += new System.EventHandler(this.runWoWToolStripMenuItem1_Click);
+            // 
+            // runWoiW64ToolStripMenuItem
+            // 
+            this.runWoiW64ToolStripMenuItem.Name = "runWoiW64ToolStripMenuItem";
+            resources.ApplyResources(this.runWoiW64ToolStripMenuItem, "runWoiW64ToolStripMenuItem");
+            this.runWoiW64ToolStripMenuItem.Click += new System.EventHandler(this.runWoiW64ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -542,8 +560,8 @@
             // 
             // botSettingsToolStripMenuItem
             // 
-            this.botSettingsToolStripMenuItem.Name = "botSettingsToolStripMenuItem";
             resources.ApplyResources(this.botSettingsToolStripMenuItem, "botSettingsToolStripMenuItem");
+            this.botSettingsToolStripMenuItem.Name = "botSettingsToolStripMenuItem";
             this.botSettingsToolStripMenuItem.Click += new System.EventHandler(this.botSettingsToolStripMenuItem_Click);
             // 
             // changeWoWPathToolStripMenuItem1
@@ -554,14 +572,14 @@
             // 
             // resetAllRandomBotsToolStripMenuItem
             // 
-            this.resetAllRandomBotsToolStripMenuItem.Name = "resetAllRandomBotsToolStripMenuItem";
             resources.ApplyResources(this.resetAllRandomBotsToolStripMenuItem, "resetAllRandomBotsToolStripMenuItem");
+            this.resetAllRandomBotsToolStripMenuItem.Name = "resetAllRandomBotsToolStripMenuItem";
             this.resetAllRandomBotsToolStripMenuItem.Click += new System.EventHandler(this.resetAllRandomBotsToolStripMenuItem_Click);
             // 
             // randomizeBotsToolStripMenuItem
             // 
-            this.randomizeBotsToolStripMenuItem.Name = "randomizeBotsToolStripMenuItem";
             resources.ApplyResources(this.randomizeBotsToolStripMenuItem, "randomizeBotsToolStripMenuItem");
+            this.randomizeBotsToolStripMenuItem.Name = "randomizeBotsToolStripMenuItem";
             this.randomizeBotsToolStripMenuItem.Click += new System.EventHandler(this.randomizeBotsToolStripMenuItem_Click);
             // 
             // languageToolStripMenuItem
@@ -625,9 +643,9 @@
             // 
             // accountToolToolStripMenuItem1
             // 
+            resources.ApplyResources(this.accountToolToolStripMenuItem1, "accountToolToolStripMenuItem1");
             this.accountToolToolStripMenuItem1.Image = global::SppLauncher.Properties.Resources.WoW_icon;
             this.accountToolToolStripMenuItem1.Name = "accountToolToolStripMenuItem1";
-            resources.ApplyResources(this.accountToolToolStripMenuItem1, "accountToolToolStripMenuItem1");
             this.accountToolToolStripMenuItem1.Click += new System.EventHandler(this.accountToolToolStripMenuItem1_Click);
             // 
             // toolStripSeparator3
@@ -984,6 +1002,8 @@
         private System.Windows.Forms.Timer tmrSysProtect;
         private System.ComponentModel.BackgroundWorker bwCloseSPP;
         private System.Windows.Forms.ToolStripMenuItem systemProtectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem runWoWToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem runWoiW64ToolStripMenuItem;
     }
 }
 

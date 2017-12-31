@@ -32,7 +32,7 @@ namespace SppLauncher
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("http://my.opera.com/conan513/blog/");
+            Process.Start("https://www.patreon.com/conan513");
             
         }
 

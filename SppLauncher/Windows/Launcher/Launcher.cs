@@ -36,7 +36,7 @@ namespace SppLauncher.Windows.Launcher
         private static string _olDrealmList, _updLink, _realmDialogPath, _exportfile, _ipAdress, _importFile;
         private static bool _sqlimport, _sqlexport, _updater;
         private string _realm, _mangosdMem, _realmdMem, _sqlMem, _world, _sql, _sqlStartTime, _realmStartTime, _worldStartTime;
-        public static string AutoS , resetBots, RandomizeBots, RealmListPath, Lang, UpdateUnpack, Status, WowExePath;
+        public static string AutoS , resetBots, RandomizeBots, RealmListPath, Lang, UpdateUnpack, Status, WowExePath, WowExePath64;
         public static string SysProt = "1";
         public static bool OnlyMysqlStart, MysqlOn, Dbupdate;
         public static double CurrEmuVer;
@@ -483,7 +483,7 @@ namespace SppLauncher.Windows.Launcher
             if (!CheckRunwow())
             {
                 Check.Stop();
-                RealmRestore();
+                //RealmRestore();
             }
         }
 
@@ -892,14 +892,29 @@ namespace SppLauncher.Windows.Launcher
         {
             CheckLanIpInRealmDatabase();
 
-            if (WowExePath == "" || RealmListPath == "")
+            if (WowExePath == "")
             {
                 DialogMethod();
             }
             else
             {
-                RealmChange();
-                Process.Start(WowExePath);
+                Process.Start(WowExePath, "-noautolaunch64bit -config wtf\\spp-config.wtf");
+                Check.Start();
+
+            }
+        }
+
+        public void StartWow64()
+        {
+            CheckLanIpInRealmDatabase();
+
+            if (WowExePath64 == "")
+            {
+                DialogMethod();
+            }
+            else
+            {
+                Process.Start(WowExePath64, "-config wtf\\spp-config.wtf");
                 Check.Start();
 
             }
@@ -910,7 +925,7 @@ namespace SppLauncher.Windows.Launcher
             var dialog = new OpenFileDialog();
 
             dialog.InitialDirectory = "c:\\";
-            dialog.Filter           = "Executable (*wow.exe)|*wow.exe";
+            dialog.Filter           = "Executable (SPP-WoW.exe)|SPP*.exe";
             dialog.FilterIndex      = 2;
             dialog.RestoreDirectory = true;
 
@@ -920,7 +935,10 @@ namespace SppLauncher.Windows.Launcher
                 {
                     WowExePath       = dialog.FileName;
                     _realmDialogPath = Path.GetDirectoryName(WowExePath);
-                    RealmDialog();
+                    //RealmDialog();
+                    _xmlReadWrite.saveMethod();
+                    Process.Start(WowExePath);
+                    Check.Start();
                 }
                 catch (Exception)
                 {
@@ -934,7 +952,7 @@ namespace SppLauncher.Windows.Launcher
             var dialog = new OpenFileDialog();
 
             dialog.InitialDirectory = _realmDialogPath;
-            dialog.Filter           = "Realmlist File (*realmlist.wtf)|*realmlist.wtf";
+            dialog.Filter           = "Realmlist File (*Config.wtf)|*Config.wtf";
             dialog.FilterIndex      = 2;
             dialog.RestoreDirectory = true;
 
@@ -963,7 +981,7 @@ namespace SppLauncher.Windows.Launcher
 
             try
             {
-                File.WriteAllText(RealmListPath, "set realmlist " + _ipAdress);
+                File.WriteAllText(RealmListPath, "SET portal " + _ipAdress);
             }
             catch (Exception ex)
             {
@@ -1476,7 +1494,22 @@ namespace SppLauncher.Windows.Launcher
 
         private void runWoWToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void lblRealm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void runWoWToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
             StartWow();
+        }
+
+        private void runWoiW64ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StartWow64();
         }
 
         private void lanSwitcherToolStripMenuItem1_Click(object sender, EventArgs e)
