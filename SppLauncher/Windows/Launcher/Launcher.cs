@@ -898,7 +898,7 @@ namespace SppLauncher.Windows.Launcher
             }
             else
             {
-                Process.Start(WowExePath, "-noautolaunch64bit -config wtf\\spp-config.wtf");
+                Process.Start(WowExePath);
                 Check.Start();
 
             }
@@ -914,7 +914,7 @@ namespace SppLauncher.Windows.Launcher
             }
             else
             {
-                Process.Start(WowExePath64, "-config wtf\\spp-config.wtf");
+                Process.Start(WowExePath64);
                 Check.Start();
 
             }
@@ -1735,7 +1735,7 @@ namespace SppLauncher.Windows.Launcher
                 {
                     pbarWorld.Value = 90;
                 }
-                if (_world.Contains("Loading world quests status..."))
+                if (_world.Contains("Loading character info store"))
                 {
                     tmrWorld.Stop();
 
